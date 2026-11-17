@@ -1,0 +1,11 @@
+venture_id,display_name,aliases_json,entity_type,legal_name,registration_id,current_operating_status,current_funding_stage,selection_bucket,identity_review_status
+v_ivf_tool,IVF support tool,"[""IVF Decision Support Tool""]",venture_or_project,,,,,100k_award,needs_owner_review
+v_space_optics,Deployable Space Optics,[],venture_or_project,,,,,100k_award,needs_owner_review
+v_pollsport,Pollsport,[],venture_or_project,,,,,100k_award,needs_owner_review
+v_quickmas,QuickMas,[],venture_or_project,,,,,100k_award,needs_owner_review
+v_agriphage,AgriPhage,[],venture_or_project,,,,,ideas_award,needs_owner_review
+v_biosleeve,BioSleeve,[],venture_or_project,,,,,ideas_award,needs_owner_review
+v_atlasor,AtlasOR,"[""AtlasOR: Revolutionising Anatomy Education""]",venture_or_project,,,,,ideas_award,needs_owner_review
+v_alimetry,Alimetry,[],venture_or_project,,,,,uoa_origin,needs_owner_review
+v_formus,Formus Labs,"[""FormusLabs""]",venture_or_project,,,,,uoa_origin,needs_owner_review
+v_rosterlab,RosterLab,[],venture_or_project,,,,,uoa_origin,needs_owner_review

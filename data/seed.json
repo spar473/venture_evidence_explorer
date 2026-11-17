@@ -1,0 +1,1229 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "prepared_at": "2026-11-16",
+    "project": "Venture Evidence Explorer",
+    "scope": "Selected public Velocity award recipients and UoA-connected ventures; non-exhaustive starter sample",
+    "selection": "Purposive workflow sample, not representative of entrants or outcomes",
+    "source_policy": "Public institutional sources only; no private submissions, feedback or committee records",
+    "time_policy": "Historical publisher reports retrieved in 2026. Not a point-in-time backtest dataset.",
+    "review_policy": "Sources checked by assistant; owner and company review not obtained",
+    "outcome_labels_available": false
+  },
+  "sources": [
+    {
+      "source_id": "src_100k_2025",
+      "title": "Start-ups reach for the stars – literally – in $100k Challenge",
+      "url": "https://www.auckland.ac.nz/en/news/2025/10/17/start-ups-reach-for-the-stars---literally---in--100k-challenge-.html",
+      "publisher": "University of Auckland",
+      "source_type": "institutional_news",
+      "published_at": "2025-10-17",
+      "retrieved_at": "2026-11-16",
+      "content_version": "live_page_read_2026-11-16",
+      "archive_path": null,
+      "limitations": "Publisher report; not independent verification. Historical statements are not current operating-status claims."
+    },
+    {
+      "source_id": "src_100k_2024",
+      "title": "Innovating until the cows come home",
+      "url": "https://www.auckland.ac.nz/en/news/2024/10/17/innovating-until-the-cows-come-home.html",
+      "publisher": "University of Auckland",
+      "source_type": "institutional_news",
+      "published_at": "2024-10-17",
+      "retrieved_at": "2026-11-16",
+      "content_version": "live_page_read_2026-11-16",
+      "archive_path": null,
+      "limitations": "Publisher report; not independent verification. Historical statements are not current operating-status claims."
+    },
+    {
+      "source_id": "src_ideas_2025",
+      "title": "Where start-ups begin – meet the 2025 Velocity Ideas Challenge winners",
+      "url": "https://www.auckland.ac.nz/en/news/2025/05/23/2025-velocity-ideas-challenge-winners.html",
+      "publisher": "University of Auckland",
+      "source_type": "institutional_news",
+      "published_at": "2025-05-23",
+      "retrieved_at": "2026-11-16",
+      "content_version": "live_page_read_2026-11-16",
+      "archive_path": null,
+      "limitations": "Publisher report; not independent verification. Historical statements are not current operating-status claims."
+    },
+    {
+      "source_id": "src_ideas_2026",
+      "title": "University innovators recognised for tackling real-world problems",
+      "url": "https://www.auckland.ac.nz/en/news/2026/05/22/university-innovators-recognised-for-tackling-real-world-problems.html",
+      "publisher": "University of Auckland",
+      "source_type": "institutional_news",
+      "published_at": "2026-05-22",
+      "retrieved_at": "2026-11-16",
+      "content_version": "live_page_read_2026-11-16",
+      "archive_path": null,
+      "limitations": "Publisher report; not independent verification. Historical statements are not current operating-status claims."
+    },
+    {
+      "source_id": "src_rosterlab_2024",
+      "title": "RosterLab levels up support for healthcare workers",
+      "url": "https://www.auckland.ac.nz/en/news/2024/11/27/rosterlab-levels-support-healthcare-workers.html",
+      "publisher": "University of Auckland",
+      "source_type": "institutional_news",
+      "published_at": "2024-11-27",
+      "retrieved_at": "2026-11-16",
+      "content_version": "live_page_read_2026-11-16",
+      "archive_path": null,
+      "limitations": "Publisher report; not independent verification. Historical statements are not current operating-status claims."
+    },
+    {
+      "source_id": "src_formus_2022",
+      "title": "Alumni venture FormusLabs raises $5m towards AI powered orthopaedic surgery software",
+      "url": "https://www.auckland.ac.nz/en/news/2022/06/29/formuslabs-raises-towards-ai-powered-orthopaedic-surgery.html",
+      "publisher": "University of Auckland",
+      "source_type": "institutional_news",
+      "published_at": "2022-06-29",
+      "retrieved_at": "2026-11-16",
+      "content_version": "live_page_read_2026-11-16",
+      "archive_path": null,
+      "limitations": "Publisher report; not independent verification. Historical statements are not current operating-status claims."
+    },
+    {
+      "source_id": "src_abi_2021",
+      "title": "Bioengineers cutting to the high-tech chase",
+      "url": "https://www.auckland.ac.nz/en/news/2021/04/07/three-abi-spinouts--high-tech-award-finalists.html",
+      "publisher": "University of Auckland",
+      "source_type": "institutional_news",
+      "published_at": "2021-04-08",
+      "retrieved_at": "2026-11-16",
+      "content_version": "live_page_read_2026-11-16",
+      "archive_path": null,
+      "limitations": "Publisher report; not independent verification. Historical statements are not current operating-status claims."
+    }
+  ],
+  "ventures": [
+    {
+      "venture_id": "v_ivf_tool",
+      "display_name": "IVF support tool",
+      "aliases": [
+        "IVF Decision Support Tool"
+      ],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "100k_award",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_space_optics",
+      "display_name": "Deployable Space Optics",
+      "aliases": [],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "100k_award",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_pollsport",
+      "display_name": "Pollsport",
+      "aliases": [],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "100k_award",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_quickmas",
+      "display_name": "QuickMas",
+      "aliases": [],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "100k_award",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_agriphage",
+      "display_name": "AgriPhage",
+      "aliases": [],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "ideas_award",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_biosleeve",
+      "display_name": "BioSleeve",
+      "aliases": [],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "ideas_award",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_atlasor",
+      "display_name": "AtlasOR",
+      "aliases": [
+        "AtlasOR: Revolutionising Anatomy Education"
+      ],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "ideas_award",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_alimetry",
+      "display_name": "Alimetry",
+      "aliases": [],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "uoa_origin",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_formus",
+      "display_name": "Formus Labs",
+      "aliases": [
+        "FormusLabs"
+      ],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "uoa_origin",
+      "identity_review_status": "needs_owner_review"
+    },
+    {
+      "venture_id": "v_rosterlab",
+      "display_name": "RosterLab",
+      "aliases": [],
+      "entity_type": "venture_or_project",
+      "legal_name": null,
+      "registration_id": null,
+      "current_operating_status": null,
+      "current_funding_stage": null,
+      "selection_bucket": "uoa_origin",
+      "identity_review_status": "needs_owner_review"
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "v_ivf_tool_product",
+      "venture_id": "v_ivf_tool",
+      "field": "product_description",
+      "value_text": "AI-assisted embryo assessment intended to support IVF treatment decisions.",
+      "source_id": "src_100k_2025",
+      "locator": "First-place IVF team; paragraphs on clinical testing",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_ivf_tool_connection",
+      "venture_id": "v_ivf_tool",
+      "field": "uoa_connection",
+      "value_text": "Reported as arising from doctoral research in the Faculty of Medical and Health Sciences.",
+      "source_id": "src_100k_2025",
+      "locator": "First-place IVF team; paragraphs on clinical testing",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_space_optics_product",
+      "venture_id": "v_space_optics",
+      "field": "product_description",
+      "value_text": "A deployable telescope baffle intended to reduce launch volume while controlling unwanted light.",
+      "source_id": "src_100k_2025",
+      "locator": "Runner-up Deployable Space Optics section",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_space_optics_connection",
+      "venture_id": "v_space_optics",
+      "field": "uoa_connection",
+      "value_text": "Reported as an Auckland Space Institute team.",
+      "source_id": "src_100k_2025",
+      "locator": "Runner-up Deployable Space Optics section",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_pollsport_product",
+      "venture_id": "v_pollsport",
+      "field": "product_description",
+      "value_text": "An app for live sports prediction games with sponsor-provided prizes.",
+      "source_id": "src_100k_2025",
+      "locator": "Third-place Pollsport section",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_pollsport_connection",
+      "venture_id": "v_pollsport",
+      "field": "uoa_connection",
+      "value_text": "Reported as developed by University of Auckland undergraduate students.",
+      "source_id": "src_100k_2025",
+      "locator": "Third-place Pollsport section",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_quickmas_product",
+      "venture_id": "v_quickmas",
+      "field": "product_description",
+      "value_text": "On-farm milk testing intended to help identify mastitis pathogens and inform treatment.",
+      "source_id": "src_100k_2024",
+      "locator": "QuickMas first-place section",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_quickmas_connection",
+      "venture_id": "v_quickmas",
+      "field": "uoa_connection",
+      "value_text": "Reported as a team spanning Liggins, ABI and Engineering.",
+      "source_id": "src_100k_2024",
+      "locator": "QuickMas first-place section",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_agriphage_product",
+      "venture_id": "v_agriphage",
+      "field": "product_description",
+      "value_text": "A proposed phage-based alternative to antibiotics for livestock.",
+      "source_id": "src_ideas_2025",
+      "locator": "Winners 2025 > AgriPhage",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_agriphage_connection",
+      "venture_id": "v_agriphage",
+      "field": "uoa_connection",
+      "value_text": "Listed among the University programme's Ideas Challenge winners.",
+      "source_id": "src_ideas_2025",
+      "locator": "Winners 2025 > AgriPhage",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_biosleeve_product",
+      "venture_id": "v_biosleeve",
+      "field": "product_description",
+      "value_text": "A proposed boat-anchor-chain cartridge intended to reduce marine pest transfer.",
+      "source_id": "src_ideas_2026",
+      "locator": "Winners 2026 > BioSleeve",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_biosleeve_connection",
+      "venture_id": "v_biosleeve",
+      "field": "uoa_connection",
+      "value_text": "Listed among the University programme's Ideas Challenge winners.",
+      "source_id": "src_ideas_2026",
+      "locator": "Winners 2026 > BioSleeve",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_atlasor_product",
+      "venture_id": "v_atlasor",
+      "field": "product_description",
+      "value_text": "Digital anatomy models derived from clinical images for education and surgical rehearsal.",
+      "source_id": "src_ideas_2026",
+      "locator": "Winners 2026 > AtlasOR: Revolutionising Anatomy Education",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_atlasor_connection",
+      "venture_id": "v_atlasor",
+      "field": "uoa_connection",
+      "value_text": "Listed among the University programme's Ideas Challenge winners.",
+      "source_id": "src_ideas_2026",
+      "locator": "Winners 2026 > AtlasOR: Revolutionising Anatomy Education",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_alimetry_product",
+      "venture_id": "v_alimetry",
+      "field": "product_description",
+      "value_text": "Tools for gastrointestinal assessment and understanding gut disorders.",
+      "source_id": "src_abi_2021",
+      "locator": "ABI spinouts and Alimetry paragraphs",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_alimetry_connection",
+      "venture_id": "v_alimetry",
+      "field": "uoa_connection",
+      "value_text": "Explicitly identified as an Auckland Bioengineering Institute spinout.",
+      "source_id": "src_abi_2021",
+      "locator": "ABI spinouts and Alimetry paragraphs",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_formus_product",
+      "venture_id": "v_formus",
+      "field": "product_description",
+      "value_text": "Imaging and biomechanical modelling software for joint-replacement planning.",
+      "source_id": "src_formus_2022",
+      "locator": "Opening description and co-founder paragraph",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_formus_connection",
+      "venture_id": "v_formus",
+      "field": "uoa_connection",
+      "value_text": "Reported as co-founded by a University professor and alumnus.",
+      "source_id": "src_formus_2022",
+      "locator": "Opening description and co-founder paragraph",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_rosterlab_product",
+      "venture_id": "v_rosterlab",
+      "field": "product_description",
+      "value_text": "Optimisation-based software for complex healthcare staff rostering.",
+      "source_id": "src_rosterlab_2024",
+      "locator": "RosterLab description and PhD-origin paragraphs",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "historical_description_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "observation_id": "v_rosterlab_connection",
+      "venture_id": "v_rosterlab",
+      "field": "uoa_connection",
+      "value_text": "Reported as originating in a University PhD and progressing through Velocity and Venture Lab.",
+      "source_id": "src_rosterlab_2024",
+      "locator": "RosterLab description and PhD-origin paragraphs",
+      "assertion_type": "publisher_report",
+      "effective_at": null,
+      "date_basis": "relationship_reported_at_publication",
+      "review_status": "source_checked_owner_review_pending"
+    }
+  ],
+  "awards": [
+    {
+      "award_id": "v_ivf_tool_velocity_100k_2025",
+      "venture_id": "v_ivf_tool",
+      "programme": "velocity_100k",
+      "award_year": 2025,
+      "award_label": "Place 1",
+      "place": 1,
+      "event_date": "2025-10-15",
+      "source_id": "src_100k_2025",
+      "locator": "First-place IVF team; paragraphs on clinical testing",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "award_id": "v_space_optics_velocity_100k_2025",
+      "venture_id": "v_space_optics",
+      "programme": "velocity_100k",
+      "award_year": 2025,
+      "award_label": "Place 2",
+      "place": 2,
+      "event_date": "2025-10-15",
+      "source_id": "src_100k_2025",
+      "locator": "Runner-up Deployable Space Optics section",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "award_id": "v_pollsport_velocity_100k_2025",
+      "venture_id": "v_pollsport",
+      "programme": "velocity_100k",
+      "award_year": 2025,
+      "award_label": "Place 3",
+      "place": 3,
+      "event_date": "2025-10-15",
+      "source_id": "src_100k_2025",
+      "locator": "Third-place Pollsport section",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "award_id": "v_quickmas_velocity_100k_2024",
+      "venture_id": "v_quickmas",
+      "programme": "velocity_100k",
+      "award_year": 2024,
+      "award_label": "Place 1",
+      "place": 1,
+      "event_date": "2024-10-16",
+      "source_id": "src_100k_2024",
+      "locator": "QuickMas first-place section",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "award_id": "v_agriphage_velocity_ideas_2025",
+      "venture_id": "v_agriphage",
+      "programme": "velocity_ideas",
+      "award_year": 2025,
+      "award_label": "Winner (category not recorded)",
+      "place": null,
+      "event_date": "2025-05-22",
+      "source_id": "src_ideas_2025",
+      "locator": "Winners 2025 > AgriPhage",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "award_id": "v_biosleeve_velocity_ideas_2026",
+      "venture_id": "v_biosleeve",
+      "programme": "velocity_ideas",
+      "award_year": 2026,
+      "award_label": "Winner (category not recorded)",
+      "place": null,
+      "event_date": null,
+      "source_id": "src_ideas_2026",
+      "locator": "Winners 2026 > BioSleeve",
+      "review_status": "source_checked_owner_review_pending"
+    },
+    {
+      "award_id": "v_atlasor_velocity_ideas_2026",
+      "venture_id": "v_atlasor",
+      "programme": "velocity_ideas",
+      "award_year": 2026,
+      "award_label": "Winner (category not recorded)",
+      "place": null,
+      "event_date": null,
+      "source_id": "src_ideas_2026",
+      "locator": "Winners 2026 > AtlasOR: Revolutionising Anatomy Education",
+      "review_status": "source_checked_owner_review_pending"
+    }
+  ],
+  "connections": [
+    {
+      "connection_id": "v_ivf_tool_uoa",
+      "venture_id": "v_ivf_tool",
+      "connection_type": "uoa_research_origin",
+      "institution": "University of Auckland",
+      "observation_id": "v_ivf_tool_connection"
+    },
+    {
+      "connection_id": "v_space_optics_uoa",
+      "venture_id": "v_space_optics",
+      "connection_type": "uoa_research_origin",
+      "institution": "University of Auckland",
+      "observation_id": "v_space_optics_connection"
+    },
+    {
+      "connection_id": "v_pollsport_uoa",
+      "venture_id": "v_pollsport",
+      "connection_type": "uoa_student_venture",
+      "institution": "University of Auckland",
+      "observation_id": "v_pollsport_connection"
+    },
+    {
+      "connection_id": "v_quickmas_uoa",
+      "venture_id": "v_quickmas",
+      "connection_type": "uoa_staff_research_team",
+      "institution": "University of Auckland",
+      "observation_id": "v_quickmas_connection"
+    },
+    {
+      "connection_id": "v_agriphage_uoa",
+      "venture_id": "v_agriphage",
+      "connection_type": "uoa_programme_participation",
+      "institution": "University of Auckland",
+      "observation_id": "v_agriphage_connection"
+    },
+    {
+      "connection_id": "v_biosleeve_uoa",
+      "venture_id": "v_biosleeve",
+      "connection_type": "uoa_programme_participation",
+      "institution": "University of Auckland",
+      "observation_id": "v_biosleeve_connection"
+    },
+    {
+      "connection_id": "v_atlasor_uoa",
+      "venture_id": "v_atlasor",
+      "connection_type": "uoa_programme_participation",
+      "institution": "University of Auckland",
+      "observation_id": "v_atlasor_connection"
+    },
+    {
+      "connection_id": "v_alimetry_uoa",
+      "venture_id": "v_alimetry",
+      "connection_type": "uoa_spinout",
+      "institution": "University of Auckland",
+      "observation_id": "v_alimetry_connection"
+    },
+    {
+      "connection_id": "v_formus_uoa",
+      "venture_id": "v_formus",
+      "connection_type": "uoa_staff_alumni_founders",
+      "institution": "University of Auckland",
+      "observation_id": "v_formus_connection"
+    },
+    {
+      "connection_id": "v_rosterlab_uoa",
+      "venture_id": "v_rosterlab",
+      "connection_type": "uoa_research_origin",
+      "institution": "University of Auckland",
+      "observation_id": "v_rosterlab_connection"
+    }
+  ],
+  "annotations": [
+    {
+      "annotation_id": "v_ivf_tool_sector",
+      "venture_id": "v_ivf_tool",
+      "field": "sector",
+      "value_text": "human_health",
+      "basis_observation_ids": [
+        "v_ivf_tool_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_ivf_tool_modality",
+      "venture_id": "v_ivf_tool",
+      "field": "modality",
+      "value_text": "clinical_decision_software",
+      "basis_observation_ids": [
+        "v_ivf_tool_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_ivf_tool_user_context",
+      "venture_id": "v_ivf_tool",
+      "field": "user_context",
+      "value_text": "fertility_clinics",
+      "basis_observation_ids": [
+        "v_ivf_tool_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_ivf_tool_comparison_angle",
+      "venture_id": "v_ivf_tool",
+      "field": "comparison_angle",
+      "value_text": "Clinical data access, validation and clinician workflow",
+      "basis_observation_ids": [
+        "v_ivf_tool_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_ivf_tool_example_diligence_question",
+      "venture_id": "v_ivf_tool",
+      "field": "example_diligence_question",
+      "value_text": "What evidence would a clinic need before testing this tool in its workflow?",
+      "basis_observation_ids": [
+        "v_ivf_tool_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_space_optics_sector",
+      "venture_id": "v_space_optics",
+      "field": "sector",
+      "value_text": "space",
+      "basis_observation_ids": [
+        "v_space_optics_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_space_optics_modality",
+      "venture_id": "v_space_optics",
+      "field": "modality",
+      "value_text": "precision_hardware",
+      "basis_observation_ids": [
+        "v_space_optics_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_space_optics_user_context",
+      "venture_id": "v_space_optics",
+      "field": "user_context",
+      "value_text": "space_instrument_developers",
+      "basis_observation_ids": [
+        "v_space_optics_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_space_optics_comparison_angle",
+      "venture_id": "v_space_optics",
+      "field": "comparison_angle",
+      "value_text": "Environmental qualification and integration",
+      "basis_observation_ids": [
+        "v_space_optics_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_space_optics_example_diligence_question",
+      "venture_id": "v_space_optics",
+      "field": "example_diligence_question",
+      "value_text": "Which deployment and optical tests would an instrument partner require?",
+      "basis_observation_ids": [
+        "v_space_optics_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_pollsport_sector",
+      "venture_id": "v_pollsport",
+      "field": "sector",
+      "value_text": "sports_media",
+      "basis_observation_ids": [
+        "v_pollsport_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_pollsport_modality",
+      "venture_id": "v_pollsport",
+      "field": "modality",
+      "value_text": "consumer_software",
+      "basis_observation_ids": [
+        "v_pollsport_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_pollsport_user_context",
+      "venture_id": "v_pollsport",
+      "field": "user_context",
+      "value_text": "sports_audiences_and_sponsors",
+      "basis_observation_ids": [
+        "v_pollsport_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_pollsport_comparison_angle",
+      "venture_id": "v_pollsport",
+      "field": "comparison_angle",
+      "value_text": "Audience engagement and sponsor demand",
+      "basis_observation_ids": [
+        "v_pollsport_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_pollsport_example_diligence_question",
+      "venture_id": "v_pollsport",
+      "field": "example_diligence_question",
+      "value_text": "Can repeat audience use and sponsor interest be demonstrated separately?",
+      "basis_observation_ids": [
+        "v_pollsport_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_quickmas_sector",
+      "venture_id": "v_quickmas",
+      "field": "sector",
+      "value_text": "animal_health",
+      "basis_observation_ids": [
+        "v_quickmas_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_quickmas_modality",
+      "venture_id": "v_quickmas",
+      "field": "modality",
+      "value_text": "diagnostic_hardware",
+      "basis_observation_ids": [
+        "v_quickmas_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_quickmas_user_context",
+      "venture_id": "v_quickmas",
+      "field": "user_context",
+      "value_text": "dairy_farms",
+      "basis_observation_ids": [
+        "v_quickmas_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_quickmas_comparison_angle",
+      "venture_id": "v_quickmas",
+      "field": "comparison_angle",
+      "value_text": "Field validation and fit with farm workflows",
+      "basis_observation_ids": [
+        "v_quickmas_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_quickmas_example_diligence_question",
+      "venture_id": "v_quickmas",
+      "field": "example_diligence_question",
+      "value_text": "How would performance and usability be tested under actual farm conditions?",
+      "basis_observation_ids": [
+        "v_quickmas_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_agriphage_sector",
+      "venture_id": "v_agriphage",
+      "field": "sector",
+      "value_text": "animal_health",
+      "basis_observation_ids": [
+        "v_agriphage_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_agriphage_modality",
+      "venture_id": "v_agriphage",
+      "field": "modality",
+      "value_text": "biotechnology",
+      "basis_observation_ids": [
+        "v_agriphage_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_agriphage_user_context",
+      "venture_id": "v_agriphage",
+      "field": "user_context",
+      "value_text": "livestock_health",
+      "basis_observation_ids": [
+        "v_agriphage_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_agriphage_comparison_angle",
+      "venture_id": "v_agriphage",
+      "field": "comparison_angle",
+      "value_text": "Biological validation and route to deployment",
+      "basis_observation_ids": [
+        "v_agriphage_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_agriphage_example_diligence_question",
+      "venture_id": "v_agriphage",
+      "field": "example_diligence_question",
+      "value_text": "Which target condition and validation experiment should be addressed first?",
+      "basis_observation_ids": [
+        "v_agriphage_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_biosleeve_sector",
+      "venture_id": "v_biosleeve",
+      "field": "sector",
+      "value_text": "marine_biosecurity",
+      "basis_observation_ids": [
+        "v_biosleeve_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_biosleeve_modality",
+      "venture_id": "v_biosleeve",
+      "field": "modality",
+      "value_text": "physical_device",
+      "basis_observation_ids": [
+        "v_biosleeve_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_biosleeve_user_context",
+      "venture_id": "v_biosleeve",
+      "field": "user_context",
+      "value_text": "recreational_boats",
+      "basis_observation_ids": [
+        "v_biosleeve_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_biosleeve_comparison_angle",
+      "venture_id": "v_biosleeve",
+      "field": "comparison_angle",
+      "value_text": "Field effectiveness and adoption",
+      "basis_observation_ids": [
+        "v_biosleeve_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_biosleeve_example_diligence_question",
+      "venture_id": "v_biosleeve",
+      "field": "example_diligence_question",
+      "value_text": "How would decontamination effectiveness and practical installation be tested?",
+      "basis_observation_ids": [
+        "v_biosleeve_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_atlasor_sector",
+      "venture_id": "v_atlasor",
+      "field": "sector",
+      "value_text": "medical_education",
+      "basis_observation_ids": [
+        "v_atlasor_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_atlasor_modality",
+      "venture_id": "v_atlasor",
+      "field": "modality",
+      "value_text": "medical_imaging_software",
+      "basis_observation_ids": [
+        "v_atlasor_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_atlasor_user_context",
+      "venture_id": "v_atlasor",
+      "field": "user_context",
+      "value_text": "medical_education_and_surgery",
+      "basis_observation_ids": [
+        "v_atlasor_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_atlasor_comparison_angle",
+      "venture_id": "v_atlasor",
+      "field": "comparison_angle",
+      "value_text": "Imaging access and user validation",
+      "basis_observation_ids": [
+        "v_atlasor_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_atlasor_example_diligence_question",
+      "venture_id": "v_atlasor",
+      "field": "example_diligence_question",
+      "value_text": "Which initial education or rehearsal task has a measurable benefit?",
+      "basis_observation_ids": [
+        "v_atlasor_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_alimetry_sector",
+      "venture_id": "v_alimetry",
+      "field": "sector",
+      "value_text": "human_health",
+      "basis_observation_ids": [
+        "v_alimetry_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_alimetry_modality",
+      "venture_id": "v_alimetry",
+      "field": "modality",
+      "value_text": "diagnostic_technology",
+      "basis_observation_ids": [
+        "v_alimetry_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_alimetry_user_context",
+      "venture_id": "v_alimetry",
+      "field": "user_context",
+      "value_text": "gastrointestinal_care",
+      "basis_observation_ids": [
+        "v_alimetry_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_alimetry_comparison_angle",
+      "venture_id": "v_alimetry",
+      "field": "comparison_angle",
+      "value_text": "Research translation and clinical evidence",
+      "basis_observation_ids": [
+        "v_alimetry_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_alimetry_example_diligence_question",
+      "venture_id": "v_alimetry",
+      "field": "example_diligence_question",
+      "value_text": "Which dated milestones establish the path from research to clinical use?",
+      "basis_observation_ids": [
+        "v_alimetry_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_formus_sector",
+      "venture_id": "v_formus",
+      "field": "sector",
+      "value_text": "human_health",
+      "basis_observation_ids": [
+        "v_formus_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_formus_modality",
+      "venture_id": "v_formus",
+      "field": "modality",
+      "value_text": "medical_imaging_software",
+      "basis_observation_ids": [
+        "v_formus_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_formus_user_context",
+      "venture_id": "v_formus",
+      "field": "user_context",
+      "value_text": "orthopaedic_surgery",
+      "basis_observation_ids": [
+        "v_formus_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_formus_comparison_angle",
+      "venture_id": "v_formus",
+      "field": "comparison_angle",
+      "value_text": "Workflow integration and clinical adoption",
+      "basis_observation_ids": [
+        "v_formus_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_formus_example_diligence_question",
+      "venture_id": "v_formus",
+      "field": "example_diligence_question",
+      "value_text": "What workflow and channel-partner evidence supports adoption?",
+      "basis_observation_ids": [
+        "v_formus_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    },
+    {
+      "annotation_id": "v_rosterlab_sector",
+      "venture_id": "v_rosterlab",
+      "field": "sector",
+      "value_text": "workforce_software",
+      "basis_observation_ids": [
+        "v_rosterlab_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_rosterlab_modality",
+      "venture_id": "v_rosterlab",
+      "field": "modality",
+      "value_text": "enterprise_software",
+      "basis_observation_ids": [
+        "v_rosterlab_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_rosterlab_user_context",
+      "venture_id": "v_rosterlab",
+      "field": "user_context",
+      "value_text": "healthcare_staffing",
+      "basis_observation_ids": [
+        "v_rosterlab_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_rosterlab_comparison_angle",
+      "venture_id": "v_rosterlab",
+      "field": "comparison_angle",
+      "value_text": "Implementation effort and workflow adoption",
+      "basis_observation_ids": [
+        "v_rosterlab_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Provisional classification; not a sourced company assertion"
+    },
+    {
+      "annotation_id": "v_rosterlab_example_diligence_question",
+      "venture_id": "v_rosterlab",
+      "field": "example_diligence_question",
+      "value_text": "What evidence distinguishes repeatable deployment from customer-specific work?",
+      "basis_observation_ids": [
+        "v_rosterlab_product"
+      ],
+      "origin": "analyst_proposed",
+      "review_status": "proposed",
+      "purpose": "Research prompt; not an allegation or finding"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "query_id": "q01",
+    "mode": "commercialisation",
+    "query_text": "A dairy-health team needs precedents for validating a technical intervention in farm conditions.",
+    "caution": "Avoid assuming all agritech products share a validation route.",
+    "split": "development",
+    "relevance_labels": null
+  },
+  {
+    "query_id": "q02",
+    "mode": "product_customer",
+    "query_text": "A team builds clinician-facing software using medical images. Find useful product or workflow precedents.",
+    "caution": "Distinguish education from treatment and diagnostic use.",
+    "split": "development",
+    "relevance_labels": null
+  },
+  {
+    "query_id": "q03",
+    "mode": "commercialisation",
+    "query_text": "A research team is commercialising precision hardware that must work outside the laboratory.",
+    "caution": "Ask what actual environmental/deployment evidence exists.",
+    "split": "development",
+    "relevance_labels": null
+  },
+  {
+    "query_id": "q04",
+    "mode": "product_customer",
+    "query_text": "A student team needs precedents for consumer engagement with a possible sponsor-funded model.",
+    "caution": "Sponsor demand and user retention are different questions.",
+    "split": "development",
+    "relevance_labels": null
+  },
+  {
+    "query_id": "q05",
+    "mode": "commercialisation",
+    "query_text": "A team sells workflow software to healthcare organisations and wants relevant implementation precedents.",
+    "caution": "Buyer identity and integration effort need separate evidence.",
+    "split": "development",
+    "relevance_labels": null
+  },
+  {
+    "query_id": "q06",
+    "mode": "stage_milestone",
+    "query_text": "Find a case with documented first paid sales within twelve months of an Ideas award.",
+    "caution": "May require abstention: the seed does not establish this milestone.",
+    "split": "development",
+    "relevance_labels": null
+  }
+]
