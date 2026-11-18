@@ -1,0 +1,473 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vee:discovery-staging:1",
+  "title": "Strict adapter boundary for supplied expanded-discovery-0.1",
+  "type": "object",
+  "required": [
+    "candidates",
+    "listings",
+    "metadata",
+    "name_links",
+    "organisations",
+    "sources",
+    "targeted_outcome_events",
+    "unresolved_cases"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "application_changed",
+        "counts_mean",
+        "format_version",
+        "investment_claim_policy",
+        "missingness",
+        "normalisation",
+        "point_in_time_policy",
+        "prepared_on",
+        "research_stage_policy",
+        "selection",
+        "source_retrieval_cutoff",
+        "status",
+        "target_event_window"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "prepared_on": {
+          "type": "string"
+        },
+        "format_version": {
+          "const": "expanded-discovery-0.1"
+        },
+        "status": {
+          "type": "string"
+        },
+        "counts_mean": {
+          "type": "string"
+        },
+        "selection": {
+          "type": "string"
+        },
+        "normalisation": {
+          "type": "string"
+        },
+        "application_changed": {
+          "type": "boolean"
+        },
+        "source_retrieval_cutoff": {
+          "type": "string"
+        },
+        "target_event_window": {
+          "type": "string"
+        },
+        "missingness": {
+          "type": "string"
+        },
+        "investment_claim_policy": {
+          "type": "string"
+        },
+        "point_in_time_policy": {
+          "type": "string"
+        },
+        "research_stage_policy": {
+          "type": "string"
+        }
+      }
+    },
+    "organisations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "coverage_status",
+          "current_investment_availability",
+          "exact_legal_fund_identity",
+          "name",
+          "note",
+          "organisation_id",
+          "research_category",
+          "source_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "coverage_status": {
+            "type": "string"
+          },
+          "current_investment_availability": {
+            "type": "null"
+          },
+          "exact_legal_fund_identity": {
+            "type": "null"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "organisation_id": {
+            "type": "string"
+          },
+          "research_category": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "access_status",
+          "full_page_archived",
+          "limitations",
+          "published_at",
+          "publisher",
+          "retrieval_method",
+          "retrieved_on",
+          "source_id",
+          "title",
+          "updated_at",
+          "url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "access_status": {
+            "type": "string"
+          },
+          "display_date_raw": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "full_page_archived": {
+            "type": "boolean"
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "primary_locator": {
+            "type": "string"
+          },
+          "publication_availability_verified_at_historical_cutoff": {
+            "type": "boolean"
+          },
+          "published_at": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "retrieval_method": {
+            "type": "string"
+          },
+          "retrieved_on": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "null"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "app_identity_id",
+          "company_domain",
+          "current_funding_stage",
+          "current_operating_status",
+          "date_window_review",
+          "discovery_id",
+          "display_name",
+          "first_investment_date",
+          "legal_identity_review",
+          "nz_eligibility_review",
+          "organisation_ids",
+          "pilot_candidate_id",
+          "research_depth",
+          "source_ids"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "app_identity_id": {
+            "type": "null"
+          },
+          "company_domain": {
+            "type": "null"
+          },
+          "current_funding_stage": {
+            "type": "null"
+          },
+          "current_operating_status": {
+            "type": "null"
+          },
+          "date_window_review": {
+            "type": "string"
+          },
+          "discovery_id": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "first_investment_date": {
+            "type": "null"
+          },
+          "legal_identity_review": {
+            "type": "string"
+          },
+          "nz_eligibility_review": {
+            "type": "string"
+          },
+          "organisation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pilot_candidate_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "proposed_existing_app_identity_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "research_depth": {
+            "type": "string"
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "listings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_type",
+          "discovery_id",
+          "investment_date",
+          "legal_fund_identity",
+          "listing_id",
+          "locator",
+          "organisation_id",
+          "reported_name_variant",
+          "review_status",
+          "source_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "claim_type": {
+            "type": "string"
+          },
+          "discovery_id": {
+            "type": "string"
+          },
+          "investment_date": {
+            "type": "null"
+          },
+          "legal_fund_identity": {
+            "type": "null"
+          },
+          "listing_id": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "organisation_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "reported_name_variant": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "review_status": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "targeted_outcome_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "acquisition_date_reported_by_acquirer",
+          "date_basis",
+          "date_precision",
+          "date_value",
+          "discovery_id",
+          "event_id",
+          "event_type",
+          "independent_legal_completion_verification",
+          "locator",
+          "money",
+          "review_status",
+          "source_id",
+          "summary"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "acquisition_date_reported_by_acquirer": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "date_basis": {
+            "type": "string"
+          },
+          "date_precision": {
+            "type": "string"
+          },
+          "date_value": {
+            "type": "string"
+          },
+          "discovery_id": {
+            "type": "string"
+          },
+          "event_id": {
+            "type": "string"
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "independent_legal_completion_verification": {
+            "type": "boolean"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "money": {
+            "type": "null"
+          },
+          "review_status": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "name_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "basis",
+          "discovery_id",
+          "other_name",
+          "review_status",
+          "source_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "basis": {
+            "type": "string"
+          },
+          "discovery_id": {
+            "type": "string"
+          },
+          "other_name": {
+            "type": "string"
+          },
+          "review_status": {
+            "type": "string"
+          },
+          "source_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unresolved_cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action",
+          "issue_type",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "issue_type": {
+            "type": "string"
+          },
+          "other_label": {
+            "type": "string"
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

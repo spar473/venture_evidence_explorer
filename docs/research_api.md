@@ -1,0 +1,44 @@
+# Two-dossier research API
+
+This pilot reads the supplied research interchange 0.2.1 packet from immutable, namespaced SQLite research tables. Research subjects remain distinct from existing application venture IDs. The original ten-record corpus, its sources and B0 ranking fields are not populated from these dossiers. Source-checked research is not accepted factual evidence or an independent relevance judgment.
+
+## Contracts and reads
+
+All JSON responses have typed Pydantic contracts. Raw graph models are constructed locally from the bundled authoritative JSON Schema, preserving every declared field, null and enum. This response serialization layer does not replace the adapter's complete structural/semantic validator. Extra fields are refused rather than discarded. `python scripts/export_contract.py --check` checks the exported OpenAPI and generated frontend TypeScript against those models.
+
+- `GET /api/research/subjects` returns paginated summaries with filtered `total`, all-subject `total_subjects`, `limit` and `offset`. Optional `q` searches display names literally; `review_state` filters recorded extraction/review state. Counts are explicitly observations, event candidates, unknowns and open cases. They are not completed milestones, distinct financing rounds or accepted companies.
+- `GET /api/research/subjects/{subject_id}` returns the exact subject row, a linked `packet` graph, the latest recorded `identity_mapping`, raw-packet anchor `packet_digest`, all contributing `source_packet_sha256s`, a canonical `graph_sha256`, explicit `date_intervals`, graph-record `counts` and limitations.
+- `GET /api/research/packets/{packet_sha256}.json` returns the exact original imported bytes. Its SHA-256 is the path/anchor digest. No reformatting, rewriting of metadata or inferred records occur.
+- `GET /api/research/exports/{name}.csv` returns an analytical export. Optional `subject_id` selects the subject's linked graph. Optional `packet_sha256` scopes records to one imported packet. Namespace is explicitly `research:0.2.1`; unknown namespaces return HTTP 422.
+
+Unknown subjects/packet hashes/export names return HTTP 404 where an individual resource is requested. A list query selecting an absent packet returns an empty list. All SQL values are parameterized, export names use a fixed allowlist and every graph read runs within one SQLite snapshot. Reads never migrate, import, accept or duplicate records.
+
+## Graph closure and counts
+
+The graph starts with the selected subject's observations, event candidates/reports, unknowns, question assessments, proposals, cases and access gaps. It then follows exact stable-ID references to shared sources/parties and counterpart evidence. A cross-subject question retains both subjects and all supporting observations, unknowns and conclusions. Adding a referenced counterpart identity does not silently import every unrelated record for that counterpart.
+
+The `packet` field is a scoped reference-closure view, explicitly labelled `packet_view_kind: subject_reference_closure` and `is_standalone_import_packet: false`. It is not advertised as a separately validated or importable research interchange packet. Download the original whole packet through the packet endpoint for interchange or revalidation.
+
+The `packet` metadata is preserved from the root subject's recorded import; it describes that original packet and its stated research actions. It is not rewritten into a claim about the later application's modification state. The full graph fingerprint and contributing import hashes distinguish a linked view from the raw source document. Graph `counts` count linked rows and can include counterpart context; they are not per-subject prevalence estimates. The directory's subject-specific counts remain separate.
+
+`identity_mapping` exposes the actual stored proposal/decision provenance. In the supplied pilot both links are `proposed` with brand/project-only scope, no decision actor/date and unresolved legal identity. A display-name match is not an accepted mapping, legal entity, registration, contracting party or continuity finding. A later genuinely supplied decision can be shown with its document hash/history without changing the original subject record.
+
+## Precision and evidence boundaries
+
+Raw dates retain their supplied value, precision, basis and unknown reason. `date_intervals` adds validated calendar bounds for queries/display. For a year such as the QuickMas 2025 launch target, January 1 and December 31 are interval bounds; the raw value remains `2025`, and the occurrence date stays unknown. Context/publication/retrieval, effective and target dates remain separate. Passing a target year does not establish completion. Research-as-of cutoffs do not prove historical web availability.
+
+Money remains a scoped source statement with currency value or explicit null/reason, billing interval, qualifier and unit. Advertised prices, round totals and investor cheques are not converted, combined or treated as contract prices. The two possibly duplicate RosterLab financing candidates stay separate with the open reconciliation case and `aggregation_allowed: false`. No monetary total, distinct-round count or investment score is exposed.
+
+Speaker responsibility and publisher hosting are preserved independently. Regulator hosting does not turn applicant claims into regulator validation. Advertised integration does not establish completed implementation; named adoption does not establish payment or procurement budget authority. Supported readiness conclusions remain attributed/source-checked and scoped to their basis observations. Stronger requested conclusions remain withheld, including partial questions where only one subject has enough evidence. Unknowns keep null values, reason codes, source inspection scope and access gaps; unavailable sources are not evidence that a fact is false.
+
+## CSV grains and preservation
+
+Export names are `subjects`, `parties`, `sources`, `observations`, `events`, `event_reports`, `unknowns`, `proposed_annotations`, `readiness`, `reconciliation_cases`, `access_gaps`, `review_events`, `requirements`, `conclusions`, `identity_mappings` and `date_intervals`.
+
+Each collection export has one row per stable record ID. Raw collection rows are preserved in `record_json`, alongside nested JSON cells and convenient flattened provenance, review and time columns. Original packet bytes are available through the packet endpoint. Observation/report exports include their exact source URL, publisher-role/relationship fields, speaker context, assertion nature, source IDs and source-check disposition. Time columns include raw value, precision, basis, unknown reason and calendar bounds. Nested money/currency preserves null currency explicitly. CSV empty cells mean unknown/not applicable where the original contains null, never a manufactured numeric zero. Formula-leading text is escaped for spreadsheet safety while `record_json` retains its unescaped JSON content.
+
+A subject-filtered export includes linked counterpart records necessary to inspect a cross-subject question. `scope_subject_id` marks the requested subject, while each record's own `subject_id`/`subject_ids` retains its real attribution. Sources are shared, not duplicated per observation. Requirement and conclusion exports retain their parent readiness ID. Empty accepted-review exports stay empty; no acceptance or reviewer decision is synthesized to fill a table.
+
+## Verification scope
+
+API regressions use the supplied two-dossier packet, not invented factual records. They check exact model round-trip preservation, proposed identity/unknown legal fields, source/report lineage, cross-subject readiness closure, null currency, target-versus-occurrence dates, open financing cases, CSV row equality/no duplication, exact original-byte download, filtering and read-only behavior. These verify software behavior. They do not establish passage accuracy, event occurrence, relevance, investment merit, usefulness or time savings; those require actual source/human review and separate task evaluation.

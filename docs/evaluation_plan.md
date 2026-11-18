@@ -31,8 +31,8 @@ The six supplied queries are development examples. Reserve new queries and, wher
 When the corpus expands, hold out venture identities and avoid near-duplicate/rephrased queries crossing splits. Deduplicate source text before splits. Keep final labels sealed during tuning.
 
 ## Metrics
-- nDCG@3 with gains 2^grade-1, over judged candidates. If ideal gain is zero, report undefined/no-relevant-case separately.
-- Precision@3 using grade >=2 as relevant; define the handling of fewer than three returned items before evaluation.
+- Implemented nDCG@3 uses gains 2^grade-1 and requires complete eligible-corpus labels per reviewer. Zero ideal gain is null with an explicit reason.
+- The earlier research plan proposed precision at grade >=2. The existing executable B0 runner uses >=1 (including limited analogy). Versioned `evaluation-workbench:1` explicitly retains >=1 and divides by the number actually returned; it preserves each reviewer separately. A future >=2 analysis needs an explicit protocol version/label interpretation, not a silent threshold change. See `docs/evaluation_workbench.md`.
 - Coverage: queries receiving any eligible result; field/source coverage per result.
 - Abstention: no appropriate comparison, accompanied by a reason.
 - Grounding: supported factual assertions / audited factual assertions; report numerator and denominator.

@@ -134,7 +134,7 @@ test("loading and recoverable API error states", async ({ page }) => {
   await expect(page.locator(".venture-card")).toHaveCount(1);
 });
 
-test("narrow layout has no page overflow", async ({ page }) => {
+test("narrow layout has no page overflow", async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await expect(page.locator(".venture-card")).toHaveCount(10);
@@ -143,14 +143,14 @@ test("narrow layout has no page overflow", async ({ page }) => {
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBe(true);
-  await page.screenshot({ path: "../outputs/mobile.png", fullPage: true });
+  await page.screenshot({ path: testInfo.outputPath("mobile.png"), fullPage: true });
 });
 
-test("desktop release capture", async ({ page }) => {
+test("desktop release capture", async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 1440, height: 1050 });
   await page.goto("/");
   await expect(page.locator(".venture-card")).toHaveCount(10);
-  await page.screenshot({ path: "../outputs/desktop.png", fullPage: true });
+  await page.screenshot({ path: testInfo.outputPath("desktop.png"), fullPage: true });
 });
 
 test("changing a comparison query invalidates stale results", async ({

@@ -1,0 +1,152 @@
+[
+  {
+    "request": {
+      "query": "A dairy-health team needs precedents for validating a technical intervention in farm conditions.",
+      "mode": "commercialisation"
+    },
+    "signature": [],
+    "abstention_reason": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance."
+  },
+  {
+    "request": {
+      "query": "A team builds clinician-facing software using medical images. Find useful product or workflow precedents.",
+      "mode": "product_customer"
+    },
+    "signature": [
+      [
+        "v_formus",
+        0.162014,
+        0.2222,
+        [
+          "image",
+          "software"
+        ]
+      ]
+    ],
+    "abstention_reason": null
+  },
+  {
+    "request": {
+      "query": "A research team is commercialising precision hardware that must work outside the laboratory.",
+      "mode": "commercialisation"
+    },
+    "signature": [],
+    "abstention_reason": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance."
+  },
+  {
+    "request": {
+      "query": "A student team needs precedents for consumer engagement with a possible sponsor-funded model.",
+      "mode": "product_customer"
+    },
+    "signature": [],
+    "abstention_reason": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance."
+  },
+  {
+    "request": {
+      "query": "A team sells workflow software to healthcare organisations and wants relevant implementation precedents.",
+      "mode": "commercialisation"
+    },
+    "signature": [
+      [
+        "v_rosterlab",
+        0.227523,
+        0.2857,
+        [
+          "healthcare",
+          "software"
+        ]
+      ]
+    ],
+    "abstention_reason": null
+  },
+  {
+    "request": {
+      "query": "Find a case with documented first paid sales within twelve months of an Ideas award.",
+      "mode": "stage_milestone"
+    },
+    "signature": [],
+    "abstention_reason": "Insufficient eligible dated milestone evidence. This release has no verified first-sale, funding-stage or deployment milestone dataset; award dates cannot substitute."
+  },
+  {
+    "request": {
+      "query": "clinical images software surgical planning"
+    },
+    "signature": [
+      [
+        "v_atlasor",
+        0.606379,
+        0.6,
+        [
+          "clinical",
+          "image",
+          "surgery"
+        ]
+      ],
+      [
+        "v_formus",
+        0.574485,
+        0.6,
+        [
+          "image",
+          "planning",
+          "software"
+        ]
+      ]
+    ],
+    "abstention_reason": null
+  },
+  {
+    "request": {
+      "subject_id": "v_formus"
+    },
+    "signature": [
+      [
+        "v_atlasor",
+        0.259559,
+        0.2857,
+        [
+          "image",
+          "model"
+        ]
+      ]
+    ],
+    "abstention_reason": null
+  },
+  {
+    "request": {
+      "query": "FormusLabs"
+    },
+    "signature": [
+      [
+        "v_atlasor",
+        0.259559,
+        0.2857,
+        [
+          "image",
+          "model"
+        ]
+      ]
+    ],
+    "abstention_reason": null
+  },
+  {
+    "request": {
+      "query": "clinical images software surgical planning",
+      "programme": "velocity_ideas",
+      "year": 2026
+    },
+    "signature": [
+      [
+        "v_atlasor",
+        0.606379,
+        0.6,
+        [
+          "clinical",
+          "image",
+          "surgery"
+        ]
+      ]
+    ],
+    "abstention_reason": null
+  }
+]

@@ -91,7 +91,7 @@ def test_same_name_distinct_ids_and_aliases(dataset, tmp_path):
     variant['ventures'].append(dict(variant['ventures'][0], venture_id='different_identity'))
     import_variant(db, variant, tmp_path)
     with connect(db) as conn:
-        assert len(browse(conn, q='IVF support tool')) == 2
+        assert len(browse(conn, q='IVF support tool')['items']) == 2
     c = TestClient(create_app(db))
     result = c.post('/api/compare', json={'query':'IVF support tool'}).json()
     assert 'Ambiguous' in result['abstention_reason']
@@ -112,7 +112,8 @@ def test_filter_overlap_actual_tables(dataset, tmp_path):
     assert not query('programme=velocity_100k&year=2026') # Cannot combine different award rows.
     roster = query('q=RosterLab')[0]
     assert roster['selection_bucket']=='uoa_origin'
-    assert any(c['connection_type']=='uoa_research_origin' for c in roster['connections'])
+    client_detail = c.get('/api/ventures/'+roster['venture_id']).json()
+    assert any(c['connection_type']=='uoa_research_origin' for c in client_detail['connections'])
 
 
 def test_all_assertions_resolve_correct_sources(client, dataset):
@@ -120,7 +121,8 @@ def test_all_assertions_resolve_correct_sources(client, dataset):
     source_map = {s['source_id']:s for s in original['sources']}
     observations = {o['observation_id']:o for o in original['observations']}
     seen = 0
-    for v in client.get('/api/ventures').json()['items']:
+    for summary in client.get('/api/ventures').json()['items']:
+        v = client.get('/api/ventures/'+summary['venture_id']).json()
         assert all(v[x] is None for x in ('legal_name','registration_id','current_operating_status','current_funding_stage'))
         for e in [*v['observations'],*v['awards']]:
             source = source_map[e['source_id']]

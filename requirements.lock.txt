@@ -19,3 +19,9 @@ tomli==2.5.0
 typing-inspection==0.4.5
 typing_extensions==4.16.0
 uvicorn==0.34.2
+attrs==26.1.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==0.30.0
+rfc3986-validator==0.1.1

@@ -1,0 +1,39 @@
+{
+  "stage": 5,
+  "status": "locally_verified_with_preserved_failure_evidence",
+  "python310": {
+    "passed": 113,
+    "skipped": 2
+  },
+  "python311": {
+    "passed": 113,
+    "skipped": 2
+  },
+  "python312": {
+    "passed": 115,
+    "skipped": 0
+  },
+  "browser": {
+    "passed": 20,
+    "seconds": 29.4,
+    "runtime": "Node 22.23.5",
+    "browser": "bundled Chromium 145.0.7632.6 revision 1208",
+    "python": "3.12.15",
+    "CHROME_PATH": null
+  },
+  "locks_unchanged": true,
+  "fresh_pip_installs": 3,
+  "npm_ci": "PASS on Node26 and Node22",
+  "build": "PASS on Node26 and Node22",
+  "unexecuted": [
+    "Python 3.13",
+    "Linux / Ubuntu CI matrix",
+    "Remote CI not triggered"
+  ],
+  "retained_failures": [
+    "chromium-headless-install",
+    "chromium-install",
+    "discovery-url-regression-before"
+  ],
+  "original_database_bytes_unchanged_during_fresh_verification": true
+}

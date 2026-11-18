@@ -1,0 +1,16 @@
+{
+  "research_entries": 274,
+  "original_evidence_pilot": 10,
+  "targeted_outcome_source_checks": 4,
+  "portfolio_discovery_only": 260,
+  "investor_and_commercialisation_source_families": 27,
+  "originally_requested_source_families": 5,
+  "additional_source_families": 22,
+  "listing_records": 365,
+  "source_records": 42,
+  "accepted_NZ_population_count": null,
+  "legal_identity_deduplication_complete": false,
+  "historical_coverage_complete": false,
+  "app_modified": false,
+  "structural_checks": "PASS"
+}

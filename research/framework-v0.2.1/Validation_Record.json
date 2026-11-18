@@ -1,0 +1,514 @@
+{
+  "prepared_on": "2026-11-18",
+  "timezone": "Pacific/Auckland",
+  "format_version": "0.2.1",
+  "status": "PASS_RESEARCH_CHECKS_AND_ISOLATED_LOCAL_CODE_CHECKS",
+  "validation_as_of": "2026-11-18",
+  "schema_dialect": "2020-12",
+  "validator_runtime": {
+    "python": "3.10.10",
+    "jsonschema": "4.26.0"
+  },
+  "schema": "PASS",
+  "semantic_checks": "PASS",
+  "counts": {
+    "subjects": 2,
+    "parties": 4,
+    "sources": 6,
+    "observations": 34,
+    "events": 6,
+    "event_reports": 6,
+    "unknowns": 21,
+    "proposed_annotations": 2,
+    "readiness": 6,
+    "reconciliation_cases": 3,
+    "access_gaps": 2,
+    "review_events": 0
+  },
+  "original_negative_cases": [
+    {
+      "case": "duplicate_observation_id",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "orphan_source",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "cross_subject_report",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "target_marked_completed",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "target_year_as_occurrence",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "invalid_calendar_date",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "missing_currency_reason",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "assistant_acceptance",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "proposal_used_as_fact",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "conclusion_without_evidence",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "conclusion_wrong_sources",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "unread_source_as_evidence",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "hidden_duplicate_candidates",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "guessed_zero_unknown",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    }
+  ],
+  "added_regressions": [
+    {
+      "case": "unsupported_event_target",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "event target lacks matching report precision"
+    },
+    {
+      "case": "wrong_review_target_type",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "review target type/ID mismatch"
+    },
+    {
+      "case": "future_review",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "after preparation date"
+    },
+    {
+      "case": "missing_required_counterpart",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "supported requirement lacks required subject coverage"
+    },
+    {
+      "case": "target_precision_mismatch",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "event target lacks matching report precision"
+    },
+    {
+      "case": "report_target_not_in_observation",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "report time lacks matching observation precision"
+    },
+    {
+      "case": "report_occurrence_not_in_observation",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "report time lacks matching observation precision"
+    },
+    {
+      "case": "future_retrieval_and_readiness",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "retrieved_on after preparation date"
+    },
+    {
+      "case": "future_readiness_alone",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "evidence_cutoff after preparation date"
+    },
+    {
+      "case": "future_check",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "checked_on after preparation date"
+    },
+    {
+      "case": "future_unknown_assessment",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "as_of after preparation date"
+    },
+    {
+      "case": "future_access_attempt",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "retrieved_on after preparation date"
+    },
+    {
+      "case": "future_preparation",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "preparation after validation-as-of date"
+    },
+    {
+      "case": "check_before_retrieval",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "observation check before source retrieval"
+    },
+    {
+      "case": "unknown_before_inspection",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "unknown assessed before source inspection"
+    },
+    {
+      "case": "update_after_retrieval",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "source update after retrieval"
+    },
+    {
+      "case": "conclusion_missing_subject_evidence",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "conclusion lacks declared subject coverage"
+    },
+    {
+      "case": "partial_without_explicit_gap",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "partial requirement needs evidence and explicit gaps"
+    },
+    {
+      "case": "correct_typed_acceptance_fixture",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "one_subject_requirement_in_broad_question",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "partial_charging_conclusion_and_withheld_comparison",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "consistently_represented_future_target_fixture",
+      "expected": "PASS",
+      "observed": "PASS"
+    }
+  ],
+  "negative_cases_passed": 32,
+  "permitted_counterexamples_passed": 4,
+  "baseline_gap_reproduction": [
+    {
+      "case": "unsupported_event_target",
+      "old_validator_result": "PASS",
+      "interpretation": "Demonstrated validator gap; no claim that baseline observations are wrong."
+    },
+    {
+      "case": "wrong_review_target_type",
+      "old_validator_result": "PASS",
+      "interpretation": "Demonstrated validator gap; no claim that baseline observations are wrong."
+    },
+    {
+      "case": "future_review",
+      "old_validator_result": "PASS",
+      "interpretation": "Demonstrated validator gap; no claim that baseline observations are wrong."
+    },
+    {
+      "case": "missing_required_counterpart",
+      "old_validator_result": "PASS",
+      "interpretation": "Demonstrated validator gap; no claim that baseline observations are wrong."
+    },
+    {
+      "case": "future_retrieval_and_readiness",
+      "old_validator_result": "PASS",
+      "interpretation": "Demonstrated validator gap; no claim that baseline observations are wrong."
+    }
+  ],
+  "contract_change": {
+    "from": "0.2",
+    "to": "0.2.1",
+    "requirement_subject_field_renamed_to": "required_subject_ids",
+    "strict_consumers_must_adapt": true,
+    "substantive_dossier_changes": false
+  },
+  "source_review": {
+    "new_source_research_in_this_revision": false,
+    "source_reading_record_from": "framework-v0.2/Validation_Record.json",
+    "carried_forward_record": [
+      {
+        "subject": "QuickMas",
+        "checks": "Prototype report, award occurrence and 2025 target separated. Team quotations attributed to project_team; award narration to university.",
+        "limits": "No launch occurrence or prototype start/setting/performance data accepted."
+      },
+      {
+        "subject": "RosterLab",
+        "checks": "Live pricing/API/SSO/integration offerings reopened; departmental adoption retained as vendor report; financing reports kept separate as possible duplicates.",
+        "limits": "No inferred currency, payer, budget authority, completed IT integration or settlement day."
+      },
+      {
+        "subject": "Sources",
+        "checks": "Five usable primary pages read; customer-side link 403 preserved; study link resolved to a general homepage.",
+        "limits": "No historical snapshots, exhaustive search or independent factual/usefulness validation."
+      }
+    ],
+    "historical_availability_verified": false
+  },
+  "compatibility_probe": {
+    "compatible": false,
+    "result": "REJECTED_AS_EXPECTED",
+    "current_application_input_versions": [
+      1,
+      2
+    ],
+    "exception": "ValueError",
+    "validation_error_count": 792,
+    "sample_error_locations": [
+      [
+        "metadata",
+        "schema_version"
+      ],
+      [
+        "metadata",
+        "prepared_at"
+      ],
+      [
+        "metadata",
+        "project"
+      ],
+      [
+        "metadata",
+        "scope"
+      ],
+      [
+        "metadata",
+        "selection"
+      ],
+      [
+        "metadata",
+        "source_policy"
+      ],
+      [
+        "metadata",
+        "time_policy"
+      ],
+      [
+        "metadata",
+        "review_policy"
+      ],
+      [
+        "metadata",
+        "outcome_labels_available"
+      ],
+      [
+        "metadata",
+        "format_version"
+      ],
+      [
+        "metadata",
+        "prepared_on"
+      ],
+      [
+        "metadata",
+        "purpose"
+      ]
+    ],
+    "validation_module": "backend/ingestion.py",
+    "validation_module_sha256_before": "610e690d2a525440831a5f6a4f9cb4eb22780069bbbcbb462f0173cb48d1319c",
+    "validation_module_sha256_after": "610e690d2a525440831a5f6a4f9cb4eb22780069bbbcbb462f0173cb48d1319c",
+    "example_sha256": "b8c736b9f04c6f0885b42a8132d93af1b500df3d395a7d7e50d4dca89d6ffbbe",
+    "method": "Current app validate function called only. sqlite3.connect replaced by a fail-fast guard; bytecode writes disabled; no load_seed, migrate, store_extensions or database access.",
+    "probe_module_stable_during_call": true
+  },
+  "application_checks": {
+    "scope": "Isolated copied source with existing installed dependencies; original app/database not edited.",
+    "source_files": 87,
+    "source_manifest": "Application_Source_Manifest.json",
+    "bootstrap": "PASS; 10 ventures, 7 sources, 20 observations, 7 awards, 10 connections, 50 annotations",
+    "integrity": "PASS; repeat import, atomic conflict refusal, FK/subject and unknown checks",
+    "backend": {
+      "passed": 59,
+      "skipped": 2,
+      "warnings": 1,
+      "seconds": 1.08,
+      "runtime": "Python 3.10.10",
+      "skips": "Python 3.12-only autocommit tests"
+    },
+    "migrations": [
+      {
+        "python": "3.10.10",
+        "sqlite": "3.39.4",
+        "transaction_modes": 2,
+        "result": "PASS"
+      },
+      {
+        "python": "3.12.15",
+        "sqlite": "3.54.1",
+        "transaction_modes": 3,
+        "result": "PASS"
+      }
+    ],
+    "openapi_type_drift": "PASS",
+    "frontend_build": "PASS; TypeScript and Vite, 26 modules",
+    "browser": {
+      "passed": 13,
+      "seconds": 12.1,
+      "runtime": "Installed macOS Chrome; Node 26.12.1",
+      "server": "127.0.0.1:8147",
+      "database": "disposable"
+    },
+    "details": "Local_Code_Review_Record.md",
+    "fresh_locked_install_executed": false,
+    "ci_executed": false,
+    "benchmarks_rerun_here": false,
+    "engineering_completion": "Unchanged attributed report supplied separately; not every reported check was rerun.",
+    "harness_issues_resolved": [
+      "Vite cache could not write through dependency symlink; copied dependencies locally.",
+      "Restored relative npm executable links after copy dereference.",
+      "Sandbox loopback bind refused; approved local browser test run passed."
+    ]
+  },
+  "preservation": {
+    "tracked_originals": 115,
+    "originals_changed_or_removed": [],
+    "snapshot_source_drift": [],
+    "original_application_files_authored_by_this_task": 0,
+    "original_application_imports_by_this_task": 0,
+    "test_databases_and_generated_builds": "isolated work copy only",
+    "previous_framework_files_unchanged": true,
+    "expanded_inventory_files_unchanged": true,
+    "expanded_inventory_entries": 274,
+    "inventory_imported": false,
+    "prior_concurrent_drift": "Earlier v0.2 metadata is retained; no changed/removed file detected against this revision starting snapshot."
+  },
+  "acceptance": {
+    "accepted_records": 0,
+    "review_events": 0,
+    "independent_relevance_judgments": 0,
+    "identity_links_accepted": false
+  },
+  "remaining_cases": [
+    {
+      "case_id": "case_rl_financing_possible_duplicate",
+      "case_kind": "possible_duplicate_event",
+      "subject_ids": [
+        "subj_rosterlab"
+      ],
+      "event_ids": [
+        "event_rl_financing_uoa",
+        "event_rl_financing_movac"
+      ],
+      "observation_ids": [
+        "obs_rl_uoa_round_amount",
+        "obs_rl_movac_round_amount"
+      ],
+      "status": "open",
+      "rationale": "Same named venture/round label/amount and overlapping lead reports suggest one round, but those similarities alone are not an identity decision.",
+      "required_resolution": "Confirm event correspondence through explicit cross-reference or reviewed transaction chronology; preserve both reports and amounts/scopes.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_rl_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_rosterlab"
+      ],
+      "event_ids": [],
+      "observation_ids": [],
+      "status": "open",
+      "rationale": "Existing application-ID link is proposed; legal identity not established.",
+      "required_resolution": "Review project/brand identity and record owner decision before import or merge.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_qm_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_quickmas"
+      ],
+      "event_ids": [],
+      "observation_ids": [],
+      "status": "open",
+      "rationale": "Existing application-ID link is proposed; legal identity not established.",
+      "required_resolution": "Review project/brand identity and record owner decision before import or merge.",
+      "aggregation_allowed": false
+    }
+  ],
+  "delivery": {
+    "local_only": true,
+    "pushed": false,
+    "deployed": false,
+    "direct_import_ready": false,
+    "bounded_pilot_planning_ready": true,
+    "adapter_implemented": false
+  },
+  "limits": [
+    "Structure, represented chronology and linkage do not establish source entailment, factual truth, authenticated human decisions or usefulness.",
+    "Partial-date earliest bounds support compatible chronology checks, not invented exact occurrence days.",
+    "Source checks and access status inherited from 0.2 were not freshly researched.",
+    "Research format 0.2.1 is distinct from integer app input versions 1/2; app rejection is expected.",
+    "Fresh lock installs, CI/Linux bundled Chromium and full multi-version backend suites remain pending.",
+    "No new research import/adapter, accepted identity mapping, new-venture intake or research dossier UI is claimed.",
+    "Performance numbers in the attributed engineering report were not rerun here; query counts do not prove speed.",
+    "274 discovery entries are unaudited leads, not an accepted deduplicated historical NZ population."
+  ],
+  "artifact_sha256_excluding_this_record": {
+    "Application_Source_Manifest.json": "94ba3208601d2680e858c5783bad15cc29372f07af69e3e95fda379a9d7beafe",
+    "Comparison_Framework_v0.2.1.md": "264b7f5c9e9f182628538c720c9f842fe921d2b847bea20e0be119839e40e512",
+    "Implementation_Note.md": "d3e0c81e32519075071886bd05ca92b442caee0b5eeae81b9789cd17cfab9ae2",
+    "Implementation_TODOs.md": "6db4680f4c6c1bb31ded187f1c609694bca0ed357287a627645fbf81d1d8c421",
+    "Local_Code_Review_Record.md": "da95448f845b7b2c5c81fef3978d0b5d9999d547dce0fe72fa4e74665df7a75d",
+    "README.md": "c8c3b98303ca17668572a51456eda1e5694d2faf41971b435235a0ae025d4fb0",
+    "Research_Interchange_Contract.md": "21032583c4b1717d1f9d020f48314413e63517889c0d8666bcf746244b88f1b7",
+    "Research_Interchange_v0.2.1.schema.json": "bddaf4d319e9f10a46dbf3d9b8addd131c11be17ad38302262398ef3b21f7b49",
+    "Two_Dossier_Research_Example.json": "b8c736b9f04c6f0885b42a8132d93af1b500df3d395a7d7e50d4dca89d6ffbbe",
+    "engineering_completion.md": "5b2d48afbc8fd4cf10562d164d9de2b8797931ae6029b55f7139b9fd00b299a0",
+    "regression_cases.py": "02f3b049f24399120181288af212ef5c27fa704723e98627cd212767122c88a0",
+    "validate_research_example.py": "77f89c03b2020118ce07ef18b6a28a4975163f44f38f50a9922e75bc3e00ed72"
+  }
+}
