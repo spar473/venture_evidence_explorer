@@ -143,3 +143,7 @@ The current-state review fixes (F1–F3) and dossier/discovery presentation refi
 ## Continue from another computer
 
 The implemented source and complete handover are on `implementation/vee-workbench`. Start with [handover/DESKTOP_START.md](handover/DESKTOP_START.md) for Windows PowerShell and macOS/Linux instructions. [handover/README.md](handover/README.md) indexes supplied documents, verification history, captures, original archives and the consistent evidence snapshot. Runtime databases/dependencies stay local; the restore script refuses to overwrite an existing database.
+
+## Consolidated project handover · 18 November 2026
+
+The latest end-to-end project context is [the master handover](handover/master-2026-11-18/Code_Agent_Handover_v2_2026-11-18.md). It covers the initial plan, expanded NZ research goals, implemented workflows, evidence boundaries, latest fixes and remaining work. [Start here](handover/master-2026-11-18/README.md) for the copy-ready new-chat prompt, complete project archive and snapshot verification. Use the current branch for development; archived source copies are frozen references.

@@ -18,3 +18,7 @@ The current implementation is at the repository root. The original GitHub root c
 Archived reports use original absolute Mac paths as execution provenance. They do not configure the new desktop. `DESKTOP_START.md` uses checkout-relative commands. The latest source-only handover checksum list covers the files included in this branch; older release manifests are preserved historical records, and may include generated artifacts from their original Mac builds.
 
 Real relevance/factual labels, independent held-out research, identity/legal/event decisions and usefulness observations remain pending. Academic E1/E3 are scaffolded; E2 is synthetic-only; E4/sequential work is deferred. No research acceptance or external-source validation is invented by archiving the work.
+
+## Latest consolidated context
+
+Start with [the complete master handover](master-2026-11-18/Code_Agent_Handover_v2_2026-11-18.md) for the project's original aims, research history, architecture, completed work, current evidence limits and next priorities. [The package index](master-2026-11-18/README.md) links the continuation prompt, full ZIP and checksum/verification records. These extend the existing desktop setup and historical evidence; they do not replace the working source or authorize automatic imports or deployment.

@@ -1,0 +1,143 @@
+{
+  "prepared_on": "2026-11-18",
+  "timezone": "Pacific/Auckland",
+  "purpose": "Full-project handover compilation; no original application edits or record imports",
+  "original_handover": {
+    "requested_path": "/Users/kevinnn.park/Downloads/Code_Agent_Handover.md",
+    "available": false,
+    "literal_original_bytes_included": false,
+    "reconstruction_basis": [
+      "Preserved docs/implementation_handover.md",
+      "Preserved docs/project_spec.md",
+      "Original schema/seed/research notes",
+      "Explicit requests in this conversation"
+    ]
+  },
+  "snapshot": {
+    "application": "/Users/kevinnn.park/Documents/venture_evidence_explorer",
+    "source_files": 159,
+    "source_manifest": "Source_Manifest.json",
+    "current_release_manifest": "REVIEW_FIX_SHA256SUMS.txt",
+    "release_manifest_entries_verified": 161,
+    "mismatches": [],
+    "local_git_metadata_present": false
+  },
+  "checks_executed": {
+    "backend": {
+      "passed": 131,
+      "skipped": 2,
+      "warnings": 1,
+      "seconds": 9.68,
+      "python": "3.10.10",
+      "skips": "Python 3.12-only transaction cases"
+    },
+    "frontend": "PASS; TypeScript and Vite, 33 modules",
+    "browser": {
+      "passed": 32,
+      "seconds": 49.5,
+      "node": "26.12.1",
+      "browser": "Installed macOS Chrome; CHROME_PATH explicitly set",
+      "port": 8185,
+      "database": "disposable"
+    },
+    "openapi_generated_types": "PASS",
+    "research_preservation_rollback": "PASS",
+    "fresh_dependencies_installed_here": false,
+    "linux_or_remote_ci_run": false
+  },
+  "preservation": {
+    "original_files_snapshotted": 172,
+    "changed_or_removed": [],
+    "tested_source_drift": [],
+    "original_application_writes_by_compilation": 0,
+    "original_database_sha256": "09775f184b8d18a535f318c390a83e6d4cabd038b6627d1c1947d47802370431",
+    "database_bytes_unchanged": true
+  },
+  "database": {
+    "counts": {
+      "annotation_evidence": 50,
+      "annotations": 50,
+      "awards": 7,
+      "connections": 10,
+      "discovery_decision_documents": 0,
+      "discovery_imports": 1,
+      "discovery_links": 2218,
+      "discovery_membership": 730,
+      "discovery_records": 730,
+      "discovery_reviews": 0,
+      "evidence_dates": 0,
+      "import_documents": 1,
+      "imports": 1,
+      "intake_drafts": 0,
+      "intake_revisions": 0,
+      "observation_relations": 0,
+      "observation_values": 0,
+      "observations": 20,
+      "research_identity_mappings": 2,
+      "research_import_records": 109,
+      "research_imports": 1,
+      "research_links": 401,
+      "research_mapping_documents": 0,
+      "research_records": 109,
+      "research_time_values": 138,
+      "review_events": 0,
+      "schema_migrations": 6,
+      "source_availability": 0,
+      "sources": 7,
+      "ventures": 10
+    },
+    "integrity": "ok",
+    "fk_violations": [],
+    "research_collections": {
+      "access_gaps": 2,
+      "conclusions": 4,
+      "event_reports": 6,
+      "events": 6,
+      "observations": 34,
+      "parties": 4,
+      "proposed_annotations": 2,
+      "readiness": 6,
+      "reconciliation_cases": 3,
+      "requirements": 13,
+      "sources": 6,
+      "subjects": 2,
+      "unknowns": 21
+    },
+    "discovery_collections": {
+      "candidates": 274,
+      "listings": 365,
+      "name_links": 2,
+      "organisations": 27,
+      "sources": 42,
+      "targeted_outcome_events": 4,
+      "unresolved_cases": 16
+    }
+  },
+  "latest_review_findings": {
+    "F1_late_save_association": "FIXED; regression suite passes",
+    "F2_editor_identity_reload": "FIXED; regression suite passes",
+    "F3_mapping_provenance_chronology": "FIXED; regression suite passes",
+    "old_review_record": "Historical pre-fix evidence retained, not current open defects"
+  },
+  "remaining": [
+    "Reviewed NZ/period/identity/event inclusion and curation",
+    "274 staged leads are not accepted national population; retrieval remains 10 core ventures",
+    "Actual human acceptance, relevance/factual judgments and independent held-out evidence",
+    "Broader reviewed comparative visuals and measured user benefit",
+    "Linux/remote CI and Python 3.13 not executed in supplied record"
+  ],
+  "bundle_exclusions": [
+    "Live SQLite and backup databases",
+    "Installed dependencies/environments",
+    "Compiled frontend assets",
+    "Caches/Git metadata",
+    "Private credentials/material",
+    "Full historical temporary logs/backups"
+  ],
+  "limits": [
+    "No new external venture research or current company fact verification",
+    "No claim of literal rereading/revising unavailable original handover bytes",
+    "Historical clean-install checks are attributed; this compilation reused installed dependencies",
+    "File/code tests do not establish factual truth, human identity authenticity, relevance or investment outcomes"
+  ]
+}
