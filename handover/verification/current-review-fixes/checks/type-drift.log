@@ -1,0 +1,3 @@
+$ /Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python scripts/export_contract.py --check
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository
+PASS: OpenAPI and generated TypeScript match

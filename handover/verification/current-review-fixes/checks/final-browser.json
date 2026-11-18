@@ -1,0 +1,12 @@
+{
+  "name": "final-browser",
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository/frontend",
+  "command": [
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/npm-node22-cache/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+    "node_modules/playwright/cli.js",
+    "test",
+    "--output=/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/final-browser"
+  ],
+  "exit_code": 0,
+  "seconds": 33.052
+}

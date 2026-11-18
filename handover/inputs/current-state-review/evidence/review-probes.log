@@ -1,0 +1,19 @@
+(node:34153) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[2m[WebServer] [22mINFO:     Started server process [34163]
+[2m[WebServer] [22mINFO:     Waiting for application startup.
+[2m[WebServer] [22mINFO:     Application startup complete.
+[2m[WebServer] [22mINFO:     Uvicorn running on http://127.0.0.1:8184 (Press CTRL+C to quit)
+
+Running 3 tests using 1 worker
+
+(node:34164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34164) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(node:34164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 e2e/review-probes.spec.ts:6:1 › review probe: delayed save switches edit identity and overwrites another draft on next save (887ms)
+  ✓  2 e2e/review-probes.spec.ts:29:1 › review probe: reload preserves fields but loses existing draft identity (516ms)
+  ✓  3 e2e/review-probes.spec.ts:43:1 › capture current workspace layouts (1.4s)
+
+  3 passed (7.4s)

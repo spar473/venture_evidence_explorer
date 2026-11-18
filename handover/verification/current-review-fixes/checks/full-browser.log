@@ -1,0 +1,47 @@
+$ /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/npm-node22-cache/_npx/52027bd8fc0022aa/node_modules/node/bin/node node_modules/playwright/cli.js test --output=/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/full-browser
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository/frontend
+[2m[WebServer] [22mINFO:     Started server process [35401]
+[2m[WebServer] [22mINFO:     Waiting for application startup.
+[2m[WebServer] [22mINFO:     Application startup complete.
+[2m[WebServer] [22mINFO:     Uvicorn running on http://127.0.0.1:8188 (Press CTRL+C to quit)
+
+Running 32 tests using 1 worker
+
+(node:35408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:35408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/contracts.spec.ts:3:1 › directory paginates summaries and loads evidence only when opened (2.0s)
+  ✓   2 e2e/contracts.spec.ts:33:1 › closing a loading profile prevents late evidence reopening the drawer (1.1s)
+  ✓   3 e2e/contracts.spec.ts:48:1 › historical profile preserves unknown and partial dates with review state (436ms)
+  ✓   4 e2e/contracts.spec.ts:72:1 › exported comparison run replays against the recorded corpus (506ms)
+  ✓   5 e2e/contracts.spec.ts:94:1 › tab navigation retains directory inputs, page and completed comparison (2.3s)
+  ✓   6 e2e/discovery.spec.ts:2:1 › discovery staging totals, scope filters, unresolved aliases and withheld promotion (1.6s)
+  ✓   7 e2e/intake-recovery.spec.ts:7:1 › delayed save prevents switching draft identity and preserves both histories (605ms)
+  ✓   8 e2e/intake-recovery.spec.ts:17:1 › reload retains saved identity and edits instead of creating a duplicate (494ms)
+  ✓   9 e2e/intake-recovery.spec.ts:22:1 › tab return retains revision base and Start another draft explicitly clears it (511ms)
+  ✓  10 e2e/intake-recovery.spec.ts:27:1 › concurrent revision shows conflict without discarding local edits (666ms)
+  ✓  11 e2e/intake-recovery.spec.ts:31:51 › lost create response survives reload with the exact retry request (593ms)
+  ✓  12 e2e/intake-recovery.spec.ts:31:51 › lost revision response survives reload with the exact retry request (642ms)
+  ✓  13 e2e/intake-recovery.spec.ts:38:1 › unmounted delayed save cannot replace the restored editor session (559ms)
+  ✓  14 e2e/intake-recovery.spec.ts:42:1 › legacy field recovery requires explicit identity selection (429ms)
+  ✓  15 e2e/intake-recovery.spec.ts:46:1 › unavailable recovery journal refuses a write and retains typed input (250ms)
+  ✓  16 e2e/intake.spec.ts:2:1 › save/reload/reopen user draft and compare without accepting source facts (1.1s)
+  ✓  17 e2e/intake.spec.ts:21:1 › source validation and persistence failure keep typed input (693ms)
+  ✓  18 e2e/release.spec.ts:3:1 › browse, filter, inspect and unknowns (2.2s)
+  ✓  19 e2e/release.spec.ts:50:1 › comparison, source evidence, fewer than three and stage abstention (628ms)
+  ✓  20 e2e/release.spec.ts:98:1 › analytics and real CSV download (302ms)
+  ✓  21 e2e/release.spec.ts:115:1 › loading and recoverable API error states (1.8s)
+  ✓  22 e2e/release.spec.ts:137:1 › narrow layout has no page overflow (594ms)
+  ✓  23 e2e/release.spec.ts:149:1 › desktop release capture (594ms)
+  ✓  24 e2e/release.spec.ts:156:1 › changing a comparison query invalidates stale results (1.1s)
+  ✓  25 e2e/release.spec.ts:181:1 › evidence drawer supports Escape and returns keyboard focus (361ms)
+  ✓  26 e2e/research.spec.ts:22:1 › research directory filters preserve quarantine, unknown identity and source responsibility (1.7s)
+  ✓  27 e2e/research.spec.ts:58:1 › dossiers retain prospective targets, possibly duplicate financing and scoped withheld conclusions (1.2s)
+  ✓  28 e2e/research.spec.ts:90:1 › research exports download preserved IDs, review, money scope and exact packet bytes (688ms)
+  ✓  29 e2e/research.spec.ts:114:1 › research drawers remain keyboard accessible with narrow screens (571ms)
+  ✓  30 e2e/review-usability.spec.ts:2:1 › dossier leads with attributed solution and users while preserving identity disclosure (678ms)
+  ✓  31 e2e/review-usability.spec.ts:7:1 › compact timeline preserves target precision and unknown occurrence on mobile (574ms)
+  ✓  32 e2e/review-usability.spec.ts:10:1 › discovery labels are readable and stable IDs remain available in disclosures and exports (846ms)
+
+  32 passed (33.5s)

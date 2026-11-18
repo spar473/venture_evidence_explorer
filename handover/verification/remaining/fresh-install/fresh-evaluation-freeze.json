@@ -1,0 +1,18 @@
+{
+  "name": "fresh-evaluation-freeze",
+  "command": [
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+    "scripts/evaluation_workbench.py",
+    "freeze",
+    "--db",
+    "outputs/venture_evidence.sqlite",
+    "--output-dir",
+    "outputs/frozen-evaluation",
+    "--as-of",
+    "2026-11-18"
+  ],
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+  "exit_code": 0,
+  "seconds": 0.406,
+  "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-evaluation-freeze.log"
+}

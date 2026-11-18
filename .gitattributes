@@ -1,0 +1,14 @@
+# Keep application source stable across Windows/macOS/Linux checkouts.
+* text=auto eol=lf
+*.png binary
+*.zip binary
+*.sqlite binary
+
+# Evidence archives and supplied contracts retain their exact original bytes.
+handover/inputs/** -text -whitespace
+handover/verification/** -text -whitespace
+handover/snapshots/** -text -whitespace
+research/** -text -whitespace
+outputs/** -text -whitespace
+evaluation/*.csv -text
+evaluation/protocol-v1/*.csv -text

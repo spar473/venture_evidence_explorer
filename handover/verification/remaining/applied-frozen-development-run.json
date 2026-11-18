@@ -1,0 +1,703 @@
+{
+  "protocol_version": "evaluation-workbench:1",
+  "manifest_id": "120e60ce3fe2de904879a0d2601abb5964caa22e0b385089afe37ce5a8746331",
+  "input_hashes": {
+    "corpus.sqlite": "654e6f7ac7bf4ae2fcac53d2266b6fe25b428ec25b39f81978726eebb9fdfc9e",
+    "corpus.json": "3b3a187182c8bec550f97a9cf1405f1be0050e62c82378c627d8a71fe1745b3c",
+    "tasks.json": "1f21c8a2977c802263c1a47a8eab6d91daca2064c9a9104c76dadb58dabd9dd0"
+  },
+  "method_version": "b0-token-overlap-1.0",
+  "policy": "exploration",
+  "split": "development",
+  "status": "not_evaluated",
+  "reason": "judgments_missing",
+  "label_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "eligible_ids": [
+    "v_agriphage",
+    "v_alimetry",
+    "v_atlasor",
+    "v_biosleeve",
+    "v_formus",
+    "v_ivf_tool",
+    "v_pollsport",
+    "v_quickmas",
+    "v_rosterlab",
+    "v_space_optics"
+  ],
+  "reviewers": {},
+  "judgments": [],
+  "pending_review_rows": 0,
+  "tasks_pending": [],
+  "queries": [
+    {
+      "query_id": "q01",
+      "group_id": "seed_cohort_development",
+      "ranked_ids": [],
+      "run": {
+        "record_version": "comparison-run-1.0",
+        "method_version": "b0-token-overlap-1.0",
+        "policy_version": "evidence-selection-1.0",
+        "corpus_digest": "74eedac3a579bd080f4f5645b8aecdcaeead3c99b475f1942f67de44bc80c54c",
+        "request": {
+          "query": "A dairy-health team needs precedents for validating a technical intervention in farm conditions.",
+          "subject_id": null,
+          "mode": "commercialisation",
+          "programme": "",
+          "year": null,
+          "connection_type": "",
+          "policy": "exploration",
+          "cutoff": null
+        },
+        "selected_observations": [
+          {
+            "observation_id": "v_agriphage_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_agriphage_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_product",
+            "review_status": "source_checked_owner_review_pending"
+          }
+        ],
+        "result_signature": {
+          "abstention_reason": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance.",
+          "subject_id": null,
+          "results": []
+        },
+        "run_id": "55dc2cea26609d63c3a6038098f7fe7d5f23bf542d374d148f687467b7590f0c"
+      },
+      "abstention": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance.",
+      "metrics": [],
+      "aggregate_metrics": {
+        "ndcg_at_3": null,
+        "precision_at_3_returned_denominator": null,
+        "reason": "judgments_missing"
+      },
+      "evidence_reference_checks": {
+        "checked": 0,
+        "resolved_subject_and_source": 0,
+        "semantic_entailment": "not_evaluated_human_audit_missing"
+      },
+      "latency": {
+        "repeats": 3,
+        "median_ms": 39.942,
+        "p95_ms": 45.91,
+        "digest_median_ms": 38.968,
+        "scope": "Warm offline comparison plus JSON serialization, digest included; no browser/network"
+      },
+      "selects": 38
+    },
+    {
+      "query_id": "q02",
+      "group_id": "seed_cohort_development",
+      "ranked_ids": [
+        "v_formus"
+      ],
+      "run": {
+        "record_version": "comparison-run-1.0",
+        "method_version": "b0-token-overlap-1.0",
+        "policy_version": "evidence-selection-1.0",
+        "corpus_digest": "74eedac3a579bd080f4f5645b8aecdcaeead3c99b475f1942f67de44bc80c54c",
+        "request": {
+          "query": "A team builds clinician-facing software using medical images. Find useful product or workflow precedents.",
+          "subject_id": null,
+          "mode": "product_customer",
+          "programme": "",
+          "year": null,
+          "connection_type": "",
+          "policy": "exploration",
+          "cutoff": null
+        },
+        "selected_observations": [
+          {
+            "observation_id": "v_agriphage_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_product",
+            "review_status": "source_checked_owner_review_pending"
+          }
+        ],
+        "result_signature": {
+          "abstention_reason": null,
+          "subject_id": null,
+          "results": [
+            {
+              "venture_id": "v_formus",
+              "ranking_score": 0.162014,
+              "query_token_coverage": 0.2222,
+              "matched_terms": [
+                "image",
+                "software"
+              ],
+              "observation_ids": [
+                "v_formus_product"
+              ]
+            }
+          ]
+        },
+        "run_id": "996774d985036768a3999ebcd8519396d065e75d8a001dcb38426c0868c3b3e8"
+      },
+      "abstention": null,
+      "metrics": [],
+      "aggregate_metrics": {
+        "ndcg_at_3": null,
+        "precision_at_3_returned_denominator": null,
+        "reason": "judgments_missing"
+      },
+      "evidence_reference_checks": {
+        "checked": 1,
+        "resolved_subject_and_source": 1,
+        "semantic_entailment": "not_evaluated_human_audit_missing"
+      },
+      "latency": {
+        "repeats": 3,
+        "median_ms": 39.902,
+        "p95_ms": 40.078,
+        "digest_median_ms": 38.849,
+        "scope": "Warm offline comparison plus JSON serialization, digest included; no browser/network"
+      },
+      "selects": 48
+    },
+    {
+      "query_id": "q03",
+      "group_id": "seed_cohort_development",
+      "ranked_ids": [],
+      "run": {
+        "record_version": "comparison-run-1.0",
+        "method_version": "b0-token-overlap-1.0",
+        "policy_version": "evidence-selection-1.0",
+        "corpus_digest": "74eedac3a579bd080f4f5645b8aecdcaeead3c99b475f1942f67de44bc80c54c",
+        "request": {
+          "query": "A research team is commercialising precision hardware that must work outside the laboratory.",
+          "subject_id": null,
+          "mode": "commercialisation",
+          "programme": "",
+          "year": null,
+          "connection_type": "",
+          "policy": "exploration",
+          "cutoff": null
+        },
+        "selected_observations": [
+          {
+            "observation_id": "v_agriphage_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_agriphage_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_product",
+            "review_status": "source_checked_owner_review_pending"
+          }
+        ],
+        "result_signature": {
+          "abstention_reason": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance.",
+          "subject_id": null,
+          "results": []
+        },
+        "run_id": "c7de2cd227c4c36040c9980d80a5ba80d352126d4b21b2814580d502c55b25ca"
+      },
+      "abstention": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance.",
+      "metrics": [],
+      "aggregate_metrics": {
+        "ndcg_at_3": null,
+        "precision_at_3_returned_denominator": null,
+        "reason": "judgments_missing"
+      },
+      "evidence_reference_checks": {
+        "checked": 0,
+        "resolved_subject_and_source": 0,
+        "semantic_entailment": "not_evaluated_human_audit_missing"
+      },
+      "latency": {
+        "repeats": 3,
+        "median_ms": 39.679,
+        "p95_ms": 39.68,
+        "digest_median_ms": 38.78,
+        "scope": "Warm offline comparison plus JSON serialization, digest included; no browser/network"
+      },
+      "selects": 38
+    },
+    {
+      "query_id": "q04",
+      "group_id": "seed_cohort_development",
+      "ranked_ids": [],
+      "run": {
+        "record_version": "comparison-run-1.0",
+        "method_version": "b0-token-overlap-1.0",
+        "policy_version": "evidence-selection-1.0",
+        "corpus_digest": "74eedac3a579bd080f4f5645b8aecdcaeead3c99b475f1942f67de44bc80c54c",
+        "request": {
+          "query": "A student team needs precedents for consumer engagement with a possible sponsor-funded model.",
+          "subject_id": null,
+          "mode": "product_customer",
+          "programme": "",
+          "year": null,
+          "connection_type": "",
+          "policy": "exploration",
+          "cutoff": null
+        },
+        "selected_observations": [
+          {
+            "observation_id": "v_agriphage_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_product",
+            "review_status": "source_checked_owner_review_pending"
+          }
+        ],
+        "result_signature": {
+          "abstention_reason": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance.",
+          "subject_id": null,
+          "results": []
+        },
+        "run_id": "2e36c4a825d9b5e37702d4c67bcb6983f399da710d6e3f06b3c4cddf7c15413e"
+      },
+      "abstention": "No candidate meets the documented minimum token-overlap and coverage rules within these filters. Try different wording; absence of a match is not evidence of irrelevance.",
+      "metrics": [],
+      "aggregate_metrics": {
+        "ndcg_at_3": null,
+        "precision_at_3_returned_denominator": null,
+        "reason": "judgments_missing"
+      },
+      "evidence_reference_checks": {
+        "checked": 0,
+        "resolved_subject_and_source": 0,
+        "semantic_entailment": "not_evaluated_human_audit_missing"
+      },
+      "latency": {
+        "repeats": 3,
+        "median_ms": 39.432,
+        "p95_ms": 39.655,
+        "digest_median_ms": 38.637,
+        "scope": "Warm offline comparison plus JSON serialization, digest included; no browser/network"
+      },
+      "selects": 38
+    },
+    {
+      "query_id": "q05",
+      "group_id": "seed_cohort_development",
+      "ranked_ids": [
+        "v_rosterlab"
+      ],
+      "run": {
+        "record_version": "comparison-run-1.0",
+        "method_version": "b0-token-overlap-1.0",
+        "policy_version": "evidence-selection-1.0",
+        "corpus_digest": "74eedac3a579bd080f4f5645b8aecdcaeead3c99b475f1942f67de44bc80c54c",
+        "request": {
+          "query": "A team sells workflow software to healthcare organisations and wants relevant implementation precedents.",
+          "subject_id": null,
+          "mode": "commercialisation",
+          "programme": "",
+          "year": null,
+          "connection_type": "",
+          "policy": "exploration",
+          "cutoff": null
+        },
+        "selected_observations": [
+          {
+            "observation_id": "v_agriphage_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_agriphage_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_alimetry_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_atlasor_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_biosleeve_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_formus_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_ivf_tool_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_pollsport_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_quickmas_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_rosterlab_product",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_connection",
+            "review_status": "source_checked_owner_review_pending"
+          },
+          {
+            "observation_id": "v_space_optics_product",
+            "review_status": "source_checked_owner_review_pending"
+          }
+        ],
+        "result_signature": {
+          "abstention_reason": null,
+          "subject_id": null,
+          "results": [
+            {
+              "venture_id": "v_rosterlab",
+              "ranking_score": 0.227523,
+              "query_token_coverage": 0.2857,
+              "matched_terms": [
+                "healthcare",
+                "software"
+              ],
+              "observation_ids": [
+                "v_rosterlab_product"
+              ]
+            }
+          ]
+        },
+        "run_id": "da64a75ee525c2e268471a85e9088f097db4deb30cadbf118e9069d948f49665"
+      },
+      "abstention": null,
+      "metrics": [],
+      "aggregate_metrics": {
+        "ndcg_at_3": null,
+        "precision_at_3_returned_denominator": null,
+        "reason": "judgments_missing"
+      },
+      "evidence_reference_checks": {
+        "checked": 1,
+        "resolved_subject_and_source": 1,
+        "semantic_entailment": "not_evaluated_human_audit_missing"
+      },
+      "latency": {
+        "repeats": 3,
+        "median_ms": 41.053,
+        "p95_ms": 41.317,
+        "digest_median_ms": 39.704,
+        "scope": "Warm offline comparison plus JSON serialization, digest included; no browser/network"
+      },
+      "selects": 48
+    },
+    {
+      "query_id": "q06",
+      "group_id": "seed_cohort_development",
+      "ranked_ids": [],
+      "run": {
+        "record_version": "comparison-run-1.0",
+        "method_version": "b0-token-overlap-1.0",
+        "policy_version": "evidence-selection-1.0",
+        "corpus_digest": "74eedac3a579bd080f4f5645b8aecdcaeead3c99b475f1942f67de44bc80c54c",
+        "request": {
+          "query": "Find a case with documented first paid sales within twelve months of an Ideas award.",
+          "subject_id": null,
+          "mode": "stage_milestone",
+          "programme": "",
+          "year": null,
+          "connection_type": "",
+          "policy": "exploration",
+          "cutoff": null
+        },
+        "selected_observations": [],
+        "result_signature": {
+          "abstention_reason": "Insufficient eligible dated milestone evidence. This release has no verified first-sale, funding-stage or deployment milestone dataset; award dates cannot substitute.",
+          "subject_id": null,
+          "results": []
+        },
+        "run_id": "78f430c73ebd7c8d99dcef271b98fda3c9a0edba846b2119459f5bbbcd8b13ea"
+      },
+      "abstention": "Insufficient eligible dated milestone evidence. This release has no verified first-sale, funding-stage or deployment milestone dataset; award dates cannot substitute.",
+      "metrics": [],
+      "aggregate_metrics": {
+        "ndcg_at_3": null,
+        "precision_at_3_returned_denominator": null,
+        "reason": "judgments_missing"
+      },
+      "evidence_reference_checks": {
+        "checked": 0,
+        "resolved_subject_and_source": 0,
+        "semantic_entailment": "not_evaluated_human_audit_missing"
+      },
+      "latency": {
+        "repeats": 3,
+        "median_ms": 39.857,
+        "p95_ms": 39.877,
+        "digest_median_ms": 39.124,
+        "scope": "Warm offline comparison plus JSON serialization, digest included; no browser/network"
+      },
+      "selects": 37
+    }
+  ],
+  "disagreements": [],
+  "coverage": {
+    "tasks_run": 6,
+    "with_results": 2,
+    "abstentions": 4,
+    "result_coverage": 0.3333333333333333
+  },
+  "uncertainty": {
+    "interval": null,
+    "reason": "No intervals without real complete paired labels and adequate independent query groups"
+  },
+  "factual_audit": {
+    "status": "not_evaluated",
+    "reason": "No human factual-support audit supplied; structural references are checked separately",
+    "counts": null,
+    "records": []
+  },
+  "environment": {
+    "python": "3.10.10",
+    "sqlite": "3.39.4",
+    "platform": "macOS-26.5.1-arm64-arm-64bit"
+  },
+  "limits": [
+    "No unjudged-as-irrelevant assumption",
+    "Precision denominator is returned results, nDCG requires complete eligible-corpus judgments per reviewer",
+    "No recall, relevance generalisation, usefulness or time-saving claim from blank templates"
+  ]
+}

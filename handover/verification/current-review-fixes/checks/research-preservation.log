@@ -1,0 +1,20 @@
+$ /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python scripts/verify_research.py --output /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/current-review-fixes/research-verification.json
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository
+{
+  "status": "PASS",
+  "scope": "Disposable database code verification; not source entailment or human acceptance",
+  "checks": [
+    "dry run leaves database bytes/rows unchanged",
+    "original tables and review history preserved",
+    "lossless packet graph roundtrip",
+    "repeat import full-row equality",
+    "immutable conflict whole-graph rollback",
+    "active caller transaction refusal",
+    "foreign keys/integrity",
+    "B0 rankings preserved",
+    "accepted-only isolation"
+  ],
+  "packet_sha256": "b8c736b9f04c6f0885b42a8132d93af1b500df3d395a7d7e50d4dca89d6ffbbe",
+  "research_format": "0.2.1",
+  "accepted_records": 0
+}

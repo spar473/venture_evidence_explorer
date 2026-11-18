@@ -1,0 +1,11 @@
+{
+  "name": "verified-build",
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository/frontend",
+  "command": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "exit_code": 0,
+  "seconds": 2.72
+}

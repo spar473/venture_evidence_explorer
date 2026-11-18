@@ -1,0 +1,16 @@
+{
+  "name": "fresh-evaluation-run",
+  "command": [
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+    "scripts/evaluation_workbench.py",
+    "run",
+    "--bundle",
+    "outputs/frozen-evaluation",
+    "--output",
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/frozen-development-run.json"
+  ],
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+  "exit_code": 0,
+  "seconds": 1.786,
+  "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-evaluation-run.log"
+}

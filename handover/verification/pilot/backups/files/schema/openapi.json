@@ -1,0 +1,2037 @@
+{
+  "components": {
+    "schemas": {
+      "AnalyticsResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "title": "Scope",
+            "type": "string"
+          },
+          "tables": {
+            "$ref": "#/components/schemas/AnalyticsTables"
+          }
+        },
+        "required": [
+          "scope",
+          "tables"
+        ],
+        "title": "AnalyticsResponse",
+        "type": "object"
+      },
+      "AnalyticsTables": {
+        "additionalProperties": false,
+        "properties": {
+          "connection_coverage": {
+            "items": {
+              "$ref": "#/components/schemas/ConnectionFacet"
+            },
+            "title": "Connection Coverage",
+            "type": "array"
+          },
+          "programme_recognition": {
+            "items": {
+              "$ref": "#/components/schemas/ProgrammeRecognition"
+            },
+            "title": "Programme Recognition",
+            "type": "array"
+          },
+          "source_coverage": {
+            "items": {
+              "$ref": "#/components/schemas/SourceCoverage"
+            },
+            "title": "Source Coverage",
+            "type": "array"
+          }
+        },
+        "required": [
+          "programme_recognition",
+          "connection_coverage",
+          "source_coverage"
+        ],
+        "title": "AnalyticsTables",
+        "type": "object"
+      },
+      "Annotation": {
+        "additionalProperties": false,
+        "properties": {
+          "annotation_id": {
+            "title": "Annotation Id",
+            "type": "string"
+          },
+          "basis_observation_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Basis Observation Ids",
+            "type": "array"
+          },
+          "field": {
+            "title": "Field",
+            "type": "string"
+          },
+          "origin": {
+            "title": "Origin",
+            "type": "string"
+          },
+          "purpose": {
+            "title": "Purpose",
+            "type": "string"
+          },
+          "review_status": {
+            "title": "Review Status",
+            "type": "string"
+          },
+          "value_text": {
+            "title": "Value Text",
+            "type": "string"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "annotation_id",
+          "venture_id",
+          "field",
+          "value_text",
+          "basis_observation_ids",
+          "origin",
+          "review_status",
+          "purpose"
+        ],
+        "title": "Annotation",
+        "type": "object"
+      },
+      "Award": {
+        "additionalProperties": false,
+        "properties": {
+          "award_id": {
+            "title": "Award Id",
+            "type": "string"
+          },
+          "award_label": {
+            "title": "Award Label",
+            "type": "string"
+          },
+          "award_year": {
+            "title": "Award Year",
+            "type": "integer"
+          },
+          "event_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Event Date"
+          },
+          "event_interval": {
+            "$ref": "#/components/schemas/PartialDate"
+          },
+          "limitations": {
+            "title": "Limitations",
+            "type": "string"
+          },
+          "locator": {
+            "title": "Locator",
+            "type": "string"
+          },
+          "place": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Place"
+          },
+          "programme": {
+            "title": "Programme",
+            "type": "string"
+          },
+          "publication_date": {
+            "$ref": "#/components/schemas/PartialDate"
+          },
+          "published_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published At"
+          },
+          "publisher": {
+            "title": "Publisher",
+            "type": "string"
+          },
+          "retrieved_at": {
+            "title": "Retrieved At",
+            "type": "string"
+          },
+          "review_status": {
+            "title": "Review Status",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "source_title": {
+            "title": "Source Title",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "award_id",
+          "venture_id",
+          "programme",
+          "award_year",
+          "award_label",
+          "place",
+          "event_date",
+          "publication_date",
+          "event_interval",
+          "source_id",
+          "locator",
+          "review_status",
+          "source_title",
+          "url",
+          "publisher",
+          "published_at",
+          "retrieved_at",
+          "limitations"
+        ],
+        "title": "Award",
+        "type": "object"
+      },
+      "Comparison": {
+        "additionalProperties": false,
+        "properties": {
+          "abstention_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abstention Reason"
+          },
+          "annotations_used": {
+            "title": "Annotations Used",
+            "type": "boolean"
+          },
+          "brief_type": {
+            "title": "Brief Type",
+            "type": "string"
+          },
+          "effective_query": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective Query"
+          },
+          "evidence_policy": {
+            "$ref": "#/components/schemas/EvidencePolicy"
+          },
+          "method": {
+            "$ref": "#/components/schemas/Method"
+          },
+          "mode": {
+            "title": "Mode",
+            "type": "string"
+          },
+          "query": {
+            "title": "Query",
+            "type": "string"
+          },
+          "questions": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Questions",
+            "type": "array"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/ComparisonResult"
+            },
+            "title": "Results",
+            "type": "array"
+          },
+          "run": {
+            "$ref": "#/components/schemas/ComparisonRun"
+          },
+          "subject": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Venture"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "method",
+          "mode",
+          "query",
+          "subject",
+          "results",
+          "questions",
+          "brief_type",
+          "annotations_used",
+          "abstention_reason",
+          "evidence_policy",
+          "run"
+        ],
+        "title": "Comparison",
+        "type": "object"
+      },
+      "ComparisonRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "connection_type": {
+            "default": "",
+            "title": "Connection Type",
+            "type": "string"
+          },
+          "cutoff": {
+            "anyOf": [
+              {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cutoff"
+          },
+          "mode": {
+            "default": "product_customer",
+            "enum": [
+              "product_customer",
+              "commercialisation",
+              "stage_milestone"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "policy": {
+            "default": "exploration",
+            "enum": [
+              "exploration",
+              "accepted"
+            ],
+            "title": "Policy",
+            "type": "string"
+          },
+          "programme": {
+            "default": "",
+            "title": "Programme",
+            "type": "string"
+          },
+          "query": {
+            "default": "",
+            "maxLength": 5000,
+            "title": "Query",
+            "type": "string"
+          },
+          "subject_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject Id"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          }
+        },
+        "title": "ComparisonRequest",
+        "type": "object"
+      },
+      "ComparisonResult": {
+        "additionalProperties": false,
+        "properties": {
+          "brief": {
+            "title": "Brief",
+            "type": "string"
+          },
+          "evidence": {
+            "items": {
+              "$ref": "#/components/schemas/MatchEvidence"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "matched_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Matched Terms",
+            "type": "array"
+          },
+          "query_token_coverage": {
+            "title": "Query Token Coverage",
+            "type": "number"
+          },
+          "ranking_score": {
+            "title": "Ranking Score",
+            "type": "number"
+          },
+          "unavailable_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Unavailable Evidence",
+            "type": "array"
+          },
+          "venture": {
+            "$ref": "#/components/schemas/Venture"
+          },
+          "wording_differences": {
+            "$ref": "#/components/schemas/WordingDifferences"
+          }
+        },
+        "required": [
+          "venture",
+          "ranking_score",
+          "query_token_coverage",
+          "matched_terms",
+          "evidence",
+          "wording_differences",
+          "unavailable_evidence",
+          "brief"
+        ],
+        "title": "ComparisonResult",
+        "type": "object"
+      },
+      "ComparisonRun": {
+        "additionalProperties": false,
+        "properties": {
+          "corpus_digest": {
+            "title": "Corpus Digest",
+            "type": "string"
+          },
+          "method_version": {
+            "title": "Method Version",
+            "type": "string"
+          },
+          "policy_version": {
+            "title": "Policy Version",
+            "type": "string"
+          },
+          "record_version": {
+            "title": "Record Version",
+            "type": "string"
+          },
+          "request": {
+            "$ref": "#/components/schemas/ComparisonRequest"
+          },
+          "result_signature": {
+            "$ref": "#/components/schemas/ResultSignature"
+          },
+          "run_id": {
+            "title": "Run Id",
+            "type": "string"
+          },
+          "selected_observations": {
+            "items": {
+              "$ref": "#/components/schemas/SelectedObservation"
+            },
+            "title": "Selected Observations",
+            "type": "array"
+          }
+        },
+        "required": [
+          "record_version",
+          "method_version",
+          "policy_version",
+          "corpus_digest",
+          "request",
+          "selected_observations",
+          "result_signature",
+          "run_id"
+        ],
+        "title": "ComparisonRun",
+        "type": "object"
+      },
+      "Connection": {
+        "additionalProperties": false,
+        "properties": {
+          "connection_id": {
+            "title": "Connection Id",
+            "type": "string"
+          },
+          "connection_type": {
+            "title": "Connection Type",
+            "type": "string"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Observation"
+          },
+          "institution": {
+            "title": "Institution",
+            "type": "string"
+          },
+          "observation_id": {
+            "title": "Observation Id",
+            "type": "string"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "connection_id",
+          "venture_id",
+          "connection_type",
+          "institution",
+          "observation_id",
+          "evidence"
+        ],
+        "title": "Connection",
+        "type": "object"
+      },
+      "ConnectionFacet": {
+        "additionalProperties": false,
+        "properties": {
+          "connection_type": {
+            "title": "Connection Type",
+            "type": "string"
+          },
+          "distinct_ventures": {
+            "title": "Distinct Ventures",
+            "type": "integer"
+          },
+          "recorded_connections": {
+            "title": "Recorded Connections",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "connection_type",
+          "recorded_connections",
+          "distinct_ventures"
+        ],
+        "title": "ConnectionFacet",
+        "type": "object"
+      },
+      "EventValue": {
+        "additionalProperties": false,
+        "properties": {
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "event_date": {
+            "$ref": "#/components/schemas/PartialDate"
+          },
+          "event_type": {
+            "title": "Event Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_type",
+          "description",
+          "event_date"
+        ],
+        "title": "EventValue",
+        "type": "object"
+      },
+      "EvidencePolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "availability_requirement": {
+            "title": "Availability Requirement",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "historical_cutoff": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Historical Cutoff"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "name",
+          "description",
+          "historical_cutoff",
+          "availability_requirement"
+        ],
+        "title": "EvidencePolicy",
+        "type": "object"
+      },
+      "Facets": {
+        "additionalProperties": false,
+        "properties": {
+          "connection_types": {
+            "items": {
+              "$ref": "#/components/schemas/ConnectionFacet"
+            },
+            "title": "Connection Types",
+            "type": "array"
+          },
+          "counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Counts",
+            "type": "object"
+          },
+          "programmes": {
+            "items": {
+              "$ref": "#/components/schemas/ProgrammeFacet"
+            },
+            "title": "Programmes",
+            "type": "array"
+          },
+          "years": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Years",
+            "type": "array"
+          }
+        },
+        "required": [
+          "programmes",
+          "years",
+          "connection_types",
+          "counts"
+        ],
+        "title": "Facets",
+        "type": "object"
+      },
+      "FinancialValue": {
+        "additionalProperties": false,
+        "properties": {
+          "amount_qualifier": {
+            "title": "Amount Qualifier",
+            "type": "string"
+          },
+          "currency": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Currency"
+          },
+          "event_date": {
+            "$ref": "#/components/schemas/PartialDate"
+          },
+          "raw_amount": {
+            "title": "Raw Amount",
+            "type": "string"
+          },
+          "scope": {
+            "title": "Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "raw_amount",
+          "currency",
+          "amount_qualifier",
+          "scope",
+          "event_date"
+        ],
+        "title": "FinancialValue",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "Health": {
+        "additionalProperties": false,
+        "properties": {
+          "schema_migrations": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Schema Migrations",
+            "type": "array"
+          },
+          "status": {
+            "const": "ok",
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "schema_migrations"
+        ],
+        "title": "Health",
+        "type": "object"
+      },
+      "MatchEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "matched_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Matched Terms",
+            "type": "array"
+          },
+          "observation": {
+            "$ref": "#/components/schemas/Observation"
+          }
+        },
+        "required": [
+          "observation",
+          "matched_terms"
+        ],
+        "title": "MatchEvidence",
+        "type": "object"
+      },
+      "Method": {
+        "additionalProperties": false,
+        "properties": {
+          "abstention": {
+            "title": "Abstention",
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "title": "Fields",
+            "type": "object"
+          },
+          "limitations": {
+            "title": "Limitations",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "normalization": {
+            "title": "Normalization",
+            "type": "string"
+          },
+          "scoring": {
+            "title": "Scoring",
+            "type": "string"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "version",
+          "normalization",
+          "fields",
+          "scoring",
+          "abstention",
+          "limitations"
+        ],
+        "title": "Method",
+        "type": "object"
+      },
+      "Observation": {
+        "additionalProperties": false,
+        "properties": {
+          "announcement_date": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PartialDate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "assertion_type": {
+            "title": "Assertion Type",
+            "type": "string"
+          },
+          "date_basis": {
+            "title": "Date Basis",
+            "type": "string"
+          },
+          "effective_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective At"
+          },
+          "effective_date": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PartialDate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "effective_review_status": {
+            "default": "unreviewed",
+            "title": "Effective Review Status",
+            "type": "string"
+          },
+          "event_value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EventValue"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "field": {
+            "title": "Field",
+            "type": "string"
+          },
+          "financial_value": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FinancialValue"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "limitations": {
+            "title": "Limitations",
+            "type": "string"
+          },
+          "locator": {
+            "title": "Locator",
+            "type": "string"
+          },
+          "observation_id": {
+            "title": "Observation Id",
+            "type": "string"
+          },
+          "publication_date": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PartialDate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "published_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published At"
+          },
+          "publisher": {
+            "title": "Publisher",
+            "type": "string"
+          },
+          "relations": {
+            "items": {
+              "$ref": "#/components/schemas/ObservationRelation"
+            },
+            "title": "Relations",
+            "type": "array"
+          },
+          "retrieved_at": {
+            "title": "Retrieved At",
+            "type": "string"
+          },
+          "review_status": {
+            "title": "Review Status",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "source_title": {
+            "title": "Source Title",
+            "type": "string"
+          },
+          "superseded": {
+            "default": false,
+            "title": "Superseded",
+            "type": "boolean"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "value_text": {
+            "title": "Value Text",
+            "type": "string"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "observation_id",
+          "venture_id",
+          "field",
+          "value_text",
+          "source_id",
+          "source_title",
+          "url",
+          "publisher",
+          "published_at",
+          "retrieved_at",
+          "locator",
+          "review_status",
+          "assertion_type",
+          "effective_at",
+          "date_basis",
+          "limitations"
+        ],
+        "title": "Observation",
+        "type": "object"
+      },
+      "ObservationRelation": {
+        "additionalProperties": false,
+        "properties": {
+          "observation_id": {
+            "title": "Observation Id",
+            "type": "string"
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          },
+          "recorded_at": {
+            "title": "Recorded At",
+            "type": "string"
+          },
+          "relation_id": {
+            "title": "Relation Id",
+            "type": "string"
+          },
+          "relation_type": {
+            "enum": [
+              "supersedes",
+              "corrects"
+            ],
+            "title": "Relation Type",
+            "type": "string"
+          },
+          "replacement_id": {
+            "title": "Replacement Id",
+            "type": "string"
+          },
+          "reviewer": {
+            "title": "Reviewer",
+            "type": "string"
+          }
+        },
+        "required": [
+          "relation_id",
+          "observation_id",
+          "replacement_id",
+          "relation_type",
+          "reviewer",
+          "recorded_at",
+          "rationale"
+        ],
+        "title": "ObservationRelation",
+        "type": "object"
+      },
+      "PartialDate": {
+        "additionalProperties": false,
+        "properties": {
+          "lower_bound": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower Bound"
+          },
+          "precision": {
+            "enum": [
+              "unknown",
+              "day",
+              "month",
+              "year"
+            ],
+            "title": "Precision",
+            "type": "string"
+          },
+          "upper_bound": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper Bound"
+          }
+        },
+        "required": [
+          "precision"
+        ],
+        "title": "PartialDate",
+        "type": "object"
+      },
+      "ProgrammeFacet": {
+        "additionalProperties": false,
+        "properties": {
+          "awards": {
+            "title": "Awards",
+            "type": "integer"
+          },
+          "programme": {
+            "title": "Programme",
+            "type": "string"
+          },
+          "ventures": {
+            "title": "Ventures",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "programme",
+          "awards",
+          "ventures"
+        ],
+        "title": "ProgrammeFacet",
+        "type": "object"
+      },
+      "ProgrammeRecognition": {
+        "additionalProperties": false,
+        "properties": {
+          "award_year": {
+            "title": "Award Year",
+            "type": "integer"
+          },
+          "distinct_ventures": {
+            "title": "Distinct Ventures",
+            "type": "integer"
+          },
+          "programme": {
+            "title": "Programme",
+            "type": "string"
+          },
+          "recorded_awards": {
+            "title": "Recorded Awards",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "programme",
+          "award_year",
+          "recorded_awards",
+          "distinct_ventures"
+        ],
+        "title": "ProgrammeRecognition",
+        "type": "object"
+      },
+      "Recognition": {
+        "additionalProperties": false,
+        "properties": {
+          "award_id": {
+            "title": "Award Id",
+            "type": "string"
+          },
+          "award_year": {
+            "title": "Award Year",
+            "type": "integer"
+          },
+          "programme": {
+            "title": "Programme",
+            "type": "string"
+          }
+        },
+        "required": [
+          "award_id",
+          "programme",
+          "award_year"
+        ],
+        "title": "Recognition",
+        "type": "object"
+      },
+      "ResultItemSignature": {
+        "additionalProperties": false,
+        "properties": {
+          "matched_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Matched Terms",
+            "type": "array"
+          },
+          "observation_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Observation Ids",
+            "type": "array"
+          },
+          "query_token_coverage": {
+            "title": "Query Token Coverage",
+            "type": "number"
+          },
+          "ranking_score": {
+            "title": "Ranking Score",
+            "type": "number"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "venture_id",
+          "ranking_score",
+          "query_token_coverage",
+          "matched_terms",
+          "observation_ids"
+        ],
+        "title": "ResultItemSignature",
+        "type": "object"
+      },
+      "ResultSignature": {
+        "additionalProperties": false,
+        "properties": {
+          "abstention_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abstention Reason"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/ResultItemSignature"
+            },
+            "title": "Results",
+            "type": "array"
+          },
+          "subject_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject Id"
+          }
+        },
+        "required": [
+          "abstention_reason",
+          "subject_id",
+          "results"
+        ],
+        "title": "ResultSignature",
+        "type": "object"
+      },
+      "SelectedObservation": {
+        "additionalProperties": false,
+        "properties": {
+          "observation_id": {
+            "title": "Observation Id",
+            "type": "string"
+          },
+          "review_status": {
+            "title": "Review Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "observation_id",
+          "review_status"
+        ],
+        "title": "SelectedObservation",
+        "type": "object"
+      },
+      "SourceCoverage": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of_date": {
+            "title": "As Of Date",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "earliest_source_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Earliest Source Date"
+          },
+          "evidence_note": {
+            "title": "Evidence Note",
+            "type": "string"
+          },
+          "latest_retrieval_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Retrieval Date"
+          },
+          "latest_source_age_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Source Age Days"
+          },
+          "latest_source_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Source Date"
+          },
+          "observation_count": {
+            "title": "Observation Count",
+            "type": "integer"
+          },
+          "source_count": {
+            "title": "Source Count",
+            "type": "integer"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "venture_id",
+          "display_name",
+          "source_count",
+          "observation_count",
+          "earliest_source_date",
+          "latest_source_date",
+          "latest_retrieval_date",
+          "as_of_date",
+          "latest_source_age_days",
+          "evidence_note"
+        ],
+        "title": "SourceCoverage",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "Venture": {
+        "additionalProperties": false,
+        "properties": {
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Aliases",
+            "type": "array"
+          },
+          "awards": {
+            "items": {
+              "$ref": "#/components/schemas/Award"
+            },
+            "title": "Awards",
+            "type": "array"
+          },
+          "connections": {
+            "items": {
+              "$ref": "#/components/schemas/Connection"
+            },
+            "title": "Connections",
+            "type": "array"
+          },
+          "current_funding_stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Funding Stage"
+          },
+          "current_operating_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Operating Status"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "entity_type": {
+            "title": "Entity Type",
+            "type": "string"
+          },
+          "identity_review_status": {
+            "title": "Identity Review Status",
+            "type": "string"
+          },
+          "legal_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Legal Name"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/components/schemas/Observation"
+            },
+            "title": "Observations",
+            "type": "array"
+          },
+          "proposed_annotations": {
+            "items": {
+              "$ref": "#/components/schemas/Annotation"
+            },
+            "title": "Proposed Annotations",
+            "type": "array"
+          },
+          "registration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Registration Id"
+          },
+          "selection_bucket": {
+            "title": "Selection Bucket",
+            "type": "string"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "venture_id",
+          "display_name",
+          "aliases",
+          "entity_type",
+          "legal_name",
+          "registration_id",
+          "current_operating_status",
+          "current_funding_stage",
+          "selection_bucket",
+          "identity_review_status",
+          "observations",
+          "awards",
+          "connections",
+          "proposed_annotations"
+        ],
+        "title": "Venture",
+        "type": "object"
+      },
+      "VenturePage": {
+        "additionalProperties": false,
+        "properties": {
+          "filtered_ventures": {
+            "title": "Filtered Ventures",
+            "type": "integer"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/VentureSummary"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "integer"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "total_ventures": {
+            "title": "Total Ventures",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "filtered_ventures",
+          "total_ventures",
+          "limit",
+          "offset"
+        ],
+        "title": "VenturePage",
+        "type": "object"
+      },
+      "VentureSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Aliases",
+            "type": "array"
+          },
+          "award_count": {
+            "title": "Award Count",
+            "type": "integer"
+          },
+          "connection_types": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Connection Types",
+            "type": "array"
+          },
+          "current_funding_stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Funding Stage"
+          },
+          "current_operating_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Operating Status"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "entity_type": {
+            "title": "Entity Type",
+            "type": "string"
+          },
+          "identity_review_status": {
+            "title": "Identity Review Status",
+            "type": "string"
+          },
+          "legal_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Legal Name"
+          },
+          "product_excerpt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Product Excerpt"
+          },
+          "publication_dates": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "title": "Publication Dates",
+            "type": "array"
+          },
+          "recognitions": {
+            "items": {
+              "$ref": "#/components/schemas/Recognition"
+            },
+            "title": "Recognitions",
+            "type": "array"
+          },
+          "registration_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Registration Id"
+          },
+          "selection_bucket": {
+            "title": "Selection Bucket",
+            "type": "string"
+          },
+          "source_count": {
+            "title": "Source Count",
+            "type": "integer"
+          },
+          "venture_id": {
+            "title": "Venture Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "venture_id",
+          "display_name",
+          "aliases",
+          "entity_type",
+          "legal_name",
+          "registration_id",
+          "current_operating_status",
+          "current_funding_stage",
+          "selection_bucket",
+          "identity_review_status",
+          "product_excerpt",
+          "award_count",
+          "recognitions",
+          "connection_types",
+          "source_count",
+          "publication_dates"
+        ],
+        "title": "VentureSummary",
+        "type": "object"
+      },
+      "WordingDifferences": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_only_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Candidate Only Terms",
+            "type": "array"
+          },
+          "meaning": {
+            "title": "Meaning",
+            "type": "string"
+          },
+          "query_only_terms": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Query Only Terms",
+            "type": "array"
+          }
+        },
+        "required": [
+          "query_only_terms",
+          "candidate_only_terms",
+          "meaning"
+        ],
+        "title": "WordingDifferences",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "Venture Evidence Explorer",
+    "version": "1.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "index__get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Index"
+      }
+    },
+    "/api/analytics": {
+      "get": {
+        "operationId": "get_analytics_api_analytics_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Analytics"
+      }
+    },
+    "/api/compare": {
+      "post": {
+        "operationId": "comparison_api_compare_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComparisonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Comparison"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Comparison"
+      }
+    },
+    "/api/comparison-runs/replay": {
+      "post": {
+        "operationId": "replay_comparison_api_comparison_runs_replay_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ComparisonRun"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Comparison"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Replay Comparison"
+      }
+    },
+    "/api/exports/{name}.csv": {
+      "get": {
+        "operationId": "export_api_exports__name__csv_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "required": true,
+            "schema": {
+              "title": "Name",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Export"
+      }
+    },
+    "/api/facets": {
+      "get": {
+        "operationId": "get_facets_api_facets_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Facets"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Facets"
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    },
+    "/api/ventures": {
+      "get": {
+        "operationId": "ventures_api_ventures_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "default": "",
+              "maxLength": 300,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "programme",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Programme",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "year",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Year"
+            }
+          },
+          {
+            "in": "query",
+            "name": "connection_type",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Connection Type",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VenturePage"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Ventures"
+      }
+    },
+    "/api/ventures/{venture_id}": {
+      "get": {
+        "operationId": "venture_api_ventures__venture_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "venture_id",
+            "required": true,
+            "schema": {
+              "title": "Venture Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Venture"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Venture"
+      }
+    }
+  }
+}

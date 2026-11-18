@@ -1,0 +1,25 @@
+$ ['/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python', '-m', 'pytest', '-q', '-p', 'no:cacheprovider', 'tests/test_discovery.py::test_invalid_discovery_source_urls_never_write']
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________________ test_invalid_discovery_source_urls_never_write ________________
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-61/test_invalid_discovery_source_0')
+
+    def test_invalid_discovery_source_urls_never_write(tmp_path):
+     for url in ('https://invalid host/source','https://','https://user:secret@example.org/source'):
+      payload=decode_packet(PACK.read_bytes());payload['sources'][0]['url']=url
+      path=tmp_path/'bad-url.json';path.write_text(json.dumps(payload));db=tmp_path/'never-created.sqlite'
+>     with pytest.raises(Exception):import_discovery(db,path)
+E     Failed: DID NOT RAISE <class 'Exception'>
+
+tests/test_discovery.py:92: Failed
+=============================== warnings summary ===============================
+../fresh-env/lib/python3.10/site-packages/starlette/testclient.py:37
+  /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/lib/python3.10/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_discovery.py::test_invalid_discovery_source_urls_never_write
+1 failed, 1 warning in 0.62s

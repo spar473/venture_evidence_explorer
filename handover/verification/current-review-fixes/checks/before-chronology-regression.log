@@ -1,0 +1,182 @@
+$ /Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository
+.FFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+_ test_direct_and_indirect_backdating_rejected_before_writes[obs_rl_solution] __
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd1')
+evidence = 'obs_rl_solution'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('valid_dry_run' == 'rejected'
+E      
+E      - rejected
+E      + valid_dry_run)
+
+tests/test_mapping_chronology.py:22: AssertionError
+_ test_direct_and_indirect_backdating_rejected_before_writes[report_rl_uoa_financing] _
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd2')
+evidence = 'report_rl_adoption'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('valid_dry_run' == 'rejected'
+E      
+E      - rejected
+E      + valid_dry_run)
+
+tests/test_mapping_chronology.py:22: AssertionError
+_ test_direct_and_indirect_backdating_rejected_before_writes[event_rl_financing_uoa] _
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd3')
+evidence = 'event_rl_financing_uoa'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('valid_dry_run' == 'rejected'
+E      
+E      - rejected
+E      + valid_dry_run)
+
+tests/test_mapping_chronology.py:22: AssertionError
+_ test_direct_and_indirect_backdating_rejected_before_writes[conclusion_solutions] _
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd4')
+evidence = 'conclusion_solutions'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('valid_dry_run' == 'rejected'
+E      
+E      - rejected
+E      + valid_dry_run)
+
+tests/test_mapping_chronology.py:22: AssertionError
+__ test_direct_and_indirect_backdating_rejected_before_writes[req_solutions] ___
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd5')
+evidence = 'req_solutions'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('rejected' == 'rejected'
+E      
+E        rejected and False)
+E     +  where False = any(<generator object test_direct_and_indirect_backdating_rejected_before_writes.<locals>.<genexpr> at 0x1039b94d0>)
+
+tests/test_mapping_chronology.py:22: AssertionError
+_ test_direct_and_indirect_backdating_rejected_before_writes[ready_solutions] __
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd6')
+evidence = 'ready_solutions'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('valid_dry_run' == 'rejected'
+E      
+E      - rejected
+E      + valid_dry_run)
+
+tests/test_mapping_chronology.py:22: AssertionError
+_ test_direct_and_indirect_backdating_rejected_before_writes[unknown_rl_reported_paying_organisation] _
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd7')
+evidence = 'unknown_rl_reported_paying_organisation'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('valid_dry_run' == 'rejected'
+E      
+E      - rejected
+E      + valid_dry_run)
+
+tests/test_mapping_chronology.py:22: AssertionError
+_ test_direct_and_indirect_backdating_rejected_before_writes[ann_rl_relevance] _
+
+tmp_path = PosixPath('/private/var/folders/fg/swwl95vs33b9zybpn70ph7hw0000gn/T/pytest-of-kevinnn.park/pytest-68/test_direct_and_indirect_backd8')
+evidence = 'ann_solution_contrast'
+
+    @pytest.mark.parametrize('evidence',['src_rl_pricing','obs_rl_solution','report_rl_uoa_financing','event_rl_financing_uoa','conclusion_solutions','req_solutions','ready_solutions','unknown_rl_reported_paying_organisation','ann_rl_relevance'])
+    def test_direct_and_indirect_backdating_rejected_before_writes(tmp_path,evidence):
+     # Find actual editorial IDs where spelling differs; never invent source data.
+     packet=json.loads(EXAMPLE.read_bytes())
+     if evidence=='report_rl_uoa_financing':evidence=next(r['report_id'] for r in packet['event_reports'] if r['subject_id']=='subj_rosterlab')
+     if evidence=='ann_rl_relevance':evidence=packet['proposed_annotations'][0]['annotation_id']
+     db=tmp_path/'probe.sqlite';load_seed(db);import_research(db,EXAMPLE,as_of='2026-11-18');before=snapshot(db)
+     path=decision(tmp_path/'decision.json',evidence)
+     report=dry_run_research(EXAMPLE,db,'2026-11-18',path)
+>    assert report['status']=='rejected' and any('predates' in e['message'] for e in report['mapping_errors'])
+E    AssertionError: assert ('valid_dry_run' == 'rejected'
+E      
+E      - rejected
+E      + valid_dry_run)
+
+tests/test_mapping_chronology.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[obs_rl_solution]
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[report_rl_uoa_financing]
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[event_rl_financing_uoa]
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[conclusion_solutions]
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[req_solutions]
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[ready_solutions]
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[unknown_rl_reported_paying_organisation]
+FAILED tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes[ann_rl_relevance]
+8 failed, 1 passed in 2.39s

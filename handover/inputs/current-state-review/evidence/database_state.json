@@ -1,0 +1,38 @@
+{
+  "tables": {
+    "annotation_evidence": 50,
+    "annotations": 50,
+    "awards": 7,
+    "connections": 10,
+    "discovery_decision_documents": 0,
+    "discovery_imports": 1,
+    "discovery_links": 2218,
+    "discovery_membership": 730,
+    "discovery_records": 730,
+    "discovery_reviews": 0,
+    "evidence_dates": 0,
+    "import_documents": 1,
+    "imports": 1,
+    "intake_drafts": 0,
+    "intake_revisions": 0,
+    "observation_relations": 0,
+    "observation_values": 0,
+    "observations": 20,
+    "research_identity_mappings": 2,
+    "research_import_records": 109,
+    "research_imports": 1,
+    "research_links": 401,
+    "research_mapping_documents": 0,
+    "research_records": 109,
+    "research_time_values": 138,
+    "review_events": 0,
+    "schema_migrations": 6,
+    "source_availability": 0,
+    "sources": 7,
+    "ventures": 10
+  },
+  "integrity": [
+    "ok"
+  ],
+  "foreign_key_errors": []
+}

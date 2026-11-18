@@ -1,0 +1,238 @@
+$ ['/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python', 'research/framework-v0.2.1/validate_research_example.py', '--as-of', '2026-11-18']
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source
+{
+  "schema": "PASS",
+  "semantic_checks": "PASS",
+  "validation_as_of": "2026-11-18",
+  "counts": {
+    "subjects": 2,
+    "parties": 4,
+    "sources": 6,
+    "observations": 34,
+    "events": 6,
+    "event_reports": 6,
+    "unknowns": 21,
+    "proposed_annotations": 2,
+    "readiness": 6,
+    "reconciliation_cases": 3,
+    "access_gaps": 2,
+    "review_events": 0
+  },
+  "negative_cases": [
+    {
+      "case": "duplicate_observation_id",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "orphan_source",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "cross_subject_report",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "target_marked_completed",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "target_year_as_occurrence",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "invalid_calendar_date",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "missing_currency_reason",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "assistant_acceptance",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "proposal_used_as_fact",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "conclusion_without_evidence",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    },
+    {
+      "case": "conclusion_wrong_sources",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "unread_source_as_evidence",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "hidden_duplicate_candidates",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValueError"
+    },
+    {
+      "case": "guessed_zero_unknown",
+      "expected_rejection": true,
+      "observed": "REJECTED",
+      "category": "ValidationError"
+    }
+  ],
+  "regressions": [
+    {
+      "case": "unsupported_event_target",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "event target lacks matching report precision"
+    },
+    {
+      "case": "wrong_review_target_type",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "review target type/ID mismatch"
+    },
+    {
+      "case": "future_review",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "after preparation date"
+    },
+    {
+      "case": "missing_required_counterpart",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "supported requirement lacks required subject coverage"
+    },
+    {
+      "case": "target_precision_mismatch",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "event target lacks matching report precision"
+    },
+    {
+      "case": "report_target_not_in_observation",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "report time lacks matching observation precision"
+    },
+    {
+      "case": "report_occurrence_not_in_observation",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "report time lacks matching observation precision"
+    },
+    {
+      "case": "future_retrieval_and_readiness",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "retrieved_on after preparation date"
+    },
+    {
+      "case": "future_readiness_alone",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "evidence_cutoff after preparation date"
+    },
+    {
+      "case": "future_check",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "checked_on after preparation date"
+    },
+    {
+      "case": "future_unknown_assessment",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "as_of after preparation date"
+    },
+    {
+      "case": "future_access_attempt",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "retrieved_on after preparation date"
+    },
+    {
+      "case": "future_preparation",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "preparation after validation-as-of date"
+    },
+    {
+      "case": "check_before_retrieval",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "observation check before source retrieval"
+    },
+    {
+      "case": "unknown_before_inspection",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "unknown assessed before source inspection"
+    },
+    {
+      "case": "update_after_retrieval",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "source update after retrieval"
+    },
+    {
+      "case": "conclusion_missing_subject_evidence",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "conclusion lacks declared subject coverage"
+    },
+    {
+      "case": "partial_without_explicit_gap",
+      "expected": "REJECTED",
+      "observed": "REJECTED",
+      "guard": "partial requirement needs evidence and explicit gaps"
+    },
+    {
+      "case": "correct_typed_acceptance_fixture",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "one_subject_requirement_in_broad_question",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "partial_charging_conclusion_and_withheld_comparison",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "consistently_represented_future_target_fixture",
+      "expected": "PASS",
+      "observed": "PASS"
+    }
+  ],
+  "limits": "Structure, represented chronology and linkage only; not issuer truth, source entailment, reviewer identity authentication or usefulness."
+}

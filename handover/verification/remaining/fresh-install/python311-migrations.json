@@ -1,0 +1,11 @@
+{
+  "name": "python311-migrations",
+  "command": [
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env311/bin/python",
+    "scripts/check_migrations.py"
+  ],
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+  "exit_code": 0,
+  "seconds": 0.078,
+  "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python311-migrations.log"
+}

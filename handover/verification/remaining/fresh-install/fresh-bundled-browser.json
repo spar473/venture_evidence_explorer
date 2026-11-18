@@ -1,0 +1,13 @@
+{
+  "name": "fresh-bundled-browser",
+  "command": [
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/npm-node22-cache/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+    "node_modules/playwright/cli.js",
+    "test",
+    "--output=/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-bundled-browser"
+  ],
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+  "exit_code": 0,
+  "seconds": 30.644,
+  "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-bundled-browser.log"
+}

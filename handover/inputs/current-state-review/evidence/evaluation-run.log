@@ -1,0 +1,16 @@
+{
+  "manifest_id": "120e60ce3fe2de904879a0d2601abb5964caa22e0b385089afe37ce5a8746331",
+  "status": "not_evaluated",
+  "reason": "judgments_missing",
+  "tasks_pending": [],
+  "coverage": {
+    "tasks_run": 6,
+    "with_results": 2,
+    "abstentions": 4,
+    "result_coverage": 0.3333333333333333
+  },
+  "uncertainty": {
+    "interval": null,
+    "reason": "No intervals without real complete paired labels and adequate independent query groups"
+  }
+}

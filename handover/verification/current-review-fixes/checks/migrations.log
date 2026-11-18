@@ -1,0 +1,3 @@
+$ /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python scripts/check_migrations.py
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository
+PASS: Python 3.12.15, SQLite 3.54.1; 3 transaction modes; failure rollback, retry and caller transaction refusal

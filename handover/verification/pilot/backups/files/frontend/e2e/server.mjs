@@ -1,0 +1,21 @@
+/** Disposable browser-test database: never migrate or replace the user's evidence. */
+import { spawn, spawnSync } from "node:child_process";
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+const temp = mkdtempSync(join(tmpdir(), "vee-browser-"));
+const python = process.env.VEE_PYTHON || "python3";
+const db = join(temp, "browser.sqlite");
+const bootstrap = spawnSync(python, ["scripts/bootstrap.py", "--db", db, "--output-dir", temp], {cwd: root, stdio: "inherit"});
+if (bootstrap.status !== 0 || bootstrap.error) {
+  rmSync(temp, {recursive: true, force: true});
+  if (bootstrap.error) console.error(bootstrap.error.message);
+  process.exit(bootstrap.status || 1);
+}
+const child = spawn(python, ["scripts/serve.py", "--port", process.env.VEE_TEST_PORT || "8138"], {cwd: root, env: {...process.env, VEE_DB: db}, stdio: "inherit"});
+for (const signal of ["SIGTERM", "SIGINT"]) process.on(signal, () => child.kill(signal));
+child.on("exit", code => {rmSync(temp, {recursive: true, force: true}); process.exit(code || 0);});
+child.on("error", error => {console.error(error.message); rmSync(temp, {recursive: true, force: true}); process.exit(1);});

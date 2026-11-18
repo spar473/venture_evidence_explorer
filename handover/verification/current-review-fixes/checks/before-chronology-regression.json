@@ -1,0 +1,15 @@
+{
+  "name": "before-chronology-regression",
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository",
+  "command": [
+    "/Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_mapping_chronology.py::test_direct_and_indirect_backdating_rejected_before_writes"
+  ],
+  "exit_code": 1,
+  "seconds": 2.832
+}

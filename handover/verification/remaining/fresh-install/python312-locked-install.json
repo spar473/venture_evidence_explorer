@@ -1,0 +1,20 @@
+{
+  "name": "python312-locked-install",
+  "command": [
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--disable-pip-version-check",
+    "--retries",
+    "1",
+    "--timeout",
+    "20",
+    "-r",
+    "requirements.lock.txt"
+  ],
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+  "exit_code": 0,
+  "seconds": 6.849,
+  "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python312-locked-install.log"
+}

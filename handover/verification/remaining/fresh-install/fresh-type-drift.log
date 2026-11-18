@@ -1,0 +1,3 @@
+$ ['/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python', 'scripts/export_contract.py', '--check']
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source
+PASS: OpenAPI and generated TypeScript match

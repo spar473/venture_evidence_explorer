@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "base_url": "http://127.0.0.1:8170",
+  "routes": [
+    "/",
+    "/api/health",
+    "/api/discovery",
+    "/api/intake/drafts",
+    "/api/research/subjects/subj_rosterlab",
+    "/api/research/subjects/subj_quickmas"
+  ],
+  "served_frontend_matches_built_bytes": true,
+  "staged_total": 274,
+  "intake_drafts": 0,
+  "process_id": 32256
+}

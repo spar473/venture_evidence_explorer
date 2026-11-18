@@ -1,0 +1,14 @@
+$ ['npm', 'ci', '--fetch-retries=1', '--fetch-timeout=20000', '--no-audit', '--no-fund']
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend
+
+added 27 packages in 3s
+npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   fsevents@2.3.2 (install: (install scripts present))
+npm warn install-scripts   fsevents@2.3.3 (install: (install scripts present))
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+npm notice
+npm notice New major version of npm available! 11.20.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice

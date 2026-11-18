@@ -1,0 +1,11 @@
+{
+  "name": "fresh-academic-demo",
+  "command": [
+    "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+    "scripts/academic_demo.py"
+  ],
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+  "exit_code": 0,
+  "seconds": 0.077,
+  "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-academic-demo.log"
+}

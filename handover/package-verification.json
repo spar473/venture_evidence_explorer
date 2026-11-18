@@ -1,0 +1,38 @@
+{
+  "status": "locally_verified_ready_to_publish",
+  "baseline_original_commit": "cb00b27571fbff6e6972a3643fbe2900f9716283",
+  "baseline_reference": "baseline/initial-release (annotated tag)",
+  "working_branch": "implementation/vee-workbench",
+  "main_rewritten": false,
+  "initial_commit_message_rewritten": false,
+  "application_source_files_copied": 159,
+  "unchanged_from_verified_mac_source_excluding_packaging_readme_gitignore": 157,
+  "handover_files": 341,
+  "backend": {
+    "passed": 133,
+    "seconds": 9.5,
+    "python": "3.12.15"
+  },
+  "frontend_build": "PASS (33 modules)",
+  "openapi_types": "PASS",
+  "fresh_dependencies_installed_for_packaging": false,
+  "snapshot_restore": {
+    "status": "PASS",
+    "full_row_tables": 30,
+    "existing_destination_refused": true,
+    "existing_destination_bytes_unchanged": true,
+    "source_snapshot_unchanged": true,
+    "live_mac_database_unchanged": true
+  },
+  "desktop_windows_linux_execution": "not_executed",
+  "remote_ci_triggered": false,
+  "browser": {
+    "passed": 32,
+    "browser": "bundled Chromium 145.0.7632.6 revision 1208",
+    "python": "3.12.15",
+    "database": "disposable harness only",
+    "log": "verification/publication/packaged-browser.log"
+  },
+  "preserved_inputs": "Byte-identical supplied Markdown/ZIP inputs; original unavailable engineering handover explicitly recorded as missing",
+  "cross_platform_line_endings": "Application source uses LF; archived evidence/research/snapshots preserve exact original bytes through .gitattributes."
+}

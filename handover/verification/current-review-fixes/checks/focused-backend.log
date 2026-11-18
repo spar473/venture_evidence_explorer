@@ -1,0 +1,10 @@
+$ /Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_mapping_chronology.py tests/test_intake.py
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository
+........................                                                 [100%]
+=============================== warnings summary ===============================
+../../../../../../venture_evidence_explorer/.venv/lib/python3.10/site-packages/starlette/testclient.py:37
+  /Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/lib/python3.10/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+24 passed, 1 warning in 5.35s

@@ -1,0 +1,807 @@
+{
+  "status": "locally_verified_with_preserved_failure_evidence",
+  "environment": {
+    "python": "3.10.10",
+    "sqlite": "3.39.4",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "node": "v26.12.1",
+    "npm": "11.20.0",
+    "python_locked_versions": {
+      "annotated-types": "0.8.0",
+      "anyio": "4.16.0",
+      "certifi": "2026.10.23",
+      "click": "8.5.1",
+      "exceptiongroup": "1.3.1",
+      "fastapi": "0.115.12",
+      "h11": "0.16.0",
+      "httpcore": "1.0.9",
+      "httpx": "0.28.1",
+      "idna": "3.20",
+      "iniconfig": "2.3.1",
+      "packaging": "26.3",
+      "pluggy": "1.7.0",
+      "pydantic": "2.14.3",
+      "pydantic_core": "2.50.4",
+      "pytest": "8.3.5",
+      "starlette": "0.46.2",
+      "tomli": "2.5.0",
+      "typing-inspection": "0.4.5",
+      "typing_extensions": "4.16.0",
+      "uvicorn": "0.34.2",
+      "attrs": "26.1.0",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "referencing": "0.37.0",
+      "rpds-py": "0.30.0",
+      "rfc3986-validator": "0.1.1"
+    },
+    "all_python_pins_match": true,
+    "requirements_lock_sha256": "b33d284a19c431cee1ddc70a1dbecf2ac0dce1884debb572c279744e3045a4d9",
+    "npm_lock_sha256": "b46fedf0d839e2710a8c8d50c7120dde9d2c02be41aa6f1fab317863531b2993",
+    "lockfiles_unchanged": true,
+    "original_source_drift": [],
+    "original_source_files_checked": 136,
+    "fresh_install_source": "new venv plus pip-installed wheels (cache allowed); npm ci into absent node_modules; no copied installed dependencies",
+    "original_db_sha256_before_apply": "db7ffbc8f922eda3ec13bc955f8af133d31c9f1e361a8dc77a3a8c9f2f94dcf2",
+    "unexecuted": [
+      "Python 3.13 not available at inspected local paths",
+      "Linux bundled Chromium / Ubuntu CI matrix (no local Docker executable)",
+      "Remote CI not triggered"
+    ],
+    "node22_runtime": "22.23.5 (disposable npm package runtime; project pins unchanged)"
+  },
+  "stage5": {
+    "stage": 5,
+    "status": "locally_verified_with_preserved_failure_evidence",
+    "python310": {
+      "passed": 113,
+      "skipped": 2
+    },
+    "python311": {
+      "passed": 113,
+      "skipped": 2
+    },
+    "python312": {
+      "passed": 115,
+      "skipped": 0
+    },
+    "browser": {
+      "passed": 20,
+      "seconds": 29.4,
+      "runtime": "Node 22.23.5",
+      "browser": "bundled Chromium 145.0.7632.6 revision 1208",
+      "python": "3.12.15",
+      "CHROME_PATH": null
+    },
+    "locks_unchanged": true,
+    "fresh_pip_installs": 3,
+    "npm_ci": "PASS on Node26 and Node22",
+    "build": "PASS on Node26 and Node22",
+    "unexecuted": [
+      "Python 3.13",
+      "Linux / Ubuntu CI matrix",
+      "Remote CI not triggered"
+    ],
+    "retained_failures": [
+      "chromium-headless-install",
+      "chromium-install",
+      "discovery-url-regression-before"
+    ],
+    "original_database_bytes_unchanged_during_fresh_verification": true
+  },
+  "checks": [
+    {
+      "name": "applied-backend",
+      "command": [
+        "/Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp=/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/applied-tests"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/venture_evidence_explorer",
+      "exit_code": 0,
+      "seconds": 10.99,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/applied-backend.log"
+    },
+    {
+      "name": "applied-integrity",
+      "command": [
+        "/Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python",
+        "scripts/verify.py"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/venture_evidence_explorer",
+      "exit_code": 0,
+      "seconds": 0.207,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/applied-integrity.log"
+    },
+    {
+      "name": "applied-research",
+      "command": [
+        "/Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python",
+        "scripts/verify_research.py",
+        "--output",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/applied-research-verification.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/venture_evidence_explorer",
+      "exit_code": 0,
+      "seconds": 0.775,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/applied-research.log"
+    },
+    {
+      "name": "applied-type-drift",
+      "command": [
+        "/Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python",
+        "scripts/export_contract.py",
+        "--check"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/venture_evidence_explorer",
+      "exit_code": 0,
+      "seconds": 0.634,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/applied-type-drift.log"
+    },
+    {
+      "name": "chromium-headless-install",
+      "command": [
+        "npx",
+        "playwright",
+        "install",
+        "--only-shell",
+        "chromium"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": -15,
+      "seconds": 222.817,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/chromium-headless-install.log"
+    },
+    {
+      "name": "chromium-install",
+      "command": [
+        "npx",
+        "playwright",
+        "install",
+        "chromium"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 124,
+      "seconds": 600.12,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/chromium-install.log"
+    },
+    {
+      "name": "discovery-url-regression-before",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_discovery.py::test_invalid_discovery_source_urls_never_write"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 1,
+      "seconds": 1.063,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/discovery-url-regression-before.log"
+    },
+    {
+      "name": "final-node22-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 4.604,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/final-node22-build.log"
+    },
+    {
+      "name": "final-python310-backend",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 10.909,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/final-python310-backend.log"
+    },
+    {
+      "name": "final-python311-backend",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env311/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 9.944,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/final-python311-backend.log"
+    },
+    {
+      "name": "final-python312-backend",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 10.247,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/final-python312-backend.log"
+    },
+    {
+      "name": "fresh-academic-demo",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/academic_demo.py"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.077,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-academic-demo.log"
+    },
+    {
+      "name": "fresh-b0-evaluation",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/evaluate.py",
+        "--db",
+        "outputs/venture_evidence.sqlite",
+        "--output",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/development-evaluation.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.351,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-b0-evaluation.log"
+    },
+    {
+      "name": "fresh-backend",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 13.647,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-backend.log"
+    },
+    {
+      "name": "fresh-bootstrap",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/bootstrap.py"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.587,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-bootstrap.log"
+    },
+    {
+      "name": "fresh-browser-local-chrome",
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--output=/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-browser-chrome"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 52.965,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-browser-local-chrome.log"
+    },
+    {
+      "name": "fresh-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 6.917,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-build.log"
+    },
+    {
+      "name": "fresh-bundled-browser",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/npm-node22-cache/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+        "node_modules/playwright/cli.js",
+        "test",
+        "--output=/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-bundled-browser"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 30.644,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-bundled-browser.log"
+    },
+    {
+      "name": "fresh-discovery-import",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/import_discovery.py",
+        "--db",
+        "outputs/venture_evidence.sqlite",
+        "--apply",
+        "--report",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/discovery-import.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.447,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-discovery-import.log"
+    },
+    {
+      "name": "fresh-discovery-repeat",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/import_discovery.py",
+        "--db",
+        "outputs/venture_evidence.sqlite",
+        "--apply",
+        "--report",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/discovery-repeat.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.454,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-discovery-repeat.log"
+    },
+    {
+      "name": "fresh-evaluation-freeze",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/evaluation_workbench.py",
+        "freeze",
+        "--db",
+        "outputs/venture_evidence.sqlite",
+        "--output-dir",
+        "outputs/frozen-evaluation",
+        "--as-of",
+        "2026-11-18"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.406,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-evaluation-freeze.log"
+    },
+    {
+      "name": "fresh-evaluation-run",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/evaluation_workbench.py",
+        "run",
+        "--bundle",
+        "outputs/frozen-evaluation",
+        "--output",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/frozen-development-run.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 1.786,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-evaluation-run.log"
+    },
+    {
+      "name": "fresh-heldout-run",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/evaluation_workbench.py",
+        "run",
+        "--bundle",
+        "outputs/frozen-evaluation",
+        "--split",
+        "held_out",
+        "--output",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/held-out-status.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.401,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-heldout-run.log"
+    },
+    {
+      "name": "fresh-integrity",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/verify.py"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.51,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-integrity.log"
+    },
+    {
+      "name": "fresh-migrations",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/check_migrations.py"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.131,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-migrations.log"
+    },
+    {
+      "name": "fresh-pip-check",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.664,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-pip-check.log"
+    },
+    {
+      "name": "fresh-research-import",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/import_research.py",
+        "--db",
+        "outputs/venture_evidence.sqlite",
+        "--as-of",
+        "2026-11-18",
+        "--apply",
+        "--report",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/research-import.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.506,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-research-import.log"
+    },
+    {
+      "name": "fresh-research-validator",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "research/framework-v0.2.1/validate_research_example.py",
+        "--as-of",
+        "2026-11-18"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 1.637,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-research-validator.log"
+    },
+    {
+      "name": "fresh-research",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/verify_research.py",
+        "--output",
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/research-verification.json"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 1.551,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-research.log"
+    },
+    {
+      "name": "fresh-review-materials",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/evaluation_workbench.py",
+        "review-materials",
+        "--bundle",
+        "outputs/frozen-evaluation",
+        "--output-dir",
+        "outputs/human-review"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.35,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-review-materials.log"
+    },
+    {
+      "name": "fresh-type-drift",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "scripts/export_contract.py",
+        "--check"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 1.823,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/fresh-type-drift.log"
+    },
+    {
+      "name": "node22-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 2.2,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/node22-build.log"
+    },
+    {
+      "name": "node22-chromium-install",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/npm-node22-cache/_npx/52027bd8fc0022aa/node_modules/node/bin/node",
+        "node_modules/playwright/cli.js",
+        "install",
+        "chromium"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 22.194,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/node22-chromium-install.log"
+    },
+    {
+      "name": "node22-npm-ci",
+      "command": [
+        "npm",
+        "ci",
+        "--fetch-retries=1",
+        "--fetch-timeout=20000",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 1.262,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/node22-npm-ci.log"
+    },
+    {
+      "name": "node22-runtime",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=node@22",
+        "--",
+        "node",
+        "--version"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining",
+      "exit_code": 0,
+      "seconds": 6.971,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/node22-runtime.log"
+    },
+    {
+      "name": "npm-ci",
+      "command": [
+        "npm",
+        "ci",
+        "--fetch-retries=1",
+        "--fetch-timeout=20000",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source/frontend",
+      "exit_code": 0,
+      "seconds": 3.169,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/npm-ci.log"
+    },
+    {
+      "name": "python-locked-install",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--retries",
+        "1",
+        "--timeout",
+        "20",
+        "-r",
+        "requirements.lock.txt"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 8.115,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python-locked-install.log"
+    },
+    {
+      "name": "python311-backend",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env311/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 10.653,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python311-backend.log"
+    },
+    {
+      "name": "python311-locked-install",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env311/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--retries",
+        "1",
+        "--timeout",
+        "20",
+        "-r",
+        "requirements.lock.txt"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 9.237,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python311-locked-install.log"
+    },
+    {
+      "name": "python311-migrations",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env311/bin/python",
+        "scripts/check_migrations.py"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.078,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python311-migrations.log"
+    },
+    {
+      "name": "python311-pip-check",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env311/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.509,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python311-pip-check.log"
+    },
+    {
+      "name": "python311-type-drift",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env311/bin/python",
+        "scripts/export_contract.py",
+        "--check"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.562,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python311-type-drift.log"
+    },
+    {
+      "name": "python312-backend",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 11.817,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python312-backend.log"
+    },
+    {
+      "name": "python312-locked-install",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--retries",
+        "1",
+        "--timeout",
+        "20",
+        "-r",
+        "requirements.lock.txt"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 6.849,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python312-locked-install.log"
+    },
+    {
+      "name": "python312-migrations",
+      "command": [
+        "/opt/homebrew/bin/python3.12",
+        "scripts/check_migrations.py"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.299,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python312-migrations.log"
+    },
+    {
+      "name": "python312-pip-check",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.346,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python312-pip-check.log"
+    },
+    {
+      "name": "python312-type-drift",
+      "command": [
+        "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env312/bin/python",
+        "scripts/export_contract.py",
+        "--check"
+      ],
+      "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source",
+      "exit_code": 0,
+      "seconds": 0.624,
+      "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/python312-type-drift.log"
+    }
+  ],
+  "applied_results": {
+    "backend_passed": 113,
+    "backend_skipped": 2,
+    "api_routes_checked": 59,
+    "database_bytes_unchanged_by_api_smoke": true,
+    "original_tables_preserved": 21,
+    "migrations": 6,
+    "staged": 274,
+    "promoted": 0,
+    "source_manifest_files": 155,
+    "live_url": "http://127.0.0.1:8170",
+    "live_process_id": 32256
+  },
+  "final_audit": {
+    "status": "PASS",
+    "manifest_files_checked": 155,
+    "original_tables_rechecked": 21,
+    "old_migrations_preserved": 4,
+    "all_migrations": 6,
+    "original_evaluation_locks_research_migrations_unchanged": 21,
+    "source_manifest_sha256": "d106e5183d8dfa1abb7f2fc96492348bf085026001f442ed71b6bff1ba882b3e",
+    "completion_sha256": "7c001b3f073f53a0cdfea333e183fa60a4f26808f0f95bc0566ef44babb12ae8",
+    "real_intake_drafts": 0,
+    "new_discovery_reviews": 0,
+    "staged_leads": 274,
+    "promoted": 0,
+    "accepted_nz_population": null,
+    "empirical_metrics": "not_evaluated_judgments_missing",
+    "linux_ci": "unexecuted"
+  },
+  "live_http_smoke": {
+    "status": "PASS",
+    "base_url": "http://127.0.0.1:8170",
+    "routes": [
+      "/",
+      "/api/health",
+      "/api/discovery",
+      "/api/intake/drafts",
+      "/api/research/subjects/subj_rosterlab",
+      "/api/research/subjects/subj_quickmas"
+    ],
+    "served_frontend_matches_built_bytes": true,
+    "staged_total": 274,
+    "intake_drafts": 0,
+    "process_id": 32256
+  },
+  "applied_frozen_evaluation_status": "not_evaluated"
+}

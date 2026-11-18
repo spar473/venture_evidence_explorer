@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "checks": [
+    "/api/ventures",
+    "/api/intake/drafts",
+    "/api/intake/duplicates?q=FormusLabs",
+    "/api/discovery",
+    "/api/discovery?year=2021",
+    "/api/discovery?unknown_period=true",
+    "/api/discovery?q=Kura",
+    "/api/discovery/candidates/discovery_kura",
+    "/api/discovery/candidates/discovery_kura/promotion",
+    "/api/discovery/candidates/discovery_kuradynamics",
+    "/api/discovery/candidates/discovery_kuradynamics/promotion",
+    "/api/discovery/candidates/discovery_aplenty",
+    "/api/discovery/candidates/discovery_aplenty/promotion",
+    "/api/discovery/candidates/discovery_rosterlab",
+    "/api/discovery/candidates/discovery_rosterlab/promotion",
+    "/api/discovery/exports/organisations.csv",
+    "/api/discovery/exports/sources.csv",
+    "/api/discovery/exports/candidates.csv",
+    "/api/discovery/exports/listings.csv",
+    "/api/discovery/exports/targeted_outcome_events.csv",
+    "/api/discovery/exports/name_links.csv",
+    "/api/discovery/exports/unresolved_cases.csv",
+    "/api/research/subjects",
+    "/api/research/subjects/subj_rosterlab",
+    "/api/research/exports/subjects.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/parties.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/sources.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/observations.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/events.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/event_reports.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/unknowns.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/proposed_annotations.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/readiness.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/reconciliation_cases.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/access_gaps.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/review_events.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/requirements.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/conclusions.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/identity_mappings.csv?subject_id=subj_rosterlab",
+    "/api/research/exports/date_intervals.csv?subject_id=subj_rosterlab",
+    "/api/research/subjects/subj_quickmas",
+    "/api/research/exports/subjects.csv?subject_id=subj_quickmas",
+    "/api/research/exports/parties.csv?subject_id=subj_quickmas",
+    "/api/research/exports/sources.csv?subject_id=subj_quickmas",
+    "/api/research/exports/observations.csv?subject_id=subj_quickmas",
+    "/api/research/exports/events.csv?subject_id=subj_quickmas",
+    "/api/research/exports/event_reports.csv?subject_id=subj_quickmas",
+    "/api/research/exports/unknowns.csv?subject_id=subj_quickmas",
+    "/api/research/exports/proposed_annotations.csv?subject_id=subj_quickmas",
+    "/api/research/exports/readiness.csv?subject_id=subj_quickmas",
+    "/api/research/exports/reconciliation_cases.csv?subject_id=subj_quickmas",
+    "/api/research/exports/access_gaps.csv?subject_id=subj_quickmas",
+    "/api/research/exports/review_events.csv?subject_id=subj_quickmas",
+    "/api/research/exports/requirements.csv?subject_id=subj_quickmas",
+    "/api/research/exports/conclusions.csv?subject_id=subj_quickmas",
+    "/api/research/exports/identity_mappings.csv?subject_id=subj_quickmas",
+    "/api/research/exports/date_intervals.csv?subject_id=subj_quickmas",
+    "/api/research/packets/b8c736b9f04c6f0885b42a8132d93af1b500df3d395a7d7e50d4dca89d6ffbbe.json",
+    "POST /api/compare (read-only)"
+  ],
+  "database_bytes_unchanged": true,
+  "database_sha256": "09775f184b8d18a535f318c390a83e6d4cabd038b6627d1c1947d47802370431",
+  "synthetic_writes": 0,
+  "discovery_exports": {
+    "organisations": {
+      "rows": 27,
+      "sha256": "e44454fde5720bd41f7292f55906c4fd5205aa89ef714cb5fdaa06d7af00b797"
+    },
+    "sources": {
+      "rows": 42,
+      "sha256": "5f1975bd006ef231c8f1ea30ee4626c73b8449a4ba181b708fccd60b4b35a87e"
+    },
+    "candidates": {
+      "rows": 274,
+      "sha256": "3941aadec2a8ffdba32e3d0d5c94034e6635cb6281363fc6f2ee4cc2a74e8107"
+    },
+    "listings": {
+      "rows": 365,
+      "sha256": "e15eefa7ae72d1dd7aa1c7fa13a398137fe4534ba993ec3a38f7bde0ebf6d27f"
+    },
+    "targeted_outcome_events": {
+      "rows": 4,
+      "sha256": "2867ba9423b8c239c2dd9cfcb3c68b369ed662e11fb76f69b9c148df12dc697b"
+    },
+    "name_links": {
+      "rows": 2,
+      "sha256": "4aa3e45f7b3fd4abff5aa4f319b9efc95293c4b23a9f97f9f13e99aadb6b5cdc"
+    },
+    "unresolved_cases": {
+      "rows": 16,
+      "sha256": "84a3aee6270f02b7f042d1f4276b62597ba013a95d7b4b1aceb773a5445ff139"
+    }
+  }
+}

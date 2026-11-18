@@ -1,0 +1,28 @@
+[
+  {
+    "evidence_kind": "source",
+    "evidence_id": "src_rl_pricing",
+    "decision_date": "2020-01-01",
+    "underlying_source_retrieval": "2026-11-18",
+    "dry_run_status": "rejected",
+    "errors": [
+      {
+        "path": "/mapping_decisions/0/decided_on",
+        "message": "Decision predates its cited source inspection."
+      }
+    ]
+  },
+  {
+    "evidence_kind": "observation",
+    "evidence_id": "obs_rl_solution",
+    "decision_date": "2020-01-01",
+    "underlying_source_retrieval": "2026-11-18",
+    "dry_run_status": "valid_dry_run",
+    "errors": [],
+    "stored_decision": {
+      "state": "resolved",
+      "decided_on": "2020-01-01",
+      "evidence_ids_json": "[\"obs_rl_solution\"]"
+    }
+  }
+]

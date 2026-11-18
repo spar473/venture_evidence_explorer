@@ -1,0 +1,11 @@
+{
+  "name": "type-drift",
+  "cwd": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/current-review/repository",
+  "command": [
+    "/Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python",
+    "scripts/export_contract.py",
+    "--check"
+  ],
+  "exit_code": 0,
+  "seconds": 0.663
+}

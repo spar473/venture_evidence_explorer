@@ -1,0 +1,142 @@
+$ ['/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python', 'scripts/import_research.py', '--db', 'outputs/venture_evidence.sqlite', '--as-of', '2026-11-18', '--apply', '--report', '/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/research-import.json']
+CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source
+{
+  "status": "imported",
+  "namespace": "research:0.2.1",
+  "format_version": "0.2.1",
+  "packet_sha256": "b8c736b9f04c6f0885b42a8132d93af1b500df3d395a7d7e50d4dca89d6ffbbe",
+  "semantic_sha256": "596e095fbdf5646a04943907a0ee4820332172d4e670465b1dddb440c68ef274",
+  "validation_as_of": "2026-11-18",
+  "counts": {
+    "subjects": 2,
+    "parties": 4,
+    "sources": 6,
+    "observations": 34,
+    "events": 6,
+    "event_reports": 6,
+    "unknowns": 21,
+    "proposed_annotations": 2,
+    "readiness": 6,
+    "reconciliation_cases": 3,
+    "access_gaps": 2,
+    "review_events": 0
+  },
+  "derived_records": 17,
+  "identity_mappings": [
+    {
+      "subject_id": "subj_rosterlab",
+      "proposed_application_id": "v_rosterlab",
+      "state": "proposed",
+      "scope": "brand_project_only",
+      "legal_identity_state": "unresolved",
+      "candidate_name_matches": [
+        "v_rosterlab"
+      ],
+      "target_exists": true,
+      "source_url_matches": [
+        {
+          "research_source_id": "src_rl_uoa",
+          "application_source_id": "src_rosterlab_2024",
+          "url": "https://www.auckland.ac.nz/en/news/2024/11/27/rosterlab-levels-support-healthcare-workers.html"
+        }
+      ],
+      "conflicting_matches": [],
+      "rationale": "Same named public-university subject as existing seed; owner/legal match not accepted.",
+      "decision_actor": null,
+      "decision_date": null,
+      "quarantine_reason": "No genuine brand/project identity decision supplied; research remains inspectable under subject ID."
+    },
+    {
+      "subject_id": "subj_quickmas",
+      "proposed_application_id": "v_quickmas",
+      "state": "proposed",
+      "scope": "brand_project_only",
+      "legal_identity_state": "unresolved",
+      "candidate_name_matches": [
+        "v_quickmas"
+      ],
+      "target_exists": true,
+      "source_url_matches": [
+        {
+          "research_source_id": "src_qm_uoa",
+          "application_source_id": "src_100k_2024",
+          "url": "https://www.auckland.ac.nz/en/news/2024/10/17/innovating-until-the-cows-come-home.html"
+        }
+      ],
+      "conflicting_matches": [],
+      "rationale": "Same named public-university subject as existing seed; owner/legal match not accepted.",
+      "decision_actor": null,
+      "decision_date": null,
+      "quarantine_reason": "No genuine brand/project identity decision supplied; research remains inspectable under subject ID."
+    }
+  ],
+  "immutable_conflicts": [],
+  "mapping_decisions_supplied": 0,
+  "mapping_errors": [],
+  "writes": "atomic graph and ledger; repeated rows remain unchanged",
+  "evidence_boundary": "Research-only graph; zero automatic factual acceptances, identity resolutions or B0 feature additions.",
+  "accounting": {
+    "leaf_count": 2430,
+    "totals": {
+      "mapped": 605,
+      "preserved_research_only": 1767,
+      "quarantined": 58,
+      "unsupported": 0
+    },
+    "collections": {
+      "metadata": {
+        "count": 1,
+        "storage": "research_imports.metadata_json + original packet"
+      },
+      "subjects": {
+        "count": 2,
+        "storage": "research_records + original packet"
+      },
+      "parties": {
+        "count": 4,
+        "storage": "research_records + original packet"
+      },
+      "sources": {
+        "count": 6,
+        "storage": "research_records + original packet"
+      },
+      "observations": {
+        "count": 34,
+        "storage": "research_records + original packet"
+      },
+      "events": {
+        "count": 6,
+        "storage": "research_records + original packet"
+      },
+      "event_reports": {
+        "count": 6,
+        "storage": "research_records + original packet"
+      },
+      "unknowns": {
+        "count": 21,
+        "storage": "research_records + original packet"
+      },
+      "proposed_annotations": {
+        "count": 2,
+        "storage": "research_records + original packet"
+      },
+      "readiness": {
+        "count": 6,
+        "storage": "research_records + original packet"
+      },
+      "reconciliation_cases": {
+        "count": 3,
+        "storage": "research_records + original packet"
+      },
+      "access_gaps": {
+        "count": 2,
+        "storage": "research_records + original packet"
+      },
+      "review_events": {
+        "count": 0,
+        "storage": "research_records + original packet"
+      }
+    }
+  },
+  "report": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/research-import.json"
+}

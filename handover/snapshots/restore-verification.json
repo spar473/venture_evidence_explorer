@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "full_row_tables": 30,
+  "existing_destination_refused": true,
+  "existing_destination_bytes_unchanged": true,
+  "source_snapshot_unchanged": true,
+  "live_mac_database_unchanged": true
+}

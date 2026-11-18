@@ -1,0 +1,16 @@
+{
+  "name": "applied-backend",
+  "command": [
+    "/Users/kevinnn.park/Documents/venture_evidence_explorer/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp=/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/applied-tests"
+  ],
+  "cwd": "/Users/kevinnn.park/Documents/venture_evidence_explorer",
+  "exit_code": 0,
+  "seconds": 10.99,
+  "log": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/applied-backend.log"
+}

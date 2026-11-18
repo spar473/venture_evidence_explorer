@@ -1,0 +1,323 @@
+{
+  "target": "/Users/kevinnn.park/Documents/venture_evidence_explorer",
+  "files_applied": 56,
+  "changes": [
+    {
+      "path": ".github/workflows/checks.yml",
+      "before_sha256": null,
+      "after_sha256": "95c62d2ab5a3d4de8bf69c0f105e994dfea0126790652eb9b2a36d34a596fb57"
+    },
+    {
+      "path": "ENGINEERING_SHA256SUMS.txt",
+      "before_sha256": null,
+      "after_sha256": "bdf6d65b271d356ae2b84e6aea7baca39aafa5cf379701c237d97c4f74212b19"
+    },
+    {
+      "path": "README.md",
+      "before_sha256": "e2d4c1ef19c18fdde675df951be3ecf90217d396927adad5de47d9c012208c10",
+      "after_sha256": "89baea9dc27fa25794a3f29f59650926aabbe60161ef35b1625e8ec6d5cace17"
+    },
+    {
+      "path": "backend/comparison_runs.py",
+      "before_sha256": null,
+      "after_sha256": "c6e6386ab3a56b66bacf10560697725e2cd3f40894b4679efdf6dd8347071971"
+    },
+    {
+      "path": "backend/contracts.py",
+      "before_sha256": null,
+      "after_sha256": "39aa77edd639794585bad2782c5a5ad315ac6dd7828f22f6951ecb1d40e85808"
+    },
+    {
+      "path": "backend/database.py",
+      "before_sha256": "6b15e87c044f3125059053c8ec4fd988eb245bc8ee784ca1961fe895e02829d5",
+      "after_sha256": "32d7d4cd844ea8fade7991b6cd83a2c2d6305e663df258b9e166a15615fd810b"
+    },
+    {
+      "path": "backend/evaluation.py",
+      "before_sha256": null,
+      "after_sha256": "88abd154b3be4bf96844283632ec130ccd885f56c6e5c4177fbf02f42ab4aae4"
+    },
+    {
+      "path": "backend/evidence_policy.py",
+      "before_sha256": null,
+      "after_sha256": "08bd0556be72a6483e6aeacd418c72a01d49a81a0964aa8c57a02804c5738bad"
+    },
+    {
+      "path": "backend/experiments/__init__.py",
+      "before_sha256": null,
+      "after_sha256": "5808688b2460394a7f07813fadeb3a05768c5ed0fa51eb2ed31615b436ae4a25"
+    },
+    {
+      "path": "backend/experiments/budget.py",
+      "before_sha256": null,
+      "after_sha256": "5bd623fa4bb3dbaf500ca35fba80e1519c775fe59afb304165822d0ff9e33154"
+    },
+    {
+      "path": "backend/experiments/robustness.py",
+      "before_sha256": null,
+      "after_sha256": "5e230537bbc8e0a7903eb610aae819f6ae722ab87f37bb32b93fd936d1d1636e"
+    },
+    {
+      "path": "backend/experiments/structured.py",
+      "before_sha256": null,
+      "after_sha256": "4ccb0c7935396d3069ef02a403e91a468f83779eb691c6207b625d0c6d35dfcc"
+    },
+    {
+      "path": "backend/ingestion.py",
+      "before_sha256": null,
+      "after_sha256": "610e690d2a525440831a5f6a4f9cb4eb22780069bbbcbb462f0173cb48d1319c"
+    },
+    {
+      "path": "backend/main.py",
+      "before_sha256": "548cb35548b0489319f4201fb8d2678aa64bf67b599ac551cc23fb9e012dd40f",
+      "after_sha256": "412a4d89d54e03bd2386cea09cea525b48f8e36f3619dc348b171de62fbb0310"
+    },
+    {
+      "path": "backend/repository.py",
+      "before_sha256": "3f4cbb1d96d9f5fa0f8107fc35c5b3c7d0cc5b47be773bf46694c51801305be6",
+      "after_sha256": "9c236b7f776111202b38f9b8c7daa6d54f103b9418c6252cf1ac4299899f52cd"
+    },
+    {
+      "path": "backend/retrieval.py",
+      "before_sha256": "a2413c3a7ebf5bb6044ed761e34d4e6d98b863cde9b39877a72d9c597d5684c5",
+      "after_sha256": "24afb11187009cfae7f6057d25c2d3d3c1b4ecc0f80d23cbd89f6a77ec8f53db"
+    },
+    {
+      "path": "docs/academic_extensions.md",
+      "before_sha256": null,
+      "after_sha256": "c93405fbf4964c8b09f8feb3f06149a9256160fc3186bf8e4b1f1d9b5972fd1d"
+    },
+    {
+      "path": "docs/api_and_comparison_runs.md",
+      "before_sha256": null,
+      "after_sha256": "8de6984fcf1c4590b9963f2336387a5fb929b04cb6ca179b423f765f19cd732f"
+    },
+    {
+      "path": "docs/evidence_contract.md",
+      "before_sha256": null,
+      "after_sha256": "b8b6128b23018b2eb0b79a7094ce1c953c8b5d1b921fc34f1236f3879c50e257"
+    },
+    {
+      "path": "docs/requirements_traceability.md",
+      "before_sha256": null,
+      "after_sha256": "8705e4e7594dd36593fc1b3ac184cedbde8ff3113488670d15dcb41b2b8d4b35"
+    },
+    {
+      "path": "frontend/dist/assets/index-h4UxhGUw.js",
+      "before_sha256": null,
+      "after_sha256": "2358f2c09f312c1a07cb5d201eb8f33c9c6672ba05ed6e85daff0e83ba9ff94c"
+    },
+    {
+      "path": "frontend/dist/assets/index-z3a4vSq9.css",
+      "before_sha256": null,
+      "after_sha256": "3d9cdaf3a72908b8a1bfc8525824fd10dbeded4069dac4e992560f8fde395b47"
+    },
+    {
+      "path": "frontend/dist/index.html",
+      "before_sha256": "7a9c2c4cac6a7f410edd3ca46ec0ea128889ee43ee72951019d8ca1890a7cac1",
+      "after_sha256": "f42d81b7459b846b15f17600ef3771d8e713468ab899d81fd581bc9a3e17c66a"
+    },
+    {
+      "path": "frontend/e2e/contracts.spec.ts",
+      "before_sha256": null,
+      "after_sha256": "cf4a0895047127c15baae165dbf4fe8cc9a537f3773172cdb70b6c018149ba43"
+    },
+    {
+      "path": "frontend/e2e/release.spec.ts",
+      "before_sha256": "aeb628c06df208e3a64ddbdd364d31bcc1a8a16822e5d466aa60cf6edae26a95",
+      "after_sha256": "e293a8010296620493501aba96d1244ad7b3208bb851d048e6e7a624d6a4eeb3"
+    },
+    {
+      "path": "frontend/e2e/server.mjs",
+      "before_sha256": null,
+      "after_sha256": "1b56fca076e142dc794bfa2cc0d1619a3a72ddb635036750d339e863aaca27db"
+    },
+    {
+      "path": "frontend/playwright.config.ts",
+      "before_sha256": "1b0290229134052ebaae1afe651585b409af6be9c4eb4b2d618dddef0a7f01d9",
+      "after_sha256": "00d7d16f3eeba4abec4790a408537cd027839a24848c291cec0880114933a3a8"
+    },
+    {
+      "path": "frontend/src/analytics.tsx",
+      "before_sha256": null,
+      "after_sha256": "d7a7a5bcd10e82012538bf4e293296b5bd872e4144be8bdce83f5832ce80e3b5"
+    },
+    {
+      "path": "frontend/src/api-schema.ts",
+      "before_sha256": null,
+      "after_sha256": "b134958b5be12aa584a66ea37a0ddccf901770ee918a8c5eae753458ddcaa486"
+    },
+    {
+      "path": "frontend/src/api.ts",
+      "before_sha256": null,
+      "after_sha256": "4861756b8aa7d96a5d74fe49f84fd798c4191a4ee8a7822de578f22e50fcb1a0"
+    },
+    {
+      "path": "frontend/src/comparison.tsx",
+      "before_sha256": null,
+      "after_sha256": "4162811c8907d229a15771a0c27d1213acceffa8c84496312a7bfd85381d51a6"
+    },
+    {
+      "path": "frontend/src/directory.tsx",
+      "before_sha256": null,
+      "after_sha256": "71c9c3e1382057e34a48f91df0c42ab733c6425b4f1fe5a6185c1447b530fc51"
+    },
+    {
+      "path": "frontend/src/drawer.tsx",
+      "before_sha256": null,
+      "after_sha256": "ab07ae1da68d58e01c00e8910bc9cf9a47dbafcbeb79a2e3925cb3c32105fb86"
+    },
+    {
+      "path": "frontend/src/filters.tsx",
+      "before_sha256": null,
+      "after_sha256": "62496533742db7804e9a68bb1076803283cc82e90b3286c92dd819f1f6ac1c29"
+    },
+    {
+      "path": "frontend/src/hooks.ts",
+      "before_sha256": null,
+      "after_sha256": "21692ec8d0153f13d344ad434a08cb0d1968a4e96600975b3f4b50621b6d1aaf"
+    },
+    {
+      "path": "frontend/src/labels.ts",
+      "before_sha256": null,
+      "after_sha256": "e9af9cc1847ea10091bea6e2409ee7507bcd6005aba5a684826c83509fe26539"
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "before_sha256": "0a20b36d044b5f80cd9018648932f338dd9a4b451be43e9e795b0ce918150da6",
+      "after_sha256": "a8c0e69da41eb03e3050c18fdcbd960f43fa2f49d8e9a635a49715bbd6240e11"
+    },
+    {
+      "path": "frontend/src/pagination.tsx",
+      "before_sha256": null,
+      "after_sha256": "b7a3efcc659827bf873ddc3c6959a4c333b603c2138a95850bea0e2da3774e11"
+    },
+    {
+      "path": "frontend/src/profile.tsx",
+      "before_sha256": null,
+      "after_sha256": "940f75426ec13c7436d6c25f27bde23191247f5499665235aa90eca46041d66b"
+    },
+    {
+      "path": "frontend/src/shared.tsx",
+      "before_sha256": null,
+      "after_sha256": "faa473ef70022d1c8bb76b13e7fa4216c4c73dcd5a71015f68f33d94f9b75a80"
+    },
+    {
+      "path": "frontend/src/style.css",
+      "before_sha256": "e1b5b63328aa1851e1d68ace4e187802db8ef03c510e44c92426620bd1e00086",
+      "after_sha256": "e6b3c98d9fc4177b7c22e6054e9a65e6b9d72f8c19fc316f007b4b72ffcaebdb"
+    },
+    {
+      "path": "frontend/src/types.ts",
+      "before_sha256": "aef2dbd52734fc8fb51cb8f0b08db9db8520cce40882253aa6198f7141c31e3a",
+      "after_sha256": "03736739fa60bf1595ee33ad8ec95406e1b8199b811ef1cf697b56cacc6e5120"
+    },
+    {
+      "path": "schema/migrations/003_historical_evidence.sql",
+      "before_sha256": null,
+      "after_sha256": "bb720b12f52213057ca4b6545c9f3f08b5ea39e2bda2d56a1301c9dee182772f"
+    },
+    {
+      "path": "schema/openapi.json",
+      "before_sha256": null,
+      "after_sha256": "3a4eb0d6b87319bc4921f2afea9b3fca85c357a8b7631d6fd079fa6fdd8dcca5"
+    },
+    {
+      "path": "scripts/academic_demo.py",
+      "before_sha256": null,
+      "after_sha256": "f4b8f8fa70d4abf06b8d1b382654fa1e743c71391c0209967b8804fe10a6b203"
+    },
+    {
+      "path": "scripts/benchmark.py",
+      "before_sha256": null,
+      "after_sha256": "660e7008ca5ca980551221fdae47b0370a6a70f0bb6a4d4535b46ab166917a37"
+    },
+    {
+      "path": "scripts/bootstrap.py",
+      "before_sha256": "e5454e01141ae5676b695bb736d28411a26519482e01d44e81081f3e2b6148ed",
+      "after_sha256": "8c5bc4ad44d732768154937fe6b61df63e71fecdc3963735c4cab1ede9c84fea"
+    },
+    {
+      "path": "scripts/check_migrations.py",
+      "before_sha256": null,
+      "after_sha256": "a08ed67d46ba8eb25590417e2495efd57cfc694ff8496207044d99574963edeb"
+    },
+    {
+      "path": "scripts/evaluate.py",
+      "before_sha256": null,
+      "after_sha256": "617013d2778e6d95788891f2038d33b625013fa1b44c8c423394808ad79f8126"
+    },
+    {
+      "path": "scripts/export_contract.py",
+      "before_sha256": null,
+      "after_sha256": "7a44c2b7bafe30808837a739ec177b4dce252f11485e47b2acabd74267705dfb"
+    },
+    {
+      "path": "tests/fixtures/b0_historical.json",
+      "before_sha256": null,
+      "after_sha256": "541638bf9977e8b10669b666804defd46aabd2876de744cc7ef0ece8936f7ba3"
+    },
+    {
+      "path": "tests/test_comparison_runs.py",
+      "before_sha256": null,
+      "after_sha256": "0ec75513b8cd724188303ff5104d9bee58eb01f0f904b606677a929ec04f5baa"
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "before_sha256": null,
+      "after_sha256": "fd4f1887468710c215b661205508c5ac4932a3e787c27e4518f87498eea5d7d6"
+    },
+    {
+      "path": "tests/test_ingestion.py",
+      "before_sha256": null,
+      "after_sha256": "c569f6c678d4b4fd6dd5d613a0f8369f8e0522fa5cdcb64b91f9287d74fc8d05"
+    },
+    {
+      "path": "tests/test_queries.py",
+      "before_sha256": null,
+      "after_sha256": "a126de0eb1571d270c6c9301a2b2bb8ea96ba651b704b3f145ce8421fd5b6186"
+    },
+    {
+      "path": "tests/test_release.py",
+      "before_sha256": "be82d76ca35c141b41a9fa7c680e736612ce8e2d29839f1ad254bf13e7ad574a",
+      "after_sha256": "da9423bb8944b10a5b4eaa8ffbd298436f8d8551ebbe565c26239614a51888ef"
+    }
+  ],
+  "existing_data_tables_verified_unchanged": [
+    "annotation_evidence",
+    "annotations",
+    "awards",
+    "connections",
+    "imports",
+    "observations",
+    "review_events",
+    "sources",
+    "ventures"
+  ],
+  "schema_migrations": [
+    [
+      "001_analytics.sql",
+      "8ab8dc6dbb88caec66023c93c4e117f3a68ffb14446e6acfeb29edf93afebade"
+    ],
+    [
+      "002_immutable_evidence.sql",
+      "95137846643094d17c7a8a0d3def6d30296f2423768d7af3b540051d51c8f49e"
+    ],
+    [
+      "003_historical_evidence.sql",
+      "bb720b12f52213057ca4b6545c9f3f08b5ea39e2bda2d56a1301c9dee182772f"
+    ]
+  ],
+  "counts": {
+    "ventures": 10,
+    "sources": 7,
+    "observations": 20,
+    "awards": 7,
+    "connections": 10,
+    "annotations": 50,
+    "review_events": 0,
+    "source_availability": 0,
+    "observation_relations": 0
+  },
+  "backup": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/backups/venture_evidence_before.sqlite"
+}

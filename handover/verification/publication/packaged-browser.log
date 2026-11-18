@@ -1,0 +1,45 @@
+[2m[WebServer] [22mINFO:     Started server process [40546]
+[2m[WebServer] [22mINFO:     Waiting for application startup.
+[2m[WebServer] [22mINFO:     Application startup complete.
+[2m[WebServer] [22mINFO:     Uvicorn running on http://127.0.0.1:8190 (Press CTRL+C to quit)
+
+Running 32 tests using 1 worker
+
+(node:40547) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:40547) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 e2e/contracts.spec.ts:3:1 › directory paginates summaries and loads evidence only when opened (1.9s)
+  ✓   2 e2e/contracts.spec.ts:33:1 › closing a loading profile prevents late evidence reopening the drawer (1.0s)
+  ✓   3 e2e/contracts.spec.ts:48:1 › historical profile preserves unknown and partial dates with review state (392ms)
+  ✓   4 e2e/contracts.spec.ts:72:1 › exported comparison run replays against the recorded corpus (325ms)
+  ✓   5 e2e/contracts.spec.ts:94:1 › tab navigation retains directory inputs, page and completed comparison (2.3s)
+  ✓   6 e2e/discovery.spec.ts:2:1 › discovery staging totals, scope filters, unresolved aliases and withheld promotion (1.4s)
+  ✓   7 e2e/intake-recovery.spec.ts:7:1 › delayed save prevents switching draft identity and preserves both histories (565ms)
+  ✓   8 e2e/intake-recovery.spec.ts:17:1 › reload retains saved identity and edits instead of creating a duplicate (414ms)
+  ✓   9 e2e/intake-recovery.spec.ts:22:1 › tab return retains revision base and Start another draft explicitly clears it (433ms)
+  ✓  10 e2e/intake-recovery.spec.ts:27:1 › concurrent revision shows conflict without discarding local edits (570ms)
+  ✓  11 e2e/intake-recovery.spec.ts:31:51 › lost create response survives reload with the exact retry request (469ms)
+  ✓  12 e2e/intake-recovery.spec.ts:31:51 › lost revision response survives reload with the exact retry request (580ms)
+  ✓  13 e2e/intake-recovery.spec.ts:38:1 › unmounted delayed save cannot replace the restored editor session (477ms)
+  ✓  14 e2e/intake-recovery.spec.ts:42:1 › legacy field recovery requires explicit identity selection (378ms)
+  ✓  15 e2e/intake-recovery.spec.ts:46:1 › unavailable recovery journal refuses a write and retains typed input (161ms)
+  ✓  16 e2e/intake.spec.ts:2:1 › save/reload/reopen user draft and compare without accepting source facts (984ms)
+  ✓  17 e2e/intake.spec.ts:21:1 › source validation and persistence failure keep typed input (628ms)
+  ✓  18 e2e/release.spec.ts:3:1 › browse, filter, inspect and unknowns (2.2s)
+  ✓  19 e2e/release.spec.ts:50:1 › comparison, source evidence, fewer than three and stage abstention (610ms)
+  ✓  20 e2e/release.spec.ts:98:1 › analytics and real CSV download (237ms)
+  ✓  21 e2e/release.spec.ts:115:1 › loading and recoverable API error states (1.7s)
+  ✓  22 e2e/release.spec.ts:137:1 › narrow layout has no page overflow (551ms)
+  ✓  23 e2e/release.spec.ts:149:1 › desktop release capture (507ms)
+  ✓  24 e2e/release.spec.ts:156:1 › changing a comparison query invalidates stale results (950ms)
+  ✓  25 e2e/release.spec.ts:181:1 › evidence drawer supports Escape and returns keyboard focus (290ms)
+  ✓  26 e2e/research.spec.ts:22:1 › research directory filters preserve quarantine, unknown identity and source responsibility (1.6s)
+  ✓  27 e2e/research.spec.ts:58:1 › dossiers retain prospective targets, possibly duplicate financing and scoped withheld conclusions (1.0s)
+  ✓  28 e2e/research.spec.ts:90:1 › research exports download preserved IDs, review, money scope and exact packet bytes (580ms)
+  ✓  29 e2e/research.spec.ts:114:1 › research drawers remain keyboard accessible with narrow screens (488ms)
+  ✓  30 e2e/review-usability.spec.ts:2:1 › dossier leads with attributed solution and users while preserving identity disclosure (584ms)
+  ✓  31 e2e/review-usability.spec.ts:7:1 › compact timeline preserves target precision and unknown occurrence on mobile (476ms)
+  ✓  32 e2e/review-usability.spec.ts:10:1 › discovery labels are readable and stable IDs remain available in disclosures and exports (717ms)
+
+  32 passed (29.8s)

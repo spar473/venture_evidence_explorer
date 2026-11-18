@@ -1,0 +1,14 @@
+
+> venture-evidence-explorer@1.0.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 31 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.41 kB │ gzip:  0.29 kB
+dist/assets/index-DwdSNHX7.css   21.83 kB │ gzip:  5.01 kB
+dist/assets/index-BefXLwBx.js   293.19 kB │ gzip: 86.47 kB
+
+✓ built in 553ms

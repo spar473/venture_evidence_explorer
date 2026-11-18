@@ -1,0 +1,88 @@
+{
+  "protocol_version": "evaluation-workbench:1",
+  "method": {
+    "name": "Sourced keyword baseline",
+    "version": "b0-token-overlap-1.0",
+    "normalization": "Lowercase alphanumeric tokens, fixed stopwords, fixed morphology map (including imaging/images\u2192image, modelling/models\u2192model, surgical\u2192surgery); no learned synonyms. See backend/retrieval.py.",
+    "fields": {
+      "product_customer": [
+        "product_description"
+      ],
+      "commercialisation": [
+        "product_description",
+        "uoa_connection"
+      ]
+    },
+    "scoring": "Sum of matched token IDFs / sum of query token IDFs. IDF=1+ln((N+1)/(df+1)); each token counted once per venture.",
+    "abstention": "At least two distinct informative matching tokens and query-token coverage >= 0.15. At most three results; stable venture-ID tie break.",
+    "limitations": "Lexical ranking scores, not probabilities, quality or investment scores. No semantic understanding or validated relevance. Pathway mode searches reported product and university-origin wording, not verified deployment milestones. Awards, proposed annotations and press volume are excluded. Sparse wording may miss useful analogies."
+  },
+  "policy": "exploration",
+  "evidence_policy_version": "evidence-selection-1.0",
+  "evidence_as_of": "2026-11-18",
+  "cutoff_semantics": "Frozen present-day exploration snapshot; not a historical availability backtest",
+  "files": {
+    "corpus.sqlite": "654e6f7ac7bf4ae2fcac53d2266b6fe25b428ec25b39f81978726eebb9fdfc9e",
+    "corpus.json": "3b3a187182c8bec550f97a9cf1405f1be0050e62c82378c627d8a71fe1745b3c",
+    "tasks.json": "1f21c8a2977c802263c1a47a8eab6d91daca2064c9a9104c76dadb58dabd9dd0"
+  },
+  "source_hashes": {
+    "backend/retrieval.py": "24afb11187009cfae7f6057d25c2d3d3c1b4ecc0f80d23cbd89f6a77ec8f53db",
+    "backend/evidence_policy.py": "08bd0556be72a6483e6aeacd418c72a01d49a81a0964aa8c57a02804c5738bad",
+    "backend/repository.py": "9c236b7f776111202b38f9b8c7daa6d54f103b9418c6252cf1ac4299899f52cd",
+    "backend/comparison_runs.py": "c6e6386ab3a56b66bacf10560697725e2cd3f40894b4679efdf6dd8347071971",
+    "backend/evaluation_protocol.py": "85182e271194904d90af0370c565338f5cbdadb5640cdcae0333d74f263f1716"
+  },
+  "migrations": [
+    [
+      "001_analytics.sql",
+      "8ab8dc6dbb88caec66023c93c4e117f3a68ffb14446e6acfeb29edf93afebade"
+    ],
+    [
+      "002_immutable_evidence.sql",
+      "95137846643094d17c7a8a0d3def6d30296f2423768d7af3b540051d51c8f49e"
+    ],
+    [
+      "003_historical_evidence.sql",
+      "bb720b12f52213057ca4b6545c9f3f08b5ea39e2bda2d56a1301c9dee182772f"
+    ],
+    [
+      "004_research_pilot.sql",
+      "f39c45090f74af97e9c0fd8529f1a738f6ebfb2825318bcff6e3cd06cf3618b8"
+    ],
+    [
+      "005_venture_intake.sql",
+      "5ca366028d19fd4b706310e0295a58cbd376a59943be7d6392d08e6225bb57c3"
+    ],
+    [
+      "006_discovery_staging.sql",
+      "212cd48f8148613977376802526a3374c559386d97028e4c87fef0efd035b9c9"
+    ]
+  ],
+  "splits": {
+    "development": [
+      "q01",
+      "q02",
+      "q03",
+      "q04",
+      "q05",
+      "q06"
+    ],
+    "held_out": [
+      "heldout_unseen_cohort_01"
+    ]
+  },
+  "tasks_pending": [
+    "heldout_unseen_cohort_01"
+  ],
+  "corpus_counts": {
+    "identities": 10,
+    "selected_observations": 20
+  },
+  "limits": [
+    "Candidate pools and distractor suggestions are protocol hypotheses, not relevance judgments",
+    "Held-out cohort is explicitly pending independent sourced evidence",
+    "No exhaustive recall is reported"
+  ],
+  "manifest_id": "120e60ce3fe2de904879a0d2601abb5964caa22e0b385089afe37ce5a8746331"
+}

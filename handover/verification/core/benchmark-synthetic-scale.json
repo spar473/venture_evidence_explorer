@@ -1,0 +1,25 @@
+{
+  "scope": "Warm local engineering benchmark; declared synthetic additions are temporary, not research data. Not a production load test",
+  "synthetic_additions": 1000,
+  "rows": {
+    "ventures": 1010,
+    "observations": 1020,
+    "sources": 7
+  },
+  "measurements": [
+    {
+      "operation": "directory",
+      "selects": 5,
+      "repeats": 20,
+      "median_ms": 0.259,
+      "p95_ms": 0.311
+    },
+    {
+      "operation": "compare",
+      "selects": 33,
+      "repeats": 20,
+      "median_ms": 41.548,
+      "p95_ms": 46.119
+    }
+  ]
+}
