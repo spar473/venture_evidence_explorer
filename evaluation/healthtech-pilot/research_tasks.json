@@ -1,0 +1,44 @@
+{
+  "format_version": "healthtech-research-tasks:1",
+  "purpose": "Link the same development questions to curated research views; no equal-corpus ranking comparison is claimed.",
+  "tasks": [
+    {
+      "query_id": "ht_mri",
+      "subject_id": "subj_ht_mri",
+      "view": "research",
+      "as_of": "2026-11-19"
+    },
+    {
+      "query_id": "ht_neurofanos",
+      "subject_id": "subj_ht_neurofanos",
+      "view": "research",
+      "as_of": "2026-11-19"
+    },
+    {
+      "query_id": "ht_ivf",
+      "subject_id": "subj_ht_ivf",
+      "view": "research",
+      "as_of": "2026-11-19"
+    },
+    {
+      "query_id": "ht_vistavision",
+      "subject_id": "subj_ht_vistavision",
+      "view": "research",
+      "as_of": "2026-11-19"
+    },
+    {
+      "query_id": "ht_pulsemap",
+      "subject_id": "subj_ht_pulsemap",
+      "view": "research",
+      "as_of": "2026-11-19"
+    },
+    {
+      "query_id": "ht_rosterlab",
+      "subject_id": "subj_rosterlab",
+      "view": "research",
+      "as_of": "2026-11-19"
+    }
+  ],
+  "human_judgments": [],
+  "manual_research_observations": []
+}

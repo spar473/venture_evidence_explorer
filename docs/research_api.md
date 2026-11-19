@@ -42,3 +42,13 @@ A subject-filtered export includes linked counterpart records necessary to inspe
 ## Verification scope
 
 API regressions use the supplied two-dossier packet, not invented factual records. They check exact model round-trip preservation, proposed identity/unknown legal fields, source/report lineage, cross-subject readiness closure, null currency, target-versus-occurrence dates, open financing cases, CSV row equality/no duplication, exact original-byte download, filtering and read-only behavior. These verify software behavior. They do not establish passage accuracy, event occurrence, relevance, investment merit, usefulness or time savings; those require actual source/human review and separate task evaluation.
+
+## Curated healthtech comparison view
+
+`GET /api/research/subjects/{subject_id}/comparisons?as_of=2026-11-19&view=research` returns the typed `HealthtechComparison` view. `as_of` is required and calendar-validated. `view` is `research` or `historical`; optional `packet_sha256` pins the same packet as the opened dossier. Unknown subjects return 404; invalid dates/views return 422. Reads share one SQLite snapshot and never import or write.
+
+The strict `healthtech-comparisons:1` selection manifest references imported readiness, subject and observation IDs. Self/duplicate peers and more than three peers are refused. A possible shared proposed application identity is withheld without resolving that identity. Missing, mis-scoped, disputed, future or date-ineligible support withholds the comparison rather than silently weakening the rationale. Partial dates must have their entire validated interval at or before the cutoff; targets remain prospective. Research publication dates may be unknown when the actual source was read by the research cutoff, but that never qualifies historical availability.
+
+Research mode returns at most three explicitly curated `pathway_precedent` records, readiness conclusions and their basis, sourced reference-document and later evidence, unknowns and open cases. `early_stage_anchor` remains null and `same_stage_assessment` is `abstain`. The response includes policy/selection/graph hashes and contributing original packet hashes. Current curation is not an automated relevance score, independent judgment or adoption forecast. Subjects with no assembled analogy abstain, including the sparse PAD case and RosterLab contrast.
+
+Historical mode returns no peer claims or subject evidence: research 0.2.1 cannot carry the dated source-availability witness required to qualify an early snapshot. Even a present-day source containing an old document date cannot bypass that boundary. The full dossier endpoint remains an unfiltered audit view; the UI labels that distinction beside the comparison controls.

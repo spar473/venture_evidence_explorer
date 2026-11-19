@@ -1,0 +1,3505 @@
+{
+  "subjects": [
+    {
+      "subject_id": "subj_ht_formus",
+      "display_name": "Formus Labs",
+      "subject_kind": "venture_brand",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_formus",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Proposed brand/project correspondence with seed v_formus and staged discovery_formuslabs / cand_formus. No identity decision supplied. Formus Hip and Formus Labs Ltd. are source labels, not an accepted legal-entity crosswalk.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_neurofanos",
+      "display_name": "Neurofanos",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_neurofanos",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No matching seed, existing research dossier or staged discovery identity found. Project and proposed brand remain distinct from legal ownership of the University research and future IP licence.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_pulsemap",
+      "display_name": "PulseMap PAD Detector",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_pulsemap_pad_detector",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No matching seed, existing research dossier or staged discovery identity found. Project/device/legal contracting entity mapping remains unresolved.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_ivf",
+      "display_name": "IVF Decision Support Tool",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_ivf_tool",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Proposed correspondence with seed v_ivf_tool (IVF support tool), supported by the same university article. No mapping acceptance or legal identity inferred.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_vistavision",
+      "display_name": "VistaVision",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_vistavision",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No matching seed, existing research dossier or staged discovery identity found. The portfolio project name does not establish a legal entity or operating status.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_toku",
+      "display_name": "Toku Eyes / Toku Inc. (unresolved)",
+      "subject_kind": "venture_brand",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_toku_eyes",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Staged discovery_toku and discovery_tokueyes already have an unresolved alias case. No legacy seed identity exists. Toku Eyes, Toku Inc., product labels and legal continuity remain unresolved; financing is kept as the investor’s separate report.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    }
+  ],
+  "parties": [],
+  "sources": [
+    {
+      "source_id": "src_ht_formus22",
+      "title": "Formus Labs Raises $5 Million; Partners With Zimmer Biomet",
+      "url": "https://www.prnewswire.com/news-releases/formus-labs-raises-5-million-to-automate-orthopedic-surgery-planning-partners-with-zimmer-biomet-to-supercharge-global-launch-301473244.html",
+      "publisher": "PR Newswire (release provided by Formus Labs)",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Company-authored release; the host is not an independent clinical evaluator."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus_repost",
+      "title": "Formus Labs Raises $5 Million (company repost)",
+      "url": "https://www.formus.com/news/formus-labs-raises-5-million-to-automate-orthopedic-surgery-planning-partners-with-zimmer-biomet-to-supercharge-global-launch",
+      "publisher": "Formus Labs",
+      "publisher_role": "company",
+      "published_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Header displays May 22, 2026 while body dateline says February 2, 2022. Use the original wire release for announcement chronology; do not count as another financing."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus23",
+      "title": "Formus Hip K213272: decision letter and applicant 510(k) summary",
+      "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K213272.pdf",
+      "publisher": "US FDA",
+      "publisher_role": "regulator",
+      "published_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Letter and summary dated 31 March 2023; the web publication date is unknown. Applicant performance claims remain applicant responsibility, despite regulator hosting."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus26",
+      "title": "Formus Labs Hip Platform Receives FDA Clearance!",
+      "url": "https://www.formus.com/news/formus-labs-hip-platform-receives-fda-clearance",
+      "publisher": "Formus Labs",
+      "publisher_role": "company",
+      "published_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Submission identifier and product-version correspondence with K213272 are not established. The displayed page date is not a verified new clearance date."
+      ]
+    },
+    {
+      "source_id": "src_ht_n22",
+      "title": "Cutting-edge brain technology takes out top Velocity prize",
+      "url": "https://www.auckland.ac.nz/en/news/2022/11/01/brain-tech-takes-out-top-velocity-prize.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Team descriptions are proposed benefits, not measured provider outcomes."
+      ]
+    },
+    {
+      "source_id": "src_ht_n23",
+      "title": "Making brain surgery smarter with artificial intelligence",
+      "url": "https://www.auckland.ac.nz/en/news/2023/11/10/making-brain-surgery-smarter-artificial-intelligence.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Endeavour funding belongs to a university research team. Future licensing and a proposed pre-seed raise are distinct from closed VC financing."
+      ]
+    },
+    {
+      "source_id": "src_ht_p26",
+      "title": "Medtech-iQ prize awarded to PulseMap PAD Detector",
+      "url": "https://medtechiq.org.nz/news/medtech-iq-tamaki-makaurau-prize-was-awarded-to-pulsemap-pad-detector",
+      "publisher": "Medtech-iQ Tāmaki Makaurau",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2026-06-05",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "An award and intended screening use do not establish performance, modality details or a provider evaluation."
+      ]
+    },
+    {
+      "source_id": "src_ht_i25",
+      "title": "Start-ups reach for the stars – literally – in $100k Challenge",
+      "url": "https://www.auckland.ac.nz/en/news/2025/10/17/start-ups-reach-for-the-stars---literally---in--100k-challenge-.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Clinic co-development is not a completed evaluation or paid deployment; team plans remain prospective."
+      ]
+    },
+    {
+      "source_id": "src_ht_x25",
+      "title": "The latest start-ups emerging from the University’s incubator",
+      "url": "https://www.auckland.ac.nz/en/news/2025/08/25/latest-start-ups-emerging-from-the-universitys-incubator.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2025-08-25",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "The one-sentence VistaVision description does not establish deployed hardware, regulatory status or evaluated clinical performance."
+      ]
+    },
+    {
+      "source_id": "src_ht_t22",
+      "title": "Eyes wide open – the journey from academic to entrepreneur",
+      "url": "https://www.auckland.ac.nz/en/news/2022/06/28/eyes-wide-open-academic-entrepreneur.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2022-06-28",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "A reported clinic count does not establish payment; the source distinguishes wellness positioning from future diagnostic ambitions."
+      ]
+    },
+    {
+      "source_id": "src_ht_t23",
+      "title": "Toku Inc. Series A Preferred Investment Round",
+      "url": "https://www.nationalvision.com/news/2023/04/17/toku-inc-series-a-preferred-investment-round-led-by-national-vision-inc-and-topcon-healthcare/",
+      "publisher": "National Vision",
+      "publisher_role": "investor",
+      "published_time": {
+        "value": "2023-04-17",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Investor-hosted financing announcement. Product-specific regulatory status, payer and identity correspondence are not established."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_ht_formus_solution",
+      "subject_id": "subj_ht_formus",
+      "field": "solution",
+      "paraphrase": "The release describes automated image-based 3D planning for joint replacement.",
+      "source_id": "src_ht_formus22",
+      "locator": "Opening and platform paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_users",
+      "subject_id": "subj_ht_formus",
+      "field": "intended_user",
+      "paraphrase": "Orthopaedic surgeons are the intended users.",
+      "source_id": "src_ht_formus22",
+      "locator": "Platform and surgeon-specific plans paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_partner",
+      "subject_id": "subj_ht_formus",
+      "field": "distribution_channel",
+      "paraphrase": "Formus announced co-development and commercialisation with Zimmer Biomet for Australia and New Zealand.",
+      "source_id": "src_ht_formus22",
+      "locator": "Partnership paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_finance",
+      "subject_id": "subj_ht_formus",
+      "field": "financing_amount",
+      "paraphrase": "Formus announced US$5 million raised; this is venture financing, not sales.",
+      "source_id": "src_ht_formus22",
+      "locator": "Opening and investment paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": {
+        "amount": 5000000,
+        "currency": {
+          "value": "USD",
+          "unknown_reason": null
+        },
+        "scope": "round_total",
+        "unit": "round",
+        "billing_interval": "not_applicable",
+        "qualifier": "exact_reported"
+      },
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_evaluation_plan",
+      "subject_id": "subj_ht_formus",
+      "field": "validation_requirement",
+      "paraphrase": "US product evaluation was planned after expected regulatory clearance; no completed evaluation is established by this release.",
+      "source_id": "src_ht_formus22",
+      "locator": "Final paragraph before About Formus Labs",
+      "assertion_nature": "intention_target",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_launch_target",
+      "subject_id": "subj_ht_formus",
+      "field": "launch_target",
+      "paraphrase": "ANZ Hip launch was planned for February 2022, not documented here as completed.",
+      "source_id": "src_ht_formus22",
+      "locator": "Final paragraph before About Formus Labs",
+      "assertion_nature": "intention_target",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": "2022-02",
+        "precision": "month",
+        "basis": "Prospective timing as stated; no completion inferred.",
+        "unknown_reason": null
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_repost_date",
+      "subject_id": "subj_ht_formus",
+      "field": "outcome",
+      "paraphrase": "The company repost has a May 2026 header and February 2022 body dateline.",
+      "source_id": "src_ht_formus_repost",
+      "locator": "Page header and opening dateline",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_reg23",
+      "subject_id": "subj_ht_formus",
+      "field": "regulatory_record",
+      "paraphrase": "FDA’s K213272 letter records substantial equivalence for Formus Hip on 31 March 2023.",
+      "source_id": "src_ht_formus23",
+      "locator": "PDF pp. 1–2, decision letter",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "regulator",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": "2023-03-31",
+        "precision": "day",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2023-03-31",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_workflow23",
+      "subject_id": "subj_ht_formus",
+      "field": "technology",
+      "paraphrase": "The applicant describes CT-to-3D hip planning, PACS input, clinician adjustment and PDF output.",
+      "source_id": "src_ht_formus23",
+      "locator": "PDF pp. 3–5, Indications for Use and Device Description",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Applicant summary hosted by FDA.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-03-31",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_validation23",
+      "subject_id": "subj_ht_formus",
+      "field": "prototype_testing",
+      "paraphrase": "The applicant reports software tests, segmentation validation on 60 US patient images and implant-sizing validation on 133 Australian patient images.",
+      "source_id": "src_ht_formus23",
+      "locator": "PDF pp. 7–8, §8 Non-clinical Performance Data",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Applicant summary hosted by FDA.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-03-31",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_limits23",
+      "subject_id": "subj_ht_formus",
+      "field": "validation_requirement",
+      "paraphrase": "The summary states substantial equivalence was not based on clinical performance data.",
+      "source_id": "src_ht_formus23",
+      "locator": "PDF p. 8, §9 Clinical Performance Data",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Applicant summary hosted by FDA.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-03-31",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_reg26",
+      "subject_id": "subj_ht_formus",
+      "field": "regulatory_record",
+      "paraphrase": "A separate company page reports Formus Hip clearance; its header says 22 May 2026, with no submission number.",
+      "source_id": "src_ht_formus26",
+      "locator": "Page header and opening announcement",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "limitations": [
+        "Attributed source claim, not independent acceptance.",
+        "Do not count as a second clearance or correct K213272’s date without product/submission reconciliation."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_solution",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "solution",
+      "paraphrase": "The university describes an early image-guided tool using computer vision and AI for real-time neurosurgical guidance.",
+      "source_id": "src_ht_n22",
+      "locator": "Neurofanos introduction and Safaei description",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_user",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "intended_user",
+      "paraphrase": "Neurosurgeons are the intended users.",
+      "source_id": "src_ht_n22",
+      "locator": "Neurofanos introduction and surgeon-navigation paragraphs",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_award",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "award_recognition",
+      "paraphrase": "The university reports a 2022 Velocity win with $25,000 competition seed capital. This is an award, not a VC round.",
+      "source_id": "src_ht_n22",
+      "locator": "Team and first-place prize paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_grant",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "outcome",
+      "paraphrase": "The university reports $1 million in September 2023 Endeavour Smart Ideas research funding to its research team, with eventual licensing to Neurofanos planned. This is not a reported equity investment in the venture.",
+      "source_id": "src_ht_n23",
+      "locator": "In September this year paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": "2023-09",
+        "precision": "month",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance.",
+        "Currency code is not explicit in the inspected paragraph. Grant amount remains text: the 0.2.1 money scopes cannot represent a research grant."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_licence",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "business_model",
+      "paraphrase": "The team was negotiating an IP transfer agreement and preparing a pre-seed capital round; completion is not reported.",
+      "source_id": "src_ht_n23",
+      "locator": "UniServices assistance and IP transfer paragraph",
+      "assertion_nature": "intention_target",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_regulatory",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "validation_requirement",
+      "paraphrase": "The founder described the neuro-navigation regulatory pathway as a costly challenge ahead.",
+      "source_id": "src_ht_n23",
+      "locator": "Regulatory environment quotation",
+      "assertion_nature": "intention_target",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_pulse_solution",
+      "subject_id": "subj_ht_pulsemap",
+      "field": "solution",
+      "paraphrase": "The prize sponsor describes a proposed portable, non-invasive vascular screening device for earlier peripheral arterial disease detection.",
+      "source_id": "src_ht_p26",
+      "locator": "At the 2026 Velocity Ideas Challenge paragraph",
+      "assertion_nature": "proposal",
+      "source_relationship": "other_identified",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-06-05",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "PulseMap PAD Detector proposal",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_pulse_award",
+      "subject_id": "subj_ht_pulsemap",
+      "field": "award_recognition",
+      "paraphrase": "Medtech-iQ reports awarding the project its 2026 Velocity Ideas Challenge prize.",
+      "source_id": "src_ht_p26",
+      "locator": "At the 2026 Velocity Ideas Challenge paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "other_identified",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-06-05",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "PulseMap PAD Detector proposal",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_solution",
+      "subject_id": "subj_ht_ivf",
+      "field": "solution",
+      "paraphrase": "The university describes AI embryo assessment using multimodal data, cycle analysis and imaging support.",
+      "source_id": "src_ht_i25",
+      "locator": "First-place IVF support tool section",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_user",
+      "subject_id": "subj_ht_ivf",
+      "field": "intended_user",
+      "paraphrase": "Embryologists are the intended decision-support users.",
+      "source_id": "src_ht_i25",
+      "locator": "Deep learning and informed decisions paragraph",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_development",
+      "subject_id": "subj_ht_ivf",
+      "field": "research_origin",
+      "paraphrase": "The source reports development with Fertility Associates and prior MBIE Smart Ideas funding to university supervisors.",
+      "source_id": "src_ht_i25",
+      "locator": "Developed with Fertility Associates and initial concept paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_evaluation_plan",
+      "subject_id": "subj_ht_ivf",
+      "field": "validation_requirement",
+      "paraphrase": "The team planned a clinic-facing interface, real-world testing, usability feedback and performance validation before broader deployment.",
+      "source_id": "src_ht_i25",
+      "locator": "Next focus and collaborate closely paragraphs",
+      "assertion_nature": "intention_target",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_award",
+      "subject_id": "subj_ht_ivf",
+      "field": "award_recognition",
+      "paraphrase": "The university reports first place and $25,000 in the 2025 competition; this is award recognition, not a financing round.",
+      "source_id": "src_ht_i25",
+      "locator": "First place paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": "2025-10-15",
+        "precision": "day",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_vista_solution",
+      "subject_id": "subj_ht_vistavision",
+      "field": "solution",
+      "paraphrase": "The university describes real-time remote eye care for rural patients through telerobotic technology.",
+      "source_id": "src_ht_x25",
+      "locator": "2025 Venture Lab cohort / VistaVision entry",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-08-25",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_vista_beneficiary",
+      "subject_id": "subj_ht_vistavision",
+      "field": "intended_beneficiary",
+      "paraphrase": "Rural patients are the stated beneficiaries.",
+      "source_id": "src_ht_x25",
+      "locator": "2025 Venture Lab cohort / VistaVision entry",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-08-25",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_vista_incubation",
+      "subject_id": "subj_ht_vistavision",
+      "field": "incubation",
+      "paraphrase": "VistaVision is listed in the 2025 Venture Lab cohort.",
+      "source_id": "src_ht_x25",
+      "locator": "2025 Venture Lab cohort / VistaVision entry",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-08-25",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_toku_solution",
+      "subject_id": "subj_ht_toku",
+      "field": "solution",
+      "paraphrase": "The university describes AI analysis of retinal images for health-risk screening.",
+      "source_id": "src_ht_t22",
+      "locator": "Opening product description",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-06-28",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_toku_wellness",
+      "subject_id": "subj_ht_toku",
+      "field": "regulatory_record",
+      "paraphrase": "The 2022 profile describes ORAiCLE and THEIA as wellness products rather than diagnostic tools, with diagnostic ambitions still prospective.",
+      "source_id": "src_ht_t22",
+      "locator": "Wellness positioning and regulatory strategy paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-06-28",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_toku_clinics",
+      "subject_id": "subj_ht_toku",
+      "field": "documented_user",
+      "paraphrase": "The university reports operation in over 70 clinics worldwide; it does not identify first paid deployment.",
+      "source_id": "src_ht_t22",
+      "locator": "Opening product description",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-06-28",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_toku_finance23",
+      "subject_id": "subj_ht_toku",
+      "field": "financing_amount",
+      "paraphrase": "National Vision reports a $8 million Series A Preferred round for Toku Inc., co-led with Topcon Healthcare. Currency and correspondence with the earlier product/entity labels remain unresolved.",
+      "source_id": "src_ht_t23",
+      "locator": "Opening financing paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "investor",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-04-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": {
+        "amount": 8000000,
+        "currency": {
+          "value": null,
+          "unknown_reason": "not_stated_in_inspected_sources"
+        },
+        "scope": "round_total",
+        "unit": "round",
+        "billing_interval": "not_applicable",
+        "qualifier": "exact_reported"
+      },
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event_id": "event_ht_formus_finance",
+      "subject_id": "subj_ht_formus",
+      "event_kind": "financing",
+      "record_status": "source_reported_candidate",
+      "scenario": "reported_occurrence",
+      "event_state": "completed",
+      "state_basis_report_ids": [
+        "report_ht_formus_finance"
+      ],
+      "occurrence_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "identity_resolution": "single_candidate",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "limitations": [
+        "Source-reported state only. Financing is not a provider purchase; a launch target is not completed deployment."
+      ]
+    },
+    {
+      "event_id": "event_ht_formus_launch_target",
+      "subject_id": "subj_ht_formus",
+      "event_kind": "market_launch",
+      "record_status": "source_reported_candidate",
+      "scenario": "target",
+      "event_state": "announced",
+      "state_basis_report_ids": [
+        "report_ht_formus_launch_target"
+      ],
+      "occurrence_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "target_time": {
+        "value": "2022-02",
+        "precision": "month",
+        "basis": "Prospective timing as stated; no completion inferred.",
+        "unknown_reason": null
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "identity_resolution": "single_candidate",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "limitations": [
+        "Source-reported state only. Financing is not a provider purchase; a launch target is not completed deployment."
+      ]
+    }
+  ],
+  "event_reports": [
+    {
+      "report_id": "report_ht_formus_finance",
+      "event_id": "event_ht_formus_finance",
+      "subject_id": "subj_ht_formus",
+      "source_id": "src_ht_formus22",
+      "observation_ids": [
+        "obs_ht_formus_finance"
+      ],
+      "reported_event_state": "completed",
+      "reported_occurrence_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "reported_target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "locator": "Opening and investment paragraphs",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "limitations": [
+        "Announcement, event and target dates remain distinct."
+      ]
+    },
+    {
+      "report_id": "report_ht_formus_launch_target",
+      "event_id": "event_ht_formus_launch_target",
+      "subject_id": "subj_ht_formus",
+      "source_id": "src_ht_formus22",
+      "observation_ids": [
+        "obs_ht_formus_launch_target"
+      ],
+      "reported_event_state": "announced",
+      "reported_occurrence_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "reported_target_time": {
+        "value": "2022-02",
+        "precision": "month",
+        "basis": "Prospective timing as stated; no completion inferred.",
+        "unknown_reason": null
+      },
+      "assertion_nature": "intention_target",
+      "source_relationship": "company",
+      "locator": "Final paragraph before About Formus Labs",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "limitations": [
+        "Announcement, event and target dates remain distinct."
+      ]
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "unknown_ht_formus_provider_criteria",
+      "subject_id": "subj_ht_formus",
+      "field": "provider_criteria",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "Provider-defined criteria to admit this product to an evaluation are not established.",
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_formus22",
+        "src_ht_formus23",
+        "src_ht_formus26",
+        "src_ht_formus_repost"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_formus_paid_deployment",
+      "subject_id": "subj_ht_formus",
+      "field": "paid_deployment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "First paid provider deployment, contracting party, budget authority and date are not established.",
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_formus22",
+        "src_ht_formus23",
+        "src_ht_formus26",
+        "src_ht_formus_repost"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_formus_early_snapshot",
+      "subject_id": "subj_ht_formus",
+      "field": "early_snapshot",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "No verified same-stage entry anchor or historical web-availability witness assembled. Earlier development may exist.",
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_formus22",
+        "src_ht_formus23",
+        "src_ht_formus26",
+        "src_ht_formus_repost"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_formus_legal_identity",
+      "subject_id": "subj_ht_formus",
+      "field": "legal_identity",
+      "value": null,
+      "reason": "identity_unresolved",
+      "explanation": "Project/product/legal-entity correspondence remains unresolved.",
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_formus22",
+        "src_ht_formus23",
+        "src_ht_formus26",
+        "src_ht_formus_repost"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_neurofanos_provider_criteria",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "provider_criteria",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "Provider-defined evaluation admission criteria and named completed evaluation are not established.",
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_n22",
+        "src_ht_n23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_neurofanos_paid_deployment",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "paid_deployment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "First paid deployment, payer, procurement authority and occurrence date remain unknown.",
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_n22",
+        "src_ht_n23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_neurofanos_early_snapshot",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "early_snapshot",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "No verified same-stage entry anchor or archived source-availability witness assembled.",
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_n22",
+        "src_ht_n23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_neurofanos_legal_identity",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "legal_identity",
+      "value": null,
+      "reason": "identity_unresolved",
+      "explanation": "Project, product, research owner and legal contracting party remain unresolved.",
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_n22",
+        "src_ht_n23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_pulsemap_provider_criteria",
+      "subject_id": "subj_ht_pulsemap",
+      "field": "provider_criteria",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "Provider-defined evaluation admission criteria and named completed evaluation are not established.",
+      "scope": {
+        "product": "PulseMap PAD Detector proposal",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_p26"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_pulsemap_paid_deployment",
+      "subject_id": "subj_ht_pulsemap",
+      "field": "paid_deployment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "First paid deployment, payer, procurement authority and occurrence date remain unknown.",
+      "scope": {
+        "product": "PulseMap PAD Detector proposal",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_p26"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_pulsemap_early_snapshot",
+      "subject_id": "subj_ht_pulsemap",
+      "field": "early_snapshot",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "No verified same-stage entry anchor or archived source-availability witness assembled.",
+      "scope": {
+        "product": "PulseMap PAD Detector proposal",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_p26"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_pulsemap_legal_identity",
+      "subject_id": "subj_ht_pulsemap",
+      "field": "legal_identity",
+      "value": null,
+      "reason": "identity_unresolved",
+      "explanation": "Project, product, research owner and legal contracting party remain unresolved.",
+      "scope": {
+        "product": "PulseMap PAD Detector proposal",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_p26"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_ivf_provider_criteria",
+      "subject_id": "subj_ht_ivf",
+      "field": "provider_criteria",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "Provider-defined evaluation admission criteria and named completed evaluation are not established.",
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_i25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_ivf_paid_deployment",
+      "subject_id": "subj_ht_ivf",
+      "field": "paid_deployment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "First paid deployment, payer, procurement authority and occurrence date remain unknown.",
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_i25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_ivf_early_snapshot",
+      "subject_id": "subj_ht_ivf",
+      "field": "early_snapshot",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "No verified same-stage entry anchor or archived source-availability witness assembled.",
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_i25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_ivf_legal_identity",
+      "subject_id": "subj_ht_ivf",
+      "field": "legal_identity",
+      "value": null,
+      "reason": "identity_unresolved",
+      "explanation": "Project, product, research owner and legal contracting party remain unresolved.",
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_i25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_vistavision_provider_criteria",
+      "subject_id": "subj_ht_vistavision",
+      "field": "provider_criteria",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "Provider-defined evaluation admission criteria and named completed evaluation are not established.",
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_x25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_vistavision_paid_deployment",
+      "subject_id": "subj_ht_vistavision",
+      "field": "paid_deployment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "First paid deployment, payer, procurement authority and occurrence date remain unknown.",
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_x25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_vistavision_early_snapshot",
+      "subject_id": "subj_ht_vistavision",
+      "field": "early_snapshot",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "No verified same-stage entry anchor or archived source-availability witness assembled.",
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_x25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_vistavision_legal_identity",
+      "subject_id": "subj_ht_vistavision",
+      "field": "legal_identity",
+      "value": null,
+      "reason": "identity_unresolved",
+      "explanation": "Project, product, research owner and legal contracting party remain unresolved.",
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_x25"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_toku_provider_criteria",
+      "subject_id": "subj_ht_toku",
+      "field": "provider_criteria",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "Provider-defined evaluation admission criteria and named completed evaluation are not established.",
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_t22",
+        "src_ht_t23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_toku_paid_deployment",
+      "subject_id": "subj_ht_toku",
+      "field": "paid_deployment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "First paid deployment, payer, procurement authority and occurrence date remain unknown.",
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_t22",
+        "src_ht_t23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_toku_early_snapshot",
+      "subject_id": "subj_ht_toku",
+      "field": "early_snapshot",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "No verified same-stage entry anchor or archived source-availability witness assembled.",
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_t22",
+        "src_ht_t23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_toku_legal_identity",
+      "subject_id": "subj_ht_toku",
+      "field": "legal_identity",
+      "value": null,
+      "reason": "identity_unresolved",
+      "explanation": "Project, product, research owner and legal contracting party remain unresolved.",
+      "scope": {
+        "product": "Toku Eyes retinal-imaging products; Toku Inc. correspondence unresolved",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "inspected_source_ids": [
+        "src_ht_t22",
+        "src_ht_t23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    }
+  ],
+  "proposed_annotations": [],
+  "readiness": [
+    {
+      "readiness_id": "ready_ht_neuro_formus",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_neurofanos",
+        "subj_ht_formus"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_neuro_formus",
+          "description": "Sourced descriptions support a bounded analogy; provider prerequisites and historical same-stage equivalence remain unresolved.",
+          "required_subject_ids": [
+            "subj_ht_neurofanos",
+            "subj_ht_formus"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_neuro_solution",
+            "obs_ht_neuro_user",
+            "obs_ht_formus_solution",
+            "obs_ht_formus_users",
+            "obs_ht_formus_workflow23",
+            "obs_ht_formus_validation23",
+            "obs_ht_formus_limits23",
+            "obs_ht_formus_partner",
+            "obs_ht_formus_finance",
+            "obs_ht_formus_evaluation_plan",
+            "obs_ht_formus_launch_target",
+            "obs_ht_formus_repost_date",
+            "obs_ht_formus_reg23",
+            "obs_ht_formus_reg26"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_neurofanos_provider_criteria",
+            "unknown_ht_neurofanos_early_snapshot",
+            "unknown_ht_formus_provider_criteria"
+          ],
+          "unresolved_case_ids": [
+            "case_ht_formus_clearance"
+          ]
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_neuro_solution",
+        "obs_ht_neuro_user",
+        "obs_ht_formus_solution",
+        "obs_ht_formus_users",
+        "obs_ht_formus_workflow23",
+        "obs_ht_formus_validation23",
+        "obs_ht_formus_limits23",
+        "obs_ht_formus_partner",
+        "obs_ht_formus_finance",
+        "obs_ht_formus_evaluation_plan",
+        "obs_ht_formus_launch_target",
+        "obs_ht_formus_repost_date",
+        "obs_ht_formus_reg23",
+        "obs_ht_formus_reg26"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_neurofanos_provider_criteria",
+        "unknown_ht_neurofanos_early_snapshot",
+        "unknown_ht_formus_provider_criteria"
+      ],
+      "unresolved_case_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_neuro_formus_1",
+          "subject_ids": [
+            "subj_ht_formus",
+            "subj_ht_neurofanos"
+          ],
+          "text": "Match rationale: both descriptions concern image-derived guidance for a surgical specialist.",
+          "basis_observation_ids": [
+            "obs_ht_neuro_solution",
+            "obs_ht_neuro_user",
+            "obs_ht_formus_solution",
+            "obs_ht_formus_users"
+          ],
+          "source_ids": [
+            "src_ht_formus22",
+            "src_ht_n22"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_neuro_formus_2",
+          "subject_ids": [
+            "subj_ht_formus",
+            "subj_ht_neurofanos"
+          ],
+          "text": "Material difference: real-time intracranial navigation differs from preoperative CT-based hip planning; validation tasks cannot be transferred unchanged.",
+          "basis_observation_ids": [
+            "obs_ht_neuro_solution",
+            "obs_ht_formus_workflow23"
+          ],
+          "source_ids": [
+            "src_ht_formus23",
+            "src_ht_n22"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_neuro_formus_3",
+          "subject_ids": [
+            "subj_ht_formus"
+          ],
+          "text": "Pathway precedent: inspect the comparator and clinician review design in the Formus applicant summary. It does not establish Neurofanos provider requirements.",
+          "basis_observation_ids": [
+            "obs_ht_formus_validation23",
+            "obs_ht_formus_limits23"
+          ],
+          "source_ids": [
+            "src_ht_formus23"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "Verified same-stage similarity; provider-mandated admission criteria; causal requirements for adoption; completed paid deployment; time to adoption or success probability."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "Pathway precedent only. Surgical image-to-decision overlap supports focused diligence; anatomy, timing and safety context differ. Research grants and planned licences are separate from venture financing and procurement.",
+      "independent_relevance_judgment": false
+    },
+    {
+      "readiness_id": "ready_ht_ivf_formus",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_ivf",
+        "subj_ht_formus"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_ivf_formus",
+          "description": "Sourced descriptions support a bounded analogy; provider prerequisites and historical same-stage equivalence remain unresolved.",
+          "required_subject_ids": [
+            "subj_ht_ivf",
+            "subj_ht_formus"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_ivf_solution",
+            "obs_ht_ivf_user",
+            "obs_ht_ivf_evaluation_plan",
+            "obs_ht_formus_solution",
+            "obs_ht_formus_users",
+            "obs_ht_formus_evaluation_plan",
+            "obs_ht_formus_workflow23",
+            "obs_ht_formus_validation23",
+            "obs_ht_formus_limits23",
+            "obs_ht_formus_partner",
+            "obs_ht_formus_finance",
+            "obs_ht_formus_launch_target",
+            "obs_ht_formus_repost_date",
+            "obs_ht_formus_reg23",
+            "obs_ht_formus_reg26"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_ivf_provider_criteria",
+            "unknown_ht_ivf_paid_deployment",
+            "unknown_ht_ivf_early_snapshot"
+          ],
+          "unresolved_case_ids": [
+            "case_ht_formus_clearance"
+          ]
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_ivf_solution",
+        "obs_ht_ivf_user",
+        "obs_ht_ivf_evaluation_plan",
+        "obs_ht_formus_solution",
+        "obs_ht_formus_users",
+        "obs_ht_formus_evaluation_plan",
+        "obs_ht_formus_workflow23",
+        "obs_ht_formus_validation23",
+        "obs_ht_formus_limits23",
+        "obs_ht_formus_partner",
+        "obs_ht_formus_finance",
+        "obs_ht_formus_launch_target",
+        "obs_ht_formus_repost_date",
+        "obs_ht_formus_reg23",
+        "obs_ht_formus_reg26"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_ivf_provider_criteria",
+        "unknown_ht_ivf_paid_deployment",
+        "unknown_ht_ivf_early_snapshot"
+      ],
+      "unresolved_case_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_ivf_formus_1",
+          "subject_ids": [
+            "subj_ht_formus",
+            "subj_ht_ivf"
+          ],
+          "text": "Match rationale: both projects describe image-informed support for specialist decisions.",
+          "basis_observation_ids": [
+            "obs_ht_ivf_solution",
+            "obs_ht_ivf_user",
+            "obs_ht_formus_solution",
+            "obs_ht_formus_users"
+          ],
+          "source_ids": [
+            "src_ht_formus22",
+            "src_ht_i25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_ivf_formus_2",
+          "subject_ids": [
+            "subj_ht_formus",
+            "subj_ht_ivf"
+          ],
+          "text": "Material difference: embryo ranking and clinic testing plans differ from CT implant planning; endpoints and patient outcomes need separate validation.",
+          "basis_observation_ids": [
+            "obs_ht_ivf_solution",
+            "obs_ht_ivf_evaluation_plan",
+            "obs_ht_formus_workflow23"
+          ],
+          "source_ids": [
+            "src_ht_formus23",
+            "src_ht_i25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_ivf_formus_3",
+          "subject_ids": [
+            "subj_ht_formus",
+            "subj_ht_ivf"
+          ],
+          "text": "Evaluation boundary: each source describes planned evaluation in its respective context; later Formus validation cannot establish completed IVF clinic testing.",
+          "basis_observation_ids": [
+            "obs_ht_ivf_evaluation_plan",
+            "obs_ht_formus_evaluation_plan",
+            "obs_ht_formus_validation23",
+            "obs_ht_formus_limits23"
+          ],
+          "source_ids": [
+            "src_ht_formus22",
+            "src_ht_formus23",
+            "src_ht_i25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "Verified same-stage similarity; provider-mandated admission criteria; causal requirements for adoption; completed paid deployment; time to adoption or success probability."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "Pathway precedent only. Use Formus for questions about validation and specialist workflow. Clinic co-development does not establish a completed evaluation, and intended testing is not paid adoption.",
+      "independent_relevance_judgment": false
+    },
+    {
+      "readiness_id": "ready_ht_vista_toku",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_vistavision",
+        "subj_ht_toku"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_vista_toku",
+          "description": "Sourced descriptions support a bounded analogy; provider prerequisites and historical same-stage equivalence remain unresolved.",
+          "required_subject_ids": [
+            "subj_ht_vistavision",
+            "subj_ht_toku"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_vista_solution",
+            "obs_ht_vista_beneficiary",
+            "obs_ht_toku_solution",
+            "obs_ht_toku_wellness",
+            "obs_ht_toku_clinics",
+            "obs_ht_toku_finance23"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_vistavision_provider_criteria",
+            "unknown_ht_vistavision_paid_deployment",
+            "unknown_ht_vistavision_early_snapshot",
+            "unknown_ht_toku_legal_identity"
+          ],
+          "unresolved_case_ids": [
+            "case_ht_toku_identity"
+          ]
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_vista_solution",
+        "obs_ht_vista_beneficiary",
+        "obs_ht_toku_solution",
+        "obs_ht_toku_wellness",
+        "obs_ht_toku_clinics",
+        "obs_ht_toku_finance23"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_vistavision_provider_criteria",
+        "unknown_ht_vistavision_paid_deployment",
+        "unknown_ht_vistavision_early_snapshot",
+        "unknown_ht_toku_legal_identity"
+      ],
+      "unresolved_case_ids": [
+        "case_ht_toku_identity"
+      ],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_vista_toku_1",
+          "subject_ids": [
+            "subj_ht_toku",
+            "subj_ht_vistavision"
+          ],
+          "text": "Match rationale: both source descriptions concern expanding access to eye care. This is a commercialisation analogy.",
+          "basis_observation_ids": [
+            "obs_ht_vista_solution",
+            "obs_ht_vista_beneficiary",
+            "obs_ht_toku_solution"
+          ],
+          "source_ids": [
+            "src_ht_t22",
+            "src_ht_x25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_vista_toku_2",
+          "subject_ids": [
+            "subj_ht_toku",
+            "subj_ht_vistavision"
+          ],
+          "text": "Material difference: remote telerobotic care differs from retinal-analysis software; the 2022 Toku profile also distinguished wellness from diagnostic positioning.",
+          "basis_observation_ids": [
+            "obs_ht_vista_solution",
+            "obs_ht_toku_solution",
+            "obs_ht_toku_wellness"
+          ],
+          "source_ids": [
+            "src_ht_t22",
+            "src_ht_x25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_vista_toku_3",
+          "subject_ids": [
+            "subj_ht_toku"
+          ],
+          "text": "Later financing for Toku Inc. is an investor report, not evidence of VistaVision procurement or proven continuity between named products and entities.",
+          "basis_observation_ids": [
+            "obs_ht_toku_finance23"
+          ],
+          "source_ids": [
+            "src_ht_t23"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "Verified same-stage similarity; provider-mandated admission criteria; causal requirements for adoption; completed paid deployment; time to adoption or success probability."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "Pathway precedent only, scoped to eye-care commercialisation and product positioning. No close technical or same-stage equivalence is established; VistaVision evidence is one short portfolio description.",
+      "independent_relevance_judgment": false
+    },
+    {
+      "readiness_id": "ready_ht_pulsemap_comparison",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_pulsemap"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_pulsemap_comparison",
+          "description": "Sourced descriptions support a bounded analogy; provider prerequisites and historical same-stage equivalence remain unresolved.",
+          "required_subject_ids": [
+            "subj_ht_pulsemap"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_pulse_solution"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_pulsemap_provider_criteria",
+            "unknown_ht_pulsemap_paid_deployment",
+            "unknown_ht_pulsemap_early_snapshot"
+          ],
+          "unresolved_case_ids": []
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_pulse_solution"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_pulsemap_provider_criteria",
+        "unknown_ht_pulsemap_paid_deployment",
+        "unknown_ht_pulsemap_early_snapshot"
+      ],
+      "unresolved_case_ids": [],
+      "supported_conclusions": [],
+      "withheld_conclusions": [
+        "Verified same-stage similarity; provider-mandated admission criteria; causal requirements for adoption; completed paid deployment; time to adoption or success probability."
+      ],
+      "assessment": "abstain_on_requested_conclusion",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "Abstain: a portable PAD screening proposal and a prize do not establish its measurement modality, performance comparator, clinical users or an evaluated provider workflow. No close diagnostic-imaging peer is supported in this packet.",
+      "independent_relevance_judgment": false
+    }
+  ],
+  "reconciliation_cases": [
+    {
+      "case_id": "case_ht_formus_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_formus"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_formus_solution"
+      ],
+      "status": "open",
+      "rationale": "Proposed brand/project correspondence with seed v_formus and staged discovery_formuslabs / cand_formus. No identity decision supplied. Formus Hip and Formus Labs Ltd. are source labels, not an accepted legal-entity crosswalk.",
+      "required_resolution": "Obtain an actual owner/independent brand-project mapping decision; reconcile product and legal-entity labels independently.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_ht_formus_clearance",
+      "case_kind": "date_or_scope_uncertainty",
+      "subject_ids": [
+        "subj_ht_formus"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_formus_reg23",
+        "obs_ht_formus_reg26",
+        "obs_ht_formus_repost_date"
+      ],
+      "status": "open",
+      "rationale": "K213272’s dated 2023 FDA letter and the company’s May 2026 header are distinct source claims. Repost date behaviour also makes header-only event inference unsafe.",
+      "required_resolution": "Identify the submission number and device version for the company report. Determine whether it is a repost, another product version or another submission; preserve both claims meanwhile.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_ht_neurofanos_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_neurofanos"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_neuro_solution"
+      ],
+      "status": "open",
+      "rationale": "No matching seed, existing research dossier or staged discovery identity found. Project and proposed brand remain distinct from legal ownership of the University research and future IP licence.",
+      "required_resolution": "Obtain actual brand/project correspondence and legal/product ownership evidence; record any genuine review decision separately.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_ht_pulsemap_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_pulsemap"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_pulse_solution"
+      ],
+      "status": "open",
+      "rationale": "No matching seed, existing research dossier or staged discovery identity found. Project/device/legal contracting entity mapping remains unresolved.",
+      "required_resolution": "Obtain actual brand/project correspondence and legal/product ownership evidence; record any genuine review decision separately.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_ht_ivf_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_ivf"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_ivf_solution"
+      ],
+      "status": "open",
+      "rationale": "Proposed correspondence with seed v_ivf_tool (IVF support tool), supported by the same university article. No mapping acceptance or legal identity inferred.",
+      "required_resolution": "Obtain actual brand/project correspondence and legal/product ownership evidence; record any genuine review decision separately.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_ht_vistavision_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_vistavision"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_vista_solution"
+      ],
+      "status": "open",
+      "rationale": "No matching seed, existing research dossier or staged discovery identity found. The portfolio project name does not establish a legal entity or operating status.",
+      "required_resolution": "Obtain actual brand/project correspondence and legal/product ownership evidence; record any genuine review decision separately.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_ht_toku_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_toku"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_toku_solution"
+      ],
+      "status": "open",
+      "rationale": "Staged discovery_toku and discovery_tokueyes already have an unresolved alias case. No legacy seed identity exists. Toku Eyes, Toku Inc., product labels and legal continuity remain unresolved; financing is kept as the investor’s separate report.",
+      "required_resolution": "Obtain actual brand/project correspondence and legal/product ownership evidence; record any genuine review decision separately.",
+      "aggregation_allowed": false
+    }
+  ],
+  "access_gaps": [],
+  "review_events": [],
+  "metadata": {
+    "format_version": "0.2.1",
+    "prepared_on": "2026-11-19",
+    "purpose": "Four additional university dossiers and Toku pathway reference. Exact shared Formus records reuse the original stable IDs.",
+    "application_import_compatible": false,
+    "application_modified": false,
+    "modification_scope": "this_research_task_only",
+    "concurrent_application_changes_observed": true,
+    "inventory_modified": false,
+    "accepted_records_count": 0,
+    "source_authority_weighting": "none",
+    "limitations": [
+      "Research packet only; imported through the separate research adapter, never the legacy seed.",
+      "Assistant source checks are extraction checks, not independent factual acceptance or relevance judgments.",
+      "No archived availability witness was established; all historical comparisons must abstain. Document dates do not establish web availability.",
+      "Provider admission criteria, first paid deployment and representative same-stage anchors remain unestablished.",
+      "Selected cases are comparison material, not a forecast training cohort."
+    ]
+  }
+}

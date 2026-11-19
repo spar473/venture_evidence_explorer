@@ -33,3 +33,38 @@ The ultimate product is decision support for the NZ healthtech pipeline. A found
 - Avoid importing a duplicate company because a product, research project and legal entity have different labels. Leave patient-level data out of the workflow.
 
 The next review is the MRI comparison with its first two reference dossiers. Review the question, time anchor, match rationale and unknowns before expanding the interface.
+
+## Implemented pilot · 19 November 2026
+
+The first comparison and four university extensions now use the existing **Research dossiers** entry point and research 0.2.1 importer. Nothing is imported at server startup. The legacy ten-venture corpus and lexical B0 policy remain unchanged.
+
+From a checkout with the documented Python and Node dependencies installed:
+
+```sh
+npm --prefix frontend ci
+npm --prefix frontend run build
+python scripts/healthtech_demo.py --serve --evaluate
+```
+
+Open <http://127.0.0.1:8001>, choose **Research dossiers → Automated Breast MRI Reporting**, then **Provider evaluation comparison**. Volpara and Formus are curated **pathway precedents**. Each has cited match rationale, material differences, reference-document evidence, later reports and unresolved questions. Expand a reference claim to inspect its publisher, responsibility, locator, publication, retrieval, context, occurrence and target dates. Evidence links reveal the corresponding original dossier record.
+
+The script creates a fresh system-temporary database, validates/dry-runs/imports all three packets, verifies unchanged dry-run bytes and repeat-import rows, and refuses a nonempty explicit output directory. `--output-dir /tmp/my-new-healthtech-demo` selects a new/empty directory; omit `--serve` to prepare without starting a service. `--evaluate` exports the existing frozen B0 task/review workflow alongside curated research results and a separate blank research-review sheet. No relevance, factual-error or time-saving judgment is supplied.
+
+The MRI packet is [packet.json](../../research/healthtech-pilot/packet.json). The additional projects and Toku reference are in [extension.json](../../research/healthtech-pilot/extension.json). Both are standalone research packets. Shared Formus rows retain exactly the same IDs and semantic content; importing both does not duplicate them. [comparisons.json](../../research/healthtech-pilot/comparisons.json) is a strict, versioned editorial selection manifest referencing imported readiness records. It orders at most three peers; it supplies no score and changes no B0 method.
+
+| Selectable case | Current comparison | Boundary |
+|---|---|---|
+| Automated Breast MRI Reporting | Volpara; Formus | Breast-imaging domain and image-to-specialist workflow precedents; no established provider admission threshold |
+| Neurofanos | Formus | Surgical image guidance; intraoperative brain navigation differs from preoperative hip planning |
+| IVF Decision Support Tool | Formus | Specialist decision support and planned clinic evaluation; co-development is not completed evaluation |
+| VistaVision | Toku | Eye-care commercialisation analogy only; telerobotics differ from retinal-analysis software |
+| PulseMap PAD Detector | Abstain | Modality, performance comparator and evaluated provider workflow are insufficiently described |
+| RosterLab (existing dossier) | Abstain | A healthcare buyer and software vocabulary do not establish diagnostic-imaging relevance |
+
+Formus, Volpara and Toku can also be opened as their own dossiers. They do not recursively match back to the university queries. Alimetry and Wellumio remain inventory leads, with no new dossier imported in this pass.
+
+**Historical snapshots abstain.** The authoritative research 0.2.1 contract fixes historical availability to false and provides no dated archive-witness locator. A contemporaneously authored document retrieved today is useful research, but cannot prove availability at an earlier cutoff. The UI keeps reference-document dates separate from verified early-stage anchors, which remain unset. Future/overlapping partial dates and later assessments cannot qualify an earlier comparison. The cutoff controls the comparison panel; the full source dossier remains inspectable below it.
+
+Regulatory decisions and acquisition reports remain atomic observations because the existing event-kind enum cannot represent them. They appear in the comparison’s later-evidence section rather than being recast as financing or adoption. Neurofanos’s university research grant remains a text claim with its month precision: the contract’s monetary scopes do not support a grant, so no round-total or currency value is invented. Planned licences, clinic testing and launch targets remain intentions.
+
+See [SOURCE_LOG.md](SOURCE_LOG.md) for source checks and identity reconciliation, and [STATUS.md](STATUS.md) for the exact implementation checkpoint and executed checks. Scenario modelling, a historical availability-witness extension and any forecasting cohort remain follow-on work.

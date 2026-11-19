@@ -1,0 +1,157 @@
+{
+  "format_version": "evaluation-tasks:1",
+  "tasks": [
+    {
+      "query_id": "ht_mri",
+      "split": "development",
+      "group_id": "healthtech_pilot_development",
+      "identity_group_ids": [
+        "v_formus",
+        "v_ivf_tool",
+        "v_rosterlab"
+      ],
+      "status": "runnable",
+      "query_text": "clinical breast images software radiologist reporting",
+      "mode": "product_customer",
+      "inclusion_criteria": "Inspect provider evaluation evidence for MRI reporting; distinguish breast imaging from other specialist workflows.",
+      "possible_closer_cases": [
+        "v_formus",
+        "v_ivf_tool"
+      ],
+      "plausible_distractors": [
+        "v_rosterlab"
+      ],
+      "evidence_gaps": [
+        "Candidate suggestions are inspection hypotheses, not relevance grades.",
+        "B0 has only the unchanged ten-venture corpus; research dossiers are a separate, larger source graph.",
+        "Provider acceptance criteria, historical availability, paid deployment and independent human review remain pending."
+      ],
+      "selection_is_relevance_judgment": false
+    },
+    {
+      "query_id": "ht_neurofanos",
+      "split": "development",
+      "group_id": "healthtech_pilot_development",
+      "identity_group_ids": [
+        "v_formus",
+        "v_ivf_tool",
+        "v_rosterlab"
+      ],
+      "status": "runnable",
+      "query_text": "clinical image surgical navigation software",
+      "mode": "product_customer",
+      "inclusion_criteria": "Inspect specialist image-guidance analogies; distinguish real-time neuro-navigation from preoperative planning.",
+      "possible_closer_cases": [
+        "v_formus",
+        "v_atlasor"
+      ],
+      "plausible_distractors": [
+        "v_rosterlab"
+      ],
+      "evidence_gaps": [
+        "Candidate suggestions are inspection hypotheses, not relevance grades.",
+        "B0 has only the unchanged ten-venture corpus; research dossiers are a separate, larger source graph.",
+        "Provider acceptance criteria, historical availability, paid deployment and independent human review remain pending."
+      ],
+      "selection_is_relevance_judgment": false
+    },
+    {
+      "query_id": "ht_ivf",
+      "split": "development",
+      "group_id": "healthtech_pilot_development",
+      "identity_group_ids": [
+        "v_formus",
+        "v_ivf_tool",
+        "v_rosterlab"
+      ],
+      "status": "runnable",
+      "query_text": "embryo image assessment clinical decision support",
+      "mode": "product_customer",
+      "inclusion_criteria": "Inspect clinic testing and specialist support analogies; do not infer completed trials from co-development.",
+      "possible_closer_cases": [
+        "v_formus"
+      ],
+      "plausible_distractors": [
+        "v_rosterlab"
+      ],
+      "evidence_gaps": [
+        "Candidate suggestions are inspection hypotheses, not relevance grades.",
+        "B0 has only the unchanged ten-venture corpus; research dossiers are a separate, larger source graph.",
+        "Provider acceptance criteria, historical availability, paid deployment and independent human review remain pending."
+      ],
+      "selection_is_relevance_judgment": false
+    },
+    {
+      "query_id": "ht_vistavision",
+      "split": "development",
+      "group_id": "healthtech_pilot_development",
+      "identity_group_ids": [
+        "v_formus",
+        "v_ivf_tool",
+        "v_rosterlab"
+      ],
+      "status": "runnable",
+      "query_text": "remote eye care telerobotic rural patients",
+      "mode": "product_customer",
+      "inclusion_criteria": "Inspect eye-care commercialisation analogies; distinguish a telerobotic service from retinal software.",
+      "possible_closer_cases": [],
+      "plausible_distractors": [
+        "v_rosterlab"
+      ],
+      "evidence_gaps": [
+        "Candidate suggestions are inspection hypotheses, not relevance grades.",
+        "B0 has only the unchanged ten-venture corpus; research dossiers are a separate, larger source graph.",
+        "Provider acceptance criteria, historical availability, paid deployment and independent human review remain pending."
+      ],
+      "selection_is_relevance_judgment": false
+    },
+    {
+      "query_id": "ht_pulsemap",
+      "split": "development",
+      "group_id": "healthtech_pilot_development",
+      "identity_group_ids": [
+        "v_formus",
+        "v_ivf_tool",
+        "v_rosterlab"
+      ],
+      "status": "runnable",
+      "query_text": "portable peripheral arterial screening detector",
+      "mode": "product_customer",
+      "inclusion_criteria": "Sparse query: preserve unknown modality and evaluation evidence; abstention may be appropriate.",
+      "possible_closer_cases": [],
+      "plausible_distractors": [
+        "v_rosterlab"
+      ],
+      "evidence_gaps": [
+        "Candidate suggestions are inspection hypotheses, not relevance grades.",
+        "B0 has only the unchanged ten-venture corpus; research dossiers are a separate, larger source graph.",
+        "Provider acceptance criteria, historical availability, paid deployment and independent human review remain pending."
+      ],
+      "selection_is_relevance_judgment": false
+    },
+    {
+      "query_id": "ht_rosterlab",
+      "split": "development",
+      "group_id": "healthtech_pilot_development",
+      "identity_group_ids": [
+        "v_formus",
+        "v_ivf_tool",
+        "v_rosterlab"
+      ],
+      "status": "runnable",
+      "query_text": "healthcare staff roster optimisation software",
+      "mode": "product_customer",
+      "inclusion_criteria": "Contrast: a shared hospital buyer does not establish diagnostic-imaging similarity.",
+      "possible_closer_cases": [],
+      "plausible_distractors": [
+        "v_formus"
+      ],
+      "evidence_gaps": [
+        "Candidate suggestions are inspection hypotheses, not relevance grades.",
+        "B0 has only the unchanged ten-venture corpus; research dossiers are a separate, larger source graph.",
+        "Provider acceptance criteria, historical availability, paid deployment and independent human review remain pending."
+      ],
+      "selection_is_relevance_judgment": false
+    }
+  ]
+}

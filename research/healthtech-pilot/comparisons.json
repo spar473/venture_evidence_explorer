@@ -1,0 +1,125 @@
+{
+  "format_version": "healthtech-comparisons:1",
+  "prepared_on": "2026-11-19",
+  "selections": [
+    {
+      "subject_id": "subj_ht_mri",
+      "peers": [
+        {
+          "subject_id": "subj_ht_volpara",
+          "readiness_id": "ready_ht_mri_volpara",
+          "reference_document_date": "2010-10-07",
+          "reference_observation_ids": [
+            "obs_ht_volpara_solution",
+            "obs_ht_volpara_users",
+            "obs_ht_volpara_limits",
+            "obs_ht_volpara_validation",
+            "obs_ht_volpara_reg10"
+          ],
+          "later_observation_ids": [
+            "obs_ht_volpara_acquisition",
+            "obs_ht_volpara_sites"
+          ]
+        },
+        {
+          "subject_id": "subj_ht_formus",
+          "readiness_id": "ready_ht_mri_formus",
+          "reference_document_date": "2022-02-02",
+          "reference_observation_ids": [
+            "obs_ht_formus_solution",
+            "obs_ht_formus_users",
+            "obs_ht_formus_partner",
+            "obs_ht_formus_finance",
+            "obs_ht_formus_evaluation_plan",
+            "obs_ht_formus_launch_target"
+          ],
+          "later_observation_ids": [
+            "obs_ht_formus_reg23",
+            "obs_ht_formus_workflow23",
+            "obs_ht_formus_validation23",
+            "obs_ht_formus_limits23",
+            "obs_ht_formus_reg26",
+            "obs_ht_formus_repost_date"
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_neurofanos",
+      "peers": [
+        {
+          "subject_id": "subj_ht_formus",
+          "readiness_id": "ready_ht_neuro_formus",
+          "reference_document_date": "2022-02-02",
+          "reference_observation_ids": [
+            "obs_ht_formus_solution",
+            "obs_ht_formus_users",
+            "obs_ht_formus_partner",
+            "obs_ht_formus_finance",
+            "obs_ht_formus_evaluation_plan",
+            "obs_ht_formus_launch_target"
+          ],
+          "later_observation_ids": [
+            "obs_ht_formus_reg23",
+            "obs_ht_formus_workflow23",
+            "obs_ht_formus_validation23",
+            "obs_ht_formus_limits23",
+            "obs_ht_formus_reg26",
+            "obs_ht_formus_repost_date"
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_ivf",
+      "peers": [
+        {
+          "subject_id": "subj_ht_formus",
+          "readiness_id": "ready_ht_ivf_formus",
+          "reference_document_date": "2022-02-02",
+          "reference_observation_ids": [
+            "obs_ht_formus_solution",
+            "obs_ht_formus_users",
+            "obs_ht_formus_partner",
+            "obs_ht_formus_finance",
+            "obs_ht_formus_evaluation_plan",
+            "obs_ht_formus_launch_target"
+          ],
+          "later_observation_ids": [
+            "obs_ht_formus_reg23",
+            "obs_ht_formus_workflow23",
+            "obs_ht_formus_validation23",
+            "obs_ht_formus_limits23",
+            "obs_ht_formus_reg26",
+            "obs_ht_formus_repost_date"
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_vistavision",
+      "peers": [
+        {
+          "subject_id": "subj_ht_toku",
+          "readiness_id": "ready_ht_vista_toku",
+          "reference_document_date": "2022-06-28",
+          "reference_observation_ids": [
+            "obs_ht_toku_solution",
+            "obs_ht_toku_wellness",
+            "obs_ht_toku_clinics"
+          ],
+          "later_observation_ids": [
+            "obs_ht_toku_finance23"
+          ]
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_pulsemap",
+      "peers": [],
+      "gap_readiness_ids": [
+        "ready_ht_pulsemap_comparison"
+      ]
+    }
+  ]
+}

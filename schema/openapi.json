@@ -313,6 +313,23 @@
         "title": "Comparison",
         "type": "object"
       },
+      "ComparisonEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "observation": {
+            "$ref": "#/components/schemas/ResearchObservation"
+          },
+          "source": {
+            "$ref": "#/components/schemas/ResearchSource"
+          }
+        },
+        "required": [
+          "observation",
+          "source"
+        ],
+        "title": "ComparisonEvidence",
+        "type": "object"
+      },
       "ComparisonRequest": {
         "additionalProperties": false,
         "properties": {
@@ -1236,6 +1253,114 @@
         "title": "Health",
         "type": "object"
       },
+      "HealthtechComparison": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "gaps": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Gaps",
+            "type": "array"
+          },
+          "graph_sha256": {
+            "title": "Graph Sha256",
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Limitations",
+            "type": "array"
+          },
+          "peers": {
+            "items": {
+              "$ref": "#/components/schemas/PathwayPeer"
+            },
+            "title": "Peers",
+            "type": "array"
+          },
+          "policy_version": {
+            "title": "Policy Version",
+            "type": "string"
+          },
+          "question": {
+            "title": "Question",
+            "type": "string"
+          },
+          "same_stage_assessment": {
+            "const": "abstain",
+            "title": "Same Stage Assessment",
+            "type": "string"
+          },
+          "selection_sha256": {
+            "title": "Selection Sha256",
+            "type": "string"
+          },
+          "source_packet_sha256s": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Source Packet Sha256S",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "pathway_precedents",
+              "abstain"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "subject_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ComparisonEvidence"
+            },
+            "title": "Subject Evidence",
+            "type": "array"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "view": {
+            "enum": [
+              "research",
+              "historical"
+            ],
+            "title": "View",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_id",
+          "question",
+          "view",
+          "as_of",
+          "policy_version",
+          "selection_sha256",
+          "graph_sha256",
+          "source_packet_sha256s",
+          "same_stage_assessment",
+          "status",
+          "explanation",
+          "subject_evidence",
+          "peers",
+          "gaps",
+          "limitations"
+        ],
+        "title": "HealthtechComparison",
+        "type": "object"
+      },
       "HistoricalDate": {
         "additionalProperties": false,
         "properties": {
@@ -1703,6 +1828,76 @@
           "precision"
         ],
         "title": "PartialDate",
+        "type": "object"
+      },
+      "PathwayPeer": {
+        "additionalProperties": false,
+        "properties": {
+          "classification": {
+            "const": "pathway_precedent",
+            "title": "Classification",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "early_stage_anchor": {
+            "title": "Early Stage Anchor",
+            "type": "null"
+          },
+          "later_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ComparisonEvidence"
+            },
+            "title": "Later Evidence",
+            "type": "array"
+          },
+          "readiness": {
+            "$ref": "#/components/schemas/ResearchReadiness"
+          },
+          "reference_document_date": {
+            "title": "Reference Document Date",
+            "type": "string"
+          },
+          "reference_evidence": {
+            "items": {
+              "$ref": "#/components/schemas/ComparisonEvidence"
+            },
+            "title": "Reference Evidence",
+            "type": "array"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          },
+          "unknowns": {
+            "items": {
+              "$ref": "#/components/schemas/ResearchUnknown"
+            },
+            "title": "Unknowns",
+            "type": "array"
+          },
+          "unresolved_cases": {
+            "items": {
+              "$ref": "#/components/schemas/ResearchCase"
+            },
+            "title": "Unresolved Cases",
+            "type": "array"
+          }
+        },
+        "required": [
+          "subject_id",
+          "display_name",
+          "classification",
+          "reference_document_date",
+          "readiness",
+          "reference_evidence",
+          "later_evidence",
+          "unknowns",
+          "unresolved_cases"
+        ],
+        "title": "PathwayPeer",
         "type": "object"
       },
       "ProgrammeFacet": {
@@ -5555,6 +5750,85 @@
           }
         },
         "summary": "Research Subject"
+      }
+    },
+    "/api/research/subjects/{subject_id}/comparisons": {
+      "get": {
+        "operationId": "healthtech_comparisons_api_research_subjects__subject_id__comparisons_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subject_id",
+            "required": true,
+            "schema": {
+              "title": "Subject Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "as_of",
+            "required": true,
+            "schema": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "title": "As Of",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "view",
+            "required": false,
+            "schema": {
+              "default": "research",
+              "enum": [
+                "research",
+                "historical"
+              ],
+              "title": "View",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "packet_sha256",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Packet Sha256"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthtechComparison"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Healthtech Comparisons"
       }
     },
     "/api/ventures": {

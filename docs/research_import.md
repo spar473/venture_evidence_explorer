@@ -57,3 +57,15 @@ A decision must not predate any cited source inspection or relevant evidence ass
 Every cited item must resolve to an inspected source. A source-less subject name, party assertion or failed-access record cannot alone support either a resolution or rejection; cite the actual source-backed basis. Subject/scope checks still apply. These are necessary chronology/provenance checks, not authentication of the actor or proof that the evidence warrants the decision. Shared requirement subject coverage is recognized explicitly. Brand/project scope remains separate from legal identity.
 
 Only exact inspection/assessment/review dates constrain the decision day. Publication/event intervals, unknown occurrence dates and future target years are not promoted to invented inspection dates or upper-bound deadlines. All original raw partial dates remain intact. Invalid decisions/batches are rejected before graph/mapping writes; a rejected sidecar leaves mapping documents, decisions and research import rows unchanged. Applied migration files and existing decisions are not rewritten.
+
+## Healthtech packets · 19 November 2026
+
+`research/healthtech-pilot/packet.json` and `extension.json` use the unchanged research 0.2.1 contract and adapter. Each is independently valid. Reused Formus reference records keep identical stable IDs and semantic content across packets; membership/raw bytes preserve both inputs, while graph rows remain unique. New external application IDs are proposals only and missing targets stay quarantined. Existing Formus and IVF base IDs are proposed correspondences, never automatically resolved identities.
+
+```sh
+python scripts/import_research.py --input research/healthtech-pilot/packet.json --db /tmp/healthtech-demo.sqlite --as-of 2026-11-19 --report /tmp/healthtech-dry-run.json
+python scripts/import_research.py --input research/healthtech-pilot/packet.json --db /tmp/healthtech-demo.sqlite --as-of 2026-11-19 --apply --report /tmp/healthtech-import.json
+# Same commands with extension.json add the remaining projects and Toku.
+```
+
+Use a disposable bootstrapped database; `python scripts/healthtech_demo.py` prepares and verifies one without touching any existing database. See the [pilot guide](healthtech-pilot/README.md). The editorial comparison manifest is not an import packet or a new evidence namespace. It selects existing question-readiness records for display without projecting features into B0. Historical availability remains unrepresentable under 0.2.1, so these comparisons explicitly abstain in historical mode. Adding archive support requires a separately versioned, validated contract; no boolean or publication date is treated as an archive witness.

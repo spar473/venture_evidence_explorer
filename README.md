@@ -147,3 +147,14 @@ The implemented source and complete handover are on `implementation/vee-workbenc
 ## Consolidated project handover · 18 November 2026
 
 The latest end-to-end project context is [the master handover](handover/master-2026-11-18/Code_Agent_Handover_v2_2026-11-18.md). It covers the initial plan, expanded NZ research goals, implemented workflows, evidence boundaries, latest fixes and remaining work. [Start here](handover/master-2026-11-18/README.md) for the copy-ready new-chat prompt, complete project archive and snapshot verification. Use the current branch for development; archived source copies are frozen references.
+
+## NZ healthtech comparison pilot · 19 November 2026
+
+The healthtech branch adds source-attributed university dossiers and curated provider-evaluation pathway comparisons through **Research dossiers**. MRI Reporting opens Volpara and Formus precedents; Neurofanos, IVF and VistaVision have scoped analogies, while sparse PulseMap and the RosterLab contrast abstain. Historical snapshots abstain without archive availability evidence. B0, the original corpus and all existing import/review boundaries remain intact.
+
+```sh
+npm --prefix frontend run build
+python scripts/healthtech_demo.py --serve --evaluate
+```
+
+The command creates a disposable database, verifies dry-run and repeat-import safety, and serves on <http://127.0.0.1:8001>. See [the pilot guide](docs/healthtech-pilot/README.md) for dependency setup, evidence limits and reproducible commands, and [the checkpoint](docs/healthtech-pilot/STATUS.md) for actual verification results. No live database, deployment or outcome forecasting is included.
