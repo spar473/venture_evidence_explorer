@@ -1,0 +1,1812 @@
+{
+  "subjects": [
+    {
+      "subject_id": "subj_ht_mri",
+      "display_name": "Automated Breast MRI Reporting",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_automated_breast_mri_reporting",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No existing seed or staged discovery identity found. Proposed external ID is reserved only; no legacy venture is created. Project, product ownership and contracting entity remain unresolved.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_formus",
+      "display_name": "Formus Labs",
+      "subject_kind": "venture_brand",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_formus",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Proposed brand/project correspondence with seed v_formus and staged discovery_formuslabs / cand_formus. No identity decision supplied. Formus Hip and Formus Labs Ltd. are source labels, not an accepted legal-entity crosswalk.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_volpara",
+      "display_name": "Volpara Health Technologies",
+      "subject_kind": "venture_brand",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_volpara",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No existing seed or staged discovery identity found. Proposed external ID only. Matakina Technology Limited is named as the K102556 applicant; continuity with the later Volpara corporate group remains unresolved.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_pulsemap",
+      "display_name": "PulseMap PAD Detector",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_pulsemap_pad_detector",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No matching seed, existing research dossier or staged discovery identity found. Project/device/legal contracting entity mapping remains unresolved.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_vistavision",
+      "display_name": "VistaVision",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_vistavision",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No matching seed, existing research dossier or staged discovery identity found. The portfolio project name does not establish a legal entity or operating status.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_toku",
+      "display_name": "Toku Eyes / Toku Inc. (unresolved)",
+      "subject_kind": "venture_brand",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_toku_eyes",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Staged discovery_toku and discovery_tokueyes already have an unresolved alias case. No legacy seed identity exists. Toku Eyes, Toku Inc., product labels and legal continuity remain unresolved; financing is kept as the investor’s separate report.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    }
+  ],
+  "parties": [],
+  "sources": [
+    {
+      "source_id": "src_ht_formus22",
+      "title": "Formus Labs Raises $5 Million; Partners With Zimmer Biomet",
+      "url": "https://www.prnewswire.com/news-releases/formus-labs-raises-5-million-to-automate-orthopedic-surgery-planning-partners-with-zimmer-biomet-to-supercharge-global-launch-301473244.html",
+      "publisher": "PR Newswire (release provided by Formus Labs)",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Company-authored release; the host is not an independent clinical evaluator."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus23",
+      "title": "Formus Hip K213272: decision letter and applicant 510(k) summary",
+      "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf21/K213272.pdf",
+      "publisher": "US FDA",
+      "publisher_role": "regulator",
+      "published_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Letter and summary dated 31 March 2023; the web publication date is unknown. Applicant performance claims remain applicant responsibility, despite regulator hosting."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus26",
+      "title": "Formus Labs Hip Platform Receives FDA Clearance!",
+      "url": "https://www.formus.com/news/formus-labs-hip-platform-receives-fda-clearance",
+      "publisher": "Formus Labs",
+      "publisher_role": "company",
+      "published_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Submission identifier and product-version correspondence with K213272 are not established. The displayed page date is not a verified new clearance date."
+      ]
+    },
+    {
+      "source_id": "src_ht_mri26",
+      "title": "Supermarket scents, sound sleep, smarter scans: Velocity $100k Challenge winners",
+      "url": "https://www.auckland.ac.nz/en/news/2026/10/22/entrepreneurship-velocity-100k-winners-auckland.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Direct HTTPS retrieval succeeded after web-reader access failed. Institutional report and team claims, not clinical validation."
+      ]
+    },
+    {
+      "source_id": "src_ht_volpara10",
+      "title": "Volpara K102556: applicant summary and FDA decision letter",
+      "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf10/K102556.pdf",
+      "publisher": "US FDA",
+      "publisher_role": "regulator",
+      "published_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Summary prepared 30 September 2010; decision letter dated 7 October 2010. Web publication date unknown. Applicant validation statements are not FDA-authored clinical findings."
+      ]
+    },
+    {
+      "source_id": "src_ht_x25",
+      "title": "The latest start-ups emerging from the University’s incubator",
+      "url": "https://www.auckland.ac.nz/en/news/2025/08/25/latest-start-ups-emerging-from-the-universitys-incubator.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2025-08-25",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "The one-sentence VistaVision description does not establish deployed hardware, regulatory status or evaluated clinical performance."
+      ]
+    },
+    {
+      "source_id": "src_ht_dense",
+      "title": "Supplemental MRI Screening for Women with Extremely Dense Breast Tissue",
+      "url": "https://brystkraeftforeningen.dk/fileadmin/user_upload/Editor/documents/PDF-blandet/nejmoa1903986_DENSE_TRIAL.pdf",
+      "publisher": "The New England Journal of Medicine (PDF copy hosted by Brystkræftforeningen)",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2019-11-28",
+        "precision": "day",
+        "basis": "Displayed publication or registration date.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No independently dated update available.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "The publisher page returned HTTP 403. The hosted copy preserves the article’s date and DOI 10.1056/NEJMoa1903986. The date of this copy’s upload is unverified."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus_wire23",
+      "title": "Formus Labs Announces FDA Clearance for Formus Hip",
+      "url": "https://www.prnewswire.com/news-releases/formus-labs-pioneering-developer-of-ai-powered-3d-orthopedic-surgery-planning-technology-receives-fda-clearance-301815312.html",
+      "publisher": "PR Newswire (release provided by Formus Labs)",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2023-05-03",
+        "precision": "day",
+        "basis": "Displayed publication or registration date.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No independently dated update available.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "The release does not supply the FDA submission identifier or device version."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus_anzctr",
+      "title": "Formus and OSSIS surgical-planning study registration (ACTRN12626000713392p)",
+      "url": "https://anzctr.org.au/Trial/Registration/TrialReview.aspx?id=391831",
+      "publisher": "Australian New Zealand Clinical Trials Registry",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2026-06-16",
+        "precision": "day",
+        "basis": "Displayed publication or registration date.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": "2026-06-16",
+        "precision": "day",
+        "basis": "Registry last-updated field.",
+        "unknown_reason": null
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Zimmer Biomet is the listed commercial sponsor. The registry records investigator plans and submission status."
+      ]
+    },
+    {
+      "source_id": "src_ht_theia22",
+      "title": "A multi-centre prospective evaluation of THEIA in the New Zealand screening program",
+      "url": "https://www.nature.com/articles/s41433-022-02217-w",
+      "publisher": "Eye",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2022-09-03",
+        "precision": "day",
+        "basis": "Displayed publication or registration date.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No independently dated update available.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "The article reports prospective study results. The authors disclose that Ehsan Vaghefi and David Squirrell co-founded Toku Eyes."
+      ]
+    },
+    {
+      "source_id": "src_ht_pulse_uoa",
+      "title": "University innovators recognised for tackling real-world problems",
+      "url": "https://www.auckland.ac.nz/en/news/2026/05/22/university-innovators-recognised-for-tackling-real-world-problems.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Displayed publication or registration date.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No independently dated update available.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Competition coverage describes intended use."
+      ]
+    },
+    {
+      "source_id": "src_ht_formus_repost",
+      "title": "Formus Labs Raises $5 Million (company repost)",
+      "url": "https://www.formus.com/news/formus-labs-raises-5-million-to-automate-orthopedic-surgery-planning-partners-with-zimmer-biomet-to-supercharge-global-launch",
+      "publisher": "Formus Labs",
+      "publisher_role": "company",
+      "published_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Header displays May 22, 2026 while body dateline says February 2, 2022. Use the original wire release for announcement chronology; do not count as another financing."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_ht_formus_evaluation_plan",
+      "subject_id": "subj_ht_formus",
+      "field": "validation_requirement",
+      "paraphrase": "US product evaluation was planned after expected regulatory clearance; no completed evaluation is established by this release.",
+      "source_id": "src_ht_formus22",
+      "locator": "Final paragraph before About Formus Labs",
+      "assertion_nature": "intention_target",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-02-02",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_reg23",
+      "subject_id": "subj_ht_formus",
+      "field": "regulatory_record",
+      "paraphrase": "FDA’s K213272 letter records substantial equivalence for Formus Hip on 31 March 2023.",
+      "source_id": "src_ht_formus23",
+      "locator": "PDF pp. 1–2, decision letter",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "regulator",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": "2023-03-31",
+        "precision": "day",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2023-03-31",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_reg26",
+      "subject_id": "subj_ht_formus",
+      "field": "regulatory_record",
+      "paraphrase": "A separate company page reports Formus Hip clearance; its header says 22 May 2026, with no submission number.",
+      "source_id": "src_ht_formus26",
+      "locator": "Page header and opening announcement",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "limitations": [
+        "Attributed source claim, not independent acceptance.",
+        "Do not count as a second clearance or correct K213272’s date without product/submission reconciliation."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_mri_solution",
+      "subject_id": "subj_ht_mri",
+      "field": "solution",
+      "paraphrase": "The university describes software to draft breast MRI reports using a breast digital twin and comparison with the previous scan.",
+      "source_id": "src_ht_mri26",
+      "locator": "Automated Breast MRI Reporting section; Babarenda Gamage quotation",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Automated Breast MRI Reporting project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_vista_solution",
+      "subject_id": "subj_ht_vistavision",
+      "field": "solution",
+      "paraphrase": "The university describes real-time remote eye care for rural patients through telerobotic technology.",
+      "source_id": "src_ht_x25",
+      "locator": "2025 Venture Lab cohort / VistaVision entry",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-08-25",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "VistaVision telerobotic eye care project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_volpara_limits",
+      "subject_id": "subj_ht_volpara",
+      "field": "validation_requirement",
+      "paraphrase": "The intended use is adjunctive composition information, not an interpretive or diagnostic aid.",
+      "source_id": "src_ht_volpara10",
+      "locator": "PDF p. 2, Intended Use",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Applicant summary hosted by FDA.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2010-10-07",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Volpara Imaging Software v1.3 (K102556); later company milestones scoped separately",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_dense_approval",
+      "subject_id": "subj_ht_volpara",
+      "field": "outcome",
+      "paraphrase": "The study team reports Dutch ministerial approval for the DENSE supplemental MRI trial on 11 November 2011.",
+      "source_id": "src_ht_dense",
+      "locator": "Page 2092, Methods, Trial Oversight",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Bakker and colleagues describe their MRI screening study.",
+      "scope": {
+        "product": "Volpara Imaging Software v1.5 in the DENSE trial",
+        "geographies": [
+          "Netherlands"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": "2011-11-11",
+        "precision": "day",
+        "basis": "Trial investigators report this approval date.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2019-11-28",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "The publisher page returned HTTP 403. The hosted copy preserves the article’s date and DOI 10.1056/NEJMoa1903986. The date of this copy’s upload is unverified."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_dense_selection",
+      "subject_id": "subj_ht_volpara",
+      "field": "documented_user",
+      "paraphrase": "For enrolment, DENSE used Volpara v1.5 grade 4 mammographic density together with a negative mammogram. The investigators assigned participants to supplemental MRI invitation or usual mammography.",
+      "source_id": "src_ht_dense",
+      "locator": "Page 2092, Methods, Trial Design and Population; page 2091, Abstract",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Bakker and colleagues describe their MRI screening study.",
+      "scope": {
+        "product": "Volpara Imaging Software v1.5 in the DENSE trial",
+        "geographies": [
+          "Netherlands"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2019-11-28",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "The publisher page returned HTTP 403. The hosted copy preserves the article’s date and DOI 10.1056/NEJMoa1903986. The date of this copy’s upload is unverified."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_dense_installation",
+      "subject_id": "subj_ht_volpara",
+      "field": "outcome",
+      "paraphrase": "The investigators say Volpara supplied v1.5 for server installation in the screening units as an in-kind research contribution.",
+      "source_id": "src_ht_dense",
+      "locator": "Page 2101, Funding and acknowledgments; page 2092, Trial Oversight",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Bakker and colleagues describe their MRI screening study.",
+      "scope": {
+        "product": "Volpara Imaging Software v1.5 in the DENSE trial",
+        "geographies": [
+          "Netherlands"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2019-11-28",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "The publisher page returned HTTP 403. The hosted copy preserves the article’s date and DOI 10.1056/NEJMoa1903986. The date of this copy’s upload is unverified."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_wire_clearance",
+      "subject_id": "subj_ht_formus",
+      "field": "regulatory_record",
+      "paraphrase": "On 3 May 2023 Formus announced FDA 510(k) clearance for Formus Hip in a wire release. The text names neither a submission identifier nor a software version.",
+      "source_id": "src_ht_formus_wire23",
+      "locator": "Dateline and opening paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Formus Labs issued the announcement.",
+      "scope": {
+        "product": "Formus Hip, submission identifier unreported in the wire release",
+        "geographies": [
+          "United States"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-05-03",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "The release does not supply the FDA submission identifier or device version."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_tr_reg",
+      "subject_id": "subj_ht_formus",
+      "field": "outcome",
+      "paraphrase": "ANZCTR registered a Fremantle Hospital study of Formus pre-operative planning combined with OSSIS patient-specific guides. The record lists the study as not yet recruiting and ethics approval as pending.",
+      "source_id": "src_ht_formus_anzctr",
+      "locator": "Registration number and date; Recruitment; Funding & Sponsors; Ethics approval",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Trial investigators and sponsor are responsible for the registered protocol.",
+      "scope": {
+        "product": "Formus planning with OSSIS guides (ACTRN12626000713392p)",
+        "geographies": [
+          "Australia"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": "2026-06-16",
+        "precision": "day",
+        "basis": "Registry registration date.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2026-06-16",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Zimmer Biomet is the listed commercial sponsor. The registry records investigator plans and submission status."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_tr_design",
+      "subject_id": "subj_ht_formus",
+      "field": "validation_requirement",
+      "paraphrase": "Investigators planned onboarding before recruitment and comparison of the combined plan and guides with postoperative CT and implant-use records. The design has a single group and a composite primary outcome.",
+      "source_id": "src_ht_formus_anzctr",
+      "locator": "Intervention/exposure; Outcomes, Primary outcome; Study design",
+      "assertion_nature": "intention_target",
+      "source_relationship": "project_team",
+      "speaker_context": "Trial investigators and sponsor are responsible for the registered protocol.",
+      "scope": {
+        "product": "Formus planning with OSSIS guides (ACTRN12626000713392p)",
+        "geographies": [
+          "Australia"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-06-16",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Zimmer Biomet is the listed commercial sponsor. The registry records investigator plans and submission status."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_tr_target",
+      "subject_id": "subj_ht_formus",
+      "field": "prototype_testing",
+      "paraphrase": "The registry lists 6 July 2026 as the anticipated first enrolment and leaves actual enrolment undated.",
+      "source_id": "src_ht_formus_anzctr",
+      "locator": "Recruitment, Date of first participant enrolment",
+      "assertion_nature": "intention_target",
+      "source_relationship": "project_team",
+      "speaker_context": "Trial investigators and sponsor are responsible for the registered protocol.",
+      "scope": {
+        "product": "Formus planning with OSSIS guides (ACTRN12626000713392p)",
+        "geographies": [
+          "Australia"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-06-16",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": "2026-07-06",
+        "precision": "day",
+        "basis": "Anticipated first enrolment in the registry.",
+        "unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Zimmer Biomet is the listed commercial sponsor. The registry records investigator plans and submission status."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_theia_design",
+      "subject_id": "subj_ht_toku",
+      "field": "prototype_testing",
+      "paraphrase": "The prospective THEIA v1 study compared retinal grading with an adjudicated reference from three specialists at an urban hospital and a provincial optometrist-led site.",
+      "source_id": "src_ht_theia22",
+      "locator": "Methods; Methods of image grading; Discussion",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Study authors include Toku Eyes co-founders.",
+      "scope": {
+        "product": "THEIA v1 diabetic eye screening",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-09-03",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "The article reports prospective study results. The authors disclose that Ehsan Vaghefi and David Squirrell co-founded Toku Eyes."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_theia_results",
+      "subject_id": "subj_ht_toku",
+      "field": "outcome",
+      "paraphrase": "The analysis included 900 patients from the study’s selected image set. Authors reported 100% sensitivity and 98.18% specificity against their reference for patient-level referral classification.",
+      "source_id": "src_ht_theia22",
+      "locator": "Results, Study recruitment and Results Binary Non referrable/referrable classification, Table 2",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Study authors report the analysed cohort, grading protocol and results.",
+      "scope": {
+        "product": "THEIA v1 diabetic eye screening",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-09-03",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "The article reports prospective study results. The authors disclose that Ehsan Vaghefi and David Squirrell co-founded Toku Eyes."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_pulse_uoa_solution",
+      "subject_id": "subj_ht_pulsemap",
+      "field": "solution",
+      "paraphrase": "The university described PulseMap as a portable non-invasive vascular screening device intended for earlier peripheral arterial disease detection. It did not identify the measurement method.",
+      "source_id": "src_ht_pulse_uoa",
+      "locator": "Velocity Ideas Challenge winners 2026, PulseMap PAD Detector",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "University innovation programme names the project and intended use.",
+      "scope": {
+        "product": "PulseMap PAD Detector concept",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Precise occurrence date unverified.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Date carried by the cited document.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No target date for this claim.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Competition coverage describes intended use."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_formus_repost_date",
+      "subject_id": "subj_ht_formus",
+      "field": "outcome",
+      "paraphrase": "The company repost has a May 2026 header and February 2022 body dateline.",
+      "source_id": "src_ht_formus_repost",
+      "locator": "Page header and opening dateline",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-05-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Formus Hip; submission K213272 distinguished from the company’s May 2026 report",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [
+        "case_ht_formus_clearance"
+      ],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    }
+  ],
+  "events": [],
+  "event_reports": [],
+  "unknowns": [
+    {
+      "unknown_id": "unknown_ht_mri_volpara_followup",
+      "subject_id": "subj_ht_volpara",
+      "field": "provider_evaluation_follow_up",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "The provider’s initial evaluation decision, paid use and the mapping from v1.3 to the study implementation remain unverified.",
+      "scope": {
+        "product": "Volpara v1.5 in DENSE",
+        "geographies": [
+          "Netherlands"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "inspected_source_ids": [
+        "src_ht_dense",
+        "src_ht_volpara10"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_mri_formus_followup",
+      "subject_id": "subj_ht_formus",
+      "field": "provider_evaluation_follow_up",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "Whether the two company pages refer to K213272, whether the registered evaluation began, and how either provider decided to admit or buy the product remain unverified.",
+      "scope": {
+        "product": "Formus planning with OSSIS guides (ACTRN12626000713392p)",
+        "geographies": [
+          "Australia"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "inspected_source_ids": [
+        "src_ht_formus22",
+        "src_ht_formus23",
+        "src_ht_formus26",
+        "src_ht_formus_anzctr",
+        "src_ht_formus_wire23"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_vistavision_toku_followup",
+      "subject_id": "subj_ht_toku",
+      "field": "provider_evaluation_follow_up",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "A comparable VistaVision evaluation, THEIA first paid deployment, and the link between THEIA v1 and later Toku products remain unverified.",
+      "scope": {
+        "product": "THEIA v1 diabetic eye screening",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_unknown_reason": null,
+        "geography_basis": "Place explicitly in scope of the cited report."
+      },
+      "inspected_source_ids": [
+        "src_ht_theia22"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    }
+  ],
+  "proposed_annotations": [],
+  "readiness": [
+    {
+      "readiness_id": "ready_ht_mri_volpara_followup",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_mri",
+        "subj_ht_volpara"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_mri_volpara_followup",
+          "description": "Find dated evidence of a scoped product evaluation or workflow.",
+          "required_subject_ids": [
+            "subj_ht_mri",
+            "subj_ht_volpara"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_mri_solution",
+            "obs_ht_volpara_limits",
+            "obs_ht_dense_selection",
+            "obs_ht_dense_installation",
+            "obs_ht_dense_approval"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_mri_volpara_followup"
+          ],
+          "unresolved_case_ids": []
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_mri_solution",
+        "obs_ht_volpara_limits",
+        "obs_ht_dense_selection",
+        "obs_ht_dense_installation",
+        "obs_ht_dense_approval"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_mri_volpara_followup"
+      ],
+      "unresolved_case_ids": [],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_mri_volpara_followup_1",
+          "subject_ids": [
+            "subj_ht_mri",
+            "subj_ht_volpara"
+          ],
+          "text": "Volpara v1.5 was used for mammographic density eligibility. The MRI project concerns radiologist report drafting after breast MRI.",
+          "basis_observation_ids": [
+            "obs_ht_mri_solution",
+            "obs_ht_dense_selection"
+          ],
+          "source_ids": [
+            "src_ht_dense",
+            "src_ht_mri26"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_mri_volpara_followup_2",
+          "subject_ids": [
+            "subj_ht_volpara"
+          ],
+          "text": "The trial documents an in-kind software contribution to screening units and approval for its study protocol.",
+          "basis_observation_ids": [
+            "obs_ht_dense_approval",
+            "obs_ht_dense_installation"
+          ],
+          "source_ids": [
+            "src_ht_dense"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "The provider’s initial evaluation decision, paid use and the mapping from v1.3 to the study implementation remain unverified."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "DENSE documents how a later Volpara version was used to select participants for a breast MRI screening study.",
+      "independent_relevance_judgment": false
+    },
+    {
+      "readiness_id": "ready_ht_mri_formus_followup",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_mri",
+        "subj_ht_formus"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_mri_formus_followup",
+          "description": "Find dated evidence of a scoped product evaluation or workflow.",
+          "required_subject_ids": [
+            "subj_ht_mri",
+            "subj_ht_formus"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_mri_solution",
+            "obs_ht_formus_evaluation_plan",
+            "obs_ht_formus_reg23",
+            "obs_ht_formus_reg26",
+            "obs_ht_formus_wire_clearance",
+            "obs_ht_formus_tr_reg",
+            "obs_ht_formus_tr_design",
+            "obs_ht_formus_tr_target"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_mri_formus_followup"
+          ],
+          "unresolved_case_ids": []
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_mri_solution",
+        "obs_ht_formus_evaluation_plan",
+        "obs_ht_formus_reg23",
+        "obs_ht_formus_reg26",
+        "obs_ht_formus_wire_clearance",
+        "obs_ht_formus_tr_reg",
+        "obs_ht_formus_tr_design",
+        "obs_ht_formus_tr_target"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_mri_formus_followup"
+      ],
+      "unresolved_case_ids": [],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_mri_formus_followup_1",
+          "subject_ids": [
+            "subj_ht_formus"
+          ],
+          "text": "The 2023 wire release and the company page headed May 2026 report clearance for the same named platform with closely matching wording. The FDA letter identifies K213272. The public company reports leave the version and submission number open.",
+          "basis_observation_ids": [
+            "obs_ht_formus_reg23",
+            "obs_ht_formus_reg26",
+            "obs_ht_formus_wire_clearance"
+          ],
+          "source_ids": [
+            "src_ht_formus23",
+            "src_ht_formus26",
+            "src_ht_formus_wire23"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_mri_formus_followup_2",
+          "subject_ids": [
+            "subj_ht_formus"
+          ],
+          "text": "The Australian protocol specifies onboarding and compares the combined planning-and-guide workflow with postoperative CT and implant records. The registration records future enrolment and pending ethics approval.",
+          "basis_observation_ids": [
+            "obs_ht_formus_tr_reg",
+            "obs_ht_formus_tr_design",
+            "obs_ht_formus_tr_target"
+          ],
+          "source_ids": [
+            "src_ht_formus_anzctr"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "Whether the two company pages refer to K213272, whether the registered evaluation began, and how either provider decided to admit or buy the product remain unverified."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "The original clearance announcement helps interpret the company page’s header date. The Australian registration describes a separate planned evaluation.",
+      "independent_relevance_judgment": false
+    },
+    {
+      "readiness_id": "ready_ht_vistavision_toku_followup",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_vistavision",
+        "subj_ht_toku"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_vistavision_toku_followup",
+          "description": "Find dated evidence of a scoped product evaluation or workflow.",
+          "required_subject_ids": [
+            "subj_ht_vistavision",
+            "subj_ht_toku"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_vista_solution",
+            "obs_ht_theia_design",
+            "obs_ht_theia_results"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_vistavision_toku_followup"
+          ],
+          "unresolved_case_ids": []
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_vista_solution",
+        "obs_ht_theia_design",
+        "obs_ht_theia_results"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_vistavision_toku_followup"
+      ],
+      "unresolved_case_ids": [],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_vistavision_toku_followup_1",
+          "subject_ids": [
+            "subj_ht_toku",
+            "subj_ht_vistavision"
+          ],
+          "text": "VistaVision describes remote examination delivery. THEIA supplied a retinal grading aid whose outputs were compared with a specialist reference.",
+          "basis_observation_ids": [
+            "obs_ht_vista_solution",
+            "obs_ht_theia_design"
+          ],
+          "source_ids": [
+            "src_ht_theia22",
+            "src_ht_x25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_vistavision_toku_followup_2",
+          "subject_ids": [
+            "subj_ht_toku"
+          ],
+          "text": "THEIA’s study reported patient-level performance on a selected analysis cohort from two clinical settings. The published results apply to THEIA v1 and that study population.",
+          "basis_observation_ids": [
+            "obs_ht_theia_design",
+            "obs_ht_theia_results"
+          ],
+          "source_ids": [
+            "src_ht_theia22"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "A comparable VistaVision evaluation, THEIA first paid deployment, and the link between THEIA v1 and later Toku products remain unverified."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "THEIA v1 provides a study-design example spanning urban and provincial eye-care sites.",
+      "independent_relevance_judgment": false
+    }
+  ],
+  "reconciliation_cases": [
+    {
+      "case_id": "case_ht_formus_clearance",
+      "case_kind": "date_or_scope_uncertainty",
+      "subject_ids": [
+        "subj_ht_formus"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_formus_reg23",
+        "obs_ht_formus_reg26",
+        "obs_ht_formus_repost_date"
+      ],
+      "status": "open",
+      "rationale": "K213272’s dated 2023 FDA letter and the company’s May 2026 header are distinct source claims. Repost date behaviour also makes header-only event inference unsafe.",
+      "required_resolution": "Identify the submission number and device version for the company report. Determine whether it is a repost, another product version or another submission; preserve both claims meanwhile.",
+      "aggregation_allowed": false
+    }
+  ],
+  "access_gaps": [],
+  "review_events": [],
+  "metadata": {
+    "format_version": "0.2.1",
+    "prepared_on": "2026-11-19",
+    "purpose": "Attributed follow-up evidence on healthtech evaluation methods and regulatory reporting.",
+    "application_import_compatible": false,
+    "application_modified": false,
+    "modification_scope": "this_research_task_only",
+    "concurrent_application_changes_observed": true,
+    "inventory_modified": false,
+    "accepted_records_count": 0,
+    "source_authority_weighting": "none",
+    "limitations": [
+      "Research packet only; imported through the separate research adapter, never the legacy seed.",
+      "Assistant source checks are extraction checks, not independent factual acceptance or relevance judgments.",
+      "No archived availability witness was established; all historical comparisons must abstain. Document dates do not establish web availability.",
+      "Provider admission criteria, first paid deployment and representative same-stage anchors remain unestablished.",
+      "Selected cases are comparison material, not a forecast training cohort."
+    ]
+  }
+}

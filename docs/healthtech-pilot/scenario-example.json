@@ -1,0 +1,41 @@
+{
+  "format_version": "provider-scenarios:1",
+  "label": "Illustrative provider evaluation",
+  "assumption_note": "Invented cash, timing and cost inputs for exercising the calculator. The cases describe no pilot company.",
+  "horizon_months": 12,
+  "opening_cash_nzd": 160000,
+  "monthly_operating_outflow_nzd": 12000,
+  "evaluation_start_month": 2,
+  "cases": [
+    {
+      "case_id": "conversion",
+      "label": "Conversion after evaluation",
+      "evaluation_months": 3,
+      "evaluation_cost_nzd": 18000,
+      "conversion_delay_months": 0,
+      "implementation_cost_nzd": 12000,
+      "monthly_provider_charge_nzd": 6000,
+      "payment_lag_months": 1
+    },
+    {
+      "case_id": "delay",
+      "label": "Three-month delay and higher setup cost",
+      "evaluation_months": 3,
+      "evaluation_cost_nzd": 18000,
+      "conversion_delay_months": 3,
+      "implementation_cost_nzd": 24000,
+      "monthly_provider_charge_nzd": 6000,
+      "payment_lag_months": 1
+    },
+    {
+      "case_id": "no_conversion",
+      "label": "Evaluation without conversion",
+      "evaluation_months": 3,
+      "evaluation_cost_nzd": 18000,
+      "conversion_delay_months": null,
+      "implementation_cost_nzd": null,
+      "monthly_provider_charge_nzd": null,
+      "payment_lag_months": null
+    }
+  ]
+}

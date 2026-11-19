@@ -152,6 +152,22 @@
         "Provider acceptance criteria, historical availability, paid deployment and independent human review remain pending."
       ],
       "selection_is_relevance_judgment": false
+    },
+    {
+      "query_id": "ht_held_out_pending",
+      "split": "held_out",
+      "group_id": "healthtech_independent_held_out",
+      "identity_group_ids": [],
+      "status": "awaiting_evidence",
+      "query_text": null,
+      "mode": "product_customer",
+      "inclusion_criteria": "Independently authored provider evaluation tasks from unseen venture and product families.",
+      "possible_closer_cases": [],
+      "plausible_distractors": [],
+      "evidence_gaps": [
+        "An independent task author and an identity-disjoint evidence set are pending."
+      ],
+      "selection_is_relevance_judgment": false
     }
   ]
 }

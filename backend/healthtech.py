@@ -6,6 +6,7 @@ historical request always abstains. A future contract must supply and validate
 those witnesses before enabling backtests.
 """
 import hashlib
+from datetime import date
 from typing import Literal
 
 from pydantic import Field, model_validator
@@ -13,12 +14,12 @@ from .database import ROOT
 from .ingestion import day
 from .research_adapter import research_time_interval
 from .research_contracts import (ResearchContract, ResearchObservation, ResearchSource,
-    ResearchReadiness, ResearchUnknown, ResearchCase)
+    ResearchReadiness, ResearchUnknown, ResearchCase, ResearchTime)
 from .research_repository import dossier, read_consistently
 from .research_validation import decode_packet
 
 SELECTION_PATH = ROOT / 'research/healthtech-pilot/comparisons.json'
-POLICY = 'healthtech-curated-pathways-1.0'
+POLICY = 'healthtech-curated-pathways-1.1'
 
 
 class PeerSelection(ResearchContract):
@@ -27,6 +28,7 @@ class PeerSelection(ResearchContract):
     reference_document_date: str
     reference_observation_ids: list[str] = Field(min_length=1)
     later_observation_ids: list[str]
+    follow_up_readiness_ids: list[str] = Field(default_factory=list)
 
     @model_validator(mode='after')
     def dates_and_ids(self):
@@ -34,6 +36,8 @@ class PeerSelection(ResearchContract):
         ids = self.reference_observation_ids + self.later_observation_ids
         if len(ids) != len(set(ids)):
             raise ValueError('Comparison evidence IDs must be unique')
+        if self.readiness_id in self.follow_up_readiness_ids or len(set(self.follow_up_readiness_ids)) != len(self.follow_up_readiness_ids):
+            raise ValueError('Follow-up assessment IDs must be unique')
         return self
 
 
@@ -69,6 +73,19 @@ class ComparisonEvidence(ResearchContract):
     source: ResearchSource
 
 
+class FollowUpEvidence(ResearchContract):
+    readiness: ResearchReadiness
+    evidence: list[ComparisonEvidence]
+
+
+class ElapsedEvidence(ResearchContract):
+    date_type: Literal['document_context', 'reported_occurrence', 'prospective_target']
+    time: ResearchTime
+    lower_days: int | None
+    upper_days: int | None
+    observation_id: str
+
+
 class PathwayPeer(ResearchContract):
     subject_id: str
     display_name: str
@@ -78,6 +95,8 @@ class PathwayPeer(ResearchContract):
     readiness: ResearchReadiness
     reference_evidence: list[ComparisonEvidence]
     later_evidence: list[ComparisonEvidence]
+    follow_up: list[FollowUpEvidence]
+    elapsed_evidence: list[ElapsedEvidence]
     unknowns: list[ResearchUnknown]
     unresolved_cases: list[ResearchCase]
 
@@ -139,6 +158,27 @@ def evidence_eligible(observation, source, cutoff, view):
         if value['precision'] != 'unknown' and not time_proves_by(value, cutoff):
             return False
     return True
+
+
+def elapsed_evidence(evidence, reference_document_date):
+    """Align reported dates to a reference document, keeping their original roles."""
+    origin = date.fromisoformat(reference_document_date)
+    rows = []
+    for item in evidence:
+        observation = item['observation']
+        dates = [('document_context', observation['context_time'])]
+        if observation['assertion_nature'] == 'reported_occurrence':
+            dates.append(('reported_occurrence', observation['effective_time']))
+        if observation['target_time']['precision'] != 'unknown':
+            dates.append(('prospective_target', observation['target_time']))
+        for date_type, time in dates:
+            interval = research_time_interval(time)
+            lower, upper = interval['lower_bound'], interval['upper_bound']
+            rows.append(dict(date_type=date_type, time=time, observation_id=observation['observation_id'],
+                lower_days=(date.fromisoformat(lower)-origin).days if lower is not None else None,
+                upper_days=(date.fromisoformat(upper)-origin).days if upper is not None else None))
+    rows.sort(key=lambda row: (row['lower_days'] is None, row['lower_days'] or 0))
+    return rows
 
 
 @read_consistently
@@ -206,6 +246,15 @@ def compare_graph(graph, selections, raw, as_of, view):
     def evidence(ids):
         return [dict(observation=observations[oid], source=sources[observations[oid]['source_id']]) for oid in ids if eligible(oid)]
 
+    def assessment_is_eligible(assessment, peer_id):
+        return (assessment is not None
+            and set(assessment['subject_ids']) == {subject_id, peer_id}
+            and assessment['evidence_cutoff'] <= as_of
+            and review_allows(assessment['readiness_id'], assessment['review'])
+            and assessment['assessment'] == 'limited_conclusions_supported'
+            and all(review_allows(c['conclusion_id'], c['review']) for c in assessment['supported_conclusions'])
+            and all(eligible(oid) for oid in assessment['supporting_observation_ids']))
+
     gaps = []
     peers = []
     if view == 'historical':
@@ -233,25 +282,32 @@ def compare_graph(graph, selections, raw, as_of, view):
                 gaps.append('A possible shared brand/project identity is withheld to avoid a self-comparison; the identity mapping remains unresolved.')
                 continue
             ids = peer.reference_observation_ids + peer.later_observation_ids
-            if (r is None or peer.subject_id not in subjects
-                or set(r['subject_ids']) != {subject_id, peer.subject_id}
+            if (peer_subject is None
                 or not review_allows(peer.subject_id, peer_subject['review'])
-                or not review_allows(peer.readiness_id, r['review']) or r['evidence_cutoff'] > as_of
-                or any(not review_allows(c['conclusion_id'], c['review']) for c in r['supported_conclusions'])
-                or r['assessment'] != 'limited_conclusions_supported'
-                or not all(eligible(oid) for oid in set(ids + r['supporting_observation_ids']))
-                or any(observations[oid]['subject_id'] != peer.subject_id for oid in ids)):
+                or not assessment_is_eligible(r, peer.subject_id)
+                or not all(eligible(oid) and observations[oid]['subject_id'] == peer.subject_id for oid in ids)):
                 gaps.append('A selected comparison lacks eligible, subject-correct evidence or an assessment at this cutoff; it is withheld.')
                 continue
             if not all(time_proves_by(observations[oid]['context_time'], peer.reference_document_date) for oid in peer.reference_observation_ids):
                 gaps.append('Reference-document timing is unresolved; the selected comparison is withheld.')
                 continue
+            later_evidence = evidence(peer.later_observation_ids)
+            reference_evidence = evidence(peer.reference_observation_ids)
+            follow_up = []
+            for rid in peer.follow_up_readiness_ids:
+                assessment = readiness.get(rid)
+                if assessment_is_eligible(assessment, peer.subject_id):
+                    follow_up.append(dict(readiness=assessment, evidence=evidence(assessment['supporting_observation_ids'])))
+            timeline_items = {item['observation']['observation_id']: item
+                for item in reference_evidence + later_evidence + [item for group in follow_up for item in group['evidence']]
+                if item['observation']['subject_id'] == peer.subject_id}
             peers.append(dict(subject_id=peer.subject_id, display_name=subjects[peer.subject_id]['display_name'],
                 classification='pathway_precedent', early_stage_anchor=None,
                 reference_document_date=peer.reference_document_date, readiness=r,
-                reference_evidence=evidence(peer.reference_observation_ids), later_evidence=evidence(peer.later_observation_ids),
+                reference_evidence=reference_evidence, later_evidence=later_evidence, follow_up=follow_up,
+                elapsed_evidence=elapsed_evidence(timeline_items.values(), peer.reference_document_date),
                 unknowns=[u for u in packet['unknowns'] if u['subject_id'] in (subject_id, peer.subject_id) and u['as_of'] <= as_of and u['review']['checked_on'] <= as_of],
-                unresolved_cases=[c for c in packet['reconciliation_cases'] if peer.subject_id in c['subject_ids']]))
+                unresolved_cases=[c for c in packet['reconciliation_cases'] if peer.subject_id in c['subject_ids'] and all(eligible(oid) for oid in c['observation_ids'])]))
     return dict(subject_id=subject_id,
         question='What did comparable Kiwi healthtech ventures have to demonstrate before a healthcare provider would evaluate or adopt their product?',
         view=view, as_of=as_of, policy_version=POLICY,

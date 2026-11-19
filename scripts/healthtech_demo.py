@@ -23,7 +23,7 @@ from backend.healthtech import compare_healthtech, healthtech_coverage, SELECTIO
 
 AS_OF = '2026-11-19'
 PACKETS = (EXAMPLE, ROOT/'research/healthtech-pilot/packet.json', ROOT/'research/healthtech-pilot/extension.json',
-           ROOT/'research/healthtech-pilot/clinical-studies.json')
+           ROOT/'research/healthtech-pilot/clinical-studies.json', ROOT/'research/healthtech-pilot/provider-evidence.json')
 
 
 def snapshot(db):
@@ -104,6 +104,8 @@ def export_evaluation(db, output):
             result=row['result']
             for peer in result['peers'] or [None]:
                 writer.writerow([row['query_id'],result['subject_id'],peer['subject_id'] if peer else '',*(['']*8)])
+    from backend.healthtech_review import export_task_review
+    export_task_review(output, results)
     return {'status':'not_evaluated','tasks':len(results),'output':str(output.resolve()),'human_fields':'blank'}
 
 

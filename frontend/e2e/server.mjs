@@ -21,7 +21,7 @@ if (research.status !== 0 || research.error) {
   if (research.error) console.error(research.error.message);
   process.exit(research.status || 1);
 }
-for (const packet of ["packet", "extension", "clinical-studies"]) {
+for (const packet of ["packet", "extension", "clinical-studies", "provider-evidence"]) {
   const result = spawnSync(python, ["scripts/import_research.py", "--input", `research/healthtech-pilot/${packet}.json`, "--db", db, "--as-of", "2026-11-19", "--apply", "--report", join(temp, `healthtech-${packet}.json`)], {cwd: root, stdio: "inherit"});
   if (result.status !== 0 || result.error) {rmSync(temp,{recursive:true,force:true}); process.exit(result.status || 1);}
 }

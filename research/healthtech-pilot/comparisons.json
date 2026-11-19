@@ -19,6 +19,9 @@
           "later_observation_ids": [
             "obs_ht_volpara_acquisition",
             "obs_ht_volpara_sites"
+          ],
+          "follow_up_readiness_ids": [
+            "ready_ht_mri_volpara_followup"
           ]
         },
         {
@@ -40,6 +43,9 @@
             "obs_ht_formus_limits23",
             "obs_ht_formus_reg26",
             "obs_ht_formus_repost_date"
+          ],
+          "follow_up_readiness_ids": [
+            "ready_ht_mri_formus_followup"
           ]
         },
         {
@@ -149,6 +155,9 @@
           ],
           "later_observation_ids": [
             "obs_ht_toku_finance23"
+          ],
+          "follow_up_readiness_ids": [
+            "ready_ht_vistavision_toku_followup"
           ]
         }
       ]

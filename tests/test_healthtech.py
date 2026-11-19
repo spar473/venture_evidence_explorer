@@ -227,7 +227,7 @@ def test_disposable_demo_and_existing_evaluation_workflow_keep_human_fields_blan
     demo=importlib.util.module_from_spec(spec);spec.loader.exec_module(demo)
     output=tmp_path/'demo'
     summary=demo.prepare_demo(output)
-    assert len(summary['imports'])==4
+    assert len(summary['imports'])==5
     before=snapshot(Path(summary['database']))
     with pytest.raises(ValueError,match='never replaced'): demo.prepare_demo(output)
     assert snapshot(Path(summary['database']))==before
@@ -242,6 +242,12 @@ def test_disposable_demo_and_existing_evaluation_workflow_keep_human_fields_blan
     baseline=json.loads((output/'evaluation/lexical-results.json').read_text())
     assert baseline['status']=='not_evaluated' and baseline['reason']=='judgments_missing'
     assert baseline['coverage']['tasks_run']==6
+    runs = list(csv.DictReader((output/'evaluation/task-runs.csv').open()))
+    assert len(runs) == 18
+    assert {row['method'] for row in runs} == {'manual','lexical_b0','curated_dossiers'}
+    assert all(not row['analyst_id'] and not row['elapsed_seconds'] and not row['usefulness_grade'] for row in runs)
+    review_inputs = json.loads((output/'evaluation/task-review-inputs.json').read_text())
+    assert review_inputs['held_out_pending'] == ['ht_held_out_pending']
     assert all(q['aggregate_metrics']['ndcg_at_3'] is None for q in baseline['queries'])
     sparse=next(r for r in research['results'] if r['query_id']=='ht_pulsemap')
     assert sparse['result']['peers']==[] and sparse['result']['status']=='abstain'
@@ -316,3 +322,114 @@ def test_coverage_counts_openable_pairs_across_imports_and_reviews(tmp_path):
     import_research(db, review_packet, as_of=AS_OF)
     # One shared disputed result withholds both Wellumio pairs.
     check_counts((5, 4, 4, 6))
+
+
+def test_provider_follow_up_preserves_proposals_and_date_roles(pilot):
+    packet = PACKET.with_name('provider-evidence.json')
+    before = snapshot(pilot)
+    before_bytes = pilot.read_bytes()
+    dry = dry_run_research(packet, pilot, as_of=AS_OF)
+    assert dry['status'] == 'valid_dry_run' and dry['writes'] == 0
+    assert pilot.read_bytes() == before_bytes
+    import_research(pilot, packet, as_of=AS_OF)
+    after = snapshot(pilot)
+    assert after['research_identity_mappings'] == before['research_identity_mappings']
+    import_research(pilot, packet, as_of=AS_OF)
+    assert snapshot(pilot) == after
+
+    client = TestClient(create_app(pilot))
+    endpoint = f'/api/research/subjects/{MRI}/comparisons'
+    current = client.get(endpoint, params={'as_of': AS_OF}).json()
+    volpara, formus = current['peers']
+    assert volpara['follow_up'][0]['readiness']['readiness_id'] == 'ready_ht_mri_volpara_followup'
+    assert volpara['early_stage_anchor'] is None
+    assert {i['observation']['observation_id'] for i in formus['follow_up'][0]['evidence']} >= {
+        'obs_ht_formus_wire_clearance', 'obs_ht_formus_reg26', 'obs_ht_formus_reg23'}
+    elapsed = {(r['date_type'], r['observation_id']): r for r in formus['elapsed_evidence']}
+    assert elapsed['document_context', 'obs_ht_formus_solution']['lower_days'] == 0
+    decision = elapsed['reported_occurrence', 'obs_ht_formus_reg23']
+    assert decision['lower_days'] == decision['upper_days'] == 422
+    assert elapsed['reported_occurrence', 'obs_ht_formus_reg26']['lower_days'] is None
+    assert elapsed['prospective_target', 'obs_ht_formus_tr_target']['time']['value'] == '2026-07-06'
+    assert ('reported_occurrence', 'obs_ht_formus_tr_target') not in elapsed
+    old_view = client.get(endpoint, params={'as_of': AS_OF, 'packet_sha256': hashlib.sha256(PACKET.read_bytes()).hexdigest()}).json()
+    assert [p['follow_up'] for p in old_view['peers']] == [[], []]
+    past = client.get(endpoint, params={'as_of':'2023-06-01', 'view':'historical'}).json()
+    assert past['peers'] == past['subject_evidence'] == []
+
+
+def test_three_method_review_summary_requires_submitted_human_records(tmp_path):
+    import csv
+    from backend.evaluation_protocol import file_sha
+    from backend.healthtech_review import COLUMNS, METHODS, report_task_review
+
+    for name in ('task-cards.json','lexical-evidence.json','research-results.json'):
+        (tmp_path/name).write_text('{}\n')
+    manifest = dict(format_version='healthtech-task-review:1', research_cutoff=AS_OF,
+        lexical_manifest_id='synthetic', tasks=['synthetic'], methods=list(METHODS),
+        held_out_pending=['held_out_pending'], files={
+            name:file_sha(tmp_path/name) for name in ('task-cards.json','lexical-evidence.json','research-results.json')})
+    (tmp_path/'task-review-inputs.json').write_text(json.dumps(manifest))
+    reviewers = tmp_path/'reviewers.json'
+    reviewers.write_text(json.dumps([dict(reviewer_id=name,role='independent_reviewer',
+        independent_of_author=True,is_human=True) for name in ('a','b','c','r')]))
+    runs = tmp_path/'task-runs.csv'
+
+    def write(rows):
+        with runs.open('w', newline='') as stream:
+            writer = csv.writer(stream)
+            writer.writerow(COLUMNS)
+            writer.writerows(rows)
+
+    write([['synthetic', method, *(['']*9)] for method in METHODS])
+    report = report_task_review(tmp_path, runs, reviewers, AS_OF)
+    assert report['status'] == 'not_evaluated'
+    assert report['complete_task_ids'] == []
+    assert all(r['median_seconds_to_useful_answer'] is None for r in report['summary'].values())
+    assert all(r['material_errors_on_complete_tasks'] is None for r in report['summary'].values())
+
+    rows = [['synthetic',method,analyst,str(seconds),'Synthetic answer','Synthetic source locator',
+             'r','2',str(errors),'Synthetic evaluation only.',AS_OF]
+            for method,analyst,seconds,errors in zip(METHODS, ('a','b','c'), (50,30,20), (0,1,0))]
+    write(rows[:2])
+    assert report_task_review(tmp_path, runs, reviewers, AS_OF)['complete_task_ids'] == []
+    write(rows)
+    result = report_task_review(tmp_path, runs, reviewers, AS_OF)
+    assert result['complete_task_ids'] == ['synthetic']
+    assert result['summary']['manual']['median_seconds_to_useful_answer'] == 50
+    assert result['summary']['lexical_b0']['median_seconds_to_useful_answer'] is None
+    assert result['summary']['lexical_b0']['material_errors_on_complete_tasks'] == 1
+    assert result['summary']['curated_dossiers']['median_seconds_to_useful_answer'] == 20
+    rows[1][2] = 'a'
+    write(rows)
+    with pytest.raises(ValueError, match='one method per task'):
+        report_task_review(tmp_path, runs, reviewers, AS_OF)
+
+
+def test_scenarios_model_cash_receipts_and_export_measurements():
+    from backend.healthtech_scenarios import ProviderScenarios, scenario_report, venture_frame_project
+
+    raw = json.loads((ROOT/'docs/healthtech-pilot/scenario-example.json').read_text())
+    model = ProviderScenarios.model_validate(raw)
+    report = scenario_report(model)
+    assert scenario_report(model) == report
+    conversion, delayed, no_conversion = report['cases']
+    assert conversion['months'][1]['evaluation_outflow_nzd'] == 18000
+    assert conversion['months'][4]['implementation_outflow_nzd'] == 12000
+    assert conversion['months'][4]['provider_receipt_nzd'] == 0
+    assert conversion['months'][5]['provider_receipt_nzd'] == 6000
+    assert conversion['closing_cash_nzd'] == 28000
+    assert delayed['modelled_service_month'] == 8
+    assert delayed['modelled_first_receipt_month'] == 9
+    assert delayed['funding_gap_nzd'] == 2000
+    assert no_conversion['modelled_first_receipt_month'] is None
+    assert not any(row['provider_receipt_nzd'] for row in no_conversion['months'])
+    assert report['ranges_across_supplied_cases']['modelled_first_receipt_month'] == {
+        'minimum': 6, 'maximum': 9, 'applicable_cases': 2}
+    project = venture_frame_project(report)
+    assert project['weight_profiles'] == project['scenarios'] == []
+    timing = [row['alternative_id'] for row in project['performances'] if row['criterion_id']=='modelled_first_receipt_month']
+    assert timing == ['conversion','delay']
+    raw['cases'][-1]['payment_lag_months'] = 0
+    with pytest.raises(ValidationError, match='no-conversion case'):
+        ProviderScenarios.model_validate(raw)

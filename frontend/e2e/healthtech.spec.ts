@@ -81,7 +81,7 @@ test('MRI comparison recovers from API errors, downloads provenance and fits a n
   for await (const chunk of stream) chunks.push(chunk);
   const data=JSON.parse(Buffer.concat(chunks).toString('utf8'));
   expect(data.peers).toHaveLength(3);
-  expect(data.policy_version).toBe('healthtech-curated-pathways-1.0');
+  expect(data.policy_version).toBe('healthtech-curated-pathways-1.1');
   expect(data.source_packet_sha256s.length).toBeGreaterThan(0);
   expect(await dossier.evaluate(node => node.scrollWidth <= node.clientWidth)).toBe(true);
   await dossier.locator('.healthtech-comparison').scrollIntoViewIfNeeded();
@@ -128,9 +128,25 @@ test('directory counts distinct ventures and opens the hospital feasibility evid
   await expect(wellumio).toContainText('Of 49 stroke participants, 40 had successful scans.');
   await wellumio.getByRole('link', {name:'obs_ht_well_ethics',exact:true}).first().click();
   await expect(drawer.locator('#research-obs_ht_well_ethics')).toBeFocused();
-  await expect(drawer.getByRole('link', {name:/^Source packet .* JSON/})).toHaveCount(3);
+  await expect(drawer.getByRole('link', {name:/^Source packet .* JSON/})).toHaveCount(4);
   const csvUrl = await drawer.getByRole('link', {name:'observations CSV ↓',exact:true}).getAttribute('href');
   const csv = await (await page.request.get(csvUrl!)).text();
   expect(csv).toContain('obs_ht_well_ethics');
   expect(csv).toContain('obs_ht_volpara_validation');
+});
+
+test('elapsed comparison distinguishes study milestones from document dates and plans', async ({page}) => {
+  const {dossier, comparison} = await openMRI(page);
+  const formus = comparison.locator('.healthtech-peer').filter({has: page.getByRole('heading', {name:'Formus Labs',exact:true})});
+  await formus.getByText('Provider studies and follow-up records', {exact:true}).click();
+  await expect(formus).toContainText('6 July 2026 as the anticipated first enrolment');
+  await expect(formus).toContainText('3 May 2023 Formus announced FDA 510(k) clearance');
+  await comparison.getByText('Compare elapsed time', {exact:true}).click();
+  const timeline = comparison.locator('.healthtech-elapsed');
+  await timeline.getByLabel('Date to compare').selectOption('reported_occurrence');
+  await expect(timeline).toContainText('+422 days');
+  await expect(timeline).not.toContainText('anticipated first enrolment');
+  await timeline.getByLabel('Date to compare').selectOption('prospective_target');
+  await timeline.getByRole('link', {name:/anticipated first enrolment/}).click();
+  await expect(dossier.locator('#research-obs_ht_formus_tr_target')).toBeFocused();
 });

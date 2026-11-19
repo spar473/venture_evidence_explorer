@@ -389,11 +389,13 @@ def _write_graph(conn,prepared,failure_injector=None):
         target=subject['proposed_application_id']
         if target and conn.execute('SELECT 1 FROM ventures WHERE venture_id=?',(target,)).fetchone():
             evidence=[o['observation_id'] for o in packet['observations'] if o['subject_id']==subject['subject_id']]
+            # The proposal keeps the first import’s packet and evidence lineage.
             _insert(conn,'research_identity_mappings',{'mapping_id':_proposal_id(subject['subject_id']),'namespace':NAMESPACE,
                 'subject_id':subject['subject_id'],'venture_id':target,'state':'proposed','scope':'brand_project_only',
                 'actor_role':'supplied_proposal','actor_id':None,'decided_on':None,'evidence_ids_json':canonical(evidence),
                 'rationale':subject['identity_basis'],'source_packet_sha256':digest,'legal_identity_state':'unresolved',
-                'decision_document_sha256':None,'supersedes_mapping_id':None},('mapping_id',),ignore_existing=('source_packet_sha256',))
+                'decision_document_sha256':None,'supersedes_mapping_id':None},('mapping_id',),
+                ignore_existing=('source_packet_sha256','evidence_ids_json'))
     if prepared['decision_raw'] is not None:
         decision_hash=hashlib.sha256(prepared['decision_raw']).hexdigest()
         _insert(conn,'research_mapping_documents',{'decision_sha256':decision_hash,'raw_bytes':prepared['decision_raw'],

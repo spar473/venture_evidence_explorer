@@ -150,11 +150,11 @@ The latest end-to-end project context is [the master handover](handover/master-2
 
 ## NZ healthtech comparison pilot · 19 November 2026
 
-Open **Research dossiers** to see how many university projects have a supported comparison. The full pilot has eight project–venture pairs across five distinct reference ventures. MRI Reporting has three precedents covering breast imaging (Volpara), specialist planning (Formus) and hospital MR feasibility testing (Wellumio). PulseMap and the RosterLab contrast abstain. Historical snapshots require verified archive evidence.
+Open **Research dossiers** to see how many university projects have a supported comparison. The full pilot has eight project–venture pairs across five distinct reference ventures. MRI Reporting has three precedents covering breast imaging (Volpara), specialist planning (Formus) and hospital MR feasibility testing (Wellumio). Open **Compare elapsed time** to inspect document, event and target dates relative to each precedent’s reference document. PulseMap and the RosterLab contrast abstain. Historical snapshots require verified archive evidence.
 
 ```sh
 npm --prefix frontend run build
 python scripts/healthtech_demo.py --serve --evaluate
 ```
 
-The command creates a disposable database, verifies dry-run and repeat-import safety, and serves on <http://127.0.0.1:8001>. See [the pilot guide](docs/healthtech-pilot/README.md) for dependency setup, evidence limits and reproducible commands, and [the checkpoint](docs/healthtech-pilot/STATUS.md) for actual verification results. No live database, deployment or outcome forecasting is included.
+The command creates a disposable database, verifies dry-run and repeat-import safety, and serves on <http://127.0.0.1:8001>. See [the pilot guide](docs/healthtech-pilot/README.md) for dependency setup, evidence limits and reproducible commands, and [the checkpoint](docs/healthtech-pilot/STATUS.md) for actual verification results. The pilot guide links to the three-method review kit, cash scenario prototype and forecast feasibility check.

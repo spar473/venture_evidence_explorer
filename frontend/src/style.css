@@ -1364,3 +1364,14 @@ summary {
   border-left: 3px solid currentColor;
 }
 .healthtech-coverage h3, .healthtech-coverage p { margin: 0.3rem 0; }
+
+.healthtech-timeline > div {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, auto) 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.healthtech-timeline dd, .healthtech-timeline ul { margin: 0; }
+.healthtech-timeline ul { padding-inline-start: 1rem; }
