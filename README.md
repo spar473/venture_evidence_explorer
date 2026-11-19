@@ -1,6 +1,12 @@
-# Venture Evidence Explorer — local research workbench
+# Venture Evidence Explorer
 
-An independent project for analysts and student founders investigating venture precedents. Browse historical public reports, inspect provenance and compare sourced wording. This selected sample is not the complete University of Auckland ecosystem, and the project has no official endorsement.
+Explore sourced NZ venture histories in a local research workbench.<br>
+Built for founders and analysts investigating how comparable ventures developed.<br>
+Trace milestones, claims and unresolved gaps back to public evidence.<br>
+Try **Research dossiers → Automated Breast MRI Reporting → Compare elapsed time**.<br>
+See the [method and evidence boundaries](docs/METHOD.md).
+
+![The breast MRI dossier showing the Formus comparison and links to the source claims](docs/healthtech-pilot/mri-comparison.png)
 
 ## Two-dossier integration pilot · Prompt 1
 
@@ -67,15 +73,7 @@ Development: run the service, then `cd frontend && npm run dev`. Vite proxies `/
 4. Select Formus Labs as subject and compare. Self is excluded. Switch to stage/milestone to see explicit insufficient evidence.
 5. Data & exports → download each CSV. Counts name awards, ventures, relationships, observations or sources. Source age carries its UTC `as_of_date`.
 
-## Method and boundaries
-
-`b0-token-overlap-1.0`: lowercase alphanumeric tokens, fixed stopwords and a published morphology map in `backend/retrieval.py` (e.g. images/imaging→image and surgical→surgery). Tokens shorter than three characters are excluded. Each venture contributes a set of eligible sourced tokens; repeated observations do not multiply a token's weight. For token t, IDF = 1 + ln((N+1)/(df(t)+1)), computed on all ventures. Score = matched query IDF sum / all query IDF sum. A candidate must match at least two distinct informative query tokens and cover at least 15% of query tokens. Return up to three, sorted by score then stable venture ID. Filters restrict candidates, not corpus IDFs. The corpus is part of the method input; expanding evidence can change rankings.
-
-Selecting a subject, or entering its exact name/alias, derives the query from its eligible observations. A description naming one known venture preserves the description and excludes that venture. Ambiguous identities require selecting a subject. Candidate filters are explicit and visible under comparison settings; browse text search is not a comparison filter.
-
-This heuristic is intentionally conservative and unvalidated. Shared wording is not demonstrated relevance; no match does not establish irrelevance. Pathway mode can compare origin wording, not verified market access, regulatory progress or deployment. Wording differences do not assert feature absence or company weaknesses. There are no accepted structured features, semantic retrieval, investment ranking or confidence probabilities. Awards, prestige, press volume and all proposed annotations are excluded from ranking. No experimental proposal matching is exposed.
-
-Ten venture/project identities, seven sources, 20 observations, seven awards, ten connections and 50 proposals remain the supplied baseline. These are historical publisher reports, not independent validation or current profiles. All legal names, registrations, operating status and funding stages remain unverified. Publication dates differ from retrieval and event dates; 2026 retrieval does not establish past source availability. Source pages are not archived and may change. No success rate, programme effectiveness or return can be inferred from this selected sample.
+See [methods and evidence boundaries](docs/METHOD.md) for the ranking policy, source coverage and historical comparison rules.
 
 ## Verification
 
