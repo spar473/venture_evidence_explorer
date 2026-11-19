@@ -1,39 +1,55 @@
-# NZ healthtech comparison checkpoint · 19 November 2026
+# NZ healthtech pilot checkpoint · 20 November 2026
 
-Branch `implementation/healthtech-pilot`. Implementation commit `97397a56a443c2be99814047777628ccc434ec8d`. This status note is the following documentation commit. The branch is local.
+Branch `implementation/healthtech-pilot`. Verified implementation commit `cc20ef0a66ee97ae5feae5b67e2910abb6cbb208`. This note is the following documentation commit.
 
-**Research dossiers** shows eight comparisons across five distinct reference ventures. Four of the five university projects have supported pathway precedents. The four healthtech packets contain ten cases, 23 distinct sources and 62 distinct observations. The original packet adds RosterLab as a contrast and QuickMas outside the pilot.
+The README now opens with a five-line pitch and the MRI demo. Migration 007 adds the fixture, round dates and source passages, six outcome states, historical availability witnesses, and snapshots with evidence at or before the cutoff. The importer stores the original packet and its normalized records. A dry run leaves the database byte-for-byte identical, and an exact repeat writes zero rows.
 
-| University project | Reference ventures |
-|---|---|
+**Research dossiers → NZ reference fixture** opens the coverage panel and a selector for all 30 companies. Select Supie to see the verified closure marker, or Cleanery to see the open-circle follow-up marker. **Research dossiers → Neurofanos → Peer trajectories** shows Formus Labs with a year-precision 2019 entry and a dated pre-Series A report. **Inspect source evidence** shows the publisher, passage, dates and applicable witness. **What was public at the time** shows the witnessed features at the later Formus stage. The entry snapshot remains open.
+
+The original healthtech pilot still has eight comparison pairs across five distinct reference ventures. The four projects with pathway precedents show those peers in the new view because the existing lexical B0 run returned zero fixture-linked matches for these queries. PulseMap abstains. The five projects remain analogy queries with timelines for the peers only. The fixture serves named histories and counts, with rates and probabilities reserved for a future eligible cohort.
+
+| Project | Reference ventures |
+| --- | --- |
 | Automated Breast MRI Reporting | Volpara, Formus Labs, Wellumio |
 | Neurofanos | Formus Labs, Wellumio |
 | IVF Decision Support Tool | Formus Labs, Alimetry |
-| VistaVision | Toku Eyes / Toku Inc. (mapping open) |
-| PulseMap PAD Detector | Abstains. Two public descriptions leave the measurement method, comparator and clinical evaluation open. |
+| VistaVision | Toku Eyes, with the Toku Inc. mapping still open |
+| PulseMap PAD Detector | Abstains |
 
-All named cases were integrated. Under the MRI comparison, **Compare elapsed time** shows the dates of documents, reported events or prospective targets relative to each reference document. **Provider studies and follow-up records** covers Volpara v1.5 use in DENSE and Formus’s original 2023 announcement and separate planned Australian study. The FDA decision, original Formus release and company page headed May 2026 remain individually inspectable. The VistaVision comparison includes the THEIA v1 study. Dates of first paid use, specific provider admission criteria, several product mappings and historical availability remain unresolved. [Sources and locators](SOURCE_LOG.md)
+## Fixture coverage
+
+The hand-picked fixture spans healthtech, agriculture, finance, payments, space, software, retail and other sectors. All requested reference companies are integrated as named records, including the five healthtech references and Halter, Sharesies, Hnry and Tracksuit. Fifteen companies have a source-supported entry. The other fifteen remain leads with unresolved eligibility. Twenty companies lack a witnessed entry snapshot. Across the fixture there are 49 sourced event claims and 12 witnessed stage snapshots, including ten at entry.
+
+| Status | Companies |
+| --- | ---: |
+| Reached qualifying Series A or later within 36 months | 1 |
+| Verified closure first | 1 |
+| Acquisition or IPO first | 0 |
+| Observed without a qualifying outcome | 5 |
+| Lost to follow-up | 3 |
+| Unknown | 20 |
+
+The nine quiet cases are Supie, Cleanery, HeartLab, Quashed, Carepatron, Immersve, Astrix Astronautics, Runn.io and Excellent. Supie's closure comes from the liquidators' report. Bounded public follow-up supports the other classifications. Volpara's acquisition remains visible while its entry is unresolved. The pending Toku Eyes and Toku Inc. link leaves the Series A claim inspectable without an elapsed time or derived outcome. Formus regulatory claims continue to appear as separate reports. Its company-reported usage revenue supplies evidence of commercial use. The date of first payment remains open.
+
+The 56 sources comprise 40 publisher-dated witnesses, zero verified archive captures and 16 sources without a witness. The HeartLab report links to an inaccessible contemporary HiNZ item, so the fixture uses a retrospective source and leaves its entry snapshot open. The ASX prospectus exceeded the public reader's full-text limit; an indexed excerpt was available. Some Scoop pages returned an access interstitial on direct opening; dated claims were checked against public indexed passages. [Fixture packet](../../research/healthtech-pilot/reference-fixture.json) · [Pilot source log](SOURCE_LOG.md)
 
 ## Reproduce
 
-From the checkout with locked Python and frontend dependencies installed, build and start the disposable demo.
+With the repository's locked dependencies installed, run these commands from the checkout.
 
 ```sh
+python scripts/import_reference_pool.py
 npm --prefix frontend run build
-python scripts/healthtech_demo.py --serve --evaluate --port 8005
+python scripts/healthtech_demo.py --serve --port 8006
 ```
 
-Open **Research dossiers → Automated Breast MRI Reporting → Compare elapsed time**. The verified [demo on port 8004](http://127.0.0.1:8004) uses a fresh temporary database. Omit `--serve` to prepare and verify the five imports without starting a server.
-
-The six-task review kit contains frozen results and 18 blank task/method rows. The cash prototype compares explicit evaluation, implementation and payment assumptions, and exports a Venture Frame measurement draft. The forecast feasibility check found 140 candidate registry records. The denominator of eligible products and their 24-month deployment outcomes remain unestablished. [Review kit](REVIEW.md) · [Scenarios](SCENARIOS.md) · [Forecast feasibility](FORECAST_FEASIBILITY.md)
+Open the [local demo](http://127.0.0.1:8006) and select **Research dossiers**. The demo bootstraps a fresh temporary database, dry-runs and applies the existing dossier packets and the fixture, then verifies exact reimports. Omit `--serve` to run the same import verification without starting the app.
 
 ## Executed verification
 
-- `python -m pytest -q` in a fresh locked Python 3.12.15 environment — **146 passed**, including the SQLite autocommit cases. Starlette emitted one dependency deprecation warning.
-- Full Playwright suite with local Chrome and a disposable database — **38 passed**. All six affected healthtech browser tests passed again after claims were grouped by timeline date. The directory and elapsed-time view were also opened in the running demo.
-- Production frontend build, `scripts/verify.py`, `scripts/check_migrations.py` (three transaction modes), `scripts/export_contract.py --check` and staged diff checks — **passed**.
-- `scripts/verify_research.py --as-of 2026-11-19` — **passed** for the original packet and each healthtech packet through `--packet`. The combined demo verified unchanged dry-run bytes and identical rows after reimport. Existing brand/project proposals retained their original evidence pointers.
-- `scripts/healthtech_demo.py --evaluate` and the task-review CLI with blank inputs — **passed**. The report shows six development tasks, zero completed human reviews and a pending held-out slot.
-- Scenario replay produced identical JSON. Venture Frame at `cf1068a8ff2f25436af5fd53759a8d0798369f81` imported and reopened a draft with three cases and eleven measurements in a temporary library.
+- `python -m pytest -q` on Python 3.12.15 passed all **153** tests. Starlette emitted a dependency deprecation warning.
+- The full Playwright suite with local Chrome and a disposable database passed all **40** tests. Opened the running app separately to inspect Supie's closure, the Neurofanos peer evidence and the sparse PulseMap view. Verified the trajectory response for all five projects.
+- The frontend production build, `python scripts/verify.py`, `python scripts/check_migrations.py` in three transaction modes and `python scripts/export_contract.py --check` all passed.
+- The fixture dry run wrote zero rows. The disposable demo applied 220 records, verified byte equality after a second apply, and passed SQLite integrity and foreign-key checks.
 
-**Next task:** run the six prompts with independent analysts and reviewers. For historical replay, collect dated source-version evidence for both sides of a pair. For forecasting, assemble a separate product-family cohort and establish routine provider use or documented absence through the full 24-month follow-up window.
+**Next task** — Run P2 against the public discovery sources using the frozen first institutional pre-seed or seed entry rule for 2012–2022, and audit eligibility, closure evidence and follow-up coverage before any outcome estimation.
