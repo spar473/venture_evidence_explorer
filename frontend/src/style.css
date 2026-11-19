@@ -1345,7 +1345,7 @@ summary {
 @media(max-width:700px){.research-overview-grid,.research-timeline>li{grid-template-columns:1fr;}.research-overview-grid{gap:8px;}.research-timeline>li{gap:8px;}}
 
 /* Research pathway comparisons share the existing dossier and source navigation. */
-.healthtech-comparison {border: 1px solid var(--line, #d8dedc); background: var(--surface, #fff); padding: 1.25rem; margin: 1rem 0 1.5rem; border-radius: 8px;}
+.healthtech-comparison, .pool-panel {border: 1px solid var(--line, #d8dedc); background: var(--surface, #fff); padding: 1.25rem; margin: 1rem 0 1.5rem; border-radius: 8px;}
 .healthtech-peer {border-top: 2px solid #94aaa1; padding-top: 1rem; margin-top: 1.5rem;}
 .healthtech-peer h4 {font-size: 1.2rem; margin: .2rem 0 .6rem;}
 .healthtech-peer h5 {font-size: .95rem; margin-bottom: .5rem;}
@@ -1356,7 +1356,11 @@ summary {
 .healthtech-conclusion {margin: .8rem 0;}
 .healthtech-conclusion p {margin-bottom: .3rem;}
 .healthtech-comparison code {overflow-wrap: anywhere;}
-@media (max-width: 600px) {.healthtech-comparison {padding: .8rem;} .healthtech-comparison .research-toolbar {display: flex; flex-direction: column; align-items: stretch;} .healthtech-comparison input {max-width: 100%; min-width: 0;}}
+@media (max-width: 600px) {
+  .healthtech-comparison, .pool-panel {padding: .8rem;}
+  :is(.healthtech-comparison, .pool-panel) .research-toolbar {display: flex; flex-direction: column; align-items: stretch;}
+  .healthtech-comparison input {max-width: 100%; min-width: 0;}
+}
 
 .healthtech-coverage {
   margin: 1rem 0;
@@ -1375,3 +1379,25 @@ summary {
 }
 .healthtech-timeline dd, .healthtech-timeline ul { margin: 0; }
 .healthtech-timeline ul { padding-inline-start: 1rem; }
+
+.pool-panel > summary { font-weight: 700; cursor: pointer; }
+.pool-panel { margin-block: 0.75rem; }
+.pool-coverage { margin-block: 0.75rem; }
+.pool-counts { display: grid; grid-template-columns: repeat(auto-fit,minmax(8.75rem,1fr)); gap: 0.5rem; }
+.pool-counts div { padding: 0.55rem; border: 1px solid var(--line); }
+.pool-counts dd { margin: 0.25rem 0 0; font-size: 1.2rem; font-weight: 700; }
+.pool-figure { margin: 0.75rem 0; }
+.pool-figure figcaption { font-weight: 600; }
+.pool-plot { padding: 0.4rem 0.6rem; margin-top: 0.5rem; border: 1px solid var(--line); }
+.pool-plot-row { display: grid; grid-template-columns: 5.8rem minmax(0,1fr); align-items: center; height: 2.4rem; font-size: 0.78rem; }
+.pool-plot-track { position: relative; height: 100%; border-bottom: 1px solid var(--line); margin-right: 0.45rem; }
+.pool-step, .pool-step-rise, .pool-range, .pool-mark { position: absolute; color: #376351; }
+.pool-step { top: 50%; border-top: 2px solid currentColor; }
+.pool-step-rise { bottom: 50%; border-left: 2px solid currentColor; }
+.pool-range { top: calc(50% - 4px); height: 8px; background: currentColor; opacity: 0.4; }
+.pool-mark { top: 50%; transform: translate(-50%,-50%); font: normal 0.9rem/1 system-ui; }
+.pool-censor { background: white; font-size: 1.2rem; }
+.pool-close { color: #8d372e; font-size: 1.25rem; font-weight: 700; }
+.pool-axis > div { display: flex; justify-content: space-between; }
+.pool-trajectory { margin-block: 1rem; }
+.pool-evidence > li { margin-block: 0.7rem; }

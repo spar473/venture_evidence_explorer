@@ -8,6 +8,7 @@ import { ResearchCaseCard, ResearchEventCard, ResearchObservationCard, ResearchR
 
 import {ResearchOverview} from './research-overview';
 import {HealthtechPanel} from './healthtech';
+import {ReferencePool} from './reference-pool';
 
 const exportNames = ["observations", "events", "event_reports", "unknowns", "readiness", "sources", "reconciliation_cases", "access_gaps", "identity_mappings", "date_intervals", "requirements", "conclusions"];
 
@@ -31,6 +32,7 @@ export function ResearchWorkspace() {
       <p>{pilot.pair_count} project–venture pairs use {pilot.distinct_reference_count} distinct reference ventures.</p>
       <p className="muted">Across the imported pilot at {pilot.as_of}. Each pair links a project to evidence about a reference venture’s clinical or commercial pathway.</p>
     </section>}
+    <ReferencePool />
     <div className="research-toolbar">
       <label>Search research dossiers<input aria-label="Search research dossiers" value={q} onChange={e => setQ(e.target.value)} placeholder="Search dossier names" /></label>
       <label>Research review state<select aria-label="Research review state" value={review} onChange={e => setReview(e.target.value)}><option value="">All review states</option>{["extracted", "source_checked", "accepted", "disputed"].map(state => <option key={state} value={state}>{label(state)}</option>)}</select></label>
@@ -91,6 +93,7 @@ function ResearchDossierContent({dossier}: {dossier: ResearchDossier}) {
   return <ResearchNavigation.Provider value={reveal}><div className="research-dossier">
     <p className="notice">{label(subject.identity_link_status)} at brand/project level. Legal identity remains separate and unverified; a brand/project mapping decision does not establish it. Research evidence remains quarantined from accepted structured matching and B0 retrieval.</p>
     {(subject.subject_id.startsWith("subj_ht_") || subject.subject_id === "subj_rosterlab") && <HealthtechPanel dossier={dossier} />}
+    {["subj_ht_mri", "subj_ht_neurofanos", "subj_ht_ivf", "subj_ht_vistavision", "subj_ht_pulsemap"].includes(subject.subject_id) && <ReferencePool subjectId={subject.subject_id} />}
     <ResearchOverview dossier={dossier} />
     <details className="research-identity-details"><summary>Identity, legal unknowns and mapping review</summary>
     <dl className="research-values research-identity">

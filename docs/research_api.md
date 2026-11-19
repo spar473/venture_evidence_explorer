@@ -57,3 +57,13 @@ Historical mode returns no peer claims or subject evidence: research 0.2.1 canno
 `GET /api/research/healthtech/coverage` returns the research cutoff, imported university project count, projects with at least one eligible peer, distinct reference subject count, directed project–venture pair count and the peer list per project. The endpoint evaluates the same comparisons as the dossier from one database snapshot at the manifest preparation date. Partial imports and applicable review disputes affect the counts. Directory text filters do not change this pilot-wide total. Reference counts use stable research subject IDs and carry no legal-entity or historical-stage determination.
 
 The comparison response includes `follow_up` assessments from eligible imported research records. Individual follow-up assessments can be withheld without removing an eligible core comparison. `elapsed_evidence` exposes the date role, raw precision, observation ID and inclusive lower and upper day offsets from the named reference document. Unknown occurrence dates have null offsets. Planned dates are presented separately from occurrences. The original observation/source pair retains publication and retrieval dates.
+
+## NZ reference fixture
+
+The read-only routes below use the latest imported fixture. The directory returns an empty list and null coverage until a fixture is imported.
+
+- `GET /api/reference-pool` returns the packet digest, named companies and coverage counts across all six status categories and three witness categories.
+- `GET /api/reference-pool/companies/{company_id}` returns the publisher-attributed events, elapsed-day intervals for supported anchors, censor and closure markers, and witnessed stage snapshots. Events with proposed company links retain their claims without elapsed-day coordinates.
+- `GET /api/reference-pool/analogy/{subject_id}` applies the existing B0 lexical comparison and joins eligible fixture identities. Where B0 yields no linked fixture company, it uses the dossier's curated pathway precedents if available. The response identifies the method or abstention. Elapsed-day coordinates describe peers only.
+
+The fixture routes expose counts and individual histories. Rate, curve and prediction routes are outside this contract.

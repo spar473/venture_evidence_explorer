@@ -1124,6 +1124,39 @@
         "title": "ElapsedEvidence",
         "type": "object"
       },
+      "EventDate": {
+        "additionalProperties": false,
+        "properties": {
+          "precision": {
+            "enum": [
+              "day",
+              "month",
+              "quarter",
+              "year",
+              "unknown"
+            ],
+            "title": "Precision",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "value",
+          "precision"
+        ],
+        "title": "EventDate",
+        "type": "object"
+      },
       "EventValue": {
         "additionalProperties": false,
         "properties": {
@@ -1227,6 +1260,68 @@
           "counts"
         ],
         "title": "Facets",
+        "type": "object"
+      },
+      "Feature": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "enum": [
+              "stage",
+              "months_since_founding",
+              "team_size",
+              "founder_count",
+              "prior_founder_exits",
+              "university_origin",
+              "sector",
+              "buyer",
+              "business_model",
+              "regulatory_class",
+              "capital_raised_to_date",
+              "lead_investor_type",
+              "description"
+            ],
+            "title": "Name",
+            "type": "string"
+          },
+          "passage": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Passage",
+            "type": "string"
+          },
+          "source_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "title": "Value"
+          },
+          "witness_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Witness Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "source_id",
+          "witness_id",
+          "passage"
+        ],
+        "title": "Feature",
         "type": "object"
       },
       "FinancialValue": {
@@ -2029,6 +2124,589 @@
           "unresolved_cases"
         ],
         "title": "PathwayPeer",
+        "type": "object"
+      },
+      "PoolAnalogy": {
+        "additionalProperties": false,
+        "properties": {
+          "b0_candidate_count": {
+            "title": "B0 Candidate Count",
+            "type": "integer"
+          },
+          "coverage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PoolCounts"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "method": {
+            "enum": [
+              "lexical_b0",
+              "curated_pathway",
+              "abstain"
+            ],
+            "title": "Method",
+            "type": "string"
+          },
+          "trajectories": {
+            "items": {
+              "$ref": "#/components/schemas/PoolTrajectory"
+            },
+            "title": "Trajectories",
+            "type": "array"
+          }
+        },
+        "required": [
+          "coverage",
+          "trajectories",
+          "b0_candidate_count",
+          "method"
+        ],
+        "title": "PoolAnalogy",
+        "type": "object"
+      },
+      "PoolCounts": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "companies": {
+            "title": "Companies",
+            "type": "integer"
+          },
+          "companies_without_entry": {
+            "title": "Companies Without Entry",
+            "type": "integer"
+          },
+          "companies_without_entry_snapshot": {
+            "title": "Companies Without Entry Snapshot",
+            "type": "integer"
+          },
+          "kind": {
+            "const": "fixture",
+            "title": "Kind",
+            "type": "string"
+          },
+          "sources": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Sources",
+            "type": "object"
+          },
+          "statuses": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Statuses",
+            "type": "object"
+          }
+        },
+        "required": [
+          "kind",
+          "as_of",
+          "companies",
+          "statuses",
+          "sources",
+          "companies_without_entry",
+          "companies_without_entry_snapshot"
+        ],
+        "title": "PoolCounts",
+        "type": "object"
+      },
+      "PoolDirectory": {
+        "additionalProperties": false,
+        "properties": {
+          "companies": {
+            "items": {
+              "$ref": "#/components/schemas/PoolDirectoryItem"
+            },
+            "title": "Companies",
+            "type": "array"
+          },
+          "coverage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PoolCounts"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "packet_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Packet Sha256"
+          }
+        },
+        "required": [
+          "packet_sha256",
+          "coverage",
+          "companies"
+        ],
+        "title": "PoolDirectory",
+        "type": "object"
+      },
+      "PoolDirectoryItem": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "sector": {
+            "title": "Sector",
+            "type": "string"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "sector"
+        ],
+        "title": "PoolDirectoryItem",
+        "type": "object"
+      },
+      "PoolEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "amount_nzd": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Amount Nzd"
+          },
+          "claim": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Claim",
+            "type": "string"
+          },
+          "closure_evidence": {
+            "anyOf": [
+              {
+                "enum": [
+                  "register_removal",
+                  "liquidation_notice",
+                  "founder_announcement"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Closure Evidence"
+          },
+          "company_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Company Id",
+            "type": "string"
+          },
+          "date": {
+            "$ref": "#/components/schemas/EventDate"
+          },
+          "date_basis": {
+            "enum": [
+              "reported_occurrence",
+              "completed_at_announcement",
+              "unknown"
+            ],
+            "title": "Date Basis",
+            "type": "string"
+          },
+          "entity_link": {
+            "default": "supported",
+            "enum": [
+              "supported",
+              "proposed"
+            ],
+            "title": "Entity Link",
+            "type": "string"
+          },
+          "event_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "institutional_investor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Institutional Investor"
+          },
+          "instrument": {
+            "default": "unknown",
+            "enum": [
+              "priced_equity",
+              "equity_unspecified",
+              "other",
+              "unknown"
+            ],
+            "title": "Instrument",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "pre_seed",
+              "seed",
+              "series_a",
+              "series_b",
+              "series_c_plus",
+              "series_a_equivalent",
+              "pre_series_a",
+              "seed_extension",
+              "bridge",
+              "convertible_note",
+              "grant",
+              "crowdfunding",
+              "other_financing",
+              "acquired",
+              "ipo",
+              "first_paid_customer",
+              "provider_deployment",
+              "regulatory_clearance",
+              "closed_register_removal",
+              "closed_liquidation",
+              "closed_founder_announcement",
+              "last_verified_activity"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "passage": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Passage",
+            "type": "string"
+          },
+          "round_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Round Label"
+          },
+          "source_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Source Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id",
+          "company_id",
+          "kind",
+          "date",
+          "date_basis",
+          "source_id",
+          "passage",
+          "claim"
+        ],
+        "title": "PoolEvent",
+        "type": "object"
+      },
+      "PoolPoint": {
+        "additionalProperties": false,
+        "properties": {
+          "event": {
+            "$ref": "#/components/schemas/PoolEvent"
+          },
+          "lower_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower Days"
+          },
+          "source": {
+            "$ref": "#/components/schemas/PoolSource"
+          },
+          "upper_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper Days"
+          },
+          "witnesses": {
+            "items": {
+              "$ref": "#/components/schemas/Witness"
+            },
+            "title": "Witnesses",
+            "type": "array"
+          }
+        },
+        "required": [
+          "event",
+          "source",
+          "witnesses",
+          "lower_days",
+          "upper_days"
+        ],
+        "title": "PoolPoint",
+        "type": "object"
+      },
+      "PoolSource": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "press_release",
+              "news_article",
+              "portfolio_page",
+              "company_page",
+              "registry_record",
+              "liquidation_notice",
+              "founder_announcement",
+              "dated_report"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "published_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published On"
+          },
+          "publisher": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Publisher",
+            "type": "string"
+          },
+          "retrieved_on": {
+            "title": "Retrieved On",
+            "type": "string"
+          },
+          "revised_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revised On"
+          },
+          "source_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "title": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Title",
+            "type": "string"
+          },
+          "url": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_id",
+          "title",
+          "publisher",
+          "url",
+          "kind",
+          "published_on",
+          "retrieved_on"
+        ],
+        "title": "PoolSource",
+        "type": "object"
+      },
+      "PoolStageSnapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "features": {
+            "items": {
+              "$ref": "#/components/schemas/WitnessedFeature"
+            },
+            "title": "Features",
+            "type": "array"
+          },
+          "stage_event_id": {
+            "title": "Stage Event Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "as_of",
+          "stage_event_id",
+          "features"
+        ],
+        "title": "PoolStageSnapshot",
+        "type": "object"
+      },
+      "PoolTrajectory": {
+        "additionalProperties": false,
+        "properties": {
+          "censor_lower_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Censor Lower Days"
+          },
+          "censor_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Censor On"
+          },
+          "censor_upper_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Censor Upper Days"
+          },
+          "company": {
+            "$ref": "#/components/schemas/PoolDirectoryItem"
+          },
+          "entry_basis": {
+            "title": "Entry Basis",
+            "type": "string"
+          },
+          "entry_event_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Entry Event Id"
+          },
+          "origin_passage": {
+            "title": "Origin Passage",
+            "type": "string"
+          },
+          "origin_source": {
+            "$ref": "#/components/schemas/PoolSource"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/PoolPoint"
+            },
+            "title": "Points",
+            "type": "array"
+          },
+          "snapshots": {
+            "items": {
+              "$ref": "#/components/schemas/PoolStageSnapshot"
+            },
+            "title": "Snapshots",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "stop_event_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stop Event Id"
+          }
+        },
+        "required": [
+          "company",
+          "status",
+          "entry_basis",
+          "entry_event_id",
+          "origin_source",
+          "origin_passage",
+          "censor_on",
+          "censor_lower_days",
+          "censor_upper_days",
+          "stop_event_id",
+          "points",
+          "snapshots"
+        ],
+        "title": "PoolTrajectory",
         "type": "object"
       },
       "ProgrammeFacet": {
@@ -4893,6 +5571,87 @@
         "title": "VentureSummary",
         "type": "object"
       },
+      "Witness": {
+        "additionalProperties": false,
+        "properties": {
+          "available_on": {
+            "title": "Available On",
+            "type": "string"
+          },
+          "captured_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Captured At"
+          },
+          "kind": {
+            "enum": [
+              "publisher_dated",
+              "archived_capture"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "locator": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Locator",
+            "type": "string"
+          },
+          "source_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Source Id",
+            "type": "string"
+          },
+          "url": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "title": "Url",
+            "type": "string"
+          },
+          "witness_id": {
+            "pattern": "^[a-z][a-z0-9_]{0,79}$",
+            "title": "Witness Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "witness_id",
+          "source_id",
+          "kind",
+          "available_on",
+          "url",
+          "locator"
+        ],
+        "title": "Witness",
+        "type": "object"
+      },
+      "WitnessedFeature": {
+        "additionalProperties": false,
+        "properties": {
+          "feature": {
+            "$ref": "#/components/schemas/Feature"
+          },
+          "source": {
+            "$ref": "#/components/schemas/PoolSource"
+          },
+          "witness": {
+            "$ref": "#/components/schemas/Witness"
+          }
+        },
+        "required": [
+          "feature",
+          "source",
+          "witness"
+        ],
+        "title": "WitnessedFeature",
+        "type": "object"
+      },
       "WordingDifferences": {
         "additionalProperties": false,
         "properties": {
@@ -5618,6 +6377,102 @@
           }
         },
         "summary": "Duplicates"
+      }
+    },
+    "/api/reference-pool": {
+      "get": {
+        "operationId": "reference_directory_api_reference_pool_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PoolDirectory"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Reference Directory"
+      }
+    },
+    "/api/reference-pool/analogy/{subject_id}": {
+      "get": {
+        "operationId": "reference_analogy_api_reference_pool_analogy__subject_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subject_id",
+            "required": true,
+            "schema": {
+              "title": "Subject Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PoolAnalogy"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Reference Analogy"
+      }
+    },
+    "/api/reference-pool/companies/{company_id}": {
+      "get": {
+        "operationId": "reference_company_api_reference_pool_companies__company_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "company_id",
+            "required": true,
+            "schema": {
+              "title": "Company Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PoolTrajectory"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Reference Company"
       }
     },
     "/api/research/exports/{name}.csv": {

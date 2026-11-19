@@ -140,6 +140,9 @@ def create_app(db_path=None):
     from .discovery_api import install as install_discovery
     install_discovery(app,path)
 
+    from .reference_pool_api import install as install_reference_pool
+    install_reference_pool(app,path)
+
     dist = ROOT / 'frontend/dist'
     if (dist / 'assets').is_dir():
         app.mount('/assets', StaticFiles(directory=dist / 'assets'), name='assets')
