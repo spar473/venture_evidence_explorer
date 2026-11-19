@@ -1,0 +1,4624 @@
+{
+  "format_version": "nz-cohort-entry-evidence:1",
+  "captured_on": "2026-11-20",
+  "sources": {
+    "ycf_2019": {
+      "publisher": "PwC NZ / Young Company Finance",
+      "url": "https://www.pwc.co.nz/publications/2019/startup/young-company-finance-deals.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historic named deal appendix. Table has reported location, sector, round number and stage. It does not identify deal investors."
+    },
+    "ycf_2020": {
+      "publisher": "PwC NZ / Young Company Finance",
+      "url": "https://www.pwc.co.nz/publications/2020/StartUp/deal-data-for-website.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "2019 deal appendix with lead and syndication parties where stated. Round number and reported location alone leave first institutional financing and headquarters open."
+    },
+    "ycf_2017": {
+      "publisher": "PwC NZ / Young Company Finance",
+      "url": "https://www.pwc.co.nz/publications/the-young-company-finance-index-2017-results.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "2017 deal table including lead and syndication parties. Publication day is not printed in the deal table."
+    },
+    "ycf_2023": {
+      "publisher": "PwC NZ / Young Company Finance",
+      "url": "https://www.pwc.co.nz/assets/2023-assets/startup-may-2023/young-company-finance-deals-and-data.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2023-05",
+        "precision": "month"
+      },
+      "scope": "Second-half 2022 table. NC is new company capital within YCF coverage and does not specify a financing stage or investor."
+    },
+    "ycf_spring_2022": {
+      "publisher": "NZGCP / Angel Association NZ / PwC NZ",
+      "url": "https://www.nzgcp.co.nz/assets/Media/startup-investment-report-spring-2022_sml.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Headline deal-count chart for H1 2022 includes new and follow-on early-stage deals."
+    },
+    "ycf_autumn_2023": {
+      "publisher": "NZGCP / Angel Association NZ / PwC NZ",
+      "url": "https://www.nzgcp.co.nz/assets/Media/startup-investment-autumn-2023.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2023-05",
+        "precision": "month"
+      },
+      "scope": "Headline deal-count chart for H2 2022 includes new and follow-on early-stage deals."
+    },
+    "entry_formuslabs_punakaikifund": {
+      "publisher": "Punakaiki Fund",
+      "url": "https://punakaikifund.co.nz/capital-injection-fuels-formus-labs-for-us-launch/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-02-11",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_astrix_astrixastronautics": {
+      "publisher": "Astrix Astronautics",
+      "url": "https://astrix.space/astrix-raises-500000-from-outset-ventures-to-power-satellites-with-inflatable-space-tech/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-04-22",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_cleanery_cleaneryviascoop": {
+      "publisher": "Cleanery via Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU2206/S00139/cleanery-nets-234m-in-oversubscribed-seed-round.htm",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-06-09",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_heartlab_techcrunch": {
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2021/09/16/new-zealand-startup-heartlab-raises-2-45m-to-bring-heart-scanning-software-to-the-u-s/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-09-16",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_runnio_startupdaily": {
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-project-capability-startup-runn-io-raises-2-million-seed-round/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-12-14",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_quashed_quashed": {
+      "publisher": "Quashed",
+      "url": "https://quashed.co.nz/blog/press-release-5-March-2021/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-03-05",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_excellent_startupdaily": {
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-employee-experience-platform-excellent-raises-2-million-in-pre-seed-round/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-09-08",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_supie_supermarketnews": {
+      "publisher": "Supermarket News",
+      "url": "https://supermarketnews.co.nz/news/supie-puts-2-5m-towards-growth/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-11-09",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_firstaml_firstamlviascoop": {
+      "publisher": "First AML via Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU1910/S00164/first-aml-raises-25m-for-its-anti-money-laundering-tech.htm",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2019-10-07",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_partly_nzentrepreneur": {
+      "publisher": "NZ Entrepreneur",
+      "url": "https://nzentrepreneur.co.nz/partly-raises-1-7-million-seed-funding-from-all-star-consortium/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2020-10-08",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_safestack_safestack": {
+      "publisher": "SafeStack",
+      "url": "https://safestack.io/blog/safestack-news/safestack-academy-closes-seed-investment-round",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_carepatron_startupdaily": {
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-healthtech-startup-carepatron-banks-nz1-6m-pre-seed-round-from-blackbird-to-ramp-up-global-growth/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-07-26",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_immersve_immersve": {
+      "publisher": "Immersve",
+      "url": "https://medium.com/@Immersve/global-vcs-back-immersve-in-one-of-nz-s-largest-seed-rounds-6c0b2f78e2b6",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-06-20",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_miruku_mirukuviaprnewswire": {
+      "publisher": "Miruku via PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/miruku-a-new-zealand-animal-free-dairy-start-up-emerges-from-stealth-on-foodtech-vc-investment-301507390.html",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-03-22",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_cetogenix_cetogenixviascoop": {
+      "publisher": "Cetogenix via Scoop",
+      "url": "https://www.scoop.co.nz/stories/SC2207/S00011/new-zealand-clean-tech-start-up-cetogenix-raises-45m-seed-funding-for-organic-waste-to-renewable-energy-technology.htm",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-07-07",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_zincovery_climateventurecapitalfund": {
+      "publisher": "Climate Venture Capital Fund",
+      "url": "https://climatevcfund.com/why-were-backing-zincovery-for-zinc-recycling-without-coal/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-10-25",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_energybank_blackbird": {
+      "publisher": "Blackbird",
+      "url": "https://www.blackbird.vc/blog/investment-notes-energybank",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-10-21",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_aspiringmaterials_startupdaily": {
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/climate-tech/kiwi-carbon-capture-startup-aspiring-materials-raises-1-million-seed-round/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-10-15",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_dawnaerospace_nbr": {
+      "publisher": "NBR",
+      "url": "https://www.nbr.co.nz/investment/why-you-would-raise-30m-when-you-dont-really-need-it/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_theinsidescompany_youngcompanyfinance": {
+      "publisher": "Young Company Finance",
+      "url": "https://www.pwc.co.nz/publications/2020/StartUp/deal-data-for-website.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_halter_promusventures": {
+      "publisher": "Promus Ventures",
+      "url": "https://promusventures.com/2017/10/26/cowgorithms/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2017-10-26",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_cropsy_nztradeandenterprise": {
+      "publisher": "NZ Trade and Enterprise",
+      "url": "https://www.nzte.govt.nz/blog/nz-agritech-start-up-caps-its-first-capital-raise-at-usd1-5-million",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_cropsy_ttakiaucklandunlimited": {
+      "publisher": "Tātaki Auckland Unlimited",
+      "url": "https://aucklandeconomicdevelopment.com/invest/news/Auckland-agritech-companies-addressing-21st-Century-challenges",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_vertusenergy_nzministryoftransport": {
+      "publisher": "NZ Ministry of Transport",
+      "url": "https://www.transport.govt.nz/assets/Uploads/AllAdviceToTheMinisterForMay_2.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "vertus_uoa": {
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2022/01/27/biofuel-start-up-make-fossil-fuels-extinct.html",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-01-27",
+        "precision": "day"
+      },
+      "scope": "Supporting investor attribution for Vertus Energy’s pre-seed."
+    },
+    "entry_zennoastronautics_nuanceconnectedcapital": {
+      "publisher": "Nuance Connected Capital",
+      "url": "https://www.nuance.vc/post/zenno-10-5-million-seed-round",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-08-29",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_dosh_startupdaily": {
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-digital-wallet-dosh-raises-5-million-seed-round/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-04-13",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_karatechnologies_startupdaily": {
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kara-technologies-a-kiwi-startup-helping-deaf-people-with-sign-language-raises-nz1-3-million-seed-round/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-11-14",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_evouch_startupdaily": {
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-social-media-marketing-startup-evouch-banks-nz500000-pre-seed/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-10-20",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "entry_alimetry_universityofauckland": {
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2021/04/20/guts-glory-rise-biotech-start-up-alimetry.html",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-04-20",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "insides_uoa": {
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2023/08/01/duncan-cunninghame-new-zealand-medtech.html",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2023-08-01",
+        "precision": "day"
+      },
+      "scope": "Direct corroboration of the NZ founding of The Insides Company."
+    },
+    "sharesies_founding": {
+      "publisher": "Sharesies",
+      "url": "https://www.sharesies.nz/blog/from-startup-to-our-sixth-birthday",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2023-05-29",
+        "precision": "day"
+      },
+      "scope": "Company account of its origins and early Wellington operations."
+    },
+    "wnt_fund2": {
+      "publisher": "WNT Ventures",
+      "url": "https://wntventures.co.nz/news/wnt-ventures-announces-the-first-two-portfolio-companies-of-their-second-fund/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2018-12-10",
+        "precision": "day"
+      },
+      "scope": "WNT announces completed institutional investments in Foundry Lab and TDRI and identifies the latter’s NZ spinout origin."
+    },
+    "foundry_callaghan": {
+      "publisher": "Callaghan Innovation",
+      "url": "https://www.callaghaninnovation.govt.nz/stories/foundry-lab-wnt-ventures-from-backyard-project-to-series-b-capital-raise/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Government profile of Foundry Lab’s Wellington founder and original engagement by WNT Ventures."
+    },
+    "mint_nzpc": {
+      "publisher": "NZ Private Capital",
+      "url": "https://nzprivatecapital.co.nz/wp-content/uploads/2021/05/20215-000676_NZPC-Monitor-2021_FINAL_Digital.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-05",
+        "precision": "month"
+      },
+      "scope": "The Mint Innovation case reports its original seed participation by Ice Angels and WNT Ventures and early Auckland operations."
+    },
+    "entry_narrative_nbr": {
+      "publisher": "NBR",
+      "url": "https://www.nbr.co.nz/investment/peter-thiel-led-fund-backs-local-creative-tech-startup-narrative/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2019-05-21",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "evouch_founder": {
+      "publisher": "Balance the Grind",
+      "url": "https://balancethegrind.co/interviews/alonzo-nieves-co-founder-at-evouch/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-11-23",
+        "precision": "day"
+      },
+      "scope": "Public founder interview corroborates the first pre-seed claim."
+    },
+    "supie_register": {
+      "publisher": "NZ Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Company summary and previous status checked in the Companies Register. Current register, separate from historical availability evidence."
+    },
+    "inhibit_ea": {
+      "publisher": "Enterprise Angels",
+      "url": "https://www.enterpriseangels.co.nz/project/inhibit-coatings/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Investor portfolio profile corroborates the identity and company’s New Zealand base."
+    },
+    "inhibit_macdiarmid": {
+      "publisher": "The MacDiarmid Institute",
+      "url": "https://www.macdiarmid.ac.nz/what-we-do/into-the-marketplace/regulatory-navigation-a-starter-pack-for-researchers/case-studies/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Inhibit Coatings case describes the founders’ New Zealand work and establishment in 2016."
+    },
+    "entry_codelingolimited_rightclickcapital": {
+      "publisher": "Right Click Capital",
+      "url": "https://www.rightclickcapital.com/2018/01/24/dunedin-startup-codelingo-raises-nz540000-from-reinventure-and-right-click-capital/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2018-01-24",
+        "precision": "day"
+      },
+      "scope": "One public financing report, scoped to the named company and its entry claim."
+    },
+    "socialclub_nz": {
+      "publisher": "Otago Daily Times",
+      "url": "https://www.odt.co.nz/business/dunedin-based-start-up-one-to-watch-mncbu8c5",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Icehouse seed partner describes The Social Club and the 2015 launch of the advertising marketplace in the New Zealand startup ecosystem."
+    },
+    "partly_scoop": {
+      "publisher": "Partly via Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU2010/S00131/partly-raises-17-million-in-seed-funding-from-all-star-consortium-of-investors.htm",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2020-10-08",
+        "precision": "day"
+      },
+      "scope": "Company dateline and financing announcement corroborate the October 2020 public report."
+    }
+  },
+  "reports": [
+    {
+      "company_id": "discovery_aera",
+      "name": "Aera",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Oct-22 row for Aera",
+      "sector": "Fintech",
+      "date": {
+        "value": "2022-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "discovery_alimetry",
+      "name": "Alimetry",
+      "source_id": "entry_alimetry_universityofauckland",
+      "locator": "First institutional funding paragraph and NZ origins",
+      "sector": "Healthtech",
+      "date": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "date_basis": "unknown",
+      "label": null,
+      "institutional_investor": "IP Group",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "The university reports the company’s first institutional round without stating a seed label or closing date."
+    },
+    {
+      "company_id": "discovery_aspiringmaterials",
+      "name": "Aspiring Materials",
+      "source_id": "entry_aspiringmaterials_startupdaily",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Cleantech",
+      "date": {
+        "value": "2021-10-15",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed funding",
+      "institutional_investor": "Icehouse Ventures and Outset Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The report places the original startup in Christchurch and identifies both venture funds in the completed round."
+    },
+    {
+      "company_id": "discovery_astrix",
+      "name": "Astrix",
+      "source_id": "entry_astrix_astrixastronautics",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Space technology",
+      "date": {
+        "value": "2021-04-21",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "label": "pre-seed funding round",
+      "institutional_investor": "Outset Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The issuer reports the Outset-led pre-seed in Auckland and describes the startup operating there since formation."
+    },
+    {
+      "company_id": "discovery_cetogenix",
+      "name": "Cetogenix",
+      "source_id": "entry_cetogenix_cetogenixviascoop",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Cleantech",
+      "date": {
+        "value": "2022-07-07",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed funding",
+      "institutional_investor": "Pacific Channel",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The company cites its NZ origin and seed led by Pacific Channel."
+    },
+    {
+      "company_id": "discovery_cleanery",
+      "name": "Cleanery",
+      "source_id": "entry_cleanery_cleaneryviascoop",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Consumer products",
+      "date": {
+        "value": "2022-06-09",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "Seed Round",
+      "institutional_investor": "Climate Venture Capital Fund and Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The issuer identifies the Kiwi company and its recently closed institutional Seed Round."
+    },
+    {
+      "company_id": "discovery_cropsy",
+      "name": "Cropsy",
+      "source_id": "entry_cropsy_ttakiaucklandunlimited",
+      "locator": "Cropsy paragraph, corroborated by NZTE first capital raise",
+      "sector": "Agritech",
+      "date": {
+        "value": "2022",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "label": "seed capital raise",
+      "institutional_investor": "Aspire NZ Seed Fund and Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "The economic development agency reports closing the 2022 seed, corresponding to the first NZTE round in size and named NZ company.",
+      "corroborating_source_ids": [
+        "entry_cropsy_nztradeandenterprise"
+      ]
+    },
+    {
+      "company_id": "discovery_cropsy",
+      "name": "Cropsy",
+      "source_id": "entry_cropsy_nztradeandenterprise",
+      "locator": "Title, initial capital and named investors",
+      "sector": "Agritech",
+      "date": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "date_basis": "unknown",
+      "label": null,
+      "institutional_investor": "Aspire NZ Seed Fund and Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "NZTE names investors and the first round. Its article requires corroboration for the entry date and exact seed label."
+    },
+    {
+      "company_id": "discovery_dawnaerospace",
+      "name": "Dawn Aerospace",
+      "source_id": "entry_dawnaerospace_nbr",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Space technology",
+      "date": {
+        "value": "2018-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "seed money",
+      "institutional_investor": "Icehouse Ventures’ Tuhua Fund",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The publication names the institutional lead for the 2018 seed of the NZ-founded company; Young Company Finance supplies the reported December month.",
+      "corroborating_source_ids": [
+        "ycf_2019",
+        "ycf_autumn_2023"
+      ]
+    },
+    {
+      "company_id": "discovery_dawnaerospace",
+      "name": "Dawn Aerospace",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 5, Dec-18 row for Dawn Aerospace",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2018-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "discovery_ddrxpharmaceuticals",
+      "name": "DDRx Pharmaceuticals",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Dec-22 row for DDRx Pharmaceuticals",
+      "sector": "Life Sciences",
+      "date": {
+        "value": "2022-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "discovery_diasense",
+      "name": "Diasense",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, Jun-18 row for Diasense",
+      "sector": "Sciences",
+      "date": {
+        "value": "2018-06",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "discovery_diasense",
+      "name": "Diasense Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 1, Feb-19 row for Diasense Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Pre-seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Pre-seed, round 0, and location Auckland."
+    },
+    {
+      "company_id": "discovery_diasense",
+      "name": "Diasense Limited",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 1, Feb-19 row for Diasense Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Pre-seed",
+      "institutional_investor": "Pacific Channel",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Pre-seed, round 0, and location Auckland. Named participants include Pacific Channel."
+    },
+    {
+      "company_id": "discovery_energybank",
+      "name": "EnergyBank",
+      "source_id": "entry_energybank_blackbird",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Energy",
+      "date": {
+        "value": "2021-10-21",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "Seed round",
+      "institutional_investor": "Blackbird and Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The investor identifies the NZ startup and its participation in the completed round."
+    },
+    {
+      "company_id": "discovery_evouch",
+      "name": "eVouch",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Oct-22 row for eVouch",
+      "sector": "Software",
+      "date": {
+        "value": "2022-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "discovery_evouch",
+      "name": "eVouch",
+      "source_id": "entry_evouch_startupdaily",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Marketing software",
+      "date": {
+        "value": "2022-10-20",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "pre-Seed round",
+      "institutional_investor": "GD1 and UniServices",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "The dated article names the Kiwi company, completed pre-Seed and participating institutions. A founder interview identifies it as the first pre-seed.",
+      "corroborating_source_ids": [
+        "evouch_founder"
+      ]
+    },
+    {
+      "company_id": "discovery_formuslabs",
+      "name": "Formus Labs",
+      "source_id": "entry_formuslabs_punakaikifund",
+      "locator": "Historical funding and NZ spinout paragraphs",
+      "sector": "Healthtech",
+      "date": {
+        "value": "2019",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "label": "seed round",
+      "institutional_investor": "Flying Kiwi Angels",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The investor reports a Flying Kiwi Angels-led seed in early 2019 and describes the Auckland Bioengineering Institute spinout."
+    },
+    {
+      "company_id": "discovery_foundrylab",
+      "name": "Foundry Lab",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 5, Nov-18 row for Foundry Lab",
+      "sector": "Advanced manufacturing",
+      "date": {
+        "value": "2018-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The YCF table dates the Wellington Seed round. The WNT fund announcement and Callaghan Innovation’s description of the original Wellington start corroborate the earliest funding.",
+      "corroborating_source_ids": [
+        "wnt_fund2",
+        "foundry_callaghan"
+      ]
+    },
+    {
+      "company_id": "discovery_halter",
+      "name": "Halter",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 12, Dec-16 row for Halter",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2016-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "discovery_halter",
+      "name": "Halter",
+      "source_id": "entry_halter_promusventures",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Agritech",
+      "date": {
+        "value": "2017-10-26",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "Seed round",
+      "institutional_investor": "Promus Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "The investor announced the 2017 Seed and describes earlier backing. Young Company Finance records an earlier seed entry lead in 2016."
+    },
+    {
+      "company_id": "discovery_heartlab",
+      "name": "HeartLab",
+      "source_id": "entry_heartlab_techcrunch",
+      "locator": "Dateline, opening and total capital paragraph",
+      "sector": "Healthtech",
+      "date": {
+        "value": "2020-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "pre-seed",
+      "institutional_investor": "Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The article identifies the New Zealand medtech company and reports its Icehouse-led pre-seed the previous October."
+    },
+    {
+      "company_id": "discovery_inhibitcoatings",
+      "name": "Inhibit Coatings Limited",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 3, Dec-19 row for Inhibit Coatings Limited",
+      "sector": "Advanced materials",
+      "date": {
+        "value": "2019-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Enterprise Angels, Angel HQ, Ice Angels, SCIF",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The YCF table identifies the December 2019 Seed round numbered 1 and names the syndication parties. Investor and institute profiles corroborate the NZ company.",
+      "corroborating_source_ids": [
+        "inhibit_ea",
+        "inhibit_macdiarmid"
+      ]
+    },
+    {
+      "company_id": "discovery_insiteai",
+      "name": "Insite AI",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 1, Mar-19 row for Insite AI",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round 0, and location Auckland."
+    },
+    {
+      "company_id": "discovery_insiteai",
+      "name": "Insite AI",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 2, Mar-19 row for Insite AI",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round 0, and location Auckland. Named participants include WNT Ventures."
+    },
+    {
+      "company_id": "discovery_karatechnologies",
+      "name": "Kara Technologies",
+      "source_id": "entry_karatechnologies_startupdaily",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Accessibility technology",
+      "date": {
+        "value": "2022-11-14",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "Seed funding",
+      "institutional_investor": "Investible",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "unresolved",
+      "passage": "The release identifies the NZ company and institutional Seed. Earlier staged backing needs reconciliation."
+    },
+    {
+      "company_id": "discovery_maramalabs",
+      "name": "Marama Labs",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 1, Feb-19 row for Marama Labs",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2019-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "discovery_maramalabs",
+      "name": "Marama Labs",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 2, Feb-19 row for Marama Labs",
+      "sector": "Services",
+      "date": {
+        "value": "2019-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington. Named participants include WNT Ventures."
+    },
+    {
+      "company_id": "discovery_mastaplex",
+      "name": "Mastaplex",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Aug-15 row for Mastaplex",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2015-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Dunedin."
+    },
+    {
+      "company_id": "discovery_mintinnovation",
+      "name": "Mint",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 2, Mar-17 row for Mint",
+      "sector": "Energy",
+      "date": {
+        "value": "2017-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland. Named participants include WNT Ventures."
+    },
+    {
+      "company_id": "discovery_mintinnovation",
+      "name": "Mint Innovation",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, Mar-17 row for Mint Innovation",
+      "sector": "Cleantech",
+      "date": {
+        "value": "2017-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The YCF edition records the March seed tranche. The later name continuity and original institutional backing are supported by the 2017 results table and the NZ Private Capital case.",
+      "corroborating_source_ids": [
+        "ycf_2017",
+        "mint_nzpc"
+      ]
+    },
+    {
+      "company_id": "discovery_mintinnovation",
+      "name": "Mint",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 2, Apr-17 row for Mint",
+      "sector": "Energy",
+      "date": {
+        "value": "2017-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Ice Angels, K1W1",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Ice Angels, K1W1."
+    },
+    {
+      "company_id": "discovery_mintinnovation",
+      "name": "Mint Innovation",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, Apr-17 row for Mint Innovation",
+      "sector": "Energy",
+      "date": {
+        "value": "2017-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "discovery_miruku",
+      "name": "Miruku",
+      "source_id": "entry_miruku_mirukuviaprnewswire",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Foodtech",
+      "date": {
+        "value": "2022-03-22",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed investment round",
+      "institutional_investor": "Movac",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The issuer describes the New Zealand company emerging from stealth and its closed Movac-led seed."
+    },
+    {
+      "company_id": "discovery_nextfarm",
+      "name": "Next Farm",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 2, Jan-18 row for Next Farm",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-01",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Dunedin."
+    },
+    {
+      "company_id": "discovery_nyriad",
+      "name": "Nyriad",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Aug-15 row for Nyriad",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Hamilton."
+    },
+    {
+      "company_id": "discovery_reactory",
+      "name": "Reactory",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Oct-22 row for Reactory",
+      "sector": "FoodTech",
+      "date": {
+        "value": "2022-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "discovery_regen",
+      "name": "Regen Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 1, Mar-19 row for Regen Limited",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2019-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round 0, and location Wellington."
+    },
+    {
+      "company_id": "discovery_regen",
+      "name": "Regen Limited",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 3, Mar-19 row for Regen Limited",
+      "sector": "Equipment",
+      "date": {
+        "value": "2019-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round 0, and location Wellington."
+    },
+    {
+      "company_id": "discovery_sharesies",
+      "name": "Sharesies",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 3, May-17 row for Sharesies",
+      "sector": "Fintech",
+      "date": {
+        "value": "2017-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Sparkbox",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The YCF table associates Sparkbox with the May 2017 Seed round numbered 1. Sharesies’ own account corroborates the identity and New Zealand origins. The table location is a reported deal location.",
+      "corroborating_source_ids": [
+        "sharesies_founding"
+      ]
+    },
+    {
+      "company_id": "discovery_sharesies",
+      "name": "Sharesies",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, May-17 row for Sharesies",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "discovery_stretchsense",
+      "name": "StretchSense",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 20, Nov-14 row for StretchSense",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "discovery_tdri",
+      "name": "TDRI",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 5, Nov-18 row for TDRI",
+      "sector": "Industrial sensing",
+      "date": {
+        "value": "2018-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The YCF table dates the Christchurch company’s Seed round. WNT identifies the Lincoln Agritech spinout and the investment in its fund announcement.",
+      "corroborating_source_ids": [
+        "wnt_fund2"
+      ]
+    },
+    {
+      "company_id": "discovery_theinsidescompany",
+      "name": "The Insides Company",
+      "source_id": "entry_theinsidescompany_youngcompanyfinance",
+      "locator": "2019 deal table, The Insides Company Ltd / SDS Push, August row",
+      "sector": "Healthtech",
+      "date": {
+        "value": "2019-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Ice Angels and UniServices",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The table lists the Auckland company, formerly SDS Push, as Seed round 1 with Ice Angels and UniServices. University coverage identifies the company as founded in NZ.",
+      "corroborating_source_ids": [
+        "insides_uoa"
+      ]
+    },
+    {
+      "company_id": "discovery_upstreammedicaltechnologies",
+      "name": "Upstream Medical Technologies",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Feb-16 row for Upstream Medical Technologies",
+      "sector": "Sciences",
+      "date": {
+        "value": "2016-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Dunedin."
+    },
+    {
+      "company_id": "discovery_vertusenergy",
+      "name": "Vertus Energy",
+      "source_id": "entry_vertusenergy_nzministryoftransport",
+      "locator": "26 May 2022 meeting note, paragraph reporting 2021 raise",
+      "sector": "Cleantech",
+      "date": {
+        "value": "2021",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "label": "pre-seed funding round",
+      "institutional_investor": "Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The 26 May 2022 briefing places the NZ company’s pre-seed in 2021. The University of Auckland identifies Icehouse Ventures as lead.",
+      "corroborating_source_ids": [
+        "vertus_uoa"
+      ]
+    },
+    {
+      "company_id": "discovery_zennoastronautics",
+      "name": "Zenno Astronautics",
+      "source_id": "entry_zennoastronautics_nuanceconnectedcapital",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Space technology",
+      "date": {
+        "value": "2022-08-29",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed funding round",
+      "institutional_investor": "Nuance Connected Capital and GD1",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "The institutional lead announces the Seed. The discovery cross-reference to Zenno remains unresolved."
+    },
+    {
+      "company_id": "discovery_zincovery",
+      "name": "Zincovery",
+      "source_id": "entry_zincovery_climateventurecapitalfund",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Cleantech",
+      "date": {
+        "value": "2022-10-25",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed round",
+      "institutional_investor": "Climate Venture Capital Fund, Icehouse Ventures and Outset Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The fund reports supporting a seed round for a startup spun out of University of Canterbury research."
+    },
+    {
+      "company_id": "public_1centre",
+      "name": "1Centre",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 2, Apr-17 row for 1Centre",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Ice Angels",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Ice Angels."
+    },
+    {
+      "company_id": "public_1centre",
+      "name": "1Centre",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, Apr-17 row for 1Centre",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_acuiteltd",
+      "name": "Acuite Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Aug-15 row for Acuite Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_agritrack",
+      "name": "Agritrack",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Agritrack",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_agritrack",
+      "name": "Agritrack",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 11, Aug-16 row for Agritrack",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Otago."
+    },
+    {
+      "company_id": "public_agritrack",
+      "name": "Agritrack",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 11, Sep-16 row for Agritrack",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Dunedin."
+    },
+    {
+      "company_id": "public_agtractlimited",
+      "name": "Agtract Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Agtract Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_anonymous",
+      "name": "Anonymous",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 27, Dec-12 row for Anonymous",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2012-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_asknicely",
+      "name": "Ask Nicely",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 20, Dec-14 row for Ask Nicely",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_asknicely",
+      "name": "Ask Nicely",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Mar-15 row for Ask Nicely",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_auraeqlimited",
+      "name": "Aura EQ Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Aura EQ Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_auraeqlimited",
+      "name": "Aura EQ Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Feb-16 row for Aura EQ Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_auramerbio",
+      "name": "AuramerBio",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Feb-16 row for AuramerBio",
+      "sector": "Sciences",
+      "date": {
+        "value": "2016-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_avaliaimmunotherapiesltd",
+      "name": "Avalia Immunotherapies Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Sep-15 row for Avalia Immunotherapies Ltd",
+      "sector": "Sciences",
+      "date": {
+        "value": "2015-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_avaliaimmunotherapiesltd",
+      "name": "Avalia Immunotherapies Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Mar-16 row for Avalia Immunotherapies Ltd",
+      "sector": "Sciences",
+      "date": {
+        "value": "2016-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "public_banqerlimited",
+      "name": "BANQER LIMITED",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Sep-22 row for BANQER LIMITED",
+      "sector": "Software",
+      "date": {
+        "value": "2022-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Christchurch. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_beanybiz",
+      "name": "Beany. Biz",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Jul-15 row for Beany. Biz",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_beezthingzlimited",
+      "name": "Bee'z Thingz Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Bee'z Thingz Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_bisongroup",
+      "name": "Bison Group",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 20, Dec-14 row for Bison Group",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2014-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Dunedin."
+    },
+    {
+      "company_id": "public_blackcurrent",
+      "name": "Blackcurrent",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Jul-22 row for Blackcurrent",
+      "sector": "SaaS",
+      "date": {
+        "value": "2022-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Wellington. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_bovoniclimited",
+      "name": "Bovonic Limited",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Jul-22 row for Bovonic Limited",
+      "sector": "AgTech",
+      "date": {
+        "value": "2022-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Tauranga. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_buddybidltd",
+      "name": "BuddyBid Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, Jul-18 row for BuddyBid Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_calfsmartlimited",
+      "name": "Calf Smart Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 18, Jun-14 row for Calf Smart Limited",
+      "sector": "Capital Goods",
+      "date": {
+        "value": "2014-06",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_calfsmartlimited",
+      "name": "Calf Smart Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 20, Dec-14 row for Calf Smart Limited",
+      "sector": "Capital Goods",
+      "date": {
+        "value": "2014-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_captivatetechnologylimited",
+      "name": "Captivate Technology Limited",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Dec-22 row for Captivate Technology Limited",
+      "sector": "CleanTech",
+      "date": {
+        "value": "2022-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Palmerston North. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_carepatron",
+      "name": "Carepatron",
+      "source_id": "entry_carepatron_startupdaily",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Healthtech software",
+      "date": {
+        "value": "2022-07-26",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "pre-seed funding",
+      "institutional_investor": "Blackbird",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "The publication describes a Kiwi company previously bootstrapped before Blackbird’s pre-seed."
+    },
+    {
+      "company_id": "public_certusbioltdacuiredscitox",
+      "name": "CertusBio Ltd (Acuired Scitox)",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, May-15 row for CertusBio Ltd (Acuired Scitox)",
+      "sector": "Sciences",
+      "date": {
+        "value": "2015-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_chipi",
+      "name": "Chipi",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, May-18 row for Chipi",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_cirrus",
+      "name": "Cirrus",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 2, May-17 row for Cirrus",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Ice Angels, UniServices",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Manawatu. Named participants include Ice Angels, UniServices."
+    },
+    {
+      "company_id": "public_cirrus",
+      "name": "Cirrus",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, May-17 row for Cirrus",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Manawatu."
+    },
+    {
+      "company_id": "public_coachseeklimited",
+      "name": "Coachseek Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 19, Sep-14 row for Coachseek Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_coachseeklimited",
+      "name": "Coachseek Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Aug-15 row for Coachseek Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_codeavengers",
+      "name": "Code Avengers",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, Jul-18 row for Code Avengers",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Hamilton."
+    },
+    {
+      "company_id": "public_codelingolimited",
+      "name": "CodeLingo Limited",
+      "source_id": "entry_codelingolimited_rightclickcapital",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Developer software",
+      "date": {
+        "value": "2018-01-24",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed funding",
+      "institutional_investor": "Right Click Capital and Reinventure",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The investment firm dates its announcement of seed for the Dunedin startup. The 2019 Young Company Finance row is later despite being numbered 1 in that report.",
+      "corroborating_source_ids": [
+        "ycf_2020"
+      ]
+    },
+    {
+      "company_id": "public_codelingolimited",
+      "name": "Codelingo Limited",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 2, Aug-19 row for Codelingo Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "SCIF",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Dunedin. Named participants include SCIF."
+    },
+    {
+      "company_id": "public_cohired",
+      "name": "Cohired",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, May-18 row for Cohired",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_compostic",
+      "name": "Compostic",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 1, Jul-19 row for Compostic",
+      "sector": "Apparel",
+      "date": {
+        "value": "2019-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_confidential",
+      "name": "Confidential",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Nov-22 row for Confidential",
+      "sector": "Foodtech",
+      "date": {
+        "value": "2022-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Tauranga. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_constructbrands",
+      "name": "Construct Brands",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Aug-15 row for Construct Brands",
+      "sector": "Food & Beverages",
+      "date": {
+        "value": "2015-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_cotiss",
+      "name": "Cotiss",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Sep-22 row for Cotiss",
+      "sector": "SaaS",
+      "date": {
+        "value": "2022-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_croplogic",
+      "name": "CropLogic",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 24, Mar-12 row for CropLogic",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2012-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_croplogic",
+      "name": "CropLogic",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 26, Aug-12 row for CropLogic",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2012-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_croplogic",
+      "name": "CropLogic",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 26, Nov-12 row for CropLogic",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2012-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_dairymaxlimited",
+      "name": "Dairymax Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Dairymax Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_darcypolychrome",
+      "name": "D'Arcy Polychrome",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 24, Mar-12 row for D'Arcy Polychrome",
+      "sector": "Materials",
+      "date": {
+        "value": "2012-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_datagateinnovationlimited",
+      "name": "Datagate Innovation Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Datagate Innovation Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_debtordaddy",
+      "name": "Debtor Daddy",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 10, May-16 row for Debtor Daddy",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_designerwardrobe",
+      "name": "Designer Wardrobe",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Aug-15 row for Designer Wardrobe",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_dewpointinnovationslimited",
+      "name": "Dewpoint Innovations Limited",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Sep-22 row for Dewpoint Innovations Limited",
+      "sector": "CleanTech",
+      "date": {
+        "value": "2022-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_dexibit",
+      "name": "Dexibit",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 11, Jul-16 row for Dexibit",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_dosh",
+      "name": "Dosh",
+      "source_id": "entry_dosh_startupdaily",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Fintech",
+      "date": {
+        "value": "2022-04-13",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed round",
+      "institutional_investor": null,
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "unresolved",
+      "passage": "The news confirms the New Zealand seed funding report. Institutional participation and earliest round remain to be checked."
+    },
+    {
+      "company_id": "public_eightwirelimited",
+      "name": "Eight Wire Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 13, Feb-15 row for Eight Wire Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_excellent",
+      "name": "Excellent",
+      "source_id": "entry_excellent_startupdaily",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Workforce software",
+      "date": {
+        "value": "2022-09-08",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "pre-Seed round",
+      "institutional_investor": "Blackbird",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The dated story reports the New Zealand startup and Blackbird-led pre-Seed."
+    },
+    {
+      "company_id": "public_expander",
+      "name": "Expander",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 22, Aug-13 row for Expander",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_expander",
+      "name": "Expander",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 24, Dec-13 row for Expander",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_eyedentify",
+      "name": "Eyedentify",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 18, Jun-14 row for Eyedentify",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-06",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_farrago",
+      "name": "Farrago",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 2, Jun-19 row for Farrago",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-06",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "public_farrago",
+      "name": "Farrago",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 2, Jun-19 row for Farrago",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-06",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures, SCIF",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington. Named participants include WNT Ventures, SCIF."
+    },
+    {
+      "company_id": "public_feedmyfurbaby",
+      "name": "Feed My Fur Baby",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 2, Jul-19 row for Feed My Fur Baby",
+      "sector": "Apparel",
+      "date": {
+        "value": "2019-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_ficommslimited",
+      "name": "Ficomms Limited",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 5, Oct-17 row for Ficomms Limited",
+      "sector": "& Equipment",
+      "date": {
+        "value": "2017-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland. Named participants include WNT Ventures."
+    },
+    {
+      "company_id": "public_ficommslimited",
+      "name": "Ficomms Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 8, Oct-17 row for Ficomms Limited",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2017-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_firstaml",
+      "name": "First AML",
+      "source_id": "entry_firstaml_firstamlviascoop",
+      "locator": "Flux Accelerator paragraph and dateline",
+      "sector": "Regtech",
+      "date": {
+        "value": "2019-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "seed investment",
+      "institutional_investor": "Icehouse Ventures Flux Accelerator",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The Auckland company reports earlier seed from the Flux accelerator separately from its subsequent angel round."
+    },
+    {
+      "company_id": "public_firstcheckltd",
+      "name": "Firstcheck Ltd",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 2, May-17 row for Firstcheck Ltd",
+      "sector": "Equipment & Services",
+      "date": {
+        "value": "2017-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Launch Taranaki, Angel HQ, SCIF",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location New Plymouth. Named participants include Launch Taranaki, Angel HQ, SCIF."
+    },
+    {
+      "company_id": "public_firstcheckltd",
+      "name": "Firstcheck Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, May-17 row for Firstcheck Ltd",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2017-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location New Plymouth."
+    },
+    {
+      "company_id": "public_floatingrockstudio",
+      "name": "Floating Rock Studio",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Aug-22 row for Floating Rock Studio",
+      "sector": "Gaming",
+      "date": {
+        "value": "2022-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Wellington. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_fluentscientificltd",
+      "name": "Fluent Scientific Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Apr-15 row for Fluent Scientific Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_footfallsandheartbeatsltd",
+      "name": "Footfalls and Heartbeats Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 21, Apr-13 row for Footfalls and Heartbeats Ltd",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2013-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_footfallsandheartbeatsltd",
+      "name": "Footfalls and Heartbeats Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 21, May-13 row for Footfalls and Heartbeats Ltd",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2013-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_footfallsandheartbeatsltd",
+      "name": "Footfalls and Heartbeats Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 22, Aug-13 row for Footfalls and Heartbeats Ltd",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2013-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_freightfish",
+      "name": "Freight Fish",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 4, Aug-18 row for Freight Fish",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2018-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_havelocknorthfruit",
+      "name": "Havelock North Fruit",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 26, Nov-12 row for Havelock North Fruit",
+      "sector": "Food & Beverages",
+      "date": {
+        "value": "2012-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Hawkes Bay."
+    },
+    {
+      "company_id": "public_hiaspect",
+      "name": "Hi-Aspect",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 10, Apr-16 row for Hi-Aspect",
+      "sector": "Sciences",
+      "date": {
+        "value": "2016-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_huntersafetylabltd",
+      "name": "Hunter Safety Lab Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 21, Mar-13 row for Hunter Safety Lab Ltd",
+      "sector": "Consumer Durables & Apparel",
+      "date": {
+        "value": "2013-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_huntersafetylabltd",
+      "name": "Hunter Safety Lab Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 23, Sep-13 row for Hunter Safety Lab Ltd",
+      "sector": "Consumer Durables & Apparel",
+      "date": {
+        "value": "2013-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "public_immersve",
+      "name": "Immersve",
+      "source_id": "entry_immersve_immersve",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Payments",
+      "date": {
+        "value": "2022-06-20",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed round",
+      "institutional_investor": "TCG Crypto",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The issuer identifies the New Zealand startup and confirms closure with venture funds."
+    },
+    {
+      "company_id": "public_immersve",
+      "name": "Immersve",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Aug-22 row for Immersve",
+      "sector": "Cryptocurrency/Blockchain",
+      "date": {
+        "value": "2022-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_intdevicelimited",
+      "name": "IntDevice Limited",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Dec-22 row for IntDevice Limited",
+      "sector": "CleanTech",
+      "date": {
+        "value": "2022-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_jasper",
+      "name": "Jasper",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 1, Apr-19 row for Jasper",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_jasper",
+      "name": "Jasper",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 2, Apr-19 row for Jasper",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Flux",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Flux."
+    },
+    {
+      "company_id": "public_jrny",
+      "name": "Jrny",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 2, Feb-18 row for Jrny",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_jumpshiftdevelopmentcompany",
+      "name": "Jumpshift Development Company",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 2, Mar-18 row for Jumpshift Development Company",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_justly",
+      "name": "Justly",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Justly",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_justly",
+      "name": "Justly",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Jan-16 row for Justly",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-01",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_kiwifibre",
+      "name": "KiwiFibre",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Oct-22 row for KiwiFibre",
+      "sector": "CleanTech",
+      "date": {
+        "value": "2022-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Christchurch. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_korudiagnostics",
+      "name": "Koru Diagnostics",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, May-18 row for Koru Diagnostics",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2018-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_kotitechnologies",
+      "name": "Koti Technologies",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 25, Jun-12 row for Koti Technologies",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2012-06",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_kotitechnologies",
+      "name": "Koti Technologies",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 26, Nov-12 row for Koti Technologies",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2012-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_kotitechnologies",
+      "name": "Koti Technologies",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 21, Mar-13 row for Koti Technologies",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2013-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_latch",
+      "name": "Latch",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Sep-22 row for Latch",
+      "sector": "Software",
+      "date": {
+        "value": "2022-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_leapingtiger",
+      "name": "Leaping Tiger",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 10, Apr-16 row for Leaping Tiger",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_learnkolimited",
+      "name": "LearnKo Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 22, Jul-13 row for LearnKo Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_learnkolimited",
+      "name": "LearnKo Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 17, Mar-14 row for LearnKo Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "public_learnkolimited",
+      "name": "LearnKo Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 20, Dec-14 row for LearnKo Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "public_limited",
+      "name": "Limited",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 4, May-19 row for Limited",
+      "sector": "Energy",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Pre-seed",
+      "institutional_investor": "Pacific Channel, UniServices",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Pre-seed, round 0, and location Auckland. Named participants include Pacific Channel, UniServices."
+    },
+    {
+      "company_id": "public_limpidity",
+      "name": "Limpidity",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 5, Dec-18 row for Limpidity",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2018-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_logiclabslimited",
+      "name": "Logic Labs Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Logic Labs Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_logicorelimited",
+      "name": "Logicore Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Nov-15 row for Logicore Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_marsbioimagingltd",
+      "name": "Mars Bioimaging Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 17, Mar-14 row for Mars Bioimaging Ltd",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2014-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_milkingonthemoovelimited",
+      "name": "Milking on the Moove Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Milking on the Moove Limited",
+      "sector": "Capital Goods",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_mishguru",
+      "name": "Mish Guru",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 13, Mar-15 row for Mish Guru",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_mishguru",
+      "name": "Mish Guru",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Oct-15 row for Mish Guru",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_myovoltlimited",
+      "name": "Myovolt Limited",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 4, Dec-19 row for Myovolt Limited",
+      "sector": "Services",
+      "date": {
+        "value": "2019-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Marlborough Angels, Canterbury Angels",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch. Named participants include Marlborough Angels, Canterbury Angels."
+    },
+    {
+      "company_id": "public_narrative",
+      "name": "Narrative",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 2, May-19 row for Narrative",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_narrative",
+      "name": "Narrative",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 3, May-19 row for Narrative",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Flux, NZVIF, Founders Fund",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Flux, NZVIF, Founders Fund."
+    },
+    {
+      "company_id": "public_narrative",
+      "name": "Narrative",
+      "source_id": "entry_narrative_nbr",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Photography software",
+      "date": {
+        "value": "2019-05-21",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed round",
+      "institutional_investor": "Icehouse Flux and NZVIF",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The contemporaneous report describes the local startup and its Flux-led seed. The YCF lead and syndication columns corroborate the institutional participation.",
+      "corroborating_source_ids": [
+        "ycf_2020"
+      ]
+    },
+    {
+      "company_id": "public_narrativemuse",
+      "name": "Narrative Muse",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 2, Nov-19 row for Narrative Muse",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_nectar",
+      "name": "Nectar",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 7, Dec-17 row for Nectar",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Eden Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Eden Ventures."
+    },
+    {
+      "company_id": "public_nectar",
+      "name": "Nectar",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Dec-17 row for Nectar",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_notable",
+      "name": "Notable",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 18, May-14 row for Notable",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_notable",
+      "name": "Notable",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 13, Feb-15 row for Notable",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_noticematchltd",
+      "name": "NoticeMatch Ltd",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 2, Apr-17 row for NoticeMatch Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Canterbury Angels, SCIF",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Timaru. Named participants include Canterbury Angels, SCIF."
+    },
+    {
+      "company_id": "public_noticematchltd",
+      "name": "NoticeMatch Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, Apr-17 row for NoticeMatch Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Timaru."
+    },
+    {
+      "company_id": "public_noticematchltd",
+      "name": "NoticeMatch Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, Apr-18 row for NoticeMatch Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Timaru."
+    },
+    {
+      "company_id": "public_octana",
+      "name": "Octana",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Nov-22 row for Octana",
+      "sector": "SaaS",
+      "date": {
+        "value": "2022-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Queenstown. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_onesixonelimited",
+      "name": "Onesixone Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Aug-15 row for Onesixone Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Tauranga."
+    },
+    {
+      "company_id": "public_onesixonelimited",
+      "name": "Onesixone Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Nov-15 row for Onesixone Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Tauranga."
+    },
+    {
+      "company_id": "public_onesixonelimited",
+      "name": "Onesixone Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 10, Apr-16 row for Onesixone Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Tauranga."
+    },
+    {
+      "company_id": "public_onesixonelimited",
+      "name": "Onesixone Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 12, Dec-16 row for Onesixone Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Tauranga."
+    },
+    {
+      "company_id": "public_onsend",
+      "name": "Onsend",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 4, Nov-19 row for Onsend",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "K1W1",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include K1W1."
+    },
+    {
+      "company_id": "public_opumtechnologieslimited",
+      "name": "Opum Technologies Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 2, May-19 row for Opum Technologies Limited",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_opumtechnologieslimited",
+      "name": "Opum Technologies Limited",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 3, May-19 row for Opum Technologies Limited",
+      "sector": "Services",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "WNT Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland. Named participants include WNT Ventures."
+    },
+    {
+      "company_id": "public_orbicalimited",
+      "name": "Orbica Limited",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Jul-22 row for Orbica Limited",
+      "sector": "Artificial Intelligence & Machine Learning",
+      "date": {
+        "value": "2022-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Christchurch. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_orbviz",
+      "name": "OrbViz",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Nov-22 row for OrbViz",
+      "sector": "SaaS",
+      "date": {
+        "value": "2022-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Christchurch. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_ossis",
+      "name": "Ossis",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 3, Jul-19 row for Ossis",
+      "sector": "Services",
+      "date": {
+        "value": "2019-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_parcelport",
+      "name": "Parcelport",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 8, Dec-17 row for Parcelport",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Zino Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Zino Ventures."
+    },
+    {
+      "company_id": "public_parcelport",
+      "name": "Parcelport",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Dec-17 row for Parcelport",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_parkable",
+      "name": "Parkable",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 4, Oct-18 row for Parkable",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_parrotanalyticsltd",
+      "name": "Parrot Analytics Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 23, Aug-13 row for Parrot Analytics Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_partly",
+      "name": "Partly",
+      "source_id": "entry_partly_nzentrepreneur",
+      "locator": "First date and opening paragraphs",
+      "sector": "Automotive software",
+      "date": {
+        "value": "2020-10-08",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed capital",
+      "institutional_investor": "Blackbird Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The report names the Christchurch company and completed seed led by Blackbird. The current page displays a later update.",
+      "corroborating_source_ids": [
+        "partly_scoop"
+      ]
+    },
+    {
+      "company_id": "public_photonicinnovationsltd",
+      "name": "Photonic Innovations Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 24, Dec-13 row for Photonic Innovations Ltd",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2013-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Dunedin."
+    },
+    {
+      "company_id": "public_photonicinnovationsltd",
+      "name": "Photonic Innovations Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 19, Jul-14 row for Photonic Innovations Ltd",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2014-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Dunedin."
+    },
+    {
+      "company_id": "public_postrmedialtd",
+      "name": "Postr Media Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Jul-15 row for Postr Media Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "public_prenoltd",
+      "name": "Preno Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Sep-15 row for Preno Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_prenoltd",
+      "name": "Preno Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 10, May-16 row for Preno Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_pricetechltd",
+      "name": "PriceTech Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 11, Jul-16 row for PriceTech Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_profile",
+      "name": "Profile",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 9, Feb-16 row for Profile",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_puteko",
+      "name": "Puteko",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 23, Sep-13 row for Puteko",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_puteko",
+      "name": "Puteko",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 23, Oct-13 row for Puteko",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_puteko",
+      "name": "Puteko",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 24, Dec-13 row for Puteko",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_puteko",
+      "name": "Puteko",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 17, Feb-14 row for Puteko",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_qotientgroup",
+      "name": "Qotient Group",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 17, Dec-15 row for Qotient Group",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_quashed",
+      "name": "Quashed",
+      "source_id": "entry_quashed_quashed",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Insurtech",
+      "date": {
+        "value": "2021-03-05",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "pre-seed funding round",
+      "institutional_investor": "Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The Auckland issuer reports a completed pre-seed round led by Icehouse, alongside individual investors."
+    },
+    {
+      "company_id": "public_rakiuraholdingsno1limited",
+      "name": "Rakiura Holdings No.1 Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Rakiura Holdings No.1 Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_redphase",
+      "name": "Red Phase",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Oct-22 row for Red Phase",
+      "sector": "CleanTech",
+      "date": {
+        "value": "2022-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Hawkes Bay. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_relay",
+      "name": "Relay",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 3, Aug-19 row for Relay",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_ripetimeltd",
+      "name": "Ripetime Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Mar-15 row for Ripetime Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_ripetimeltd",
+      "name": "Ripetime Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Oct-15 row for Ripetime Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_rockitorchardpartnership",
+      "name": "Rockit Orchard Partnership",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 25, May-12 row for Rockit Orchard Partnership",
+      "sector": "Food & Beverages",
+      "date": {
+        "value": "2012-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Tauranga."
+    },
+    {
+      "company_id": "public_rockitorchardpartnership",
+      "name": "Rockit Orchard Partnership",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 18, Apr-14 row for Rockit Orchard Partnership",
+      "sector": "Food & Beverages",
+      "date": {
+        "value": "2014-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Tauranga."
+    },
+    {
+      "company_id": "public_rocos",
+      "name": "Rocos",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 6, Nov-17 row for Rocos",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Sparkbox",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Sparkbox."
+    },
+    {
+      "company_id": "public_rocosgloballimited",
+      "name": "Rocos Global Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 8, Nov-17 row for Rocos Global Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_rollerblasterlimited",
+      "name": "Roller Blaster Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 5, Dec-18 row for Roller Blaster Limited",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2018-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_rolllimited",
+      "name": "Roll Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Nov-15 row for Roll Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_runnio",
+      "name": "Runn.io",
+      "source_id": "entry_runnio_startupdaily",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Workforce software",
+      "date": {
+        "value": "2021-12-14",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "Seed round",
+      "institutional_investor": "GD1 and Wavemaker Partners",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The article identifies the NZ startup and names institutional investors participating in the Seed round."
+    },
+    {
+      "company_id": "public_safestack",
+      "name": "SafeStack",
+      "source_id": "entry_safestack_safestack",
+      "locator": "Issuer headline and investor paragraph",
+      "sector": "Security education",
+      "date": {
+        "value": "2021-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "pre-seed round",
+      "institutional_investor": "Jelix Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "unresolved",
+      "passage": "The team describes the pre-seed and investor syndicate. The displayed date omits the year. NZTE independently places the first round after InvestHER 2021."
+    },
+    {
+      "company_id": "public_safestack",
+      "name": "Safestack",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Aug-22 row for Safestack",
+      "sector": "Software",
+      "date": {
+        "value": "2022-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_scriptsee",
+      "name": "Scriptsee",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Dec-22 row for Scriptsee",
+      "sector": "Artificial Intelligence & Machine Learning",
+      "date": {
+        "value": "2022-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Wellington. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_senseelimited",
+      "name": "Sensee Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 16, Dec-15 row for Sensee Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Palmerston North."
+    },
+    {
+      "company_id": "public_socialclub",
+      "name": "Social Club",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 1, Mar-17 row for Social Club",
+      "sector": "Marketing software",
+      "date": {
+        "value": "2017-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Ice Angels",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The YCF table identifies Ice Angels in the Auckland company’s March 2017 Seed round numbered 1. Contemporary coverage of the local company corroborates identity and origin.",
+      "corroborating_source_ids": [
+        "socialclub_nz"
+      ]
+    },
+    {
+      "company_id": "public_socialclub",
+      "name": "Social Club",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 6, Mar-17 row for Social Club",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_spokenetworklimited",
+      "name": "Spoke Network Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 11, Sep-16 row for Spoke Network Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_suchcrowdltd",
+      "name": "SuchCrowd Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 11, Jul-16 row for SuchCrowd Ltd",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_supie",
+      "name": "Supie",
+      "source_id": "entry_supie_supermarketnews",
+      "locator": "Dateline, company background and opening financing paragraphs",
+      "sector": "Grocery retail",
+      "date": {
+        "value": "2021-11-09",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "seed funding",
+      "institutional_investor": "Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Trade coverage identifies the NZ-based company and states the reported raise was led by Icehouse."
+    },
+    {
+      "company_id": "public_synthasebiotechlimited",
+      "name": "Synthase Biotech Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 12, Nov-16 row for Synthase Biotech Limited",
+      "sector": "Sciences",
+      "date": {
+        "value": "2016-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Hamilton."
+    },
+    {
+      "company_id": "public_texusfibres",
+      "name": "Texus Fibres",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 23, Sep-13 row for Texus Fibres",
+      "sector": "Materials",
+      "date": {
+        "value": "2013-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_texusfibres",
+      "name": "Texus Fibres",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 24, Dec-13 row for Texus Fibres",
+      "sector": "Materials",
+      "date": {
+        "value": "2013-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_texusfibres",
+      "name": "Texus Fibres",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 17, Mar-14 row for Texus Fibres",
+      "sector": "Materials",
+      "date": {
+        "value": "2014-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Auckland."
+    },
+    {
+      "company_id": "public_thieve",
+      "name": "Thieve",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, May-18 row for Thieve",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_thinkladder",
+      "name": "Thinkladder",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, May-18 row for Thinkladder",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_thinkladder",
+      "name": "Thinkladder",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 4, Aug-18 row for Thinkladder",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_thundermaps",
+      "name": "ThunderMaps",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 3, May-18 row for ThunderMaps",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2018-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_tirolifesciencesltd",
+      "name": "Tiro Lifesciences Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 19, Aug-14 row for Tiro Lifesciences Ltd",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2014-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_tirolifesciencesltd",
+      "name": "Tiro Lifesciences Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 20, Nov-14 row for Tiro Lifesciences Ltd",
+      "sector": "Health Care Equipment & Services",
+      "date": {
+        "value": "2014-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_tnx",
+      "name": "TNX",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 12, Nov-16 row for TNX",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_unfilteredlimited",
+      "name": "Unfiltered Limited",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 5, Sep-17 row for Unfiltered Limited",
+      "sector": "Commercial Services",
+      "date": {
+        "value": "2017-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_unfilteredlimited",
+      "name": "Unfiltered Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 8, Sep-17 row for Unfiltered Limited",
+      "sector": "Commercial Services",
+      "date": {
+        "value": "2017-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_uproarlimited",
+      "name": "Uproar Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 12, Oct-16 row for Uproar Limited",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2016-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_varigatelimited",
+      "name": "Varigate Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 18, May-14 row for Varigate Limited",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2014-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_veritideltd",
+      "name": "Veritide Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 24, Feb-12 row for Veritide Ltd",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2012-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Christchurch."
+    },
+    {
+      "company_id": "public_veritideltd",
+      "name": "Veritide Ltd",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 14, Apr-15 row for Veritide Ltd",
+      "sector": "Technology Hardware & Equipment",
+      "date": {
+        "value": "2015-04",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Christchurch."
+    },
+    {
+      "company_id": "public_vidapp",
+      "name": "VidApp",
+      "source_id": "ycf_2017",
+      "locator": "PDF page 5, Sep-17 row for VidApp",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Ice Angels",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Ice Angels."
+    },
+    {
+      "company_id": "public_vidapp",
+      "name": "VidApp",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 8, Sep-17 row for VidApp",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2017-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_vortetechnologieslimited",
+      "name": "Vorte Technologies Limited",
+      "source_id": "ycf_2023",
+      "locator": "PDF page 1, Oct-22 row for Vorte Technologies Limited",
+      "sector": "CleanTech",
+      "date": {
+        "value": "2022-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": null,
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_vortexpowersystemslimited",
+      "name": "Vortex Power Systems Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 1, May-19 row for Vortex Power Systems Limited",
+      "sector": "Energy",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Pre-seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Pre-seed, round 0, and location Auckland."
+    },
+    {
+      "company_id": "public_watchme",
+      "name": "WatchMe",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 23, Oct-13 row for WatchMe",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_wearitherway",
+      "name": "Wear It Her Way",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 15, Sep-15 row for Wear It Her Way",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2015-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_wingacousticslimited",
+      "name": "Wing Acoustics Limited",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 4, Jul-18 row for Wing Acoustics Limited",
+      "sector": "Capital Goods",
+      "date": {
+        "value": "2018-07",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    },
+    {
+      "company_id": "public_wipappltdtawipster",
+      "name": "WIP APP Ltd (t/a Wipster)",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 23, Aug-13 row for WIP APP Ltd (t/a Wipster)",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2013-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Wellington."
+    },
+    {
+      "company_id": "public_wipappltdtawipster",
+      "name": "WIP APP Ltd (t/a Wipster)",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 17, Feb-14 row for WIP APP Ltd (t/a Wipster)",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2014-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Table records Seed, round T1, and location Wellington."
+    },
+    {
+      "company_id": "public_yourcar",
+      "name": "Your Car",
+      "source_id": "ycf_2020",
+      "locator": "PDF page 3, Dec-19 row for Your Car",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2019-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "Table records Seed, round 1, and location Auckland."
+    }
+  ],
+  "benchmarks": [
+    {
+      "year": 2022,
+      "count": 66,
+      "source_id": "ycf_spring_2022",
+      "locator": "Startup Investment Trends, H1 2022 deal count",
+      "definition": "H1 2022 new and follow-on deals in the Young Company Finance early-stage series"
+    },
+    {
+      "year": 2022,
+      "count": 76,
+      "source_id": "ycf_autumn_2023",
+      "locator": "Startup Investment Trends, H2 2022 deal count",
+      "definition": "H2 2022 new and follow-on deals in the Young Company Finance early-stage series"
+    }
+  ],
+  "registry_statuses": [
+    {
+      "company_id": "public_supie",
+      "company_number": "7775376",
+      "source_id": "supie_register",
+      "status": "liquidation",
+      "effective_on": "2023-11-09",
+      "locator": "Company summary, View Previous Status, In Liquidation interval starts 09 Nov 2023"
+    },
+    {
+      "company_id": "public_supie",
+      "company_number": "7775376",
+      "source_id": "supie_register",
+      "status": "removed",
+      "effective_on": "2025-02-13",
+      "locator": "Company summary, current Removed status and the end of the prior liquidation interval on 13 Feb 2025"
+    }
+  ]
+}
