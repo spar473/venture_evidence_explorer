@@ -1,6 +1,6 @@
 # NZ healthtech pilot checkpoint · 20 November 2026
 
-Branch `implementation/healthtech-pilot`. Verified implementation commit `cc20ef0a66ee97ae5feae5b67e2910abb6cbb208`. This note is the following documentation commit.
+Branch `implementation/healthtech-pilot`. The P2 audit is verified through `a545c963f42b514cd6a031544ad98a7c0cb11fa5`. The P1 demo implementation is `cc20ef0a66ee97ae5feae5b67e2910abb6cbb208`.
 
 The README now opens with a five-line pitch and the MRI demo. Migration 007 adds the fixture, round dates and source passages, six outcome states, historical availability witnesses, and snapshots with evidence at or before the cutoff. The importer stores the original packet and its normalized records. A dry run leaves the database byte-for-byte identical, and an exact repeat writes zero rows.
 
@@ -52,4 +52,32 @@ Open the [local demo](http://127.0.0.1:8006) and select **Research dossiers**. T
 - The frontend production build, `python scripts/verify.py`, `python scripts/check_migrations.py` in three transaction modes and `python scripts/export_contract.py --check` all passed.
 - The fixture dry run wrote zero rows. The disposable demo applied 220 records, verified byte equality after a second apply, and passed SQLite integrity and foreign-key checks.
 
-**Next task** — Run P2 against the public discovery sources using the frozen first institutional pre-seed or seed entry rule for 2012–2022, and audit eligibility, closure evidence and follow-up coverage before any outcome estimation.
+## P2 entry-cohort audit
+
+The first public-source run evaluated **455 candidate records**, including the 274 staged discovery leads. **34** have enough evidence for a first institutional pre-seed or seed entry in 2012–2022. **420** remain unresolved. Bspkl's documented first seed is in 2023, outside the window. These are dated research decisions within the captured sources. The fixture in the app remains the separate 30-company demonstration.
+
+| Entry vintage | Included companies |
+| --- | ---: |
+| 2012–2016 | 0 |
+| 2017 | 6 |
+| 2018 | 4 |
+| 2019 | 5 |
+| 2020 | 2 |
+| 2021 | 8 |
+| 2022 | 9 |
+
+The audit retains 297 financing reports with publisher URLs, passage locators, publication precision, retrieval dates and reported event dates. It also records the sector breakdown and gaps. None of the 365 staged portfolio listings gives an investment date. The new historical tables add named deals, but some show only a region, a round number or a new-company code. Those rows remain leads until the founding or headquarters, first qualifying label and institutional investor can be supported. The 2012–2016 gap is still open. Halter's earlier 2016 seed lead leaves its 2017 entry unresolved. [Entry evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Young Company Finance historical appendix](https://www.pwc.co.nz/publications/2019/startup/young-company-finance-deals.pdf)
+
+Young Company Finance reported 66 early-stage deals in the first half of 2022 and 76 in the second. Those benchmarks include follow-ons and therefore measure a different population from the nine supported first entries for that vintage. The audit preserves both counts without estimating national coverage. [Spring 2022 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-report-spring-2022_sml.pdf) · [Autumn 2023 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-autumn-2023.pdf)
+
+The Companies Register documents Supie's move into liquidation on 9 November 2023 and later removal on 13 February 2025. The audit records both events after applying the entry rule. Register and operating follow-up are incomplete for the other companies, so the observed count at 36 months is unknown. Base rates remain gated. [Supie’s Companies Register record](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376)
+
+Run the read-only audit from the checkout. Use `--include-decisions` for every company or `--company-id discovery_formuslabs` to inspect one decision and its financing sources.
+
+```sh
+python scripts/audit_reference_cohort.py
+```
+
+The deterministic audit replay, **159 backend tests**, **40 browser tests**, production build, smoke verification, migration checks, API contract and disposable fixture import passed. The entry decisions were identical with the recorded outcomes withheld. The fixture dry run wrote zero rows and its repeated import preserved the database.
+
+**Next task** — Verify the seven remaining named-investor round-one leads against issuer or register evidence, and continue sourcing the earliest vintages toward the 150-company target.
