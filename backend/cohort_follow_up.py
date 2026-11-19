@@ -1,0 +1,168 @@
+"""Independent outcome coverage audit for an already selected entry cohort."""
+from collections import Counter, defaultdict
+import hashlib
+from pathlib import Path
+from typing import Literal
+
+from pydantic import Field, model_validator
+
+from .database import ROOT
+from .ingestion import StrictModel, Text, day
+from .reference_pool import (
+    CLOSURES, STATUSES, EventDate, FollowUp, Id, PoolCompany, PoolEvent, PoolSource,
+    outcome_status, plus_months, unique_index, validate_event,
+)
+from .research_validation import decode_packet
+
+
+FOLLOW_UP = ROOT / 'research/healthtech-pilot/cohort-follow-up.json'
+ENTRY_ANCHOR = 'entry_anchor'
+
+
+class CoverageReview(StrictModel):
+    company_id: Id
+    reviewed_on: str
+    searched_through: str
+    scope: Text
+    source_ids: list[Id] = Field(min_length=1)
+    activity_event_id: Id | None = None
+
+
+class OutcomeEvidence(StrictModel):
+    format_version: Literal['nz-cohort-follow-up:1']
+    as_of: str
+    sources: list[PoolSource]
+    events: list[PoolEvent]
+    reviews: list[CoverageReview]
+
+    @model_validator(mode='after')
+    def chronology(self):
+        day(self.as_of)
+        sources = unique_index(self.sources, 'source_id')
+        events = unique_index(self.events, 'event_id')
+        unique_index(self.reviews, 'company_id')
+        if any(source.retrieved_on > self.as_of for source in self.sources):
+            raise ValueError('Follow-up source retrieval exceeds cutoff')
+        for event in self.events:
+            source = sources.get(event.source_id)
+            if not source or event.event_id == ENTRY_ANCHOR:
+                raise ValueError('Follow-up event needs a source and an independent event ID')
+            if event.kind in ('pre_seed', 'seed'):
+                raise ValueError('Follow-up evidence cannot alter the entry round')
+            _, end = event.date.bounds()
+            if (end is None) != (event.date_basis == 'unknown') or (end and end > (source.published_on or source.retrieved_on)):
+                raise ValueError('Follow-up event date exceeds or conflicts with its dated source')
+            if event.date_basis == 'completed_at_announcement' and (not end or end != source.published_on):
+                raise ValueError('Announcement timing must use the publication day')
+            validate_event(event, source)
+        for review in self.reviews:
+            if not day(review.searched_through) <= day(review.reviewed_on) <= self.as_of:
+                raise ValueError('Follow-up search window exceeds its review or audit date')
+            if len(set(review.source_ids)) != len(review.source_ids) or any(
+                source_id not in sources or sources[source_id].retrieved_on > review.reviewed_on
+                for source_id in review.source_ids
+            ):
+                raise ValueError('Follow-up review needs sources retrieved by its review date')
+            if review.activity_event_id:
+                activity = events.get(review.activity_event_id)
+                if (not activity or activity.company_id != review.company_id or activity.kind in CLOSURES
+                    or activity.entity_link != 'supported' or activity.source_id not in review.source_ids
+                    or activity.date.bounds()[1] is None or activity.date.bounds()[1] > review.searched_through):
+                    raise ValueError('Follow-up needs a supported, dated activity within its own search')
+        return self
+
+
+def registry_events(records):
+    for record in records:
+        is_liquidation = record.status == 'liquidation'
+        yield PoolEvent(
+            event_id=f'register_{record.company_number}_{record.status}_{record.effective_on.replace("-", "")}',
+            company_id=record.company_id, source_id=record.source_id, date_basis='reported_occurrence',
+            date=EventDate(value=record.effective_on, precision='day'),
+            kind='closed_liquidation' if is_liquidation else 'closed_register_removal',
+            closure_evidence='liquidation_notice' if is_liquidation else 'register_removal',
+            claim=f'Companies Register records {record.status}.', passage=record.locator,
+        )
+
+
+def assess(entry, events, review):
+    company_id = entry['company_id']
+    anchor = PoolEvent(
+        event_id=ENTRY_ANCHOR, company_id=company_id, source_id=entry['source_id'],
+        date=EventDate.model_validate(entry['date']), date_basis='reported_occurrence',
+        kind='pre_seed' if entry['label'].lower().startswith('pre') else 'seed',
+        round_label=entry['label'], institutional_investor=entry['institutional_investor'],
+        passage=entry['locator'], claim=entry['passage'],
+    )
+    earliest_entry, latest_entry = anchor.date.bounds()
+    early_horizon = plus_months(earliest_entry, 36)
+    horizon = plus_months(latest_entry, 36)
+    company = PoolCompany(
+        company_id=company_id, display_name=entry['name'], sector=entry['sector'],
+        origin_source_id=entry['source_id'], origin_passage=entry['locator'],
+        entry_event_id=ENTRY_ANCHOR, entry_basis=entry['first_basis'],
+    )
+    by_id = {event.event_id:event for event in events}
+    activity = by_id.get(review.activity_event_id) if review else None
+    if activity and activity.date.bounds()[0] < latest_entry:
+        raise ValueError('Later activity cannot precede or overlap uncertain entry')
+    if activity:
+        company.follow_up = FollowUp(searched_on=review.reviewed_on, scope=review.scope,
+                                     activity_event_id=activity.event_id)
+    status, censored_on, event_id = outcome_status(company, [anchor, *events])
+    if status in ('closed_before_outcome', 'acquired_or_ipo_before_outcome') and (
+        not review or review.searched_through < by_id[event_id].date.bounds()[1]
+    ):
+        # A registry event proves closure, while the competing outcome also
+        # needs a financing search covering the period up to the event.
+        status, event_id = 'unknown', None
+    covered_at_36_months = None
+    if status in ('reached_outcome', 'closed_before_outcome', 'acquired_or_ipo_before_outcome'):
+        covered_at_36_months = False
+    elif status in ('observed_no_outcome', 'lost_to_follow_up'):
+        if activity.date.bounds()[0] >= horizon and review.searched_through >= horizon:
+            covered_at_36_months = True
+        elif activity.date.bounds()[1] < early_horizon:
+            covered_at_36_months = False
+    return dict(status=status, censor_on=censored_on, outcome_event_id=event_id,
+                latest_horizon=horizon, observed_at_36_months=covered_at_36_months)
+
+
+def outcome_audit(included, registry_statuses, path=FOLLOW_UP):
+    raw = Path(path).read_bytes()
+    evidence = OutcomeEvidence.model_validate(decode_packet(raw))
+    reviews = {review.company_id:review for review in evidence.reviews}
+    groups = defaultdict(list)
+    for event in [*evidence.events, *registry_events(registry_statuses)]:
+        groups[event.company_id].append(event)
+    results = {}
+    for entry in included:
+        owner = entry['company_id']
+        result = assess(entry, groups[owner], reviews.get(owner))
+        results[owner] = dict(result,
+            review=reviews[owner].model_dump() if owner in reviews else None,
+            events=[event.model_dump() for event in groups[owner]])
+    count = Counter(item['status'] for item in results.values())
+    observed = sum(item['observed_at_36_months'] is True for item in results.values())
+    open_at_36 = sum(item['observed_at_36_months'] is None for item in results.values())
+    total = len(included)
+    blockers = []
+    if total < 150:
+        blockers.append('fewer_than_150_eligible_companies')
+    if count['reached_outcome'] < 30:
+        blockers.append('fewer_than_30_primary_outcomes')
+    if not total or open_at_36 == total:
+        blockers.append('no_measured_36_month_coverage')
+    if not total or 4 * (count['lost_to_follow_up'] + count['unknown']) >= total:
+        blockers.append('follow_up_below_required_coverage')
+    return dict(
+        as_of=evidence.as_of, evidence_sha256=hashlib.sha256(raw).hexdigest(),
+        statuses={status:count[status] for status in STATUSES},
+        reviewed_companies=len(results.keys() & reviews.keys()),
+        evidence_outside_included_companies=sorted((reviews.keys() | groups.keys()) - results.keys()),
+        observed_at_36_months=None if not total or open_at_36 else observed,
+        verified_observed_at_36_months=observed,
+        unresolved_at_36_months=open_at_36,
+        gate_ready=not blockers, gate_blockers=blockers,
+        sources={s.source_id:s.model_dump() for s in evidence.sources}, decisions=results,
+    )

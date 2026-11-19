@@ -265,7 +265,7 @@ def validate_event(event, source):
     if event.kind in OUTCOMES | {'pre_seed','seed'} and not event.round_label:
         raise ValueError('Classified rounds need the publisher’s exact label')
     letter = {'series_a':'a','series_b':'b','series_c_plus':'[c-z]'}.get(event.kind)
-    if letter and not re.fullmatch(rf'series\s+{letter}[0-9]*(?:\s+(?:preferred|investment|equity|financing|funding|fundraising|capital raise|round))*',
+    if letter and not re.fullmatch(rf'series\s+{letter}(?:-?[0-9]+)?(?:\s+(?:preferred|stock|investment|equity|financing|funding|fundraising|capital raise|round))*',
                                   event.round_label.strip(),re.I):
         raise ValueError('Series classification requires an explicit letter-stage label')
     if event.kind == 'series_a_equivalent' and (event.round_label is not None or

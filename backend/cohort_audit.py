@@ -9,9 +9,10 @@ from urllib.parse import urlsplit
 from pydantic import Field, model_validator
 
 from .database import ROOT
+from .cohort_follow_up import FOLLOW_UP, outcome_audit
 from .discovery import PACK, validate_packet
 from .ingestion import StrictModel, Text, day
-from .reference_pool import ENTRY_END, ENTRY_START, EventDate, https
+from .reference_pool import ENTRY_END, ENTRY_START, EventDate, Id, https
 from .research_validation import decode_packet
 from .retrieval import name_key
 
@@ -28,9 +29,9 @@ class EntrySource(StrictModel):
 
 
 class EntryReport(StrictModel):
-    company_id: Text
+    company_id: Id
     name: Text
-    source_id: Text
+    source_id: Id
     locator: Text
     sector: Text
     date: EventDate
@@ -52,9 +53,9 @@ class DealBenchmark(StrictModel):
 
 
 class RegistryStatus(StrictModel):
-    company_id: Text
+    company_id: Id
     company_number: str = Field(pattern=r'^[0-9]+$')
-    source_id: Text
+    source_id: Id
     status: Literal['liquidation', 'removed']
     effective_on: str
     locator: Text
@@ -63,7 +64,7 @@ class RegistryStatus(StrictModel):
 class PublicEntryEvidence(StrictModel):
     format_version: Literal['nz-cohort-entry-evidence:1']
     captured_on: str
-    sources: dict[str, EntrySource]
+    sources: dict[Id, EntrySource]
     reports: list[EntryReport]
     benchmarks: list[DealBenchmark]
     registry_statuses: list[RegistryStatus] = Field(default_factory=list)
@@ -108,6 +109,9 @@ class PublicEntryEvidence(StrictModel):
                 raise ValueError('Registry status requires its official company-number record')
             if day(record.effective_on) > source.retrieved_on:
                 raise ValueError('Registry status takes effect after retrieval')
+        keys = {(row.company_id, row.status, row.effective_on) for row in self.registry_statuses}
+        if len(keys) != len(self.registry_statuses):
+            raise ValueError('Duplicate registry status')
         return self
 
 
@@ -157,7 +161,7 @@ def decide(reports, identity_pending):
     return 'included', chosen, []
 
 
-def run_audit(discovery_path=PACK, evidence_path=ENTRIES):
+def run_audit(discovery_path=PACK, evidence_path=ENTRIES, follow_up_path=FOLLOW_UP):
     evidence_raw = Path(evidence_path).read_bytes()
     discovery_raw = Path(discovery_path).read_bytes()
     evidence = PublicEntryEvidence.model_validate(decode_packet(evidence_raw))
@@ -196,6 +200,11 @@ def run_audit(discovery_path=PACK, evidence_path=ENTRIES):
         raise ValueError('Registry status references a company absent from the entry audit')
     included_ids = {entry['company_id'] for entry in included}
     documented_closed = {record.company_id for record in evidence.registry_statuses} & included_ids
+    follow_up = outcome_audit(included, evidence.registry_statuses, follow_up_path)
+    if follow_up['as_of'] < evidence.captured_on:
+        raise ValueError('Follow-up cutoff predates the source-covered entry audit')
+    if evidence.sources.keys() & follow_up['sources'].keys():
+        raise ValueError('Entry and follow-up source IDs must be distinct')
     return dict(
         rule='nz-first-institutional-seed:1', evaluated_on=evidence.captured_on,
         window={'start':ENTRY_START, 'end':ENTRY_END}, candidate_records=len(results),
@@ -216,9 +225,9 @@ def run_audit(discovery_path=PACK, evidence_path=ENTRIES):
         input_sha256={'discovery':hashlib.sha256(discovery_raw).hexdigest(),
                       'entry_evidence':hashlib.sha256(evidence_raw).hexdigest()},
         benchmark_deal_counts=[row.model_dump() for row in evidence.benchmarks],
-        follow_up={'status':'partial', 'registry_confirmed_closures':len(documented_closed),
-                   'observed_at_36_months':None,
+        follow_up={**follow_up, 'registry_confirmed_closures':len(documented_closed),
                    'registry_statuses':[record.model_dump() for record in evidence.registry_statuses]},
-        outcome_gate='withheld', sources={key:source.model_dump() for key, source in evidence.sources.items()},
+        outcome_gate='eligible_for_p3_review' if follow_up['gate_ready'] else 'withheld',
+        sources={key:source.model_dump() for key, source in evidence.sources.items()},
         decisions=results,
     )

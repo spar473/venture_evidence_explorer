@@ -581,6 +581,136 @@
         "precision": "month"
       },
       "scope": "Calendar 2021 named deal table. Round 1 with an NC code is a lead. The code does not supply the seed label or the institutional investor."
+    },
+    "stretchsense_adviser": {
+      "publisher": "Kindrik Partners",
+      "url": "https://kindrik.co.nz/case-studies/stretchsense/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Company advisers describe the Auckland university spinout, prior founder and individual capital, and initial institutional seed in 2014."
+    },
+    "halter_icehouse_first": {
+      "publisher": "Icehouse Ventures",
+      "url": "https://resources.icehouseventures.co.nz/blog/reflections-and-lessons-from-our-journey-with-halter",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "The participant identifies its Seed Fund role in the company’s first raise in 2016 and distinguishes the later Promus-led round."
+    },
+    "vidapp_register": {
+      "publisher": "NZ Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5546937",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Company summary and name history confirm the NZ-incorporated Video App Publisher / VidApp entity traced through the financing reports."
+    },
+    "vidapp_issuer": {
+      "publisher": "VidApp via Scoop",
+      "url": "https://m.scoop.co.nz/stories/BU2108/S00491/vidapp-raises-over-18m.htm",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-08-26",
+        "precision": "day"
+      },
+      "scope": "Company account connects the founders to the original 2017 Icehouse Flux involvement."
+    },
+    "jasper_founding": {
+      "publisher": "Jasper via PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/seed-funding-in-proptech-biz-accelerates-democratisation-of-commercial-property-investment-300915474.html",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2019-09-10",
+        "precision": "day"
+      },
+      "scope": "Issuer account corroborates the Auckland venture and ongoing seed-stage funding. The disclosed September SAFE is a separate later report."
+    },
+    "myovolt_uoc": {
+      "publisher": "University of Canterbury",
+      "url": "https://www.canterbury.ac.nz/about-uc/why-uc/our-alumni/notable-alumni/steve-leftly",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Founder profile identifies Myovolt as the NZ-based venture from the founder’s return to Christchurch."
+    },
+    "myovolt_founder": {
+      "publisher": "The Spinoff",
+      "url": "https://thespinoff.co.nz/business/03-06-2021/business-is-boring-wearable-tech-for-astronauts-olympians-and-everybody",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2021-06-03",
+        "precision": "day"
+      },
+      "scope": "Founder interview corroborates company identity and New Zealand origins, distinct from earlier consulting and product engineering."
+    },
+    "opum_wnt": {
+      "publisher": "WNT Ventures",
+      "url": "https://wntventures.co.nz/news/wnt-has-had-a-busy-start-to-the-year/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2019-08-20",
+        "precision": "day"
+      },
+      "scope": "WNT reports its new Auckland University venture investment."
+    },
+    "vortex_tataki": {
+      "publisher": "Tātaki Auckland Unlimited",
+      "url": "https://www.aucklandconventionbureau.com/invest/news/auckland-cleantech-solutions-zero-carbon-future",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Vortex section corroborates the NZ university research origins and participation by Pacific Channel and the Auckland Inventors’ Fund."
+    },
+    "biolumic_founding": {
+      "publisher": "Massey University via Scoop",
+      "url": "https://www.scoop.co.nz/stories/SC1304/S00010/researcher-shines-a-light-on-crop-growth.htm",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2013-04-04",
+        "precision": "day"
+      },
+      "scope": "The university describes the NZ-based spinout and the university commercialisation support."
+    },
+    "biolumic_ea": {
+      "publisher": "Enterprise Angels",
+      "url": "https://www.enterpriseangels.co.nz/project/biolumic-ltd/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "The investor confirms its first participation in October 2014 and gives no date for participation by other institutions."
+    },
+    "cirrus_pvl_asx": {
+      "publisher": "Powerhouse Ventures via ASX",
+      "url": "https://announcements.asx.com.au/asxpdf/20220610/pdf/459th38y9f03lh.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-06-10",
+        "precision": "day"
+      },
+      "scope": "In the 2022 release Powerhouse dates its own initial pre-seed investment to 2018."
+    },
+    "tasmanion_pacific": {
+      "publisher": "Pacific Channel",
+      "url": "https://www.pacificchannel.com/stories/tasmanion-venture-capital-investment",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Investment announcement identifies the completed Seed and NZ spinout."
     }
   },
   "reports": [
@@ -670,6 +800,27 @@
       "passage": "The issuer reports the Outset-led pre-seed in Auckland and describes the startup operating there since formation."
     },
     {
+      "company_id": "discovery_biolumic",
+      "name": "BioLumic",
+      "source_id": "ycf_2019",
+      "locator": "September 2013 and 2014 BioLumic rows",
+      "sector": "Agritech",
+      "date": {
+        "value": "2013-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": null,
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "unresolved",
+      "passage": "The market table locates a Seed before Enterprise Angels’ own first investment. The investor in the September 2013 round remains open.",
+      "corroborating_source_ids": [
+        "biolumic_founding",
+        "biolumic_ea"
+      ]
+    },
+    {
       "company_id": "discovery_bovonic",
       "name": "Bovonic",
       "source_id": "ycf_2022",
@@ -719,6 +870,24 @@
       "nz_basis": "founded_or_headquartered",
       "first_basis": "earliest_supported",
       "passage": "The company cites its NZ origin and seed led by Pacific Channel."
+    },
+    {
+      "company_id": "discovery_cirrusmaterialsscience",
+      "name": "Cirrus Materials Science",
+      "source_id": "cirrus_pvl_asx",
+      "locator": "Initial pre-seed participation paragraph",
+      "sector": "Advanced materials",
+      "date": {
+        "value": "2018",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "label": "pre-seed round",
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "The investment release reports Powerhouse’s initial investment. Whether it precedes all institutional rounds remains unresolved and the 2017 Cirrus report has a different location.",
+      "corroborating_source_ids": []
     },
     {
       "company_id": "discovery_cleanery",
@@ -994,17 +1163,20 @@
       "name": "Halter",
       "source_id": "ycf_2019",
       "locator": "PDF page 12, Dec-16 row for Halter",
-      "sector": "Health Care Equipment & Services",
+      "sector": "Agritech",
       "date": {
         "value": "2016-12",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Auckland."
+      "institutional_investor": "Icehouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "Table records Seed, round 1, and location Auckland. Icehouse identifies the same NZ-founded company, confirms participation by its Seed Fund in the company’s initial 2016 round, and describes Promus as later backing. The table supplies the month and its reported label. The historical table’s sector cell is inconsistent with the investor’s description and was reconciled to agritech.",
+      "corroborating_source_ids": [
+        "halter_icehouse_first"
+      ]
     },
     {
       "company_id": "discovery_halter",
@@ -1304,6 +1476,26 @@
       "passage": "Table records Seed, round 1, and location Hamilton."
     },
     {
+      "company_id": "discovery_opumtechnology",
+      "name": "Opum Technology",
+      "source_id": "ycf_2020",
+      "locator": "May 2019 Opum Technologies Limited row, T1 and named investors",
+      "sector": "Healthtech",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Pacific Channel and WNT Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The dated deal table labels the first recorded Seed tranche and names the institutional participants. WNT’s contemporaneous portfolio announcement identifies the Auckland University venture.",
+      "corroborating_source_ids": [
+        "opum_wnt"
+      ]
+    },
+    {
       "company_id": "discovery_reactory",
       "name": "Reactory",
       "source_id": "ycf_2023",
@@ -1460,6 +1652,46 @@
       "passage": "Table records Seed, round 1, and location Auckland."
     },
     {
+      "company_id": "discovery_stretchsense",
+      "name": "StretchSense",
+      "source_id": "ycf_2019",
+      "locator": "PDF page 20, November 2014 row for StretchSense",
+      "sector": "Sensors",
+      "date": {
+        "value": "2014-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Flying Kiwi Angels and NZVIF",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Young Company Finance gives the month and first Seed round. The company’s advisers identify the prior founder and individual funding and the 2014 institutional participation.",
+      "corroborating_source_ids": [
+        "stretchsense_adviser"
+      ]
+    },
+    {
+      "company_id": "discovery_tasmanion",
+      "name": "TasmanIon",
+      "source_id": "tasmanion_pacific",
+      "locator": "Opening funding and university spinout paragraphs",
+      "sector": "Energy storage",
+      "date": {
+        "value": "2021-12",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "seed round",
+      "institutional_investor": "Pacific Channel",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The lead investor reports backing this newly formed Wellington spinout. The December month is reported by the 2021 public deal table.",
+      "corroborating_source_ids": [
+        "ycf_2022"
+      ]
+    },
+    {
       "company_id": "discovery_tasmanion",
       "name": "TasmanIon",
       "source_id": "ycf_2022",
@@ -1568,6 +1800,27 @@
       "passage": "The 26 May 2022 briefing places the NZ company’s pre-seed in 2021. The University of Auckland identifies Icehouse Ventures as lead.",
       "corroborating_source_ids": [
         "vertus_uoa"
+      ]
+    },
+    {
+      "company_id": "discovery_vortexpowersystems",
+      "name": "Vortex Power Systems",
+      "source_id": "ycf_2020",
+      "locator": "May 2019 Vortex Power Systems Limited row, Stage and investor columns",
+      "sector": "Cleantech",
+      "date": {
+        "value": "2019-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Pre-seed",
+      "institutional_investor": "Pacific Channel and UniServices",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The detailed report identifies a Pre-seed deal and institutional parties. The older 2017 table labels its entry proof of concept and the agency profile supports the company identity and NZ origins.",
+      "corroborating_source_ids": [
+        "vortex_tataki",
+        "ycf_2017"
       ]
     },
     {
@@ -1777,23 +2030,6 @@
       "nz_basis": "reported_location",
       "first_basis": "publisher_round_one",
       "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
-    },
-    {
-      "company_id": "public_anonymous",
-      "name": "Anonymous",
-      "source_id": "ycf_2019",
-      "locator": "PDF page 27, Dec-12 row for Anonymous",
-      "sector": "Software & Services",
-      "date": {
-        "value": "2012-12",
-        "precision": "month"
-      },
-      "date_basis": "reported_month",
-      "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Auckland."
     },
     {
       "company_id": "public_asknicely",
@@ -3340,7 +3576,7 @@
       "name": "Jasper",
       "source_id": "ycf_2020",
       "locator": "PDF page 2, Apr-19 row for Jasper",
-      "sector": "Software & Services",
+      "sector": "Property software",
       "date": {
         "value": "2019-04",
         "precision": "month"
@@ -3348,9 +3584,12 @@
       "date_basis": "reported_month",
       "label": "Seed",
       "institutional_investor": "Flux",
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Flux."
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Flux. The issuer’s later report corroborates the Auckland company and describes a follow-on SAFE separately from its earlier seed funding.",
+      "corroborating_source_ids": [
+        "jasper_founding"
+      ]
     },
     {
       "company_id": "public_jobloads",
@@ -3833,7 +4072,7 @@
       "name": "Myovolt Limited",
       "source_id": "ycf_2020",
       "locator": "PDF page 4, Dec-19 row for Myovolt Limited",
-      "sector": "Services",
+      "sector": "Wearable healthtech",
       "date": {
         "value": "2019-12",
         "precision": "month"
@@ -3841,9 +4080,13 @@
       "date_basis": "reported_month",
       "label": "Seed",
       "institutional_investor": "Marlborough Angels, Canterbury Angels",
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Christchurch. Named participants include Marlborough Angels, Canterbury Angels."
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Christchurch. Named participants include Marlborough Angels, Canterbury Angels. Founder accounts corroborate the New Zealand company. The financing table provides the first recorded Seed date and organised angel participants.",
+      "corroborating_source_ids": [
+        "myovolt_uoc",
+        "myovolt_founder"
+      ]
     },
     {
       "company_id": "public_narrative",
@@ -5480,7 +5723,7 @@
       "name": "VidApp",
       "source_id": "ycf_2017",
       "locator": "PDF page 5, Sep-17 row for VidApp",
-      "sector": "Software & Services",
+      "sector": "Creator software",
       "date": {
         "value": "2017-09",
         "precision": "month"
@@ -5488,9 +5731,13 @@
       "date_basis": "reported_month",
       "label": "Seed",
       "institutional_investor": "Ice Angels",
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Ice Angels."
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Ice Angels. The issuer connects the same venture to Icehouse in 2017, and the official register corroborates its earlier New Zealand incorporation and name continuity.",
+      "corroborating_source_ids": [
+        "vidapp_register",
+        "vidapp_issuer"
+      ]
     },
     {
       "company_id": "public_vidapp",

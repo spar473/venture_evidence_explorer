@@ -1,0 +1,522 @@
+{
+  "format_version": "nz-cohort-follow-up:1",
+  "as_of": "2026-11-20",
+  "sources": [
+    {
+      "source_id": "partly_idealog",
+      "publisher": "Idealog",
+      "title": "Partly becomes New Zealand’s fastest growing start-up",
+      "url": "https://idealog.co.nz/venture/2022/12/partly-becomes-new-zealands-fastest-growing-start-up",
+      "kind": "news_article",
+      "published_on": "2022-12-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "dawn_a_report",
+      "publisher": "NZGCP, PwC and Angel Association NZ",
+      "title": "Startup Investment Autumn 2023",
+      "url": "https://www.pwc.co.nz/pdfs/2023/startup-may-2023.pdf",
+      "kind": "dated_report",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "dawn_b_company",
+      "publisher": "Dawn Aerospace",
+      "title": "Dawn Aerospace closes US$25 million Series B",
+      "url": "https://www.dawnaerospace.com/latest-news/dawn-aerospace-closes-us25-million-series-b",
+      "kind": "press_release",
+      "published_on": "2026-06-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "supie_liquidators",
+      "publisher": "PwC liquidators",
+      "title": "Supie group first liquidators’ report",
+      "url": "https://www.pwc.co.nz/pdfs/2023/liquidators-first-report-supie-limited.pdf",
+      "kind": "liquidation_notice",
+      "published_on": "2023-11-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "supie_grocery",
+      "publisher": "Supermarket News",
+      "title": "Supie puts $2.5m towards growth",
+      "url": "https://supermarketnews.co.nz/news/supie-puts-2-5m-towards-growth/",
+      "kind": "news_article",
+      "published_on": "2021-11-09",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "cetogenix_bpa",
+      "publisher": "Bioresource Processing Alliance",
+      "title": "Cetogenix is advancing circular energy solutions with BPA support",
+      "url": "https://bioresourceprocessing.co.nz/case-study/cetogenix-is-advancing-circular-energy-solutions-with-bpa-support/",
+      "kind": "news_article",
+      "published_on": "2026-03-31",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "cleanery_sbn",
+      "publisher": "Sustainable Business Network",
+      "title": "Cleanery cuts packaging waste while going global",
+      "url": "https://sustainable.org.nz/learn/news-insights/the-proof-is-in-the-powder-cleanery-cuts-packaging-waste-while-going-global/",
+      "kind": "news_article",
+      "published_on": "2025-08-25",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "cropsy_auckland",
+      "publisher": "University of Auckland",
+      "title": "Agritech start-up Cropsy Technologies is changing the face of viticulture",
+      "url": "https://www.auckland.ac.nz/en/news/2025/05/13/agritech-start-up-cropsy-technologies-changing-viticulture.html",
+      "kind": "news_article",
+      "published_on": "2025-05-13",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "heartlab_invision",
+      "publisher": "HeartLab",
+      "title": "HeartLab announces partnership with InVision Medical Technology",
+      "url": "https://heartlab.com/blog/announcing-our-partnership-with-invision-medical-technology",
+      "kind": "press_release",
+      "published_on": "2025-10-13",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "carepatron_beehive",
+      "publisher": "New Zealand Government",
+      "title": "Māori-led tech company prepares to go global",
+      "url": "https://www.beehive.govt.nz/release/m%C4%81ori-led-tech-company-prepares-go-global",
+      "kind": "press_release",
+      "published_on": "2026-03-04",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "quashed_herald",
+      "publisher": "NZ Herald",
+      "title": "Herald NOW discusses Quashed’s insurance comparison site",
+      "url": "https://www.youtube.com/watch?v=GSdjV3iiVXY",
+      "kind": "news_article",
+      "published_on": "2025-10-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "runn_updates",
+      "publisher": "Runn",
+      "title": "Planner Updates and New Availability Summary Views",
+      "url": "https://help.runn.io/en/articles/13226396-26-jan-26-planner-updates-new-availability-summary-views",
+      "kind": "press_release",
+      "published_on": "2026-01-20",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "formus_2022_punakaiki",
+      "publisher": "Punakaiki Fund",
+      "title": "Capital injection fuels Formus Labs for US launch",
+      "url": "https://punakaikifund.co.nz/capital-injection-fuels-formus-labs-for-us-launch/",
+      "kind": "press_release",
+      "published_on": "2022-02-11",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "formus_uoa_2022",
+      "publisher": "University of Auckland",
+      "title": "Alumni venture FormusLabs raises $5m",
+      "url": "https://www.auckland.ac.nz/en/news/2022/06/29/formuslabs-raises-towards-ai-powered-orthopaedic-surgery.html",
+      "kind": "news_article",
+      "published_on": "2022-06-29",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "formus_commercial_2024",
+      "publisher": "Formus Labs",
+      "title": "Formus Hip in Commercial Use",
+      "url": "https://www.formus.com/news/hip-planner-officially-in-use",
+      "kind": "company_page",
+      "published_on": "2024-12-18",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "astrix_summit",
+      "publisher": "New Zealand Government",
+      "title": "Speech to 2024 Aerospace Summit",
+      "url": "https://www.beehive.govt.nz/speech/speech-2024-aerospace-summit",
+      "kind": "press_release",
+      "published_on": "2024-09-24",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "insides_snowball",
+      "publisher": "Snowball Effect",
+      "title": "Capital raise recap from quarter 1 of 2023",
+      "url": "https://www.snowballeffect.co.nz/articles/q1-2023-capital-raise-recap",
+      "kind": "dated_report",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "foundry_sec",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "title": "Foundry Lab, Inc. Form D",
+      "url": "https://www.sec.gov/Archives/edgar/data/1881935/000188193521000001/xslFormDX08/primary_doc.xml",
+      "kind": "registry_record",
+      "published_on": "2021-11-30",
+      "retrieved_on": "2026-11-20"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "partly_priced_series_a",
+      "company_id": "public_partly",
+      "kind": "series_a",
+      "date": {
+        "value": "2022-12-16",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "partly_idealog",
+      "passage": "Opening financing and valuation paragraphs",
+      "claim": "The article reports a completed Series A at an approximately NZ$180 million valuation.",
+      "round_label": "Series A",
+      "institutional_investor": "Octopus Ventures",
+      "instrument": "priced_equity"
+    },
+    {
+      "event_id": "dawn_priced_series_a",
+      "company_id": "discovery_dawnaerospace",
+      "kind": "series_a",
+      "date": {
+        "value": "2022",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "dawn_a_report",
+      "passage": "Dawn Aerospace case, funding history",
+      "claim": "The case dates the priced Series A to 2022 and records the valuation and prior 2018 seed.",
+      "round_label": "series A",
+      "instrument": "priced_equity"
+    },
+    {
+      "event_id": "dawn_priced_series_b",
+      "company_id": "discovery_dawnaerospace",
+      "kind": "series_b",
+      "date": {
+        "value": "2026-06-16",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "dawn_b_company",
+      "passage": "Dateline, opening, pricing and financing history",
+      "claim": "The company reports closing a priced Series B in 2026 and places its Series A in 2022.",
+      "round_label": "Series B funding round",
+      "instrument": "priced_equity"
+    },
+    {
+      "event_id": "cetogenix_active_2026",
+      "company_id": "discovery_cetogenix",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-03-31",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "cetogenix_bpa",
+      "passage": "Dateline, grant support and current demonstration section",
+      "claim": "The alliance describes the company still developing a demonstration-ready technology in March 2026."
+    },
+    {
+      "event_id": "cleanery_sales_2025",
+      "company_id": "discovery_cleanery",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-08-25",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "cleanery_sbn",
+      "passage": "Case study introduction and international operations",
+      "claim": "The case study described products sold in New Zealand, Australia and the United States."
+    },
+    {
+      "event_id": "cropsy_operations_2025",
+      "company_id": "discovery_cropsy",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-05-13",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "cropsy_auckland",
+      "passage": "Dateline and company development paragraphs",
+      "claim": "The university reports the company still developing and selling its crop-monitoring technology in May 2025."
+    },
+    {
+      "event_id": "heartlab_agreement_2025",
+      "company_id": "discovery_heartlab",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-10-13",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "heartlab_invision",
+      "passage": "Announcement and availability sections",
+      "claim": "HeartLab announced an agreement for Australia and New Zealand with product availability pending regulatory approval."
+    },
+    {
+      "event_id": "carepatron_government_2026",
+      "company_id": "public_carepatron",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-03-04",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "carepatron_beehive",
+      "passage": "Opening paragraphs and development support",
+      "claim": "Government describes the company’s developed practice-management tool and support for expansion."
+    },
+    {
+      "event_id": "quashed_coverage_2025",
+      "company_id": "public_quashed",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-10-16",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "quashed_herald",
+      "passage": "Published episode description",
+      "claim": "Coverage of the insurance comparison service confirms operating activity."
+    },
+    {
+      "event_id": "runn_release_2026",
+      "company_id": "public_runnio",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-01-20",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "runn_updates",
+      "passage": "Publisher date and product update",
+      "claim": "The company published release information for its planning tools, with availability dates described separately in the article."
+    },
+    {
+      "event_id": "formus_pre_a_2022",
+      "company_id": "discovery_formuslabs",
+      "kind": "pre_series_a",
+      "date": {
+        "value": "2022-02-11",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "formus_2022_punakaiki",
+      "passage": "Opening investment paragraphs",
+      "claim": "The investor describes this funding as a pre-Series A round.",
+      "round_label": "pre-series A funding round"
+    },
+    {
+      "event_id": "formus_uoa_launch_2022",
+      "company_id": "discovery_formuslabs",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2022-06-29",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "formus_uoa_2022",
+      "passage": "Launch and Zimmer Biomet paragraph",
+      "claim": "University coverage reports the Australian launch and more than 700 surgical plans delivered via Zimmer Biomet. It does not establish the first payment date."
+    },
+    {
+      "event_id": "formus_revenue_report_2024",
+      "company_id": "discovery_formuslabs",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2024-12-18",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "formus_commercial_2024",
+      "passage": "Usage revenue paragraph",
+      "claim": "The company reports usage revenue and more than 90 planned surgeries since an unspecified January rollout. The report day does not date first paid use."
+    },
+    {
+      "event_id": "astrix_grant_2024",
+      "company_id": "discovery_astrix",
+      "kind": "grant",
+      "date": {
+        "value": "2024-09-24",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "astrix_summit",
+      "passage": "Ārohia Trailblazer Grant and award recipients",
+      "claim": "The minister identifies Astrix as an Ārohia grant recipient.",
+      "instrument": "other"
+    },
+    {
+      "event_id": "insides_series_a_2021",
+      "company_id": "discovery_theinsidescompany",
+      "kind": "series_a",
+      "date": {
+        "value": "2021",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "insides_snowball",
+      "passage": "The Insides Company opening paragraph",
+      "claim": "The adviser reports a Series A completed in 2021. Pricing and equity terms remain unverified.",
+      "round_label": "Series A round",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "insides_series_a_extension_2023",
+      "company_id": "discovery_theinsidescompany",
+      "kind": "other_financing",
+      "date": {
+        "value": "2023-03-31",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "insides_snowball",
+      "passage": "The Insides Company extension paragraph",
+      "claim": "The adviser dates a distinct extension closed on 31 March 2023.",
+      "round_label": "Series A extension round"
+    },
+    {
+      "event_id": "foundry_proposed_us_equity_2021",
+      "company_id": "discovery_foundrylab",
+      "kind": "series_a",
+      "date": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "date_basis": "unknown",
+      "source_id": "foundry_sec",
+      "passage": "Offering, securities and signature sections",
+      "claim": "The U.S. entity filing identifies preferred stock. The US issuer crosswalk and first closing date remain open.",
+      "round_label": "Series A-2 Preferred Stock",
+      "instrument": "equity_unspecified",
+      "entity_link": "proposed"
+    }
+  ],
+  "reviews": [
+    {
+      "company_id": "discovery_dawnaerospace",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "dawn_priced_series_b",
+      "scope": "Compared the published funding history with the company announcement and checked public records for earlier lettered rounds and closure. The reviewed history places Series A in 2022.",
+      "source_ids": [
+        "dawn_a_report",
+        "dawn_b_company"
+      ]
+    },
+    {
+      "company_id": "public_supie",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2023-11-09",
+      "activity_event_id": null,
+      "scope": "Compared the earlier seed and its proposed follow-on with the liquidators’ initial business and shareholder account and the official Companies Register. Checked public reports for completed priced lettered financing through the liquidation date.",
+      "source_ids": [
+        "supie_liquidators",
+        "supie_grocery"
+      ]
+    },
+    {
+      "company_id": "discovery_cetogenix",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "cetogenix_active_2026",
+      "scope": "Checked later financing searches and public operating announcements. The March company activity establishes follow-up. The subsequent UK project funding report describes a possible future Series A separately.",
+      "source_ids": [
+        "cetogenix_bpa"
+      ]
+    },
+    {
+      "company_id": "discovery_cleanery",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "cleanery_sales_2025",
+      "scope": "Checked issuer seed release, NZX portfolio addition, investor case and dated operating coverage; later labelled financing remains unverified.",
+      "source_ids": [
+        "cleanery_sbn"
+      ]
+    },
+    {
+      "company_id": "discovery_cropsy",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "cropsy_operations_2025",
+      "scope": "Compared NZTE’s first raise with public sources covering later financing and operations. The dated university account is the latest positively identified operating report in this review.",
+      "source_ids": [
+        "cropsy_auckland"
+      ]
+    },
+    {
+      "company_id": "discovery_heartlab",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "heartlab_agreement_2025",
+      "scope": "Checked the public funding reports, the issuer newsroom and later named funding. This follow-up uses the agreement, with product availability still pending as of that source.",
+      "source_ids": [
+        "heartlab_invision"
+      ]
+    },
+    {
+      "company_id": "public_carepatron",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "carepatron_government_2026",
+      "scope": "Checked venture and trade reports of seed financing, issuer activity and later funding searches. Government support is a distinct funding source.",
+      "source_ids": [
+        "carepatron_beehive"
+      ]
+    },
+    {
+      "company_id": "public_quashed",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "quashed_coverage_2025",
+      "scope": "Checked financing announcements, trade reporting, the issuer media index and later funding searches; a priced outcome remains unverified.",
+      "source_ids": [
+        "quashed_herald"
+      ]
+    },
+    {
+      "company_id": "public_runnio",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "runn_release_2026",
+      "scope": "Checked original seed and Shearwater’s unlabelled follow-on alongside the company’s operating updates and later funding searches.",
+      "source_ids": [
+        "runn_updates"
+      ]
+    },
+    {
+      "company_id": "discovery_formuslabs",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "formus_revenue_report_2024",
+      "scope": "Reviewed investor descriptions of the pre-Series A, launch reporting, company evidence of usage revenue and public searches for lettered financing. Device-version correspondence and first payment remain unresolved.",
+      "source_ids": [
+        "formus_2022_punakaiki",
+        "formus_uoa_2022",
+        "formus_commercial_2024"
+      ]
+    },
+    {
+      "company_id": "discovery_astrix",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "activity_event_id": "astrix_grant_2024",
+      "scope": "Checked the issuer’s news, public award evidence and funding searches. The latest dated signal used in this review is a grant, distinct from a priced financing outcome.",
+      "source_ids": [
+        "astrix_summit"
+      ]
+    }
+  ]
+}

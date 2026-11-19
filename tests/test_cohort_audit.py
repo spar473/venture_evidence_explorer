@@ -68,7 +68,8 @@ def test_bundled_run_is_stable_and_does_not_promote_portfolio_listings():
     assert result['follow_up']['observed_at_36_months'] is None
     rows = {row['company_id']:row for row in result['decisions']}
     assert rows['discovery_formuslabs']['status'] == 'included'
-    assert rows['discovery_halter']['status'] == 'unresolved'
+    assert rows['discovery_halter']['status'] == 'included'
+    assert rows['discovery_halter']['entry']['date']['value'] == '2016-12'
     assert rows['discovery_toku']['status'] == rows['discovery_tokueyes']['status'] == 'unresolved'
 
 
