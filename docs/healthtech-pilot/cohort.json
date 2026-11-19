@@ -1,0 +1,418 @@
+{
+  "curated_on": "2026-11-19",
+  "purpose": "Source-checked cohort inventory for research packet preparation. Local keys are editorial keys, with no accepted app identity, point-in-time anchor or outcome label implied. Clinical users describe intended use, not verified customers.",
+  "sources": [
+    {
+      "key": "f22",
+      "publisher": "Formus Labs",
+      "published_date": "2022-02-02",
+      "url": "https://www.formus.com/news/formus-labs-raises-5-million-to-automate-orthopedic-surgery-planning-partners-with-zimmer-biomet-to-supercharge-global-launch",
+      "locator": "Company announcement, opening paragraphs",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "f23",
+      "publisher": "US FDA",
+      "published_date": null,
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K213272",
+      "locator": "Decision details for Formus Hip, K213272",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "f26",
+      "publisher": "Formus Labs",
+      "published_date": "2026-05-22",
+      "url": "https://www.formus.com/news/formus-labs-hip-platform-receives-fda-clearance",
+      "locator": "Company announcement",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "t22",
+      "publisher": "University of Auckland",
+      "published_date": "2022-06-28",
+      "url": "https://www.auckland.ac.nz/en/news/2022/06/28/eyes-wide-open-academic-entrepreneur.html",
+      "locator": "Toku Eyes founder and project profile",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "t23",
+      "publisher": "National Vision",
+      "published_date": "2023-04-17",
+      "url": "https://www.nationalvision.com/news/2023/04/17/toku-inc-series-a-preferred-investment-round-led-by-national-vision-inc-and-topcon-healthcare/",
+      "locator": "Series A preferred financing release",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "v10",
+      "publisher": "US FDA",
+      "published_date": null,
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=k102556",
+      "locator": "Decision details for Volpara Version 1.3, K102556",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "v24",
+      "publisher": "Lunit",
+      "published_date": "2024-05-22",
+      "url": "https://www.lunit.io/en/media-hub/lunit-completes-acquisition-of-volpara-pioneering-next-level-of-ai-driven-cancer-care/",
+      "locator": "Acquisition completion announcement",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "a22",
+      "publisher": "US FDA",
+      "published_date": null,
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPMN/pmn.cfm?ID=K213924",
+      "locator": "Decision details for Gastric Alimetry System, K213924",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "a24",
+      "publisher": "Alimetry",
+      "published_date": "2024-10-25",
+      "url": "https://www.alimetry.com/press/alimetry-raises-an-oversubscribed-us-18m",
+      "locator": "A2 funding and hospital adoption release",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "w24",
+      "publisher": "NZX / Booster Innovation Fund",
+      "published_date": "2024-02-13",
+      "url": "https://www.nzx.com/announcements/426110",
+      "locator": "Portfolio investment notice",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "wprofile",
+      "publisher": "NZGCP",
+      "published_date": null,
+      "url": "https://www.nzgcp.co.nz/portfolio/case-study/wellumio",
+      "locator": "Venture and portable stroke imaging case study",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "m26",
+      "publisher": "University of Auckland",
+      "published_date": "2026-10-22",
+      "url": "https://www.auckland.ac.nz/en/news/2026/10/22/entrepreneurship-velocity-100k-winners-auckland.html",
+      "locator": "Automated Breast MRI Reporting section",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "n22",
+      "publisher": "University of Auckland",
+      "published_date": "2022-11-01",
+      "url": "https://www.auckland.ac.nz/en/news/2022/11/01/brain-tech-takes-out-top-velocity-prize.html",
+      "locator": "Neurofanos team and product description",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "n23",
+      "publisher": "University of Auckland",
+      "published_date": "2023-11-10",
+      "url": "https://www.auckland.ac.nz/en/news/2023/11/10/making-brain-surgery-smarter-artificial-intelligence.html",
+      "locator": "Endeavour funding and intended licensing paragraphs",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "p26",
+      "publisher": "Medtech-iQ Tāmaki Makaurau",
+      "published_date": "2026-06-05",
+      "url": "https://medtechiq.org.nz/news/medtech-iq-tamaki-makaurau-prize-was-awarded-to-pulsemap-pad-detector",
+      "locator": "Velocity prize and intended use",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "i25",
+      "publisher": "University of Auckland",
+      "published_date": "2025-10-17",
+      "url": "https://www.auckland.ac.nz/en/news/2025/10/17/start-ups-reach-for-the-stars---literally---in--100k-challenge-.html",
+      "locator": "First-place IVF support tool section",
+      "checked_date": "2026-11-19"
+    },
+    {
+      "key": "x25",
+      "publisher": "University of Auckland",
+      "published_date": "2025-08-25",
+      "url": "https://www.auckland.ac.nz/en/news/2025/08/25/latest-start-ups-emerging-from-the-universitys-incubator.html",
+      "locator": "VistaVision, 2025 Venture Lab cohort",
+      "checked_date": "2026-11-19"
+    }
+  ],
+  "cases": [
+    {
+      "key": "formus",
+      "name": "Formus Labs",
+      "role": "established_reference",
+      "product": "Surgical planning using imaging",
+      "clinical_user": "Orthopaedic surgeons",
+      "comparison_context": "Comparable image-to-clinician decision workflow. Orthopaedics and distribution partnership differ from radiology reporting.",
+      "open_questions": "Earlier prototype or evaluation source, actual site deployment dates",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "f22",
+          "kind": "financing",
+          "claim": "Company announced a US$5 million raise.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "f22",
+          "kind": "partnership",
+          "claim": "Company announced a co-development and commercialisation partnership with Zimmer Biomet. Contract economics and live deployments are unspecified.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "f23",
+          "kind": "us_510k_decision",
+          "claim": "US FDA record K213272 shows a substantially equivalent decision for Formus Hip.",
+          "event_date": "2023-03-31",
+          "notes": "Decision date is distinct from when the specific page version was publicly available."
+        },
+        {
+          "source": "f26",
+          "kind": "product_specific_regulatory_report",
+          "claim": "A separate company announcement reports Formus Hip 510(k) clearance in May 2026.",
+          "event_date": null,
+          "notes": "Resolve device version and 510(k) identity before treating this as a distinct regulatory event or a date correction."
+        }
+      ]
+    },
+    {
+      "key": "toku",
+      "name": "Toku Eyes / Toku Inc.",
+      "role": "established_reference",
+      "product": "Retinal imaging and screening software",
+      "clinical_user": "Eye care professionals",
+      "comparison_context": "Image-based decision support and a clinic workflow. Retail optometry channels and retinal risk assessment differ from hospital breast MRI.",
+      "open_questions": "First dated evaluation or deployment, legal-entity crosswalk, product-by-product regulatory records",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "t22",
+          "kind": "product_and_origin",
+          "claim": "UoA profiled the venture founded by academic Ehsan Vaghefi and its use of AI with retinal imaging.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "t23",
+          "kind": "financing",
+          "claim": "National Vision reported the close of a $8 million Series A Preferred round co-led by National Vision and Topcon Healthcare.",
+          "event_date": null,
+          "notes": "Cross-reference the named products and entities before joining product-specific subsequent events. Separate financing from deployments."
+        }
+      ]
+    },
+    {
+      "key": "volpara",
+      "name": "Volpara Health Technologies",
+      "role": "established_reference",
+      "product": "Breast-imaging analysis and screening workflow",
+      "clinical_user": "Breast imaging teams",
+      "comparison_context": "Closest clinical domain overlap for MRI Reporting. Mammography density tools and breast MRI report drafting differ. Legacy vintage and acquisition make this a pathway precedent rather than a representative early peer.",
+      "open_questions": "Earliest contemporaneous prototype or provider evaluation, evidence for procurement and commercial dates",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "v10",
+          "kind": "us_510k_decision",
+          "claim": "US FDA record K102556 shows a substantially equivalent decision for Volpara Version 1.3.",
+          "event_date": "2010-10-07",
+          "notes": "Regulatory decision is for a specific version. Earlier development anchor unresolved."
+        },
+        {
+          "source": "v24",
+          "kind": "acquisition",
+          "claim": "Lunit announced completion of its acquisition of Volpara Health Technologies.",
+          "event_date": "2024-05-22",
+          "notes": "Use as a later outcome. Keep off any early snapshot."
+        }
+      ]
+    },
+    {
+      "key": "alimetry",
+      "name": "Alimetry",
+      "role": "established_reference",
+      "product": "Wearable gastric diagnostics and analysis",
+      "clinical_user": "Gastroenterology teams",
+      "comparison_context": "Useful for adoption and market access across a hospital diagnostics workflow. Wearable hardware and GI indication are materially different.",
+      "open_questions": "Dated first evaluation and first paid deployment, matched reimbursement jurisdictions",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "a22",
+          "kind": "us_510k_decision",
+          "claim": "US FDA record K213924 identifies Gastric Alimetry System with a 3 June 2022 decision.",
+          "event_date": "2022-06-03",
+          "notes": ""
+        },
+        {
+          "source": "a24",
+          "kind": "financing",
+          "claim": "Company reported an oversubscribed US$18 million A2 round.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "a24",
+          "kind": "adoption_company_report",
+          "claim": "Company reported more than 40 hospitals and clinics signed on. Paid status and completed implementation by site are unverified.",
+          "event_date": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "key": "wellumio",
+      "name": "Wellumio",
+      "role": "adjacent_reference",
+      "product": "Portable imaging for stroke detection",
+      "clinical_user": "Acute stroke teams",
+      "comparison_context": "Useful for a specific imaging validation or hospital access question. Hardware maturity and acute workflow limit direct comparability.",
+      "open_questions": "Find an early dated feasibility or trial record and check reported funding closes for overlap",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "w24",
+          "kind": "portfolio_relationship",
+          "claim": "Booster Innovation Fund announced adding Wellumio to its portfolio.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "wprofile",
+          "kind": "product_positioning",
+          "claim": "NZGCP profiles a portable stroke imaging technology.",
+          "event_date": null,
+          "notes": "Undated page is discovery context unless a dated version is found."
+        }
+      ]
+    },
+    {
+      "key": "mri",
+      "name": "Automated Breast MRI Reporting",
+      "role": "university_case",
+      "product": "Research software for breast MRI reporting",
+      "clinical_user": "Radiologists",
+      "comparison_context": "Primary query. Look for historical breast imaging workflow and diagnostic decision-support precedents.",
+      "open_questions": "Independent clinical validation, hospital evaluation, intended purchaser, paid deployment and regulatory status",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "m26",
+          "kind": "university_recognition",
+          "claim": "UoA named the project among the 2026 Velocity $100k Challenge winners.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "m26",
+          "kind": "intended_product",
+          "claim": "UoA described software intended to draft breast MRI reports using digital twin comparisons.",
+          "event_date": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "key": "neurofanos",
+      "name": "Neurofanos",
+      "role": "university_case",
+      "product": "Image-guided neurosurgery support",
+      "clinical_user": "Neurosurgeons",
+      "comparison_context": "A clinical imaging/navigation comparison with different treatment use and operating-room workflow.",
+      "open_questions": "First prospective clinical validation, completed licence, regulatory product status and buying pathway",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "n22",
+          "kind": "university_recognition",
+          "claim": "UoA reported first place in the 2022 Velocity $100k Challenge for an image-guidance venture.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "n23",
+          "kind": "research_grant",
+          "claim": "UoA reported a NZ$1 million Endeavour grant to the university team with licensing to the venture planned.",
+          "event_date": "2023-09",
+          "notes": "Month precision. The university research grant and any future licence are separate from company financing and completed transfer."
+        }
+      ]
+    },
+    {
+      "key": "pulsemap",
+      "name": "PulseMap PAD Detector",
+      "role": "university_case",
+      "product": "Portable peripheral artery disease screening concept",
+      "clinical_user": "Screening clinicians, setting to verify",
+      "comparison_context": "Diagnostic milestone case with a different modality. Often an appropriate sparse query.",
+      "open_questions": "Prototype state, human evaluation, clinical site, legal entity and regulatory status",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "p26",
+          "kind": "university_recognition",
+          "claim": "Prize sponsor documented the 2026 Velocity Ideas Challenge award.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "p26",
+          "kind": "intended_product",
+          "claim": "Sponsor described a portable non-invasive vascular screening concept.",
+          "event_date": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "key": "ivf",
+      "name": "IVF Decision Support Tool",
+      "role": "university_case",
+      "product": "Clinical decision support for embryo assessment",
+      "clinical_user": "Embryologists and fertility clinics",
+      "comparison_context": "A workflow and dataset comparison. IVF clinic buying and clinical use are different from hospital radiology.",
+      "open_questions": "Prospective clinic validation, deployment, intended use boundary, payment and legal identity",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "i25",
+          "kind": "university_recognition",
+          "claim": "UoA reported first place in the 2025 Velocity $100k Challenge.",
+          "event_date": null,
+          "notes": ""
+        },
+        {
+          "source": "i25",
+          "kind": "development_collaboration",
+          "claim": "UoA reported development with Fertility Associates and described future clinic testing. Paid customer and completed evaluation status are unverified.",
+          "event_date": null,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "key": "vistavision",
+      "name": "VistaVision",
+      "role": "university_case",
+      "product": "Telerobotic remote eye care",
+      "clinical_user": "Eye-care clinicians and rural providers",
+      "comparison_context": "Tests whether the system can distinguish retinal screening software from the workflow of delivering remote examinations.",
+      "open_questions": "Clinical evaluation site, operating status, financing and implementation evidence",
+      "early_stage_anchor": null,
+      "observations": [
+        {
+          "source": "x25",
+          "kind": "university_incubation",
+          "claim": "UoA listed VistaVision with the 2025 Venture Lab cohort and described its telerobotic eye-care approach.",
+          "event_date": null,
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
