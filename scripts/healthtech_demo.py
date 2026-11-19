@@ -19,10 +19,11 @@ sys.path.insert(0, str(ROOT))
 from backend.database import connect
 from backend.ingestion import load_seed
 from backend.research_adapter import EXAMPLE, dry_run_research, import_research
-from backend.healthtech import compare_healthtech, SELECTION_PATH
+from backend.healthtech import compare_healthtech, healthtech_coverage, SELECTION_PATH
 
 AS_OF = '2026-11-19'
-PACKETS = (EXAMPLE, ROOT/'research/healthtech-pilot/packet.json', ROOT/'research/healthtech-pilot/extension.json')
+PACKETS = (EXAMPLE, ROOT/'research/healthtech-pilot/packet.json', ROOT/'research/healthtech-pilot/extension.json',
+           ROOT/'research/healthtech-pilot/clinical-studies.json')
 
 
 def snapshot(db):
@@ -59,9 +60,11 @@ def prepare_demo(output):
         if conn.execute('PRAGMA integrity_check').fetchone()[0] != 'ok' or conn.execute('PRAGMA foreign_key_check').fetchall():
             raise RuntimeError('Demo database failed integrity checks')
         mri = compare_healthtech(conn, 'subj_ht_mri', as_of=AS_OF)
-        if len(mri['peers']) != 2:
-            raise RuntimeError('Expected two MRI pathway precedents')
+        coverage = healthtech_coverage(conn)
+        if len(mri['peers']) != 3:
+            raise RuntimeError('Expected three MRI pathway precedents')
     result = {'database':str(db.resolve()), 'research_as_of':AS_OF, 'imports':summaries,
+        'coverage':coverage.model_dump(),
         'ui_path':'Research dossiers → Automated Breast MRI Reporting → Provider evaluation comparison',
         'limits':'Source-checked pathway evidence; same-stage and historical comparisons abstain. Human judgments remain pending.'}
     (output/'demo-summary.json').write_text(json.dumps(result,indent=2)+'\n')

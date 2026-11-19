@@ -24,7 +24,7 @@ test("research directory filters preserve quarantine, unknown identity and sourc
   page.on("pageerror", error => errors.push(error.message));
   await page.goto("/");
   await page.getByRole("button", {name: "Research dossiers", exact: true}).click();
-  await expect(page.locator(".research-directory-row")).toHaveCount(10);
+  await expect(page.locator(".research-directory-row")).toHaveCount(12);
   await page.getByLabel("Research review state", {exact: true}).selectOption("accepted");
   await expect(page.getByRole("status")).toContainText("No research dossiers match");
   await page.getByRole("button", {name: "Reset research filters"}).click();

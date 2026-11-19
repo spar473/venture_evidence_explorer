@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { ResearchDossier, ResearchSubjectsResponse, ResearchSubjectSummary } from "./api-schema";
+import type { HealthtechCoverage, ResearchDossier, ResearchSubjectsResponse, ResearchSubjectSummary } from "./api-schema";
 import { useResource } from "./hooks";
 import { label } from "./labels";
 import { Status } from "./shared";
@@ -18,8 +18,19 @@ export function ResearchWorkspace() {
   const [selected, setSelected] = useState<ResearchSubjectSummary | null>(null);
   const params = new URLSearchParams({q, review_state: review});
   const {data, error, loading} = useResource<ResearchSubjectsResponse>("/research/subjects?" + params, retry, 120);
+  const [coverageRetry, setCoverageRetry] = useState(0);
+  const coverage = useResource<HealthtechCoverage>("/research/healthtech/coverage", coverageRetry);
+  const pilot = coverage.data;
+  const peersByProject = new Map(pilot?.projects.map(project => [project.subject_id, project.peers]));
   return <section className="research-workspace">
     <p className="notice">Research dossiers preserve source-attributed claims, explicit unknowns and unresolved identity links. Source checks are not human acceptance or independent relevance judgments. Proposed mappings do not merge evidence into the venture directory or B0 comparison.</p>
+    {coverage.error && <Status error>Comparison counts unavailable. <button onClick={() => setCoverageRetry(n => n + 1)}>Retry counts</button></Status>}
+    {pilot && pilot.project_count > 0 && <section className="healthtech-coverage" aria-label="Healthtech comparison coverage">
+      <h3>Healthtech comparison coverage</h3>
+      <p><strong>{pilot.projects_with_peers} of {pilot.project_count} university projects</strong> have a supported comparison.</p>
+      <p>{pilot.pair_count} project–venture pairs use {pilot.distinct_reference_count} distinct reference ventures.</p>
+      <p className="muted">Across the imported pilot at {pilot.as_of}. Each pair links a project to evidence about a reference venture’s clinical or commercial pathway.</p>
+    </section>}
     <div className="research-toolbar">
       <label>Search research dossiers<input aria-label="Search research dossiers" value={q} onChange={e => setQ(e.target.value)} placeholder="Search dossier names" /></label>
       <label>Research review state<select aria-label="Research review state" value={review} onChange={e => setReview(e.target.value)}><option value="">All review states</option>{["extracted", "source_checked", "accepted", "disputed"].map(state => <option key={state} value={state}>{label(state)}</option>)}</select></label>
@@ -27,10 +38,13 @@ export function ResearchWorkspace() {
     </div>
     {loading ? <Status>Loading research dossiers…</Status> : error ? <Status error>{error} <button onClick={() => setRetry(n => n + 1)}>Retry research dossiers</button></Status> : !data?.items.length ? <Status>No research dossiers match these filters. Import a validated research packet into a disposable pilot database to inspect it here.</Status> : <>
       <p className="muted" aria-live="polite">{data.total} research subjects · separate from accepted venture counts</p>
-      <div className="research-directory">{data.items.map(subject => <article className="research-directory-row" key={subject.subject_id}>
-        <div><button className="research-open" data-subject-id={subject.subject_id} aria-haspopup="dialog" onClick={() => setSelected(subject)}>{subject.display_name}</button><p><code>{subject.subject_id}</code> · {label(subject.subject_kind)}</p><p>Identity link: {label(subject.identity_link_status)} · Review: {label(subject.review_state)}</p></div>
+      <div className="research-directory">{data.items.map(subject => {
+        const peers = peersByProject.get(subject.subject_id);
+        return <article className="research-directory-row" key={subject.subject_id}>
+        <div><button className="research-open" data-subject-id={subject.subject_id} aria-haspopup="dialog" onClick={() => setSelected(subject)}>{subject.display_name}</button><p><code>{subject.subject_id}</code> · {label(subject.subject_kind)}</p><p>Identity link: {label(subject.identity_link_status)} · Review: {label(subject.review_state)}</p>
+          {peers && <p>{peers.length ? <><strong>{peers.length} pathway {peers.length === 1 ? "precedent" : "precedents"}</strong> · {peers.map(peer => peer.display_name).join(", ")}</> : "No supported comparison at the pilot cutoff."}</p>}</div>
         <dl className="research-summary-counts"><div><dt>Atomic claims</dt><dd>{subject.observation_count}</dd></div><div><dt>Event candidates</dt><dd>{subject.event_candidate_count}</dd></div><div><dt>Explicit unknowns</dt><dd>{subject.unknown_count}</dd></div><div><dt>Open cases</dt><dd>{subject.open_case_count}</dd></div></dl>
-      </article>)}</div>
+      </article>;})}</div>
     </>}
     {selected && <ResearchDrawer selected={selected} onClose={() => setSelected(null)} />}
   </section>;
@@ -39,7 +53,7 @@ export function ResearchWorkspace() {
 function ResearchDrawer({selected, onClose}: {selected: ResearchSubjectSummary; onClose: () => void}) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [retry, setRetry] = useState(0);
-  const {data, error, loading} = useResource<ResearchDossier>("/research/subjects/" + encodeURIComponent(selected.subject_id) + "?packet_sha256=" + encodeURIComponent(selected.packet_digest), retry);
+  const {data, error, loading} = useResource<ResearchDossier>("/research/subjects/" + encodeURIComponent(selected.subject_id), retry);
   useEffect(() => {
     const node = dialog.current;
     const opener = document.querySelector<HTMLButtonElement>(`.research-open[data-subject-id="${CSS.escape(selected.subject_id)}"]`);
@@ -117,9 +131,9 @@ function ResearchDossierContent({dossier}: {dossier: ResearchDossier}) {
     </section>
     <section><h3>Proposed analyst annotations</h3><p className="notice">Analyst interpretations and questions. Excluded from accepted facts and independent relevance judgments.</p>{packet.proposed_annotations.filter(record => record.subject_ids.includes(subject.subject_id)).map(record => <article className="research-record research-proposal" key={record.annotation_id} id={`research-${record.annotation_id}`} tabIndex={-1}><h4>{label(record.annotation_kind)} · {record.status}</h4><p>{record.text}</p><ResearchRefs ids={record.basis_observation_ids} title="Proposed interpretation basis" /><ResearchRaw record={record} /></article>)}</section>
     <section><h3>Recorded review events</h3>{!packet.review_events.length && <p>No owner or independent-reviewer decisions are recorded in this packet.</p>}{packet.review_events.map(review => <article className="research-record" key={review.review_event_id} id={`research-${review.review_event_id}`} tabIndex={-1}><h4>{label(review.decision)} · {review.reviewer_id}</h4><p>{label(review.actor_role)} · {review.reviewed_on}</p><p>{review.rationale}</p><ResearchRaw record={review} /></article>)}</section>
-    <section id="research-section-exports"><h3>Export this dossier</h3><p>Database-generated CSVs retain stable IDs, raw precision, attribution, review and unknown reasons. This dossier is a subject reference view, not a standalone interchange import packet. Shared question provenance can reference the other subject. Use the original packet download to preserve its complete import bytes. No monetary totals or investment scores are generated.</p><div className="research-export-links">{exportNames.map(name => <a key={name} href={`/api/research/exports/${name}.csv?subject_id=${encodeURIComponent(subject.subject_id)}&packet_sha256=${encodeURIComponent(dossier.packet_digest)}`} download>{label(name)} CSV ↓</a>)}</div>
-      <p><a href={`/api/research/packets/${dossier.packet_digest}.json`} download>Original research packet JSON ↓</a></p>
-      <p className="muted">Research format {packet.metadata.format_version} · Prepared {packet.metadata.prepared_on} · Packet SHA-256 <code>{dossier.packet_digest}</code></p><ResearchLimitations items={dossier.limitations} />
+    <section id="research-section-exports"><h3>Export this dossier</h3><p>Database-generated CSVs retain stable IDs, raw precision, attribution, review and unknown reasons. This dossier is a subject reference view, not a standalone interchange import packet. Shared question provenance can reference the other subject. Download a source packet to inspect its exact imported bytes. No monetary totals or investment scores are generated.</p><div className="research-export-links">{exportNames.map(name => <a key={name} href={`/api/research/exports/${name}.csv?subject_id=${encodeURIComponent(subject.subject_id)}`} download>{label(name)} CSV ↓</a>)}</div>
+      {dossier.source_packet_sha256s.map(hash => <p key={hash}><a href={`/api/research/packets/${hash}.json`} download>{dossier.source_packet_sha256s.length === 1 ? "Original research packet JSON ↓" : `Source packet ${hash.slice(0, 12)} JSON ↓`}</a></p>)}
+      <p className="muted">Research format {packet.metadata.format_version} · Prepared {packet.metadata.prepared_on} · Latest subject packet SHA-256 <code>{dossier.packet_digest}</code></p><ResearchLimitations items={dossier.limitations} />
       <p className="muted">Reference graph SHA-256 <code>{dossier.graph_sha256}</code></p>
       <details><summary>Dossier reference view and preserved date projections (not a standalone import packet)</summary><ResearchRaw record={dossier} /></details>
     </section>

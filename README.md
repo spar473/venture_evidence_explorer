@@ -150,7 +150,7 @@ The latest end-to-end project context is [the master handover](handover/master-2
 
 ## NZ healthtech comparison pilot · 19 November 2026
 
-The healthtech branch adds source-attributed university dossiers and curated provider-evaluation pathway comparisons through **Research dossiers**. MRI Reporting opens Volpara and Formus precedents; Neurofanos, IVF and VistaVision have scoped analogies, while sparse PulseMap and the RosterLab contrast abstain. Historical snapshots abstain without archive availability evidence. B0, the original corpus and all existing import/review boundaries remain intact.
+Open **Research dossiers** to see how many university projects have a supported comparison. The full pilot has eight project–venture pairs across five distinct reference ventures. MRI Reporting has three precedents covering breast imaging (Volpara), specialist planning (Formus) and hospital MR feasibility testing (Wellumio). PulseMap and the RosterLab contrast abstain. Historical snapshots require verified archive evidence.
 
 ```sh
 npm --prefix frontend run build

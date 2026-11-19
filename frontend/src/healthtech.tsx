@@ -60,7 +60,7 @@ function ComparisonResult({path}: {path: string}) {
 export function HealthtechPanel({dossier}: {dossier: ResearchDossier}) {
   const [view, setView] = useState('research');
   const [cutoff, setCutoff] = useState(dossier.packet.metadata.prepared_on);
-  const params = new URLSearchParams({view, as_of: cutoff, packet_sha256: dossier.packet_digest});
+  const params = new URLSearchParams({view, as_of: cutoff});
   const path = '/research/subjects/' + encodeURIComponent(dossier.subject.subject_id) + '/comparisons?' + params;
   return <section className="healthtech-comparison" aria-label="Provider evaluation comparison">
     <h3>Provider evaluation comparison</h3>

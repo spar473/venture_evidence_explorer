@@ -1,0 +1,2003 @@
+{
+  "subjects": [
+    {
+      "subject_id": "subj_ht_mri",
+      "display_name": "Automated Breast MRI Reporting",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_automated_breast_mri_reporting",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No existing seed or staged discovery identity found. Proposed external ID is reserved only; no legacy venture is created. Project, product ownership and contracting entity remain unresolved.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_neurofanos",
+      "display_name": "Neurofanos",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_neurofanos",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "No matching seed, existing research dossier or staged discovery identity found. Project and proposed brand remain distinct from legal ownership of the University research and future IP licence.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_ivf",
+      "display_name": "IVF Decision Support Tool",
+      "subject_kind": "venture_or_project",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_ivf_tool",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Proposed correspondence with seed v_ivf_tool (IVF support tool), supported by the same university article. No mapping acceptance or legal identity inferred.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_wellumio",
+      "display_name": "Wellumio",
+      "subject_kind": "venture_brand",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_wellumio",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Proposed correspondence with discovery_wellumio. Booster names Wellumio Limited and the investigators identify the Axana prototype. Registry identity and product-version continuity require review.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "subject_id": "subj_ht_alimetry",
+      "display_name": "Alimetry",
+      "subject_kind": "venture_brand",
+      "legal_name": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "registration_id": {
+        "value": null,
+        "reason": "identity_unresolved"
+      },
+      "current_operating_status": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "current_funding_stage": {
+        "value": null,
+        "reason": "not_researched_this_pass"
+      },
+      "proposed_application_id": "v_alimetry",
+      "identity_link_status": "proposed_unresolved",
+      "identity_basis": "Proposed brand correspondence with seed v_alimetry and discovery_alimetry / cand_alimetry. The named gastric test and company brand do not resolve legal identity or device revisions.",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    }
+  ],
+  "parties": [],
+  "sources": [
+    {
+      "source_id": "src_ht_mri26",
+      "title": "Supermarket scents, sound sleep, smarter scans: Velocity $100k Challenge winners",
+      "url": "https://www.auckland.ac.nz/en/news/2026/10/22/entrepreneurship-velocity-100k-winners-auckland.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Direct HTTPS retrieval succeeded after web-reader access failed. Institutional report and team claims, not clinical validation."
+      ]
+    },
+    {
+      "source_id": "src_ht_n22",
+      "title": "Cutting-edge brain technology takes out top Velocity prize",
+      "url": "https://www.auckland.ac.nz/en/news/2022/11/01/brain-tech-takes-out-top-velocity-prize.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Team descriptions are proposed benefits, not measured provider outcomes."
+      ]
+    },
+    {
+      "source_id": "src_ht_i25",
+      "title": "Start-ups reach for the stars – literally – in $100k Challenge",
+      "url": "https://www.auckland.ac.nz/en/news/2025/10/17/start-ups-reach-for-the-stars---literally---in--100k-challenge-.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Clinic co-development is not a completed evaluation or paid deployment; team plans remain prospective."
+      ]
+    },
+    {
+      "source_id": "src_ht_well_booster",
+      "title": "BIF adds Wellumio to its investment portfolio",
+      "url": "https://www.nzx.com/announcements/426110",
+      "publisher": "NZX (Booster Innovation Fund announcement)",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2024-02-13",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Investor account of the product under development."
+      ]
+    },
+    {
+      "source_id": "src_ht_well_study",
+      "title": "First-in-human feasibility study of a portable low-field pulsed-gradient-free MR device in acute stroke",
+      "url": "https://www.nature.com/articles/s41598-026-80754-0",
+      "publisher": "Scientific Reports",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2026-11-18",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Investigators include Wellumio employees and co-founders. The prototype and in-kind support are disclosed under Funding and Competing interests."
+      ]
+    },
+    {
+      "source_id": "src_ht_ali_study",
+      "title": "Gastric Alimetry in the Management of Chronic Gastroduodenal Disorders: Impact to Diagnosis and Health Care Utilization",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10684143/",
+      "publisher": "Clinical and Translational Gastroenterology (full text via PMC)",
+      "publisher_role": "other_identified",
+      "published_time": {
+        "value": "2023-08-17",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Retrospective study at two tertiary centres. The study measures associations and leaves causal effects on patient outcomes unresolved."
+      ]
+    },
+    {
+      "source_id": "src_ht_ali_sites",
+      "title": "Alimetry Raises an Oversubscribed US$18M",
+      "url": "https://www.alimetry.com/press/alimetry-raises-an-oversubscribed-us-18m",
+      "publisher": "Alimetry",
+      "publisher_role": "company",
+      "published_time": {
+        "value": "2024-10-25",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Company account of site sign-ups. Commercial terms and site-level implementation dates are unspecified."
+      ]
+    },
+    {
+      "source_id": "src_ht_n23",
+      "title": "Making brain surgery smarter with artificial intelligence",
+      "url": "https://www.auckland.ac.nz/en/news/2023/11/10/making-brain-surgery-smarter-artificial-intelligence.html",
+      "publisher": "University of Auckland",
+      "publisher_role": "university",
+      "published_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Displayed publication date; current retrieval is not historical availability proof.",
+        "unknown_reason": null
+      },
+      "updated_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Reliable page-version update time not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "retrieved_on": "2026-11-19",
+      "access_status": "text_read",
+      "archive_status": "not_archived",
+      "historical_availability_verified": false,
+      "limitations": [
+        "Current public text may have changed; no historical web archive established.",
+        "Endeavour funding belongs to a university research team. Future licensing and a proposed pre-seed raise are distinct from closed VC financing."
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_ht_mri_solution",
+      "subject_id": "subj_ht_mri",
+      "field": "solution",
+      "paraphrase": "The university describes software to draft breast MRI reports using a breast digital twin and comparison with the previous scan.",
+      "source_id": "src_ht_mri26",
+      "locator": "Automated Breast MRI Reporting section; Babarenda Gamage quotation",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Automated Breast MRI Reporting project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_mri_users",
+      "subject_id": "subj_ht_mri",
+      "field": "intended_user",
+      "paraphrase": "Radiologists are the intended users.",
+      "source_id": "src_ht_mri26",
+      "locator": "MRI section, software helps radiologists paragraph",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Automated Breast MRI Reporting project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_mri_problem",
+      "subject_id": "subj_ht_mri",
+      "field": "problem",
+      "paraphrase": "The proposed benefit is faster results for women at high risk of breast cancer.",
+      "source_id": "src_ht_mri26",
+      "locator": "MRI section, opening and senior research fellow paragraphs",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Automated Breast MRI Reporting project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_mri_origin",
+      "subject_id": "subj_ht_mri",
+      "field": "research_origin",
+      "paraphrase": "The reported team spans Auckland Bioengineering Institute and Medical and Health Sciences.",
+      "source_id": "src_ht_mri26",
+      "locator": "MRI section, team and affiliation paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Automated Breast MRI Reporting project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_mri_award",
+      "subject_id": "subj_ht_mri",
+      "field": "award_recognition",
+      "paraphrase": "The university reports the project among the three 2026 Velocity $100k winning ventures.",
+      "source_id": "src_ht_mri26",
+      "locator": "Third winning venture and prizegiving paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": "2026-10-21",
+        "precision": "day",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2026-10-22",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Automated Breast MRI Reporting project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_solution",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "solution",
+      "paraphrase": "The university describes an early image-guided tool using computer vision and AI for real-time neurosurgical guidance.",
+      "source_id": "src_ht_n22",
+      "locator": "Neurofanos introduction and Safaei description",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_user",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "intended_user",
+      "paraphrase": "Neurosurgeons are the intended users.",
+      "source_id": "src_ht_n22",
+      "locator": "Neurofanos introduction and surgeon-navigation paragraphs",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_award",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "award_recognition",
+      "paraphrase": "The university reports a 2022 Velocity win with $25,000 competition seed capital. This is an award, not a VC round.",
+      "source_id": "src_ht_n22",
+      "locator": "Team and first-place prize paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2022-11-01",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_grant",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "outcome",
+      "paraphrase": "The university reports $1 million in September 2023 Endeavour Smart Ideas research funding to its research team, with eventual licensing to Neurofanos planned. This is not a reported equity investment in the venture.",
+      "source_id": "src_ht_n23",
+      "locator": "In September this year paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": "2023-09",
+        "precision": "month",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance.",
+        "Currency code is not explicit in the inspected paragraph. Grant amount remains text: the 0.2.1 money scopes cannot represent a research grant."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_licence",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "business_model",
+      "paraphrase": "The team was negotiating an IP transfer agreement and preparing a pre-seed capital round; completion is not reported.",
+      "source_id": "src_ht_n23",
+      "locator": "UniServices assistance and IP transfer paragraph",
+      "assertion_nature": "intention_target",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_neuro_regulatory",
+      "subject_id": "subj_ht_neurofanos",
+      "field": "validation_requirement",
+      "paraphrase": "The founder described the neuro-navigation regulatory pathway as a costly challenge ahead.",
+      "source_id": "src_ht_n23",
+      "locator": "Regulatory environment quotation",
+      "assertion_nature": "intention_target",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-11-10",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Neurofanos image-guided neurosurgery project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_solution",
+      "subject_id": "subj_ht_ivf",
+      "field": "solution",
+      "paraphrase": "The university describes AI embryo assessment using multimodal data, cycle analysis and imaging support.",
+      "source_id": "src_ht_i25",
+      "locator": "First-place IVF support tool section",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_user",
+      "subject_id": "subj_ht_ivf",
+      "field": "intended_user",
+      "paraphrase": "Embryologists are the intended decision-support users.",
+      "source_id": "src_ht_i25",
+      "locator": "Deep learning and informed decisions paragraph",
+      "assertion_nature": "proposal",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_development",
+      "subject_id": "subj_ht_ivf",
+      "field": "research_origin",
+      "paraphrase": "The source reports development with Fertility Associates and prior MBIE Smart Ideas funding to university supervisors.",
+      "source_id": "src_ht_i25",
+      "locator": "Developed with Fertility Associates and initial concept paragraphs",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_evaluation_plan",
+      "subject_id": "subj_ht_ivf",
+      "field": "validation_requirement",
+      "paraphrase": "The team planned a clinic-facing interface, real-world testing, usability feedback and performance validation before broader deployment.",
+      "source_id": "src_ht_i25",
+      "locator": "Next focus and collaborate closely paragraphs",
+      "assertion_nature": "intention_target",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ivf_award",
+      "subject_id": "subj_ht_ivf",
+      "field": "award_recognition",
+      "paraphrase": "The university reports first place and $25,000 in the 2025 competition; this is award recognition, not a financing round.",
+      "source_id": "src_ht_i25",
+      "locator": "First place paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "university",
+      "speaker_context": "Publisher narrative or attributed team statement; responsibility retained.",
+      "effective_time": {
+        "value": "2025-10-15",
+        "precision": "day",
+        "basis": "Explicit event/occurrence date in the source.",
+        "unknown_reason": null
+      },
+      "context_time": {
+        "value": "2025-10-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "IVF Decision Support Tool project",
+        "geographies": [],
+        "geography_unknown_reason": "not_stated_in_inspected_sources",
+        "geography_basis": "Scope is product-specific; no universal geography or regulatory portability is inferred."
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Attributed source claim, not independent acceptance."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_well_solution",
+      "subject_id": "subj_ht_wellumio",
+      "field": "solution",
+      "paraphrase": "Booster described development of portable MRI for stroke assessment in New Zealand.",
+      "source_id": "src_ht_well_booster",
+      "locator": "Transaction notice, second paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "investor",
+      "speaker_context": "Booster describes a portfolio company in its NZX notice.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2024-02-13",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Wellumio portable stroke MR device (Axana in the clinical report)",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Investor account of the product under development."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_well_design",
+      "subject_id": "subj_ht_wellumio",
+      "field": "prototype_testing",
+      "paraphrase": "At the Royal Melbourne Hospital, investigators compared prototype bedside scans with conventional MRI in a prospective single-centre feasibility study.",
+      "source_id": "src_ht_well_study",
+      "locator": "Abstract, methods; Competing interests, study site",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Barker and colleagues report the Royal Melbourne Hospital feasibility study. The team included company personnel.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-11-18",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Wellumio portable stroke MR device (Axana in the clinical report)",
+        "geographies": [
+          "Australia"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Investigators include Wellumio employees and co-founders. The prototype and in-kind support are disclosed under Funding and Competing interests."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_well_ethics",
+      "subject_id": "subj_ht_wellumio",
+      "field": "validation_requirement",
+      "paraphrase": "Investigators reported hospital ethics approval (HREC/105831/MH-2024) and consent procedures for participants or their representatives.",
+      "source_id": "src_ht_well_study",
+      "locator": "Ethics declarations, Ethics approval and consent to participate",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Barker and colleagues report the Royal Melbourne Hospital feasibility study. The team included company personnel.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-11-18",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Wellumio portable stroke MR device (Axana in the clinical report)",
+        "geographies": [
+          "Australia"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Investigators include Wellumio employees and co-founders. The prototype and in-kind support are disclosed under Funding and Competing interests."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_well_signal",
+      "subject_id": "subj_ht_wellumio",
+      "field": "outcome",
+      "paraphrase": "Of 49 stroke participants, 40 had successful scans. Of those 40, 36 met the signal threshold for algorithmic analysis and 12 met the higher threshold for heatmap display.",
+      "source_id": "src_ht_well_study",
+      "locator": "Abstract, scan results and signal thresholds",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Barker and colleagues report the Royal Melbourne Hospital feasibility study. The team included company personnel.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2026-11-18",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Wellumio portable stroke MR device (Axana in the clinical report)",
+        "geographies": [
+          "Australia"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Investigators include Wellumio employees and co-founders. The prototype and in-kind support are disclosed under Funding and Competing interests."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ali_solution",
+      "subject_id": "subj_ht_alimetry",
+      "field": "solution",
+      "paraphrase": "The gastric test combines body-surface electrical recordings with patient-reported symptoms to help specialists interpret gastric function.",
+      "source_id": "src_ht_ali_study",
+      "locator": "Introduction, paragraph beginning “Gastric Alimetry”; Methods, Study design",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Varghese and colleagues report their clinical chart review.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-08-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Gastric Alimetry",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Retrospective study at two tertiary centres. The study measures associations and leaves causal effects on patient outcomes unresolved."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ali_design",
+      "subject_id": "subj_ht_alimetry",
+      "field": "documented_user",
+      "paraphrase": "Investigators reviewed 50 consecutive patients at two New Zealand tertiary centres. They compared diagnoses before and after testing and assessed changes in management by chart review.",
+      "source_id": "src_ht_ali_study",
+      "locator": "Methods, Study design, paragraphs 1–3",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Varghese and colleagues report their clinical chart review.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-08-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Gastric Alimetry",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Retrospective study at two tertiary centres. The study measures associations and leaves causal effects on patient outcomes unresolved."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ali_decisions",
+      "subject_id": "subj_ht_alimetry",
+      "field": "outcome",
+      "paraphrase": "The authors judged the test to have informed a management decision in 42 of 50 patients. They describe associations and leave effects on patient outcomes open.",
+      "source_id": "src_ht_ali_study",
+      "locator": "Results, Changes in clinical management; Discussion, limitations",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "project_team",
+      "speaker_context": "Varghese and colleagues report their clinical chart review.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2023-08-17",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Gastric Alimetry",
+        "geographies": [
+          "New Zealand"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Retrospective study at two tertiary centres. The study measures associations and leaves causal effects on patient outcomes unresolved."
+      ]
+    },
+    {
+      "observation_id": "obs_ht_ali_sites",
+      "subject_id": "subj_ht_alimetry",
+      "field": "outcome",
+      "paraphrase": "Alimetry reported that more than 40 hospitals and clinics worldwide had signed on to use the device. Payment and implementation at individual sites remain unknown.",
+      "source_id": "src_ht_ali_sites",
+      "locator": "Early uptake following FDA approval, first paragraph",
+      "assertion_nature": "reported_occurrence",
+      "source_relationship": "company",
+      "speaker_context": "Alimetry describes commercial uptake in its own release.",
+      "effective_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "Exact occurrence date for this claim was not established.",
+        "unknown_reason": "not_stated_in_inspected_sources"
+      },
+      "context_time": {
+        "value": "2024-10-25",
+        "precision": "day",
+        "basis": "Document or announcement context date; not a historical availability witness.",
+        "unknown_reason": null
+      },
+      "target_time": {
+        "value": null,
+        "precision": "unknown",
+        "basis": "No dated target stated.",
+        "unknown_reason": "not_applicable_with_reason"
+      },
+      "scope": {
+        "product": "Gastric Alimetry",
+        "geographies": [
+          "Worldwide"
+        ],
+        "geography_basis": "Location or market explicitly described in the cited passage.",
+        "geography_unknown_reason": null
+      },
+      "related_party_id": null,
+      "money": null,
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "conflict_ids": [],
+      "limitations": [
+        "Company account of site sign-ups. Commercial terms and site-level implementation dates are unspecified."
+      ]
+    }
+  ],
+  "events": [],
+  "event_reports": [],
+  "unknowns": [
+    {
+      "unknown_id": "unknown_ht_wellumio_admission",
+      "subject_id": "subj_ht_wellumio",
+      "field": "provider_admission_and_payment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "The criteria the provider used to admit the product to evaluation, purchase terms and the first paid deployment date remain unverified.",
+      "scope": {
+        "product": "Wellumio portable stroke MR device (Axana in the clinical report)",
+        "geographies": [],
+        "geography_basis": "The sources do not establish procurement jurisdiction for the first paid deployment.",
+        "geography_unknown_reason": "not_researched_this_pass"
+      },
+      "inspected_source_ids": [
+        "src_ht_well_booster",
+        "src_ht_well_study"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    },
+    {
+      "unknown_id": "unknown_ht_alimetry_admission",
+      "subject_id": "subj_ht_alimetry",
+      "field": "provider_admission_and_payment",
+      "value": null,
+      "reason": "not_stated_in_inspected_sources",
+      "explanation": "The criteria the provider used to admit the product to evaluation, purchase terms and the first paid deployment date remain unverified.",
+      "scope": {
+        "product": "Gastric Alimetry",
+        "geographies": [],
+        "geography_basis": "The sources do not establish procurement jurisdiction for the first paid deployment.",
+        "geography_unknown_reason": "not_researched_this_pass"
+      },
+      "inspected_source_ids": [
+        "src_ht_ali_sites",
+        "src_ht_ali_study"
+      ],
+      "access_gap_ids": [],
+      "as_of": "2026-11-19",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      }
+    }
+  ],
+  "proposed_annotations": [],
+  "readiness": [
+    {
+      "readiness_id": "ready_ht_mri_wellumio",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_mri",
+        "subj_ht_wellumio"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_mri_wellumio",
+          "description": "Sourced descriptions support a bounded analogy; provider prerequisites and historical same-stage equivalence remain unresolved.",
+          "required_subject_ids": [
+            "subj_ht_mri",
+            "subj_ht_wellumio"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_mri_solution",
+            "obs_ht_mri_users",
+            "obs_ht_well_solution",
+            "obs_ht_well_design",
+            "obs_ht_well_ethics",
+            "obs_ht_well_signal"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_wellumio_admission"
+          ],
+          "unresolved_case_ids": [
+            "case_ht_wellumio_identity"
+          ]
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_mri_solution",
+        "obs_ht_mri_users",
+        "obs_ht_well_solution",
+        "obs_ht_well_design",
+        "obs_ht_well_ethics",
+        "obs_ht_well_signal"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_wellumio_admission"
+      ],
+      "unresolved_case_ids": [
+        "case_ht_wellumio_identity"
+      ],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_mri_wellumio_1",
+          "subject_ids": [
+            "subj_ht_mri",
+            "subj_ht_wellumio"
+          ],
+          "text": "The MRI project drafts reports from breast scans. Wellumio acquires stroke signals with bedside hardware. Its signal thresholds cannot assess report accuracy.",
+          "basis_observation_ids": [
+            "obs_ht_mri_solution",
+            "obs_ht_mri_users",
+            "obs_ht_well_solution"
+          ],
+          "source_ids": [
+            "src_ht_mri26",
+            "src_ht_well_booster"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_mri_wellumio_2",
+          "subject_ids": [
+            "subj_ht_wellumio"
+          ],
+          "text": "The hospital study documented ethics approval, consent and paired scans. Scan completion and interpretable signals were separate endpoints.",
+          "basis_observation_ids": [
+            "obs_ht_well_design",
+            "obs_ht_well_ethics",
+            "obs_ht_well_signal"
+          ],
+          "source_ids": [
+            "src_ht_well_study"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "Verified same-stage similarity; provider-mandated admission criteria; causal requirements for adoption; completed paid deployment; time to adoption or success probability."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "Wellumio offers an example of how a hospital evaluated an MR prototype alongside its existing imaging workflow. The study helps frame a feasibility question for breast MRI reporting.",
+      "independent_relevance_judgment": false
+    },
+    {
+      "readiness_id": "ready_ht_neurofanos_wellumio",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_neurofanos",
+        "subj_ht_wellumio"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_neurofanos_wellumio",
+          "description": "Sourced descriptions support a bounded analogy; provider prerequisites and historical same-stage equivalence remain unresolved.",
+          "required_subject_ids": [
+            "subj_ht_neurofanos",
+            "subj_ht_wellumio"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_neuro_solution",
+            "obs_ht_neuro_user",
+            "obs_ht_well_solution",
+            "obs_ht_well_design",
+            "obs_ht_well_ethics",
+            "obs_ht_well_signal"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_wellumio_admission"
+          ],
+          "unresolved_case_ids": [
+            "case_ht_wellumio_identity"
+          ]
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_neuro_solution",
+        "obs_ht_neuro_user",
+        "obs_ht_well_solution",
+        "obs_ht_well_design",
+        "obs_ht_well_ethics",
+        "obs_ht_well_signal"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_wellumio_admission"
+      ],
+      "unresolved_case_ids": [
+        "case_ht_wellumio_identity"
+      ],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_neurofanos_wellumio_1",
+          "subject_ids": [
+            "subj_ht_neurofanos",
+            "subj_ht_wellumio"
+          ],
+          "text": "Neurofanos aims to guide a surgeon in real time. Wellumio developed a device to examine suspected stroke. Operating-room guidance requires a different comparator.",
+          "basis_observation_ids": [
+            "obs_ht_neuro_solution",
+            "obs_ht_neuro_user",
+            "obs_ht_well_solution"
+          ],
+          "source_ids": [
+            "src_ht_n22",
+            "src_ht_well_booster"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_neurofanos_wellumio_2",
+          "subject_ids": [
+            "subj_ht_wellumio"
+          ],
+          "text": "The investigators measured whether signals were interpretable in patients scanned alongside conventional MRI. This endpoint can inform study design, while surgical guidance needs its own validation.",
+          "basis_observation_ids": [
+            "obs_ht_well_design",
+            "obs_ht_well_ethics",
+            "obs_ht_well_signal"
+          ],
+          "source_ids": [
+            "src_ht_well_study"
+          ],
+          "inference_type": "attributed_description",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "Verified same-stage similarity; provider-mandated admission criteria; causal requirements for adoption; completed paid deployment; time to adoption or success probability."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "Both projects ask clinical teams to use imaging information in brain care. Wellumio supplies a concrete example of testing feasibility in a hospital workflow.",
+      "independent_relevance_judgment": false
+    },
+    {
+      "readiness_id": "ready_ht_ivf_alimetry",
+      "question": "What did comparable Kiwi healthtech ventures demonstrate before a provider would evaluate or adopt their product?",
+      "mode": "implementation_journey",
+      "subject_ids": [
+        "subj_ht_ivf",
+        "subj_ht_alimetry"
+      ],
+      "evidence_cutoff": "2026-11-19",
+      "cutoff_semantics": "research_as_of_not_historical_backtest",
+      "requirements": [
+        {
+          "requirement_id": "req_ht_ivf_alimetry",
+          "description": "Sourced descriptions support a bounded analogy; provider prerequisites and historical same-stage equivalence remain unresolved.",
+          "required_subject_ids": [
+            "subj_ht_ivf",
+            "subj_ht_alimetry"
+          ],
+          "status": "partially_supported",
+          "supporting_observation_ids": [
+            "obs_ht_ivf_solution",
+            "obs_ht_ivf_user",
+            "obs_ht_ivf_evaluation_plan",
+            "obs_ht_ali_solution",
+            "obs_ht_ali_design",
+            "obs_ht_ali_decisions",
+            "obs_ht_ali_sites"
+          ],
+          "missing_unknown_ids": [
+            "unknown_ht_alimetry_admission"
+          ],
+          "unresolved_case_ids": [
+            "case_ht_alimetry_identity"
+          ]
+        }
+      ],
+      "supporting_observation_ids": [
+        "obs_ht_ivf_solution",
+        "obs_ht_ivf_user",
+        "obs_ht_ivf_evaluation_plan",
+        "obs_ht_ali_solution",
+        "obs_ht_ali_design",
+        "obs_ht_ali_decisions",
+        "obs_ht_ali_sites"
+      ],
+      "missing_unknown_ids": [
+        "unknown_ht_alimetry_admission"
+      ],
+      "unresolved_case_ids": [
+        "case_ht_alimetry_identity"
+      ],
+      "supported_conclusions": [
+        {
+          "conclusion_id": "conclusion_ht_ivf_alimetry_1",
+          "subject_ids": [
+            "subj_ht_alimetry",
+            "subj_ht_ivf"
+          ],
+          "text": "Embryologists assess embryos using multiple data types. The gastric study concerns electrical recordings and symptoms. Its results cannot establish embryo selection performance.",
+          "basis_observation_ids": [
+            "obs_ht_ivf_solution",
+            "obs_ht_ivf_user",
+            "obs_ht_ivf_evaluation_plan",
+            "obs_ht_ali_solution"
+          ],
+          "source_ids": [
+            "src_ht_ali_study",
+            "src_ht_i25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        },
+        {
+          "conclusion_id": "conclusion_ht_ivf_alimetry_2",
+          "subject_ids": [
+            "subj_ht_alimetry",
+            "subj_ht_ivf"
+          ],
+          "text": "Reviewers compared decisions before and after the gastric test in 50 patient records. A review of decision changes is one possible evaluation design for the IVF project.",
+          "basis_observation_ids": [
+            "obs_ht_ali_design",
+            "obs_ht_ali_decisions",
+            "obs_ht_ivf_evaluation_plan"
+          ],
+          "source_ids": [
+            "src_ht_ali_study",
+            "src_ht_i25"
+          ],
+          "inference_type": "contrast_of_attributed_descriptions",
+          "review": {
+            "state": "source_checked",
+            "actor_role": "assistant",
+            "checked_on": "2026-11-19",
+            "acceptance_review_id": null,
+            "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+          }
+        }
+      ],
+      "withheld_conclusions": [
+        "Verified same-stage similarity; provider-mandated admission criteria; causal requirements for adoption; completed paid deployment; time to adoption or success probability."
+      ],
+      "assessment": "limited_conclusions_supported",
+      "review": {
+        "state": "source_checked",
+        "actor_role": "assistant",
+        "checked_on": "2026-11-19",
+        "acceptance_review_id": null,
+        "rationale": "Public source text inspected on this day; no human acceptance or independent relevance judgment."
+      },
+      "rationale": "Alimetry provides an example of evaluating whether a specialist actually used a test result in a decision. The IVF team describes planned clinic testing and usability feedback.",
+      "independent_relevance_judgment": false
+    }
+  ],
+  "reconciliation_cases": [
+    {
+      "case_id": "case_ht_wellumio_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_wellumio"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_well_solution"
+      ],
+      "status": "open",
+      "rationale": "Proposed correspondence with discovery_wellumio. Booster names Wellumio Limited and the investigators identify the Axana prototype. Registry identity and product-version continuity require review.",
+      "required_resolution": "Obtain an actual owner/independent brand-project mapping decision; reconcile product and legal-entity labels independently.",
+      "aggregation_allowed": false
+    },
+    {
+      "case_id": "case_ht_alimetry_identity",
+      "case_kind": "identity_link",
+      "subject_ids": [
+        "subj_ht_alimetry"
+      ],
+      "event_ids": [],
+      "observation_ids": [
+        "obs_ht_ali_solution"
+      ],
+      "status": "open",
+      "rationale": "Proposed brand correspondence with seed v_alimetry and discovery_alimetry / cand_alimetry. The named gastric test and company brand do not resolve legal identity or device revisions.",
+      "required_resolution": "Obtain an actual owner/independent brand-project mapping decision; reconcile product and legal-entity labels independently.",
+      "aggregation_allowed": false
+    }
+  ],
+  "access_gaps": [],
+  "review_events": [],
+  "metadata": {
+    "format_version": "0.2.1",
+    "prepared_on": "2026-11-19",
+    "purpose": "Hospital evaluation methods for Wellumio and Alimetry linked to MRI Reporting, Neurofanos and IVF Decision Support. Shared query records retain their original IDs.",
+    "application_import_compatible": false,
+    "application_modified": false,
+    "modification_scope": "this_research_task_only",
+    "concurrent_application_changes_observed": true,
+    "inventory_modified": false,
+    "accepted_records_count": 0,
+    "source_authority_weighting": "none",
+    "limitations": [
+      "Research packet only; imported through the separate research adapter, never the legacy seed.",
+      "Assistant source checks are extraction checks, not independent factual acceptance or relevance judgments.",
+      "No archived availability witness was established; all historical comparisons must abstain. Document dates do not establish web availability.",
+      "Provider admission criteria, first paid deployment and representative same-stage anchors remain unestablished.",
+      "Selected cases are comparison material, not a forecast training cohort."
+    ]
+  }
+}

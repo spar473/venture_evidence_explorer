@@ -100,6 +100,25 @@ class HealthtechComparison(ResearchContract):
     limitations: list[str]
 
 
+class ReferenceVenture(ResearchContract):
+    subject_id: str
+    display_name: str
+
+
+class ProjectCoverage(ResearchContract):
+    subject_id: str
+    peers: list[ReferenceVenture]
+
+
+class HealthtechCoverage(ResearchContract):
+    as_of: str
+    project_count: int
+    projects_with_peers: int
+    distinct_reference_count: int
+    pair_count: int
+    projects: list[ProjectCoverage]
+
+
 def time_proves_by(value, cutoff):
     """Use the latest possible day. Unknown and overlapping partial dates fail."""
     interval = research_time_interval(value)
@@ -127,11 +146,40 @@ def compare_healthtech(conn, subject_id, *, as_of, view='research', packet_sha25
     day(as_of)
     if view not in ('research', 'historical'):
         raise ValueError('Unknown comparison view')
-    raw = SELECTION_PATH.read_bytes()
-    selections = Selections.model_validate(decode_packet(raw))
+    raw, selections = load_selections()
     graph = dossier(conn, subject_id, packet_sha256)
     if graph is None:
         raise LookupError('Research subject not found')
+    return compare_graph(graph, selections, raw, as_of, view)
+
+
+def load_selections():
+    raw = SELECTION_PATH.read_bytes()
+    return raw, Selections.model_validate(decode_packet(raw))
+
+
+@read_consistently
+def healthtech_coverage(conn):
+    """Count the pairs a reader can open at the pilot research cutoff."""
+    raw, selections = load_selections()
+    projects = []
+    reference_ids = set()
+    for choice in selections.selections:
+        graph = dossier(conn, choice.subject_id)
+        if graph is None:
+            continue
+        comparison = compare_graph(graph, selections, raw, selections.prepared_on, 'research')
+        peers = [ReferenceVenture(subject_id=p['subject_id'], display_name=p['display_name'])
+                 for p in comparison['peers']]
+        projects.append(ProjectCoverage(subject_id=choice.subject_id, peers=peers))
+        reference_ids.update(p.subject_id for p in peers)
+    return HealthtechCoverage(as_of=selections.prepared_on, projects=projects,
+        project_count=len(projects), projects_with_peers=sum(bool(p.peers) for p in projects),
+        distinct_reference_count=len(reference_ids), pair_count=sum(len(p.peers) for p in projects))
+
+
+def compare_graph(graph, selections, raw, as_of, view):
+    subject_id = graph['subject']['subject_id']
     packet = graph['packet']
     sources = {s['source_id']: s for s in packet['sources']}
     observations = {o['observation_id']: o for o in packet['observations']}
@@ -212,7 +260,7 @@ def compare_healthtech(conn, subject_id, *, as_of, view='research', packet_sha25
         status='pathway_precedents' if peers else 'abstain',
         explanation='No verified same-stage peer or provider admission threshold is established. The supported slice contains scoped pathway precedents.' if peers else 'Insufficient eligible evidence for a supported comparison at this cutoff. Abstaining.',
         subject_evidence=evidence([oid for oid,o in observations.items() if o['subject_id'] == subject_id]),
-        peers=peers[:3], gaps=gaps,
+        peers=peers[:3], gaps=list(dict.fromkeys(gaps)),
         limitations=['Curated analyst selection from imported question-readiness records; no similarity score or independent relevance judgment.',
             'Reference-document evidence is read today, not a verified historical snapshot. Early-stage anchors remain unset.',
             'Later reports are separate context; financing, grants, intentions, evaluations and paid deployment are not interchangeable.',

@@ -17,7 +17,7 @@ from .repository import EXPORTS, analytics, browse, detail, facets
 from .retrieval import compare
 from .research_contracts import ResearchDossier, ResearchPacket, ResearchSubjectsResponse
 from . import research_repository
-from .healthtech import HealthtechComparison, compare_healthtech
+from .healthtech import HealthtechComparison, HealthtechCoverage, compare_healthtech, healthtech_coverage
 
 
 def create_app(db_path=None):
@@ -91,6 +91,11 @@ def create_app(db_path=None):
     def research_subjects(q: str = Query('',max_length=300), review_state: Literal['','extracted','source_checked','accepted','disputed'] = '', limit: int = Query(25,ge=1,le=100), offset: int = Query(0,ge=0), namespace: Literal['research:0.2.1'] = 'research:0.2.1', packet_sha256: str | None = None):
         with closing(connect(path)) as conn:
             return research_repository.subjects(conn,q=q,review_state=review_state,limit=limit,offset=offset,packet_sha256=packet_sha256)
+
+    @app.get('/api/research/healthtech/coverage', response_model=HealthtechCoverage)
+    def research_healthtech_coverage():
+        with closing(connect(path)) as conn:
+            return healthtech_coverage(conn)
 
     @app.get('/api/research/subjects/{subject_id}/comparisons', response_model=HealthtechComparison)
     def healthtech_comparisons(subject_id: str, as_of: str = Query(..., pattern=r'^\d{4}-\d{2}-\d{2}$'), view: Literal['research','historical'] = 'research', packet_sha256: str | None = None):

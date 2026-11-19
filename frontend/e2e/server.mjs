@@ -21,10 +21,10 @@ if (research.status !== 0 || research.error) {
   if (research.error) console.error(research.error.message);
   process.exit(research.status || 1);
 }
-const healthtech = spawnSync(python, ["scripts/import_research.py", "--input", "research/healthtech-pilot/packet.json", "--db", db, "--as-of", "2026-11-19", "--apply", "--report", join(temp, "healthtech-import.json")], {cwd: root, stdio: "inherit"});
-if (healthtech.status !== 0 || healthtech.error) {rmSync(temp,{recursive:true,force:true}); process.exit(healthtech.status || 1);}
-const extension = spawnSync(python, ["scripts/import_research.py", "--input", "research/healthtech-pilot/extension.json", "--db", db, "--as-of", "2026-11-19", "--apply", "--report", join(temp, "healthtech-extension.json")], {cwd: root, stdio: "inherit"});
-if (extension.status !== 0 || extension.error) {rmSync(temp,{recursive:true,force:true}); process.exit(extension.status || 1);}
+for (const packet of ["packet", "extension", "clinical-studies"]) {
+  const result = spawnSync(python, ["scripts/import_research.py", "--input", `research/healthtech-pilot/${packet}.json`, "--db", db, "--as-of", "2026-11-19", "--apply", "--report", join(temp, `healthtech-${packet}.json`)], {cwd: root, stdio: "inherit"});
+  if (result.status !== 0 || result.error) {rmSync(temp,{recursive:true,force:true}); process.exit(result.status || 1);}
+}
 const discovery = spawnSync(python, ["scripts/import_discovery.py", "--db", db, "--as-of", "2026-11-18", "--apply"], {cwd: root, stdio: "inherit"});
 if (discovery.status !== 0 || discovery.error) {rmSync(temp,{recursive:true,force:true}); process.exit(discovery.status || 1);}
 const child = spawn(python, ["scripts/serve.py", "--port", process.env.VEE_TEST_PORT || "8138"], {cwd: root, env: {...process.env, VEE_DB: db}, stdio: "inherit"});

@@ -227,7 +227,7 @@ def test_disposable_demo_and_existing_evaluation_workflow_keep_human_fields_blan
     demo=importlib.util.module_from_spec(spec);spec.loader.exec_module(demo)
     output=tmp_path/'demo'
     summary=demo.prepare_demo(output)
-    assert len(summary['imports'])==3
+    assert len(summary['imports'])==4
     before=snapshot(Path(summary['database']))
     with pytest.raises(ValueError,match='never replaced'): demo.prepare_demo(output)
     assert snapshot(Path(summary['database']))==before
@@ -236,7 +236,7 @@ def test_disposable_demo_and_existing_evaluation_workflow_keep_human_fields_blan
     research=json.loads((output/'evaluation/research-results.json').read_text())
     assert research['human_judgments']==research['manual_research_observations']==[]
     rows=list(csv.DictReader((output/'evaluation/research-review.csv').open()))
-    assert len(rows)==7
+    assert len(rows)==10
     human_fields=['reviewer_id','relevance_grade','material_evidence_errors','rationale','supporting_observation_ids','reviewed_on','manual_research_minutes','useful_result_minutes']
     assert all(not row[field] for row in rows for field in human_fields)
     baseline=json.loads((output/'evaluation/lexical-results.json').read_text())
@@ -270,3 +270,49 @@ def test_possible_shared_identity_and_later_review_decisions_cannot_supply_a_pee
         with connect(pilot) as conn:
             result = compare_healthtech(conn, MRI, as_of=AS_OF)
         assert len(result['peers'])==2
+
+
+def test_coverage_counts_openable_pairs_across_imports_and_reviews(tmp_path):
+    db = tmp_path / 'coverage.sqlite'
+    load_seed(db)
+    client = TestClient(create_app(db))
+    endpoint = '/api/research/healthtech/coverage'
+    studies = PACKET.with_name('clinical-studies.json')
+
+    def check_counts(expected_counts):
+        response = client.get(endpoint)
+        assert response.status_code == 200
+        summary = response.json()
+        counts = ('project_count', 'projects_with_peers', 'distinct_reference_count', 'pair_count')
+        assert tuple(summary[key] for key in counts) == expected_counts
+        for project in summary['projects']:
+            path = f"/api/research/subjects/{project['subject_id']}/comparisons"
+            result = client.get(path, params={'as_of': summary['as_of']}).json()
+            assert project['peers'] == [
+                {'subject_id': peer['subject_id'], 'display_name': peer['display_name']}
+                for peer in result['peers']]
+        return summary
+
+    check_counts((0, 0, 0, 0))
+    # The clinical packet can arrive before the original packets.
+    import_research(db, studies, as_of=AS_OF)
+    check_counts((3, 3, 2, 3))
+    import_research(db, PACKET, as_of=AS_OF)
+    import_research(db, PACKET.with_name('extension.json'), as_of=AS_OF)
+    initial = check_counts((5, 4, 5, 8))
+    import_research(db, studies, as_of=AS_OF)
+    assert check_counts((5, 4, 5, 8)) == initial
+    mri = f'/api/research/subjects/{MRI}/comparisons'
+    pinned = client.get(mri, params={'as_of': AS_OF, 'packet_sha256': hashlib.sha256(studies.read_bytes()).hexdigest()})
+    assert [p['subject_id'] for p in pinned.json()['peers']] == ['subj_ht_wellumio']
+    assert client.get(mri, params={'as_of': '2026-11-18'}).json()['peers'] == []
+
+    packet = json.loads(studies.read_bytes())
+    packet['review_events'].append(dict(review_event_id='review_synthetic_signal', target_type='observation',
+        target_id='obs_ht_well_signal', actor_role='owner', reviewer_id='synthetic_test_fixture',
+        decision='disputed', reviewed_on=AS_OF, rationale='Synthetic regression fixture.'))
+    review_packet = tmp_path / 'review.json'
+    review_packet.write_text(json.dumps(packet))
+    import_research(db, review_packet, as_of=AS_OF)
+    # One shared disputed result withholds both Wellumio pairs.
+    check_counts((5, 4, 4, 6))

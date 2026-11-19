@@ -1361,6 +1361,48 @@
         "title": "HealthtechComparison",
         "type": "object"
       },
+      "HealthtechCoverage": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "distinct_reference_count": {
+            "title": "Distinct Reference Count",
+            "type": "integer"
+          },
+          "pair_count": {
+            "title": "Pair Count",
+            "type": "integer"
+          },
+          "project_count": {
+            "title": "Project Count",
+            "type": "integer"
+          },
+          "projects": {
+            "items": {
+              "$ref": "#/components/schemas/ProjectCoverage"
+            },
+            "title": "Projects",
+            "type": "array"
+          },
+          "projects_with_peers": {
+            "title": "Projects With Peers",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "as_of",
+          "project_count",
+          "projects_with_peers",
+          "distinct_reference_count",
+          "pair_count",
+          "projects"
+        ],
+        "title": "HealthtechCoverage",
+        "type": "object"
+      },
       "HistoricalDate": {
         "additionalProperties": false,
         "properties": {
@@ -1953,6 +1995,28 @@
         "title": "ProgrammeRecognition",
         "type": "object"
       },
+      "ProjectCoverage": {
+        "additionalProperties": false,
+        "properties": {
+          "peers": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceVenture"
+            },
+            "title": "Peers",
+            "type": "array"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_id",
+          "peers"
+        ],
+        "title": "ProjectCoverage",
+        "type": "object"
+      },
       "PromotionPreview": {
         "additionalProperties": false,
         "properties": {
@@ -2028,6 +2092,25 @@
           "award_year"
         ],
         "title": "Recognition",
+        "type": "object"
+      },
+      "ReferenceVenture": {
+        "additionalProperties": false,
+        "properties": {
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject_id",
+          "display_name"
+        ],
+        "title": "ReferenceVenture",
         "type": "object"
       },
       "ResearchAnnotation": {
@@ -5526,6 +5609,24 @@
           }
         },
         "summary": "Research Export"
+      }
+    },
+    "/api/research/healthtech/coverage": {
+      "get": {
+        "operationId": "research_healthtech_coverage_api_research_healthtech_coverage_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthtechCoverage"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Research Healthtech Coverage"
       }
     },
     "/api/research/packets/{packet_sha256}.json": {

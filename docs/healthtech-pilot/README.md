@@ -32,7 +32,7 @@ The ultimate product is decision support for the NZ healthtech pipeline. A found
 - Preserve gaps, date precision, conflicts and product jurisdictions. In this inventory the 2023 Formus Hip FDA record and the company’s May 2026 clearance report need product and submission-level reconciliation.
 - Avoid importing a duplicate company because a product, research project and legal entity have different labels. Leave patient-level data out of the workflow.
 
-The next review is the MRI comparison with its first two reference dossiers. Review the question, time anchor, match rationale and unknowns before expanding the interface.
+The next analyst review can start with the MRI comparison. Record which references helped answer the question and which material gaps remain.
 
 ## Implemented pilot · 19 November 2026
 
@@ -46,22 +46,22 @@ npm --prefix frontend run build
 python scripts/healthtech_demo.py --serve --evaluate
 ```
 
-Open <http://127.0.0.1:8001>, choose **Research dossiers → Automated Breast MRI Reporting**, then **Provider evaluation comparison**. Volpara and Formus are curated **pathway precedents**. Each has cited match rationale, material differences, reference-document evidence, later reports and unresolved questions. Expand a reference claim to inspect its publisher, responsibility, locator, publication, retrieval, context, occurrence and target dates. Evidence links reveal the corresponding original dossier record.
+Open <http://127.0.0.1:8001>, choose **Research dossiers → Automated Breast MRI Reporting**, then **Provider evaluation comparison**. Volpara, Formus and Wellumio are curated **pathway precedents**. The directory also shows the number and names of eligible reference ventures for each university project. Each has cited match rationale, material differences, reference-document evidence, later reports and unresolved questions. Expand a reference claim to inspect its publisher, responsibility, locator, publication, retrieval, context, occurrence and target dates. Evidence links reveal the corresponding original dossier record.
 
-The script creates a fresh system-temporary database, validates/dry-runs/imports all three packets, verifies unchanged dry-run bytes and repeat-import rows, and refuses a nonempty explicit output directory. `--output-dir /tmp/my-new-healthtech-demo` selects a new/empty directory; omit `--serve` to prepare without starting a service. `--evaluate` exports the existing frozen B0 task/review workflow alongside curated research results and a separate blank research-review sheet. No relevance, factual-error or time-saving judgment is supplied.
+The script creates a fresh system-temporary database, validates/dry-runs/imports all four packets, verifies unchanged dry-run bytes and repeat-import rows, and refuses a nonempty explicit output directory. `--output-dir /tmp/my-new-healthtech-demo` selects a new/empty directory; omit `--serve` to prepare without starting a service. `--evaluate` exports the existing frozen B0 task/review workflow alongside curated research results and a separate blank research-review sheet. No relevance, factual-error or time-saving judgment is supplied.
 
-The MRI packet is [packet.json](../../research/healthtech-pilot/packet.json). The additional projects and Toku reference are in [extension.json](../../research/healthtech-pilot/extension.json). Both are standalone research packets. Shared Formus rows retain exactly the same IDs and semantic content; importing both does not duplicate them. [comparisons.json](../../research/healthtech-pilot/comparisons.json) is a strict, versioned editorial selection manifest referencing imported readiness records. It orders at most three peers; it supplies no score and changes no B0 method.
+The MRI packet is [packet.json](../../research/healthtech-pilot/packet.json). The additional projects and Toku reference are in [extension.json](../../research/healthtech-pilot/extension.json). The [clinical studies packet](../../research/healthtech-pilot/clinical-studies.json) adds Wellumio and Alimetry, with the original project records needed to validate its comparisons independently. Shared Formus rows retain exactly the same IDs and semantic content; importing both does not duplicate them. [comparisons.json](../../research/healthtech-pilot/comparisons.json) is a strict, versioned editorial selection manifest referencing imported readiness records. It orders at most three peers; it supplies no score and changes no B0 method.
 
 | Selectable case | Current comparison | Boundary |
 |---|---|---|
-| Automated Breast MRI Reporting | Volpara; Formus | Breast-imaging domain and image-to-specialist workflow precedents; no established provider admission threshold |
-| Neurofanos | Formus | Surgical image guidance; intraoperative brain navigation differs from preoperative hip planning |
-| IVF Decision Support Tool | Formus | Specialist decision support and planned clinic evaluation; co-development is not completed evaluation |
+| Automated Breast MRI Reporting | Volpara, Formus, Wellumio | Breast imaging, image-guided planning and hospital MR feasibility testing. The provider admission threshold remains unknown. |
+| Neurofanos | Formus, Wellumio | Surgical image guidance and brain imaging feasibility. Real-time navigation requires a different comparator from hip planning or stroke detection. |
+| IVF Decision Support Tool | Formus, Alimetry | Specialist decision support and a method for assessing changes to clinical decisions. IVF clinic testing remains a plan. |
 | VistaVision | Toku | Eye-care commercialisation analogy only; telerobotics differ from retinal-analysis software |
 | PulseMap PAD Detector | Abstain | Modality, performance comparator and evaluated provider workflow are insufficiently described |
 | RosterLab (existing dossier) | Abstain | A healthcare buyer and software vocabulary do not establish diagnostic-imaging relevance |
 
-Formus, Volpara and Toku can also be opened as their own dossiers. They do not recursively match back to the university queries. Alimetry and Wellumio remain inventory leads, with no new dossier imported in this pass.
+With all four packets imported, four of five university projects have at least one comparison. The eight project–venture pairs use five distinct reference dossiers. Formus appears in three pairs and Wellumio in two. The directory counts each once in the distinct reference total. RosterLab and QuickMas are additional research dossiers outside the university-project denominator.
 
 **Historical snapshots abstain.** The authoritative research 0.2.1 contract fixes historical availability to false and provides no dated archive-witness locator. A contemporaneously authored document retrieved today is useful research, but cannot prove availability at an earlier cutoff. The UI keeps reference-document dates separate from verified early-stage anchors, which remain unset. Future/overlapping partial dates and later assessments cannot qualify an earlier comparison. The cutoff controls the comparison panel; the full source dossier remains inspectable below it.
 

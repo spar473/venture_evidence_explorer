@@ -18,6 +18,10 @@ Public text checked on **19 November 2026 (Pacific/Auckland)**. Sources are attr
 | `src_ht_x25` | [University of Auckland: The latest start-ups emerging from the University’s incubator](https://www.auckland.ac.nz/en/news/2025/08/25/latest-start-ups-emerging-from-the-universitys-incubator.html) | 2025-08-25 | Public HTML; heading/paragraph locators on each claim; direct HTTPS client |
 | `src_ht_t22` | [University of Auckland: Eyes wide open – the journey from academic to entrepreneur](https://www.auckland.ac.nz/en/news/2022/06/28/eyes-wide-open-academic-entrepreneur.html) | 2022-06-28 | Public HTML; heading/paragraph locators on each claim; web-reader text |
 | `src_ht_t23` | [National Vision: Toku Inc. Series A Preferred Investment Round](https://www.nationalvision.com/news/2023/04/17/toku-inc-series-a-preferred-investment-round-led-by-national-vision-inc-and-topcon-healthcare/) | 2023-04-17 | Public HTML; heading/paragraph locators on each claim; web-reader text |
+| `src_ht_well_booster` | [Booster announcement on NZX](https://www.nzx.com/announcements/426110) | 2024-02-13 | Transaction notice, product description |
+| `src_ht_well_study` | [Barker et al., Scientific Reports](https://www.nature.com/articles/s41598-026-80754-0) | 2026-11-18 | Abstract, ethics and competing interests. Investigators disclose prototype support and company personnel. |
+| `src_ht_ali_study` | [Varghese et al., Clinical and Translational Gastroenterology](https://pmc.ncbi.nlm.nih.gov/articles/PMC10684143/) | 2023-08-17 | Online publication date. Study design, changes in clinical management and limitations. |
+| `src_ht_ali_sites` | [Alimetry company announcement](https://www.alimetry.com/press/alimetry-raises-an-oversubscribed-us-18m) | 2024-10-25 | Early uptake following FDA approval, site sign-ups. The earlier clinical series and this commercial report have different denominators. |
 
 The web reader could not open the MRI university article. Direct HTTPS retrieval succeeded and the displayed date, MRI section and prizegiving date were inspected. Expansion retrieval initially failed in Python’s local certificate store; the system HTTPS client verified TLS and retrieved the five cited pages. These were access-tool limitations resolved during research, not evidence that the projects lack evaluations. No archive witness was retrieved.
 
@@ -36,7 +40,8 @@ The inventory’s FDA database leads were followed to the regulator-hosted K1025
 | VistaVision | No seed, existing research or staged discovery match | `subj_ht_vistavision`; proposed `v_vistavision`; portfolio description only |
 | Toku | `discovery_toku`, `discovery_tokueyes` and their existing unresolved alias case | `subj_ht_toku`; source labels remain unresolved; investor’s Toku Inc. report is separately attributable |
 | RosterLab | Existing `subj_rosterlab`, proposed `v_rosterlab` | Reused original dossier unchanged; contrast abstains on diagnostic-imaging relevance |
-| Alimetry / Wellumio | Seed/staged `v_alimetry`, `discovery_alimetry`; staged `discovery_wellumio` | Inventory leads only in this pass; no new evidence imported or mapping decided |
+| Alimetry | Seed `v_alimetry`, staged `discovery_alimetry` and `cand_alimetry` | `subj_ht_alimetry` proposes the existing brand link. Legal identity and product revisions remain open. |
+| Wellumio | Staged `discovery_wellumio` | `subj_ht_wellumio` proposes external `v_wellumio`. Booster names Wellumio Limited and the clinical team names the Axana prototype. Registry identity remains open. |
 
 ## Material boundaries and next research
 
