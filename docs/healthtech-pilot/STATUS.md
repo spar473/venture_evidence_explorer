@@ -1,6 +1,6 @@
 # NZ healthtech pilot checkpoint · 20 November 2026
 
-Branch `implementation/healthtech-pilot`. The P2 audit is verified through `a545c963f42b514cd6a031544ad98a7c0cb11fa5`. The P1 demo implementation is `cc20ef0a66ee97ae5feae5b67e2910abb6cbb208`.
+Branch `implementation/healthtech-pilot`. The P2 audit is verified through `0cb82fe74e82d523c76b95f357bb63483133f3b2`. The P1 demo implementation is `cc20ef0a66ee97ae5feae5b67e2910abb6cbb208`.
 
 The README now opens with a five-line pitch and the MRI demo. Migration 007 adds the fixture, round dates and source passages, six outcome states, historical availability witnesses, and snapshots with evidence at or before the cutoff. The importer stores the original packet and its normalized records. A dry run leaves the database byte-for-byte identical, and an exact repeat writes zero rows.
 
@@ -52,32 +52,38 @@ Open the [local demo](http://127.0.0.1:8006) and select **Research dossiers**. T
 - The frontend production build, `python scripts/verify.py`, `python scripts/check_migrations.py` in three transaction modes and `python scripts/export_contract.py --check` all passed.
 - The fixture dry run wrote zero rows. The disposable demo applied 220 records, verified byte equality after a second apply, and passed SQLite integrity and foreign-key checks.
 
-## P2 entry-cohort audit
+## P2 entry and follow-up audit
 
-The first public-source run evaluated **455 candidate records**, including the 274 staged discovery leads. **34** have enough evidence for a first institutional pre-seed or seed entry in 2012–2022. **420** remain unresolved. Bspkl's documented first seed is in 2023, outside the window. These are dated research decisions within the captured sources. The fixture in the app remains the separate 30-company demonstration.
+The latest public-source run evaluated **454 named candidate records**, including the 274 staged discovery leads. **50** have support for a first institutional pre-seed or seed in 2012–2022. **403** remain unresolved and Bspkl's documented first seed falls outside the window. The source-covered cohort is still 100 entries short of the 150-company gate. The app's 30 selectable fixture companies remain available for individual comparisons.
 
 | Entry vintage | Included companies |
 | --- | ---: |
-| 2012–2016 | 0 |
-| 2017 | 6 |
+| 2012 | 1 |
+| 2013 | 1 |
+| 2014 | 2 |
+| 2015 | 2 |
+| 2016 | 3 |
+| 2017 | 7 |
 | 2018 | 4 |
-| 2019 | 5 |
+| 2019 | 9 |
 | 2020 | 2 |
-| 2021 | 8 |
-| 2022 | 9 |
+| 2021 | 9 |
+| 2022 | 10 |
 
-The audit retains 297 financing reports with publisher URLs, passage locators, publication precision, retrieval dates and reported event dates. It also records the sector breakdown and gaps. None of the 365 staged portfolio listings gives an investment date. The new historical tables add named deals, but some show only a region, a round number or a new-company code. Those rows remain leads until the founding or headquarters, first qualifying label and institutional investor can be supported. The 2012–2016 gap is still open. Halter's earlier 2016 seed lead leaves its 2017 entry unresolved. [Entry evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Young Company Finance historical appendix](https://www.pwc.co.nz/publications/2019/startup/young-company-finance-deals.pdf)
+The 304 entry reports and 79 sources include historical Young Company Finance tables and investor disclosures that support entries in every vintage. The 2016 investor account confirms Halter's initial institutional investment and the deal table supplies the December month. In the staged discovery pack, all 365 portfolio listings still lack an investment date. The historical report also contains anonymous deals and stage or location codes that are insufficient for legal-entity identification or entry eligibility. [Entry evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Young Company Finance historical appendix](https://www.pwc.co.nz/publications/2019/startup/young-company-finance-deals.pdf) · [Powerhouse portfolio disclosure](https://announcements.asx.com.au/asxpdf/20161128/pdf/43d85vnsf8cf54.pdf)
 
-Young Company Finance reported 66 early-stage deals in the first half of 2022 and 76 in the second. Those benchmarks include follow-ons and therefore measure a different population from the nine supported first entries for that vintage. The audit preserves both counts without estimating national coverage. [Spring 2022 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-report-spring-2022_sml.pdf) · [Autumn 2023 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-autumn-2023.pdf)
+Young Company Finance reported 66 early-stage deals in the first half of 2022 and 76 in the second. Those counts include follow-ons and use deals as the unit. The audit reports ten qualifying first entries for that vintage and preserves both market benchmark counts for context. [Spring 2022 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-report-spring-2022_sml.pdf) · [Autumn 2023 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-autumn-2023.pdf)
 
-The Companies Register documents Supie's move into liquidation on 9 November 2023 and later removal on 13 February 2025. The audit records both events after applying the entry rule. Register and operating follow-up are incomplete for the other companies, so the observed count at 36 months is unknown. Base rates remain gated. [Supie’s Companies Register record](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376)
+Follow-up evidence is applied after fixing the entry list. Eleven companies have bounded follow-up searches. Nine have verified activity through the 36-month horizon with no qualifying outcome identified in their reviewed sources. Horizon coverage remains unresolved for 39. The status tally is one priced lettered round, one closure within the window, zero acquisitions or IPOs before the outcome, seven observed without a qualifying outcome, three lost to follow-up and 38 unknown. These are audit counts. [Follow-up evidence](../../research/healthtech-pilot/cohort-follow-up.json)
 
-Run the read-only audit from the checkout. Use `--include-decisions` for every company or `--company-id discovery_formuslabs` to inspect one decision and its financing sources.
+The Companies Register confirms liquidation and later removal for both Supie and Tiro Medical, formerly Tiro Lifesciences. Supie's liquidation follows its seed within 36 months, with a financing search through the closure date. Tiro's 2025 liquidation and 2026 removal are later than its 36-month window, so its earlier outcome remains unknown. [Supie register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376) · [Tiro register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5024040)
+
+Run the read-only audit from the checkout. Use `--include-decisions` to export each decision or `--company-id public_tirolifesciencesltd` to inspect one history and its sources.
 
 ```sh
 python scripts/audit_reference_cohort.py
 ```
 
-The deterministic audit replay, **159 backend tests**, **40 browser tests**, production build, smoke verification, migration checks, API contract and disposable fixture import passed. The entry decisions were identical with the recorded outcomes withheld. The fixture dry run wrote zero rows and its repeated import preserved the database.
+The deterministic audit replay, **163 backend tests**, **40 browser tests**, production build, smoke verification, migration checks, generated API contract and disposable demo passed. The fixture dry run wrote zero rows and reimport preserved the database. Entry decisions were identical with the registry and staged outcome evidence withheld. The M0 gate remains closed on cohort size, confirmed primary outcomes and follow-up coverage. P3 curves, embedding retrieval and predictive models remain pending.
 
-**Next task** — Verify the seven remaining named-investor round-one leads against issuer or register evidence, and continue sourcing the earliest vintages toward the 150-company target.
+**Next task** — Review the remaining named-investor deal leads and the earlier NZVIF deal appendices for dated first-round evidence, then extend bounded follow-up on included cases.
