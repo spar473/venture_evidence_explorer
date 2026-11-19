@@ -69,6 +69,9 @@ def test_real_audit_gate_retains_unknowns_and_reports_verified_lower_bound():
     follow = report['follow_up']
     assert follow['decisions']['public_supie']['status'] == 'closed_before_outcome'
     assert follow['decisions']['public_partly']['status'] == 'reached_outcome'
+    tiro = follow['decisions']['public_tirolifesciencesltd']
+    assert tiro['status'] == 'unknown'
+    assert {event['kind'] for event in tiro['events']} == {'closed_liquidation','closed_register_removal'}
     assert follow['decisions']['discovery_cropsy']['observed_at_36_months'] is None
     assert follow['verified_observed_at_36_months'] > 0
     assert follow['observed_at_36_months'] is None

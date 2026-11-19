@@ -711,6 +711,86 @@
         "precision": "unknown"
       },
       "scope": "Investment announcement identifies the completed Seed and NZ spinout."
+    },
+    "powerhouse_2016_asx": {
+      "publisher": "Powerhouse Ventures via ASX",
+      "url": "https://announcements.asx.com.au/asxpdf/20161128/pdf/43d85vnsf8cf54.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2016-11-28",
+        "precision": "day"
+      },
+      "scope": "Portfolio appendix gives each company’s originating institution and year of Powerhouse’s initial investment. Current portfolio headings are separate from the YCF financing labels."
+    },
+    "ycf_2012_issue13": {
+      "publisher": "New Zealand Venture Investment Fund and Angel Association NZ",
+      "url": "https://img.scoop.co.nz/media/pdfs/1208/Young_Company_Finance_Issue_13_August_2012.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2012-08",
+        "precision": "month"
+      },
+      "scope": "Issue 13 first-half 2012 transactions table gives month, company, location, stage, lead and syndication."
+    },
+    "ycf_2013_issue14": {
+      "publisher": "New Zealand Venture Investment Fund and Angel Association NZ",
+      "url": "https://img.scoop.co.nz/media/pdfs/1304/Young_Company_Finance_Issue_14_April_2013.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2013-04",
+        "precision": "month"
+      },
+      "scope": "Issue 14 second-half 2012 transactions table includes named syndication rows."
+    },
+    "tamorx_issuer": {
+      "publisher": "Maurice Wilkins Centre and investor release",
+      "url": "https://www.mauricewilkinscentre.org/media/1002/tamorx-release-may-2022.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-05-25",
+        "precision": "day"
+      },
+      "scope": "Dated release establishes the initial company backing, named institutional lead and NZ university spinout."
+    },
+    "tamorx_stage_report": {
+      "publisher": "PwC and NZGCP Startup Investment",
+      "url": "https://media.journoportfolio.com/users/96305/uploads/b017772e-f4a0-47a0-9a24-e189f127d679.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Healthtech deal section labels the same May 2022 round Seed and identifies the lead."
+    },
+    "datagate_nzx": {
+      "publisher": "Enprise via NZX",
+      "url": "https://www.nzx.com/announcements/296033",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2017-01-26",
+        "precision": "day"
+      },
+      "scope": "Company filing gives February 2016 as the first seed close and separately describes forming the NZ joint venture in 2015."
+    },
+    "tiro_register": {
+      "publisher": "NZ Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5024040",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Official company summary, previous names and statuses. Company number 5024040 links Tiro Lifesciences and Tiro Medical."
+    },
+    "tiro_grant_2014": {
+      "publisher": "New Zealand Government",
+      "url": "https://www.beehive.govt.nz/release/tech-incubator-awards-first-repayable-grant",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2014-11-12",
+        "precision": "day"
+      },
+      "scope": "Government release documents the later incubator grant independently of the table’s Seed financing."
     }
   },
   "reports": [
@@ -1672,6 +1752,26 @@
       ]
     },
     {
+      "company_id": "discovery_tamorx",
+      "name": "TamoRx",
+      "source_id": "tamorx_issuer",
+      "locator": "Opening round announcement, cross-checked to Healthtech deals in Startup Investment",
+      "sector": "Healthtech",
+      "date": {
+        "value": "2022-05-25",
+        "precision": "day"
+      },
+      "date_basis": "announced_completed",
+      "label": "Seed funding",
+      "institutional_investor": "Brandon Capital and University of Auckland Inventors’ Fund",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The dated release reports the completed institutional financing and Auckland spinout. The matching deal report labels the transaction Seed.",
+      "corroborating_source_ids": [
+        "tamorx_stage_report"
+      ]
+    },
+    {
       "company_id": "discovery_tasmanion",
       "name": "TasmanIon",
       "source_id": "tasmanion_pacific",
@@ -2121,17 +2221,20 @@
       "name": "AuramerBio",
       "source_id": "ycf_2019",
       "locator": "PDF page 9, Feb-16 row for AuramerBio",
-      "sector": "Sciences",
+      "sector": "Healthtech",
       "date": {
         "value": "2016-02",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Wellington."
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Wellington. Powerhouse portfolio appendix, PDF page 76, AuramerBio and Victoria University of Wellington. The first Seed appears in the historical table and the investor dates participation to 2016.",
+      "corroborating_source_ids": [
+        "powerhouse_2016_asx"
+      ]
     },
     {
       "company_id": "public_autolifeltd",
@@ -2155,17 +2258,20 @@
       "name": "Avalia Immunotherapies Ltd",
       "source_id": "ycf_2019",
       "locator": "PDF page 15, Sep-15 row for Avalia Immunotherapies Ltd",
-      "sector": "Sciences",
+      "sector": "Healthtech",
       "date": {
         "value": "2015-09",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Wellington."
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Wellington. Powerhouse portfolio appendix, PDF page 76, Avalia, VUW and Malaghan. The investor dates its initial investment to 2015 and the historical table records this round as the first Seed.",
+      "corroborating_source_ids": [
+        "powerhouse_2016_asx"
+      ]
     },
     {
       "company_id": "public_avaliaimmunotherapiesltd",
@@ -2817,6 +2923,23 @@
       "passage": "Table records Seed, round 1, and location Auckland."
     },
     {
+      "company_id": "public_datagateinnovationlimited",
+      "name": "Datagate Innovation Limited",
+      "source_id": "datagate_nzx",
+      "locator": "Earlier investor and first seed closing paragraphs",
+      "sector": "Billing software",
+      "date": {
+        "value": "2016-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "seed capital round",
+      "institutional_investor": "Ice Angels, NZVIF and Flying Kiwi Angels",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "The issuer dates the first seed close to February 2016. The historical deal table instead labels a December 2015 entry Seed. The link between the earlier issuance and the close is unresolved."
+    },
+    {
       "company_id": "public_debtordaddy",
       "name": "Debtor Daddy",
       "source_id": "ycf_2019",
@@ -3216,17 +3339,20 @@
       "name": "Fluent Scientific Ltd",
       "source_id": "ycf_2019",
       "locator": "PDF page 14, Apr-15 row for Fluent Scientific Ltd",
-      "sector": "Software & Services",
+      "sector": "Education software",
       "date": {
         "value": "2015-04",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Christchurch."
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Christchurch. Powerhouse portfolio appendix, PDF page 77, Fluent and University of Canterbury. The investor identifies its initial investment in 2015. The historical table records the April Seed.",
+      "corroborating_source_ids": [
+        "powerhouse_2016_asx"
+      ]
     },
     {
       "company_id": "public_footfallsandheartbeatsltd",
@@ -3420,17 +3546,20 @@
       "name": "Hi-Aspect",
       "source_id": "ycf_2019",
       "locator": "PDF page 10, Apr-16 row for Hi-Aspect",
-      "sector": "Sciences",
+      "sector": "Advanced materials",
       "date": {
         "value": "2016-04",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Wellington."
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Wellington. Powerhouse portfolio appendix, PDF page 78, Hi-Aspect and University of Canterbury origin. The investor dates initial participation to 2016. The historical table records its first Seed in April.",
+      "corroborating_source_ids": [
+        "powerhouse_2016_asx"
+      ]
     },
     {
       "company_id": "public_huntersafetylabltd",
@@ -3732,17 +3861,22 @@
       "name": "Koti Technologies",
       "source_id": "ycf_2019",
       "locator": "PDF page 25, Jun-12 row for Koti Technologies",
-      "sector": "Technology Hardware & Equipment",
+      "sector": "Advanced materials",
       "date": {
         "value": "2012-06",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Christchurch."
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Christchurch. Powerhouse portfolio appendix, PDF page 78, Koti and University of Canterbury. The contemporary YCF issue names Powerhouse in the June Seed.",
+      "corroborating_source_ids": [
+        "powerhouse_2016_asx",
+        "ycf_2012_issue13",
+        "ycf_2013_issue14"
+      ]
     },
     {
       "company_id": "public_kotitechnologies",
@@ -4666,17 +4800,20 @@
       "name": "Photonic Innovations Ltd",
       "source_id": "ycf_2019",
       "locator": "PDF page 24, Dec-13 row for Photonic Innovations Ltd",
-      "sector": "Technology Hardware & Equipment",
+      "sector": "Sensors",
       "date": {
         "value": "2013-12",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Dunedin."
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Dunedin. Powerhouse portfolio appendix, PDF page 79, Photonic and University of Otago. The investor dates its initial stake to 2013. The December table gives the Seed label and month.",
+      "corroborating_source_ids": [
+        "powerhouse_2016_asx"
+      ]
     },
     {
       "company_id": "public_photonicinnovationsltd",
@@ -5519,17 +5656,22 @@
       "name": "Tiro Lifesciences Ltd",
       "source_id": "ycf_2019",
       "locator": "PDF page 19, Aug-14 row for Tiro Lifesciences Ltd",
-      "sector": "Health Care Equipment & Services",
+      "sector": "Diagnostic imaging",
       "date": {
         "value": "2014-08",
         "precision": "month"
       },
       "date_basis": "reported_month",
       "label": "Seed",
-      "institutional_investor": null,
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Christchurch."
+      "institutional_investor": "Powerhouse Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Christchurch. The Powerhouse disclosure dates its initial stake in the University of Canterbury spinout to 2014. The register confirms Tiro Lifesciences and Tiro Medical are the same company. The separate November repayable grant is not used as the Seed.",
+      "corroborating_source_ids": [
+        "powerhouse_2016_asx",
+        "tiro_register",
+        "tiro_grant_2014"
+      ]
     },
     {
       "company_id": "public_tirolifesciencesltd",
@@ -5976,6 +6118,22 @@
       "status": "removed",
       "effective_on": "2025-02-13",
       "locator": "Company summary, current Removed status and the end of the prior liquidation interval on 13 Feb 2025"
+    },
+    {
+      "company_id": "public_tirolifesciencesltd",
+      "company_number": "5024040",
+      "source_id": "tiro_register",
+      "status": "liquidation",
+      "effective_on": "2025-08-28",
+      "locator": "Previous Status, In Liquidation interval starts 28 Aug 2025"
+    },
+    {
+      "company_id": "public_tirolifesciencesltd",
+      "company_number": "5024040",
+      "source_id": "tiro_register",
+      "status": "removed",
+      "effective_on": "2026-10-29",
+      "locator": "Company summary, Removed, and end of prior liquidation interval on 29 Oct 2026"
     }
   ]
 }
