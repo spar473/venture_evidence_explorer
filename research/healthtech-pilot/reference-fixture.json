@@ -1,0 +1,2129 @@
+{
+  "format_version": "nz-reference-pool:1",
+  "kind": "fixture",
+  "as_of": "2026-11-20",
+  "companies": [
+    {
+      "company_id": "volpara",
+      "display_name": "Volpara Health Technologies",
+      "sector": "Healthtech",
+      "origin_source_id": "volpara_asx",
+      "origin_passage": "Key dates and offer details and company overview",
+      "entry_basis": "The prospectus and acquisition identify the company. A qualifying first institutional seed date remains unverified.",
+      "research_subject_id": "subj_ht_volpara",
+      "aliases": [
+        "Volpara",
+        "Matakina Technology"
+      ]
+    },
+    {
+      "company_id": "formus",
+      "display_name": "Formus Labs",
+      "sector": "Healthtech",
+      "origin_source_id": "formus_punakaiki",
+      "origin_passage": "Opening and company background",
+      "entry_basis": "Punakaiki reports an early-2019 Flying Kiwi Angels-led seed. The exact closing date and contemporaneous source version remain unverified.",
+      "venture_id": "v_formus",
+      "research_subject_id": "subj_ht_formus",
+      "aliases": [
+        "FormusLabs"
+      ],
+      "entry_event_id": "formus_entry"
+    },
+    {
+      "company_id": "toku",
+      "display_name": "Toku Eyes",
+      "sector": "Healthtech",
+      "origin_source_id": "toku_seed",
+      "origin_passage": "Opening, first external raise",
+      "entry_basis": "The 2021 article states that the Icehouse-led seed was the first external raise. The later Toku Inc. brand linkage remains proposed.",
+      "research_subject_id": "subj_ht_toku",
+      "aliases": [
+        "Toku"
+      ],
+      "entry_event_id": "toku_entry"
+    },
+    {
+      "company_id": "alimetry",
+      "display_name": "Alimetry",
+      "sector": "Healthtech",
+      "origin_source_id": "alimetry_uoa",
+      "origin_passage": "Origins and first institutional investment",
+      "entry_basis": "The university reports the first institutional round. The passage leaves its round label and precise closing date open.",
+      "venture_id": "v_alimetry",
+      "research_subject_id": "subj_ht_alimetry"
+    },
+    {
+      "company_id": "wellumio",
+      "display_name": "Wellumio",
+      "sector": "Healthtech",
+      "origin_source_id": "wellumio_nzx",
+      "origin_passage": "Transaction and NZ technology origins",
+      "entry_basis": "The 2024 portfolio announcement is outside the entry window. Earlier qualifying financing remains unverified.",
+      "research_subject_id": "subj_ht_wellumio"
+    },
+    {
+      "company_id": "halter",
+      "display_name": "Halter",
+      "sector": "Agritech",
+      "origin_source_id": "halter_promus",
+      "origin_passage": "Seed announcement and founder background",
+      "entry_basis": "Promus publicly reported a Seed round in 2017. Icehouse describes earlier backing in 2016 without a contemporaneous public round record here.",
+      "entry_event_id": "halter_entry"
+    },
+    {
+      "company_id": "sharesies",
+      "display_name": "Sharesies",
+      "sector": "Fintech",
+      "origin_source_id": "sharesies_icehouse",
+      "origin_passage": "Founding, 2018 showcase and First Invested",
+      "entry_basis": "Icehouse lists Seed and a 2018 showcase. The showcase date alone cannot date the institutional round."
+    },
+    {
+      "company_id": "hnry",
+      "display_name": "Hnry",
+      "sector": "Fintech",
+      "origin_source_id": "hnry_2019",
+      "origin_passage": "Funding and Wellington company background",
+      "entry_basis": "The firm’s 2019 release calls this its latest investment round. The first institutional seed date and its source label remain open."
+    },
+    {
+      "company_id": "tracksuit",
+      "display_name": "Tracksuit",
+      "sector": "Marketing software",
+      "origin_source_id": "tracksuit_blackbird",
+      "origin_passage": "Dateline and opening",
+      "entry_basis": "The dated Seed announcement is in 2023. Icehouse’s earlier investment date remains unverified."
+    },
+    {
+      "company_id": "astrix",
+      "display_name": "Astrix Astronautics",
+      "sector": "Space",
+      "origin_source_id": "astrix_pre",
+      "origin_passage": "Issuer dateline and opening",
+      "entry_basis": "Outset led the earliest institutional pre-seed report located for the fixture.",
+      "entry_event_id": "astrix_entry",
+      "follow_up": {
+        "activity_event_id": "astrix_entry",
+        "searched_on": "2026-11-20",
+        "scope": "Checked Astrix company news, the investment announcement and public funding searches. Later grants and accelerator participation do not establish a dated lettered round."
+      }
+    },
+    {
+      "company_id": "cleanery",
+      "display_name": "Cleanery",
+      "sector": "Consumer products",
+      "origin_source_id": "cleanery_seed",
+      "origin_passage": "Issuer dateline and opening",
+      "entry_basis": "The 2022 release supplies the earliest reported institutional seed identified for the fixture.",
+      "aliases": [
+        "The Sustainable Care Company"
+      ],
+      "entry_event_id": "cleanery_entry",
+      "follow_up": {
+        "activity_event_id": "cleanery_activity",
+        "searched_on": "2026-11-20",
+        "scope": "Reviewed the issuer’s Seed release, NZX portfolio addition, investor case and public funding searches. The latest checked operating evidence is the SBN case."
+      }
+    },
+    {
+      "company_id": "heartlab",
+      "display_name": "HeartLab",
+      "sector": "Healthtech",
+      "origin_source_id": "heartlab_techcrunch",
+      "origin_passage": "Opening and total capital paragraph",
+      "entry_basis": "The 2021 report dates the earlier Icehouse-led pre-seed to the prior October. Its day and contemporaneous witness remain open.",
+      "entry_event_id": "heartlab_entry",
+      "follow_up": {
+        "activity_event_id": "heartlab_partnership",
+        "searched_on": "2026-11-20",
+        "scope": "Reviewed the 2021 funding report, the issuer’s newsroom and targeted public searches for later labelled financing. Latest included activity is the InVision agreement."
+      }
+    },
+    {
+      "company_id": "vidapp",
+      "display_name": "VidApp",
+      "sector": "Creator software",
+      "origin_source_id": "vidapp_ea",
+      "origin_passage": "Initial October 2017 investment",
+      "entry_basis": "The investor describes first investing in October 2017. The source does not name the round label.",
+      "aliases": [
+        "Vidapp"
+      ]
+    },
+    {
+      "company_id": "firstaml",
+      "display_name": "First AML",
+      "sector": "Regtech",
+      "origin_source_id": "firstaml_scoop",
+      "origin_passage": "Opening and Flux Accelerator paragraph",
+      "entry_basis": "The 2019 press release separately describes seed investment from Icehouse’s accelerator in March. The source is subsequent to the dated entry.",
+      "entry_event_id": "firstaml_entry"
+    },
+    {
+      "company_id": "safestack",
+      "display_name": "SafeStack",
+      "sector": "Cybersecurity education",
+      "origin_source_id": "safestack_seed",
+      "origin_passage": "Dateline and investment opening",
+      "entry_basis": "The company described its Jelix-led pre-seed. Subsequent funding and acquisition reports need additional dated reconciliation.",
+      "aliases": [
+        "SafeStack Academy"
+      ],
+      "entry_event_id": "safestack_entry"
+    },
+    {
+      "company_id": "vxt",
+      "display_name": "Vxt",
+      "sector": "Telecommunications software",
+      "origin_source_id": "vxt_pre",
+      "origin_passage": "Media release and named investors",
+      "entry_basis": "The disclosed pre-seed investors are named as individuals. Institutional participation remains unverified."
+    },
+    {
+      "company_id": "upstock",
+      "display_name": "Upstock",
+      "sector": "Foodservice software",
+      "origin_source_id": "upstock_ea",
+      "origin_passage": "Portfolio description and June 2022 investment",
+      "entry_basis": "The investor dates its own first investment to 2022. Earlier financing was reported and candidate entry still needs reconciliation."
+    },
+    {
+      "company_id": "ubco",
+      "display_name": "UBCO",
+      "sector": "Electric vehicles",
+      "origin_source_id": "ubco_ea",
+      "origin_passage": "UBCO business and investment details",
+      "entry_basis": "The first institutional seed label and closing date remain open. The later receiver statement is scoped to named companies."
+    },
+    {
+      "company_id": "partly",
+      "display_name": "Partly",
+      "sector": "Automotive software",
+      "origin_source_id": "partly_seed",
+      "origin_passage": "Opening, investors and Christchurch context",
+      "entry_basis": "The 2020 Seed report names institutional investors. The preserved article displays a later date and cannot witness the entry snapshot.",
+      "entry_event_id": "partly_entry"
+    },
+    {
+      "company_id": "supie",
+      "display_name": "Supie",
+      "sector": "Online grocery",
+      "origin_source_id": "supie_seed",
+      "origin_passage": "Opening and Icehouse investment paragraph",
+      "entry_basis": "The public seed report names Icehouse. The liquidators identify a separate dated closure event.",
+      "entry_event_id": "supie_entry"
+    },
+    {
+      "company_id": "flowingly",
+      "display_name": "Flowingly",
+      "sector": "Workflow software",
+      "origin_source_id": "flowingly_issuer",
+      "origin_passage": "Opening, investor names and founder history",
+      "entry_basis": "The company reports $4.5m in 2022. Trade reporting describes it as pre-Series A. A qualifying earlier institutional seed is unverified."
+    },
+    {
+      "company_id": "quashed",
+      "display_name": "Quashed",
+      "sector": "Insurtech",
+      "origin_source_id": "quashed_pre",
+      "origin_passage": "Auckland dateline and funding paragraph",
+      "entry_basis": "Icehouse led the earliest dated institutional pre-seed report located.",
+      "entry_event_id": "quashed_entry",
+      "follow_up": {
+        "activity_event_id": "quashed_insurance_coverage",
+        "searched_on": "2026-11-20",
+        "scope": "Checked Quashed’s funding announcement, trade coverage, the issuer media index and public searches for later financing. The dated Herald episode confirms operating activity."
+      }
+    },
+    {
+      "company_id": "carepatron",
+      "display_name": "Carepatron",
+      "sector": "Healthtech software",
+      "origin_source_id": "carepatron_pre",
+      "origin_passage": "Opening and prior bootstrap history",
+      "entry_basis": "The report says the company bootstrapped until Blackbird’s pre-seed.",
+      "entry_event_id": "carepatron_entry",
+      "follow_up": {
+        "activity_event_id": "carepatron_activity",
+        "searched_on": "2026-11-20",
+        "scope": "Reviewed the investor and news reports of funding, the government announcement and public searches for later lettered investment."
+      }
+    },
+    {
+      "company_id": "kara",
+      "display_name": "Kara Technologies",
+      "sector": "Accessibility technology",
+      "origin_source_id": "kara_seed",
+      "origin_passage": "Opening and investor paragraph",
+      "entry_basis": "The November 2022 Seed is dated. The investor’s later account describes staged backing before that round, so the first entry remains unresolved."
+    },
+    {
+      "company_id": "runn",
+      "display_name": "Runn.io",
+      "sector": "Workforce software",
+      "origin_source_id": "runn_seed",
+      "origin_passage": "Opening and named funds",
+      "entry_basis": "The 2021 report is the earliest publicly dated institutional seed located in the fixture.",
+      "entry_event_id": "runn_entry",
+      "follow_up": {
+        "activity_event_id": "runn_followon",
+        "searched_on": "2026-11-20",
+        "scope": "Checked the Seed report, Shearwater announcement, and targeted public searches for later financing. Further dated activity remains unverified in the reviewed financing sources."
+      }
+    },
+    {
+      "company_id": "onwardly",
+      "display_name": "Onwardly",
+      "sector": "Cybersecurity software",
+      "origin_source_id": "onwardly_seed",
+      "origin_passage": "Opening and named lead",
+      "entry_basis": "The report names a Seed round and individual backers. The lead vehicle’s institutional status remains to be established."
+    },
+    {
+      "company_id": "excellent",
+      "display_name": "Excellent",
+      "sector": "Workplace education",
+      "origin_source_id": "excellent_pre",
+      "origin_passage": "Opening and Blackbird investment",
+      "entry_basis": "The 2022 Blackbird-led pre-Seed report is the earliest public institutional round located.",
+      "aliases": [
+        "Employee Experience Design School"
+      ],
+      "entry_event_id": "excellent_entry",
+      "follow_up": {
+        "activity_event_id": "excellent_entry",
+        "searched_on": "2026-11-20",
+        "scope": "Checked the September Seed reports, Blackbird’s investment notes and portfolio entry, and public searches for later rounds or operating updates. Dated later qualifying evidence remains unresolved."
+      }
+    },
+    {
+      "company_id": "immersve",
+      "display_name": "Immersve",
+      "sector": "Payments",
+      "origin_source_id": "immersve_seed",
+      "origin_passage": "Opening and institutional investors",
+      "entry_basis": "The issuer announces closure of its 2022 seed, the earliest institutional report located.",
+      "entry_event_id": "immersve_entry",
+      "follow_up": {
+        "activity_event_id": "immersve_metamask_uk",
+        "searched_on": "2026-11-20",
+        "scope": "Reviewed the issuer’s Seed release, announcements and public searches for later lettered financing. Latest verified activity is the UK partner launch."
+      }
+    },
+    {
+      "company_id": "conical",
+      "display_name": "Conical",
+      "sector": "Games",
+      "origin_source_id": "conical_seed",
+      "origin_passage": "Dateline, Auckland location and named lead",
+      "entry_basis": "The release names an individual global investor. Institutional entry remains unverified."
+    },
+    {
+      "company_id": "avertana",
+      "display_name": "Avertana",
+      "sector": "Industrial materials",
+      "origin_source_id": "avertana_ea",
+      "origin_passage": "Company overview and investor case",
+      "entry_basis": "The portfolio confirms a lead for further research. A dated qualifying first institutional pre-seed or seed requires verification."
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "volpara_asx",
+      "title": "Volpara Health Technologies prospectus",
+      "publisher": "Volpara / ASX",
+      "url": "https://announcements.asx.com.au/asxpdf/20160426/pdf/436rdv4w14m77c.pdf",
+      "kind": "dated_report",
+      "published_on": "2016-04-26",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "volpara_rename",
+      "title": "Matakina Technology announces company name change to Volpara",
+      "publisher": "Matakina Technology via Scoop",
+      "url": "https://m.scoop.co.nz/stories/BU1510/S00631/matakina-technology-announces-company-name-change-to-volpara.htm",
+      "kind": "press_release",
+      "published_on": "2015-10-20",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "volpara_lunit",
+      "title": "Lunit completes acquisition of Volpara",
+      "publisher": "Lunit",
+      "url": "https://www.lunit.io/en/media-hub/lunit-completes-acquisition-of-volpara-pioneering-next-level-of-ai-driven-cancer-care/",
+      "kind": "press_release",
+      "published_on": "2024-05-22",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "formus_punakaiki",
+      "title": "Capital injection fuels Formus Labs for US launch",
+      "publisher": "Punakaiki Fund",
+      "url": "https://punakaikifund.co.nz/capital-injection-fuels-formus-labs-for-us-launch/",
+      "kind": "press_release",
+      "published_on": "2022-02-11",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "formus_510k",
+      "title": "Formus Labs Announces FDA Clearance for Formus Hip",
+      "publisher": "PR Newswire (release provided by Formus Labs)",
+      "url": "https://www.prnewswire.com/news-releases/formus-labs-pioneering-developer-of-ai-powered-3d-orthopedic-surgery-planning-technology-receives-fda-clearance-301815312.html",
+      "kind": "press_release",
+      "published_on": "2023-05-03",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "formus_510k_repost",
+      "title": "Formus Labs Hip Platform Receives FDA Clearance!",
+      "publisher": "Formus Labs",
+      "url": "https://www.formus.com/news/formus-labs-hip-platform-receives-fda-clearance",
+      "kind": "company_page",
+      "published_on": "2026-05-22",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "formus_commercial",
+      "title": "Formus Hip in Commercial Use",
+      "publisher": "Formus Labs",
+      "url": "https://www.formus.com/news/hip-planner-officially-in-use",
+      "kind": "company_page",
+      "published_on": "2024-12-18",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "toku_seed",
+      "title": "Toku Eyes seed round",
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/a-new-zealand-startup-using-ai-to-detect-eye-disease-raises-3-35-million/",
+      "kind": "news_article",
+      "published_on": "2021-06-29",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "toku_series_a",
+      "title": "Toku Inc. Series A Preferred Investment Round",
+      "publisher": "National Vision",
+      "url": "https://www.nationalvision.com/news/2023/04/17/toku-inc-series-a-preferred-investment-round-led-by-national-vision-inc-and-topcon-healthcare/",
+      "kind": "press_release",
+      "published_on": "2023-04-17",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "alimetry_uoa",
+      "title": "Guts and glory",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2021/04/20/guts-glory-rise-biotech-start-up-alimetry.html",
+      "kind": "news_article",
+      "published_on": "2021-04-20",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "alimetry_a2",
+      "title": "Alimetry reports an oversubscribed US$18m round",
+      "publisher": "Alimetry",
+      "url": "https://www.alimetry.com/press/alimetry-raises-an-oversubscribed-us-18m",
+      "kind": "press_release",
+      "published_on": "2024-10-25",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "wellumio_nzx",
+      "title": "BIF adds Wellumio to its investment portfolio",
+      "publisher": "Booster Innovation Fund via NZX",
+      "url": "https://www.nzx.com/announcements/426110",
+      "kind": "press_release",
+      "published_on": "2024-02-13",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "halter_promus",
+      "title": "Promus Ventures Leads Seed Round for Halter",
+      "publisher": "Promus Ventures",
+      "url": "https://promusventures.com/2017/10/26/cowgorithms/",
+      "kind": "press_release",
+      "published_on": "2017-10-26",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "halter_icehouse",
+      "title": "Halter portfolio profile",
+      "publisher": "Icehouse Ventures",
+      "url": "https://www.icehouseventures.co.nz/companies/halter",
+      "kind": "portfolio_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "halter_d",
+      "title": "Halter fundraising release",
+      "publisher": "Halter",
+      "url": "https://www.halterhq.com/en-au/news/halter-raises-165m-in-funding-to-help-farmers-boost-productivity",
+      "kind": "press_release",
+      "published_on": "2025-06-24",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "sharesies_icehouse",
+      "title": "Sharesies portfolio profile",
+      "publisher": "Icehouse Ventures",
+      "url": "https://www.icehouseventures.co.nz/companies/sharesies",
+      "kind": "portfolio_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "sharesies_scoop",
+      "title": "Sharesies $1m Media Release",
+      "publisher": "Sharesies via Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU1708/S00562/sharesies-1m-media-release.htm",
+      "kind": "press_release",
+      "published_on": "2017-08-17",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "hnry_2019",
+      "title": "Hnry raises $2.15m",
+      "publisher": "Hnry",
+      "url": "https://hnry.co.nz/resources/news/hnry-closes-second-investment-round/",
+      "kind": "press_release",
+      "published_on": "2019-09-20",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "hnry_b",
+      "title": "Hnry secures $35m in Series B capital raise",
+      "publisher": "Hnry",
+      "url": "https://hnry.co.nz/resources/news/hnry-secures-35-million-capital-raise/",
+      "kind": "press_release",
+      "published_on": "2023-02-02",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "tracksuit_blackbird",
+      "title": "Investment Notes: Tracksuit",
+      "publisher": "Blackbird",
+      "url": "https://www.blackbird.vc/blog/title-investment-notes-tracksuit",
+      "kind": "press_release",
+      "published_on": "2023-02-21",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "tracksuit_a",
+      "title": "Tracksuit Series A",
+      "publisher": "Tracksuit",
+      "url": "https://www.gotracksuit.com/au/blog/posts/raise-announcement-series-a",
+      "kind": "press_release",
+      "published_on": "2024-02-28",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "astrix_pre",
+      "title": "Astrix raises $500,000 from Outset Ventures",
+      "publisher": "Astrix Astronautics",
+      "url": "https://astrix.space/astrix-raises-500000-from-outset-ventures-to-power-satellites-with-inflatable-space-tech/",
+      "kind": "press_release",
+      "published_on": "2021-04-22",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "cleanery_seed",
+      "title": "Cleanery Nets $2.34m In Oversubscribed Seed Round",
+      "publisher": "Cleanery via Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU2206/S00139/cleanery-nets-234m-in-oversubscribed-seed-round.htm",
+      "kind": "press_release",
+      "published_on": "2022-06-09",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "cleanery_sbn",
+      "title": "Cleanery cuts packaging waste while going global",
+      "publisher": "Sustainable Business Network",
+      "url": "https://sustainable.org.nz/learn/news-insights/the-proof-is-in-the-powder-cleanery-cuts-packaging-waste-while-going-global/",
+      "kind": "news_article",
+      "published_on": "2025-08-25",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "heartlab_techcrunch",
+      "title": "HeartLab seed financing",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2021/09/16/new-zealand-startup-heartlab-raises-2-45m-to-bring-heart-scanning-software-to-the-u-s/",
+      "kind": "news_article",
+      "published_on": "2021-09-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "heartlab_invision",
+      "title": "HeartLab announces partnership with InVision Medical Technology",
+      "publisher": "HeartLab",
+      "url": "https://heartlab.com/blog/announcing-our-partnership-with-invision-medical-technology",
+      "kind": "press_release",
+      "published_on": "2025-10-13",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "vidapp_ea",
+      "title": "VidApp investor case",
+      "publisher": "Enterprise Angels",
+      "url": "https://www.enterpriseangels.co.nz/project/vidapp/",
+      "kind": "portfolio_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "vidapp_2021",
+      "title": "VidApp raises over $1.8M",
+      "publisher": "VidApp via Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU2108/S00491/vidapp-raises-over-18m.htm",
+      "kind": "press_release",
+      "published_on": "2021-08-26",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "firstaml_scoop",
+      "title": "First AML raises 2.5m",
+      "publisher": "First AML via Scoop",
+      "url": "https://www.scoop.co.nz/stories/BU1910/S00164/first-aml-raises-25m-for-its-anti-money-laundering-tech.htm",
+      "kind": "press_release",
+      "published_on": "2019-10-07",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "safestack_seed",
+      "title": "SafeStack closes $2.3m NZD pre-seed round",
+      "publisher": "SafeStack",
+      "url": "https://safestack.io/blog/safestack-news/safestack-academy-closes-seed-investment-round",
+      "kind": "press_release",
+      "published_on": "2021-10-11",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "vxt_pre",
+      "title": "Announcing Vxt’s $600K Pre-Seed Funding Round",
+      "publisher": "Vxt",
+      "url": "https://www.vxt.ai/post/announcing-vxt-s-600k-seed-funding-round",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "upstock_ea",
+      "title": "Upstock portfolio case",
+      "publisher": "Enterprise Angels",
+      "url": "https://www.enterpriseangels.co.nz/project/upstock/",
+      "kind": "portfolio_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "upstock_story",
+      "title": "NZ Herald picks Upstock top startup to watch for 2022",
+      "publisher": "Upstock",
+      "url": "https://www.upstock.app/stories/nz-herald-picks-upstock-top-startup-to-watch-for-2022",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "ubco_ea",
+      "title": "UBCO portfolio case",
+      "publisher": "Enterprise Angels",
+      "url": "https://www.enterpriseangels.co.nz/project/ubco/",
+      "kind": "portfolio_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "ubco_receivers",
+      "title": "UBCO enters receivership",
+      "publisher": "Grant Thornton New Zealand",
+      "url": "https://www.grantthornton.co.nz/press/press-releases-2025/ubco-enters-receivership/",
+      "kind": "dated_report",
+      "published_on": "2025-01-17",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "partly_seed",
+      "title": "Partly raises $1.7 million seed funding",
+      "publisher": "NZ Entrepreneur",
+      "url": "https://nzentrepreneur.co.nz/partly-raises-1-7-million-seed-funding-from-all-star-consortium/",
+      "kind": "news_article",
+      "published_on": "2020-10-08",
+      "retrieved_on": "2026-11-20",
+      "revised_on": "2021-08-20"
+    },
+    {
+      "source_id": "partly_a",
+      "title": "Partly becomes New Zealand’s fastest growing start-up",
+      "publisher": "Idealog",
+      "url": "https://idealog.co.nz/venture/2022/12/partly-becomes-new-zealands-fastest-growing-start-up",
+      "kind": "news_article",
+      "published_on": "2022-12-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "supie_seed",
+      "title": "Supie Puts $2.5m Towards Growth",
+      "publisher": "Supermarket News",
+      "url": "https://supermarketnews.co.nz/news/supie-puts-2-5m-towards-growth/",
+      "kind": "news_article",
+      "published_on": "2021-11-09",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "supie_liquidation",
+      "title": "Supie Group first liquidators’ report",
+      "publisher": "PwC liquidators",
+      "url": "https://www.pwc.co.nz/pdfs/2023/liquidators-first-report-supie-limited.pdf",
+      "kind": "liquidation_notice",
+      "published_on": "2023-11-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "flowingly_issuer",
+      "title": "Fundraise announcement",
+      "publisher": "Flowingly",
+      "url": "https://flowingly.io/celebrating-flowinglys-fundraise/",
+      "kind": "press_release",
+      "published_on": "2022-03-22",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "quashed_pre",
+      "title": "Quashed raises funds from Icehouse Ventures",
+      "publisher": "Quashed",
+      "url": "https://quashed.co.nz/blog/press-release-5-March-2021/",
+      "kind": "press_release",
+      "published_on": "2021-03-05",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "quashed_herald",
+      "title": "Herald NOW discusses Quashed’s insurance comparison site",
+      "publisher": "NZ Herald",
+      "url": "https://www.youtube.com/watch?v=GSdjV3iiVXY",
+      "kind": "news_article",
+      "published_on": "2025-10-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "carepatron_pre",
+      "title": "Carepatron pre-seed financing",
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-healthtech-startup-carepatron-banks-nz1-6m-pre-seed-round-from-blackbird-to-ramp-up-global-growth/",
+      "kind": "news_article",
+      "published_on": "2022-07-26",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "carepatron_tc",
+      "title": "Blackbird invests in Carepatron",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2023/11/03/carepatron/",
+      "kind": "news_article",
+      "published_on": "2023-11-03",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "carepatron_beehive",
+      "title": "Māori-led tech company prepares to go global",
+      "publisher": "New Zealand Government",
+      "url": "https://www.beehive.govt.nz/release/m%C4%81ori-led-tech-company-prepares-go-global",
+      "kind": "press_release",
+      "published_on": "2026-03-04",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "kara_seed",
+      "title": "Kara Technologies raises NZ$1.3m",
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kara-technologies-a-kiwi-startup-helping-deaf-people-with-sign-language-raises-nz1-3-million-seed-round/",
+      "kind": "news_article",
+      "published_on": "2022-11-14",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "kara_soul",
+      "title": "Kara Technologies investment case",
+      "publisher": "Soul Capital",
+      "url": "https://www.soul.capital/insights/karatechnologies",
+      "kind": "portfolio_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "runn_seed",
+      "title": "Runn.io raises $2m seed",
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-project-capability-startup-runn-io-raises-2-million-seed-round/",
+      "kind": "news_article",
+      "published_on": "2021-12-14",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "runn_2023",
+      "title": "Our investment in Runn.io",
+      "publisher": "Shearwater Capital",
+      "url": "https://www.shearwater.co/news/our-investment-in-runn-io/",
+      "kind": "press_release",
+      "published_on": "2023-01-30",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "onwardly_seed",
+      "title": "Onwardly raises NZ$1m",
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-cybersecurity-startup-onwardly-raises-1-million-seed-round/",
+      "kind": "news_article",
+      "published_on": "2021-12-07",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "onwardly_news",
+      "title": "Onwardly builds consortium",
+      "publisher": "Reseller News",
+      "url": "https://www.reseller.co.nz/article/1301533/cyber-startup-onwardly-builds-consortium-to-bolster-cyber-resilience.html",
+      "kind": "news_article",
+      "published_on": "2023-05-29",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "excellent_pre",
+      "title": "Excellent raises $2m in pre-Seed round",
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-employee-experience-platform-excellent-raises-2-million-in-pre-seed-round/",
+      "kind": "news_article",
+      "published_on": "2022-09-08",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "immersve_seed",
+      "title": "Immersve announces closure of seed round",
+      "publisher": "Immersve",
+      "url": "https://medium.com/@Immersve/global-vcs-back-immersve-in-one-of-nz-s-largest-seed-rounds-6c0b2f78e2b6",
+      "kind": "press_release",
+      "published_on": "2022-06-20",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "immersve_launches",
+      "title": "Announcements",
+      "publisher": "Immersve",
+      "url": "https://immersve.com/announcements",
+      "kind": "dated_report",
+      "published_on": "2026-09-30",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "conical_seed",
+      "title": "CONICAL raises NZ$1.4m seed",
+      "publisher": "CONICAL via PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/gaming-studio-conical-raises-1-4m-seed-round-to-develop-vertical-slice-for-its-upcoming-aaa-action-adventure-video-game-301513438.html",
+      "kind": "press_release",
+      "published_on": "2022-03-30",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "avertana_ea",
+      "title": "Avertana portfolio profile",
+      "publisher": "Enterprise Angels",
+      "url": "https://www.enterpriseangels.co.nz/project/avertana/",
+      "kind": "portfolio_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-20"
+    }
+  ],
+  "witnesses": [
+    {
+      "witness_id": "w_volpara_rename",
+      "source_id": "volpara_rename",
+      "kind": "publisher_dated",
+      "available_on": "2015-10-20",
+      "url": "https://m.scoop.co.nz/stories/BU1510/S00631/matakina-technology-announces-company-name-change-to-volpara.htm",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_volpara_lunit",
+      "source_id": "volpara_lunit",
+      "kind": "publisher_dated",
+      "available_on": "2024-05-22",
+      "url": "https://www.lunit.io/en/media-hub/lunit-completes-acquisition-of-volpara-pioneering-next-level-of-ai-driven-cancer-care/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_formus_punakaiki",
+      "source_id": "formus_punakaiki",
+      "kind": "publisher_dated",
+      "available_on": "2022-02-11",
+      "url": "https://punakaikifund.co.nz/capital-injection-fuels-formus-labs-for-us-launch/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_formus_510k",
+      "source_id": "formus_510k",
+      "kind": "publisher_dated",
+      "available_on": "2023-05-03",
+      "url": "https://www.prnewswire.com/news-releases/formus-labs-pioneering-developer-of-ai-powered-3d-orthopedic-surgery-planning-technology-receives-fda-clearance-301815312.html",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_toku_seed",
+      "source_id": "toku_seed",
+      "kind": "publisher_dated",
+      "available_on": "2021-06-29",
+      "url": "https://www.startupdaily.net/topic/funding/a-new-zealand-startup-using-ai-to-detect-eye-disease-raises-3-35-million/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_toku_series_a",
+      "source_id": "toku_series_a",
+      "kind": "publisher_dated",
+      "available_on": "2023-04-17",
+      "url": "https://www.nationalvision.com/news/2023/04/17/toku-inc-series-a-preferred-investment-round-led-by-national-vision-inc-and-topcon-healthcare/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_alimetry_uoa",
+      "source_id": "alimetry_uoa",
+      "kind": "publisher_dated",
+      "available_on": "2021-04-20",
+      "url": "https://www.auckland.ac.nz/en/news/2021/04/20/guts-glory-rise-biotech-start-up-alimetry.html",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_alimetry_a2",
+      "source_id": "alimetry_a2",
+      "kind": "publisher_dated",
+      "available_on": "2024-10-25",
+      "url": "https://www.alimetry.com/press/alimetry-raises-an-oversubscribed-us-18m",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_wellumio_nzx",
+      "source_id": "wellumio_nzx",
+      "kind": "publisher_dated",
+      "available_on": "2024-02-13",
+      "url": "https://www.nzx.com/announcements/426110",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_halter_promus",
+      "source_id": "halter_promus",
+      "kind": "publisher_dated",
+      "available_on": "2017-10-26",
+      "url": "https://promusventures.com/2017/10/26/cowgorithms/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_halter_d",
+      "source_id": "halter_d",
+      "kind": "publisher_dated",
+      "available_on": "2025-06-24",
+      "url": "https://www.halterhq.com/en-au/news/halter-raises-165m-in-funding-to-help-farmers-boost-productivity",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_sharesies_scoop",
+      "source_id": "sharesies_scoop",
+      "kind": "publisher_dated",
+      "available_on": "2017-08-17",
+      "url": "https://www.scoop.co.nz/stories/BU1708/S00562/sharesies-1m-media-release.htm",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_hnry_2019",
+      "source_id": "hnry_2019",
+      "kind": "publisher_dated",
+      "available_on": "2019-09-20",
+      "url": "https://hnry.co.nz/resources/news/hnry-closes-second-investment-round/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_hnry_b",
+      "source_id": "hnry_b",
+      "kind": "publisher_dated",
+      "available_on": "2023-02-02",
+      "url": "https://hnry.co.nz/resources/news/hnry-secures-35-million-capital-raise/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_tracksuit_blackbird",
+      "source_id": "tracksuit_blackbird",
+      "kind": "publisher_dated",
+      "available_on": "2023-02-21",
+      "url": "https://www.blackbird.vc/blog/title-investment-notes-tracksuit",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_tracksuit_a",
+      "source_id": "tracksuit_a",
+      "kind": "publisher_dated",
+      "available_on": "2024-02-28",
+      "url": "https://www.gotracksuit.com/au/blog/posts/raise-announcement-series-a",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_astrix_pre",
+      "source_id": "astrix_pre",
+      "kind": "publisher_dated",
+      "available_on": "2021-04-22",
+      "url": "https://astrix.space/astrix-raises-500000-from-outset-ventures-to-power-satellites-with-inflatable-space-tech/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_cleanery_seed",
+      "source_id": "cleanery_seed",
+      "kind": "publisher_dated",
+      "available_on": "2022-06-09",
+      "url": "https://www.scoop.co.nz/stories/BU2206/S00139/cleanery-nets-234m-in-oversubscribed-seed-round.htm",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_cleanery_sbn",
+      "source_id": "cleanery_sbn",
+      "kind": "publisher_dated",
+      "available_on": "2025-08-25",
+      "url": "https://sustainable.org.nz/learn/news-insights/the-proof-is-in-the-powder-cleanery-cuts-packaging-waste-while-going-global/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_heartlab_techcrunch",
+      "source_id": "heartlab_techcrunch",
+      "kind": "publisher_dated",
+      "available_on": "2021-09-16",
+      "url": "https://techcrunch.com/2021/09/16/new-zealand-startup-heartlab-raises-2-45m-to-bring-heart-scanning-software-to-the-u-s/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_heartlab_invision",
+      "source_id": "heartlab_invision",
+      "kind": "publisher_dated",
+      "available_on": "2025-10-13",
+      "url": "https://heartlab.com/blog/announcing-our-partnership-with-invision-medical-technology",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_vidapp_2021",
+      "source_id": "vidapp_2021",
+      "kind": "publisher_dated",
+      "available_on": "2021-08-26",
+      "url": "https://www.scoop.co.nz/stories/BU2108/S00491/vidapp-raises-over-18m.htm",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_firstaml_scoop",
+      "source_id": "firstaml_scoop",
+      "kind": "publisher_dated",
+      "available_on": "2019-10-07",
+      "url": "https://www.scoop.co.nz/stories/BU1910/S00164/first-aml-raises-25m-for-its-anti-money-laundering-tech.htm",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_safestack_seed",
+      "source_id": "safestack_seed",
+      "kind": "publisher_dated",
+      "available_on": "2021-10-11",
+      "url": "https://safestack.io/blog/safestack-news/safestack-academy-closes-seed-investment-round",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_partly_seed",
+      "source_id": "partly_seed",
+      "kind": "publisher_dated",
+      "available_on": "2021-08-20",
+      "url": "https://nzentrepreneur.co.nz/partly-raises-1-7-million-seed-funding-from-all-star-consortium/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_partly_a",
+      "source_id": "partly_a",
+      "kind": "publisher_dated",
+      "available_on": "2022-12-16",
+      "url": "https://idealog.co.nz/venture/2022/12/partly-becomes-new-zealands-fastest-growing-start-up",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_supie_seed",
+      "source_id": "supie_seed",
+      "kind": "publisher_dated",
+      "available_on": "2021-11-09",
+      "url": "https://supermarketnews.co.nz/news/supie-puts-2-5m-towards-growth/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_flowingly_issuer",
+      "source_id": "flowingly_issuer",
+      "kind": "publisher_dated",
+      "available_on": "2022-03-22",
+      "url": "https://flowingly.io/celebrating-flowinglys-fundraise/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_quashed_pre",
+      "source_id": "quashed_pre",
+      "kind": "publisher_dated",
+      "available_on": "2021-03-05",
+      "url": "https://quashed.co.nz/blog/press-release-5-March-2021/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_carepatron_pre",
+      "source_id": "carepatron_pre",
+      "kind": "publisher_dated",
+      "available_on": "2022-07-26",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-healthtech-startup-carepatron-banks-nz1-6m-pre-seed-round-from-blackbird-to-ramp-up-global-growth/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_carepatron_tc",
+      "source_id": "carepatron_tc",
+      "kind": "publisher_dated",
+      "available_on": "2023-11-03",
+      "url": "https://techcrunch.com/2023/11/03/carepatron/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_carepatron_beehive",
+      "source_id": "carepatron_beehive",
+      "kind": "publisher_dated",
+      "available_on": "2026-03-04",
+      "url": "https://www.beehive.govt.nz/release/m%C4%81ori-led-tech-company-prepares-go-global",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_kara_seed",
+      "source_id": "kara_seed",
+      "kind": "publisher_dated",
+      "available_on": "2022-11-14",
+      "url": "https://www.startupdaily.net/topic/funding/kara-technologies-a-kiwi-startup-helping-deaf-people-with-sign-language-raises-nz1-3-million-seed-round/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_runn_seed",
+      "source_id": "runn_seed",
+      "kind": "publisher_dated",
+      "available_on": "2021-12-14",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-project-capability-startup-runn-io-raises-2-million-seed-round/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_runn_2023",
+      "source_id": "runn_2023",
+      "kind": "publisher_dated",
+      "available_on": "2023-01-30",
+      "url": "https://www.shearwater.co/news/our-investment-in-runn-io/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_onwardly_seed",
+      "source_id": "onwardly_seed",
+      "kind": "publisher_dated",
+      "available_on": "2021-12-07",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-cybersecurity-startup-onwardly-raises-1-million-seed-round/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_onwardly_news",
+      "source_id": "onwardly_news",
+      "kind": "publisher_dated",
+      "available_on": "2023-05-29",
+      "url": "https://www.reseller.co.nz/article/1301533/cyber-startup-onwardly-builds-consortium-to-bolster-cyber-resilience.html",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_excellent_pre",
+      "source_id": "excellent_pre",
+      "kind": "publisher_dated",
+      "available_on": "2022-09-08",
+      "url": "https://www.startupdaily.net/topic/funding/kiwi-employee-experience-platform-excellent-raises-2-million-in-pre-seed-round/",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_immersve_seed",
+      "source_id": "immersve_seed",
+      "kind": "publisher_dated",
+      "available_on": "2022-06-20",
+      "url": "https://medium.com/@Immersve/global-vcs-back-immersve-in-one-of-nz-s-largest-seed-rounds-6c0b2f78e2b6",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    },
+    {
+      "witness_id": "w_conical_seed",
+      "source_id": "conical_seed",
+      "kind": "publisher_dated",
+      "available_on": "2022-03-30",
+      "url": "https://www.prnewswire.com/news-releases/gaming-studio-conical-raises-1-4m-seed-round-to-develop-vertical-slice-for-its-upcoming-aaa-action-adventure-video-game-301513438.html",
+      "locator": "Publisher dateline and dated article or release at the cited URL"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "volpara_rename_report",
+      "company_id": "volpara",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2015-10-20",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "volpara_rename",
+      "passage": "Dateline and opening",
+      "claim": "The issuer announced changing its name from Matakina Technology to Volpara Health Technologies."
+    },
+    {
+      "event_id": "volpara_acquired",
+      "company_id": "volpara",
+      "kind": "acquired",
+      "date": {
+        "value": "2024-05-22",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "volpara_lunit",
+      "passage": "Release heading and opening",
+      "claim": "Lunit announced completion of the Volpara acquisition."
+    },
+    {
+      "event_id": "formus_entry",
+      "company_id": "formus",
+      "kind": "seed",
+      "date": {
+        "value": "2019",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "formus_punakaiki",
+      "passage": "Historical funding paragraph",
+      "claim": "Punakaiki reports that Flying Kiwi Angels led the 2019 seed.",
+      "round_label": "seed round",
+      "institutional_investor": "Flying Kiwi Angels"
+    },
+    {
+      "event_id": "formus_pre_a",
+      "company_id": "formus",
+      "kind": "pre_series_a",
+      "date": {
+        "value": "2022-02-11",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "formus_punakaiki",
+      "passage": "Opening investment paragraphs",
+      "claim": "Punakaiki describes the $5m US financing as a pre-series A funding round.",
+      "round_label": "pre-series A funding round",
+      "institutional_investor": "GD1"
+    },
+    {
+      "event_id": "formus_fda",
+      "company_id": "formus",
+      "kind": "regulatory_clearance",
+      "date": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "date_basis": "unknown",
+      "source_id": "formus_510k",
+      "passage": "Dateline and opening",
+      "claim": "Formus reported US clearance for Formus Hip. The release does not give a submission identifier."
+    },
+    {
+      "event_id": "formus_fda_repost",
+      "company_id": "formus",
+      "kind": "regulatory_clearance",
+      "date": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "date_basis": "unknown",
+      "source_id": "formus_510k_repost",
+      "passage": "Displayed date, dateline and opening",
+      "claim": "The Formus company page repeats its clearance claim for Formus Hip without a submission identifier. Device-version and submission correspondence remain unresolved."
+    },
+    {
+      "event_id": "formus_usage",
+      "company_id": "formus",
+      "kind": "provider_deployment",
+      "date": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "date_basis": "unknown",
+      "source_id": "formus_commercial",
+      "passage": "Usage revenue paragraph",
+      "claim": "Formus reported receiving usage revenue and more than 90 surgeries planned since rollout. The first payment date remains unknown."
+    },
+    {
+      "event_id": "toku_entry",
+      "company_id": "toku",
+      "kind": "seed",
+      "date": {
+        "value": "2021-06-29",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "toku_seed",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Startup Daily reported the first external raise, led by Icehouse Ventures.",
+      "round_label": "seed round",
+      "institutional_investor": "Icehouse Ventures"
+    },
+    {
+      "event_id": "toku_a",
+      "company_id": "toku",
+      "kind": "series_a",
+      "date": {
+        "value": "2023-04-17",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "toku_series_a",
+      "passage": "Dateline and opening investment paragraphs",
+      "claim": "National Vision announced a Series A preferred investment in Toku Inc. The link to the Toku Eyes entity in the seed report is proposed.",
+      "round_label": "Series A Preferred Investment Round",
+      "institutional_investor": "National Vision and Topcon Healthcare",
+      "instrument": "priced_equity",
+      "entity_link": "proposed"
+    },
+    {
+      "event_id": "alimetry_institutional",
+      "company_id": "alimetry",
+      "kind": "other_financing",
+      "date": {
+        "value": "2021-04-20",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "alimetry_uoa",
+      "passage": "Investment paragraph",
+      "claim": "The university reports completion of a first institutional round led by IP Group.",
+      "institutional_investor": "IP Group"
+    },
+    {
+      "event_id": "alimetry_a2_report",
+      "company_id": "alimetry",
+      "kind": "other_financing",
+      "date": {
+        "value": "2024-10-25",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "alimetry_a2",
+      "passage": "Opening funding paragraph",
+      "claim": "The company calls the financing A2 and reports a US$18m amount.",
+      "round_label": "A2 financing round",
+      "instrument": "unknown"
+    },
+    {
+      "event_id": "wellumio_booster",
+      "company_id": "wellumio",
+      "kind": "other_financing",
+      "date": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "date_basis": "unknown",
+      "source_id": "wellumio_nzx",
+      "passage": "Transaction paragraphs",
+      "claim": "Booster announced the portfolio addition and a proposed cheque. The cash transfer date was unspecified."
+    },
+    {
+      "event_id": "halter_entry",
+      "company_id": "halter",
+      "kind": "seed",
+      "date": {
+        "value": "2017-10-26",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "halter_promus",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Promus reported leading the Seed round.",
+      "round_label": "Seed round",
+      "institutional_investor": "Promus Ventures"
+    },
+    {
+      "event_id": "halter_series_d",
+      "company_id": "halter",
+      "kind": "series_c_plus",
+      "date": {
+        "value": "2025-06-24",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "halter_d",
+      "passage": "Dateline and lead paragraphs",
+      "claim": "Halter announced a Series D led by BOND.",
+      "round_label": "Series D fundraising round",
+      "institutional_investor": "BOND",
+      "instrument": "priced_equity"
+    },
+    {
+      "event_id": "sharesies_2017_activity",
+      "company_id": "sharesies",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2017-08-17",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "sharesies_scoop",
+      "passage": "Opening paragraphs",
+      "claim": "Sharesies reported money invested by customers through the platform. It is platform activity rather than company fundraising."
+    },
+    {
+      "event_id": "hnry_2019_round",
+      "company_id": "hnry",
+      "kind": "other_financing",
+      "date": {
+        "value": "2019-09-20",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "hnry_2019",
+      "passage": "Company dateline and opening",
+      "claim": "Hnry reported a $2.15m round including Equity Venture Partners.",
+      "institutional_investor": "Equity Venture Partners"
+    },
+    {
+      "event_id": "hnry_2022_b",
+      "company_id": "hnry",
+      "kind": "series_b",
+      "date": {
+        "value": "2022",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "hnry_b",
+      "passage": "Opening and Backstory",
+      "claim": "The 2023 article reports a Series B raised during 2022.",
+      "round_label": "Series B capital raise",
+      "institutional_investor": "AirTree Ventures",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "tracksuit_seed_2023",
+      "company_id": "tracksuit",
+      "kind": "seed",
+      "date": {
+        "value": "2023-02-21",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "tracksuit_blackbird",
+      "passage": "Opening paragraphs",
+      "claim": "Blackbird reported leading the Seed round.",
+      "round_label": "Seed round",
+      "institutional_investor": "Blackbird"
+    },
+    {
+      "event_id": "tracksuit_series_a",
+      "company_id": "tracksuit",
+      "kind": "series_a",
+      "date": {
+        "value": "2024-02-28",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "tracksuit_a",
+      "passage": "Dateline and investor paragraphs",
+      "claim": "The company announced its Series A round.",
+      "round_label": "Series A",
+      "institutional_investor": "Altos Ventures and Footwork"
+    },
+    {
+      "event_id": "astrix_entry",
+      "company_id": "astrix",
+      "kind": "pre_seed",
+      "date": {
+        "value": "2021-04-21",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "astrix_pre",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Astrix reported a $500,000 pre-seed led by Outset.",
+      "round_label": "pre-seed funding round",
+      "institutional_investor": "Outset Ventures"
+    },
+    {
+      "event_id": "cleanery_entry",
+      "company_id": "cleanery",
+      "kind": "seed",
+      "date": {
+        "value": "2022-06-09",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "cleanery_seed",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "The Seed release reported $2.34m and venture-fund participation.",
+      "round_label": "Seed Round",
+      "institutional_investor": "Climate Venture Capital Fund and Icehouse Ventures"
+    },
+    {
+      "event_id": "cleanery_activity",
+      "company_id": "cleanery",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-08-25",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "cleanery_sbn",
+      "passage": "Case study introduction",
+      "claim": "The case study described products sold in New Zealand, Australia and the US."
+    },
+    {
+      "event_id": "heartlab_entry",
+      "company_id": "heartlab",
+      "kind": "pre_seed",
+      "date": {
+        "value": "2020-10",
+        "precision": "month"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "heartlab_techcrunch",
+      "passage": "Total funding paragraph",
+      "claim": "The September 2021 article identifies an Icehouse-led pre-seed in October 2020.",
+      "round_label": "pre-seed",
+      "institutional_investor": "Icehouse Ventures"
+    },
+    {
+      "event_id": "heartlab_seed",
+      "company_id": "heartlab",
+      "kind": "seed",
+      "date": {
+        "value": "2021-09-16",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "heartlab_techcrunch",
+      "passage": "Opening and investor paragraphs",
+      "claim": "The article reports a subsequent seed led by Founders Fund.",
+      "round_label": "seed funding",
+      "institutional_investor": "Founders Fund"
+    },
+    {
+      "event_id": "heartlab_partnership",
+      "company_id": "heartlab",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-10-13",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "heartlab_invision",
+      "passage": "Announcement and availability sections",
+      "claim": "HeartLab announced a partnership for the Australian and New Zealand markets, with product availability subject to regulatory approval."
+    },
+    {
+      "event_id": "vidapp_raise",
+      "company_id": "vidapp",
+      "kind": "other_financing",
+      "date": {
+        "value": "2021-08-26",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "vidapp_2021",
+      "passage": "Dateline and opening",
+      "claim": "VidApp announced a raise of more than $1.8m. The prior 2017 investment is a separate report."
+    },
+    {
+      "event_id": "firstaml_entry",
+      "company_id": "firstaml",
+      "kind": "seed",
+      "date": {
+        "value": "2019-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "firstaml_scoop",
+      "passage": "Flux Accelerator paragraph",
+      "claim": "The release describes seed investment in March 2019 through Flux.",
+      "round_label": "seed investment",
+      "institutional_investor": "Icehouse Ventures Flux Accelerator"
+    },
+    {
+      "event_id": "firstaml_angel",
+      "company_id": "firstaml",
+      "kind": "other_financing",
+      "date": {
+        "value": "2019-10-07",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "firstaml_scoop",
+      "passage": "Dateline and opening",
+      "claim": "First AML announced its first angel fundraising round.",
+      "round_label": "first angel fundraising round"
+    },
+    {
+      "event_id": "safestack_entry",
+      "company_id": "safestack",
+      "kind": "pre_seed",
+      "date": {
+        "value": "2021-10-11",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "safestack_seed",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "SafeStack reports closing a NZ$2.3m pre-seed led by Jelix.",
+      "round_label": "pre-seed round",
+      "institutional_investor": "Jelix Ventures"
+    },
+    {
+      "event_id": "ubco_receivership",
+      "company_id": "ubco",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-01-17",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "ubco_receivers",
+      "passage": "Receiver appointment and trading statement",
+      "claim": "The receivers reported cessation of trading by UBCO Limited and UBCO Holdings Limited; this record does not establish register removal."
+    },
+    {
+      "event_id": "partly_entry",
+      "company_id": "partly",
+      "kind": "seed",
+      "date": {
+        "value": "2020-10-08",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "partly_seed",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "NZ Entrepreneur reported that Blackbird led the Christchurch company’s $1.7m seed.",
+      "round_label": "seed funding",
+      "institutional_investor": "Blackbird Ventures"
+    },
+    {
+      "event_id": "partly_series_a",
+      "company_id": "partly",
+      "kind": "series_a",
+      "date": {
+        "value": "2022-12-16",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "partly_a",
+      "passage": "Opening funding and valuation paragraphs",
+      "claim": "The report identifies the recent Series A and a valuation of about NZ$180m.",
+      "round_label": "Series A",
+      "institutional_investor": "Octopus Ventures",
+      "instrument": "priced_equity"
+    },
+    {
+      "event_id": "supie_entry",
+      "company_id": "supie",
+      "kind": "seed",
+      "date": {
+        "value": "2021-11-09",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "supie_seed",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Trade reporting described Icehouse leading the $2.5m seed financing.",
+      "round_label": "seed funding",
+      "institutional_investor": "Icehouse Ventures"
+    },
+    {
+      "event_id": "supie_liquidation_event",
+      "company_id": "supie",
+      "kind": "closed_liquidation",
+      "date": {
+        "value": "2023-11-09",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "supie_liquidation",
+      "passage": "Page 1, appointment and trading cessation",
+      "claim": "The liquidators record that the companies ceased trading on 30 October and entered liquidation after the watershed meeting.",
+      "closure_evidence": "liquidation_notice"
+    },
+    {
+      "event_id": "flowingly_2022",
+      "company_id": "flowingly",
+      "kind": "other_financing",
+      "date": {
+        "value": "2022-03-22",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "flowingly_issuer",
+      "passage": "Opening funding paragraph",
+      "claim": "Flowingly reported a $4.5m funding round led by GD1 and Icehouse.",
+      "institutional_investor": "GD1 and Icehouse Ventures"
+    },
+    {
+      "event_id": "quashed_entry",
+      "company_id": "quashed",
+      "kind": "pre_seed",
+      "date": {
+        "value": "2021-03-05",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "quashed_pre",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Quashed reported an Icehouse-led pre-seed.",
+      "round_label": "pre-seed funding round",
+      "institutional_investor": "Icehouse Ventures"
+    },
+    {
+      "event_id": "quashed_insurance_coverage",
+      "company_id": "quashed",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2025-10-16",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "quashed_herald",
+      "passage": "Published episode description",
+      "claim": "The Herald covered Quashed’s operating insurance price comparison service in its BusinessDesk insurance series."
+    },
+    {
+      "event_id": "carepatron_entry",
+      "company_id": "carepatron",
+      "kind": "pre_seed",
+      "date": {
+        "value": "2022-07-26",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "carepatron_pre",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Startup Daily reported the Blackbird-led pre-seed.",
+      "round_label": "pre-seed funding",
+      "institutional_investor": "Blackbird"
+    },
+    {
+      "event_id": "carepatron_later",
+      "company_id": "carepatron",
+      "kind": "seed",
+      "date": {
+        "value": "2023-11-03",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "carepatron_tc",
+      "passage": "Opening and venture investment paragraphs",
+      "claim": "TechCrunch reported later seed funding from Blackbird and TQ Ventures.",
+      "round_label": "seed funding"
+    },
+    {
+      "event_id": "carepatron_activity",
+      "company_id": "carepatron",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-03-04",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "carepatron_beehive",
+      "passage": "Dateline and opening",
+      "claim": "The government describes a developed practice management and clinical support product and launch support."
+    },
+    {
+      "event_id": "kara_2022_seed",
+      "company_id": "kara",
+      "kind": "seed",
+      "date": {
+        "value": "2022-11-14",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "kara_seed",
+      "passage": "Opening and investor paragraph",
+      "claim": "Startup Daily reported a Seed led by Investible.",
+      "round_label": "Seed funding",
+      "institutional_investor": "Investible"
+    },
+    {
+      "event_id": "runn_entry",
+      "company_id": "runn",
+      "kind": "seed",
+      "date": {
+        "value": "2021-12-14",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "runn_seed",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Startup Daily reported the 2021 Seed round.",
+      "round_label": "Seed round",
+      "institutional_investor": "GD1 and Wavemaker Partners"
+    },
+    {
+      "event_id": "runn_followon",
+      "company_id": "runn",
+      "kind": "other_financing",
+      "date": {
+        "value": "2023-01-30",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "runn_2023",
+      "passage": "Opening",
+      "claim": "Shearwater announced an investment without naming a lettered round.",
+      "institutional_investor": "Shearwater Capital"
+    },
+    {
+      "event_id": "onwardly_seed_report",
+      "company_id": "onwardly",
+      "kind": "seed",
+      "date": {
+        "value": "2021-12-07",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "onwardly_seed",
+      "passage": "Opening and lead investor paragraph",
+      "claim": "Startup Daily reported Seed funding led by Kendra Ross of We Love Cyber.",
+      "round_label": "seed round"
+    },
+    {
+      "event_id": "onwardly_consortium",
+      "company_id": "onwardly",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2023-05-29",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "onwardly_news",
+      "passage": "Opening and collaboration paragraphs",
+      "claim": "The article reports formation of a cyber-resilience consortium."
+    },
+    {
+      "event_id": "excellent_entry",
+      "company_id": "excellent",
+      "kind": "pre_seed",
+      "date": {
+        "value": "2022-09-08",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "excellent_pre",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "The news report describes the Blackbird-led pre-Seed.",
+      "round_label": "pre-Seed round",
+      "institutional_investor": "Blackbird"
+    },
+    {
+      "event_id": "immersve_entry",
+      "company_id": "immersve",
+      "kind": "seed",
+      "date": {
+        "value": "2022-06-20",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "immersve_seed",
+      "passage": "Dateline and opening paragraphs",
+      "claim": "Immersve announced completion of its institutional Seed round.",
+      "round_label": "seed round",
+      "institutional_investor": "TCG Crypto"
+    },
+    {
+      "event_id": "immersve_metamask_uk",
+      "company_id": "immersve",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-09-30",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "immersve_launches",
+      "passage": "30 September 2026 Partner launch item",
+      "claim": "Immersve reported that the MetaMask Card had launched in the United Kingdom on its network."
+    },
+    {
+      "event_id": "conical_2022",
+      "company_id": "conical",
+      "kind": "seed",
+      "date": {
+        "value": "2022-03-30",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "conical_seed",
+      "passage": "Dateline and lead paragraph",
+      "claim": "CONICAL reported a NZ$1.4m seed investment led by Konstantin Koos.",
+      "round_label": "seed investment"
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot_id": "formus_pre_a_snapshot",
+      "company_id": "formus",
+      "stage_event_id": "formus_pre_a",
+      "as_of": "2022-02-11",
+      "features": [
+        {
+          "name": "stage",
+          "value": "pre_series_a",
+          "source_id": "formus_punakaiki",
+          "witness_id": "w_formus_punakaiki",
+          "passage": "Opening investment paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Automated preoperative planning for joint replacement surgery.",
+          "source_id": "formus_punakaiki",
+          "witness_id": "w_formus_punakaiki",
+          "passage": "Opening investment paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "toku_entry_snapshot",
+      "company_id": "toku",
+      "stage_event_id": "toku_entry",
+      "as_of": "2021-06-29",
+      "features": [
+        {
+          "name": "stage",
+          "value": "seed",
+          "source_id": "toku_seed",
+          "witness_id": "w_toku_seed",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Retinal imaging software for eye-health screening.",
+          "source_id": "toku_seed",
+          "witness_id": "w_toku_seed",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "halter_entry_snapshot",
+      "company_id": "halter",
+      "stage_event_id": "halter_entry",
+      "as_of": "2017-10-26",
+      "features": [
+        {
+          "name": "stage",
+          "value": "seed",
+          "source_id": "halter_promus",
+          "witness_id": "w_halter_promus",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Farm management automation.",
+          "source_id": "halter_promus",
+          "witness_id": "w_halter_promus",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "cleanery_entry_snapshot",
+      "company_id": "cleanery",
+      "stage_event_id": "cleanery_entry",
+      "as_of": "2022-06-09",
+      "features": [
+        {
+          "name": "stage",
+          "value": "seed",
+          "source_id": "cleanery_seed",
+          "witness_id": "w_cleanery_seed",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Powdered cleaning and personal-care products.",
+          "source_id": "cleanery_seed",
+          "witness_id": "w_cleanery_seed",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "safestack_entry_snapshot",
+      "company_id": "safestack",
+      "stage_event_id": "safestack_entry",
+      "as_of": "2021-10-11",
+      "features": [
+        {
+          "name": "stage",
+          "value": "pre_seed",
+          "source_id": "safestack_seed",
+          "witness_id": "w_safestack_seed",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Security education for software development teams.",
+          "source_id": "safestack_seed",
+          "witness_id": "w_safestack_seed",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "partly_series_a_snapshot",
+      "company_id": "partly",
+      "stage_event_id": "partly_series_a",
+      "as_of": "2022-12-16",
+      "features": [
+        {
+          "name": "stage",
+          "value": "series_a",
+          "source_id": "partly_a",
+          "witness_id": "w_partly_a",
+          "passage": "Opening funding and valuation paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Automotive data software for parts ordering.",
+          "source_id": "partly_a",
+          "witness_id": "w_partly_a",
+          "passage": "Opening funding and valuation paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "supie_entry_snapshot",
+      "company_id": "supie",
+      "stage_event_id": "supie_entry",
+      "as_of": "2021-11-09",
+      "features": [
+        {
+          "name": "stage",
+          "value": "seed",
+          "source_id": "supie_seed",
+          "witness_id": "w_supie_seed",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "New Zealand online supermarket.",
+          "source_id": "supie_seed",
+          "witness_id": "w_supie_seed",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "quashed_entry_snapshot",
+      "company_id": "quashed",
+      "stage_event_id": "quashed_entry",
+      "as_of": "2021-03-05",
+      "features": [
+        {
+          "name": "stage",
+          "value": "pre_seed",
+          "source_id": "quashed_pre",
+          "witness_id": "w_quashed_pre",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Online insurance management for consumers.",
+          "source_id": "quashed_pre",
+          "witness_id": "w_quashed_pre",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "carepatron_entry_snapshot",
+      "company_id": "carepatron",
+      "stage_event_id": "carepatron_entry",
+      "as_of": "2022-07-26",
+      "features": [
+        {
+          "name": "stage",
+          "value": "pre_seed",
+          "source_id": "carepatron_pre",
+          "witness_id": "w_carepatron_pre",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "A shared practice workspace for healthcare teams.",
+          "source_id": "carepatron_pre",
+          "witness_id": "w_carepatron_pre",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "runn_entry_snapshot",
+      "company_id": "runn",
+      "stage_event_id": "runn_entry",
+      "as_of": "2021-12-14",
+      "features": [
+        {
+          "name": "stage",
+          "value": "seed",
+          "source_id": "runn_seed",
+          "witness_id": "w_runn_seed",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Project resource and capacity planning.",
+          "source_id": "runn_seed",
+          "witness_id": "w_runn_seed",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "excellent_entry_snapshot",
+      "company_id": "excellent",
+      "stage_event_id": "excellent_entry",
+      "as_of": "2022-09-08",
+      "features": [
+        {
+          "name": "stage",
+          "value": "pre_seed",
+          "source_id": "excellent_pre",
+          "witness_id": "w_excellent_pre",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Employee experience design tools and education.",
+          "source_id": "excellent_pre",
+          "witness_id": "w_excellent_pre",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "snapshot_id": "immersve_entry_snapshot",
+      "company_id": "immersve",
+      "stage_event_id": "immersve_entry",
+      "as_of": "2022-06-20",
+      "features": [
+        {
+          "name": "stage",
+          "value": "seed",
+          "source_id": "immersve_seed",
+          "witness_id": "w_immersve_seed",
+          "passage": "Dateline and opening paragraphs"
+        },
+        {
+          "name": "description",
+          "value": "Payments infrastructure connecting digital assets with merchant payments.",
+          "source_id": "immersve_seed",
+          "witness_id": "w_immersve_seed",
+          "passage": "Dateline and opening paragraphs"
+        }
+      ]
+    }
+  ]
+}

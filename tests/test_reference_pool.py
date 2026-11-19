@@ -8,7 +8,7 @@ from pydantic import ValidationError
 
 from backend.ingestion import load_seed
 from backend.main import create_app
-from backend.reference_pool import EventDate, PoolPacket, coverage, import_pool, outcome_status
+from backend.reference_pool import FIXTURE, EventDate, PoolPacket, coverage, import_pool, outcome_status
 
 
 def sample():
@@ -59,6 +59,22 @@ def test_revised_publisher_version_cannot_witness_earlier_cutoff():
         PoolPacket.model_validate(raw)
 
 
+def test_partial_stage_anchor_cannot_be_backdated_using_other_evidence():
+    raw = sample()
+    raw['companies'][0]['follow_up'] = None
+    event = raw['events'][0]
+    event.update(date=dict(value='2020-02',precision='month'),date_basis='reported_occurrence',
+                 source_id='later_source')
+    raw['sources'].append(dict(raw['sources'][0],source_id='later_source',published_on='2020-06-10',
+                               url='https://example.org/later'))
+    raw['snapshots'][0]['as_of'] = '2020-02-01'
+    with pytest.raises(ValidationError, match='latest possible event date'):
+        PoolPacket.model_validate(raw)
+    raw['snapshots'][0]['as_of'] = '2020-02-29'
+    with pytest.raises(ValidationError, match='witnessed stage source'):
+        PoolPacket.model_validate(raw)
+
+
 def test_closure_and_partial_outcomes_are_evidence_required():
     raw = sample()
     raw['companies'][0]['follow_up'] = None
@@ -81,6 +97,36 @@ def test_closure_and_partial_outcomes_are_evidence_required():
     raw['events'][-1]['round_label'] = 'Pre-Series A'
     with pytest.raises(ValidationError, match='letter-stage'):
         PoolPacket.model_validate(raw)
+
+
+def test_equivalent_financing_and_proposed_entity_do_not_count_as_outcome():
+    raw = sample()
+    earlier_round = raw['events'][0]
+    raw['sources'].append(dict(raw['sources'][0],source_id='later_source',published_on='2021-01-01'))
+    raw['events'].append(dict(earlier_round,event_id='later_round',source_id='later_source',
+        kind='series_a_equivalent',round_label=None,amount_nzd=5_000_000,
+        date=dict(value='2021-01-01',precision='day')))
+    raw['companies'][0]['follow_up']['activity_event_id'] = 'later_round'
+    packet = PoolPacket.model_validate(raw)
+    assert outcome_status(packet.companies[0],packet.events)[0] == 'lost_to_follow_up'
+    raw['companies'][0]['follow_up'] = None
+    raw['events'][-1].update(kind='series_a',round_label='Series A',entity_link='proposed')
+    packet = PoolPacket.model_validate(raw)
+    assert outcome_status(packet.companies[0],packet.events)[0] == 'unknown'
+    raw['events'][-1]['entity_link'] = 'supported'
+    packet = PoolPacket.model_validate(raw)
+    assert outcome_status(packet.companies[0],packet.events)[0] == 'reached_outcome'
+
+
+def test_public_fixture_has_quiet_cases_and_preserves_open_entries():
+    packet = PoolPacket.model_validate_json(FIXTURE.read_bytes())
+    assert len(packet.companies) == 30
+    assert {'volpara','formus','toku','alimetry','wellumio','halter','sharesies','hnry','tracksuit'} <= {
+        company.company_id for company in packet.companies}
+    counts = coverage(packet)
+    assert sum(counts['statuses'][key] for key in (
+        'closed_before_outcome','observed_no_outcome','lost_to_follow_up')) >= 8
+    assert counts['companies_without_entry_snapshot'] >= counts['companies_without_entry'] > 0
 
 
 def test_fixture_dry_run_idempotent_and_no_rates(tmp_path):

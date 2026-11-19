@@ -141,6 +141,7 @@ class PoolEvent(StrictModel):
     claim: Text
     round_label: str | None = None
     institutional_investor: str | None = None
+    entity_link: Literal['supported', 'proposed'] = 'supported'
     instrument: Literal['priced_equity', 'equity_unspecified', 'other', 'unknown'] = 'unknown'
     closure_evidence: Literal['register_removal','liquidation_notice','founder_announcement'] | None = None
     amount_nzd: Annotated[StrictInt, Field(gt=0)] | None = None
@@ -236,6 +237,7 @@ class PoolPacket(StrictModel):
             if company.follow_up:
                 activity = events.get(company.follow_up.activity_event_id)
                 if (not entry or not activity or activity.company_id != company.company_id
+                    or activity.entity_link != 'supported'
                     or activity.kind in CLOSURES or not activity.date.bounds()[0]
                     or activity.date.bounds()[0] < entry.date.bounds()[1]
                     or not sources[activity.source_id].retrieved_on <= day(company.follow_up.searched_on) <= self.as_of):
@@ -263,7 +265,7 @@ def validate_event(event, source):
     if event.kind in OUTCOMES | {'pre_seed','seed'} and not event.round_label:
         raise ValueError('Classified rounds need the publisher’s exact label')
     letter = {'series_a':'a','series_b':'b','series_c_plus':'[c-z]'}.get(event.kind)
-    if letter and not re.fullmatch(rf'series\s+{letter}[0-9]*(?:\s+(?:equity|financing|funding|capital raise|round))*',
+    if letter and not re.fullmatch(rf'series\s+{letter}[0-9]*(?:\s+(?:preferred|investment|equity|financing|funding|fundraising|capital raise|round))*',
                                   event.round_label.strip(),re.I):
         raise ValueError('Series classification requires an explicit letter-stage label')
     if event.kind == 'series_a_equivalent' and (event.round_label is not None or
@@ -273,25 +275,25 @@ def validate_event(event, source):
 
 def valid_entry(entry, company, events):
     if (not entry or entry.company_id != company.company_id or entry.kind not in ('pre_seed','seed')
-        or not entry.institutional_investor or entry.instrument not in ('priced_equity','equity_unspecified')):
+        or not entry.institutional_investor or entry.instrument == 'other' or entry.entity_link != 'supported'):
         return False
     pattern = r'pre[- ]?seed' if entry.kind == 'pre_seed' else 'seed'
-    if not re.fullmatch(pattern+r'(?:\s+(?:equity|financing|funding|round|investment))*',entry.round_label.strip(),re.I):
+    if not re.fullmatch(pattern+r'(?:\s+(?:equity|financing|funding|round|investment|capital))*',entry.round_label.strip(),re.I):
         return False
     lower, upper = entry.date.bounds()
     if not lower or not ENTRY_START <= lower <= upper <= ENTRY_END:
         return False
     return not any(other.event_id != entry.event_id and other.kind in ('pre_seed','seed')
-                   and other.institutional_investor and other.instrument in ('priced_equity','equity_unspecified')
+                   and other.institutional_investor and other.instrument != 'other'
                    and (other.date.bounds()[0] is None or other.date.bounds()[0] <= upper)
                    for other in events)
 
 
 def validate_snapshot(snapshot, events, witnesses, sources):
     stage = events.get(snapshot.stage_event_id)
-    if (not stage or stage.company_id != snapshot.company_id
-        or stage.date.bounds()[0] != day(snapshot.as_of)):
-        raise ValueError('Snapshot needs a same-company stage anchor with a conservative date')
+    if (not stage or stage.company_id != snapshot.company_id or stage.entity_link != 'supported'
+        or stage.date.bounds()[1] != day(snapshot.as_of)):
+        raise ValueError('Snapshot needs a same-company stage anchor at the latest possible event date')
     unique_index(snapshot.features,'name')
     for feature in snapshot.features:
         witness = witnesses.get(feature.witness_id)
@@ -300,6 +302,8 @@ def validate_snapshot(snapshot, events, witnesses, sources):
         published = sources[feature.source_id].published_on
         if published and published > snapshot.as_of:
             raise ValueError('Snapshot feature source was published after its cutoff')
+    if not any(w.source_id == stage.source_id and w.available_on <= snapshot.as_of for w in witnesses.values()):
+        raise ValueError('Snapshot needs a witnessed stage source on or before its cutoff')
 
 
 def plus_months(value, months):
@@ -317,6 +321,12 @@ def outcome_status(company, events):
     early_horizon, late_horizon = plus_months(lower,36), plus_months(upper,36)
     candidates = []
     for event in events:
+        if event.entity_link == 'proposed':
+            if event.kind in OUTCOMES | CLOSURES.keys() | {'acquired','ipo'}:
+                first, last = event.date.bounds()
+                if not first or (first <= late_horizon and last >= lower):
+                    return 'unknown', None, None
+            continue
         if event.kind in OUTCOMES and event.instrument in ('priced_equity','equity_unspecified','unknown'):
             status = 'reached_outcome' if event.instrument == 'priced_equity' else 'unknown'
         elif event.kind in CLOSURES:

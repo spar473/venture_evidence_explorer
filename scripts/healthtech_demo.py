@@ -20,6 +20,7 @@ from backend.database import connect
 from backend.ingestion import load_seed
 from backend.research_adapter import EXAMPLE, dry_run_research, import_research
 from backend.healthtech import compare_healthtech, healthtech_coverage, SELECTION_PATH
+from backend.reference_pool import FIXTURE, import_pool
 
 AS_OF = '2026-11-19'
 PACKETS = (EXAMPLE, ROOT/'research/healthtech-pilot/packet.json', ROOT/'research/healthtech-pilot/extension.json',
@@ -56,6 +57,14 @@ def prepare_demo(output):
             (output/(packet.stem+'-'+name+'.json')).write_text(json.dumps(report,indent=2)+'\n')
         summaries.append({'packet':str(packet.relative_to(ROOT)), 'sha256':applied['packet_sha256'],
             'counts':applied['counts'], 'dry_run_writes':0, 'repeat_import':'full-row equality'})
+    before = db.read_bytes()
+    fixture_dry_run = import_pool(FIXTURE, db)
+    if fixture_dry_run['writes'] or db.read_bytes() != before:
+        raise RuntimeError('Reference fixture dry run changed the demo database')
+    fixture = import_pool(FIXTURE, db, apply=True)
+    after = db.read_bytes()
+    if import_pool(FIXTURE, db, apply=True)['writes'] or db.read_bytes() != after:
+        raise RuntimeError('Repeated reference fixture import changed the database')
     with closing(connect(db)) as conn:
         if conn.execute('PRAGMA integrity_check').fetchone()[0] != 'ok' or conn.execute('PRAGMA foreign_key_check').fetchall():
             raise RuntimeError('Demo database failed integrity checks')
@@ -64,7 +73,7 @@ def prepare_demo(output):
         if len(mri['peers']) != 3:
             raise RuntimeError('Expected three MRI pathway precedents')
     result = {'database':str(db.resolve()), 'research_as_of':AS_OF, 'imports':summaries,
-        'coverage':coverage.model_dump(),
+        'coverage':coverage.model_dump(), 'reference_fixture':fixture,
         'ui_path':'Research dossiers → Automated Breast MRI Reporting → Provider evaluation comparison',
         'limits':'Source-checked pathway evidence; same-stage and historical comparisons abstain. Human judgments remain pending.'}
     (output/'demo-summary.json').write_text(json.dumps(result,indent=2)+'\n')

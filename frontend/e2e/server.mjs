@@ -25,6 +25,8 @@ for (const packet of ["packet", "extension", "clinical-studies", "provider-evide
   const result = spawnSync(python, ["scripts/import_research.py", "--input", `research/healthtech-pilot/${packet}.json`, "--db", db, "--as-of", "2026-11-19", "--apply", "--report", join(temp, `healthtech-${packet}.json`)], {cwd: root, stdio: "inherit"});
   if (result.status !== 0 || result.error) {rmSync(temp,{recursive:true,force:true}); process.exit(result.status || 1);}
 }
+const fixture = spawnSync(python, ["scripts/import_reference_pool.py", "--db", db, "--apply"], {cwd: root, stdio: "inherit"});
+if (fixture.status !== 0 || fixture.error) {rmSync(temp,{recursive:true,force:true}); process.exit(fixture.status || 1);}
 const discovery = spawnSync(python, ["scripts/import_discovery.py", "--db", db, "--as-of", "2026-11-18", "--apply"], {cwd: root, stdio: "inherit"});
 if (discovery.status !== 0 || discovery.error) {rmSync(temp,{recursive:true,force:true}); process.exit(discovery.status || 1);}
 const child = spawn(python, ["scripts/serve.py", "--port", process.env.VEE_TEST_PORT || "8138"], {cwd: root, env: {...process.env, VEE_DB: db}, stdio: "inherit"});
