@@ -660,7 +660,7 @@
         "value": "2019-08-20",
         "precision": "day"
       },
-      "scope": "WNT reports its new Auckland University venture investment."
+      "scope": "WNT reports new NZ university venture investments, including Opum and the Marama Labs spinout from Victoria University of Wellington."
     },
     "vortex_tataki": {
       "publisher": "Tātaki Auckland Unlimited",
@@ -891,6 +891,176 @@
         "precision": "unknown"
       },
       "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "rocos_registry": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6471752",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Confirms NZ company and the former legal name ROCOS GLOBAL LIMITED, used from 2017-09-28 to 2021-08-17."
+    },
+    "rocos_tin_2020": {
+      "publisher": "Technology Investment Network",
+      "url": "https://d1r5hvvxe7dolz.cloudfront.net/media/documents/TIN-New-Zealand-Agritech-Insights-Report-2020-17.7.20.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2020",
+        "precision": "year"
+      },
+      "scope": "Agritech directory identifies Rocos as an Auckland company founded in 2017."
+    },
+    "safestack_registry": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5432761",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Confirms SafeStack Limited is the NZ company behind the SafeStack brand."
+    },
+    "safestack_nzte": {
+      "publisher": "New Zealand Trade and Enterprise",
+      "url": "https://www.nzte.govt.nz/blog/one-year-on-from-investher-2021-celebrating-our-entrepreneurial-women",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022",
+        "precision": "year"
+      },
+      "scope": "Founder identifies the NZ$2.3m Jelix-led financing as the first raise and calls it seed; the issuer release calls the same raise pre-seed."
+    },
+    "marama_registry": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7246896",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Marama Labs Limited was incorporated in Wellington in February 2019."
+    },
+    "marama_kiwinet_2019": {
+      "publisher": "KiwiNet",
+      "url": "https://kiwinet.org.nz/files/AnnualReports/KiwiNet-Annual-Report-Highlights-2019.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2019",
+        "precision": "year"
+      },
+      "scope": "Commercialisation case study separates 2017 prototype work at the university from the formation of the company and private investment."
+    },
+    "hotlime_registry": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5313681",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Register identifies NZ entity Hot Lime Labs Limited. Aplenty is its current trading name."
+    },
+    "hotlime_ea": {
+      "publisher": "Enterprise Angels",
+      "url": "https://www.enterpriseangels.co.nz/project/hot-lime-labs/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Investor records the Aplenty rebrand and identifies Hot Lime Labs and Aplenty as one company."
+    },
+    "hotlime_kiwinet": {
+      "publisher": "KiwiNet",
+      "url": "https://kiwinet.org.nz/News/Hot_Lime_boosting_greenhouse_yields_secures_investment",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2017-11-30",
+        "precision": "day"
+      },
+      "scope": "Dated report identifies the first early-stage investment, the lead Powerhouse and co-investment by Flying Kiwi Angels. Separates prior research support."
+    },
+    "hotlime_pvl": {
+      "publisher": "Powerhouse Ventures via ASX",
+      "url": "https://announcements.asx.com.au/asxpdf/20191028/pdf/449z10wl044y8j.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2019-10-28",
+        "precision": "day"
+      },
+      "scope": "Investor’s Hot Lime Labs section calls its own earliest investment seed funding and separates a non-dilutive loan."
+    },
+    "liquium_univentures_launch": {
+      "publisher": "Wellington UniVentures",
+      "url": "https://wellingtonuniventures.nz/news/the-life-of-liquium/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-06-02",
+        "precision": "day"
+      },
+      "scope": "Spinout announcement confirms $1.5m completed Seed venture investment round led by Matū and Booster."
+    },
+    "liquium_univentures_close": {
+      "publisher": "Wellington UniVentures",
+      "url": "https://www.wellingtonuniventures.nz/portfolio/ambient-ammonia-production/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "University commercialisation portfolio gives May 2022 as the month the $1.5m seed closed."
+    },
+    "liquium_matu_2022": {
+      "publisher": "Matū",
+      "url": "https://matu.co.nz/2022/07/investment-15-liquium/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-07-13",
+        "precision": "day"
+      },
+      "scope": "Dated investor notice confirms the $1.5m syndicate and domestic university spinout."
+    },
+    "liquium_nzx_2022": {
+      "publisher": "Booster Investment Management",
+      "url": "https://www.nzx.com/announcements/395266",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022",
+        "precision": "year"
+      },
+      "scope": "Booster identifies Liquium as a newly formed 2022 NZ company and confirms participation through NZ Innovation Booster LP."
+    },
+    "liquium_ycf_h1": {
+      "publisher": "PwC NZ / Young Company Finance",
+      "url": "https://www.pwc.co.nz/assets/2022-assets/startup-spring-2022/young0company-finance-data-h12022.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022",
+        "precision": "year"
+      },
+      "scope": "First-half 2022 named deal appendix lists the same capital amount, Matū and Booster in a June round-1 NC row. The university reports the closing month as May."
+    },
+    "croplogic_pfr_2012": {
+      "publisher": "Plant & Food Research",
+      "url": "https://assets.ctfassets.net/y9no91j9bwnp/10HMY6NqV9Xcw6Fm2Ei3j5/ad9345b30037a489ae03fa16ae2d0dbf/plant-and-food-research-annual-report-2012.pdf",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2012",
+        "precision": "year"
+      },
+      "scope": "Audited investments table shows CropLogic as a 2011 investment before the archived 2012 deal rows."
+    },
+    "liquium_climatevc_2022": {
+      "publisher": "Climate Venture Capital Fund",
+      "url": "https://climatevcfund.com/climate-vc-fund-invests-in-liquiums-green-ammonia-for-fuel-and-fertiliser/",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": "2022-07-13",
+        "precision": "day"
+      },
+      "scope": "Dated co-investor announcement names the closed $1.5m seed round and the original NZ syndicate."
     }
   },
   "reports": [
@@ -1486,7 +1656,7 @@
       "name": "Marama Labs",
       "source_id": "ycf_2020",
       "locator": "PDF page 2, Feb-19 row for Marama Labs",
-      "sector": "Services",
+      "sector": "Scientific instrumentation",
       "date": {
         "value": "2019-02",
         "precision": "month"
@@ -1494,9 +1664,14 @@
       "date_basis": "reported_month",
       "label": "Seed",
       "institutional_investor": "WNT Ventures",
-      "nz_basis": "reported_location",
-      "first_basis": "unresolved",
-      "passage": "Table records Seed, round T1, and location Wellington. Named participants include WNT Ventures."
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "The named YCF table lists WNT Ventures on the Feb-19 Seed tranche. WNT confirms its investment in the Victoria University of Wellington spinout and the NZ register shows formation that month. KiwiNet describes the earlier prototype as university work.",
+      "corroborating_source_ids": [
+        "opum_wnt",
+        "marama_registry",
+        "marama_kiwinet_2019"
+      ]
     },
     {
       "company_id": "discovery_maramalabs",
@@ -5319,12 +5494,17 @@
       "date_basis": "reported_month",
       "label": "Seed",
       "institutional_investor": "Sparkbox",
-      "nz_basis": "reported_location",
-      "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Sparkbox."
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "Table records Seed, round 1, and location Auckland. Named participants include Sparkbox. The historic follow-up table spells the same November transaction Rocos Global Limited. The register dates the NZ company to September 2017 and the TIN profile dates NZ founding to 2017.",
+      "corroborating_source_ids": [
+        "ycf_2019",
+        "rocos_registry",
+        "rocos_tin_2020"
+      ]
     },
     {
-      "company_id": "public_rocosgloballimited",
+      "company_id": "public_rocos",
       "name": "Rocos Global Limited",
       "source_id": "ycf_2019",
       "locator": "PDF page 8, Nov-17 row for Rocos Global Limited",
@@ -5338,7 +5518,11 @@
       "institutional_investor": null,
       "nz_basis": "reported_location",
       "first_basis": "publisher_round_one",
-      "passage": "Table records Seed, round 1, and location Auckland."
+      "passage": "Table records Seed, round 1, and location Auckland.",
+      "corroborating_source_ids": [
+        "rocos_registry",
+        "rocos_tin_2020"
+      ]
     },
     {
       "company_id": "public_rollerblasterlimited",
@@ -5406,7 +5590,11 @@
       "institutional_investor": "Jelix Ventures",
       "nz_basis": "founded_or_headquartered",
       "first_basis": "unresolved",
-      "passage": "The team describes the pre-seed and investor syndicate. The displayed date omits the year. NZTE independently places the first round after InvestHER 2021."
+      "passage": "Issuer confirms its $2.3m pre-seed round and lead Jelix. NZTE quotes the founder identifying this raise as the first. October is the announcement month; it follows the round month in the YCF table.",
+      "corroborating_source_ids": [
+        "safestack_nzte",
+        "safestack_registry"
+      ]
     },
     {
       "company_id": "public_safestack",
@@ -5426,7 +5614,7 @@
       "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
     },
     {
-      "company_id": "public_safestacklimited",
+      "company_id": "public_safestack",
       "name": "SafeStack Limited",
       "source_id": "ycf_2022",
       "locator": "PDF page 2, Sep-21 row for SafeStack Limited",
@@ -5440,7 +5628,11 @@
       "institutional_investor": null,
       "nz_basis": "reported_location",
       "first_basis": "publisher_round_one",
-      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+      "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open.",
+      "corroborating_source_ids": [
+        "safestack_registry",
+        "safestack_nzte"
+      ]
     },
     {
       "company_id": "public_sahha",
@@ -6184,6 +6376,221 @@
       "nz_basis": "reported_location",
       "first_basis": "publisher_round_one",
       "passage": "Table records round 1, type NC and location Auckland. The row leaves the financing label and investor open."
+    },
+    {
+      "company_id": "public_safestack",
+      "name": "SafeStack",
+      "source_id": "entry_safestack_safestack",
+      "locator": "Cross-check with YCF September 2021 SafeStack Limited round 1 row",
+      "sector": "Security education",
+      "date": {
+        "value": "2021-09",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "pre-seed round",
+      "institutional_investor": "Jelix Ventures",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "YCF records $2m–$2.5m of new company capital in the first round in September. The issuer’s October announcement supplies the stage, amount and investor, and NZTE confirms this as the first raise.",
+      "corroborating_source_ids": [
+        "ycf_2022",
+        "safestack_nzte",
+        "safestack_registry"
+      ]
+    },
+    {
+      "company_id": "discovery_aplenty",
+      "name": "Aplenty (Hot Lime Labs)",
+      "source_id": "hotlime_pvl",
+      "locator": "Annual Report 2019, Hot Lime Labs, Powerhouse Impact",
+      "sector": "Clean technology",
+      "date": {
+        "value": "2017-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "seed funding",
+      "institutional_investor": "Powerhouse Ventures and Flying Kiwi Angels",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "explicit_first",
+      "passage": "Powerhouse calls its own first investment seed funding. KiwiNet dated the completed first round in November 2017. YCF dates the same syndicate that month and uses the stage Proof of concept. Aplenty is the current trading name.",
+      "corroborating_source_ids": [
+        "hotlime_kiwinet",
+        "ycf_2017",
+        "hotlime_registry",
+        "hotlime_ea"
+      ]
+    },
+    {
+      "company_id": "discovery_aplenty",
+      "name": "Aplenty (Hot Lime Labs)",
+      "source_id": "ycf_2017",
+      "locator": "2017 deals appendix, November Hot Lime Labs row",
+      "sector": "Clean technology",
+      "date": {
+        "value": "2017-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Proof of concept",
+      "institutional_investor": "Powerhouse Ventures and Flying Kiwi Angels",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "YCF reports round 1 and stage Proof of concept for the same syndicate. Powerhouse describes its cash investment as seed funding. The two source labels are retained.",
+      "corroborating_source_ids": [
+        "hotlime_pvl",
+        "hotlime_kiwinet"
+      ]
+    },
+    {
+      "company_id": "discovery_liquium",
+      "name": "Liquium",
+      "source_id": "liquium_univentures_launch",
+      "locator": "Dateline and paragraph on the syndicate and close",
+      "sector": "Clean technology",
+      "date": {
+        "value": "2022-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed venture investment round",
+      "institutional_investor": "Matū Karihi Fund and NZ Innovation Booster",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "University confirms $1.5m closed and later specifies May. The June YCF first-round record describes the same amount and investors. Earlier university proof-of-concept funding and a fellowship were separate.",
+      "corroborating_source_ids": [
+        "liquium_univentures_close",
+        "liquium_matu_2022",
+        "liquium_nzx_2022",
+        "liquium_ycf_h1"
+      ]
+    },
+    {
+      "company_id": "public_croplogic",
+      "name": "CropLogic",
+      "source_id": "ycf_2012_issue13",
+      "locator": "PDF page 8, March 2012 CropLogic row",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2012-03",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Powerhouse Ventures and SCIF",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "unresolved",
+      "passage": "NZVIF lists Powerhouse and SCIF backing the March Seed. The Crown research institute reports a 2011 investment; its stage and relationship to the syndicate remain unverified.",
+      "corroborating_source_ids": [
+        "ycf_2019",
+        "ycf_2013_issue14",
+        "croplogic_pfr_2012"
+      ]
+    },
+    {
+      "company_id": "public_croplogic",
+      "name": "CropLogic",
+      "source_id": "ycf_2013_issue14",
+      "locator": "Second-half deal appendix, 2012-08 CropLogic row",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2012-08",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Powerhouse Ventures and SCIF",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Contemporary NZVIF table reports the same syndicate for a later Seed tranche.",
+      "corroborating_source_ids": [
+        "ycf_2019"
+      ]
+    },
+    {
+      "company_id": "public_croplogic",
+      "name": "CropLogic",
+      "source_id": "ycf_2013_issue14",
+      "locator": "Second-half deal appendix, 2012-11 CropLogic row",
+      "sector": "Software & Services",
+      "date": {
+        "value": "2012-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Powerhouse Ventures and SCIF",
+      "nz_basis": "reported_location",
+      "first_basis": "unresolved",
+      "passage": "Contemporary NZVIF table reports the same syndicate for a later Seed tranche.",
+      "corroborating_source_ids": [
+        "ycf_2019"
+      ]
+    },
+    {
+      "company_id": "public_googlyinclimited",
+      "name": "Googly Inc Limited",
+      "source_id": "ycf_2012_issue13",
+      "locator": "PDF page 8, February 2012 Googly row",
+      "sector": "Consumer Durables & Apparel",
+      "date": {
+        "value": "2012-02",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Seed",
+      "institutional_investor": "Sparkbox and SCIF",
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "The contemporaneous table calls this Seed. The retrospective table calls it Proof of Concept and lists a November 2011 round. First eligible entry remains open.",
+      "corroborating_source_ids": [
+        "ycf_2019"
+      ]
+    },
+    {
+      "company_id": "public_googlyinclimited",
+      "name": "Googly Inc Limited",
+      "source_id": "ycf_2019",
+      "locator": "Historical deals appendix, November 2011 Googly row",
+      "sector": "Consumer Durables & Apparel",
+      "date": {
+        "value": "2011-11",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "Proof of Concept",
+      "institutional_investor": null,
+      "nz_basis": "reported_location",
+      "first_basis": "publisher_round_one",
+      "passage": "The table reports a round 1 Proof of Concept before the study window. Later 2012 activity is shown as tranches.",
+      "corroborating_source_ids": [
+        "ycf_2012_issue13"
+      ]
+    },
+    {
+      "company_id": "discovery_liquium",
+      "name": "Liquium",
+      "source_id": "liquium_climatevc_2022",
+      "locator": "Dateline and closed seed round announcement",
+      "sector": "Clean technology",
+      "date": {
+        "value": "2022-05",
+        "precision": "month"
+      },
+      "date_basis": "reported_month",
+      "label": "seed round",
+      "institutional_investor": "Matū Karihi Fund and NZ Innovation Booster",
+      "nz_basis": "founded_or_headquartered",
+      "first_basis": "earliest_supported",
+      "passage": "University confirms $1.5m closed and later specifies May. The June YCF first-round record describes the same amount and investors. Earlier university proof-of-concept funding and a fellowship were separate.",
+      "corroborating_source_ids": [
+        "liquium_univentures_launch",
+        "liquium_univentures_close",
+        "liquium_matu_2022",
+        "liquium_nzx_2022",
+        "liquium_ycf_h1"
+      ]
     }
   ],
   "benchmarks": [

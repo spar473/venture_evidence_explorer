@@ -93,3 +93,25 @@ def test_entry_does_not_use_outcomes_and_registry_requires_positive_source(tmp_p
     evidence['sources']['supie_register']['url'] = 'https://example.org/7775376'
     with pytest.raises(ValueError, match='official company-number record'):
         PublicEntryEvidence.model_validate(evidence)
+
+
+def test_expansion_preserves_first_round_dates_aliases_and_open_conflicts():
+    report = run_audit()
+    decisions = {row['company_id']: row for row in report['decisions']}
+    expected = {
+        'discovery_aplenty': '2017-11',
+        'public_rocos': '2017-11',
+        'discovery_maramalabs': '2019-02',
+        'public_safestack': '2021-09',
+        'discovery_liquium': '2022-05',
+    }
+    for company_id, month in expected.items():
+        decision = decisions[company_id]
+        assert decision['status'] == 'included'
+        assert decision['entry']['date'] == {'value': month, 'precision': 'month'}
+    assert len(decisions['public_rocos']['source_reports']) == 2
+    assert 'public_rocosgloballimited' not in decisions
+    assert 'public_safestacklimited' not in decisions
+    assert all(decisions[key]['status'] == 'unresolved' for key in (
+        'public_nectar', 'public_googlyinclimited', 'public_croplogic', 'public_veritideltd',
+    ))
