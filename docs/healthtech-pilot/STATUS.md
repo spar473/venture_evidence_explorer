@@ -203,3 +203,12 @@ Phase 0 is published. The archive tag and new `origin/main` are visible in the c
 | Phase | Checks run in this environment | Deferred |
 | --- | --- | --- |
 | 1 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+| 2 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+
+### Similarity and witness decisions
+
+| Date | Decision | Reason | Alternative considered |
+| --- | --- | --- | --- |
+| 21 November 2026 | Use B0 token normalization and symmetric IDF overlap, with similarity 0.35 and coverage 0.15 as minimums. | No bundled offline embedder was available. Fixed thresholds require usable coverage across the defined feature dimensions. | Fetch a sentence encoder or use a score based on a single shared feature. |
+| 21 November 2026 | Use the earliest bound for snapshot eligibility and the lower median outcome rank for even peer sets. | The witness date must hold for every possible anchor day. The lower median is reproducible and conservative. | Use the latest bound or the upper median. |
+| 21 November 2026 | Keep alternate-anchor outcome ranks withheld under the current audit. | The frozen 36-month classifications were audited from seed entry. | Reuse the seed-entry classification at a different stage. |

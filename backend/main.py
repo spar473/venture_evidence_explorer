@@ -143,6 +143,9 @@ def create_app(db_path=None):
     from .reference_pool_api import install as install_reference_pool
     install_reference_pool(app,path)
 
+    from .precedents import install as install_precedents
+    install_precedents(app,path)
+
     dist = ROOT / 'frontend/dist'
     if (dist / 'assets').is_dir():
         app.mount('/assets', StaticFiles(directory=dist / 'assets'), name='assets')
