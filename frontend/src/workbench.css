@@ -119,3 +119,26 @@
 .wb-drawer dd { margin: 0 0 10px; overflow-wrap: anywhere; }
 .wb-drawer a { display: inline-flex; align-items: center; }
 @media (max-width: 1050px) { .wb-overview-grid { grid-template-columns: minmax(0, 1fr); } }
+.wb-filters {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: 12px; margin-top: 16px;
+}
+.wb-status-bar { height: 14px; display: flex; overflow: hidden; border-radius: 5px; background: #f0f2f5; gap: 2px; }
+.wb-status-bar span { flex-basis: 0; }
+.wb-bar-reached { background: var(--wb-reached); }
+.wb-bar-observed { background: repeating-linear-gradient(0deg,#e2f5ef 0 3px,var(--wb-observed) 3px 5px); }
+.wb-bar-closed { background: var(--wb-closed); }
+.wb-bar-exit { background: #684696; }
+.wb-bar-lost { background: repeating-linear-gradient(90deg,#eef0f4 0 4px,var(--wb-lost) 4px 7px); }
+.wb-bar-unknown { background: repeating-linear-gradient(45deg,#fafafa 0 3px,#8a94a6 3px 5px); }
+.wb-status-counts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 8px;
+  list-style: none; padding: 0;
+}
+.wb-status-counts li { border: 1px solid var(--wb-border); padding: 7px 10px; border-radius: 8px; }
+.wb-status-counts li strong { display: block; padding-left: 18px; }
+.wb-pagination { margin-top: 12px; }
+.wb-story-claims { list-style: none; padding: 0; }
+.wb-story-claims li { margin-bottom: 12px; }
+.wb-story-claims button { padding-left: 0; }
+.wb-story-claims p { margin: 0; }

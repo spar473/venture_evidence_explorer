@@ -222,6 +222,35 @@
         "title": "Award",
         "type": "object"
       },
+      "BenchmarkDeal": {
+        "additionalProperties": false,
+        "properties": {
+          "deals": {
+            "title": "Deals",
+            "type": "integer"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "deals",
+          "description",
+          "url"
+        ],
+        "title": "BenchmarkDeal",
+        "type": "object"
+      },
       "ChecklistResponse": {
         "additionalProperties": false,
         "properties": {
@@ -254,6 +283,23 @@
           "similarity_version"
         ],
         "title": "ChecklistResponse",
+        "type": "object"
+      },
+      "CohortCompanies": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCompany"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "CohortCompanies",
         "type": "object"
       },
       "Comparison": {
@@ -2163,6 +2209,269 @@
           "rationale"
         ],
         "title": "ObservationRelation",
+        "type": "object"
+      },
+      "OutcomeCompany": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "sector": {
+            "title": "Sector",
+            "type": "string"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "sector"
+        ],
+        "title": "OutcomeCompany",
+        "type": "object"
+      },
+      "OutcomeCounts": {
+        "additionalProperties": false,
+        "properties": {
+          "denominator": {
+            "title": "Denominator",
+            "type": "integer"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "statuses": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Statuses",
+            "type": "object"
+          }
+        },
+        "required": [
+          "label",
+          "denominator",
+          "statuses"
+        ],
+        "title": "OutcomeCounts",
+        "type": "object"
+      },
+      "OutcomeLibrary": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "benchmarks": {
+            "items": {
+              "$ref": "#/components/schemas/BenchmarkDeal"
+            },
+            "title": "Benchmarks",
+            "type": "array"
+          },
+          "candidate_records": {
+            "title": "Candidate Records",
+            "type": "integer"
+          },
+          "cohort": {
+            "const": "A",
+            "default": "A",
+            "title": "Cohort",
+            "type": "string"
+          },
+          "cohort_entries": {
+            "title": "Cohort Entries",
+            "type": "integer"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/OutcomeCounts"
+          },
+          "endpoint": {
+            "enum": [
+              "primary",
+              "secondary"
+            ],
+            "title": "Endpoint",
+            "type": "string"
+          },
+          "known_at_36_months": {
+            "title": "Known At 36 Months",
+            "type": "integer"
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "integer"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeRow"
+            },
+            "title": "Rows",
+            "type": "array"
+          },
+          "sectors": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Sectors",
+            "type": "array"
+          },
+          "sectors_comparison": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCounts"
+            },
+            "title": "Sectors Comparison",
+            "type": "array"
+          },
+          "stories": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeRow"
+            },
+            "title": "Stories",
+            "type": "array"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "verified_closures": {
+            "title": "Verified Closures",
+            "type": "integer"
+          },
+          "vintage_counts": {
+            "items": {
+              "$ref": "#/components/schemas/VintageCount"
+            },
+            "title": "Vintage Counts",
+            "type": "array"
+          },
+          "vintages": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Vintages",
+            "type": "array"
+          }
+        },
+        "required": [
+          "as_of",
+          "endpoint",
+          "candidate_records",
+          "cohort_entries",
+          "total",
+          "limit",
+          "offset",
+          "sectors",
+          "vintages",
+          "counts",
+          "verified_closures",
+          "known_at_36_months",
+          "rows",
+          "stories",
+          "vintage_counts",
+          "benchmarks",
+          "sectors_comparison"
+        ],
+        "title": "OutcomeLibrary",
+        "type": "object"
+      },
+      "OutcomeRow": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "notes": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Notes",
+            "type": "object"
+          },
+          "observed_at_36_months": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At 36 Months"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/WorkbenchPoint"
+            },
+            "title": "Points",
+            "type": "array"
+          },
+          "primary_status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Primary Status",
+            "type": "string"
+          },
+          "sector": {
+            "title": "Sector",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "verified_closure": {
+            "title": "Verified Closure",
+            "type": "boolean"
+          },
+          "vintage": {
+            "title": "Vintage",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "sector",
+          "vintage",
+          "status",
+          "primary_status",
+          "observed_at_36_months",
+          "verified_closure",
+          "points",
+          "notes"
+        ],
+        "title": "OutcomeRow",
         "type": "object"
       },
       "PartialDate": {
@@ -5919,6 +6228,25 @@
         "title": "VentureSummary",
         "type": "object"
       },
+      "VintageCount": {
+        "additionalProperties": false,
+        "properties": {
+          "entries": {
+            "title": "Entries",
+            "type": "integer"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "entries"
+        ],
+        "title": "VintageCount",
+        "type": "object"
+      },
       "Witness": {
         "additionalProperties": false,
         "properties": {
@@ -7863,6 +8191,24 @@
         "summary": "Venture"
       }
     },
+    "/api/workbench/cohort-companies": {
+      "get": {
+        "operationId": "cohort_companies_api_workbench_cohort_companies_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CohortCompanies"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Cohort Companies"
+      }
+    },
     "/api/workbench/gates": {
       "get": {
         "operationId": "get_gates_api_workbench_gates_get",
@@ -7879,6 +8225,113 @@
           }
         },
         "summary": "Get Gates"
+      }
+    },
+    "/api/workbench/outcomes": {
+      "get": {
+        "operationId": "outcomes_api_workbench_outcomes_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sector",
+            "required": false,
+            "schema": {
+              "default": "",
+              "maxLength": 100,
+              "title": "Sector",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "vintage",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maximum": 2022,
+                  "minimum": 2012,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Vintage"
+            }
+          },
+          {
+            "in": "query",
+            "name": "endpoint",
+            "required": false,
+            "schema": {
+              "default": "primary",
+              "enum": [
+                "primary",
+                "secondary"
+              ],
+              "title": "Endpoint",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cohort",
+            "required": false,
+            "schema": {
+              "const": "A",
+              "default": "A",
+              "title": "Cohort",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 8,
+              "maximum": 40,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutcomeLibrary"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Outcomes"
       }
     }
   }

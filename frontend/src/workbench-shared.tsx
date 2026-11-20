@@ -26,6 +26,7 @@ export function OutcomeStatus({status}: {status: keyof typeof statuses}) {
 }
 
 const eventLabels: Record<string, string> = {
+  secondary_timing_bound: "First priced round interval",
   clinical_study: "Clinical study evidence",
   provider_deployment: "Provider deployment",
   closed_founder_announcement: "Closure announcement",

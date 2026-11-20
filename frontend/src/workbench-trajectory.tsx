@@ -3,7 +3,7 @@ import type {WorkbenchClaim, WorkbenchPoint} from "./api-schema";
 import {dateLabel, fieldLabel} from "./workbench-shared";
 
 const month = 365.25 / 12;
-type TimelineRow = {company_id: string; display_name: string; points: WorkbenchPoint[]; note?: string};
+type TimelineRow = {company_id: string; display_name: string; points: WorkbenchPoint[]; notes?: Record<string, string>};
 
 export function Trajectory({rows, onClaim, title}: {
   rows: TimelineRow[]; onClaim: (claim: WorkbenchClaim) => void; title: string;
@@ -14,6 +14,8 @@ export function Trajectory({rows, onClaim, title}: {
   if (!points.length) return <p>No dated events can be aligned for this selection.</p>;
   const lower = Math.min(0, ...points.map(point => point.lower_days));
   const upper = Math.max(36 * month, ...points.map(point => point.upper_days));
+  const farTick = Math.floor(upper / (12 * month)) * 12;
+  const ticks = farTick > 36 ? [0, 12, 24, 36, farTick] : [0, 12, 24, 36];
   const width = 900, left = 185, gap = 43, top = 45;
   const height = top + rows.length * gap + 45;
   const x = (days: number) => left + (days - lower) / (upper - lower) * (width - left - 48);
@@ -25,25 +27,26 @@ export function Trajectory({rows, onClaim, title}: {
     {table ? <div className="wb-table-scroll"><table className="wb-table">
       <thead><tr><th scope="col">Company</th><th scope="col">Event</th><th scope="col">Date</th><th scope="col">Source</th></tr></thead>
       <tbody>{rows.flatMap(row => row.points.map(point => <tr key={row.company_id + point.claim.claim_id}>
-        <th scope="row">{row.display_name}</th><td><button onClick={() => onClaim(point.claim)}>{fieldLabel(point.claim.field)}</button>{row.note && <small>{row.note}</small>}</td>
+        <th scope="row">{row.display_name}</th><td><button onClick={() => onClaim(point.claim)}>{fieldLabel(point.claim.field)}</button>{row.notes?.[point.claim.claim_id] && <small>{row.notes[point.claim.claim_id]}</small>}</td>
         <td>{dateLabel(point.claim)}</td><td>{point.claim.publisher}</td></tr>))}</tbody>
     </table></div> : <div className="wb-chart-scroll">
       <svg viewBox={`0 0 ${width} ${height}`} aria-label={title}>
         <rect x={x(0)} y={18} width={x(36 * month) - x(0)} height={height - 58} fill="#edf3fd"/>
-        {[0, 12, 24, 36].map(value => <g key={value}>
+        {ticks.map(value => <g key={value}>
           <line x1={x(value * month)} x2={x(value * month)} y1={18} y2={height - 38} stroke="#b7c8e4" strokeDasharray={value ? "4 4" : undefined}/>
           <text x={x(value * month)} y={height - 15} textAnchor="middle" className="wb-axis">{value} mo</text>
         </g>)}
         {rows.map((row, index) => {
           const y = top + index * gap;
+          const notes = [...new Set(Object.values(row.notes ?? {}))];
           return <g key={row.company_id}>
             <text x={left - 10} y={y + 4} textAnchor="end" className="wb-axis"><title>{row.display_name}</title>
               {row.display_name.length > 24 ? row.display_name.slice(0, 22) + "…" : row.display_name}</text>
             <line x1={x(lower)} x2={x(upper)} y1={y} y2={y} stroke="#c2cbda"/>
-            {row.note && <text x={left + 5} y={y + 18} className="wb-axis">{row.note}</text>}
+            {notes.length > 0 && <text x={left + 5} y={y + 18} className="wb-axis">{notes.join(" · ")}</text>}
             {row.points.map(point => {
               const claim = point.claim;
-              const caption = `${row.display_name}, ${fieldLabel(claim.field)}, ${dateLabel(claim)}, ${claim.publisher}`;
+              const caption = `${row.display_name}, ${fieldLabel(claim.field)}, ${dateLabel(claim)}, ${claim.publisher}${row.notes?.[claim.claim_id] ? `, ${row.notes[claim.claim_id]}` : ""}`;
               const interval = point.upper_days !== point.lower_days;
               const uncertainAnchor = point.is_anchor && claim.lower_on !== claim.upper_on;
               const center = x((point.lower_days + point.upper_days) / 2);

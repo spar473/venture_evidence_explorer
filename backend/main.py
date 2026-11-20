@@ -149,6 +149,9 @@ def create_app(db_path=None):
     from .workbench_gates import install as install_gates
     install_gates(app)
 
+    from .outcome_library import install as install_outcome_library
+    install_outcome_library(app)
+
     dist = ROOT / 'frontend/dist'
     if (dist / 'assets').is_dir():
         app.mount('/assets', StaticFiles(directory=dist / 'assets'), name='assets')

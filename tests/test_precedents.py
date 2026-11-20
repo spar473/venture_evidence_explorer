@@ -105,3 +105,40 @@ def test_live_api_anchors_curation_and_snapshot_abstention(demo_db):
         assert all(value['value'] == 'unknown' for value in checklist_result['subject']['milestones'])
         assert client.get('/api/precedents/missing?as_of=2026-11-21').status_code == 404
         assert client.get('/api/precedents/subj_ht_mri?as_of=2026-02-30').status_code == 422
+
+
+def test_outcome_library_reconciles_denominators_pagination_and_events(demo_db):
+    with TestClient(create_app(demo_db)) as client:
+        response = client.get('/api/workbench/outcomes?limit=3')
+        assert response.status_code == 200
+        library = response.json()
+        assert library['candidate_records'] == 453 and library['total'] == library['cohort_entries'] == 55
+        assert len(library['rows']) == 3 and sum(library['counts']['statuses'].values()) == 55
+        assert sum(item['denominator'] for item in library['sectors_comparison']) == 55
+        assert sum(item['entries'] for item in library['vintage_counts']) == 55
+        assert all(sum(item['statuses'].values()) == item['denominator'] for item in library['sectors_comparison'])
+        assert [item['deals'] for item in library['benchmarks']] == [66, 76]
+        tiro = next(item for item in library['stories'] if item['company_id'] == 'public_tirolifesciencesltd')
+        assert tiro['status'] == 'unknown' and all('primary unknown' in note for note in tiro['notes'].values())
+        next_page = client.get('/api/workbench/outcomes?limit=3&offset=3').json()
+        assert not {item['company_id'] for item in next_page['rows']} & {item['company_id'] for item in library['rows']}
+        subset = client.get('/api/workbench/outcomes?vintage=2022&sector=Healthtech&endpoint=secondary').json()
+        assert subset['total'] < library['total'] and subset['endpoint'] == 'secondary'
+        assert all(row['vintage'] == 2022 and row['sector'] == 'Healthtech' for row in subset['rows'])
+        secondary = client.get('/api/workbench/outcomes?endpoint=secondary').json()
+        halter = next(row for row in secondary['stories'] if row['company_id'] == 'discovery_halter')
+        bounded = next(p for p in halter['points'] if p['claim']['field'] == 'secondary_timing_bound')
+        assert bounded['claim']['lower_on'] == '2016-12-01'
+        assert bounded['claim']['upper_on'] == '2018-01-31'
+        gates = client.get('/api/workbench/gates').json()
+        assert gates['secondary']['unknown_or_lost'] == 47 and not gates['primary']['gate_ready']
+        assert client.get('/api/workbench/outcomes?cohort=B').status_code == 422
+
+
+def test_swimlane_labels_intervals_straddling_the_window():
+    from backend.outcome_library import row_notes
+
+    anchor = WorkbenchAnchor(kind='first_institutional_round', claim=claim('seed'))
+    event = claim('series_a').model_copy(update={'lower_on':'2022-12-30', 'upper_on':'2023-01-02'})
+    points = points_for(anchor, [anchor.claim, event], '2023-01-03')
+    assert row_notes(points, anchor, 'unknown') == {event.claim_id: 'Unresolved at the 36-month boundary'}

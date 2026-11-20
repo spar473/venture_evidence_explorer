@@ -1,10 +1,11 @@
 import { useState } from "react";
-import type { HealthtechCoverage, PoolDirectory, PrecedentResponse,
+import type { CohortCompanies, HealthtechCoverage, PoolDirectory, PrecedentResponse,
   ResearchSubjectsResponse, WorkbenchClaim, WorkbenchGates } from "./api-schema";
 import { useResource } from "./hooks";
 import { Status } from "./shared";
 import { type AnchorKind, ClaimDrawer, GateProgress } from "./workbench-shared";
 import { Overview } from "./workbench-overview";
+import { OutcomeLibraryPage } from "./workbench-outcomes";
 import "./workbench.css";
 
 const tabs = ["Overview", "Evidence", "Outlook"] as const;
@@ -13,6 +14,7 @@ export function Workbench() {
   const watchlist = useResource<HealthtechCoverage>("/research/healthtech/coverage");
   const subjects = useResource<ResearchSubjectsResponse>("/research/subjects?limit=100");
   const fixture = useResource<PoolDirectory>("/reference-pool");
+  const cohortCompanies = useResource<CohortCompanies>("/workbench/cohort-companies");
   const gates = useResource<WorkbenchGates>("/workbench/gates");
   const names = new Map(subjects.data?.items.map(item => [item.subject_id, item.display_name]));
   const [page, setPage] = useState<"precedents" | "outcomes">("precedents");
@@ -29,9 +31,11 @@ export function Workbench() {
   const data = precedent.data?.subject.company_id === subjectId && precedent.data.as_of === asOf
     && precedent.data.anchor_kind === anchor ? precedent.data : null;
   const watched = watchlist.data?.projects.find(project => project.subject_id === subjectId);
+  const companyNames = new Set(cohortCompanies.data?.items.map(company => company.display_name.toLowerCase()));
   const search = [...(watchlist.data?.projects ?? []).map(project => ({
     id: project.subject_id, name: names.get(project.subject_id),
-  })), ...(fixture.data?.companies ?? []).map(company => ({
+  })), ...[...(cohortCompanies.data?.items ?? []), ...(fixture.data?.companies ?? []).filter(company =>
+    !companyNames.has(company.display_name.toLowerCase()))].map(company => ({
     id: company.company_id, name: company.display_name,
   }))].filter(item => item.name && item.name.toLowerCase().includes(query.trim().toLowerCase())).slice(0, 12);
   const subjectName = data?.subject.display_name ?? (watched && names.get(watched.subject_id));
@@ -59,7 +63,7 @@ export function Workbench() {
       </div>
     </aside>
     <main id="workspace-content" tabIndex={-1} className="wb-content">
-      {page === "outcomes" ? <h1>Outcome library</h1> : <>
+      {page === "outcomes" ? <OutcomeLibraryPage onClaim={setClaim}/> : <>
         <div className="wb-toolbar wb-search">
           <div><label>Search ventures<input type="search" value={query} onChange={event => setQuery(event.target.value)} /></label>
             {query.trim() && <div className="wb-search-results" aria-label="Venture search results">
