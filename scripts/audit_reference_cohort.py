@@ -34,8 +34,11 @@ def main():
         if follow:
             follow_sources.update(event['source_id'] for event in follow['events'])
         sources = {**audit['sources'], **audit['follow_up']['sources']}
+        source_ids = cited | follow_sources
         audit = {'decision':decision, 'follow_up':follow,
-                 'sources':{key:sources[key] for key in sorted(cited | follow_sources)}}
+                 'sources':{key:sources[key] for key in sorted(source_ids)},
+                 'witnesses':{key:witness for key, witness in audit['follow_up']['witnesses'].items()
+                              if witness['source_id'] in source_ids}}
     elif not args.include_decisions:
         del audit['decisions']
         del audit['follow_up']['decisions']

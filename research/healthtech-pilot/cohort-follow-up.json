@@ -1,6 +1,6 @@
 {
   "format_version": "nz-cohort-follow-up:1",
-  "as_of": "2026-11-20",
+  "as_of": "2026-11-21",
   "sources": [
     {
       "source_id": "partly_idealog",
@@ -397,6 +397,114 @@
       "kind": "press_release",
       "published_on": "2024-10-25",
       "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "halter_idealog_2018",
+      "title": "Meet the young entrepreneur at the helm of Halter",
+      "publisher": "Idealog",
+      "url": "https://idealog.co.nz/tech/2018/06/meet-young-entrepreneur-helm-halter-nz-agritech-company-backed-peter-beck-and-peter-thiel",
+      "kind": "news_article",
+      "published_on": "2018-06-22",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "halter_computerworld_2018",
+      "title": "US venture capitalists pump $8m in agritech IoT company Halter",
+      "publisher": "AmCham New Zealand (Computerworld New Zealand republication)",
+      "url": "https://amcham.co.nz/Latest-News/6360908",
+      "kind": "news_article",
+      "published_on": "2018-07-05",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "halter_promus_2017",
+      "title": "Cowgorithms",
+      "publisher": "Promus Ventures",
+      "url": "https://promusventures.com/2017/10/26/cowgorithms/",
+      "kind": "press_release",
+      "published_on": "2017-10-26",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "aspiring_motion_2023",
+      "title": "Motion Capital leads successful capital raise of $1.5M for Aspiring Materials",
+      "publisher": "Aspiring Materials and Motion Capital",
+      "url": "https://7c184638-5ea6-4266-87a7-5de5b27fa33a.filesusr.com/ugd/0b2ef1_838094dc6d5e4978bc127a061db02a1c.pdf",
+      "kind": "press_release",
+      "published_on": "2023-09-26",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "dawn_movac_2021",
+      "title": "Spaceplane Company Secures Funding From NZ’s Largest Tech VC",
+      "publisher": "Dawn Aerospace via PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/spaceplane-company-secures-funding-from-nzs-largest-tech-vc-301300701.html",
+      "kind": "press_release",
+      "published_on": "2021-05-27",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "heartlab_techcrunch_2021",
+      "title": "New Zealand startup HeartLab raises $2.45M to bring heart scanning software to the U.S.",
+      "publisher": "TechCrunch",
+      "url": "https://techcrunch.com/2021/09/16/new-zealand-startup-heartlab-raises-2-45m-to-bring-heart-scanning-software-to-the-u-s/",
+      "kind": "news_article",
+      "published_on": "2021-09-16",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "mint_nzpc_series_a_2021",
+      "title": "Mint Innovation raises expansion capital",
+      "publisher": "New Zealand Private Capital",
+      "url": "https://nzprivatecapital.co.nz/wp-content/uploads/2021/05/20215-000676_NZPC-Monitor-2021_FINAL_Digital.pdf",
+      "kind": "dated_report",
+      "published_on": null,
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "mint_spinoff_2019",
+      "title": "Mint Innovation is making e-waste less wasteful",
+      "publisher": "The Spinoff",
+      "url": "https://thespinoff.co.nz/business/30-03-2019/mint-innovation-is-making-e-waste-less-wasteful",
+      "kind": "news_article",
+      "published_on": "2019-03-30",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "respiraq_kiwinet_2024",
+      "title": "Women in deep tech: The founders changing the face of innovation",
+      "publisher": "KiwiNet",
+      "url": "https://kiwinet.org.nz/News/Women_in_Deep_Tech",
+      "kind": "news_article",
+      "published_on": "2024-09-06",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "jasper_safe_2019",
+      "title": "Seed Funding in PropTech Biz Accelerates Democratisation of Commercial Property Investment",
+      "publisher": "Jasper via PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/seed-funding-in-proptech-biz-accelerates-democratisation-of-commercial-property-investment-300915474.html",
+      "kind": "press_release",
+      "published_on": "2019-09-10",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "quashed_second_raise_2022",
+      "title": "Online insurance platform Quashed to offer AIA NZ products",
+      "publisher": "Insurance Business New Zealand",
+      "url": "https://www.insurancebusinessmag.com/nz/news/breaking-news/online-insurance-platform-quashed-to-offer-aia-nz-products-413042.aspx",
+      "kind": "news_article",
+      "published_on": "2022-07-14",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "immersve_cbinsights_financing",
+      "title": "Immersve financing history",
+      "publisher": "CB Insights",
+      "url": "https://www.cbinsights.com/company/immersve/financials",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-21"
     }
   ],
   "events": [
@@ -1009,6 +1117,190 @@
       "source_id": "zincovery_booster_2024",
       "passage": "NZX dateline and first two paragraphs, including the existing operating business and the proposed investment.",
       "claim": "Booster says it would invest NZ$394,000 in cash. Closing and price are not demonstrated."
+    },
+    {
+      "event_id": "halter_promus_seed_candidate",
+      "company_id": "discovery_halter",
+      "kind": "other_financing",
+      "date": {
+        "value": "2017-10-26",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "halter_promus_2017",
+      "passage": "Promus Ventures Leads Seed Round for Halter, opening paragraph",
+      "claim": "Promus Ventures announced it led a Seed round following earlier investment by Peter Beck. The notice does not disclose pricing or the settlement date.",
+      "instrument": "unknown",
+      "round_label": "Seed round",
+      "institutional_investor": "Promus Ventures"
+    },
+    {
+      "event_id": "halter_series_a_2018",
+      "company_id": "discovery_halter",
+      "kind": "series_a",
+      "date": {
+        "value": "2018-01",
+        "precision": "month"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "halter_idealog_2018",
+      "passage": "Paragraph quoting Peter Beck on the January Series A close; earlier paragraph lists investors",
+      "claim": "Idealog reported that Halter closed its Series A funding round in January 2018 and named investors including Peter Beck, K1W1 and Founders Fund. The closing day and share price are undisclosed.",
+      "instrument": "priced_equity",
+      "round_label": "Series A funding round"
+    },
+    {
+      "event_id": "halter_dcvc_2018_candidate",
+      "company_id": "discovery_halter",
+      "kind": "other_financing",
+      "date": {
+        "value": "2018-07-05",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "halter_computerworld_2018",
+      "passage": "First two paragraphs of the AmCham republication; July 5 is the date of the report",
+      "claim": "Computerworld reported a raised $8 million in a round led by Data Collective, also named in Idealog. The report does not establish its relationship to the January Series A or its share price.",
+      "instrument": "equity_unspecified",
+      "institutional_investor": "Data Collective"
+    },
+    {
+      "event_id": "aspiring_motion_round_candidate",
+      "company_id": "discovery_aspiringmaterials",
+      "kind": "other_financing",
+      "date": {
+        "value": "2023-09-26",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "aspiring_motion_2023",
+      "passage": "Lead of September 26 media release and investor history in About Aspiring Materials",
+      "claim": "The issuer announced a $1.5 million capital raise led by Motion Capital following the 2021 seed investment. The release gives no letter-stage label, pricing or settlement date.",
+      "instrument": "unknown",
+      "institutional_investor": "Motion Capital"
+    },
+    {
+      "event_id": "cleanery_bif_financing_candidate",
+      "company_id": "discovery_cleanery",
+      "kind": "other_financing",
+      "date": {
+        "value": "2024-02-12",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "cleanery_booster_2024",
+      "passage": "NZX announcement dated February 12, 2024, transaction paragraph",
+      "claim": "The NZX notice announced a planned $300,000 Booster investment in Sustainable Care Company, trading as Cleanery. The purchase, issue and pricing terms remain open.",
+      "instrument": "equity_unspecified",
+      "institutional_investor": "Booster Innovation Fund"
+    },
+    {
+      "event_id": "dawn_movac_financing_candidate",
+      "company_id": "discovery_dawnaerospace",
+      "kind": "other_financing",
+      "date": {
+        "value": "2021-05-27",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "dawn_movac_2021",
+      "passage": "Opening announcement of backing with a separate mention of prior investors",
+      "claim": "Dawn announced Movac backing in May 2021. The release gives no round label, price or details tying the raise to the NZ entry issuer.",
+      "instrument": "equity_unspecified",
+      "institutional_investor": "Movac"
+    },
+    {
+      "event_id": "heartlab_founders_seed_candidate",
+      "company_id": "discovery_heartlab",
+      "kind": "other_financing",
+      "date": {
+        "value": "2021-09-16",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "heartlab_techcrunch_2021",
+      "passage": "Funding lead and paragraph distinguishing the 2020 round from the new Seed",
+      "claim": "TechCrunch reported a distinct Founders Fund-led Seed round following the October 2020 raise. Share price and valuation are undisclosed.",
+      "instrument": "equity_unspecified",
+      "round_label": "Seed round",
+      "institutional_investor": "Founders Fund"
+    },
+    {
+      "event_id": "mint_series_a_candidate_2018",
+      "company_id": "discovery_mintinnovation",
+      "kind": "series_a",
+      "date": {
+        "value": "2018",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "mint_nzpc_series_a_2021",
+      "passage": "Mint Innovation raises expansion capital, paragraph headed Financing",
+      "claim": "The New Zealand Private Capital report calls the $5.2 million 2018 raise a Series A round. The CEO dated the raise to December in The Spinoff. Neither reviewed source establishes the instrument or share price.",
+      "instrument": "equity_unspecified",
+      "round_label": "Series A round"
+    },
+    {
+      "event_id": "respiraq_movac_post_seed_candidate",
+      "company_id": "discovery_respiraq",
+      "kind": "other_financing",
+      "date": {
+        "value": "2024-09-06",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "respiraq_kiwinet_2024",
+      "passage": "RespirAq profile, paragraph about the first close and Movac Emerge Fund 4",
+      "claim": "KiwiNet reported a $3 million first close of a distinct post-seed round by September 6. A dated closing day and share pricing remain undisclosed.",
+      "instrument": "equity_unspecified",
+      "round_label": "post-seed fundraising round",
+      "institutional_investor": "Movac Emerge Fund 4"
+    },
+    {
+      "event_id": "jasper_m7_safe_2019",
+      "company_id": "public_jasper",
+      "kind": "convertible_note",
+      "date": {
+        "value": "2019-09-10",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "jasper_safe_2019",
+      "passage": "Paragraph identifying the most recent fundraising instrument, lead and total seed funding",
+      "claim": "Jasper disclosed a SAFE note led by M7 that brought its total seed-stage capital to NZ$2.3 million. The release does not report a priced share issuance or the conversion date.",
+      "instrument": "other",
+      "round_label": "SAFE note",
+      "institutional_investor": "M7 Real Estate"
+    },
+    {
+      "event_id": "quashed_second_raise_candidate_2022",
+      "company_id": "public_quashed",
+      "kind": "other_financing",
+      "date": {
+        "value": "2022-07-14",
+        "precision": "day"
+      },
+      "date_basis": "completed_at_announcement",
+      "source_id": "quashed_second_raise_2022",
+      "passage": "Paragraph starting with the AIA partnership following the second capital raise",
+      "claim": "Insurance Business reports that Quashed raised $1.1 million in its second financing before announcing the AIA partnership. The article gives no pricing, stage label or exact close date.",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "immersve_2024_seed_candidate",
+      "company_id": "public_immersve",
+      "kind": "other_financing",
+      "date": {
+        "value": "2024-04-16",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "immersve_cbinsights_financing",
+      "passage": "Summary and dated funding history",
+      "claim": "CB Insights lists a Seed financing in April 2024. Its public listing does not establish the issuer, proceeds, share price or whether the instrument was a grant.",
+      "instrument": "unknown",
+      "round_label": "Seed",
+      "entity_link": "proposed"
     }
   ],
   "reviews": [
@@ -2680,6 +2972,96 @@
       "priced_at": "Idealog profile, funding paragraph: reports NZ$180m valuation.",
       "new_company_equity": "Same paragraph reports NZ$37m raised by Partly in the Series A.",
       "distinct_from_entry": "The 2022 Series A has a later date and different lead and size from the 2020 Seed round."
+    }
+  ],
+  "witnesses": [
+    {
+      "witness_id": "witness_halter_idealog_2018",
+      "source_id": "halter_idealog_2018",
+      "kind": "publisher_dated",
+      "available_on": "2018-06-22",
+      "url": "https://idealog.co.nz/tech/2018/06/meet-young-entrepreneur-helm-halter-nz-agritech-company-backed-peter-beck-and-peter-thiel",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_halter_computerworld_2018",
+      "source_id": "halter_computerworld_2018",
+      "kind": "publisher_dated",
+      "available_on": "2018-07-05",
+      "url": "https://amcham.co.nz/Latest-News/6360908",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_halter_promus_2017",
+      "source_id": "halter_promus_2017",
+      "kind": "publisher_dated",
+      "available_on": "2017-10-26",
+      "url": "https://promusventures.com/2017/10/26/cowgorithms/",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_aspiring_motion_2023",
+      "source_id": "aspiring_motion_2023",
+      "kind": "publisher_dated",
+      "available_on": "2023-09-26",
+      "url": "https://7c184638-5ea6-4266-87a7-5de5b27fa33a.filesusr.com/ugd/0b2ef1_838094dc6d5e4978bc127a061db02a1c.pdf",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_dawn_movac_2021",
+      "source_id": "dawn_movac_2021",
+      "kind": "publisher_dated",
+      "available_on": "2021-05-27",
+      "url": "https://www.prnewswire.com/news-releases/spaceplane-company-secures-funding-from-nzs-largest-tech-vc-301300701.html",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_heartlab_techcrunch_2021",
+      "source_id": "heartlab_techcrunch_2021",
+      "kind": "publisher_dated",
+      "available_on": "2021-09-16",
+      "url": "https://techcrunch.com/2021/09/16/new-zealand-startup-heartlab-raises-2-45m-to-bring-heart-scanning-software-to-the-u-s/",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_mint_spinoff_2019",
+      "source_id": "mint_spinoff_2019",
+      "kind": "publisher_dated",
+      "available_on": "2019-03-30",
+      "url": "https://thespinoff.co.nz/business/30-03-2019/mint-innovation-is-making-e-waste-less-wasteful",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_respiraq_kiwinet_2024",
+      "source_id": "respiraq_kiwinet_2024",
+      "kind": "publisher_dated",
+      "available_on": "2024-09-06",
+      "url": "https://kiwinet.org.nz/News/Women_in_Deep_Tech",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_jasper_safe_2019",
+      "source_id": "jasper_safe_2019",
+      "kind": "publisher_dated",
+      "available_on": "2019-09-10",
+      "url": "https://www.prnewswire.com/news-releases/seed-funding-in-proptech-biz-accelerates-democratisation-of-commercial-property-investment-300915474.html",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_quashed_second_raise_2022",
+      "source_id": "quashed_second_raise_2022",
+      "kind": "publisher_dated",
+      "available_on": "2022-07-14",
+      "url": "https://www.insurancebusinessmag.com/nz/news/breaking-news/online-insurance-platform-quashed-to-offer-aia-nz-products-413042.aspx",
+      "locator": "Publisher publication date"
+    },
+    {
+      "witness_id": "witness_cleanery_booster_2024",
+      "source_id": "cleanery_booster_2024",
+      "kind": "publisher_dated",
+      "available_on": "2024-02-12",
+      "url": "https://www.nzx.com/announcements/426045",
+      "locator": "Publication date in the NZX announcement header"
     }
   ]
 }

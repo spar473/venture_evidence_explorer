@@ -1,23 +1,23 @@
 # Public data limits for the NZ entry cohort
 
-**Audit date 20 November 2026.** The frozen rule covers the first publicly reported institutional pre-seed or seed of a NZ-founded or NZ-headquartered company in 2012–2022. The audit reviewed **453 named candidate records** and confirmed **55 entries**. Of the rest, **397** remain unresolved and **1** falls outside the window. Public follow-up covered the original **50** entries, with enough dated evidence for formal coverage reviews on **30**. The five later additions still await bounded follow-up. [Entry evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Follow-up ledger](../../research/healthtech-pilot/cohort-follow-up.json)
+**Audit date 21 November 2026.** The frozen rule covers the first publicly reported institutional pre-seed or seed of a NZ-founded or NZ-headquartered company in 2012–2022. The audit reviewed **453 named candidate records** and confirmed **55 entries**. Of the rest, **397** remain unresolved and **1** falls outside the window. Public follow-up covered the original **50** entries, with formal coverage reviews on **30**. The financing recheck screened all **17** companies previously marked observed for either outcome. The five later additions still await bounded follow-up. [Entry evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Follow-up ledger](../../research/healthtech-pilot/cohort-follow-up.json) · [Financing recheck](STATUS.md#workbench-phase-0--21-november-2026)
 
 The candidate count fell from 454 to 453 after the audit consolidated duplicate Rocos and SafeStack records and added Googly Inc Limited as an unresolved lead.
 
 | 36-month status across 55 entries | Series A or later | Next priced equity round |
 | --- | ---: | ---: |
-| Reached outcome | 1 | 1 |
+| Reached outcome | 2 | 2 |
 | Verified closure first | 1 | 1 |
 | Acquisition or IPO first | 0 | 0 |
-| Observed without a confirmed outcome | 17 | 14 |
+| Observed without a confirmed outcome | 9 | 5 |
 | Lost to follow-up | 10 | 6 |
-| Unknown | 26 | 33 |
-| **Unknown plus lost** | **36** | **39** |
-| Verified still observed at 36 months | 21 | 17 |
-| Observation at 36 months unresolved | 27 | 34 |
-| Out of observation by 36 months | 7 | 4 |
+| Unknown | 33 | 41 |
+| **Unknown plus lost** | **43** | **47** |
+| Verified still observed at 36 months | 13 | 8 |
+| Observation at 36 months unresolved | 34 | 42 |
+| Out of observation by 36 months | 8 | 5 |
 
-The three observation rows add to **55** in each column. Partly reached both outcomes and Supie entered liquidation within the window, placing both companies out of observation for both outcomes. Zincovery and Social Club were classed as lost to follow-up for both outcomes, with last verified activity before month 36. Miruku, TamoRx and Narrative likewise last had verified activity before month 36 and were classed as lost to follow-up for the primary outcome. Their 36-month observation remains unresolved for the secondary outcome.
+The three observation rows add to **55** in each column. Halter and Partly reached both outcomes and Supie entered liquidation within the window, placing all three companies out of observation for both outcomes. Zincovery and Social Club were classed as lost to follow-up for both outcomes, with last verified activity before month 36. Miruku, TamoRx and Narrative likewise last had verified activity before month 36 and were classed as lost to follow-up for the primary outcome. Their 36-month observation remains unresolved for the secondary outcome.
 
 | Field missing or incomplete in public evidence | What permissioned data would resolve it |
 | --- | --- |

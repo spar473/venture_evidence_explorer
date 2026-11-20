@@ -129,3 +129,61 @@ python scripts/audit_reference_cohort.py
 The deterministic audit replay, **170 backend tests**, **40 Playwright tests**, production build, smoke verification, migration checks and generated API contract check passed. The fixture dry run wrote zero rows. The disposable demo verified exact reimports and integrity. A separate browser check opened the running MRI dossier and confirmed the three named comparisons, later milestones and source notes. After expansion the fixture still renders Supie’s verified closure trajectory. Entry decisions were identical with registry and staged outcome evidence withheld. The audit replay matched the prior entry and source evidence byte for byte and changed only Partly’s secondary status.
 
 **Next task** — Resolve the next-round evidence gaps in the expanded cohort by checking the five new entrants and prioritising in-window issuances with identifiable pricing or capital records.
+
+## Workbench Phase 0 · 21 November 2026
+
+The audit rechecked all 17 companies with an observed status for either outcome. The two windows were unchanged. Both release gates remain closed. The 55 included entries and all legal-entity decisions were preserved.
+
+| 36-month follow-up across 55 entries | Series A or later, before → after | Next priced equity round, before → after |
+| --- | ---: | ---: |
+| Reached outcome | 1 → 2 | 1 → 2 |
+| Verified closure first | 1 → 1 | 1 → 1 |
+| Acquisition or IPO first | 0 → 0 | 0 → 0 |
+| Observed without a confirmed outcome | 17 → 9 | 14 → 5 |
+| Lost to follow-up | 10 → 10 | 6 → 6 |
+| Unknown | 26 → 33 | 33 → 41 |
+| Unknown plus lost | 36 → 43 | 39 → 47 |
+| Verified still observed at 36 months | 21 → 13 | 17 → 8 |
+| Observation at 36 months unresolved | 27 → 34 | 34 → 42 |
+| Out of observation by 36 months | 7 → 8 | 4 → 5 |
+
+Halter's January 2018 Series A is inside its December 2016–December 2019 window. The October 2017 Promus announcement leaves the secondary event timing unresolved, so its supported interval is 1 December 2016 through 31 January 2018. [Case ledger](../../research/healthtech-pilot/cohort-follow-up.json)
+
+### Targeted financing searches
+
+Each quoted name was searched against round-stage and pricing terms, and the results were screened against the 36-month window below. The search date was 21 November 2026. Month-level entries retain the full month at both bounds.
+
+| Company | Window | Query | Finding |
+| --- | --- | --- | --- |
+| Halter | 2016-12–2019-12 | `"Halter" seed Promus October 2017 Series A 2018 $7m $8m Data Collective` | Closed Series A in January 2018. October 2017 seed pricing remains open and the Data Collective report may overlap the same Series A. [Idealog](https://idealog.co.nz/tech/2018/06/meet-young-entrepreneur-helm-halter-nz-agritech-company-backed-peter-beck-and-peter-thiel) · [Promus](https://promusventures.com/2017/10/26/cowgorithms/) · [Computerworld](https://amcham.co.nz/Latest-News/6360908) |
+| Aspiring Materials | 2021-10-15–2024-10-15 | `"Aspiring Materials" seed Series A equity raise pricing` | Motion-led 2023 raise. Letter stage and pricing open. [Issuer release](https://7c184638-5ea6-4266-87a7-5de5b27fa33a.filesusr.com/ugd/0b2ef1_838094dc6d5e4978bc127a061db02a1c.pdf) |
+| Cetogenix | 2022-07-07–2025-07-07 | `"Cetogenix" funding seed follow-on Series A priced equity` | The 2024 continuation fund lists an existing investment. Company-level fresh financing in the window remains unconfirmed. [Pacific Channel](https://www.pacificchannel.com/stories/pacific-channel-launches-australasias-first-capital-continuation-fund) |
+| Cleanery | 2022-06-09–2025-06-09 | `"Cleanery" startup New Zealand seed Series A funding priced round` | 2024 investment notice. Closing, new issue versus purchase and pricing open. [NZX](https://www.nzx.com/announcements/426045) |
+| Dawn Aerospace | 2018-12–2021-12 | `"Dawn Aerospace" Dawn Aerospace Series A funding equity funding round` | May 2021 Movac backing lacks issuer, stage and pricing terms. Reported Series A closed after the window. [Company release](https://www.prnewswire.com/news-releases/spaceplane-company-secures-funding-from-nzs-largest-tech-vc-301300701.html) · [Series A](https://www.dawnaerospace.com/latest-news/dawn-raises-20million) |
+| EnergyBank | 2021-10-21–2024-10-21 | `"EnergyBank" EnergyBank NZ start-up funding seed Series A priced round` | Founder confirms the entry seed. Search surfaced no distinct in-window financing. [Founder interview](https://nzentrepreneur.co.nz/founder-qa-energybank/) |
+| HeartLab | 2020-10–2023-10 | `"HeartLab" Auckland HeartLab funding seed Series A priced equity Will Hewitt` | Reported a distinct later seed in 2021. Share price and valuation open. [TechCrunch](https://techcrunch.com/2021/09/16/new-zealand-startup-heartlab-raises-2-45m-to-bring-heart-scanning-software-to-the-u-s/) |
+| Mint Innovation | 2017-03–2020-03 | `"Mint Innovation" Mint Innovation Series A Series B funding priced round` | Industry report calls the 2018 financing Series A. Founder dates the raise to December. Instrument remains open. The 2020 Series B was later than the window. [NZ Private Capital](https://nzprivatecapital.co.nz/wp-content/uploads/2021/05/20215-000676_NZPC-Monitor-2021_FINAL_Digital.pdf) · [Founder interview](https://thespinoff.co.nz/business/30-03-2019/mint-innovation-is-making-e-waste-less-wasteful) |
+| RespirAq | 2021-12–2024-12 | `"RespirAq" RespirAq NZ funding seed Series A priced equity` | First close of a distinct post-seed round was reported in September 2024. Share pricing remains open. [KiwiNet](https://kiwinet.org.nz/News/Women_in_Deep_Tech) |
+| Sharesies | 2017-05–2020-05 | `"Sharesies" Sharesies Series A funding investment round share price New Zealand` | The 2019 raise is recorded. No verified pricing or stage label surfaced for it. [PwC and NZGCP](https://www.pwc.co.nz/pdfs/2023/startup-investment-autumn-2023.pdf) |
+| Carepatron | 2022-07-26–2025-07-26 | `"Carepatron" Carepatron Series A funding priced equity` | Separately reported 2023 seed lacks pricing. No lettered round surfaced in the window. [TechCrunch](https://techcrunch.com/2023/11/03/carepatron/) |
+| Immersve | 2022-06-20–2025-06-20 | `"Immersve" Immersve Series A funding equity round` | Indexed April 2024 seed lead has unresolved issuer and instrument. Callaghan reports R&D grant support without linking it to that lead. [CB Insights](https://www.cbinsights.com/company/immersve/financials) · [Callaghan Innovation](https://www.callaghaninnovation.govt.nz/about-us/up-and-coming-companies/) |
+| Jasper | 2019-04–2022-04 | `"Jasper" Jasper NZ property startup Series A funding priced equity company` | Issuer identifies M7 financing as a SAFE. No conversion, new priced financing or letter stage was confirmed in the window. [Issuer release](https://www.prnewswire.com/news-releases/seed-funding-in-proptech-biz-accelerates-democratisation-of-commercial-property-investment-300915474.html) |
+| Parcelport | 2017-12–2020-12 | `"Parcelport" Parcelport NZ Series A funding priced equity` | 2019 AngelHQ lead described as convertible by a secondary index. No primary report or verified conversion appeared in the bounded search. [Public search lead](https://bouncewatch.com/company/parcelport) · [Issuer history](https://www.zappy.nz/about-us) |
+| Quashed | 2021-03-05–2024-03-05 | `"Quashed" Quashed insurance Series A funding round New Zealand` | A July 2022 trade article reports a second raise without stage or pricing. Turners investment was announced in August 2024 after the window. [Insurance Business](https://www.insurancebusinessmag.com/nz/news/breaking-news/online-insurance-platform-quashed-to-offer-aia-nz-products-413042.aspx) · [NZX](https://www.nzx.com/announcements/436021) |
+| Runn.io | 2021-12-14–2024-12-14 | `"Runn.io" Runn.io Series A funding equity NZ` | Investor confirms 2023 backing. Letter stage, instrument and share price remain open. [Shearwater Capital](https://www.shearwater.co/news/our-investment-in-runn-io/) |
+| VidApp | 2017-09–2020-09 | `"VidApp" VidApp NZ Series A funding equity round` | Investor acknowledges later rounds without dates. The dated 2021 preference-share record falls after the window. [Enterprise Angels](https://www.enterpriseangels.co.nz/project/vidapp/) · [Young Company Finance](https://www.pwc.co.nz/assets/2022-assets/startup-april-2022/young-company-deal-data-2022.pdf) |
+
+### Decisions
+
+| Date | Decision | Reason | Alternative considered |
+| --- | --- | --- | --- |
+| 21 November 2026 | Use the contemporary, publisher-dated Idealog report for Halter's month-precision Series A. | It reports the January close. Halter's 2026 release refers to Founders Fund contributing early capital in 2017. The July report on Data Collective lacks a firm link to January. Closing day, the relationship between the reports and reported totals stay open. The supplied Press and Herald URLs could not be opened. | Use a 2018 year only or treat the Data Collective report and the January close as the same closing. |
+| 21 November 2026 | Assess candidate financing against the specific outcome. | An unlabelled in-window round with unresolved terms can prevent an observed primary status. An explicitly non-lettered seed can still leave the next priced equity outcome open. | Mark both outcomes unknown for every later seed report or infer Series A from capital raised. |
+| 21 November 2026 | Retain Mint Innovation's Series A as an unresolved candidate. | The reviewed reports support the round and label, with the instrument unresolved. | Count the reported round solely from the stage label. |
+| 21 November 2026 | Record the date of a completed financing announcement as a reporting date when the source does not give the settlement day. | The reporting date is verifiable and can bound an in-window candidate. It does not establish the settlement day. | Assign the reporting date as the actual close. |
+
+### Phase 0 verification and resume point
+
+Python 3.12 ran 174 passing backend tests. The production build, smoke verification, all three SQLite migration transaction modes, generated contract check and disposable demo import verification passed. Playwright could not start the local server on either port tested because the environment denied socket binding. A stand-alone Chrome launch also exited before a page could be opened.
+
+The Phase 0 changes are committed locally on `implementation/healthtech-pilot`. Direct Git access failed to resolve `github.com`. The remote heads were independently checked and were still `3f0905e` for the pilot and `bcca61e` for `main`. Resume by running the browser suite and inspecting the running app in an environment that allows local sockets. Then push the pilot branch, archive `origin/main` with the required tag and update `main` with the original lease from the workbench prompt. Phase 1 starts from the verified replacement `origin/main`.

@@ -47,6 +47,22 @@ def test_competing_event_requires_bounded_financing_check():
     assert result['observed_at_36_months'] is False
 
 
+@pytest.mark.parametrize(('financing_on', 'label', 'expected'), [
+    ('2021-04-01', None, 'unknown'),
+    ('2021-04-01', 'Seed round', 'observed_no_outcome'),
+    ('2023-06-16', None, 'observed_no_outcome'),
+])
+def test_unresolved_primary_financing_candidate_cannot_be_observed_no_outcome(financing_on, label, expected):
+    activity = event('last_verified_activity', '2026-01-01')
+    candidate = event('other_financing', financing_on, round_label=label).model_copy(
+        update={'event_id': 'unresolved_financing'})
+    result = assess(entry(), [candidate, activity], search('2026-01-01'))
+    assert result['status'] == expected
+    if expected == 'unknown':
+        assert result['censor_on'] is None
+        assert result['observed_at_36_months'] is None
+
+
 def test_follow_up_cannot_add_a_seed_or_use_future_activity():
     activity = event('last_verified_activity','2024-01-01').model_dump()
     data = dict(format_version='nz-cohort-follow-up:1',as_of='2026-11-20',
@@ -94,8 +110,23 @@ def test_bounded_searches_cover_original_50_with_a_public_filing_index():
     assert partly['event_time_basis'] == 'bounded_by_primary'
     assert partly['event_time_bounds'] == {'earliest_on': '2020-10-08', 'latest_on': '2022-12-16'}
     assert partly['observed_at_36_months'] is False
-    assert follow['secondary']['statuses']['reached_outcome'] == follow['statuses']['reached_outcome'] == 1
+    assert follow['secondary']['statuses']['reached_outcome'] == follow['statuses']['reached_outcome'] == 2
     assert follow['decisions']['public_supie']['secondary']['status'] == 'closed_before_outcome'
+
+
+def test_halter_outcomes_preserve_window_and_reported_precision():
+    follow = run_audit()['follow_up']
+    halter = follow['decisions']['discovery_halter']
+    assert halter['status'] == 'reached_outcome'
+    assert halter['latest_horizon'] == '2019-12-31'
+    events = {event['event_id']: event for event in halter['events']}
+    series_a = events[halter['outcome_event_id']]
+    assert series_a['date'] == {'value': '2018-01', 'precision': 'month'}
+    assert follow['witnesses']['witness_halter_idealog_2018']['available_on'] == '2018-06-22'
+    assert events['halter_promus_seed_candidate']['instrument'] == 'unknown'
+    assert halter['secondary']['status'] == 'reached_outcome'
+    assert halter['secondary']['event_time_basis'] == 'bounded_by_primary'
+    assert halter['secondary']['event_time_bounds'] == {'earliest_on': '2016-12-01', 'latest_on': '2018-01-31'}
 
 
 def test_primary_provides_secondary_bounds_without_a_separate_proof():

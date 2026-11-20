@@ -2,6 +2,7 @@
 from collections import Counter, defaultdict
 import hashlib
 from pathlib import Path
+import re
 from typing import Literal
 
 from pydantic import Field, model_validator
@@ -10,7 +11,7 @@ from .database import ROOT
 from .ingestion import StrictModel, Text, day
 from .reference_pool import (
     CLOSURES, OUTCOMES, STATUSES, EventDate, FollowUp, Id, PoolCompany, PoolEvent, PoolSource,
-    https, lettered_round_status, outcome_status, plus_months, unique_index, validate_event,
+    Witness, https, lettered_round_status, outcome_status, plus_months, unique_index, validate_event,
 )
 from .research_validation import decode_packet
 
@@ -72,6 +73,7 @@ class OutcomeEvidence(StrictModel):
     reviews: list[CoverageReview]
     searches: list[BoundedSearch] = Field(default_factory=list)
     next_round_proofs: list[NextRoundProof] = Field(default_factory=list)
+    witnesses: list[Witness] = Field(default_factory=list)
 
     @model_validator(mode='after')
     def chronology(self):
@@ -81,6 +83,11 @@ class OutcomeEvidence(StrictModel):
         unique_index(self.reviews, 'company_id')
         unique_index(self.searches, 'company_id')
         unique_index(self.next_round_proofs, 'event_id')
+        unique_index(self.witnesses, 'witness_id')
+        for witness in self.witnesses:
+            if witness.source_id not in sources:
+                raise ValueError('Follow-up witness needs a source in the same ledger')
+            witness.check_source(sources[witness.source_id])
         if any(source.retrieved_on > self.as_of for source in self.sources):
             raise ValueError('Follow-up source retrieval exceeds cutoff')
         for event in self.events:
@@ -173,6 +180,10 @@ def assess(entry, events, review, *, classify_round=lettered_round_status, stric
         company.follow_up = FollowUp(searched_on=review.reviewed_on, scope=review.scope,
                                      activity_event_id=activity.event_id)
     status, censored_on, event_id = outcome_status(company, [anchor, *events], classify_round=classify_round)
+    if status == 'observed_no_outcome' and any(
+        unresolved_in_window(event, earliest_entry, horizon) for event in events
+    ):
+        status, censored_on = 'unknown', None
     if (strictly_after_entry and status == 'reached_outcome'
         and by_id[event_id].date.bounds()[0] <= latest_entry):
         status, event_id = 'unknown', None
@@ -192,6 +203,17 @@ def assess(entry, events, review, *, classify_round=lettered_round_status, stric
             covered_at_36_months = False
     return dict(status=status, censor_on=censored_on, outcome_event_id=event_id,
                 latest_horizon=horizon, observed_at_36_months=covered_at_36_months)
+
+
+def unresolved_in_window(event, earliest_entry, latest_horizon):
+    if event.kind != 'other_financing' or event.instrument not in ('unknown', 'equity_unspecified'):
+        return False
+    # An explicitly excluded round can still leave the secondary unresolved.
+    if re.match(r'^(?:(?:pre|post)[ -])?seed\b|^pre[ -]series\b|^bridge\b',
+                (event.round_label or '').strip(), re.I):
+        return False
+    start, end = event.date.bounds()
+    return start is not None and start <= latest_horizon and end > earliest_entry
 
 
 def assess_secondary(entry, events, review, primary, classify_round):
@@ -254,7 +276,9 @@ def outcome_audit(included, registry_statuses, path=FOLLOW_UP):
         reviewed_companies=len(results.keys() & reviews.keys()),
         searched_companies=len(results.keys() & searches.keys()),
         evidence_outside_included_companies=sorted((reviews.keys() | groups.keys() | searches.keys()) - results.keys()),
-        sources={s.source_id:s.model_dump() for s in evidence.sources}, decisions=results,
+        sources={s.source_id:s.model_dump() for s in evidence.sources},
+        witnesses={w.witness_id:w.model_dump() for w in evidence.witnesses},
+        decisions=results,
     )
 
 
