@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Outcome library — NZ entry cohort</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F6F9}
+a{color:#1F4E9E}a:hover{color:#163A77}
+button,select{font-family:inherit}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 100vh; font-family: Inter, system-ui, sans-serif; color: #10151F; background: #F4F6F9">
+
+<nav aria-label="Main" style="flex: 1 1 232px; max-width: 232px; min-width: 200px; background: #0F1B2D; color: #E8EDF5; padding: 24px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px">
+<div style="width: 32px; height: 32px; border-radius: 8px; background: #3B82C4; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: #FFFFFF">VE</div>
+<div style="display: flex; flex-direction: column">
+<span style="font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px">Venture Evidence</span>
+<span style="font-size: 12px; color: #A9B6CA">NZ precedent workbench</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; color: #C9D3E2; text-decoration: none; font-size: 14px; min-height: 44px; box-sizing: border-box">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>Precedents</a>
+<a href="OutcomeLibrary.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px; background: #1E3352; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600; min-height: 44px; box-sizing: border-box">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18M9 4v16"></path></svg>Outcome library</a>
+</div>
+<div style="margin-top: auto; padding: 0 8px; display: flex; flex-direction: column; gap: 6px">
+<a href="#research" style="color: #A9B6CA; font-size: 13px">Research mode</a>
+<span style="font-size: 12px; color: #A9B6CA">Evidence as of 20 Nov 2026</span>
+</div>
+</nav>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+<header style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; padding: 24px 32px; background: #FFFFFF; border-bottom: 1px solid #E2E6EC">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 28px">Outcome library</h1>
+<p style="margin: 0; font-size: 14px; color: #4A5568">NZ companies from their first institutional seed (2012–2022), with what happened next — including the ones that stalled or closed.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #4A5568">Sector
+<select style="height: 40px; min-width: 140px; border: 1px solid #CBD2DC; border-radius: 8px; padding: 0 10px; font-size: 14px; color: #10151F; background: #FFFFFF"><option>All sectors</option><option>Healthtech / medtech</option><option>Agritech</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #4A5568">Entry vintage
+<select style="height: 40px; min-width: 120px; border: 1px solid #CBD2DC; border-radius: 8px; padding: 0 10px; font-size: 14px; color: #10151F; background: #FFFFFF"><option>2012–2022</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #4A5568">Outcome
+<select style="height: 40px; min-width: 150px; border: 1px solid #CBD2DC; border-radius: 8px; padding: 0 10px; font-size: 14px; color: #10151F; background: #FFFFFF"><option>Series A or later</option><option>Next priced round</option></select></label>
+</div>
+</header>
+
+<main style="padding: 24px 32px 40px; display: flex; flex-direction: column; gap: 20px">
+
+<section aria-label="Cohort summary" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #4A5568">Candidates reviewed</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 600">453</span>
+<span style="font-size: 12px; color: #4A5568">from 42+ public source families</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #4A5568">Confirmed entries</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 600">55</span>
+<span style="font-size: 12px; color: #4A5568">dated first institutional round</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #4A5568">Verified closures</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 600">12</span>
+<span style="font-size: 12px; color: #4A5568">legal entities · 1 inside its window</span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #4A5568">Outcome known at 36 months</span>
+<span style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 600">35%</span>
+<span style="font-size: 12px; color: #4A5568">65% unknown or lost</span>
+</div>
+</section>
+
+<section aria-labelledby="status" style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px">
+<h2 id="status" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 18px">36-month status · Series A or later · 55 entries</h2>
+<span style="font-size: 12px; padding: 2px 8px; border-radius: 6px; background: #FFF4E5; color: #7A4100; align-self: center">Halter correction pending: reached 1 → 2</span>
+</div>
+<div role="img" aria-label="Status of 55 entries: reached 1, closed first 1, observed 17, lost 10, unknown 26" style="display: flex; height: 28px; border-radius: 8px; overflow: hidden; border: 1px solid #E2E6EC">
+<div style="width: 2%; background: #0072B2"></div>
+<div style="width: 2%; background: #D55E00"></div>
+<div style="width: 31%; background: #009E73"></div>
+<div style="width: 18%; background: repeating-linear-gradient(45deg, #8A94A6 0 4px, #C3CAD5 4px 8px)"></div>
+<div style="width: 47%; background: #E9EDF2"></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: #2D3748">
+<span><span style="color: #0072B2">●</span> Reached 1</span>
+<span><span style="color: #D55E00">✕</span> Closed first 1</span>
+<span><span style="color: #009E73">○</span> Observed, no outcome 17</span>
+<span>▨ Lost to follow-up 10</span>
+<span>□ Unknown 26</span>
+</div>
+</section>
+
+<section aria-labelledby="lanes" style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 id="lanes" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Company stories on one clock</h2>
+<span style="font-size: 13px; color: #4A5568">Months since first institutional round. Shaded bars mean the source only gives a year — the true date is somewhere inside.</span>
+</div>
+<span style="font-size: 12px; padding: 2px 8px; border-radius: 6px; background: #FFF4E5; color: #7A4100">Approximate positions · layout preview</span>
+</div>
+<svg viewBox="0 0 900 380" role="img" aria-label="Swimlane timeline for seven companies: Halter and Partly reached Series A inside 36 months; Dawn Aerospace's Series A year straddles the window; Supie closed inside the window; Tiro closed after the window; Formus observed; Carepatron unknown" style="width: 100%; height: auto; display: block">
+<rect x="200" y="10" width="396" height="330" fill="#1F4E9E" fill-opacity="0.04"></rect>
+<line x1="596" y1="10" x2="596" y2="340" stroke="#1F4E9E" stroke-dasharray="4 4" stroke-width="1.5"></line>
+<text x="602" y="22" font-family="Inter, sans-serif" font-size="12" fill="#163A77">36-month window</text>
+<g font-family="Inter, sans-serif" font-size="13" fill="#10151F">
+<text x="0" y="48">Halter</text><text x="0" y="94">Partly</text><text x="0" y="140">Dawn Aerospace</text><text x="0" y="186">Supie</text><text x="0" y="232">Tiro Medical</text><text x="0" y="278">Formus Labs</text><text x="0" y="324">Carepatron</text>
+</g>
+<g font-family="Inter, sans-serif" font-size="11" fill="#4A5568">
+<text x="0" y="62">Agritech · seed Dec 2016</text><text x="0" y="108">Software · seed Oct 2020</text><text x="0" y="154">Space · seed 2018</text><text x="0" y="200">Retail · seed</text><text x="0" y="246">Medtech · seed</text><text x="0" y="292">Healthtech · entry 2019</text><text x="0" y="338">Health SaaS · 2022</text>
+</g>
+<g stroke="#EEF1F5"><line x1="200" y1="66" x2="880" y2="66"></line><line x1="200" y1="112" x2="880" y2="112"></line><line x1="200" y1="158" x2="880" y2="158"></line><line x1="200" y1="204" x2="880" y2="204"></line><line x1="200" y1="250" x2="880" y2="250"></line><line x1="200" y1="296" x2="880" y2="296"></line></g>
+
+<line x1="200" y1="44" x2="772" y2="44" stroke="#0072B2" stroke-width="3"></line>
+<circle cx="409" cy="44" r="7" fill="#0072B2"></circle><text x="420" y="38" font-family="Inter, sans-serif" font-size="11" fill="#004F7C">Series A 2018</text>
+<circle cx="772" cy="44" r="5" fill="#0072B2" fill-opacity="0.6"></circle><text x="782" y="48" font-family="Inter, sans-serif" font-size="11" fill="#4A5568">Series B 2021</text>
+
+<line x1="200" y1="90" x2="486" y2="90" stroke="#0072B2" stroke-width="3"></line>
+<rect x="233" y="82" width="121" height="16" fill="#0072B2" fill-opacity="0.15"></rect><text x="238" y="78" font-family="Inter, sans-serif" font-size="11" fill="#4A5568">pre-Series A 2021 · terms open</text>
+<circle cx="486" cy="90" r="7" fill="#0072B2"></circle><text x="497" y="94" font-family="Inter, sans-serif" font-size="11" fill="#004F7C">Series A Dec 2022</text>
+
+<line x1="200" y1="136" x2="596" y2="136" stroke="#009E73" stroke-width="3"></line>
+<rect x="596" y="128" width="253" height="16" fill="#E69F00" fill-opacity="0.25"></rect><text x="604" y="124" font-family="Inter, sans-serif" font-size="11" fill="#7A4100">Series A “2022” straddles window → unresolved</text>
+
+<line x1="200" y1="182" x2="560" y2="182" stroke="#D55E00" stroke-width="3"></line>
+<path d="M553 175 l14 14 M567 175 l-14 14" stroke="#D55E00" stroke-width="3"></path><text x="574" y="186" font-family="Inter, sans-serif" font-size="11" fill="#9A3A00">liquidation (register) · inside window</text>
+
+<line x1="200" y1="228" x2="596" y2="228" stroke="#8A94A6" stroke-width="3" stroke-dasharray="6 5"></line>
+<line x1="596" y1="228" x2="866" y2="228" stroke="#D55E00" stroke-width="1.5" stroke-dasharray="2 4"></line>
+<path d="M859 221 l14 14 M873 221 l-14 14" stroke="#D55E00" stroke-width="2"></path><text x="604" y="222" font-family="Inter, sans-serif" font-size="11" fill="#4A5568">liquidation 2025 · after window → primary unknown</text>
+
+<line x1="200" y1="274" x2="860" y2="274" stroke="#009E73" stroke-width="3"></line>
+<circle cx="860" cy="274" r="6" fill="#FFFFFF" stroke="#009E73" stroke-width="3"></circle><text x="704" y="268" font-family="Inter, sans-serif" font-size="11" fill="#4A5568">observed · no Series A found</text>
+
+<rect x="200" y="312" width="22" height="16" fill="#8A94A6" fill-opacity="0.3"></rect>
+<line x1="222" y1="320" x2="420" y2="320" stroke="#8A94A6" stroke-width="3" stroke-dasharray="6 5"></line><text x="430" y="324" font-family="Inter, sans-serif" font-size="11" fill="#4A5568">entry May vs Jul 2022 under reconciliation · unknown</text>
+
+<g font-family="Inter, sans-serif" font-size="12" fill="#4A5568"><text x="196" y="364">0</text><text x="394" y="364">18</text><text x="590" y="364">36</text><text x="852" y="364">60 mo</text></g>
+</svg>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+
+<section aria-labelledby="stories" style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 id="stories" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 20px">Stories worth knowing</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<article style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 8px"><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#0072B2"></circle></svg><h3 style="margin: 0; font-size: 16px">Partly · fast to Series A</h3></div>
+<p style="margin: 0; font-size: 13px; color: #4A5568; line-height: 1.5">Seed Oct 2020 → priced Series A Dec 2022. Next priced round dated only to a window: 8 Oct 2020 – 16 Dec 2022.</p>
+<a href="EvidenceMatrix.dc.html" style="font-size: 13px; font-weight: 600">4 sources →</a>
+</article>
+<article style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 8px"><svg width="14" height="14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="#D55E00" stroke-width="2.5"></path></svg><h3 style="margin: 0; font-size: 16px">Supie · closed inside window</h3></div>
+<p style="margin: 0; font-size: 13px; color: #4A5568; line-height: 1.5">Liquidation confirmed from the Companies Register and liquidators’ report. Counted as a competing event, not a missing value.</p>
+<a href="EvidenceMatrix.dc.html" style="font-size: 13px; font-weight: 600">Register record →</a>
+</article>
+<article style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 8px"><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="#0072B2"></circle></svg><h3 style="margin: 0; font-size: 16px">Halter · seed to Series A in 2018</h3></div>
+<p style="margin: 0; font-size: 13px; color: #4A5568; line-height: 1.5">Icehouse Seed Fund in the first 2016 round; Series A in 2018; later rounds to Series E.</p>
+<a href="EvidenceMatrix.dc.html" style="font-size: 13px; font-weight: 600">Sources →</a>
+</article>
+<article style="background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: center; gap: 8px"><svg width="22" height="14" aria-hidden="true"><path d="M1 7h20" stroke="#8A94A6" stroke-width="2.5" stroke-dasharray="4 3"></path></svg><h3 style="margin: 0; font-size: 16px">Tiro Medical · late closure</h3></div>
+<p style="margin: 0; font-size: 13px; color: #4A5568; line-height: 1.5">Liquidated 2025, removed 2026 — after its 36-month window, so its earlier financing outcome stays unknown.</p>
+<a href="EvidenceMatrix.dc.html" style="font-size: 13px; font-weight: 600">Register record →</a>
+</article>
+</div>
+</section>
+
+<section aria-labelledby="vint" style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E6EC; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h2 id="vint" style="margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 18px">Entries by vintage</h2>
+<svg viewBox="0 0 320 180" role="img" aria-label="Entries per year 2012 to 2022: 1, 1, 2, 2, 3, 7, 4, 9, 2, 9, 10" style="width: 100%; height: auto">
+<g fill="#1F4E9E">
+<rect x="10" y="146" width="20" height="14"></rect><rect x="38" y="146" width="20" height="14"></rect><rect x="66" y="132" width="20" height="28"></rect><rect x="94" y="132" width="20" height="28"></rect><rect x="122" y="118" width="20" height="42"></rect><rect x="150" y="62" width="20" height="98"></rect><rect x="178" y="104" width="20" height="56"></rect><rect x="206" y="34" width="20" height="126"></rect><rect x="234" y="132" width="20" height="28"></rect><rect x="262" y="34" width="20" height="126"></rect><rect x="290" y="20" width="20" height="140"></rect>
+</g>
+<g font-family="Inter, sans-serif" font-size="10" fill="#4A5568"><text x="10" y="176">’12</text><text x="122" y="176">’16</text><text x="206" y="176">’19</text><text x="290" y="176">’22</text></g>
+</svg>
+<p style="margin: 0; font-size: 12px; color: #4A5568; line-height: 1.5">Denominator shown with every chart. Market context: Young Company Finance counted 142 early-stage deals in 2022 (deals, not first entries).</p>
+</section>
+
+</div>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
