@@ -3,7 +3,7 @@ import type { CohortCompanies, HealthtechCoverage, PoolDirectory, PrecedentRespo
   ClaimReview, ResearchSubjectsResponse, WorkbenchClaim, WorkbenchGates } from "./api-schema";
 import { useResource } from "./hooks";
 import { Status } from "./shared";
-import { type AnchorKind, ClaimDrawer } from "./workbench-shared";
+import { type AnchorKind, ClaimDrawer, fieldLabel } from "./workbench-shared";
 import { Overview } from "./workbench-overview";
 import { OutcomeLibraryPage } from "./workbench-outcomes";
 import { DisputeControl, EvidenceMatrix } from "./workbench-evidence";
@@ -27,6 +27,7 @@ export function Workbench() {
   const [selectedDate, setSelectedDate] = useState("");
   const [query, setQuery] = useState("");
   const [selectedClaim, setSelectedClaim] = useState<{claim: WorkbenchClaim; subjectId?: string; questions?: string[]} | null>(null);
+  const [evidenceFocus, setEvidenceFocus] = useState<string | null>(null);
   const [evidenceRevision, setEvidenceRevision] = useState(0);
   function openClaim(claim: WorkbenchClaim) { setSelectedClaim({claim}); }
   function reviewed(review: ClaimReview) {
@@ -83,12 +84,14 @@ export function Workbench() {
             </div>}
           </div>
           <label>As-of date<input type="date" value={asOf} onChange={event => setSelectedDate(event.target.value)} /></label>
+          {data && path && <a className="wb-export" href={`/api${path.replace("?", "/screening-note?")}`} download>Export screening note</a>}
         </div>
         <header className="wb-header"><p>Precedents</p><h1>{subjectName ?? "Precedents"}</h1>
           {data && <>
             <p>{data.subject.kind === "research_project" ? "University research project" : "Company"}
               {data.subject.sector && ` · ${data.subject.sector}`}
-              {data.subject.anchor && ` · ${data.subject.anchor.claim.date_value}`}</p>
+              {data.subject.anchor ? ` · ${fieldLabel(data.subject.anchor.claim.field)} · ${data.subject.anchor.claim.date_value}` :
+                data.subject.kind === "research_project" ? " · Research stage" : ""}</p>
             {data.subject.kind === "research_project" && <p>Analogy query · No verified funding round yet</p>}
             <dl className="wb-metrics">
               <div><dd>{data.curated.length}</dd><dt>Curated precedents</dt></div>
@@ -98,18 +101,18 @@ export function Workbench() {
           </>}
         </header>
         <nav className="wb-tabs" aria-label="Precedent views">
-          {tabs.map(item => <button key={item} aria-current={tab === item ? "page" : undefined} onClick={() => setTab(item)}>
+          {tabs.map(item => <button key={item} aria-current={tab === item ? "page" : undefined} onClick={() => { setEvidenceFocus(null); setTab(item); }}>
             {item}{item === "Outlook" && <span role="img" aria-label="locked"> 🔒</span>}
           </button>)}
         </nav>
         {(watchlist.error || subjects.error || precedent.error || gates.error) && <Status error>{watchlist.error || subjects.error || precedent.error || gates.error}</Status>}
         {!data && !precedent.error && !gates.error && tab !== "Outlook" && <Status>Loading precedent evidence…</Status>}
         {tab === "Outlook" && <Outlook gates={gates.data} error={gates.error}/>}
-        {tab === "Evidence" && data && <EvidenceMatrix key={subjectId} data={data} onClaim={(row, claim) =>
+        {tab === "Evidence" && data && <EvidenceMatrix key={subjectId} data={data} focusCompany={evidenceFocus} onClaim={(row, claim) =>
           setSelectedClaim({claim, subjectId: row.company_id, questions: row.company_id === data.subject.company_id
             ? [...row.gaps, ...data.questions] : row.gaps})}/>}
         {tab === "Overview" && data && <Overview data={data} gates={gates.data} gateError={gates.error}
-          cohort={cohort} onCohort={setCohort} onAnchor={setAnchor} onClaim={openClaim} onOutlook={() => setTab("Outlook")} onEvidence={() => setTab("Evidence")}/>}
+          cohort={cohort} onCohort={setCohort} onAnchor={setAnchor} onClaim={openClaim} onOutlook={() => setTab("Outlook")} onEvidence={companyId => { setEvidenceFocus(companyId); setTab("Evidence"); }}/>}
       </>}
     </main>
     {selectedClaim && <ClaimDrawer claim={selectedClaim.claim} questions={selectedClaim.questions}

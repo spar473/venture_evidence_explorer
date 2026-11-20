@@ -26,6 +26,11 @@ export function OutcomeStatus({status}: {status: keyof typeof statuses}) {
 }
 
 const eventLabels: Record<string, string> = {
+  seed: "Seed", pre_seed: "Pre-seed", pre_series_a: "Pre-Series A", series_a: "Series A",
+  series_b: "Series B", ipo: "IPO", acquired: "Acquisition", prototype: "Prototype",
+  provider_study: "Provider study", submission: "Regulatory submission",
+  paid_pilot: "Paid pilot", full_time_team: "Full-time team",
+  regulatory_clearance: "Regulatory clearance", regulatory_decision: "Regulatory decision",
   secondary_timing_bound: "First priced round interval",
   clinical_study: "Clinical study evidence",
   provider_deployment: "Provider deployment",

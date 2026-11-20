@@ -160,3 +160,7 @@
 .wb-claim-dispute form, .wb-claim-dispute label { display: grid; gap: 8px; }
 .wb-claim-dispute input, .wb-claim-dispute textarea { border: 1px solid #c5cfdd; min-height: 44px; padding: 8px; border-radius: 8px; }
 .wb-limits .wb-table-scroll { margin: 14px 0; }
+.wb-export {
+  display: inline-flex; align-items: center; min-height: 44px; align-self: end; padding: 8px 12px;
+  border-radius: 8px; background: var(--wb-primary); color: #fff; font-weight: 650; text-decoration: none;
+}

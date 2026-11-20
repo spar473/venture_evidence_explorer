@@ -69,3 +69,32 @@ test("same-stage evidence uses witnesses and Outlook withholds estimates", async
   await expect(page.getByText(/Dated signed closing records or cap-table/)).toBeVisible();
   await expect(page.getByText(/0\.9876|98\.76%/)).toHaveCount(0);
 });
+
+test("screening note downloads the selected subject and anchor", async ({page}) => {
+  await page.goto("/");
+  const exportLink = page.getByRole("link", {name: "Export screening note"});
+  await expect(exportLink).toBeVisible();
+  const href = await exportLink.getAttribute("href");
+  const response = await page.request.get(href!);
+  expect(response.headers()["content-disposition"]).toContain("attachment");
+  const draft = await response.json();
+  expect(draft.alternatives[0].metadata).toMatchObject({
+    company_id: "subj_ht_mri", anchor_kind: "first_institutional_round", as_of: "2026-11-21",
+  });
+  expect(draft.weight_profiles).toEqual([]);
+});
+
+test("captures workbench screenshots for the README and PR", async ({page}, info) => {
+  await page.setViewportSize({width: 1440, height: 960});
+  await page.goto("/");
+  await expect(page.getByRole("heading", {name: "Where comparable NZ ventures went"})).toBeVisible();
+  await expect(page.getByRole("link", {name: "Export screening note"})).toBeVisible();
+  const views = page.getByRole("navigation", {name: "Precedent views"});
+  await page.screenshot({path: info.outputPath("workbench-overview.png"), fullPage: true});
+  await views.getByRole("button", {name: "Evidence"}).click();
+  await expect(page.getByRole("table", {name: "Evidence matrix"})).toBeVisible();
+  await page.screenshot({path: info.outputPath("workbench-evidence.png"), fullPage: true});
+  await page.getByRole("button", {name: "Outcome library", exact: true}).click();
+  await expect(page.getByRole("heading", {name: "36-month status · Series A or later"})).toBeVisible();
+  await page.screenshot({path: info.outputPath("workbench-outcome-library.png"), fullPage: true});
+});

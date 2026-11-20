@@ -19,7 +19,7 @@ export function Trajectory({rows, onClaim, title}: {
   const width = 900, left = 185, gap = 43, top = 45;
   const height = top + rows.length * gap + 45;
   const x = (days: number) => left + (days - lower) / (upper - lower) * (width - left - 48);
-  return <figure className="wb-timeline" aria-label={`${title}, ${rows.length} companies and ${points.length} dated marks`}>
+  return <figure className="wb-timeline" aria-label={`${title}, ${rows.length} ${rows.length === 1 ? "company" : "companies"} and ${points.length} dated marks`}>
     <div className="wb-toolbar">
       <figcaption>{rows.length} {rows.length === 1 ? "company" : "companies"} · 36-month window shaded</figcaption>
       <button type="button" aria-pressed={table} onClick={() => {setTable(!table); setHover(null);}}>{table ? "View as chart" : "View as table"}</button>

@@ -3,7 +3,7 @@ from collections import defaultdict
 from contextlib import closing
 from datetime import date
 
-from fastapi import HTTPException, Query
+from fastapi import HTTPException, Query, Response
 
 from .cohort_audit import run_audit
 from .database import connect
@@ -20,6 +20,7 @@ from .precedent_similarity import MILESTONES, VERSION, rank_peers, select_comps
 from .reference_pool import CLOSURES, OUTCOMES, EventDate, PoolEvent, PoolSource, Witness, plus_months
 from .reference_pool_api import latest_fixture
 from .research_repository import dossier, read_consistently
+from .screening_note import ScreeningDraft, screening_draft
 from .workbench_reviews import claim_reviews
 
 # Read-side links between existing case records and known fixture brands.
@@ -194,8 +195,19 @@ class PrecedentCatalog:
                   and event.date.bounds()[1] <= horizon
                   and (event.kind not in OUTCOMES or event.instrument == 'priced_equity')]
         if anchor.kind != 'first_institutional_round':
-            # Alternate anchors have no frozen 36-month follow-up audit. Their
-            # dated milestones are still plotted, with outcome ranks withheld.
+            # Only positive dated results can establish a rank on the
+            # alternate clock. Seed-entry censoring cannot establish absence.
+            outcome_ranks = [rank for rank in ladder if rank < 5]
+            if outcome_ranks:
+                return 'reached_outcome', max(ladder)
+            if ladder and decision['status'] == 'acquired_or_ipo_before_outcome':
+                return 'acquired_or_ipo_before_outcome', max(ladder)
+            terminal = events.get(decision['outcome_event_id'])
+            if decision['status'] == 'closed_before_outcome' and terminal:
+                lower, upper = terminal.date.bounds()
+                _, latest_seed = EventDate.model_validate(entry['date']).bounds()
+                if latest_seed <= anchor.claim.lower_on and start < lower <= upper <= horizon:
+                    return 'closed_before_outcome', 0
             return 'unknown', None
         status = decision['status']
         if decision['outcome_event_id'] and decision['outcome_event_id'] not in events:
@@ -259,3 +271,12 @@ def install(app, db):
                                      similarity_version=VERSION)
 
         return compute(subject_id, anchor, as_of, read)
+
+
+    @app.get('/api/precedents/{subject_id}/screening-note', response_model=ScreeningDraft)
+    def export_screening_note(subject_id: str, response_headers: Response,
+                              anchor: AnchorKind = 'first_institutional_round',
+                              as_of: str = Query(..., pattern=r'^\d{4}-\d{2}-\d{2}$')):
+        data = compute(subject_id, anchor, as_of, response)
+        response_headers.headers['Content-Disposition'] = 'attachment; filename="venture-frame-screening-note.json"'
+        return screening_draft(data)

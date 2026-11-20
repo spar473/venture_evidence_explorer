@@ -13,7 +13,7 @@ from .ingestion import StrictModel
 
 
 class DisputeRequest(StrictModel):
-    request_id: str = Field(pattern=r'^[0-9a-f-]{36}$')
+    request_id: str = Field(pattern=r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$')
     claim_id: str = Field(min_length=1, max_length=250)
     analyst: str = Field(min_length=1, max_length=120)
     rationale: str = Field(min_length=1, max_length=2400)

@@ -1,4 +1,4 @@
-import {useState, type FormEvent} from "react";
+import {useEffect, useState, type FormEvent} from "react";
 import type {ClaimReview, PrecedentResponse, WorkbenchClaim, WorkbenchRow} from "./api-schema";
 import {api} from "./api";
 import {label} from "./labels";
@@ -17,8 +17,8 @@ function WitnessBadge({claim}: {claim: WorkbenchClaim}) {
     `${label(claim.witness.kind)} · ${claim.witness.available_on}` : "No dated witness"}</small>;
 }
 
-export function EvidenceMatrix({data, onClaim}: {
-  data: PrecedentResponse; onClaim: (row: WorkbenchRow, claim: WorkbenchClaim) => void;
+export function EvidenceMatrix({data, focusCompany, onClaim}: {
+  data: PrecedentResponse; focusCompany: string | null; onClaim: (row: WorkbenchRow, claim: WorkbenchClaim) => void;
 }) {
   const [sameStage, setSameStage] = useState(false);
   const [fields, setFields] = useState<string[]>([]);
@@ -30,6 +30,12 @@ export function EvidenceMatrix({data, onClaim}: {
   const dateRows = rows.map(row => ({row, claims: sameStage ? row.snapshot : row.claims}));
   const shownFields = [...defaultFields, ...fields.map(field => ({title: fieldLabel(field), match: [field]}))];
   const knownFields = new Set(shownFields.flatMap(item => item.match));
+  useEffect(() => {
+    if (!focusCompany) return;
+    const row = document.getElementById("wb-evidence-" + focusCompany);
+    row?.focus({preventScroll: true});
+    row?.scrollIntoView({block: "nearest"});
+  }, [focusCompany]);
   const choices = [...new Set(rows.flatMap(row => [...row.claims, ...row.snapshot].map(claim => claim.field)))]
     .filter(field => !knownFields.has(field)).sort();
 
@@ -58,7 +64,7 @@ export function EvidenceMatrix({data, onClaim}: {
       `Source-attributed evidence available by ${data.as_of}.`}</p>
     <div className="wb-table-scroll wb-evidence-scroll"><table className="wb-table wb-matrix" aria-label="Evidence matrix">
       <thead><tr><th scope="col">Venture</th>{shownFields.map(field => <th scope="col" key={field.title}>{field.title}</th>)}</tr></thead>
-      <tbody>{dateRows.map(({row, claims}, index) => <tr key={row.company_id} className={index === 0 ? "wb-pinned" : undefined}>
+      <tbody>{dateRows.map(({row, claims}, index) => <tr key={row.company_id} id={"wb-evidence-" + row.company_id} tabIndex={-1} className={index === 0 ? "wb-pinned" : undefined}>
         <th scope="row">{row.display_name}{index === 0 && <small>Selected subject</small>}
           {sameStage && <small>{row.anchor?.claim.date_value || "Anchor unresolved"}</small>}</th>
         {shownFields.map(field => {

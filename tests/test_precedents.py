@@ -180,3 +180,40 @@ def test_append_only_disputes_keep_source_claim_and_gate_response_independent(de
         for statement in ('DELETE FROM workbench_claim_reviews', "UPDATE workbench_claim_reviews SET rationale='change'"):
             with pytest.raises(sqlite3.IntegrityError, match='append-only'):
                 conn.execute(statement)
+
+
+def test_screening_note_download_round_trips_existing_measurement_draft(demo_db):
+    from backend.precedent_contracts import PrecedentResponse
+    from backend.screening_note import ScreeningDraft, screening_draft
+
+    with TestClient(create_app(demo_db)) as client:
+        path = '/api/precedents/subj_ht_mri'
+        query = '?as_of=2026-11-21&anchor=first_regulatory_decision'
+        response = client.get(path + '/screening-note' + query)
+        assert response.status_code == 200, response.text
+        assert 'attachment;' in response.headers['content-disposition']
+        draft = ScreeningDraft.model_validate_json(response.content)
+        assert draft == ScreeningDraft.model_validate(draft.model_dump())
+        [subject] = draft.alternatives
+        assert subject.metadata.role == 'subject' and subject.metadata.company_id == 'subj_ht_mri'
+        assert subject.metadata.anchor_kind == 'first_regulatory_decision'
+        assert subject.metadata.anchor_event is None and subject.metadata.as_of == '2026-11-21'
+        assert draft.performances == draft.weight_profiles == draft.scenarios == []
+
+        real = PrecedentResponse.model_validate(client.get(path + query).json())
+        witnessed = claim('prototype', 'yes')
+        best = row('positive_peer', status='reached_outcome', rank=4)
+        best.anchor = WorkbenchAnchor(kind=real.anchor_kind, claim=claim('regulatory_clearance'))
+        best.milestones = checklist([witnessed])
+        ranked = rank_peers(row('subject'), [best, row('middle_peer'), row('closed_peer', 'closed_before_outcome', 0)])
+        comps, _, _ = select_comps(ranked)
+        synthetic = real.model_copy(update={'comps':comps, 'abstention':None})
+        with_comps = screening_draft(synthetic)
+        restored = ScreeningDraft.model_validate_json(with_comps.model_dump_json())
+        assert restored == with_comps
+        by_role = {item.metadata.role: item.metadata for item in restored.alternatives}
+        assert set(by_role) == {'subject', 'ceiling', 'typical', 'floor'}
+        assert by_role['ceiling'].anchor_event.claim.claim_id == 'claim_regulatory_clearance'
+        assert by_role['ceiling'].milestones[0].claim_ids == ['claim_prototype']
+        assert by_role['ceiling'].dimensions == ranked[0].dimensions
+        assert restored.performances and not restored.weight_profiles

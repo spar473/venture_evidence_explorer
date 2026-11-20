@@ -85,6 +85,7 @@ def rank_peers(subject, eligible_rows):
 
 
 def select_comps(peers):
+    peers = sorted(peers, key=lambda peer: (-peer.similarity, peer.row.company_id))[:TOP_K]
     no_closure = not any(peer.row.status == 'closed_before_outcome' for peer in peers)
     if len(peers) < MIN_PEERS:
         return [], no_closure, f'Fewer than {MIN_PEERS} peers meet the similarity and evidence coverage requirements.'
@@ -103,10 +104,11 @@ def select_comps(peers):
         SelectedComp(role='ceiling', peer=ceiling, reason='Highest outcome rank among the closest peers.'),
         SelectedComp(role='typical', peer=typical, reason='Median outcome rank among the closest peers with a classified outcome.'),
     ]
-    floor_pool = [peer for peer in resolved if peer.row.status == (
-        'observed_no_outcome' if no_closure else 'closed_before_outcome')]
+    floor_pool = [peer for peer in resolved if (peer.row.status != 'lost_to_follow_up' if no_closure
+                  else peer.row.status == 'closed_before_outcome')]
     if floor_pool:
-        comps.append(SelectedComp(role='floor', peer=floor_pool[0], reason=(
+        floor = min(floor_pool, key=lambda peer: peer.row.outcome_rank)
+        comps.append(SelectedComp(role='floor', peer=floor, reason=(
             'Lowest observed outcome among the closest peers.' if no_closure
             else 'Closest peer with verified closure before the outcome.')))
     return comps, no_closure, None

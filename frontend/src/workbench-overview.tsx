@@ -33,7 +33,7 @@ export function Checklist({data, onClaim}: {data: PrecedentResponse; onClaim: (c
 }
 
 function Comps({data, onClaim, onEvidence}: {
-  data: PrecedentResponse; onClaim: (claim: WorkbenchClaim) => void; onEvidence: () => void;
+  data: PrecedentResponse; onClaim: (claim: WorkbenchClaim) => void; onEvidence: (companyId: string) => void;
 }) {
   return <section className="wb-card">
     <header className="wb-toolbar"><h2>Ceiling, typical and floor comps</h2></header>
@@ -59,7 +59,7 @@ function Comps({data, onClaim, onEvidence}: {
         {row.snapshot.length ? <ul>{row.snapshot.map(claim => <li key={claim.claim_id + claim.field}><button
           className="wb-text-button" onClick={() => onClaim(claim)}>{fieldLabel(claim.field)} · {claim.value}</button></li>)}</ul>
           : <p>{row.gaps.find(gap => gap.startsWith("Same-stage")) || "Same-stage evidence is withheld."}</p>}
-        <button onClick={onEvidence}>Evidence matrix</button>
+        <button onClick={() => onEvidence(row.company_id)}>Evidence matrix</button>
       </article>;
     })}</div>}
     {data.no_verified_closure && data.peers.length >= 3 && <p>No verified closure among the closest peers.</p>}
@@ -76,7 +76,7 @@ export function Overview({data, gates, gateError, cohort, onCohort, onAnchor, on
   data: PrecedentResponse; gates: WorkbenchGates | null; gateError: string;
   cohort: "curated" | "similar"; onCohort: (cohort: "curated" | "similar") => void;
   onAnchor: (kind: AnchorKind) => void; onClaim: (claim: WorkbenchClaim) => void;
-  onOutlook: () => void; onEvidence: () => void;
+  onOutlook: () => void; onEvidence: (companyId: string) => void;
 }) {
   const peers = cohort === "curated" ? data.curated : data.peers.map(peer => peer.row);
   const rows: WorkbenchRow[] = [data.subject, ...peers].filter(row => row.points.length > 0);

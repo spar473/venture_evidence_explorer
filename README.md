@@ -1,12 +1,12 @@
 # Venture Evidence Explorer
 
-Explore sourced NZ venture histories in a local research workbench.<br>
-Built for founders and analysts investigating how comparable ventures developed.<br>
-Trace milestones, claims and unresolved gaps back to public evidence.<br>
-Try **Research dossiers → Automated Breast MRI Reporting → Compare elapsed time**.<br>
-See the [method and evidence boundaries](docs/METHOD.md).
+Compare early NZ ventures against sourced company histories in the Precedent & Outcome Workbench.<br>
+Align peers at institutional funding, provider or clinical study, regulatory decision or first paid customer.<br>
+Inspect dated evidence, known outcomes and unanswered diligence questions.<br>
+Export an unweighted screening note for Venture Frame. Outcome rates require cohort coverage and held-out validation.<br>
+Start with **Precedents → Automated Breast MRI Reporting → Overview**. [Comparison method](docs/design/COMPS_METHOD.md)
 
-![The breast MRI dossier showing the Formus comparison and links to the source claims](docs/healthtech-pilot/mri-comparison.png)
+Workbench screenshot capture is included in the [browser tests](frontend/e2e/workbench.spec.ts). The [verification log](docs/healthtech-pilot/STATUS.md#pending-local-verification) records the current capture status.
 
 ## Two-dossier integration pilot · Prompt 1
 
@@ -49,7 +49,7 @@ cd ..
 .venv/bin/python scripts/serve.py
 ```
 
-Open http://127.0.0.1:8000. The launcher binds only to loopback. Once dependencies and the frontend are built, restart with `.venv/bin/python scripts/serve.py`. Use `--port 8001` if 8000 is in use. `VEE_DB=/absolute/path.sqlite` selects an existing migrated database. The app never silently replaces or reimports a database on startup. Evidence requests use read-only SQLite connections. The explicit intake save/revision routes use a separate local write transaction; no evidence acceptance occurs.
+Open http://127.0.0.1:8000. The launcher binds only to loopback. Once dependencies and the frontend are built, restart with `.venv/bin/python scripts/serve.py`. Use `--port 8001` if 8000 is in use. `VEE_DB=/absolute/path.sqlite` selects an existing migrated database. The app never silently replaces or reimports a database on startup. Evidence requests use read-only SQLite connections. Intake saves and workbench claim disputes use separate local write transactions. Disputes preserve the original source claims and the frozen outcome audit.
 
 Install the documented Python dependencies before bootstrap or verification; strict ingestion now uses the already required Pydantic dependency. `python scripts/check_migrations.py` remains standard-library only. Bootstrap imports into `outputs/venture_evidence.sqlite`, applies checksummed migrations and exports database tables/analyses. Do not hand-edit CSVs as a source of truth. `data/seed.json` is the preserved input fixture; the application reads database records only.
 
@@ -67,13 +67,23 @@ Development: run the service, then `cd frontend && npm run dev`. Vite proxies `/
 
 ## Demo path
 
-1. Explore ventures → choose Velocity Ideas Challenge and 2026: two recorded ventures. Reset.
-2. Search `FormusLabs`, inspect Formus Labs. Its profile has no recorded award; the founder's IMeasureU award has not been transferred. Inspect the dated source, unknown identity/status fields and separate proposals.
-3. Find comparisons → description `clinical images software surgical planning` → product/customer. Inspect the two lexical candidates, fields, sources and unknowns. These are development examples, not relevance judgments.
-4. Select Formus Labs as subject and compare. Self is excluded. Switch to stage/milestone to see explicit insufficient evidence.
-5. Data & exports → download each CSV. Counts name awards, ventures, relationships, observations or sources. Source age carries its UTC `as_of_date`.
+Start the disposable demo from the checkout after building the frontend.
 
-See [methods and evidence boundaries](docs/METHOD.md) for the ranking policy, source coverage and historical comparison rules.
+```sh
+.venv/bin/python scripts/healthtech_demo.py --serve --port 8006
+```
+
+1. At [the local demo](http://127.0.0.1:8006), open **Precedents → Automated Breast MRI Reporting**. Switch the trajectory from the first institutional round to the first regulatory decision and open an event.
+2. Open **Evidence**, then select **What was public at the same stage**. Compare the source witnesses and the open cells. The five university projects remain analogy queries.
+3. Open **Outcome library**. Inspect Partly, Halter, Supie and Tiro Lifesciences, then change the outcome from Series A or later to the next priced equity round.
+4. Return to **Precedents → Outlook** for the current cohort counts and permissioned data requirements.
+5. Select **Export screening note** and open the JSON in Venture Frame through **Projects → Import**.
+
+The previous directory, comparison and full dossier views are available through **Research mode** in the sidebar.
+
+![Research mode dossier showing the Formus comparison and links to source claims](docs/healthtech-pilot/mri-comparison.png)
+
+See the [API and evidence contracts](docs/research_api.md#precedent-workbench) for anchor rules, provenance and outcome scope.
 
 ## Verification
 
