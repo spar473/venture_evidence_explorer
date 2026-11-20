@@ -187,3 +187,19 @@ Each quoted name was searched against round-stage and pricing terms, and the res
 Python 3.12 ran 174 passing backend tests. The production build, smoke verification, all three SQLite migration transaction modes, generated contract check and disposable demo import verification passed. Playwright could not start the local server on either port tested because the environment denied socket binding. A stand-alone Chrome launch also exited before a page could be opened.
 
 The Phase 0 changes are committed locally on `implementation/healthtech-pilot`. Direct Git access failed to resolve `github.com`. The remote heads were independently checked and were still `3f0905e` for the pilot and `bcca61e` for `main`. Resume by running the browser suite and inspecting the running app in an environment that allows local sockets. Then push the pilot branch, archive `origin/main` with the required tag and update `main` with the original lease from the workbench prompt. Phase 1 starts from the verified replacement `origin/main`.
+
+## Workbench continuation · 21 November 2026
+
+Phase 0 is published. The archive tag and new `origin/main` are visible in the checkout. The workbench branch was verified to descend from `2404f2d`.
+
+### Decisions (continued)
+
+| Date | Decision | Reason | Alternative considered |
+| --- | --- | --- | --- |
+| 21 November 2026 | Use the system font stack for the workbench. | The visual spec permits it and both font families with redistributable files were unavailable together locally. | Introduce a font download or CDN. |
+
+### Pending local verification
+
+| Phase | Checks run in this environment | Deferred |
+| --- | --- | --- |
+| 1 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |

@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 test('save/reload/reopen user draft and compare without accepting source facts',async({page})=>{
- await page.goto('/');await page.getByRole('button',{name:'Add venture',exact:true}).click();
+ await page.goto('/?mode=research');await page.getByRole('button',{name:'Add venture',exact:true}).click();
  await page.getByLabel('Venture or project name').fill('Synthetic intake browser fixture');
  await page.getByLabel('Aliases (comma separated)').fill('FormusLabs');
  await page.getByLabel('Description',{exact:true}).fill('clinical images software surgical planning');
@@ -19,7 +19,7 @@ test('save/reload/reopen user draft and compare without accepting source facts',
  const corpus=await page.request.get('/api/ventures');expect((await corpus.json()).total).toBe(10);
 });
 test('source validation and persistence failure keep typed input',async({page})=>{
- await page.goto('/');await page.getByRole('button',{name:'Add venture',exact:true}).click();await page.getByRole('button',{name:'Start another draft'}).click();
+ await page.goto('/?mode=research');await page.getByRole('button',{name:'Add venture',exact:true}).click();await page.getByRole('button',{name:'Start another draft'}).click();
  await page.getByLabel('Venture or project name').fill('Synthetic retained input');
  await page.getByRole('button',{name:'Add optional source attribution'}).click();
  await page.getByLabel('Attributed claim',{exact:true}).fill('Synthetic claim, not real research');await page.getByLabel('Source URL',{exact:true}).fill('http://example.org');

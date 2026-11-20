@@ -1,0 +1,57 @@
+.workbench {
+  --wb-navy: #0f1b2d;
+  --wb-canvas: #f4f6f9;
+  --wb-border: #e2e6ec;
+  --wb-primary: #1f4e9e;
+  --wb-muted: #516075;
+  --wb-radius: 14px;
+  --wb-reached: #0072b2;
+  --wb-observed: #009e73;
+  --wb-closed: #d55e00;
+  --wb-lost: #8a94a6;
+  --wb-unknown: #697483;
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr);
+  min-height: 100vh;
+  background: var(--wb-canvas);
+  color: #17243a;
+  font: 14px/1.55 system-ui, sans-serif;
+}
+.wb-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--wb-navy);
+  color: #e8eef9;
+  padding: 24px 16px 16px;
+}
+.wb-brand { font-size: 17px; font-weight: 700; padding: 8px; text-decoration: none; }
+.wb-sidebar a { display: inline-flex; align-items: center; min-height: 44px; color: #fff; }
+.wb-sidebar nav { display: grid; gap: 3px; }
+.wb-sidebar h2 { margin: 0 8px 4px; color: #becce1; font-size: 13px; }
+.wb-sidebar button {
+  min-height: 44px;
+  text-align: left;
+  border-color: transparent;
+  background: transparent;
+  color: inherit;
+  border-radius: 8px;
+}
+.wb-sidebar button:hover, .wb-sidebar button[aria-current] { background: #253c5d; color: #fff; }
+.wb-sidebar :focus-visible { outline-color: #a4c4ff; }
+.wb-sidebar-footer { margin-top: auto; display: grid; padding: 8px; color: #becce1; }
+.wb-content { width: 100%; padding: clamp(16px, 3vw, 44px); }
+.wb-header h1 { margin: 0; font-size: clamp(24px, 3vw, 34px); line-height: 1.2; }
+.wb-header p { margin: 4px 0; color: var(--wb-muted); }
+.wb-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+.wb-tabs button { min-height: 44px; border-radius: 8px; }
+.wb-tabs button[aria-current] { color: #fff; background: var(--wb-primary); }
+.wb-card { border: 1px solid var(--wb-border); border-radius: var(--wb-radius); background: #fff; padding: 20px; margin: 0 0 16px; min-width: 0; }
+.wb-card > h2:first-child { margin-top: 0; }
+@media (max-width: 740px) {
+  .workbench { grid-template-columns: minmax(0, 1fr); }
+  .wb-sidebar { padding: 12px 16px; gap: 10px; }
+  .wb-sidebar nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wb-sidebar h2 { grid-column: 1 / -1; }
+  .wb-sidebar-footer { margin: 0; padding: 0 8px; }
+}

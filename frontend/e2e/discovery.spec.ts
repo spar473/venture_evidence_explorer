@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 test('discovery staging totals, scope filters, unresolved aliases and withheld promotion',async({page})=>{
- await page.goto('/');await page.getByRole('button',{name:'Discovery queue',exact:true}).click();
+ await page.goto('/?mode=research');await page.getByRole('button',{name:'Discovery queue',exact:true}).click();
  await expect(page.locator('.discovery-workspace')).toContainText('274 staged leads');await expect(page.locator('.discovery-workspace')).toContainText('27 source families');await expect(page.locator('.discovery-workspace')).toContainText('0 promoted');
  await page.getByLabel('Reported outcome period').selectOption('2021');await expect(page.locator('.discovery-table tbody tr')).toHaveCount(2);
  await expect(page.locator('.discovery-table')).toContainText('Vend');await expect(page.locator('.discovery-table')).toContainText('Timely');

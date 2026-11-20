@@ -12,8 +12,9 @@ import { ResearchWorkspace } from "./research";
 import { Status } from "./shared";
 import { useResource, type ComparisonSession } from "./hooks";
 import "./style.css";
+import { Workbench } from "./workbench";
 
-function App() {
+function ResearchApp() {
   const [tab, setTab] = useState<"browse" | "compare" | "analytics" | "research" | "intake" | "discovery">("browse");
   const {data: facets, error: facetsError} = useResource<Facets>("/facets");
   const [filters, updateFilters] = useState<Filters>({programme: "", year: "", connection: ""});
@@ -59,7 +60,7 @@ function App() {
             </button>
           ))}
         </nav>
-        <span className="local">Local workspace</span>
+        <a className="local" href="/">Precedent workbench</a>
       </header>
       <main id="workspace-content" tabIndex={-1}>
         <div className="page-heading">
@@ -107,6 +108,6 @@ function App() {
 }
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    {new URLSearchParams(window.location.search).get("mode") === "research" ? <ResearchApp /> : <Workbench />}
   </React.StrictMode>,
 );
