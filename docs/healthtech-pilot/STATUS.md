@@ -56,6 +56,8 @@ Open the [local demo](http://127.0.0.1:8006) and select **Research dossiers**. T
 
 The latest public-source run evaluated **453 named candidate records**, including the 274 staged discovery leads. **55** have support for a first institutional pre-seed or seed in 2012–2022. **397** remain unresolved and Bspkl's documented first seed falls outside the window. The source-covered cohort is still 95 entries short of the 150-company gate. The app's 30 selectable fixture companies remain available for individual comparisons.
 
+The candidate count fell from 454 to 453 after the audit consolidated duplicate Rocos and SafeStack records and added Googly Inc Limited as an unresolved lead.
+
 | Entry vintage | Included companies |
 | --- | ---: |
 | 2012 | 1 |
@@ -91,6 +93,7 @@ On 20 November 2026 the review covered all 50 original entrants and was committe
 | Unknown plus lost to follow-up | 31 of 50 (62%) | 34 of 50 (68%) |
 | Verified still observed at 36 months | 21 | 17 |
 | Observation at 36 months unresolved | 22 | 29 |
+| Out of observation by 36 months | 7 | 4 |
 
 Both gates remain closed. Twelve matched legal entities have documented removals or liquidation, ten more than the previous run. Supie is the only confirmed in-window competing closure. The other legal events occurred later. The original StretchSense entity and its successor are recorded separately, and Photonic Innovations' reversed liquidation is excluded from terminal events. The corrected audit counts Partly as a secondary event. Its priced 2022 Series A proves the event occurred between the 2020-10-08 entry and the 2022-12-16 Series A report. The 2021 pre-Series A terms still leave the exact timing open. The Carepatron investor note points to a May 2022 first raise, while the entry ledger retains the July 2022 publication proxy pending reconciliation. No rates or curves were computed. [Entry and legal evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Supie register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376)
 
@@ -105,6 +108,15 @@ Both gates remain closed. Twelve matched legal entities have documented removals
 | Liquium | May 2022 | Wellington UniVentures dates the closing month and the named co-investor calls it a seed round. YCF reports the same syndicate in June. |
 
 The expansion preserved the original 50 entry decisions. The secondary timing correction updates Partly’s follow-up decision. The new entries have unknown outcomes pending follow-up. Across all 55, the primary tally is **1 reached, 1 closed first, 0 exits first, 17 observed without confirmed outcome, 10 lost and 26 unknown**. The secondary tally is **1 reached, 1 closed first, 0 exits first, 14 observed without confirmed outcome, 6 lost and 33 unknown**. Unknown plus lost is **36 of 55** and **39 of 55**, respectively. Both gates remain closed. [Public data limits and permissioned data gaps](PUBLIC_DATA_LIMITS.md)
+
+| Observation at 36 months across 55 entries | Series A or later | Next priced equity round |
+| --- | ---: | ---: |
+| Verified still observed | 21 | 17 |
+| Unresolved | 27 | 34 |
+| Out of observation by 36 months | 7 | 4 |
+| **Total** | **55** | **55** |
+
+Partly reached both outcomes and Supie entered liquidation within the window, placing both companies out of observation for both outcomes. Zincovery and Social Club were classed as lost to follow-up for both outcomes, with last verified activity before month 36. Miruku, TamoRx and Narrative likewise last had verified activity before month 36 and were classed as lost to follow-up for the primary outcome. Their 36-month observation remains unresolved for the secondary outcome.
 
 The earlier asset and stage records remain open for CropLogic, Googly and Veritide. Nectar’s issuer reports a September 2017 angel round before the December YCF entry, with its stage and investor unresolved. The expansion compared the contemporary NZVIF tables with the retrospective appendix and named investor notices. [Entry evidence and locators](../../research/healthtech-pilot/cohort-entry-evidence.json)
 
