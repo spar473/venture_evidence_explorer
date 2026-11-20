@@ -82,17 +82,17 @@ On 20 November 2026 the review covered all 50 original entrants and was committe
 
 | Status | Series A or later | Next priced equity round |
 | --- | ---: | ---: |
-| Reached outcome | 1 | 0 |
+| Reached outcome | 1 | 1 |
 | Verified closure first | 1 | 1 |
 | Acquisition or IPO first | 0 | 0 |
 | Observed without confirmed outcome | 17 | 14 |
 | Lost to follow-up | 10 | 6 |
-| Unknown | 21 | 29 |
-| Unknown plus lost to follow-up | 31 of 50 (62%) | 35 of 50 (70%) |
+| Unknown | 21 | 28 |
+| Unknown plus lost to follow-up | 31 of 50 (62%) | 34 of 50 (68%) |
 | Verified still observed at 36 months | 21 | 17 |
-| Observation at 36 months unresolved | 22 | 30 |
+| Observation at 36 months unresolved | 22 | 29 |
 
-Both gates remain closed. Twelve matched legal entities have documented removals or liquidation, ten more than the previous run. Supie is the only confirmed in-window competing closure. The other legal events occurred later. The original StretchSense entity and its successor are recorded separately, and Photonic Innovations' reversed liquidation is excluded from terminal events. Partly's 2022 Series A is priced. Its earlier pre-Series A terms are open, so the time of its first subsequent priced round is unresolved. The Carepatron investor note points to a May 2022 first raise, while the entry ledger retains the July 2022 publication proxy pending reconciliation. No rates or curves were computed. [Entry and legal evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Supie register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376)
+Both gates remain closed. Twelve matched legal entities have documented removals or liquidation, ten more than the previous run. Supie is the only confirmed in-window competing closure. The other legal events occurred later. The original StretchSense entity and its successor are recorded separately, and Photonic Innovations' reversed liquidation is excluded from terminal events. The corrected audit counts Partly as a secondary event. Its priced 2022 Series A proves the event occurred between the 2020-10-08 entry and the 2022-12-16 Series A report. The 2021 pre-Series A terms still leave the exact timing open. The Carepatron investor note points to a May 2022 first raise, while the entry ledger retains the July 2022 publication proxy pending reconciliation. No rates or curves were computed. [Entry and legal evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Supie register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376)
 
 ### Five additions after the 50-case review
 
@@ -104,7 +104,7 @@ Both gates remain closed. Twelve matched legal entities have documented removals
 | SafeStack | September 2021 | YCF dates the new company capital. The issuer announces the pre-seed in October, and NZTE quotes the founder identifying the same Jelix-led raise as the first. |
 | Liquium | May 2022 | Wellington UniVentures dates the closing month and the named co-investor calls it a seed round. YCF reports the same syndicate in June. |
 
-All 50 original entry and follow-up decisions were identical after expansion. The new entries have unknown outcomes pending follow-up. Across all 55, the primary tally is **1 reached, 1 closed first, 0 exits first, 17 observed without confirmed outcome, 10 lost and 26 unknown**. The secondary tally is **0 reached, 1 closed first, 0 exits first, 14 observed without confirmed outcome, 6 lost and 34 unknown**. Unknown plus lost is **36 of 55** and **40 of 55**, respectively. Both gates remain closed.
+The expansion preserved the original 50 entry decisions. The secondary timing correction updates Partly’s follow-up decision. The new entries have unknown outcomes pending follow-up. Across all 55, the primary tally is **1 reached, 1 closed first, 0 exits first, 17 observed without confirmed outcome, 10 lost and 26 unknown**. The secondary tally is **1 reached, 1 closed first, 0 exits first, 14 observed without confirmed outcome, 6 lost and 33 unknown**. Unknown plus lost is **36 of 55** and **39 of 55**, respectively. Both gates remain closed. [Public data limits and permissioned data gaps](PUBLIC_DATA_LIMITS.md)
 
 The earlier asset and stage records remain open for CropLogic, Googly and Veritide. Nectar’s issuer reports a September 2017 angel round before the December YCF entry, with its stage and investor unresolved. The expansion compared the contemporary NZVIF tables with the retrospective appendix and named investor notices. [Entry evidence and locators](../../research/healthtech-pilot/cohort-entry-evidence.json)
 
@@ -114,6 +114,6 @@ Run the read-only audit from the checkout. Use `--include-decisions` to export e
 python scripts/audit_reference_cohort.py
 ```
 
-The deterministic audit replay, **167 backend tests**, **40 Playwright tests**, production build, smoke verification, migration checks and generated API contract check passed. The fixture dry run wrote zero rows. The disposable demo verified exact reimports and integrity. A separate browser check opened the running MRI dossier and confirmed the three named comparisons, later milestones and source notes. After expansion the fixture still renders Supie’s verified closure trajectory. Entry decisions were identical with registry and staged outcome evidence withheld.
+The deterministic audit replay, **170 backend tests**, **40 Playwright tests**, production build, smoke verification, migration checks and generated API contract check passed. The fixture dry run wrote zero rows. The disposable demo verified exact reimports and integrity. A separate browser check opened the running MRI dossier and confirmed the three named comparisons, later milestones and source notes. After expansion the fixture still renders Supie’s verified closure trajectory. Entry decisions were identical with registry and staged outcome evidence withheld. The audit replay matched the prior entry and source evidence byte for byte and changed only Partly’s secondary status.
 
 **Next task** — Resolve the next-round evidence gaps in the expanded cohort by checking the five new entrants and prioritising in-window issuances with identifiable pricing or capital records.

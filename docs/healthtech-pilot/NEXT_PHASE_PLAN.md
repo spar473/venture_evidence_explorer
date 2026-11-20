@@ -57,6 +57,8 @@ The pool is a **source-covered cohort**: every company that the defined discover
 
 The secondary outcome uses the same source-covered entry cohort and 150-company minimum as the primary analysis. Its release gate requires at least **30 independently qualifying secondary events**, a reported count still under observation at 36 months, and **unknown plus lost to follow-up below 25%** of the cohort. Apply the same follow-up rule to both outcomes. Assess each gate against its own event and status counts. Freeze this decision before collecting the next batch of follow-up evidence.
 
+**Implementation correction · 20 November 2026.** A qualifying in-window Series A or later proves that a secondary event occurred by that round. The audit previously lost that event when an earlier financing had unresolved terms. The frozen outcome definition and gate still apply. When the primary round supplies the proof, record the interval from the earliest supported entry date through the latest supported primary event date. Use the narrower sourced dates when an earlier secondary event is independently established. When the gate permits curves, run the competing-risk analysis twice for these interval-bounded events, assigning them once to the lower bound and once to the upper bound. Report how the results depend on the timing assumption.
+
 **Status categories (kept distinct; never merged):**
 
 | Status | Meaning | Treatment |

@@ -4,8 +4,8 @@ import pytest
 from pydantic import ValidationError
 
 from backend.cohort_audit import run_audit
-from backend.cohort_follow_up import CoverageReview, OutcomeEvidence, assess, gate, outcome_audit
-from backend.reference_pool import PoolEvent
+from backend.cohort_follow_up import CoverageReview, OutcomeEvidence, assess, assess_secondary, gate, outcome_audit
+from backend.reference_pool import EventDate, PoolEvent
 
 
 def entry(value='2020-06-15', precision='day'):
@@ -88,8 +88,42 @@ def test_bounded_searches_cover_original_50_with_a_public_filing_index():
     assert len({row['registry']['company_number'] for row in searches}) == 50
     assert all(row['registry']['filings_url'].endswith('/documents') and row['public_leads']
                and row['news_query'] and row['fund_query'] for row in searches)
-    assert follow['decisions']['public_partly']['secondary']['status'] == 'unknown'
+    partly = follow['decisions']['public_partly']['secondary']
+    assert partly['status'] == 'reached_outcome'
+    assert partly['outcome_event_id'] == 'partly_priced_series_a'
+    assert partly['event_time_basis'] == 'bounded_by_primary'
+    assert partly['event_time_bounds'] == {'earliest_on': '2020-10-08', 'latest_on': '2022-12-16'}
+    assert partly['observed_at_36_months'] is False
+    assert follow['secondary']['statuses']['reached_outcome'] == follow['statuses']['reached_outcome'] == 1
     assert follow['decisions']['public_supie']['secondary']['status'] == 'closed_before_outcome'
+
+
+def test_primary_provides_secondary_bounds_without_a_separate_proof():
+    anchor = entry('2020-06', 'month')
+    series_b = event('series_b', '2022-04-01', round_label='Series B', instrument='priced_equity')
+    series_b = series_b.model_copy(update={'date': EventDate(value='2022-04', precision='month')})
+    primary = assess(anchor, [series_b], None)
+    secondary = assess_secondary(anchor, [series_b], None, primary,
+                                 lambda candidate: 'unknown' if candidate.kind == 'series_b' else None)
+    assert secondary['status'] == 'reached_outcome'
+    assert secondary['outcome_event_id'] == 'test_event'
+    assert secondary['event_time_bounds'] == {'earliest_on': '2020-06-01', 'latest_on': '2022-04-30'}
+    assert secondary['censor_on'] is None
+    assert secondary['observed_at_36_months'] is False
+
+
+@pytest.mark.parametrize(('when', 'instrument'), [
+    ('2023-06-16', 'priced_equity'), ('2022-04-01', 'equity_unspecified'),
+])
+def test_out_of_window_or_unpriced_lettered_round_provides_no_secondary_bound(when, instrument):
+    anchor = entry()
+    series_a = event('series_a', when, round_label='Series A', instrument=instrument)
+    primary = assess(anchor, [series_a], None)
+    secondary = assess_secondary(anchor, [series_a], None, primary,
+                                 lambda candidate: 'unknown' if candidate.kind == 'series_a' else None)
+    assert secondary['status'] == 'unknown'
+    assert secondary['outcome_event_id'] is None
+    assert secondary['event_time_bounds'] is None
 
 
 def test_secondary_requires_distinct_new_priced_capital_and_keeps_its_own_gate(tmp_path):
@@ -110,8 +144,20 @@ def test_secondary_requires_distinct_new_priced_capital_and_keeps_its_own_gate(t
     result = outcome_audit([entry()], [], path)
     assert result['statuses']['reached_outcome'] == 0
     assert result['secondary']['statuses']['reached_outcome'] == 1
+    assert result['decisions']['public_case']['secondary']['event_time_bounds'] == {
+        'earliest_on': '2021-04-01', 'latest_on': '2021-04-01',
+    }
     assert 'fewer_than_30_secondary_outcomes' in result['secondary']['gate_blockers']
     assert outcome_audit([entry('2021-04-01')], [], path)['secondary']['statuses']['unknown'] == 1
+    series_a = event('series_a', '2021-04-30', round_label='Series A', instrument='priced_equity').model_dump()
+    series_a['event_id'] = 'series_a_event'
+    data['sources'][0]['published_on'] = '2021-04-30'
+    data['events'].append(series_a)
+    path.write_text(dumps(data))
+    direct = outcome_audit([entry()], [], path)['decisions']['public_case']['secondary']
+    assert direct['outcome_event_id'] == 'test_event'
+    assert direct['event_time_basis'] == 'direct'
+    assert direct['event_time_bounds'] == {'earliest_on': '2021-04-01', 'latest_on': '2021-04-01'}
     new_seed.update(kind='convertible_note')
     with pytest.raises(ValidationError, match='dated, linked, priced financing'):
         OutcomeEvidence.model_validate(data)

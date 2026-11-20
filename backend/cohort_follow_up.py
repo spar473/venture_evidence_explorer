@@ -194,6 +194,29 @@ def assess(entry, events, review, *, classify_round=lettered_round_status, stric
                 latest_horizon=horizon, observed_at_36_months=covered_at_36_months)
 
 
+def assess_secondary(entry, events, review, primary, classify_round):
+    result = assess(entry, events, review, classify_round=classify_round, strictly_after_entry=True)
+    by_id = {event.event_id: event for event in events}
+    bounds = None
+    basis = None
+    if result['status'] == 'reached_outcome':
+        bounds = by_id[result['outcome_event_id']].date.bounds()
+        basis = 'direct'
+    if primary['status'] == 'reached_outcome':
+        primary_id = primary['outcome_event_id']
+        _, primary_end = by_id[primary_id].date.bounds()
+        if bounds is None or primary_end <= bounds[1]:
+            # An earlier possible priced round makes the time uncertain, but a
+            # qualifying primary round proves a secondary event by that date.
+            entry_start, _ = EventDate.model_validate(entry['date']).bounds()
+            bounds = (entry_start, primary_end)
+            basis = 'bounded_by_primary'
+            result.update(status='reached_outcome', outcome_event_id=primary_id,
+                          censor_on=None, observed_at_36_months=False)
+    return dict(result, event_time_basis=basis,
+                event_time_bounds={'earliest_on': bounds[0], 'latest_on': bounds[1]} if bounds else None)
+
+
 def outcome_audit(included, registry_statuses, path=FOLLOW_UP):
     raw = Path(path).read_bytes()
     evidence = OutcomeEvidence.model_validate(decode_packet(raw))
@@ -219,7 +242,7 @@ def outcome_audit(included, registry_statuses, path=FOLLOW_UP):
         events = groups[owner]
         result = assess(entry, events, review)
         results[owner] = dict(result,
-            secondary=assess(entry, events, review, classify_round=next_round_status, strictly_after_entry=True),
+            secondary=assess_secondary(entry, events, review, result, next_round_status),
             review=review.model_dump() if review else None,
             search=search.model_dump() if search else None,
             next_round_proofs=[proofs[event.event_id].model_dump() for event in events if event.event_id in proofs],
