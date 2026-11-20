@@ -163,6 +163,240 @@
       "kind": "registry_record",
       "published_on": "2021-11-30",
       "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "aspiring_southland_2026",
+      "publisher": "Aspiring Materials",
+      "title": "Southland announcement",
+      "url": "https://www.aspiringmaterials.com/our-news/southlandannouncement",
+      "kind": "press_release",
+      "published_on": "2026-08-12",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "cetogenix_ofwat_2026",
+      "publisher": "Cetogenix",
+      "title": "Rotorua tech company secures $23 million to take NZ innovation global",
+      "url": "https://www.cetogenix.co.nz/news/rotorua-tech-company-secures-23-million-to-take-nz-innovation-global",
+      "kind": "press_release",
+      "published_on": "2026-08-03",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "energybank_exascale_2026",
+      "publisher": "Exascale Labs",
+      "title": "Exascale and EnergyBank sign non-binding agreement",
+      "url": "https://exascalelabs.gcs-web.com/news-releases/news-release-details/exascale-and-energybank-sign-mou-develop-ai-compute-powered-full",
+      "kind": "press_release",
+      "published_on": "2026-08-31",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "heartlab_university_2026",
+      "publisher": "University of Auckland",
+      "title": "The student startup changing heart care",
+      "url": "https://www.auckland.ac.nz/en/news/2026/07/01/student-startup-changing-heart-care.html",
+      "kind": "news_article",
+      "published_on": "2026-07-01",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "respiraq_booster_2026",
+      "publisher": "Booster Investment Management",
+      "title": "BIF - Investment in RespirAq",
+      "url": "https://www.nzx.com/announcements/483768",
+      "kind": "press_release",
+      "published_on": "2026-11-16",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "company_1centre_2024",
+      "publisher": "1Centre",
+      "title": "1Centre surpasses 100,000 business customers",
+      "url": "https://www.1centre.com/1centre-surpasses-100000-business-customers-milestone-cementing-its-position-in-digital-trade-credit-management/",
+      "kind": "press_release",
+      "published_on": "2024-04-02",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "jasper_caruso_2023",
+      "publisher": "Jasper",
+      "title": "Jasper spins out its technology into a new SaaS company",
+      "url": "https://www.jasper.io/news/jasper-spins-out-technology-into-new-saas-company",
+      "kind": "press_release",
+      "published_on": "2023-02-24",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "socialclub_spinoff_2018",
+      "publisher": "The Spinoff",
+      "title": "How The Social Club is helping social media influencers",
+      "url": "https://thespinoff.co.nz/_/30-08-2018/the-social-club-is-helping-social-media-influencers-take-over-the-advertising-world",
+      "kind": "news_article",
+      "published_on": "2018-08-30",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "myovolt_avenues_2023",
+      "publisher": "Avenues",
+      "title": "Good vibrations for HealthTech",
+      "url": "https://www.avenues.net.nz/all-stories/2023/5/29/good-vibrations-for-healthtech",
+      "kind": "news_article",
+      "published_on": "2023-05-29",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "foundry_issuer_2021",
+      "publisher": "Foundry Lab",
+      "title": "Foundry Lab raises US $8M Series A round",
+      "url": "https://www.prnewswire.com/news-releases/foundry-lab-raises-us-8m-series-a-round-to-make-metal-casting-as-easy-as-a-microwave-dinner-301433107.html",
+      "kind": "press_release",
+      "published_on": "2021-11-29",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "narrative_issuer_2020",
+      "publisher": "Narrative",
+      "title": "Narrative raises $2.58M",
+      "url": "https://narrative.so/blog/narrative-raise",
+      "kind": "press_release",
+      "published_on": "2020-07-15",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "partly_counsel_2021",
+      "publisher": "Kindrik Partners",
+      "title": "Partly pre-Series A investment",
+      "url": "https://kindrik.co.nz/blogs/kindrik-partners-advises-blackbird-ventures-on-pre-series-a-investment-into-partly/",
+      "kind": "press_release",
+      "published_on": "2021-10-27",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "runn_shearwater_2023",
+      "publisher": "Shearwater Capital",
+      "title": "Our investment in Runn.io",
+      "url": "https://www.shearwater.co/news/our-investment-in-runn-io/",
+      "kind": "press_release",
+      "published_on": "2023-01-30",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "halter_operations_2026",
+      "publisher": "Halter",
+      "title": "Halter announces Series E and expansion",
+      "url": "https://www.halterhq.com/en-nz/news/halter-accelerates-international-expansion-following-seriese-fundraising-round",
+      "kind": "press_release",
+      "published_on": "2026-03-25",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "mint_hp_2026",
+      "publisher": "Mint Innovation",
+      "title": "Mint Innovation collaborates with HP",
+      "url": "https://www.mint.bio/news-and-press/mint-innovation-collaborates-with-hp-to-produce-industry-first-closed-loop-recycled-copper",
+      "kind": "press_release",
+      "published_on": "2026-03-04",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "vidapp_release_2026",
+      "publisher": "VidApp",
+      "title": "Release 3.10",
+      "url": "https://wearevidapp.zendesk.com/hc/en-nz/articles/62714130569881-Release-3-10-a-fresh-new-look-for-your-mobile-and-TV-apps",
+      "kind": "press_release",
+      "published_on": "2026-09-29",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "immersve_metamask_2026",
+      "publisher": "Immersve",
+      "title": "MetaMask Card goes live in the UK",
+      "url": "https://immersve.com/announcements",
+      "kind": "press_release",
+      "published_on": "2026-09-30",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "sharesies_activity_2026",
+      "publisher": "Sharesies",
+      "title": "Survey: Ownership will feature in the future Kiwi pay packet",
+      "url": "https://www.sharesies.nz/blog/survey-ownership-will-feature-in-the-future-kiwi-pay-packet",
+      "kind": "press_release",
+      "published_on": "2026-07-10",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "jasper_fund_2026",
+      "publisher": "Jasper",
+      "title": "Jasper grows Industrial Income Plus Fund to over $100m",
+      "url": "https://www.jasper.io/news/jasper-grows-industrial-fund",
+      "kind": "press_release",
+      "published_on": "2026-04-01",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "parcelport_zappy_operations",
+      "publisher": "High Court of New Zealand",
+      "title": "Commerce Commission v Aramex New Zealand Holdings Ltd",
+      "url": "https://www.comcom.govt.nz/assets/Documents/timeline/Commerce-Commission-v-Aramex-New-Zealand-Holdings-Limited-Judgment-4-March-2026.pdf",
+      "kind": "dated_report",
+      "published_on": "2026-03-04",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "carepatron_blackbird_follow_2023",
+      "publisher": "Blackbird",
+      "title": "Investment Notes: Carepatron",
+      "url": "https://www.blackbird.vc/blog/investment-notes-carepatron-2",
+      "kind": "press_release",
+      "published_on": "2023-08-30",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "firstaml_kindrik_2021",
+      "publisher": "Kindrik Partners",
+      "title": "Kindrik Partners advises Blackbird Ventures on Series B investment into First AML",
+      "url": "https://kindrik.co.nz/blogs/kindrik-partners-advises-blackbird-ventures-on-series-b-investment-into-first-aml/",
+      "kind": "press_release",
+      "published_on": "2021-11-11",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "miruku_techcrunch_2024",
+      "publisher": "TechCrunch",
+      "title": "Miruku grabs more capital as its plant-based dairy tech reaches proof of concept",
+      "url": "https://techcrunch.com/2024/02/18/miruku-plant-dairy-food-tech/",
+      "kind": "news_article",
+      "published_on": "2024-02-18",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "tamorx_booster_2022",
+      "publisher": "Booster Investment Management",
+      "title": "BIF acquires shares in TamoRx",
+      "url": "https://www.nzx.com/announcements/404680",
+      "kind": "press_release",
+      "published_on": "2022-12-23",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "cleanery_booster_2024",
+      "publisher": "Booster Investment Management",
+      "title": "BIF acquires shares in Cleanery",
+      "url": "https://www.nzx.com/announcements/426045",
+      "kind": "press_release",
+      "published_on": "2024-02-12",
+      "retrieved_on": "2026-11-20"
+    },
+    {
+      "source_id": "zincovery_booster_2024",
+      "publisher": "Booster Investment Management",
+      "title": "BIF adds Zincovery to its investment portfolio",
+      "url": "https://www.nzx.com/announcements/440756",
+      "kind": "press_release",
+      "published_on": "2024-10-25",
+      "retrieved_on": "2026-11-20"
     }
   ],
   "events": [
@@ -401,6 +635,380 @@
       "round_label": "Series A-2 Preferred Stock",
       "instrument": "equity_unspecified",
       "entity_link": "proposed"
+    },
+    {
+      "event_id": "aspiring_southland_2026",
+      "company_id": "discovery_aspiringmaterials",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-08-12",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "aspiring_southland_2026",
+      "passage": "Release, dateline and first three paragraphs.",
+      "claim": "Company describes a completed Christchurch pilot and new public infrastructure funding; the commercial facility remains planned."
+    },
+    {
+      "event_id": "cetogenix_ofwat_2026",
+      "company_id": "discovery_cetogenix",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-08-03",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "cetogenix_ofwat_2026",
+      "passage": "Dateline and paragraphs describing co-investment and the consortium.",
+      "claim": "Issuer reports project co-investment through a regulated UK water industry programme. This supports activity, with separate equity terms unverified."
+    },
+    {
+      "event_id": "energybank_exascale_2026",
+      "company_id": "discovery_energybank",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-08-31",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "energybank_exascale_2026",
+      "passage": "Dateline, description of the MOU and caution about potential commercial deployment.",
+      "claim": "Partner reports signing a non-binding MOU. It establishes current engagement; the pilot and financing remain proposed."
+    },
+    {
+      "event_id": "heartlab_university_2026",
+      "company_id": "discovery_heartlab",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-07-01",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "heartlab_university_2026",
+      "passage": "Dateline and narrative on the company’s software and customers.",
+      "claim": "University reports commercial activity by the NZ startup."
+    },
+    {
+      "event_id": "respiraq_booster_2026",
+      "company_id": "discovery_respiraq",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-11-16",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "respiraq_booster_2026",
+      "passage": "NZX announcement 483768, first two paragraphs.",
+      "claim": "Booster reports investing $250,000 in RespirAq and describes active product development. The announcement postdates the horizon."
+    },
+    {
+      "event_id": "company_1centre_2024",
+      "company_id": "public_1centre",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2024-04-02",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "company_1centre_2024",
+      "passage": "Dateline and opening paragraph.",
+      "claim": "Issuer reports a customer milestone for operating credit-management software."
+    },
+    {
+      "event_id": "jasper_caruso_2023",
+      "company_id": "public_jasper",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2023-02-24",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "jasper_caruso_2023",
+      "passage": "Posted date and paragraphs on continuation of the property team.",
+      "claim": "Issuer reports separation of Caruso and continuation of Jasper as a property fund manager. The spinout does not establish an acquisition of Jasper."
+    },
+    {
+      "event_id": "socialclub_spinoff_2018",
+      "company_id": "public_socialclub",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2018-08-30",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "socialclub_spinoff_2018",
+      "passage": "Dateline and article section about the marketplace.",
+      "claim": "Local reporting describes activity in the influencer marketplace."
+    },
+    {
+      "event_id": "myovolt_avenues_2023",
+      "company_id": "public_myovoltlimited",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2023-05-29",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "myovolt_avenues_2023",
+      "passage": "Dateline and company profile.",
+      "claim": "Local publisher describes Myovolt’s work developing wearable technology and the business behind it."
+    },
+    {
+      "event_id": "foundry_lettered_2021",
+      "company_id": "discovery_foundrylab",
+      "kind": "series_a",
+      "date": {
+        "value": "2021-11-29",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "foundry_issuer_2021",
+      "passage": "Dateline and first three paragraphs.",
+      "claim": "Issuer reports US$8m Series A led by Blackbird around the 36-month cutoff; legal issuing entity and terms remain open.",
+      "round_label": "Series A",
+      "institutional_investor": "Blackbird",
+      "entity_link": "proposed",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "narrative_later_seed_2020",
+      "company_id": "public_narrative",
+      "kind": "other_financing",
+      "date": {
+        "value": "2020-07-15",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "narrative_issuer_2020",
+      "passage": "Dateline, funding announcement and publisher footer.",
+      "claim": "Issuer announced US$2.58m of seed financing led by Founders Fund after the 2019 entry. Share price is undisclosed.",
+      "round_label": "seed round",
+      "institutional_investor": "Founders Fund",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "partly_pre_a_2021",
+      "company_id": "public_partly",
+      "kind": "pre_series_a",
+      "date": {
+        "value": "2021-10-27",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "partly_counsel_2021",
+      "passage": "Heading, dated byline and paragraphs describing the investment.",
+      "claim": "Blackbird’s counsel reports a distinct capital raise, without share price, instrument terms or exact closing day.",
+      "round_label": "pre-series A",
+      "institutional_investor": "Blackbird Ventures",
+      "instrument": "unknown"
+    },
+    {
+      "event_id": "runn_shearwater_investment",
+      "company_id": "public_runnio",
+      "kind": "other_financing",
+      "date": {
+        "value": "2023-01-30",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "runn_shearwater_2023",
+      "passage": "Date and first paragraph.",
+      "claim": "Shearwater announced it had invested, with price and instrument undisclosed.",
+      "institutional_investor": "Shearwater Capital",
+      "instrument": "unknown"
+    },
+    {
+      "event_id": "halter_operations_2026",
+      "company_id": "discovery_halter",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-03-25",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "halter_operations_2026",
+      "passage": "Dateline, funding description and company operating footprint.",
+      "claim": "Issuer describes products in use in three countries and announces a valued Series E well after the horizon."
+    },
+    {
+      "event_id": "mint_hp_2026",
+      "company_id": "discovery_mintinnovation",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-03-04",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "mint_hp_2026",
+      "passage": "Dateline, release lead and description of the HP collaboration.",
+      "claim": "Company announces certification and a project supplying recovered copper to HP."
+    },
+    {
+      "event_id": "vidapp_release_2026",
+      "company_id": "public_vidapp",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-09-29",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "vidapp_release_2026",
+      "passage": "29 September 2026 timestamp and list of released app changes.",
+      "claim": "Issuer release notes document a mobile and TV app update."
+    },
+    {
+      "event_id": "immersve_metamask_2026",
+      "company_id": "public_immersve",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-09-30",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "immersve_metamask_2026",
+      "passage": "Announcement under 30 September 2026. Event is a partner launch.",
+      "claim": "Issuer reports a live card programme for MetaMask in the United Kingdom."
+    },
+    {
+      "event_id": "sharesies_activity_2026",
+      "company_id": "discovery_sharesies",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-07-10",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "sharesies_activity_2026",
+      "passage": "Publisher date and paragraph describing commissioned research.",
+      "claim": "Sharesies reports commissioned research for its employee ownership business."
+    },
+    {
+      "event_id": "jasper_fund_2026",
+      "company_id": "public_jasper",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-04-01",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "jasper_fund_2026",
+      "passage": "Published date and transaction summary.",
+      "claim": "Jasper reports operating fund management and commercial transactions. Capital in the property fund remains separate from company equity."
+    },
+    {
+      "event_id": "parcelport_zappy_operations",
+      "company_id": "public_parcelport",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2026-03-04",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "parcelport_zappy_operations",
+      "passage": "Cover date and paragraphs [14]–[17].",
+      "claim": "The dated judgment links Payport and Zappy and describes the current operation of its courier software platform."
+    },
+    {
+      "event_id": "carepatron_second_round",
+      "company_id": "public_carepatron",
+      "kind": "other_financing",
+      "date": {
+        "value": "2023-08-30",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "carepatron_blackbird_follow_2023",
+      "passage": "Date and introduction. The note refers back to a May 2022 pre-Seed, a timing lead for the entry review.",
+      "claim": "Blackbird reports it co-led a distinct US$4m seed and calls it its second investment. Pricing is undisclosed.",
+      "round_label": "Seed round",
+      "institutional_investor": "Blackbird NZ Fund",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "sharesies_raise_2019",
+      "company_id": "discovery_sharesies",
+      "kind": "other_financing",
+      "date": {
+        "value": "2019",
+        "precision": "year"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "dawn_a_report",
+      "passage": "Page headed Sharesies: empowering financial inclusion, printed page 15.",
+      "claim": "Ecosystem report records NZ$7.5 million in 2019 from investors including Sam Morgan. It does not document price or use a stage label.",
+      "instrument": "unknown"
+    },
+    {
+      "event_id": "firstaml_b_2021",
+      "company_id": "public_firstaml",
+      "kind": "series_b",
+      "date": {
+        "value": "2021-11-11",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "firstaml_kindrik_2021",
+      "passage": "2021 byline and opening paragraphs.",
+      "claim": "Investor counsel reports NZ$30 million raised in Series B. Share price and valuation are undisclosed.",
+      "round_label": "Series B",
+      "institutional_investor": "Blackbird Ventures",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "miruku_pre_a_2024",
+      "company_id": "discovery_miruku",
+      "kind": "pre_series_a",
+      "date": {
+        "value": "2024-02-18",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "miruku_techcrunch_2024",
+      "passage": "Dateline and paragraphs describing the capital and founder interview.",
+      "claim": "Founder describes a US$5 million pre-Series A and says valuation was undisclosed.",
+      "round_label": "pre-Series A round",
+      "institutional_investor": "Motion Capital",
+      "instrument": "equity_unspecified"
+    },
+    {
+      "event_id": "tamorx_booster_tranches_2022",
+      "company_id": "discovery_tamorx",
+      "kind": "other_financing",
+      "date": {
+        "value": "2022-12-23",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "tamorx_booster_2022",
+      "passage": "NZX 404680, paragraph describing two tranches.",
+      "claim": "Booster reports a first allocation settling that week and a later planned tranche. Pricing and distinction from the original round were unverified.",
+      "instrument": "unknown"
+    },
+    {
+      "event_id": "cleanery_booster_2024_activity",
+      "company_id": "discovery_cleanery",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2024-02-12",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "cleanery_booster_2024",
+      "passage": "NZX dateline and first two paragraphs, including the existing operating business and the proposed investment.",
+      "claim": "Booster says it would invest NZ$300,000. Closing and price are not demonstrated."
+    },
+    {
+      "event_id": "zincovery_booster_2024_activity",
+      "company_id": "discovery_zincovery",
+      "kind": "last_verified_activity",
+      "date": {
+        "value": "2024-10-25",
+        "precision": "day"
+      },
+      "date_basis": "reported_occurrence",
+      "source_id": "zincovery_booster_2024",
+      "passage": "NZX dateline and first two paragraphs, including the existing operating business and the proposed investment.",
+      "claim": "Booster says it would invest NZ$394,000 in cash. Closing and price are not demonstrated."
     }
   ],
   "reviews": [
@@ -430,10 +1038,11 @@
       "company_id": "discovery_cetogenix",
       "reviewed_on": "2026-11-20",
       "searched_through": "2026-11-20",
-      "activity_event_id": "cetogenix_active_2026",
+      "activity_event_id": "cetogenix_ofwat_2026",
       "scope": "Checked later financing searches and public operating announcements. The March company activity establishes follow-up. The subsequent UK project funding report describes a possible future Series A separately.",
       "source_ids": [
-        "cetogenix_bpa"
+        "cetogenix_bpa",
+        "cetogenix_ofwat_2026"
       ]
     },
     {
@@ -443,7 +1052,8 @@
       "activity_event_id": "cleanery_sales_2025",
       "scope": "Checked issuer seed release, NZX portfolio addition, investor case and dated operating coverage; later labelled financing remains unverified.",
       "source_ids": [
-        "cleanery_sbn"
+        "cleanery_sbn",
+        "cleanery_booster_2024"
       ]
     },
     {
@@ -460,10 +1070,11 @@
       "company_id": "discovery_heartlab",
       "reviewed_on": "2026-11-20",
       "searched_through": "2026-11-20",
-      "activity_event_id": "heartlab_agreement_2025",
+      "activity_event_id": "heartlab_university_2026",
       "scope": "Checked the public funding reports, the issuer newsroom and later named funding. This follow-up uses the agreement, with product availability still pending as of that source.",
       "source_ids": [
-        "heartlab_invision"
+        "heartlab_invision",
+        "heartlab_university_2026"
       ]
     },
     {
@@ -473,7 +1084,8 @@
       "activity_event_id": "carepatron_government_2026",
       "scope": "Checked venture and trade reports of seed financing, issuer activity and later funding searches. Government support is a distinct funding source.",
       "source_ids": [
-        "carepatron_beehive"
+        "carepatron_beehive",
+        "carepatron_blackbird_follow_2023"
       ]
     },
     {
@@ -493,7 +1105,8 @@
       "activity_event_id": "runn_release_2026",
       "scope": "Checked original seed and Shearwater’s unlabelled follow-on alongside the company’s operating updates and later funding searches.",
       "source_ids": [
-        "runn_updates"
+        "runn_updates",
+        "runn_shearwater_2023"
       ]
     },
     {
@@ -517,6 +1130,1556 @@
       "source_ids": [
         "astrix_summit"
       ]
+    },
+    {
+      "company_id": "discovery_aspiringmaterials",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "aspiring_southland_2026"
+      ],
+      "activity_event_id": "aspiring_southland_2026"
+    },
+    {
+      "company_id": "discovery_energybank",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "energybank_exascale_2026"
+      ],
+      "activity_event_id": "energybank_exascale_2026"
+    },
+    {
+      "company_id": "discovery_respiraq",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "respiraq_booster_2026"
+      ],
+      "activity_event_id": "respiraq_booster_2026"
+    },
+    {
+      "company_id": "public_1centre",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "company_1centre_2024"
+      ],
+      "activity_event_id": "company_1centre_2024"
+    },
+    {
+      "company_id": "public_jasper",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "jasper_caruso_2023",
+        "jasper_fund_2026"
+      ],
+      "activity_event_id": "jasper_fund_2026"
+    },
+    {
+      "company_id": "public_socialclub",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "socialclub_spinoff_2018"
+      ],
+      "activity_event_id": "socialclub_spinoff_2018"
+    },
+    {
+      "company_id": "public_myovoltlimited",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "myovolt_avenues_2023"
+      ],
+      "activity_event_id": "myovolt_avenues_2023"
+    },
+    {
+      "company_id": "public_narrative",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "narrative_issuer_2020"
+      ],
+      "activity_event_id": "narrative_later_seed_2020"
+    },
+    {
+      "company_id": "public_partly",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "partly_counsel_2021"
+      ],
+      "activity_event_id": null
+    },
+    {
+      "company_id": "discovery_halter",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "halter_operations_2026"
+      ],
+      "activity_event_id": "halter_operations_2026"
+    },
+    {
+      "company_id": "discovery_mintinnovation",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "mint_hp_2026"
+      ],
+      "activity_event_id": "mint_hp_2026"
+    },
+    {
+      "company_id": "public_vidapp",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "vidapp_release_2026"
+      ],
+      "activity_event_id": "vidapp_release_2026"
+    },
+    {
+      "company_id": "public_immersve",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "immersve_metamask_2026"
+      ],
+      "activity_event_id": "immersve_metamask_2026"
+    },
+    {
+      "company_id": "discovery_sharesies",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "sharesies_activity_2026",
+        "dawn_a_report"
+      ],
+      "activity_event_id": "sharesies_activity_2026"
+    },
+    {
+      "company_id": "public_parcelport",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "parcelport_zappy_operations"
+      ],
+      "activity_event_id": "parcelport_zappy_operations"
+    },
+    {
+      "company_id": "public_firstaml",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "firstaml_kindrik_2021"
+      ],
+      "activity_event_id": "firstaml_b_2021"
+    },
+    {
+      "company_id": "discovery_miruku",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "miruku_techcrunch_2024"
+      ],
+      "activity_event_id": "miruku_pre_a_2024"
+    },
+    {
+      "company_id": "discovery_tamorx",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "tamorx_booster_2022"
+      ],
+      "activity_event_id": "tamorx_booster_tranches_2022"
+    },
+    {
+      "company_id": "discovery_zincovery",
+      "reviewed_on": "2026-11-20",
+      "searched_through": "2026-11-20",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "source_ids": [
+        "zincovery_booster_2024"
+      ],
+      "activity_event_id": "zincovery_booster_2024_activity"
+    }
+  ],
+  "searches": [
+    {
+      "company_id": "discovery_aspiringmaterials",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"Aspiring Materials\" New Zealand company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Aspiring Materials\" New Zealand \"Icehouse Ventures and Outset Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Aspiring Materials Aspiring NZ pilot plant opens 2025 2026 October 2024 funding"
+      ],
+      "public_leads": [
+        "https://www.aspiringmaterials.com/our-news/southlandannouncement"
+      ],
+      "unresolved": "Company release confirms the pilot and later public infrastructure financing; no dated priced company round confirmed.",
+      "registry": {
+        "company_number": "7747738",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7747738",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7747738/documents",
+        "identity_and_history": "ASPIRING MATERIALS LIMITED",
+        "status": "registered",
+        "indexed_filings": 53,
+        "filings_in_screened_years": 31,
+        "first_filing_in_screen": "2021-09-02",
+        "last_filing_in_screen": "2024-11-14",
+        "last_annual_return": "2026-10-13"
+      }
+    },
+    {
+      "company_id": "discovery_astrix",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"Astrix\" Astrix Astronautics company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Astrix\" New Zealand \"Outset Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Astrix Astronautics launches 2025 2026 satellite contract mission dated space",
+        "\"Astrix\" \"Astronautics\" 2025 2026 launch contract dated release"
+      ],
+      "public_leads": [
+        "https://astrix.space/astrix-astronautics-gains-500000-funding-about-to-send-prototype-to-space/"
+      ],
+      "unresolved": "Publisher fetch timed out; previously documented government funding is a grant. No priced round confirmed.",
+      "registry": {
+        "company_number": "8156808",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8156808",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8156808/documents",
+        "identity_and_history": "ASTRIX ASTRONAUTICS LIMITED",
+        "status": "registered",
+        "indexed_filings": 32,
+        "filings_in_screened_years": 27,
+        "first_filing_in_screen": "2021-02-02",
+        "last_filing_in_screen": "2024-09-10",
+        "last_annual_return": "2026-08-31"
+      }
+    },
+    {
+      "company_id": "discovery_cetogenix",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Cetogenix\" New Zealand company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Cetogenix\" New Zealand \"Pacific Channel\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://cetogenix.co.nz/news/rotorua-tech-company-secures-23-million-to-take-nz-innovation-global"
+      ],
+      "unresolved": "2026 UK water innovation programme is industry project co-investment. Separate company round and terms remain open.",
+      "registry": {
+        "company_number": "8389212",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8389212",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8389212/documents",
+        "identity_and_history": "CETOGENIX LIMITED",
+        "status": "registered",
+        "indexed_filings": 51,
+        "filings_in_screened_years": 47,
+        "first_filing_in_screen": "2022-06-15",
+        "last_filing_in_screen": "2025-09-16",
+        "last_annual_return": "2026-09-09"
+      }
+    },
+    {
+      "company_id": "discovery_cleanery",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Cleanery\" New Zealand company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Cleanery\" New Zealand \"Climate Venture Capital Fund and Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://www.nzx.com/announcements/426045"
+      ],
+      "unresolved": "Booster announces a share investment; closing, price and primary-versus-secondary terms are not given.",
+      "registry": {
+        "company_number": "6269015",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6269015",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6269015/documents",
+        "identity_and_history": "CLEANERY LIMITED, formerly THE SUSTAINABLE CARE COMPANY LIMITED",
+        "status": "registered",
+        "indexed_filings": 76,
+        "filings_in_screened_years": 61,
+        "first_filing_in_screen": "2022-03-21",
+        "last_filing_in_screen": "2025-09-08",
+        "last_annual_return": "2026-05-05"
+      }
+    },
+    {
+      "company_id": "discovery_cropsy",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Cropsy\" Cropsy Technologies company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Cropsy\" New Zealand \"Aspire NZ Seed Fund and Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://www.auckland.ac.nz/en/news/2025/05/13/agritech-start-up-cropsy-technologies-changing-viticulture.html"
+      ],
+      "unresolved": "University reports activity; year-only entry obscures the exact 36-month cutoff.",
+      "registry": {
+        "company_number": "7552076",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7552076",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7552076/documents",
+        "identity_and_history": "CROPSY TECHNOLOGIES LIMITED",
+        "status": "registered",
+        "indexed_filings": 61,
+        "filings_in_screened_years": 39,
+        "first_filing_in_screen": "2022-01-05",
+        "last_filing_in_screen": "2025-10-29",
+        "last_annual_return": "2026-06-29"
+      }
+    },
+    {
+      "company_id": "discovery_dawnaerospace",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2018,
+      "screened_through_year": 2021,
+      "news_query": "\"Dawn Aerospace\" New Zealand company 2018..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Dawn Aerospace\" New Zealand \"Icehouse Ventures’ Tuhua Fund\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://dawnaerospace.com/latest-news/dawn-raises-20million"
+      ],
+      "unresolved": "Series A and later Series B leads were outside the entry window; intermediate entity and pricing gaps remain.",
+      "registry": {
+        "company_number": "6488692",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6488692",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6488692/documents",
+        "identity_and_history": "DAWN AEROSPACE LIMITED. Other Dawn entities remain separate.",
+        "status": "registered",
+        "indexed_filings": 115,
+        "filings_in_screened_years": 27,
+        "first_filing_in_screen": "2018-06-18",
+        "last_filing_in_screen": "2021-12-08",
+        "last_annual_return": "2026-06-03"
+      }
+    },
+    {
+      "company_id": "discovery_energybank",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"EnergyBank\" EnergyBank Blackbird company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"EnergyBank\" New Zealand \"Blackbird and Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "EnergyBank New Zealand funding press investment floating EnergyBank 2024 2025 partnership"
+      ],
+      "public_leads": [
+        "https://exascalelabs.gcs-web.com/news-releases/news-release-details/exascale-and-energybank-sign-mou-develop-ai-compute-powered-full"
+      ],
+      "unresolved": "2026 partner MOU verifies current activity and names a proposed pilot; financing and deployment still not completed in this source.",
+      "registry": {
+        "company_number": "8056945",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8056945",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8056945/documents",
+        "identity_and_history": "ENERGYBANK LIMITED",
+        "status": "registered",
+        "indexed_filings": 35,
+        "filings_in_screened_years": 27,
+        "first_filing_in_screen": "2021-03-26",
+        "last_filing_in_screen": "2024-06-11",
+        "last_annual_return": "2026-07-17"
+      }
+    },
+    {
+      "company_id": "discovery_evouch",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"eVouch\" New Zealand company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"eVouch\" New Zealand \"GD1 and UniServices\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "eVouch New Zealand app 2025 2026 GD1 founder Ralph Tsui acquisition",
+        "\"eVouch\" Ralph marketing 2024 2025 app GD1"
+      ],
+      "public_leads": [
+        "https://www.uniservices.co.nz/assets/Documents/PDFs/Annual-Review-2022.pdf"
+      ],
+      "unresolved": "University report and current investor portfolio cover entry; later priced financing and verified commercial activity remain open.",
+      "registry": {
+        "company_number": "7645057",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7645057",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7645057/documents",
+        "identity_and_history": "EVOUCH LIMITED",
+        "status": "registered",
+        "indexed_filings": 28,
+        "filings_in_screened_years": 13,
+        "first_filing_in_screen": "2022-02-10",
+        "last_filing_in_screen": "2025-02-17",
+        "last_annual_return": "2026-02-17"
+      }
+    },
+    {
+      "company_id": "discovery_formuslabs",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"Formus Labs\" New Zealand company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Formus Labs\" New Zealand \"Flying Kiwi Angels\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Formus Labs top up round financing 2024 preferred share price Formus Labs Ltd SEC",
+        "\"Formus Labs\" 2025 2026 dated news FDA deployment funding Formus"
+      ],
+      "public_leads": [
+        "https://punakaikifund.co.nz/capital-injection-fuels-formus-labs-for-us-launch/"
+      ],
+      "unresolved": "Pre-Series A exists; share price and distinct priced closing not confirmed. Regulatory identifiers remain separate.",
+      "registry": {
+        "company_number": "6096077",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6096077",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6096077/documents",
+        "identity_and_history": "FORMUS LABS LIMITED",
+        "status": "registered",
+        "indexed_filings": 88,
+        "filings_in_screened_years": 55,
+        "first_filing_in_screen": "2019-03-19",
+        "last_filing_in_screen": "2022-09-07",
+        "last_annual_return": "2026-07-06"
+      }
+    },
+    {
+      "company_id": "discovery_foundrylab",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2018,
+      "screened_through_year": 2021,
+      "news_query": "\"Foundry Lab\" New Zealand company 2018..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Foundry Lab\" New Zealand \"WNT Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Foundry Lab Series A $8 million November 2021 closed series Auckland dates 2021 WNT",
+        "\"Foundry Lab\" 2026 casting financing product site:foundrylab.com OR site:wntventures.co.nz"
+      ],
+      "public_leads": [
+        "https://www.prnewswire.com/news-releases/foundry-lab-raises-us-8m-series-a-round-to-make-metal-casting-as-easy-as-a-microwave-dinner-301433107.html"
+      ],
+      "unresolved": "Series A issuer announcement is on November 29, 2021. First sale and pricing entity require reconciliation, and day-level November 2018 entry is unknown.",
+      "registry": {
+        "company_number": "6929413",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6929413",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6929413/documents",
+        "identity_and_history": "FOUNDRY LAB LIMITED. US company remains separate pending round linkage.",
+        "status": "registered",
+        "indexed_filings": 32,
+        "filings_in_screened_years": 25,
+        "first_filing_in_screen": "2018-07-12",
+        "last_filing_in_screen": "2021-12-09",
+        "last_annual_return": "2026-03-04"
+      }
+    },
+    {
+      "company_id": "discovery_halter",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2016,
+      "screened_through_year": 2019,
+      "news_query": "\"Halter\" New Zealand company 2016..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Halter\" New Zealand \"Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Halter December 2017 Series A Data Collective valuation shares 2018 2019 New Zealand",
+        "\"Halter\" 2017 funding \"Data Collective\" 2018 Series A Craig Piggott price",
+        "\"Halter\" 2026 Series E site:halterhq.com NZ investment"
+      ],
+      "public_leads": [
+        "https://resources.icehouseventures.co.nz/blog/reflections-and-lessons-from-our-journey-with-halter"
+      ],
+      "unresolved": "Investor history covers investment since founding. Later lettered rounds are public; early share price and close remain open.",
+      "registry": {
+        "company_number": "6063230",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6063230",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6063230/documents",
+        "identity_and_history": "HALTER LIMITED",
+        "status": "registered",
+        "indexed_filings": 39,
+        "filings_in_screened_years": 18,
+        "first_filing_in_screen": "2016-07-25",
+        "last_filing_in_screen": "2019-10-30",
+        "last_annual_return": "2026-04-07"
+      }
+    },
+    {
+      "company_id": "discovery_heartlab",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2020,
+      "screened_through_year": 2023,
+      "news_query": "\"HeartLab\" New Zealand company 2020..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"HeartLab\" New Zealand \"Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://www.auckland.ac.nz/en/news/2026/07/01/student-startup-changing-heart-care.html"
+      ],
+      "unresolved": "Recent university case history and company partner release support activity. Earlier financing terms remain open.",
+      "registry": {
+        "company_number": "7000734",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7000734",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7000734/documents",
+        "identity_and_history": "HEARTLAB LIMITED",
+        "status": "registered",
+        "indexed_filings": 155,
+        "filings_in_screened_years": 68,
+        "first_filing_in_screen": "2020-05-13",
+        "last_filing_in_screen": "2023-12-15",
+        "last_annual_return": "2026-09-21"
+      }
+    },
+    {
+      "company_id": "discovery_inhibitcoatings",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"Inhibit Coatings\" New Zealand company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Inhibit Coatings\" New Zealand \"Enterprise Angels, Angel HQ, Ice Angels, SCIF\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Inhibit Coatings 2023 2024 2025 dated NZX or Enterprise Angels",
+        "\"Inhibit Coatings\" 2025 2026 company contract launch Inhibit Coatings Ltd NZ"
+      ],
+      "public_leads": [
+        "https://enterpriseangels.co.nz/project/inhibit-coatings/"
+      ],
+      "unresolved": "Angel project page and dated accelerator lead; product accelerator page did not open. No verified in-window prices.",
+      "registry": {
+        "company_number": "6178597",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6178597",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6178597/documents",
+        "identity_and_history": "INHIBIT COATINGS LIMITED",
+        "status": "registered",
+        "indexed_filings": 145,
+        "filings_in_screened_years": 31,
+        "first_filing_in_screen": "2019-06-11",
+        "last_filing_in_screen": "2022-07-12",
+        "last_annual_return": "2026-07-08"
+      }
+    },
+    {
+      "company_id": "discovery_mintinnovation",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2017,
+      "screened_through_year": 2020,
+      "news_query": "\"Mint Innovation\" New Zealand company 2017..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Mint Innovation\" New Zealand \"WNT Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Mint Innovation $5.2 million Series A 2018 Auckland WNT investors 2018",
+        "\"Mint Innovation\" 2026 commercial plant investment NZ site:mint.bio"
+      ],
+      "public_leads": [
+        "https://www.scoop.co.nz/stories/BU1812/S00299/cleantech-start-up-mint-innovation-raises-52m.htm"
+      ],
+      "unresolved": "2018 issuer funding report is indexed but direct reading was restricted. Later expansion capital does not resolve its 2018 instrument or label.",
+      "registry": {
+        "company_number": "5997767",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5997767",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5997767/documents",
+        "identity_and_history": "MINT INNOVATION LIMITED. Older NZ namesake (1159183) and foreign entities are separate.",
+        "status": "registered",
+        "indexed_filings": 331,
+        "filings_in_screened_years": 59,
+        "first_filing_in_screen": "2017-03-16",
+        "last_filing_in_screen": "2020-12-14",
+        "last_annual_return": "2025-11-26"
+      }
+    },
+    {
+      "company_id": "discovery_miruku",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Miruku\" New Zealand company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Miruku\" New Zealand \"Movac\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "\"Miruku\" 2024 \"pre-Series A\" share valuation 2025 2026 release"
+      ],
+      "public_leads": [
+        "https://motioncapital.co.nz/media/miruku-investment-notes"
+      ],
+      "unresolved": "Investor note and pre-Series A reporting found. Pricing and dated closing details need corroboration.",
+      "registry": {
+        "company_number": "8137365",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8137365",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8137365/documents",
+        "identity_and_history": "MIRUKU LIMITED",
+        "status": "registered",
+        "indexed_filings": 59,
+        "filings_in_screened_years": 49,
+        "first_filing_in_screen": "2022-02-11",
+        "last_filing_in_screen": "2025-12-11",
+        "last_annual_return": "2026-10-02"
+      }
+    },
+    {
+      "company_id": "discovery_opumtechnology",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"Opum Technology\" Opum Technologies company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Opum Technology\" New Zealand \"Pacific Channel and WNT Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://opumtechnologies.com"
+      ],
+      "unresolved": "Registry insolvency begins after the 36-month cutoff; current product branding does not establish business continuity with the original company.",
+      "registry": {
+        "company_number": "5981348",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5981348",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5981348/documents",
+        "identity_and_history": "OPUM TECHNOLOGIES LIMITED. Receivership from 2023-07-25, liquidation from 2023-12-14. Product continuity remains separate.",
+        "status": "liquidation",
+        "indexed_filings": 115,
+        "filings_in_screened_years": 39,
+        "first_filing_in_screen": "2019-04-03",
+        "last_filing_in_screen": "2022-12-09",
+        "last_annual_return": "2023-04-04"
+      }
+    },
+    {
+      "company_id": "discovery_respiraq",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"RespirAq\" New Zealand company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"RespirAq\" New Zealand \"Outset Ventures, Icehouse Ventures and Cure Kids Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "RespirAq NZX Booster funding 2024 2025 137 138 investment RespirAq"
+      ],
+      "public_leads": [
+        "https://www.nzx.com/announcements/483768"
+      ],
+      "unresolved": "Booster reports a November 2026 investment after the window. Public notice gives no new-share price.",
+      "registry": {
+        "company_number": "8176021",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8176021",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8176021/documents",
+        "identity_and_history": "RESPIRAQ LIMITED",
+        "status": "registered",
+        "indexed_filings": 35,
+        "filings_in_screened_years": 28,
+        "first_filing_in_screen": "2021-04-12",
+        "last_filing_in_screen": "2024-09-11",
+        "last_annual_return": "2026-04-28"
+      }
+    },
+    {
+      "company_id": "discovery_sharesies",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2017,
+      "screened_through_year": 2020,
+      "news_query": "\"Sharesies\" New Zealand company 2017..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Sharesies\" New Zealand \"Sparkbox\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Sharesies 2019 7 million share price Snowball Effect new capital 2018",
+        "\"Sharesies\" \"2019\" capital raised shareholders $ share price from Sharesies fund",
+        "\"Sharesies\" 2026 company news NZ milestone site:sharesies.nz"
+      ],
+      "public_leads": [
+        "https://nzte.govt.nz/page/completed-deals"
+      ],
+      "unresolved": "Public investor and issuer lead searches; a first later close with documented share price or valuation within the entry window remains open.",
+      "registry": {
+        "company_number": "6234088",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6234088",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6234088/documents",
+        "identity_and_history": "SHARESIES LIMITED. Parent and subsidiaries remain separate.",
+        "status": "registered",
+        "indexed_filings": 108,
+        "filings_in_screened_years": 86,
+        "first_filing_in_screen": "2017-02-16",
+        "last_filing_in_screen": "2020-12-23",
+        "last_annual_return": "2026-04-09"
+      }
+    },
+    {
+      "company_id": "discovery_stretchsense",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2014,
+      "screened_through_year": 2017,
+      "news_query": "\"StretchSense\" New Zealand company 2014..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"StretchSense\" New Zealand \"Flying Kiwi Angels and NZVIF\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://bakertilly.nz/news/the-story-of-a-business-plucked-out-of-the-fire/"
+      ],
+      "unresolved": "Adviser account covers the 2019 insolvency of the original company and subsequent brand asset transaction. Original entity’s in-window financing terms remain open.",
+      "registry": {
+        "company_number": "4099622",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/4099622",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/4099622/documents",
+        "identity_and_history": "EXSS LIMITED, formerly STRETCHSENSE LIMITED. Administration 2019-07-15, liquidation 2019-09-30, removed 2024-06-20. Successor's operations are separate.",
+        "status": "removed",
+        "indexed_filings": 118,
+        "filings_in_screened_years": 60,
+        "first_filing_in_screen": "2014-03-03",
+        "last_filing_in_screen": "2017-11-17",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "discovery_tamorx",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"TamoRx\" TamoRx University of Auckland company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"TamoRx\" New Zealand \"Brandon Capital and University of Auckland Inventors’ Fund\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "TamoRx Auckland 2025 2026 clinical Brandon Capital funding TamoRX",
+        "\"TamoRx\" after 2023 2024 2025 Auckland immunotherapy company funding"
+      ],
+      "public_leads": [
+        "https://brandoncapital.vc/2022/06/06/over-15m-invested-in-world-leading-cancer-immunotherapy/"
+      ],
+      "unresolved": "Brandon Capital and university releases cover early capital. Later financing and activity still need dated, entity-specific evidence.",
+      "registry": {
+        "company_number": "8269121",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8269121",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8269121/documents",
+        "identity_and_history": "TAMORX LIMITED",
+        "status": "registered",
+        "indexed_filings": 31,
+        "filings_in_screened_years": 27,
+        "first_filing_in_screen": "2022-04-05",
+        "last_filing_in_screen": "2025-11-17",
+        "last_annual_return": "2026-11-20"
+      }
+    },
+    {
+      "company_id": "discovery_tasmanion",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"TasmanIon\" New Zealand company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"TasmanIon\" New Zealand \"Pacific Channel\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "TasmanIon 2025 2026 funding Pacific Channel NZ after 2024 pilot",
+        "\"TasmanIon\" 2025 2026 battery date announcement Pacific Channel operating"
+      ],
+      "public_leads": [
+        "https://www.pacificchannel.com/stories/tasmanion-venture-capital-investment"
+      ],
+      "unresolved": "Pacific Channel and university sources describe capital and pilot plans; later close and share terms need independent dating.",
+      "registry": {
+        "company_number": "8254336",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8254336",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8254336/documents",
+        "identity_and_history": "TASMANION LIMITED",
+        "status": "registered",
+        "indexed_filings": 44,
+        "filings_in_screened_years": 34,
+        "first_filing_in_screen": "2021-10-29",
+        "last_filing_in_screen": "2024-08-01",
+        "last_annual_return": "2026-04-07"
+      }
+    },
+    {
+      "company_id": "discovery_tdri",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2018,
+      "screened_through_year": 2021,
+      "news_query": "\"TDRI\" TDRI Limited company 2018..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"TDRI\" New Zealand \"WNT Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "TDRI New Zealand WNT Tacit Design 2022 2023 winding up later contracts",
+        "\"TDRI\" WNT Ventures 2024 2025 measurement Dairy patent business news NZ"
+      ],
+      "public_leads": [
+        "https://wntventures.co.nz/news/why-we-did-it-that-way-deep-tech-company-tdri/"
+      ],
+      "unresolved": "Investor selection and technology description found. Recent entity-specific operations and subsequent transaction terms remain unverified.",
+      "registry": {
+        "company_number": "7093156",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7093156",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7093156/documents",
+        "identity_and_history": "TDRI LIMITED",
+        "status": "registered",
+        "indexed_filings": 35,
+        "filings_in_screened_years": 16,
+        "first_filing_in_screen": "2018-10-30",
+        "last_filing_in_screen": "2021-12-13",
+        "last_annual_return": "2026-08-04"
+      }
+    },
+    {
+      "company_id": "discovery_theinsidescompany",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"The Insides Company\" New Zealand company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"The Insides Company\" New Zealand \"Ice Angels and UniServices\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "The Insides Company NZ 2024 2025 funding investment shares product deployment NZ"
+      ],
+      "public_leads": [
+        "https://theinsides.co/news"
+      ],
+      "unresolved": "Company describes later commercial activity. Earlier labelled Series A and extension require primary share pricing and transaction linkage.",
+      "registry": {
+        "company_number": "6494552",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6494552",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6494552/documents",
+        "identity_and_history": "THE INSIDES COMPANY LIMITED, formerly SDS PUSH LIMITED",
+        "status": "registered",
+        "indexed_filings": 258,
+        "filings_in_screened_years": 54,
+        "first_filing_in_screen": "2019-02-04",
+        "last_filing_in_screen": "2022-10-31",
+        "last_annual_return": "2026-02-02"
+      }
+    },
+    {
+      "company_id": "discovery_vertusenergy",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"Vertus Energy\" New Zealand company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Vertus Energy\" New Zealand \"Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Vertus Energy 2024 €8.75 million round pricing May 2024 operating 2026 NZ",
+        "\"Vertus Energy\" 2026 pilot commissioning site:vertusenergy.com"
+      ],
+      "public_leads": [
+        "https://vertusenergy.com/ve-seedfundinground"
+      ],
+      "unresolved": "Later issuer Seed financing report found; early entry is year-only and terms and closing date precision determine qualification.",
+      "registry": {
+        "company_number": "8171654",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8171654",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8171654/documents",
+        "identity_and_history": "VERTUS ENERGY LIMITED",
+        "status": "registered",
+        "indexed_filings": 35,
+        "filings_in_screened_years": 31,
+        "first_filing_in_screen": "2021-03-25",
+        "last_filing_in_screen": "2024-12-09",
+        "last_annual_return": "2026-06-22"
+      }
+    },
+    {
+      "company_id": "discovery_vortexpowersystems",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"Vortex Power Systems\" New Zealand company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Vortex Power Systems\" New Zealand \"Pacific Channel and UniServices\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "\"Vortex Power Systems\" 2025 liquidators New Zealand 2021 geothermal pilot"
+      ],
+      "public_leads": [
+        "https://www.uniservices.co.nz/what-we-do/investing-and-partnering/investment-portfolio"
+      ],
+      "unresolved": "University portfolio and public geothermal pilot leads screened. Registry liquidation occurred in 2025, after 36 months. In-window financing not established.",
+      "registry": {
+        "company_number": "6204076",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6204076",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6204076/documents",
+        "identity_and_history": "VORTEX POWER SYSTEMS LIMITED. Liquidation 2025-02-18, removed 2026-01-21.",
+        "status": "removed",
+        "indexed_filings": 87,
+        "filings_in_screened_years": 24,
+        "first_filing_in_screen": "2019-03-18",
+        "last_filing_in_screen": "2022-09-27",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "discovery_zincovery",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Zincovery\" New Zealand company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Zincovery\" New Zealand \"Climate Venture Capital Fund, Icehouse Ventures and Outset Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Zincovery equity 2025 2026 Booster NZX investment dated",
+        "\"Zincovery\" 2026 fundraising pilot dated announcement NZ"
+      ],
+      "public_leads": [
+        "https://www.nzx.com/announcements/440756"
+      ],
+      "unresolved": "Booster announced a prospective investment in 2024. Completion and primary-equity price require separate evidence.",
+      "registry": {
+        "company_number": "7475616",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7475616",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7475616/documents",
+        "identity_and_history": "ZINCOVERY PROCESS TECHNOLOGIES LIMITED",
+        "status": "registered",
+        "indexed_filings": 115,
+        "filings_in_screened_years": 82,
+        "first_filing_in_screen": "2022-06-13",
+        "last_filing_in_screen": "2025-11-06",
+        "last_annual_return": "2026-02-13"
+      }
+    },
+    {
+      "company_id": "public_1centre",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2017,
+      "screened_through_year": 2020,
+      "news_query": "\"1Centre\" New Zealand company 2017..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"1Centre\" New Zealand \"Ice Angels\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "1Centre 100000 users dated announcement nz follow-on equity ice angels",
+        "\"2026\" 1Centre digital trade credit operating dated announcement"
+      ],
+      "public_leads": [
+        "https://1centre.com/1centre-surpasses-100000-business-customers-milestone-cementing-its-position-in-digital-trade-credit-management/"
+      ],
+      "unresolved": "Issuer’s dated customer milestone establishes activity in April 2024; public sources do not fully resolve the early fundraising or later activity.",
+      "registry": {
+        "company_number": "5818911",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5818911",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5818911/documents",
+        "identity_and_history": "1CENTRE LIMITED",
+        "status": "registered",
+        "indexed_filings": 134,
+        "filings_in_screened_years": 43,
+        "first_filing_in_screen": "2017-03-15",
+        "last_filing_in_screen": "2020-12-03",
+        "last_annual_return": "2026-11-03"
+      }
+    },
+    {
+      "company_id": "public_auramerbio",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2016,
+      "screened_through_year": 2019,
+      "news_query": "\"AuramerBio\" New Zealand company 2016..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"AuramerBio\" New Zealand \"Powerhouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "AuramerBio NZX seed date positive shutdown liquidation 2021 post seed research"
+      ],
+      "public_leads": [
+        "https://wellingtonuniventures.nz/news/auramer-bio/"
+      ],
+      "unresolved": "University spinout history and fund disclosures precede 2021 liquidation; no admissible round inferred from portfolio valuations.",
+      "registry": {
+        "company_number": "5803490",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5803490",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5803490/documents",
+        "identity_and_history": "AURAMER BIO LIMITED. Liquidation 2021-04-29, removed 2022-09-29.",
+        "status": "removed",
+        "indexed_filings": 80,
+        "filings_in_screened_years": 54,
+        "first_filing_in_screen": "2016-02-24",
+        "last_filing_in_screen": "2019-07-17",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_avaliaimmunotherapiesltd",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2015,
+      "screened_through_year": 2018,
+      "news_query": "\"Avalia Immunotherapies Ltd\" New Zealand company 2015..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Avalia Immunotherapies Ltd\" New Zealand \"Powerhouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Avalia Immunotherapies Powerhouse 2019 2020 capital $ funding dated publisher"
+      ],
+      "public_leads": [
+        "https://kiwinet.org.nz/SuccessStories/AvaliaImmunotherapies"
+      ],
+      "unresolved": "Commercialisation history and listed investor reports give leads; confirmed liquidation is well after the horizon.",
+      "registry": {
+        "company_number": "5625065",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5625065",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5625065/documents",
+        "identity_and_history": "AVALIA IMMUNOTHERAPIES LIMITED. Liquidation 2023-09-28, removed 2025-11-12.",
+        "status": "removed",
+        "indexed_filings": 103,
+        "filings_in_screened_years": 51,
+        "first_filing_in_screen": "2015-03-13",
+        "last_filing_in_screen": "2018-09-13",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_carepatron",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Carepatron\" New Zealand company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Carepatron\" New Zealand \"Blackbird\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://blackbird.vc/blog/investment-notes-carepatron-2"
+      ],
+      "unresolved": "Blackbird reports a subsequent seed round; price is not publicly disclosed in the reviewed note.",
+      "registry": {
+        "company_number": "7678799",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7678799",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7678799/documents",
+        "identity_and_history": "CARE PATRON LIMITED",
+        "status": "registered",
+        "indexed_filings": 32,
+        "filings_in_screened_years": 19,
+        "first_filing_in_screen": "2022-06-08",
+        "last_filing_in_screen": "2025-10-07",
+        "last_annual_return": "2026-09-03"
+      }
+    },
+    {
+      "company_id": "public_codelingolimited",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2018,
+      "screened_through_year": 2021,
+      "news_query": "\"CodeLingo Limited\" New Zealand company 2018..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"CodeLingo Limited\" New Zealand \"Right Click Capital and Reinventure\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "CodeLingo 2018 2019 2020 2021 investment date later financing or acquisition announcement"
+      ],
+      "public_leads": [
+        "https://odt.co.nz/business/dunedin-based-start-up-one-to-watch-mncbu8c5"
+      ],
+      "unresolved": "Search covered local reporting and original investors. Registry confirms 2024 liquidation; earlier filing titles do not prove underwritten equity.",
+      "registry": {
+        "company_number": "6020449",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6020449",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6020449/documents",
+        "identity_and_history": "CODELINGO LIMITED. Liquidation 2024-06-05, removed 2024-09-25.",
+        "status": "removed",
+        "indexed_filings": 64,
+        "filings_in_screened_years": 17,
+        "first_filing_in_screen": "2018-03-06",
+        "last_filing_in_screen": "2021-06-01",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_excellent",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Excellent\" Excellent Samantha Gadd Blackbird company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Excellent\" New Zealand \"Blackbird\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Excellent Blackbird startup Joanna Hansen 2025 2026 product announcement",
+        "\"Excellent\" Blackbird Dr. Elizabeth Dolan specialist 2025 workplace SaaS NZ Excellent health"
+      ],
+      "public_leads": [
+        "https://blackbird.vc/blog/investment-notes-excellent"
+      ],
+      "unresolved": "Original fund investment note and matching company lead found. Post-entry financing and recent dated activity unconfirmed.",
+      "registry": {
+        "company_number": "8336665",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8336665",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8336665/documents",
+        "identity_and_history": "EXCELLENT LIMITED. Older removed namesake (1838858) is separate.",
+        "status": "registered",
+        "indexed_filings": 21,
+        "filings_in_screened_years": 20,
+        "first_filing_in_screen": "2022-03-31",
+        "last_filing_in_screen": "2025-06-02",
+        "last_annual_return": "2026-05-27"
+      }
+    },
+    {
+      "company_id": "public_firstaml",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"First AML\" New Zealand company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"First AML\" New Zealand \"Icehouse Ventures Flux Accelerator\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "First AML 2020 Series A shares valuation 2021 Series B Blackbird funding document",
+        "\"First AML\" 2025 2026 company dated press financial"
+      ],
+      "public_leads": [
+        "https://firstaml.com/nz/about/company/our-story/"
+      ],
+      "unresolved": "Series A and B announcements found; first completed priced primary round requires disclosed terms or corroborating filings.",
+      "registry": {
+        "company_number": "6553092",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6553092",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6553092/documents",
+        "identity_and_history": "FIRST AML LIMITED",
+        "status": "registered",
+        "indexed_filings": 95,
+        "filings_in_screened_years": 59,
+        "first_filing_in_screen": "2019-01-14",
+        "last_filing_in_screen": "2022-10-25",
+        "last_annual_return": "2026-10-02"
+      }
+    },
+    {
+      "company_id": "public_firstcheckltd",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2017,
+      "screened_through_year": 2020,
+      "news_query": "\"Firstcheck Ltd\" New Zealand company 2017..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Firstcheck Ltd\" New Zealand \"Launch Taranaki, Angel HQ, SCIF\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Firstcheck Skin app 2018 2019 Firstcheck patient partnership Taranaki pitch round"
+      ],
+      "public_leads": [
+        "https://www.hinz.org.nz/news/466540/First-of-its-kind-skin-cancer-detection-app-opens-up-shares-in-its-life-saving-business.htm"
+      ],
+      "unresolved": "Crowdfunding offer and activity report found. Offer is not proof of close; original company removed after the window.",
+      "registry": {
+        "company_number": "5846052",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5846052",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5846052/documents",
+        "identity_and_history": "ZAGGED INVESTMENTS LIMITED, formerly FIRSTCHECK LIMITED. Removed 2021-10-13. Brand continuity remains separate.",
+        "status": "removed",
+        "indexed_filings": 73,
+        "filings_in_screened_years": 52,
+        "first_filing_in_screen": "2017-03-20",
+        "last_filing_in_screen": "2020-11-03",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_fluentscientificltd",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2015,
+      "screened_through_year": 2018,
+      "news_query": "\"Fluent Scientific Ltd\" New Zealand company 2015..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Fluent Scientific Ltd\" New Zealand \"Powerhouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Fluent Scientific 2017 2019 2021 Powerhouse Fluent Scientific NZ funding launch"
+      ],
+      "public_leads": [
+        "https://announcements.asx.com.au/asxpdf/20181024/pdf/43zk6xtcng9jb4.pdf"
+      ],
+      "unresolved": "ASX investor portfolio report and register checked. Dated operations, later financing and current trading unresolved.",
+      "registry": {
+        "company_number": "5663787",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5663787",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5663787/documents",
+        "identity_and_history": "FLUENT SCIENTIFIC LIMITED",
+        "status": "registered",
+        "indexed_filings": 68,
+        "filings_in_screened_years": 62,
+        "first_filing_in_screen": "2015-04-13",
+        "last_filing_in_screen": "2018-10-31",
+        "last_annual_return": "2021-12-20"
+      }
+    },
+    {
+      "company_id": "public_hiaspect",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2016,
+      "screened_through_year": 2019,
+      "news_query": "\"Hi-Aspect\" New Zealand company 2016..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Hi-Aspect\" New Zealand \"Powerhouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Hi Aspect high performance actuators 2020 follow-on Powerhouse grant Hi-Aspect NZ 2024"
+      ],
+      "public_leads": [
+        "https://hi-aspect.com/blog"
+      ],
+      "unresolved": "Issuer news archive and Powerhouse reports surfaced. Registration continues under a renamed entity; project operating continuity and price remain unverified.",
+      "registry": {
+        "company_number": "5827730",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5827730",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5827730/documents",
+        "identity_and_history": "Formerly HIASPECT LIMITED",
+        "status": "registered",
+        "indexed_filings": 72,
+        "filings_in_screened_years": 48,
+        "first_filing_in_screen": "2016-03-10",
+        "last_filing_in_screen": "2019-08-19",
+        "last_annual_return": "2026-03-30"
+      }
+    },
+    {
+      "company_id": "public_immersve",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2022,
+      "screened_through_year": 2025,
+      "news_query": "\"Immersve\" New Zealand company 2022..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Immersve\" New Zealand \"TCG Crypto\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Immersve TCG Crypto 2024 2025 2026 Mastercard Visa partnership financing",
+        "\"Immersve\" 2025 2026 Mastercard company partnership press release"
+      ],
+      "public_leads": [
+        "https://immersve.com/press/"
+      ],
+      "unresolved": "Issuer partner announcements and foreign ownership decisions surface; product activity and any transaction at parent level must be linked separately.",
+      "registry": {
+        "company_number": "8262754",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8262754",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8262754/documents",
+        "identity_and_history": "IMMERSVE LIMITED",
+        "status": "registered",
+        "indexed_filings": 109,
+        "filings_in_screened_years": 53,
+        "first_filing_in_screen": "2022-05-02",
+        "last_filing_in_screen": "2025-04-28",
+        "last_annual_return": "2026-04-30"
+      }
+    },
+    {
+      "company_id": "public_jasper",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"Jasper\" Jasper property Mark Hurley company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Jasper\" New Zealand \"Flux\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Jasper New Zealand acquisitions Caruso 2023 MA Financial 2025 Jasper equity 2020",
+        "\"Jasper\" 2026 New Zealand Jasper Property acquisition portfolio site:jasper.io/news"
+      ],
+      "public_leads": [
+        "https://jasper.io/news/jasper-spins-out-technology-into-new-saas-company"
+      ],
+      "unresolved": "Issuer spun out Caruso after the window and continued property fund operations; property fund offers are not Jasper equity.",
+      "registry": {
+        "company_number": "6575172",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6575172",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6575172/documents",
+        "identity_and_history": "JASPER PROPERTY LIMITED, formerly LETI LIMITED. Fund manager and investment fund remain separate.",
+        "status": "registered",
+        "indexed_filings": 72,
+        "filings_in_screened_years": 37,
+        "first_filing_in_screen": "2019-03-05",
+        "last_filing_in_screen": "2022-12-30",
+        "last_annual_return": "2026-03-10"
+      }
+    },
+    {
+      "company_id": "public_kotitechnologies",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2012,
+      "screened_through_year": 2015,
+      "news_query": "\"Koti Technologies\" New Zealand company 2012..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Koti Technologies\" New Zealand \"Powerhouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Koti Technologies 2013 2014 Canterbury Powerhouse Koti closure funding"
+      ],
+      "public_leads": [
+        "https://announcements.asx.com.au/asxpdf/20171019/pdf/43ncj675npyft2.pdf"
+      ],
+      "unresolved": "Powerhouse portfolio report is a follow-up lead. Official removal is after the 36-month window. No priced round proved.",
+      "registry": {
+        "company_number": "3705904",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/3705904",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/3705904/documents",
+        "identity_and_history": "KOTI TECHNOLOGIES LIMITED. Removed 2020-06-16.",
+        "status": "removed",
+        "indexed_filings": 41,
+        "filings_in_screened_years": 26,
+        "first_filing_in_screen": "2012-01-18",
+        "last_filing_in_screen": "2015-12-02",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_myovoltlimited",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"Myovolt Limited\" New Zealand company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Myovolt Limited\" New Zealand \"Marlborough Angels, Canterbury Angels\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Myovolt 2022 2023 2025 announcement NZ dated funding wearables",
+        "\"Myovolt\" 2026 2025 company pilot tech testing commercial"
+      ],
+      "public_leads": [
+        "https://www.massey.ac.nz/about/news/good-vibrations-reduce-muscle-aches/"
+      ],
+      "unresolved": "University and later local reporting cover product and trials. No distinct priced financing supported.",
+      "registry": {
+        "company_number": "5740287",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5740287",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5740287/documents",
+        "identity_and_history": "MYOVOLT LIMITED",
+        "status": "registered",
+        "indexed_filings": 47,
+        "filings_in_screened_years": 19,
+        "first_filing_in_screen": "2019-07-05",
+        "last_filing_in_screen": "2022-12-15",
+        "last_annual_return": "2026-07-13"
+      }
+    },
+    {
+      "company_id": "public_narrative",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2019,
+      "screened_through_year": 2022,
+      "news_query": "\"Narrative\" Narrative photography James Broadbent company 2019..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Narrative\" New Zealand \"Icehouse Flux and NZVIF\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Narrative photography $2.58M 2020 seed subsequent 2022 price narrative.so Founders Fund"
+      ],
+      "public_leads": [
+        "https://narrative.so/blog/narrative-raise"
+      ],
+      "unresolved": "Issuer reports a distinct July 2020 Seed round. Price and valuation remain undisclosed in the announcement.",
+      "registry": {
+        "company_number": "6304647",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6304647",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6304647/documents",
+        "identity_and_history": "SOFTWARE LIMITED, trading as Narrative.",
+        "status": "registered",
+        "indexed_filings": 192,
+        "filings_in_screened_years": 59,
+        "first_filing_in_screen": "2019-05-02",
+        "last_filing_in_screen": "2022-10-05",
+        "last_annual_return": "2026-05-05"
+      }
+    },
+    {
+      "company_id": "public_parcelport",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2017,
+      "screened_through_year": 2020,
+      "news_query": "\"Parcelport\" New Zealand company 2017..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Parcelport\" New Zealand \"Zino Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://www.comcom.govt.nz/assets/Documents/timeline/Commerce-Commission-v-Aramex-New-Zealand-Holdings-Limited-Judgment-4-March-2026.pdf"
+      ],
+      "unresolved": "Court and issuer identify Payport/Zappy continuity. Parcelport brand and later subsidiary are distinguished; no in-window price found.",
+      "registry": {
+        "company_number": "1962374",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1962374",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1962374/documents",
+        "identity_and_history": "ZAPPY LIMITED, formerly PAYPORT LIMITED, trading as Parcelport at entry. A separate PARCELPORT LIMITED was formed in 2023.",
+        "status": "registered",
+        "indexed_filings": 67,
+        "filings_in_screened_years": 13,
+        "first_filing_in_screen": "2017-03-13",
+        "last_filing_in_screen": "2020-01-14",
+        "last_annual_return": "2026-01-14"
+      }
+    },
+    {
+      "company_id": "public_partly",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2020,
+      "screened_through_year": 2023,
+      "news_query": "\"Partly\" New Zealand company 2020..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Partly\" New Zealand \"Blackbird Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://kindrik.co.nz/blogs/kindrik-partners-advises-blackbird-ventures-on-pre-series-a-investment-into-partly/"
+      ],
+      "unresolved": "Investor counsel confirms staged pre-Series A by October 2021 without shares or price. 2022 Series A is documented separately.",
+      "registry": {
+        "company_number": "8061184",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8061184",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/8061184/documents",
+        "identity_and_history": "PARTLY GROUP LIMITED. Other Parts entities remain separate.",
+        "status": "registered",
+        "indexed_filings": 317,
+        "filings_in_screened_years": 173,
+        "first_filing_in_screen": "2020-07-28",
+        "last_filing_in_screen": "2023-11-29",
+        "last_annual_return": "2026-04-29"
+      }
+    },
+    {
+      "company_id": "public_photonicinnovationsltd",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2013,
+      "screened_through_year": 2016,
+      "news_query": "\"Photonic Innovations Ltd\" New Zealand company 2013..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Photonic Innovations Ltd\" New Zealand \"Powerhouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Photonic Innovations 2015 2016 2017 NZ funding Powerhouse round"
+      ],
+      "public_leads": [
+        "https://www.otago.ac.nz/__data/assets/pdf_file/0023/273371/download-issue-45-664572.pdf"
+      ],
+      "unresolved": "University and Powerhouse documents cover gas-sensor commercialisation. Judge ended 2020 liquidation; 2023 removal is the documented terminal register change.",
+      "registry": {
+        "company_number": "1597430",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1597430",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1597430/documents",
+        "identity_and_history": "PHOTONIC INNOVATIONS LIMITED. Court ended the 2020-06-09 liquidation on 2021-05-24. Subsequently removed 2023-09-13.",
+        "status": "removed",
+        "indexed_filings": 117,
+        "filings_in_screened_years": 39,
+        "first_filing_in_screen": "2013-04-16",
+        "last_filing_in_screen": "2016-09-06",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_quashed",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"Quashed\" New Zealand company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Quashed\" New Zealand \"Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Quashed new funding Turners NZX August 2025 2024 date company"
+      ],
+      "public_leads": [
+        "https://www.nzx.com/announcements/436021"
+      ],
+      "unresolved": "Turners announces 2024 strategic investment and stake after the 36-month window; primary share allocation is not given.",
+      "registry": {
+        "company_number": "7641656",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7641656",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7641656/documents",
+        "identity_and_history": "QUASHED LIMITED. Group and insurance subsidiaries remain separate.",
+        "status": "registered",
+        "indexed_filings": 32,
+        "filings_in_screened_years": 13,
+        "first_filing_in_screen": "2021-09-27",
+        "last_filing_in_screen": "2024-11-04",
+        "last_annual_return": "2026-11-03"
+      }
+    },
+    {
+      "company_id": "public_runnio",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"Runn.io\" New Zealand company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Runn.io\" New Zealand \"GD1 and Wavemaker Partners\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Runn.io funding Shearwater investment 2023 2024 price announcement Runn"
+      ],
+      "public_leads": [
+        "https://shearwater.co/news/our-investment-in-runn-io/"
+      ],
+      "unresolved": "Investor confirms January 2023 investment but does not give price, instrument terms or recipient of proceeds.",
+      "registry": {
+        "company_number": "6975841",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6975841",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6975841/documents",
+        "identity_and_history": "RUNN LIMITED",
+        "status": "registered",
+        "indexed_filings": 131,
+        "filings_in_screened_years": 103,
+        "first_filing_in_screen": "2021-04-16",
+        "last_filing_in_screen": "2024-08-05",
+        "last_annual_return": "2026-08-14"
+      }
+    },
+    {
+      "company_id": "public_socialclub",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2017,
+      "screened_through_year": 2020,
+      "news_query": "\"Social Club\" The Social Club Ice Angels company 2017..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Social Club\" New Zealand \"Ice Angels\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "Social Club New Zealand influencer The Social Club 2018 2019 platform investment funding Ice Angels"
+      ],
+      "public_leads": [
+        "https://thespinoff.co.nz/_/30-08-2018/the-social-club-is-helping-social-media-influencers-take-over-the-advertising-world"
+      ],
+      "unresolved": "Dated NZ news confirms influencer marketplace activity. The former Social Club entity was removed after the outcome window.",
+      "registry": {
+        "company_number": "5810427",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5810427",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5810427/documents",
+        "identity_and_history": "TSC CONSULTING LIMITED, formerly THE SOCIAL CLUB LIMITED until 2020-05-20. Removed 2021-03-19.",
+        "status": "removed",
+        "indexed_filings": 42,
+        "filings_in_screened_years": 30,
+        "first_filing_in_screen": "2017-07-04",
+        "last_filing_in_screen": "2020-07-31",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_supie",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2021,
+      "screened_through_year": 2024,
+      "news_query": "\"Supie\" New Zealand company 2021..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Supie\" New Zealand \"Icehouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://pwc.co.nz/pdfs/2023/liquidators-first-report-supie-limited.pdf"
+      ],
+      "unresolved": "Liquidators and registry confirm closure before an identified outcome. Bounded search ends at liquidation for competing-outcome analysis.",
+      "registry": {
+        "company_number": "7775376",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376/documents",
+        "identity_and_history": "SUPIE LIMITED. Liquidation 2023-11-09 and removal 2025-02-13.",
+        "status": "removed",
+        "indexed_filings": 58,
+        "filings_in_screened_years": 53,
+        "first_filing_in_screen": "2021-05-05",
+        "last_filing_in_screen": "2024-11-08",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_tirolifesciencesltd",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2014,
+      "screened_through_year": 2017,
+      "news_query": "\"Tiro Lifesciences Ltd\" New Zealand company 2014..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"Tiro Lifesciences Ltd\" New Zealand \"Powerhouse Ventures\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [],
+      "public_leads": [
+        "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5024040"
+      ],
+      "unresolved": "Earlier investor reports and register indices checked. Confirmed 2025–26 closure events occurred well outside the window.",
+      "registry": {
+        "company_number": "5024040",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5024040",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5024040/documents",
+        "identity_and_history": "TIRO MEDICAL LIMITED, formerly TIRO LIFESCIENCES LIMITED. Liquidation 2025-08-28 and removal 2026-10-29.",
+        "status": "removed",
+        "indexed_filings": 94,
+        "filings_in_screened_years": 54,
+        "first_filing_in_screen": "2014-03-20",
+        "last_filing_in_screen": "2017-08-02",
+        "last_annual_return": null
+      }
+    },
+    {
+      "company_id": "public_vidapp",
+      "searched_on": "2026-11-20",
+      "screened_from_year": 2017,
+      "screened_through_year": 2020,
+      "news_query": "\"VidApp\" New Zealand company 2017..2026 follow-on funding investment Series equity acquisition shutdown dated announcement latest operating product",
+      "fund_query": "\"VidApp\" New Zealand \"Ice Angels\" follow-on funding investment portfolio capital round acquisition company announcement",
+      "additional_queries": [
+        "VidApp 2019 2021 2023 accelerator investment dated 2025 VidApp",
+        "\"VidApp\" 2025 2026 video app dated news company Changelog"
+      ],
+      "public_leads": [
+        "https://enterpriseangels.co.nz/project/vidapp/"
+      ],
+      "unresolved": "Angel investment page and current product site surfaced. Retrieved undated material gives no dated later close or operating baseline.",
+      "registry": {
+        "company_number": "5546937",
+        "profile_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5546937",
+        "filings_url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5546937/documents",
+        "identity_and_history": "VIDAPP LIMITED, formerly VIDEO APP PUBLISHER LIMITED",
+        "status": "registered",
+        "indexed_filings": 49,
+        "filings_in_screened_years": 27,
+        "first_filing_in_screen": "2017-01-25",
+        "last_filing_in_screen": "2020-11-30",
+        "last_annual_return": "2026-07-24"
+      }
+    }
+  ],
+  "next_round_proofs": [
+    {
+      "event_id": "partly_priced_series_a",
+      "priced_at": "Idealog profile, funding paragraph: reports NZ$180m valuation.",
+      "new_company_equity": "Same paragraph reports NZ$37m raised by Partly in the Series A.",
+      "distinct_from_entry": "The 2022 Series A has a later date and different lead and size from the 2020 Seed round."
     }
   ]
 }

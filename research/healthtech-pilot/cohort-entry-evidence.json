@@ -791,6 +791,106 @@
         "precision": "day"
       },
       "scope": "Government release documents the later incubator grant independently of the table’s Seed financing."
+    },
+    "cohort_register_5981348": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5981348",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_4099622": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/4099622",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_6204076": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6204076",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_5803490": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5803490",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_5625065": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5625065",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_6020449": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/6020449",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_5846052": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5846052",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_3705904": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/3705904",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_1597430": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/1597430",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
+    },
+    "cohort_register_5810427": {
+      "publisher": "New Zealand Companies Office",
+      "url": "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5810427",
+      "retrieved_on": "2026-11-20",
+      "publication": {
+        "value": null,
+        "precision": "unknown"
+      },
+      "scope": "Historical legal status of the matched NZ company; activities of successor entities remain separate."
     }
   },
   "reports": [
@@ -6134,6 +6234,126 @@
       "status": "removed",
       "effective_on": "2026-10-29",
       "locator": "Company summary, Removed, and end of prior liquidation interval on 29 Oct 2026"
+    },
+    {
+      "company_id": "discovery_opumtechnology",
+      "company_number": "5981348",
+      "source_id": "cohort_register_5981348",
+      "status": "liquidation",
+      "effective_on": "2023-12-14",
+      "locator": "Company Summary, Status history. OPUM TECHNOLOGIES LIMITED. Receivership from 2023-07-25, liquidation from 2023-12-14. Product continuity remains separate."
+    },
+    {
+      "company_id": "discovery_stretchsense",
+      "company_number": "4099622",
+      "source_id": "cohort_register_4099622",
+      "status": "liquidation",
+      "effective_on": "2019-09-30",
+      "locator": "Company Summary, Status history. EXSS LIMITED, formerly STRETCHSENSE LIMITED. Administration 2019-07-15, liquidation 2019-09-30, removed 2024-06-20. Successor's operations are separate."
+    },
+    {
+      "company_id": "discovery_stretchsense",
+      "company_number": "4099622",
+      "source_id": "cohort_register_4099622",
+      "status": "removed",
+      "effective_on": "2024-06-20",
+      "locator": "Company Summary, Status history. EXSS LIMITED, formerly STRETCHSENSE LIMITED. Administration 2019-07-15, liquidation 2019-09-30, removed 2024-06-20. Successor's operations are separate."
+    },
+    {
+      "company_id": "discovery_vortexpowersystems",
+      "company_number": "6204076",
+      "source_id": "cohort_register_6204076",
+      "status": "liquidation",
+      "effective_on": "2025-02-18",
+      "locator": "Company Summary, Status history. VORTEX POWER SYSTEMS LIMITED. Liquidation 2025-02-18, removed 2026-01-21."
+    },
+    {
+      "company_id": "discovery_vortexpowersystems",
+      "company_number": "6204076",
+      "source_id": "cohort_register_6204076",
+      "status": "removed",
+      "effective_on": "2026-01-21",
+      "locator": "Company Summary, Status history. VORTEX POWER SYSTEMS LIMITED. Liquidation 2025-02-18, removed 2026-01-21."
+    },
+    {
+      "company_id": "public_auramerbio",
+      "company_number": "5803490",
+      "source_id": "cohort_register_5803490",
+      "status": "liquidation",
+      "effective_on": "2021-04-29",
+      "locator": "Company Summary, Status history. AURAMER BIO LIMITED. Liquidation 2021-04-29, removed 2022-09-29."
+    },
+    {
+      "company_id": "public_auramerbio",
+      "company_number": "5803490",
+      "source_id": "cohort_register_5803490",
+      "status": "removed",
+      "effective_on": "2022-09-29",
+      "locator": "Company Summary, Status history. AURAMER BIO LIMITED. Liquidation 2021-04-29, removed 2022-09-29."
+    },
+    {
+      "company_id": "public_avaliaimmunotherapiesltd",
+      "company_number": "5625065",
+      "source_id": "cohort_register_5625065",
+      "status": "liquidation",
+      "effective_on": "2023-09-28",
+      "locator": "Company Summary, Status history. AVALIA IMMUNOTHERAPIES LIMITED. Liquidation 2023-09-28, removed 2025-11-12."
+    },
+    {
+      "company_id": "public_avaliaimmunotherapiesltd",
+      "company_number": "5625065",
+      "source_id": "cohort_register_5625065",
+      "status": "removed",
+      "effective_on": "2025-11-12",
+      "locator": "Company Summary, Status history. AVALIA IMMUNOTHERAPIES LIMITED. Liquidation 2023-09-28, removed 2025-11-12."
+    },
+    {
+      "company_id": "public_codelingolimited",
+      "company_number": "6020449",
+      "source_id": "cohort_register_6020449",
+      "status": "liquidation",
+      "effective_on": "2024-06-05",
+      "locator": "Company Summary, Status history. CODELINGO LIMITED. Liquidation 2024-06-05, removed 2024-09-25."
+    },
+    {
+      "company_id": "public_codelingolimited",
+      "company_number": "6020449",
+      "source_id": "cohort_register_6020449",
+      "status": "removed",
+      "effective_on": "2024-09-25",
+      "locator": "Company Summary, Status history. CODELINGO LIMITED. Liquidation 2024-06-05, removed 2024-09-25."
+    },
+    {
+      "company_id": "public_firstcheckltd",
+      "company_number": "5846052",
+      "source_id": "cohort_register_5846052",
+      "status": "removed",
+      "effective_on": "2021-10-13",
+      "locator": "Company Summary, Status history. ZAGGED INVESTMENTS LIMITED, formerly FIRSTCHECK LIMITED. Removed 2021-10-13. Brand continuity remains separate."
+    },
+    {
+      "company_id": "public_kotitechnologies",
+      "company_number": "3705904",
+      "source_id": "cohort_register_3705904",
+      "status": "removed",
+      "effective_on": "2020-06-16",
+      "locator": "Company Summary, Status history. KOTI TECHNOLOGIES LIMITED. Removed 2020-06-16."
+    },
+    {
+      "company_id": "public_photonicinnovationsltd",
+      "company_number": "1597430",
+      "source_id": "cohort_register_1597430",
+      "status": "removed",
+      "effective_on": "2023-09-13",
+      "locator": "Company Summary, Status history. PHOTONIC INNOVATIONS LIMITED. Court ended the 2020-06-09 liquidation on 2021-05-24. Subsequently removed 2023-09-13."
+    },
+    {
+      "company_id": "public_socialclub",
+      "company_number": "5810427",
+      "source_id": "cohort_register_5810427",
+      "status": "removed",
+      "effective_on": "2021-03-19",
+      "locator": "Company Summary, Status history. TSC CONSULTING LIMITED, formerly THE SOCIAL CLUB LIMITED until 2020-05-20. Removed 2021-03-19."
     }
   ]
 }

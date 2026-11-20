@@ -312,7 +312,13 @@ def plus_months(value, months):
     return date(year,offset+1,min(original.day,calendar.monthrange(year,offset+1)[1])).isoformat()
 
 
-def outcome_status(company, events):
+def lettered_round_status(event):
+    if event.kind in OUTCOMES and event.instrument != 'other':
+        return 'reached_outcome' if event.instrument == 'priced_equity' else 'unknown'
+    return None
+
+
+def outcome_status(company, events, *, classify_round=lettered_round_status):
     by_id = {event.event_id:event for event in events}
     entry = by_id.get(company.entry_event_id)
     if entry is None:
@@ -321,23 +327,18 @@ def outcome_status(company, events):
     early_horizon, late_horizon = plus_months(lower,36), plus_months(upper,36)
     candidates = []
     for event in events:
-        if event.entity_link == 'proposed':
-            if event.kind in OUTCOMES | CLOSURES.keys() | {'acquired','ipo'}:
-                first, last = event.date.bounds()
-                if not first or (first <= late_horizon and last >= lower):
-                    return 'unknown', None, None
-            continue
-        if event.kind in OUTCOMES and event.instrument in ('priced_equity','equity_unspecified','unknown'):
-            status = 'reached_outcome' if event.instrument == 'priced_equity' else 'unknown'
-        elif event.kind in CLOSURES:
+        status = classify_round(event)
+        if event.kind in CLOSURES:
             status = 'closed_before_outcome'
         elif event.kind in ('acquired','ipo'):
             status = 'acquired_or_ipo_before_outcome'
-        else:
+        if status is None:
             continue
         first, last = event.date.bounds()
         if first and (first > late_horizon or last < lower):
             continue
+        if event.entity_link == 'proposed':
+            return 'unknown', None, None
         if not first or first < upper or last > early_horizon:
             return 'unknown', None, None
         candidates.append((first,last,status,event.event_id))

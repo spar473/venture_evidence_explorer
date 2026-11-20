@@ -1,6 +1,6 @@
 # NZ healthtech pilot checkpoint · 20 November 2026
 
-Branch `implementation/healthtech-pilot`. The P2 audit is verified through `0cb82fe74e82d523c76b95f357bb63483133f3b2`. The P1 demo implementation is `cc20ef0a66ee97ae5feae5b67e2910abb6cbb208`.
+Branch `implementation/healthtech-pilot`. The original 50-entry audit is anchored at `0cb82fe74e82d523c76b95f357bb63483133f3b2`. The P1 demo implementation is `cc20ef0a66ee97ae5feae5b67e2910abb6cbb208`.
 
 The README now opens with a five-line pitch and the MRI demo. Migration 007 adds the fixture, round dates and source passages, six outcome states, historical availability witnesses, and snapshots with evidence at or before the cutoff. The importer stores the original packet and its normalized records. A dry run leaves the database byte-for-byte identical, and an exact repeat writes zero rows.
 
@@ -74,9 +74,25 @@ The 304 entry reports and 79 sources include historical Young Company Finance ta
 
 Young Company Finance reported 66 early-stage deals in the first half of 2022 and 76 in the second. Those counts include follow-ons and use deals as the unit. The audit reports ten qualifying first entries for that vintage and preserves both market benchmark counts for context. [Spring 2022 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-report-spring-2022_sml.pdf) · [Autumn 2023 report](https://www.nzgcp.co.nz/assets/Media/startup-investment-autumn-2023.pdf)
 
-Follow-up evidence is applied after fixing the entry list. Eleven companies have bounded follow-up searches. Nine have verified activity through the 36-month horizon with no qualifying outcome identified in their reviewed sources. Horizon coverage remains unresolved for 39. The status tally is one priced lettered round, one closure within the window, zero acquisitions or IPOs before the outcome, seven observed without a qualifying outcome, three lost to follow-up and 38 unknown. These are audit counts. [Follow-up evidence](../../research/healthtech-pilot/cohort-follow-up.json)
+### Bounded review of the original 50
 
-The Companies Register confirms liquidation and later removal for both Supie and Tiro Medical, formerly Tiro Lifesciences. Supie's liquidation follows its seed within 36 months, with a financing search through the closure date. Tiro's 2025 liquidation and 2026 removal are later than its 36-month window, so its earlier outcome remains unknown. [Supie register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376) · [Tiro register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/5024040)
+The secondary outcome was frozen and pushed in `f8f3c7a` before this review. Its audit counts distinct completed priced equity rounds with evidence of new money for the company and a share price or round valuation. It has its own minimum of 30 verified events. Both outcomes require at least 150 entries, measured 36-month follow-up and fewer than 25% of cases unknown or lost to follow-up.
+
+On 20 November 2026 the review covered all 50 original entrants. Each record logs the official company number and status, the public filing index and date span screened, the dated news query, the named fund query, public leads and the remaining evidence gaps. The filing screen covered calendar years from the entry year through three years later. Outcome timing uses exact dates or retained bounds from the sources. Filing titles and annual returns are recorded as legal history. Underlying allotment consideration was not confirmed from the public index. Thirty entries also have enough positive source evidence for a formal coverage review. The rest have a search log with the remaining gaps. [Per-company search and evidence ledger](../../research/healthtech-pilot/cohort-follow-up.json)
+
+| Status | Series A or later | Next priced equity round |
+| --- | ---: | ---: |
+| Reached outcome | 1 | 0 |
+| Verified closure first | 1 | 1 |
+| Acquisition or IPO first | 0 | 0 |
+| Observed without confirmed outcome | 17 | 14 |
+| Lost to follow-up | 10 | 6 |
+| Unknown | 21 | 29 |
+| Unknown plus lost to follow-up | 31 of 50 (62%) | 35 of 50 (70%) |
+| Verified still observed at 36 months | 21 | 17 |
+| Observation at 36 months unresolved | 22 | 30 |
+
+Both gates remain closed. Twelve matched legal entities have documented removals or liquidation, ten more than the previous run. Supie is the only confirmed in-window competing closure. The other legal events occurred later. The original StretchSense entity and its successor are recorded separately, and Photonic Innovations' reversed liquidation is excluded from terminal events. Partly's 2022 Series A is priced. Its earlier pre-Series A terms are open, so the time of its first subsequent priced round is unresolved. The Carepatron investor note points to a May 2022 first raise, while the entry ledger retains the July 2022 publication proxy pending reconciliation. No rates or curves were computed. [Entry and legal evidence](../../research/healthtech-pilot/cohort-entry-evidence.json) · [Supie register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376)
 
 Run the read-only audit from the checkout. Use `--include-decisions` to export each decision or `--company-id public_tirolifesciencesltd` to inspect one history and its sources.
 
@@ -84,6 +100,6 @@ Run the read-only audit from the checkout. Use `--include-decisions` to export e
 python scripts/audit_reference_cohort.py
 ```
 
-The deterministic audit replay, **163 backend tests**, **40 browser tests**, production build, smoke verification, migration checks, generated API contract and disposable demo passed. The fixture dry run wrote zero rows and reimport preserved the database. Entry decisions were identical with the registry and staged outcome evidence withheld. The M0 gate remains closed on cohort size, confirmed primary outcomes and follow-up coverage. P3 curves, embedding retrieval and predictive models remain pending.
+The deterministic audit replay, **166 backend tests**, **40 Playwright tests**, production build, smoke verification, migration checks and generated API contract check passed. The fixture dry run wrote zero rows. The disposable demo verified exact reimports and integrity. A separate browser check opened the running MRI dossier and confirmed the three named comparisons, later milestones and source notes. Entry decisions were identical with registry and staged outcome evidence withheld.
 
-**Next task** — Review the remaining named-investor deal leads and the earlier NZVIF deal appendices for dated first-round evidence, then extend bounded follow-up on included cases.
+**Next task** — Screen the historical NZVIF and Young Company Finance appendices and dated investor notices for additional eligible entries. Preserve the original 50-case follow-up baseline separately.
