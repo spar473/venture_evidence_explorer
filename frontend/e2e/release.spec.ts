@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("browse, filter, inspect and unknowns", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await expect(
     page.getByRole("heading", { name: "Venture directory" }),
   ).toBeVisible();
@@ -50,7 +50,7 @@ test("browse, filter, inspect and unknowns", async ({ page }) => {
 test("comparison, source evidence, fewer than three and stage abstention", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page
     .getByRole("button", { name: "Find comparisons", exact: true })
     .click();
@@ -96,7 +96,7 @@ test("comparison, source evidence, fewer than three and stage abstention", async
 });
 
 test("analytics and real CSV download", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page.getByRole("button", { name: "Data & exports" }).click();
   await expect(
     page.getByRole("heading", { name: "Programme recognition", exact: true }),
@@ -118,7 +118,7 @@ test("loading and recoverable API error states", async ({ page }) => {
     if (blocked) await route.fulfill({ status: 503, body: "unavailable" });
     else await route.continue();
   });
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await expect(page.getByRole("alert")).toContainText("Database unavailable");
   blocked = false;
   await page.getByRole("button", { name: "Retry", exact: true }).click();
@@ -136,7 +136,7 @@ test("loading and recoverable API error states", async ({ page }) => {
 
 test("narrow layout has no page overflow", async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await expect(page.locator(".venture-card")).toHaveCount(10);
   expect(
     await page.evaluate(
@@ -148,7 +148,7 @@ test("narrow layout has no page overflow", async ({ page }, testInfo) => {
 
 test("desktop release capture", async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 1440, height: 1050 });
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await expect(page.locator(".venture-card")).toHaveCount(10);
   await page.screenshot({ path: testInfo.outputPath("desktop.png"), fullPage: true });
 });
@@ -156,7 +156,7 @@ test("desktop release capture", async ({ page }, testInfo) => {
 test("changing a comparison query invalidates stale results", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page
     .getByRole("button", { name: "Find comparisons", exact: true })
     .click();
@@ -181,7 +181,7 @@ test("changing a comparison query invalidates stale results", async ({
 test("evidence drawer supports Escape and returns keyboard focus", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?mode=research");
   const subject = page.getByRole("button", {
     name: "Formus Labs",
     exact: true,

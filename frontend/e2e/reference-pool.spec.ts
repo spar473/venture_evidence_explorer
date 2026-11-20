@@ -1,7 +1,7 @@
 import {expect, test} from '@playwright/test';
 
 test('fixture directory shows all companies and distinguishes closure from follow-up', async ({page}) => {
-  await page.goto('/');
+  await page.goto('/?mode=research');
   await page.getByRole('button', {name:'Research dossiers',exact:true}).click();
   await page.getByText('NZ reference fixture', {exact:true}).click();
   const coverage = page.getByRole('region', {name:'Fixture coverage'});
@@ -22,7 +22,7 @@ test('fixture directory shows all companies and distinguishes closure from follo
 });
 
 test('university analogy shows sourced peers and preserves the sparse abstention', async ({page}) => {
-  await page.goto('/');
+  await page.goto('/?mode=research');
   await page.getByRole('button', {name:'Research dossiers',exact:true}).click();
   await page.getByRole('button', {name:'Neurofanos',exact:true}).click();
   const drawer = page.getByRole('dialog');

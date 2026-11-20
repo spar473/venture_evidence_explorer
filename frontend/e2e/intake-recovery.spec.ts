@@ -1,7 +1,7 @@
 import {test,expect,type Page,type APIRequestContext} from '@playwright/test';
 const input=(name:string)=>({request_id:crypto.randomUUID(),name,description:'Synthetic clinical images software query',aliases:[]});
 async function create(api:APIRequestContext,name:string){const r=await api.post('/api/intake/drafts',{data:input(name)});expect(r.ok()).toBeTruthy();return r.json();}
-async function enter(page:Page,name?:string){await page.goto('/');await page.getByRole('button',{name:'Add venture',exact:true}).click();if(name)await page.getByRole('button',{name:name+' · revision 1',exact:true}).click();}
+async function enter(page:Page,name?:string){await page.goto('/?mode=research');await page.getByRole('button',{name:'Add venture',exact:true}).click();if(name)await page.getByRole('button',{name:name+' · revision 1',exact:true}).click();}
 const save=(page:Page)=>page.getByRole('button',{name:'Save revision',exact:true});
 
 test('delayed save prevents switching draft identity and preserves both histories',async({page})=>{
@@ -40,7 +40,7 @@ test('unmounted delayed save cannot replace the restored editor session',async({
 });
 
 test('legacy field recovery requires explicit identity selection',async({page})=>{
- const a=await create(page.request,'Synthetic legacy');await page.goto('/');await page.evaluate(()=>{localStorage.removeItem('vee:intake-editor:2');localStorage.setItem('vee:intake-form:1',JSON.stringify({name:'Synthetic legacy',description:'Synthetic legacy edits',aliases:'',claims:[],research_subject_id:null}));});await page.reload();await page.getByRole('button',{name:'Add venture',exact:true}).click();await expect(page.getByRole('button',{name:'Save draft',exact:true})).toBeDisabled();await page.getByRole('button',{name:a.content.name+' · revision 1',exact:true}).click();await expect(page.getByLabel('Description',{exact:true})).toHaveValue('Synthetic legacy edits');await save(page).click();await expect(save(page)).toBeEnabled();expect((await (await page.request.get('/api/intake/drafts/'+a.draft_id)).json()).revision_number).toBe(2);
+ const a=await create(page.request,'Synthetic legacy');await page.goto('/?mode=research');await page.evaluate(()=>{localStorage.removeItem('vee:intake-editor:2');localStorage.setItem('vee:intake-form:1',JSON.stringify({name:'Synthetic legacy',description:'Synthetic legacy edits',aliases:'',claims:[],research_subject_id:null}));});await page.reload();await page.getByRole('button',{name:'Add venture',exact:true}).click();await expect(page.getByRole('button',{name:'Save draft',exact:true})).toBeDisabled();await page.getByRole('button',{name:a.content.name+' · revision 1',exact:true}).click();await expect(page.getByLabel('Description',{exact:true})).toHaveValue('Synthetic legacy edits');await save(page).click();await expect(save(page)).toBeEnabled();expect((await (await page.request.get('/api/intake/drafts/'+a.draft_id)).json()).revision_number).toBe(2);
 });
 
 test('unavailable recovery journal refuses a write and retains typed input',async({page})=>{

@@ -186,4 +186,47 @@ Each quoted name was searched against round-stage and pricing terms, and the res
 
 Python 3.12 ran 174 passing backend tests. The production build, smoke verification, all three SQLite migration transaction modes, generated contract check and disposable demo import verification passed. Playwright could not start the local server on either port tested because the environment denied socket binding. A stand-alone Chrome launch also exited before a page could be opened.
 
-The Phase 0 changes are committed locally on `implementation/healthtech-pilot`. Direct Git access failed to resolve `github.com`. The remote heads were independently checked and were still `3f0905e` for the pilot and `bcca61e` for `main`. Resume by running the browser suite and inspecting the running app in an environment that allows local sockets. Then push the pilot branch, archive `origin/main` with the required tag and update `main` with the original lease from the workbench prompt. Phase 1 starts from the verified replacement `origin/main`.
+The Phase 0 changes are committed locally on `implementation/healthtech-pilot`. Direct Git access failed to resolve `github.com`. The remote heads were independently checked and were still `3f0905e` for the pilot and `bcca61e` for `main`. Publication was subsequently completed and verified from the local refs in the continuation below.
+
+## Workbench continuation · 21 November 2026
+
+Phase 0 is published. The archive tag and new `origin/main` are visible in the checkout. The workbench branch was verified to descend from `2404f2d`.
+
+### Decisions (continued)
+
+| Date | Decision | Reason | Alternative considered |
+| --- | --- | --- | --- |
+| 21 November 2026 | Use the system font stack for the workbench. | The visual spec permits it and both font families with redistributable files were unavailable together locally. | Introduce a font download or CDN. |
+
+### Pending local verification
+
+| Phase | Checks run in this environment | Deferred |
+| --- | --- | --- |
+| 1 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+| 2 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+| 3 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+| 4 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+| 5 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+| 6 | pytest, production build, smoke verification, migrations, API contract, Playwright discovery, Venture Frame round trip | Playwright execution, running app inspection, screenshot capture, branch push |
+
+### Similarity and witness decisions
+
+| Date | Decision | Reason | Alternative considered |
+| --- | --- | --- | --- |
+| 21 November 2026 | Use B0 token normalization and symmetric IDF overlap, with similarity 0.35 and coverage 0.15 as minimums. | No bundled offline embedder was available. Fixed thresholds require usable coverage across the defined feature dimensions. | Fetch a sentence encoder or use a score based on a single shared feature. |
+| 21 November 2026 | Use the earliest bound for snapshot eligibility and the lower median outcome rank for even peer sets. | The witness date must hold for every possible anchor day. The lower median is reproducible and conservative. | Use the latest bound or the upper median. |
+| 21 November 2026 | Use positive dated events for alternate-anchor ranks and withhold unsupported censoring. | The frozen follow-up audit starts at seed entry. Alternately aligned peers need evidence for their own window. | Reuse the seed-entry classification at a different stage. |
+| 21 November 2026 | Compare healthtech and medtech with other sectors at the same selected vintage. | The sector filter narrows the story view; the comparison keeps both denominators available. | Use the sector filter to remove one side of the comparison. |
+| 21 November 2026 | Store workbench disputes as separate local review events and exclude disputed IDs from matching. | Source records and the frozen audit remain immutable. Repeated or retried submissions use one request ID per attempt. | Rewrite observations or alter the checked-in cohort audit. |
+| 21 November 2026 | Apply prior shrinkage to the weighted cumulative incidence estimate. | The risk sets preserve censoring and competing events before shrinkage. | Shrink an uncensored, weighted event average. |
+| 21 November 2026 | Put screening metadata under each Venture Frame alternative and reuse the measurement draft envelope. | The receiving schema preserves alternative metadata through load and save. Similarity measurements carry no weights. | Add a project-level field that the strict importer would reject. |
+
+### Implementation checkpoint
+
+Phases 1–6 are implemented locally. The final backend suite passed all 184 tests. Playwright discovery found 46 tests. The default workbench uses the frozen Cohort A audit with 55 entries, two verified outcomes per endpoint and one in-window closure first. Unknown plus lost is 43 for Series A or later and 47 for the next priced round. Current university projects have insufficient witnessed coverage for ranked same-stage comps. The curated pathways remain available as analogies.
+
+The real MRI screening note and a synthetic note with all three comp roles both survived load, save and reload using the Venture Frame JSON repository at `cf1068a`. The real note included the subject and no measured peers. The synthetic note retained all four alternatives, 15 similarity measurements, the anchor and the checklist claim IDs.
+
+The built Overview rendered in an offline replay of the real in-process demo API responses. The screenshot preview opened in Firefox, but the tab was no longer available when saving. A later file navigation in the in-app browser was blocked by its URL policy. Workbench PNGs are pending with the socket-dependent browser suite. The README retains the older Research mode image under the demo steps, with its view identified in the caption.
+
+The PR body is in [PR_DESCRIPTION.md](PR_DESCRIPTION.md).

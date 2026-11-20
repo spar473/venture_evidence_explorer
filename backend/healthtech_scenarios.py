@@ -96,34 +96,43 @@ def scenario_report(model: ProviderScenarios):
         scope='An arithmetic exercise using supplied assumptions. Deficits show the amount needed to keep modelled month-end cash at or above zero.')
 
 
-def venture_frame_project(report):
-    """Package unweighted assumption-based measurements for Projects → Import."""
-    cases = report['cases']
+def venture_frame_measurement_draft(project_id, title, description, alternatives, criteria, performances):
     return {
         'schema_version': 1,
-        'id': 'healthtech-provider-scenarios',
-        'title': report['assumptions']['label'],
-        'description': 'Assumption-based provider evaluation cases. Raw measurements are supplied for analyst review.',
+        'id': project_id,
+        'title': title,
+        'description': description,
         'decision_maker': '',
-        'alternatives': [
-            {'id': case['case_id'], 'name': case['label'], 'metadata': {
-                'basis': report['assumptions']['assumption_note'],
-                'assumptions': assumptions,
-                'horizon_months': report['assumptions']['horizon_months'],
-                'evaluation_start_month': report['assumptions']['evaluation_start_month'],
-                'opening_cash_nzd': report['assumptions']['opening_cash_nzd'],
-                'monthly_operating_outflow_nzd': report['assumptions']['monthly_operating_outflow_nzd'],
-            }}
-            for case, assumptions in zip(cases, report['assumptions']['cases'], strict=True)
-        ],
-        'criteria': [
-            {'id': key, 'name': title, 'order': order, 'scale': {'type': 'interval', 'unit': unit}}
-            for order, (key, (title, unit)) in enumerate(MEASUREMENTS.items())
-        ],
-        'performances': [
-            {'alternative_id': case['case_id'], 'criterion_id': key, 'value': case[key]}
-            for case in cases for key in MEASUREMENTS if case[key] is not None
-        ],
+        'alternatives': alternatives,
+        'criteria': criteria,
+        'performances': performances,
         'weight_profiles': [],
         'scenarios': [],
     }
+
+
+def venture_frame_project(report):
+    """Package unweighted assumption-based measurements for Projects → Import."""
+    cases = report['cases']
+    alternatives = [
+        {'id': case['case_id'], 'name': case['label'], 'metadata': {
+            'basis': report['assumptions']['assumption_note'],
+            'assumptions': assumptions,
+            'horizon_months': report['assumptions']['horizon_months'],
+            'evaluation_start_month': report['assumptions']['evaluation_start_month'],
+            'opening_cash_nzd': report['assumptions']['opening_cash_nzd'],
+            'monthly_operating_outflow_nzd': report['assumptions']['monthly_operating_outflow_nzd'],
+        }}
+        for case, assumptions in zip(cases, report['assumptions']['cases'], strict=True)
+    ]
+    criteria = [
+        {'id': key, 'name': title, 'order': order, 'scale': {'type': 'interval', 'unit': unit}}
+        for order, (key, (title, unit)) in enumerate(MEASUREMENTS.items())
+    ]
+    performances = [
+        {'alternative_id': case['case_id'], 'criterion_id': key, 'value': case[key]}
+        for case in cases for key in MEASUREMENTS if case[key] is not None
+    ]
+    return venture_frame_measurement_draft('healthtech-provider-scenarios', report['assumptions']['label'],
+        'Assumption-based provider evaluation cases. Raw measurements are supplied for analyst review.',
+        alternatives, criteria, performances)
