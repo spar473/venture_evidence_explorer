@@ -53,6 +53,10 @@ The pool is a **source-covered cohort**: every company that the defined discover
 - Store the label exactly as the source gives it. An unlabelled round of at least NZ$5M led by an institutional VC is recorded as `series_a_equivalent` and analysed only in a sensitivity check, never silently merged.
 - Acquisition or IPO before Series A is its own outcome, recorded and reported separately.
 
+**Decision · 20 November 2026.** M0 will also estimate cumulative incidence for the pre-listed secondary outcome, **the next completed priced equity round within 36 months of entry**. A later seed, seed extension, bridge or unlabelled financing can qualify when dated evidence establishes a distinct round, a share price or round valuation, and new equity capital for the company. Tranches of the entry round, convertible instruments before conversion, grants and secondary share transfers do not qualify. Verified closure and acquisition or IPO before the next priced round are competing events.
+
+The secondary outcome uses the same source-covered entry cohort and 150-company minimum as the primary analysis. Its release gate requires at least **30 independently qualifying secondary events**, a reported count still under observation at 36 months, and **unknown plus lost to follow-up below 25%** of the cohort. Apply the same follow-up rule to both outcomes. Assess each gate against its own event and status counts. Freeze this decision before collecting the next batch of follow-up evidence.
+
 **Status categories (kept distinct; never merged):**
 
 | Status | Meaning | Treatment |
