@@ -1,0 +1,655 @@
+{
+  "format_version": "witnessed-snapshots:1",
+  "compiled_on": "2026-11-21",
+  "sources": [
+    {
+      "source_id": "ws_mri_uoa_2026",
+      "title": "Snoring solution leads ABI awards success",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2026/10/28/snoring-success-leads-ABI-double-success-velocity.html",
+      "kind": "news_article",
+      "published_on": "2026-10-28",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_neuro_uoa_2023",
+      "title": "Making brain surgery smarter with artificial intelligence",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2023/11/10/making-brain-surgery-smarter-artificial-intelligence.html",
+      "kind": "news_article",
+      "published_on": "2023-11-10",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_ivf_uoa_2025",
+      "title": "Start-ups reach for the stars – literally – in $100k Challenge",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2025/10/17/start-ups-reach-for-the-stars---literally---in--100k-challenge-.html",
+      "kind": "news_article",
+      "published_on": "2025-10-17",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_vista_uoa_2025",
+      "title": "The latest start-ups emerging from the University’s incubator",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2025/08/25/latest-start-ups-emerging-from-the-universitys-incubator.html",
+      "kind": "news_article",
+      "published_on": "2025-08-25",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_pulse_uoa_2026",
+      "title": "University innovators recognised for tackling real-world problems",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2026/05/22/university-innovators-recognised-for-tackling-real-world-problems.html",
+      "kind": "news_article",
+      "published_on": "2026-05-22",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_toku_startupdaily_2021",
+      "title": "A New Zealand startup using AI to detect eye disease raises $3.35 million",
+      "publisher": "Startup Daily",
+      "url": "https://www.startupdaily.net/topic/funding/a-new-zealand-startup-using-ai-to-detect-eye-disease-raises-3-35-million/",
+      "kind": "news_article",
+      "published_on": "2021-06-29",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_resp_aut_2020",
+      "title": "Technology to reduce spread of COVID-19",
+      "publisher": "Auckland University of Technology",
+      "url": "https://www.aut.ac.nz/news/stories/technology-to-reduce-spread-of-covid-19",
+      "kind": "news_article",
+      "published_on": "2020-06-25",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_tamo_mwc_2022",
+      "title": "Over $15m invested in world-leading cancer treatment",
+      "publisher": "Maurice Wilkins Centre",
+      "url": "https://www.mauricewilkinscentre.org/media/1002/tamorx-release-may-2022.pdf",
+      "kind": "press_release",
+      "published_on": "2022-05-25",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_avalia_vuw_2015",
+      "title": "New company to advance potential treatment for cancer and other diseases",
+      "publisher": "Victoria University of Wellington",
+      "url": "https://www.wgtn.ac.nz/news/2015/05/new-company-to-advance-potential-treatment-for-cancer-and-other-diseases",
+      "kind": "news_article",
+      "published_on": "2015-05-21",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_first_cio_2016",
+      "title": "Kiwi startup develops app for early detection of skin cancer",
+      "publisher": "CIO New Zealand",
+      "url": "https://www.cio.com/article/204127/kiwi-startup-develops-app-for-early-detection-of-skin-cancer.html",
+      "kind": "news_article",
+      "published_on": "2016-11-14",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_heart_hinz_2019",
+      "title": "AI to improve cardiology workflows",
+      "publisher": "Health Informatics New Zealand",
+      "url": "https://www.hinz.org.nz/news/449932/AI-to-improve-cardiology-workflows.htm",
+      "kind": "news_article",
+      "published_on": "2019-05-03",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_tiro_ucchronicle_2004",
+      "title": "University of Canterbury Chronicle, 6 May 2004",
+      "publisher": "University of Canterbury",
+      "url": "https://digitalvoyages.canterbury.ac.nz/files/original/cacda018dbd4c06d15a085ccfebd221dcebb2b80.pdf",
+      "kind": "news_article",
+      "published_on": "2004-05-06",
+      "retrieved_on": "2026-11-21"
+    }
+  ],
+  "witnesses": [
+    {
+      "witness_id": "w_ws_mri_uoa_2026",
+      "source_id": "ws_mri_uoa_2026",
+      "kind": "publisher_dated",
+      "available_on": "2026-10-28",
+      "url": "https://www.auckland.ac.nz/en/news/2026/10/28/snoring-success-leads-ABI-double-success-velocity.html",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_neuro_uoa_2023",
+      "source_id": "ws_neuro_uoa_2023",
+      "kind": "publisher_dated",
+      "available_on": "2023-11-10",
+      "url": "https://www.auckland.ac.nz/en/news/2023/11/10/making-brain-surgery-smarter-artificial-intelligence.html",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_ivf_uoa_2025",
+      "source_id": "ws_ivf_uoa_2025",
+      "kind": "publisher_dated",
+      "available_on": "2025-10-17",
+      "url": "https://www.auckland.ac.nz/en/news/2025/10/17/start-ups-reach-for-the-stars---literally---in--100k-challenge-.html",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_vista_uoa_2025",
+      "source_id": "ws_vista_uoa_2025",
+      "kind": "publisher_dated",
+      "available_on": "2025-08-25",
+      "url": "https://www.auckland.ac.nz/en/news/2025/08/25/latest-start-ups-emerging-from-the-universitys-incubator.html",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_pulse_uoa_2026",
+      "source_id": "ws_pulse_uoa_2026",
+      "kind": "publisher_dated",
+      "available_on": "2026-05-22",
+      "url": "https://www.auckland.ac.nz/en/news/2026/05/22/university-innovators-recognised-for-tackling-real-world-problems.html",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_toku_startupdaily_2021",
+      "source_id": "ws_toku_startupdaily_2021",
+      "kind": "publisher_dated",
+      "available_on": "2021-06-29",
+      "url": "https://www.startupdaily.net/topic/funding/a-new-zealand-startup-using-ai-to-detect-eye-disease-raises-3-35-million/",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_resp_aut_2020",
+      "source_id": "ws_resp_aut_2020",
+      "kind": "publisher_dated",
+      "available_on": "2020-06-25",
+      "url": "https://www.aut.ac.nz/news/stories/technology-to-reduce-spread-of-covid-19",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_tamo_mwc_2022",
+      "source_id": "ws_tamo_mwc_2022",
+      "kind": "publisher_dated",
+      "available_on": "2022-05-25",
+      "url": "https://www.mauricewilkinscentre.org/media/1002/tamorx-release-may-2022.pdf",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_avalia_vuw_2015",
+      "source_id": "ws_avalia_vuw_2015",
+      "kind": "publisher_dated",
+      "available_on": "2015-05-21",
+      "url": "https://www.wgtn.ac.nz/news/2015/05/new-company-to-advance-potential-treatment-for-cancer-and-other-diseases",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_first_cio_2016",
+      "source_id": "ws_first_cio_2016",
+      "kind": "publisher_dated",
+      "available_on": "2016-11-14",
+      "url": "https://www.cio.com/article/204127/kiwi-startup-develops-app-for-early-detection-of-skin-cancer.html",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_heart_hinz_2019",
+      "source_id": "ws_heart_hinz_2019",
+      "kind": "publisher_dated",
+      "available_on": "2019-05-03",
+      "url": "https://www.hinz.org.nz/news/449932/AI-to-improve-cardiology-workflows.htm",
+      "locator": "Publisher dateline and version reviewed"
+    },
+    {
+      "witness_id": "w_ws_tiro_ucchronicle_2004",
+      "source_id": "ws_tiro_ucchronicle_2004",
+      "kind": "publisher_dated",
+      "available_on": "2004-05-06",
+      "url": "https://digitalvoyages.canterbury.ac.nz/files/original/cacda018dbd4c06d15a085ccfebd221dcebb2b80.pdf",
+      "locator": "Print cover date and 7 May 2004 University of Canterbury Library stamp"
+    }
+  ],
+  "profiles": [
+    {
+      "subject_id": "subj_ht_mri",
+      "scope": "project_as_of",
+      "cutoff": "2026-11-21",
+      "features": [
+        {
+          "name": "modality",
+          "value": "breast MRI",
+          "source_id": "ws_mri_uoa_2026",
+          "witness_id": "w_ws_mri_uoa_2026",
+          "passage": "Better breast cancer screening section identifies breast MRI as the imaging input."
+        },
+        {
+          "name": "clinical_user",
+          "value": "radiologist",
+          "source_id": "ws_mri_uoa_2026",
+          "witness_id": "w_ws_mri_uoa_2026",
+          "passage": "Better breast cancer screening section identifies radiologists as the intended users."
+        },
+        {
+          "name": "output_type",
+          "value": "draft clinical imaging report",
+          "source_id": "ws_mri_uoa_2026",
+          "witness_id": "w_ws_mri_uoa_2026",
+          "passage": "The ABI researcher describes a proposed draft report with digital twin measurements and prior-scan comparison."
+        },
+        {
+          "name": "description",
+          "value": "Software intended to help radiologists interpret breast MRI and draft a longitudinal imaging report.",
+          "source_id": "ws_mri_uoa_2026",
+          "witness_id": "w_ws_mri_uoa_2026",
+          "passage": "Better breast cancer screening section describes the proposed software and reporting workflow."
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_neurofanos",
+      "scope": "project_as_of",
+      "cutoff": "2026-11-21",
+      "features": [
+        {
+          "name": "clinical_user",
+          "value": "neurosurgeon",
+          "source_id": "ws_neuro_uoa_2023",
+          "witness_id": "w_ws_neuro_uoa_2023",
+          "passage": "The opening describes the intended neurosurgical use."
+        },
+        {
+          "name": "output_type",
+          "value": "intraoperative navigation",
+          "source_id": "ws_neuro_uoa_2023",
+          "witness_id": "w_ws_neuro_uoa_2023",
+          "passage": "The article describes real-time brain structure information and neuro-navigation."
+        },
+        {
+          "name": "description",
+          "value": "A real-time brain structure analysis tool intended to support neurosurgical navigation.",
+          "source_id": "ws_neuro_uoa_2023",
+          "witness_id": "w_ws_neuro_uoa_2023",
+          "passage": "Opening product description and discussion with the research lead."
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "source_id": "ws_neuro_uoa_2023",
+          "witness_id": "w_ws_neuro_uoa_2023",
+          "passage": "Richard Faull’s attributed comments identify the team’s existing prototype."
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_ivf",
+      "scope": "project_as_of",
+      "cutoff": "2026-11-21",
+      "features": [
+        {
+          "name": "modality",
+          "value": "embryonic imaging and cycle data",
+          "source_id": "ws_ivf_uoa_2025",
+          "witness_id": "w_ws_ivf_uoa_2025",
+          "passage": "The award-winner section describes image and video assessment and multimodal cycle analysis."
+        },
+        {
+          "name": "clinical_user",
+          "value": "embryologist",
+          "source_id": "ws_ivf_uoa_2025",
+          "witness_id": "w_ws_ivf_uoa_2025",
+          "passage": "The lead researcher describes embryo selection support for embryologists."
+        },
+        {
+          "name": "output_type",
+          "value": "embryo ranking",
+          "source_id": "ws_ivf_uoa_2025",
+          "witness_id": "w_ws_ivf_uoa_2025",
+          "passage": "The award-winner section identifies a rank of embryos as the planned decision-support output."
+        },
+        {
+          "name": "description",
+          "value": "IVF decision-support software in development to rank embryos using imaging and cycle data.",
+          "source_id": "ws_ivf_uoa_2025",
+          "witness_id": "w_ws_ivf_uoa_2025",
+          "passage": "Award-winner section describes the product, the collaboration and the upcoming clinical feedback stage."
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_vistavision",
+      "scope": "project_as_of",
+      "cutoff": "2026-11-21",
+      "features": [
+        {
+          "name": "modality",
+          "value": "telerobotic eye examination",
+          "source_id": "ws_vista_uoa_2025",
+          "witness_id": "w_ws_vista_uoa_2025",
+          "passage": "VistaVision entry in the Venture Lab cohort describes a telerobotic eye-care approach."
+        },
+        {
+          "name": "description",
+          "value": "Telerobotic eye care intended to reach rural patients remotely in real time.",
+          "source_id": "ws_vista_uoa_2025",
+          "witness_id": "w_ws_vista_uoa_2025",
+          "passage": "VistaVision entry in the Venture Lab cohort."
+        }
+      ]
+    },
+    {
+      "subject_id": "subj_ht_pulsemap",
+      "scope": "project_as_of",
+      "cutoff": "2026-11-21",
+      "features": [
+        {
+          "name": "modality",
+          "value": "non-invasive vascular screening",
+          "source_id": "ws_pulse_uoa_2026",
+          "witness_id": "w_ws_pulse_uoa_2026",
+          "passage": "The PulseMap PAD Detector finalist entry describes a non-invasive vascular screening device."
+        },
+        {
+          "name": "description",
+          "value": "A portable vascular screening device intended to support earlier detection of peripheral arterial disease.",
+          "source_id": "ws_pulse_uoa_2026",
+          "witness_id": "w_ws_pulse_uoa_2026",
+          "passage": "The PulseMap PAD Detector finalist entry describes purpose and portability."
+        }
+      ]
+    },
+    {
+      "subject_id": "toku",
+      "scope": "institutional_entry",
+      "cutoff": "2021-06-29",
+      "anchor_claim_id": "toku_entry",
+      "features": [
+        {
+          "name": "modality",
+          "value": "retinal photography",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Camera workflow paragraph describes use of practices’ existing eye imaging cameras."
+        },
+        {
+          "name": "clinical_user",
+          "value": "optometrist",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Availability paragraph names optometrists as a target user group."
+        },
+        {
+          "name": "output_type",
+          "value": "eye screening and referral support",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Eye imaging, reporting and referrals discussion identifies the intended screening workflow."
+        },
+        {
+          "name": "description",
+          "value": "THEIA analyses images from eye cameras to support screening, reporting and referral decisions.",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Product and camera workflow paragraphs."
+        },
+        {
+          "name": "stage",
+          "value": "seed",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Lead describes the transaction as a seed round."
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "The article identifies THEIA as a built platform with completed trials."
+        },
+        {
+          "name": "provider_study",
+          "value": "yes",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Trial paragraph identifies completed trials at Middlemore Eye Hospital and private practices."
+        },
+        {
+          "name": "round_size_band",
+          "value": "nzd_1m_to_5m",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Lead states NZ$3.6m in the reported seed round."
+        },
+        {
+          "name": "lead_investor_type",
+          "value": "venture_capital",
+          "source_id": "ws_toku_startupdaily_2021",
+          "witness_id": "w_ws_toku_startupdaily_2021",
+          "passage": "Seed syndicate paragraph identifies Icehouse Ventures as lead."
+        }
+      ]
+    },
+    {
+      "subject_id": "discovery_respiraq",
+      "scope": "institutional_entry",
+      "cutoff": "2021-12-01",
+      "anchor_claim_id": "cohort_entry:discovery_respiraq",
+      "features": [
+        {
+          "name": "modality",
+          "value": "respiratory humidification",
+          "source_id": "ws_resp_aut_2020",
+          "witness_id": "w_ws_resp_aut_2020",
+          "passage": "AUT describes a humidifier for patients who need breathing support."
+        },
+        {
+          "name": "description",
+          "value": "Medical respiratory humidification technology in development for patients requiring breathing support.",
+          "source_id": "ws_resp_aut_2020",
+          "witness_id": "w_ws_resp_aut_2020",
+          "passage": "Prototype grant and founder discussion describe the underlying AUT technology. AUT later identifies it as RespirAq’s origin."
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "source_id": "ws_resp_aut_2020",
+          "witness_id": "w_ws_resp_aut_2020",
+          "passage": "AUT reports a working humidifier for sleep-apnoea applications and plans for a hospital-focused version."
+        }
+      ]
+    },
+    {
+      "subject_id": "discovery_tamorx",
+      "scope": "institutional_entry",
+      "cutoff": "2022-05-25",
+      "anchor_claim_id": "cohort_entry:discovery_tamorx",
+      "features": [
+        {
+          "name": "modality",
+          "value": "immunotherapy",
+          "source_id": "ws_tamo_mwc_2022",
+          "witness_id": "w_ws_tamo_mwc_2022",
+          "passage": "Opening and researcher statement describe cancer immunotherapy development."
+        },
+        {
+          "name": "output_type",
+          "value": "therapeutic candidate",
+          "source_id": "ws_tamo_mwc_2022",
+          "witness_id": "w_ws_tamo_mwc_2022",
+          "passage": "Opening describes use of the funding to advance a cancer treatment candidate."
+        },
+        {
+          "name": "description",
+          "value": "University spinout developing a preclinical cancer immunotherapy.",
+          "source_id": "ws_tamo_mwc_2022",
+          "witness_id": "w_ws_tamo_mwc_2022",
+          "passage": "Dateline, researcher statement and planned preclinical development."
+        },
+        {
+          "name": "round_size_band",
+          "value": "nzd_10m_plus",
+          "source_id": "ws_tamo_mwc_2022",
+          "witness_id": "w_ws_tamo_mwc_2022",
+          "passage": "The initial NZ$15.25m financing is still above NZ$10m after removing the disclosed NZ$750,000 repayable grant."
+        },
+        {
+          "name": "lead_investor_type",
+          "value": "venture_capital",
+          "source_id": "ws_tamo_mwc_2022",
+          "witness_id": "w_ws_tamo_mwc_2022",
+          "passage": "The investors paragraph and About Brandon Capital identify the lead and its investment mandate."
+        }
+      ]
+    },
+    {
+      "subject_id": "public_avaliaimmunotherapiesltd",
+      "scope": "institutional_entry",
+      "cutoff": "2015-09-01",
+      "anchor_claim_id": "cohort_entry:public_avaliaimmunotherapiesltd",
+      "features": [
+        {
+          "name": "modality",
+          "value": "immunotherapy",
+          "source_id": "ws_avalia_vuw_2015",
+          "witness_id": "w_ws_avalia_vuw_2015",
+          "passage": "Opening and company description identify immunotherapy as the development area."
+        },
+        {
+          "name": "output_type",
+          "value": "therapeutic candidate",
+          "source_id": "ws_avalia_vuw_2015",
+          "witness_id": "w_ws_avalia_vuw_2015",
+          "passage": "The research institute and CEO describe a cancer therapy candidate to be advanced toward trials."
+        },
+        {
+          "name": "description",
+          "value": "Research spinout developing a cancer immunotherapy and aiming to advance it toward clinical trials.",
+          "source_id": "ws_avalia_vuw_2015",
+          "witness_id": "w_ws_avalia_vuw_2015",
+          "passage": "Lead and comments attributed to the research institute director and company CEO."
+        }
+      ]
+    },
+    {
+      "subject_id": "public_firstcheckltd",
+      "scope": "institutional_entry",
+      "cutoff": "2017-05-01",
+      "anchor_claim_id": "cohort_entry:public_firstcheckltd",
+      "features": [
+        {
+          "name": "modality",
+          "value": "smartphone photographs",
+          "source_id": "ws_first_cio_2016",
+          "witness_id": "w_ws_first_cio_2016",
+          "passage": "App workflow uses phone and tablet photographs of a skin concern."
+        },
+        {
+          "name": "clinical_user",
+          "value": "dermatologist",
+          "source_id": "ws_first_cio_2016",
+          "witness_id": "w_ws_first_cio_2016",
+          "passage": "Registered dermatologists or skin-cancer doctors review patient submissions."
+        },
+        {
+          "name": "output_type",
+          "value": "specialist assessment and recommendation",
+          "source_id": "ws_first_cio_2016",
+          "witness_id": "w_ws_first_cio_2016",
+          "passage": "The workflow paragraph states that a clinician returns an assessment and recommendation."
+        },
+        {
+          "name": "description",
+          "value": "Service for submitting a skin photograph through a mobile app for clinician review.",
+          "source_id": "ws_first_cio_2016",
+          "witness_id": "w_ws_first_cio_2016",
+          "passage": "App workflow paragraph and founder comments."
+        },
+        {
+          "name": "buyer",
+          "value": "consumer",
+          "source_id": "ws_first_cio_2016",
+          "witness_id": "w_ws_first_cio_2016",
+          "passage": "The article describes direct public download and users initiating a consultation."
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "source_id": "ws_first_cio_2016",
+          "witness_id": "w_ws_first_cio_2016",
+          "passage": "The founders describe final product tests and current use by specialists."
+        }
+      ]
+    },
+    {
+      "subject_id": "discovery_heartlab",
+      "scope": "institutional_entry",
+      "cutoff": "2020-10-01",
+      "anchor_claim_id": "cohort_entry:discovery_heartlab",
+      "features": [
+        {
+          "name": "modality",
+          "value": "echocardiography",
+          "source_id": "ws_heart_hinz_2019",
+          "witness_id": "w_ws_heart_hinz_2019",
+          "passage": "The May 2019 HeartLab profile describes analysis of echocardiograms."
+        },
+        {
+          "name": "clinical_user",
+          "value": "cardiologist",
+          "source_id": "ws_heart_hinz_2019",
+          "witness_id": "w_ws_heart_hinz_2019",
+          "passage": "The lead identifies cardiologists as the clinicians interpreting the scans."
+        },
+        {
+          "name": "description",
+          "value": "HeartLab was developing AI to streamline interpretation of echocardiograms for cardiology workflows.",
+          "source_id": "ws_heart_hinz_2019",
+          "witness_id": "w_ws_heart_hinz_2019",
+          "passage": "The indexed publisher lead identifies HeartLab, its founders and the cardiac ultrasound interpretation problem."
+        },
+        {
+          "name": "output_type",
+          "value": "automated echocardiographic measurements",
+          "source_id": "ws_heart_hinz_2019",
+          "witness_id": "w_ws_heart_hinz_2019",
+          "passage": "Product paragraph describes automating measurements used by cardiologists."
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "source_id": "ws_heart_hinz_2019",
+          "witness_id": "w_ws_heart_hinz_2019",
+          "passage": "Product and pilot paragraphs describe working measurement software exercised on a pilot dataset."
+        },
+        {
+          "name": "provider_study",
+          "value": "yes",
+          "source_id": "ws_heart_hinz_2019",
+          "witness_id": "w_ws_heart_hinz_2019",
+          "passage": "Pilot paragraph states that the founders had completed a 60-patient Waitemata DHB study."
+        }
+      ]
+    },
+    {
+      "subject_id": "public_tirolifesciencesltd",
+      "scope": "institutional_entry",
+      "cutoff": "2014-08-01",
+      "anchor_claim_id": "cohort_entry:public_tirolifesciencesltd",
+      "features": [
+        {
+          "name": "modality",
+          "value": "optical elastography",
+          "source_id": "ws_tiro_ucchronicle_2004",
+          "witness_id": "w_ws_tiro_ucchronicle_2004",
+          "passage": "Breast screening story describes the Chase/Van Houten method of imaging tissue motion rather than X-rays."
+        },
+        {
+          "name": "description",
+          "value": "Early research for a non-invasive breast screening system using digital images of tissue motion.",
+          "source_id": "ws_tiro_ucchronicle_2004",
+          "witness_id": "w_ws_tiro_ucchronicle_2004",
+          "passage": "Breast screening story, tissue motion and computer-based digital imaging paragraphs. The later University of Canterbury DIET impact story links this research programme to Tiro."
+        }
+      ]
+    }
+  ]
+}

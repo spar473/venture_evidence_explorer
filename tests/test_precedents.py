@@ -217,3 +217,64 @@ def test_screening_note_download_round_trips_existing_measurement_draft(demo_db)
         assert by_role['ceiling'].milestones[0].claim_ids == ['claim_prototype']
         assert by_role['ceiling'].dimensions == ranked[0].dimensions
         assert restored.performances and not restored.weight_profiles
+
+
+def test_event_witness_enrichment_ranks_company_peers_and_keeps_projects_as_analogies(demo_db):
+    from backend.precedent_similarity import MIN_COVERAGE, MIN_SIMILARITY, features
+    from backend.precedent_contracts import PrecedentResponse
+
+    today = '2026-11-21'
+    subjects = ('subj_ht_mri', 'subj_ht_neurofanos', 'subj_ht_ivf', 'subj_ht_vistavision', 'subj_ht_pulsemap')
+    with TestClient(create_app(demo_db)) as client:
+        for key in subjects:
+            result = client.get(f'/api/precedents/{key}?as_of={today}')
+            result.raise_for_status()
+            payload = PrecedentResponse.model_validate(result.json())
+            current = [item for item in payload.subject.claims if item.claim_id.startswith(f'witnessed:{key}:')]
+            assert current and all(item.witness and item.witness.available_on <= today for item in current)
+            assert payload.subject.anchor is None
+            assert payload.subject.snapshot == payload.peers == payload.comps == []
+        historical = client.get('/api/precedents/subj_ht_mri?as_of=2026-10-27').json()
+        assert not any(claim['claim_id'].startswith('witnessed:subj_ht_mri:') for claim in historical['subject']['claims'])
+
+        conflict = client.get(f'/api/precedents/public_carepatron?as_of={today}').json()
+        assert not any(item['claim_id'].startswith('witnessed:public_carepatron:')
+                       for item in conflict['subject']['snapshot'])
+        result = client.get(f'/api/precedents/toku?as_of={today}')
+        result.raise_for_status()
+        ranked = PrecedentResponse.model_validate(result.json())
+        assert {peer.row.company_id for peer in ranked.peers} >= {
+            'discovery_heartlab', 'public_firstcheckltd', 'discovery_respiraq',
+        }
+        assert {item.role for item in ranked.comps} == {'ceiling', 'typical', 'floor'}
+        assert all(peer.similarity >= MIN_SIMILARITY and peer.coverage >= MIN_COVERAGE for peer in ranked.peers)
+        assert all(comp.peer.row.status != 'unknown' for comp in ranked.comps)
+        assert features(ranked.subject)['provider_study'] == 'yes'
+        for peer in ranked.peers:
+            anchor = peer.row.anchor.claim.lower_on
+            assert all(item.witness.available_on <= anchor for item in peer.row.snapshot)
+
+
+def test_snapshot_packet_refuses_late_or_mismatched_witness_and_anchor():
+    import json
+    from pydantic import ValidationError
+    from backend.witnessed_snapshots import PACKET, WitnessedSnapshotPacket, WitnessedSnapshots
+
+    packet = json.loads(PACKET.read_bytes())
+    case = next(profile for profile in packet['profiles'] if profile['subject_id'] == 'toku')
+    case['cutoff'] = '2021-06-28'
+    with pytest.raises(ValidationError, match='source-version witness by its profile cutoff'):
+        WitnessedSnapshotPacket.model_validate(packet)
+    case['cutoff'] = '2021-06-29'
+    case['features'][0]['source_id'] = 'ws_first_cio_2016'
+    with pytest.raises(ValidationError, match='source-version witness by its profile cutoff'):
+        WitnessedSnapshotPacket.model_validate(packet)
+    catalog = WitnessedSnapshots()
+    anchor = WorkbenchAnchor(kind='first_institutional_round', claim=claim('seed'))
+    assert catalog.claims('toku', '2026-11-21', entry_anchor=anchor) == []
+    matching = anchor.model_copy(update={'claim':anchor.claim.model_copy(update={
+        'claim_id':'toku_entry', 'lower_on':'2021-06-29', 'upper_on':'2021-06-29',
+    })})
+    assert catalog.claims('toku', '2026-11-21', entry_anchor=matching)
+    mismatched_date = matching.model_copy(update={'claim':matching.claim.model_copy(update={'lower_on':'2021-06-28'})})
+    assert not catalog.claims('toku', '2026-11-21', entry_anchor=mismatched_date)

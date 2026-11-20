@@ -21,6 +21,7 @@ from .reference_pool import CLOSURES, OUTCOMES, EventDate, PoolEvent, PoolSource
 from .reference_pool_api import latest_fixture
 from .research_repository import dossier, read_consistently
 from .screening_note import ScreeningDraft, screening_draft
+from .witnessed_snapshots import WitnessedSnapshots
 from .workbench_reviews import claim_reviews
 
 # Read-side links between existing case records and known fixture brands.
@@ -77,6 +78,7 @@ class PrecedentCatalog:
         self.projects = {item.subject_id for item in selections.selections}
         self.audit = audit if audit is not None else run_audit()
         self.reviews = claim_reviews(conn)
+        self.witnessed = WitnessedSnapshots()
         self.entries = {row['company_id']: row['entry'] for row in self.audit['decisions'] if row['status'] == 'included'}
         self.digest, self.packet = latest_fixture(conn)
         self.fixture = {c.company_id: c for c in self.packet.companies} if self.packet else {}
@@ -165,7 +167,14 @@ class PrecedentCatalog:
             if fingerprint not in unique_events or claim.claim_id == entry_id:
                 unique_events[fingerprint] = claim
         events = self.apply_reviews(unique_events.values())
-        claims = self.apply_reviews(claims)
+        prior_entry = select_anchor('first_institutional_round', events, entry_id, self.as_of) if entry_id else None
+        profile_id = entry['company_id'] if entry else fixture.company_id if fixture else key
+        witnessed = self.witnessed.claims(profile_id, self.as_of, entry_anchor=prior_entry, is_project=is_project)
+        # A current project profile has no verified financing anchor. Keep its
+        # controls and timeline separate from the historical ranking input.
+        if not is_project:
+            features.extend(witnessed)
+        claims = self.apply_reviews([*claims, *witnessed])
         features = self.apply_reviews(features)
         anchor = select_anchor(kind, events, entry_id, self.as_of)
         comparable = snapshot_at(anchor, features + [claim.model_copy(update={

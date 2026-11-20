@@ -230,3 +230,25 @@ The real MRI screening note and a synthetic note with all three comp roles both 
 The built Overview rendered in an offline replay of the real in-process demo API responses. The screenshot preview opened in Firefox, but the tab was no longer available when saving. A later file navigation in the in-app browser was blocked by its URL policy. Workbench PNGs are pending with the socket-dependent browser suite. The README retains the older Research mode image under the demo steps, with its view identified in the caption.
 
 The PR body is in [PR_DESCRIPTION.md](PR_DESCRIPTION.md).
+
+## Witnessed snapshots · 21 November 2026
+
+Created `data/witnessed-snapshots` from main at `2404f2d` and merged `implementation/precedent-workbench` at `1c66a4a` locally because main did not yet include the workbench. The packet adds 12 publisher-dated sources and 50 features across seven company snapshots and all five current university project profiles. Entry decisions, follow-up statuses, ranking thresholds, top-k, witness rules and release gates retain their existing values.
+
+The in-process API calculation returns zero ranked peers for Automated Breast MRI Reporting because its institutional-round anchor is unverified. Toku Eyes returns three qualifying ranked peers. HeartLab appears in all three comp roles under the existing tie-break and outcome rules. See the [field-by-field evidence gap report](WITNESSED_SNAPSHOT_AUDIT.md).
+
+### Decisions
+
+| Date | Decision | Reason | Alternative considered |
+| --- | --- | --- | --- |
+| 21 November 2026 | Merge the workbench prerequisite locally into the branch created from main. | Main predates the ranking API. A combined checkout can verify the result through the actual workbench. | Commit an unwired data packet on main. |
+| 21 November 2026 | Keep current university profiles out of the historical ranking input. | None has a verified institutional-round anchor. | Treat a current research profile or an award date as an institutional entry. |
+| 21 November 2026 | Admit early published antecedent technology for RespirAq and Tiro only where later institutional sources establish continuity. | The older articles establish the technical claims and their availability. Later accounts identify the spinout connection. | Borrow the earlier research programme’s financing or later clinical progress. |
+| 21 November 2026 | Withhold July 2022 Carepatron additions pending closing-date reconciliation. | The lead investor’s later account dates its pre-seed to May. | Use July evidence based solely on the existing reporting proxy. |
+| 21 November 2026 | Record archive lookups as unresolved. | No pre-entry captured page and timestamp could be inspected. | Infer historical availability from a current company page. |
+
+### Pending local verification
+
+| Change | Checks run in this environment | Deferred |
+| --- | --- | --- |
+| Witnessed snapshot enrichment | 186 pytest tests passed. Production build, smoke verification, migrations, API contract and in-process demo and ranking checks passed. Playwright discovered 46 tests. | Playwright execution, running app inspection, browser screenshots, branch push |
