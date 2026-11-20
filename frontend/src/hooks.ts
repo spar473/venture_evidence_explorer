@@ -5,11 +5,12 @@ import type { Filters } from "./filters";
 import { api } from "./api";
 
 /** Abort on replacement/unmount, and guard commits even if a transport ignores abort. */
-export function useResource<T>(path: string, retry = 0, delay = 0) {
+export function useResource<T>(path: string | null, retry = 0, delay = 0) {
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+    if (path === null) { setData(null); setError(""); setLoading(false); return; }
     let live = true;
     const controller = new AbortController();
     setLoading(true); setError(""); setData(null);

@@ -205,6 +205,8 @@ Phase 0 is published. The archive tag and new `origin/main` are visible in the c
 | 1 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
 | 2 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
 
+| 3 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+
 ### Similarity and witness decisions
 
 | Date | Decision | Reason | Alternative considered |

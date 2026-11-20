@@ -1205,6 +1205,48 @@
         "title": "ElapsedEvidence",
         "type": "object"
       },
+      "EndpointGate": {
+        "additionalProperties": false,
+        "properties": {
+          "blockers": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Blockers",
+            "type": "array"
+          },
+          "events": {
+            "title": "Events",
+            "type": "integer"
+          },
+          "gate_ready": {
+            "title": "Gate Ready",
+            "type": "boolean"
+          },
+          "unknown_or_lost": {
+            "title": "Unknown Or Lost",
+            "type": "integer"
+          },
+          "unresolved_at_36_months": {
+            "title": "Unresolved At 36 Months",
+            "type": "integer"
+          },
+          "verified_observed_at_36_months": {
+            "title": "Verified Observed At 36 Months",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "events",
+          "unknown_or_lost",
+          "verified_observed_at_36_months",
+          "unresolved_at_36_months",
+          "gate_ready",
+          "blockers"
+        ],
+        "title": "EndpointGate",
+        "type": "object"
+      },
       "EventDate": {
         "additionalProperties": false,
         "properties": {
@@ -6145,6 +6187,51 @@
         "title": "WorkbenchClaim",
         "type": "object"
       },
+      "WorkbenchGates": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "entries": {
+            "title": "Entries",
+            "type": "integer"
+          },
+          "minimum_entries": {
+            "const": 150,
+            "default": 150,
+            "title": "Minimum Entries",
+            "type": "integer"
+          },
+          "minimum_events": {
+            "const": 30,
+            "default": 30,
+            "title": "Minimum Events",
+            "type": "integer"
+          },
+          "primary": {
+            "$ref": "#/components/schemas/EndpointGate"
+          },
+          "secondary": {
+            "$ref": "#/components/schemas/EndpointGate"
+          },
+          "validation_state": {
+            "const": "not_validated",
+            "default": "not_validated",
+            "title": "Validation State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "as_of",
+          "entries",
+          "primary",
+          "secondary"
+        ],
+        "title": "WorkbenchGates",
+        "type": "object"
+      },
       "WorkbenchPoint": {
         "additionalProperties": false,
         "properties": {
@@ -7774,6 +7861,24 @@
           }
         },
         "summary": "Venture"
+      }
+    },
+    "/api/workbench/gates": {
+      "get": {
+        "operationId": "get_gates_api_workbench_gates_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkbenchGates"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Gates"
       }
     }
   }

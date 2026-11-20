@@ -17,3 +17,22 @@ test("workbench opens with the five university projects and keeps research navig
   await expect(page).toHaveURL(/mode=research/);
   await expect(page.getByRole("heading", { name: "Venture directory" })).toBeVisible();
 });
+
+test("realigns dated events, opens a keyboard-accessible claim and shows gate counts", async ({page}) => {
+  await page.setViewportSize({width: 390, height: 844});
+  await page.goto("/");
+  await expect(page.getByRole("heading", {name: "Where comparable NZ ventures went"})).toBeVisible();
+  await page.getByLabel("Align at").selectOption("first_regulatory_decision");
+  const mark = page.getByRole("button", {name: /Formus Labs,.*2023-03-31/}).first();
+  await mark.focus();
+  await expect(mark).toBeFocused();
+  await mark.press("Enter");
+  await expect(page.getByRole("dialog", {name: "Claim evidence"})).toContainText("2023-03-31");
+  await page.getByRole("button", {name: "Close evidence"}).click();
+  await page.getByRole("button", {name: "View as table"}).click();
+  await expect(page.getByRole("row").filter({hasText: "Formus Labs"}).first()).toBeVisible();
+  await page.getByRole("button", {name: "Similar cohort"}).click();
+  await expect(page.getByText(/Fewer than 3 peers/)).toBeVisible();
+  await expect(page.getByText("55 of 150")).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});

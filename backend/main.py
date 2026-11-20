@@ -146,6 +146,9 @@ def create_app(db_path=None):
     from .precedents import install as install_precedents
     install_precedents(app,path)
 
+    from .workbench_gates import install as install_gates
+    install_gates(app)
+
     dist = ROOT / 'frontend/dist'
     if (dist / 'assets').is_dir():
         app.mount('/assets', StaticFiles(directory=dist / 'assets'), name='assets')
