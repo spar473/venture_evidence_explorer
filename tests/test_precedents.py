@@ -142,3 +142,41 @@ def test_swimlane_labels_intervals_straddling_the_window():
     event = claim('series_a').model_copy(update={'lower_on':'2022-12-30', 'upper_on':'2023-01-02'})
     points = points_for(anchor, [anchor.claim, event], '2023-01-03')
     assert row_notes(points, anchor, 'unknown') == {event.claim_id: 'Unresolved at the 36-month boundary'}
+
+
+def test_append_only_disputes_keep_source_claim_and_gate_response_independent(demo_db, tmp_path):
+    import shutil
+    import sqlite3
+    from uuid import uuid4
+
+    db = tmp_path / 'disputes.sqlite'
+    shutil.copyfile(demo_db, db)
+    route = '/api/precedents/discovery_halter'
+    with TestClient(create_app(db)) as client:
+        original = client.get(route + '?as_of=2026-11-21').json()['subject']
+        case = next(claim for claim in original['claims'] if claim['claim_id'] == 'halter_series_a_2018')
+        body = {'claim_id':case['claim_id'], 'analyst':'Synthetic review', 'rationale':'Verify settlement month.',
+                'request_id':str(uuid4())}
+        assert client.post(route + '/disputes', json=body, headers={'origin':'https://elsewhere.example'}).status_code == 403
+        assert client.post(route + '/disputes', json=dict(body, rationale='  ')).status_code == 422
+        assert client.post(route + '/disputes', json=dict(body, claim_id='bogus')).status_code == 404
+        response = client.post(route + '/disputes', json=body)
+        assert response.status_code == 200, response.text
+        assert client.post(route + '/disputes', json=body).json() == response.json()
+        assert client.post(route + '/disputes', json=dict(body, rationale='Changed payload')).status_code == 409
+        updated = client.get(route + '?as_of=2026-11-21').json()['subject']
+        latest = next(claim for claim in updated['claims'] if claim['claim_id'] == case['claim_id'])
+        assert latest['passage'] == case['passage'] and latest['url'] == case['url']
+        assert latest['review_state'] == 'disputed'
+        assert [item['rationale'] for item in latest['review_events']] == [body['rationale']]
+        assert updated['status'] == 'unknown'
+        gate = client.get('/api/workbench/gates').json()
+        assert gate['validation_state'] == 'not_validated'
+        assert not gate['primary']['gate_ready'] and not gate['secondary']['gate_ready']
+        assert client.get('/api/workbench/outlook').status_code == 404
+        assert all('probability' not in key and 'estimate' not in key for key in gate)
+    with sqlite3.connect(db) as conn:
+        assert conn.execute('SELECT COUNT(*) FROM workbench_claim_reviews').fetchone()[0] == 1
+        for statement in ('DELETE FROM workbench_claim_reviews', "UPDATE workbench_claim_reviews SET rationale='change'"):
+            with pytest.raises(sqlite3.IntegrityError, match='append-only'):
+                conn.execute(statement)

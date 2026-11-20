@@ -1,11 +1,13 @@
 import { useState } from "react";
 import type { CohortCompanies, HealthtechCoverage, PoolDirectory, PrecedentResponse,
-  ResearchSubjectsResponse, WorkbenchClaim, WorkbenchGates } from "./api-schema";
+  ClaimReview, ResearchSubjectsResponse, WorkbenchClaim, WorkbenchGates } from "./api-schema";
 import { useResource } from "./hooks";
 import { Status } from "./shared";
-import { type AnchorKind, ClaimDrawer, GateProgress } from "./workbench-shared";
+import { type AnchorKind, ClaimDrawer } from "./workbench-shared";
 import { Overview } from "./workbench-overview";
 import { OutcomeLibraryPage } from "./workbench-outcomes";
+import { DisputeControl, EvidenceMatrix } from "./workbench-evidence";
+import { Outlook } from "./workbench-outlook";
 import "./workbench.css";
 
 const tabs = ["Overview", "Evidence", "Outlook"] as const;
@@ -24,10 +26,19 @@ export function Workbench() {
   const [cohort, setCohort] = useState<"curated" | "similar">("curated");
   const [selectedDate, setSelectedDate] = useState("");
   const [query, setQuery] = useState("");
-  const [claim, setClaim] = useState<WorkbenchClaim | null>(null);
+  const [selectedClaim, setSelectedClaim] = useState<{claim: WorkbenchClaim; subjectId?: string; questions?: string[]} | null>(null);
+  const [evidenceRevision, setEvidenceRevision] = useState(0);
+  function openClaim(claim: WorkbenchClaim) { setSelectedClaim({claim}); }
+  function reviewed(review: ClaimReview) {
+    setSelectedClaim(previous => previous?.claim.claim_id === review.claim_id ? {
+      ...previous, claim: {...previous.claim, review_state: "disputed",
+        review_events: [...(previous.claim.review_events ?? []), review]},
+    } : previous);
+    setEvidenceRevision(revision => revision + 1);
+  }
   const asOf = selectedDate || gates.data?.as_of || "";
   const path = asOf ? `/precedents/${encodeURIComponent(subjectId)}?${new URLSearchParams({anchor, as_of: asOf})}` : null;
-  const precedent = useResource<PrecedentResponse>(path);
+  const precedent = useResource<PrecedentResponse>(path, evidenceRevision);
   const data = precedent.data?.subject.company_id === subjectId && precedent.data.as_of === asOf
     && precedent.data.anchor_kind === anchor ? precedent.data : null;
   const watched = watchlist.data?.projects.find(project => project.subject_id === subjectId);
@@ -40,7 +51,7 @@ export function Workbench() {
   }))].filter(item => item.name && item.name.toLowerCase().includes(query.trim().toLowerCase())).slice(0, 12);
   const subjectName = data?.subject.display_name ?? (watched && names.get(watched.subject_id));
   function openSubject(id: string) {
-    setSubjectId(id); setPage("precedents"); setTab("Overview"); setCohort("curated"); setQuery(""); setClaim(null);
+    setSubjectId(id); setPage("precedents"); setTab("Overview"); setCohort("curated"); setQuery(""); setSelectedClaim(null);
   }
 
   return <div className="workbench">
@@ -63,7 +74,7 @@ export function Workbench() {
       </div>
     </aside>
     <main id="workspace-content" tabIndex={-1} className="wb-content">
-      {page === "outcomes" ? <OutcomeLibraryPage onClaim={setClaim}/> : <>
+      {page === "outcomes" ? <OutcomeLibraryPage onClaim={openClaim}/> : <>
         <div className="wb-toolbar wb-search">
           <div><label>Search ventures<input type="search" value={query} onChange={event => setQuery(event.target.value)} /></label>
             {query.trim() && <div className="wb-search-results" aria-label="Venture search results">
@@ -93,13 +104,18 @@ export function Workbench() {
         </nav>
         {(watchlist.error || subjects.error || precedent.error || gates.error) && <Status error>{watchlist.error || subjects.error || precedent.error || gates.error}</Status>}
         {!data && !precedent.error && !gates.error && tab !== "Outlook" && <Status>Loading precedent evidence…</Status>}
-        {tab === "Outlook" && <section className="wb-card"><h2>Outcome rates locked</h2>
-          {gates.data ? <GateProgress gates={gates.data}/> : <Status error={Boolean(gates.error)}>{gates.error || "Loading cohort audit…"}</Status>}
-        </section>}
+        {tab === "Outlook" && <Outlook gates={gates.data} error={gates.error}/>}
+        {tab === "Evidence" && data && <EvidenceMatrix key={subjectId} data={data} onClaim={(row, claim) =>
+          setSelectedClaim({claim, subjectId: row.company_id, questions: row.company_id === data.subject.company_id
+            ? [...row.gaps, ...data.questions] : row.gaps})}/>}
         {tab === "Overview" && data && <Overview data={data} gates={gates.data} gateError={gates.error}
-          cohort={cohort} onCohort={setCohort} onAnchor={setAnchor} onClaim={setClaim} onOutlook={() => setTab("Outlook")} onEvidence={() => setTab("Evidence")}/>}
+          cohort={cohort} onCohort={setCohort} onAnchor={setAnchor} onClaim={openClaim} onOutlook={() => setTab("Outlook")} onEvidence={() => setTab("Evidence")}/>}
       </>}
     </main>
-    {claim && <ClaimDrawer claim={claim} onClose={() => setClaim(null)}/>}
+    {selectedClaim && <ClaimDrawer claim={selectedClaim.claim} questions={selectedClaim.questions}
+      onClose={() => setSelectedClaim(null)}>
+      {selectedClaim.subjectId && <DisputeControl key={selectedClaim.claim.claim_id}
+        subjectId={selectedClaim.subjectId} claim={selectedClaim.claim} onReview={reviewed}/>}
+    </ClaimDrawer>}
   </div>;
 }

@@ -209,6 +209,8 @@ Phase 0 is published. The archive tag and new `origin/main` are visible in the c
 
 | 4 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
 
+| 5 | pytest, production build, smoke verification, migrations, API contract | Playwright, running app inspection, branch push |
+
 ### Similarity and witness decisions
 
 | Date | Decision | Reason | Alternative considered |
@@ -217,3 +219,5 @@ Phase 0 is published. The archive tag and new `origin/main` are visible in the c
 | 21 November 2026 | Use the earliest bound for snapshot eligibility and the lower median outcome rank for even peer sets. | The witness date must hold for every possible anchor day. The lower median is reproducible and conservative. | Use the latest bound or the upper median. |
 | 21 November 2026 | Keep alternate-anchor outcome ranks withheld under the current audit. | The frozen 36-month classifications were audited from seed entry. | Reuse the seed-entry classification at a different stage. |
 | 21 November 2026 | Compare healthtech and medtech with other sectors at the same selected vintage. | The sector filter narrows the story view; the comparison keeps both denominators available. | Use the sector filter to remove one side of the comparison. |
+| 21 November 2026 | Store workbench disputes as separate local review events and exclude disputed IDs from matching. | Source records and the frozen audit remain immutable. Repeated or retried submissions use one request ID per attempt. | Rewrite observations or alter the checked-in cohort audit. |
+| 21 November 2026 | Apply prior shrinkage to the weighted cumulative incidence estimate. | The risk sets preserve censoring and competing events before shrinkage. | Shrink an uncensored, weighted event average. |

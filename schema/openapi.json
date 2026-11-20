@@ -285,6 +285,63 @@
         "title": "ChecklistResponse",
         "type": "object"
       },
+      "ClaimReview": {
+        "additionalProperties": false,
+        "properties": {
+          "analyst": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Analyst",
+            "type": "string"
+          },
+          "claim_id": {
+            "maxLength": 250,
+            "minLength": 1,
+            "title": "Claim Id",
+            "type": "string"
+          },
+          "decision": {
+            "const": "disputed",
+            "title": "Decision",
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 2400,
+            "minLength": 1,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "recorded_at": {
+            "title": "Recorded At",
+            "type": "string"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f-]{36}$",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "review_id": {
+            "title": "Review Id",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "request_id",
+          "claim_id",
+          "analyst",
+          "rationale",
+          "review_id",
+          "subject_id",
+          "decision",
+          "recorded_at"
+        ],
+        "title": "ClaimReview",
+        "type": "object"
+      },
       "CohortCompanies": {
         "additionalProperties": false,
         "properties": {
@@ -963,6 +1020,42 @@
           "offset"
         ],
         "title": "DiscoveryPage",
+        "type": "object"
+      },
+      "DisputeRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "analyst": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Analyst",
+            "type": "string"
+          },
+          "claim_id": {
+            "maxLength": 250,
+            "minLength": 1,
+            "title": "Claim Id",
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 2400,
+            "minLength": 1,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f-]{36}$",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "request_id",
+          "claim_id",
+          "analyst",
+          "rationale"
+        ],
+        "title": "DisputeRequest",
         "type": "object"
       },
       "Draft": {
@@ -6460,6 +6553,13 @@
             "title": "Retrieved On",
             "type": "string"
           },
+          "review_events": {
+            "items": {
+              "$ref": "#/components/schemas/ClaimReview"
+            },
+            "title": "Review Events",
+            "type": "array"
+          },
           "review_state": {
             "default": "source_attributed",
             "title": "Review State",
@@ -7553,6 +7653,55 @@
           }
         },
         "summary": "Milestone Checklist"
+      }
+    },
+    "/api/precedents/{subject_id}/disputes": {
+      "post": {
+        "operationId": "dispute_api_precedents__subject_id__disputes_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subject_id",
+            "required": true,
+            "schema": {
+              "title": "Subject Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimReview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Dispute"
       }
     },
     "/api/reference-pool": {

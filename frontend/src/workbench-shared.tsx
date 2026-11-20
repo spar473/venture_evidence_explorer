@@ -46,8 +46,8 @@ export function claimLink(claim: WorkbenchClaim) {
   return <a href={claim.url} target="_blank" rel="noreferrer">Open source</a>;
 }
 
-export function ClaimDrawer({claim, onClose, children}: {
-  claim: WorkbenchClaim; onClose: () => void; children?: ReactNode;
+export function ClaimDrawer({claim, onClose, questions, children}: {
+  claim: WorkbenchClaim; onClose: () => void; questions?: string[]; children?: ReactNode;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
@@ -79,6 +79,13 @@ export function ClaimDrawer({claim, onClose, children}: {
       <dt>Review</dt><dd>{label(claim.review_state ?? "source_attributed")}</dd>
       <dt>Claim ID</dt><dd><code>{claim.claim_id}</code></dd>
     </dl>
+    {questions && questions.length > 0 && <section><h3>Open questions</h3>
+      <ul>{questions.map(question => <li key={question}>{question}</li>)}</ul>
+    </section>}
+    {!!claim.review_events?.length && <section><h3>Claim review history</h3>
+      <ul>{claim.review_events.map(review => <li key={review.review_id}>
+        {review.analyst} · {review.recorded_at.slice(0, 10)} · {review.rationale}</li>)}</ul>
+    </section>}
     {claimLink(claim)}
     {children}
   </dialog>;

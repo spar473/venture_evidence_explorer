@@ -1,8 +1,11 @@
 """Typed workbench projections. Claim IDs remain stable across views."""
 from typing import Literal
 
+from pydantic import Field
+
 from .ingestion import StrictModel
 from .reference_pool import Status, Witness
+from .workbench_reviews import ClaimReview
 
 AnchorKind = Literal['first_institutional_round', 'first_provider_or_clinical_study',
                      'first_regulatory_decision', 'first_paid_customer']
@@ -24,6 +27,7 @@ class WorkbenchClaim(StrictModel):
     upper_on: str | None = None
     date_basis: str | None = None
     review_state: str = 'source_attributed'
+    review_events: list[ClaimReview] = Field(default_factory=list)
 
 
 class WorkbenchAnchor(StrictModel):

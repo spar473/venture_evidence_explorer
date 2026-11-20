@@ -142,3 +142,21 @@
 .wb-story-claims li { margin-bottom: 12px; }
 .wb-story-claims button { padding-left: 0; }
 .wb-story-claims p { margin: 0; }
+.wb-evidence-scroll { max-height: 68vh; overflow: auto; }
+.wb-matrix { min-width: 760px; }
+.wb-matrix thead th { position: sticky; top: 0; z-index: 2; }
+.wb-matrix .wb-pinned > th, .wb-matrix .wb-pinned > td { position: sticky; top: 38px; z-index: 1; }
+.wb-matrix .wb-pinned th, .wb-matrix .wb-pinned td:not(.wb-missing) { background: #f1f6fd; }
+.wb-matrix th small, .wb-cell-claim small { display: block; font-weight: 400; color: var(--wb-muted); }
+.wb-missing { background: repeating-linear-gradient(135deg,#f7f8fb 0 6px,#e9edf3 6px 7px); color: var(--wb-muted); }
+.wb-cell-claim { padding: 0 0 7px; border-bottom: 1px solid var(--wb-border); margin-bottom: 6px; }
+.wb-cell-claim:last-child { border: 0; margin-bottom: 0; }
+.wb-cell-claim button { padding-inline: 0; }
+.wb-witness { width: fit-content; background: #e6f5ed; border-radius: 5px; padding: 2px 5px; margin-top: 3px; }
+.wb-cell-claim .wb-witness { color: #174f42; }
+.wb-cell-claim .wb-unwitnessed { color: var(--wb-muted); background: #eef0f4; }
+.wb-cell-claim .wb-disputed { color: #8a380c; font-weight: 700; }
+.wb-claim-dispute { border-top: 1px solid #e2e6ec; margin-top: 12px; padding-top: 14px; }
+.wb-claim-dispute form, .wb-claim-dispute label { display: grid; gap: 8px; }
+.wb-claim-dispute input, .wb-claim-dispute textarea { border: 1px solid #c5cfdd; min-height: 44px; padding: 8px; border-radius: 8px; }
+.wb-limits .wb-table-scroll { margin: 14px 0; }

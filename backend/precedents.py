@@ -20,6 +20,7 @@ from .precedent_similarity import MILESTONES, VERSION, rank_peers, select_comps
 from .reference_pool import CLOSURES, OUTCOMES, EventDate, PoolEvent, PoolSource, Witness, plus_months
 from .reference_pool_api import latest_fixture
 from .research_repository import dossier, read_consistently
+from .workbench_reviews import claim_reviews
 
 # Read-side links between existing case records and known fixture brands.
 # Fixture claims retain their own source and stable ID. They do not amend entry
@@ -69,11 +70,12 @@ class SubjectNotFound(LookupError):
 
 
 class PrecedentCatalog:
-    def __init__(self, conn, as_of):
+    def __init__(self, conn, as_of, audit=None):
         self.conn, self.as_of = conn, as_of
         _, selections = load_selections()
         self.projects = {item.subject_id for item in selections.selections}
-        self.audit = run_audit()
+        self.audit = audit if audit is not None else run_audit()
+        self.reviews = claim_reviews(conn)
         self.entries = {row['company_id']: row['entry'] for row in self.audit['decisions'] if row['status'] == 'included'}
         self.digest, self.packet = latest_fixture(conn)
         self.fixture = {c.company_id: c for c in self.packet.companies} if self.packet else {}
@@ -91,6 +93,10 @@ class PrecedentCatalog:
         self.follow_sources = {sid: PoolSource.model_validate(raw) for sid, raw in self.follow_up['sources'].items()}
         self.follow_witnesses = witnesses_by_source(Witness.model_validate(raw)
                                                      for raw in self.follow_up['witnesses'].values())
+
+    def apply_reviews(self, claims):
+        return [claim.model_copy(update={'review_state':'disputed', 'review_events':self.reviews[claim.claim_id]})
+                if claim.claim_id in self.reviews else claim for claim in claims]
 
     def identity(self, key):
         fixture_id = self.by_research.get(key, self.by_cohort.get(key, key))
@@ -157,12 +163,16 @@ class PrecedentCatalog:
             fingerprint = (claim.field, claim.lower_on, claim.upper_on, claim.url)
             if fingerprint not in unique_events or claim.claim_id == entry_id:
                 unique_events[fingerprint] = claim
-        events = list(unique_events.values())
+        events = self.apply_reviews(unique_events.values())
+        claims = self.apply_reviews(claims)
+        features = self.apply_reviews(features)
         anchor = select_anchor(kind, events, entry_id, self.as_of)
         comparable = snapshot_at(anchor, features + [claim.model_copy(update={
             'field': EVENT_FEATURES[claim.field], 'value': claim.field if EVENT_FEATURES[claim.field] == 'stage' else 'yes',
         }) for claim in events if claim.field in EVENT_FEATURES])
-        status, rank = self.comparison_outcome(entry, anchor, audit_events)
+        status, rank = self.comparison_outcome(entry, anchor, {
+            key: value for key, value in audit_events.items() if key not in self.reviews
+        })
         gaps = []
         if not anchor:
             gaps.append('No supported dated anchor in the public record at this cutoff.')
@@ -188,6 +198,8 @@ class PrecedentCatalog:
             # dated milestones are still plotted, with outcome ranks withheld.
             return 'unknown', None
         status = decision['status']
+        if decision['outcome_event_id'] and decision['outcome_event_id'] not in events:
+            return 'unknown', None
         rank = STATUS_RANK.get(status)
         if status == 'reached_outcome' and ladder:
             rank = max(rank, *ladder)

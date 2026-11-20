@@ -50,3 +50,22 @@ test("outcome library reconciles filtered counts and retains post-window source 
   await expect(page.getByText("11 of 55")).toBeVisible();
   await expect(page.getByText(/Rates locked/)).toBeVisible();
 });
+
+test("same-stage evidence uses witnesses and Outlook withholds estimates", async ({page}) => {
+  await page.route("**/api/workbench/gates", async route => {
+    const response = await route.fetch();
+    await route.fulfill({response, json: {...await response.json(), synthetic_probability: 0.9876}});
+  });
+  await page.goto("/");
+  const views = page.getByRole("navigation", {name: "Precedent views"});
+  await views.getByRole("button", {name: "Evidence"}).click();
+  const matrix = page.getByRole("table", {name: "Evidence matrix"});
+  await expect(matrix.getByRole("row").nth(1)).toContainText("Automated Breast MRI Reporting");
+  await page.getByRole("button", {name: "What was public at the same stage"}).click();
+  await expect(matrix.getByText("Not in public record").first()).toBeVisible();
+  await expect(matrix.getByText("No dated witness")).toHaveCount(0);
+  await views.getByRole("button", {name: /Outlook/}).click();
+  await expect(page.getByRole("heading", {name: "Outcome rates locked"})).toBeVisible();
+  await expect(page.getByText(/Dated signed closing records or cap-table/)).toBeVisible();
+  await expect(page.getByText(/0\.9876|98\.76%/)).toHaveCount(0);
+});

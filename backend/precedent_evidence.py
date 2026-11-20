@@ -1,4 +1,5 @@
 """Source and date projections for same-stage comparisons."""
+from collections import defaultdict
 from datetime import date
 import json
 
@@ -48,6 +49,10 @@ def research_claims(graph, subject_id, as_of):
         return []
     packet = graph['packet']
     sources = {source['source_id']: source for source in packet['sources']}
+    decisions = defaultdict(list)
+    for review in packet['review_events']:
+        if review['reviewed_on'] <= as_of:
+            decisions[review['target_id']].append(review)
     claims = []
     for observation in packet['observations']:
         if observation['subject_id'] != subject_id or observation['field'] not in RESEARCH_FIELDS:
@@ -61,13 +66,19 @@ def research_claims(graph, subject_id, as_of):
         if bounds['lower_bound'] and bounds['lower_bound'] > as_of:
             continue
         claim_id = observation['observation_id']
+        state = observation['review']['state']
+        reviews = decisions[claim_id]
+        if reviews:
+            latest_day = max(review['reviewed_on'] for review in reviews)
+            if any(review['decision'] != 'accepted' for review in reviews if review['reviewed_on'] == latest_day):
+                state = 'disputed'
         claims.append(WorkbenchClaim(claim_id=claim_id,
             field=RESEARCH_ANCHORS.get(claim_id, RESEARCH_FIELDS[observation['field']]),
             value=observation['paraphrase'], passage=observation['locator'],
             publisher=source['publisher'], url=source['url'], published_on=published,
             retrieved_on=source['retrieved_on'], date_value=effective['value'],
             date_precision=effective['precision'], lower_on=bounds['lower_bound'], upper_on=bounds['upper_bound'],
-            date_basis=effective['basis'], review_state=observation['review']['state']))
+            date_basis=effective['basis'], review_state=state))
     return claims
 
 
