@@ -26,7 +26,7 @@ STATUSES = Status.__args__
 Stage = Literal['pre_seed', 'seed', 'series_a', 'series_b', 'series_c_plus', 'series_a_equivalent',
                 'pre_series_a', 'seed_extension', 'bridge', 'convertible_note', 'grant', 'crowdfunding',
                 'other_financing', 'acquired', 'ipo', 'first_paid_customer', 'provider_deployment',
-                'regulatory_clearance', 'closed_register_removal', 'closed_liquidation',
+                'regulatory_clearance', 'regulatory_decision', 'clinical_study', 'closed_register_removal', 'closed_liquidation',
                 'closed_founder_announcement', 'last_verified_activity']
 CLOSURES = {
     'closed_register_removal': 'registry_record',
@@ -37,7 +37,10 @@ OUTCOMES = {'series_a', 'series_b', 'series_c_plus'}
 Id = Annotated[str, Field(pattern=r'^[a-z][a-z0-9_]{0,79}$')]
 FeatureName = Literal['stage', 'months_since_founding', 'team_size', 'founder_count', 'prior_founder_exits',
                       'university_origin', 'sector', 'buyer', 'business_model', 'regulatory_class',
-                      'capital_raised_to_date', 'lead_investor_type', 'description']
+                      'capital_raised_to_date', 'lead_investor_type', 'description', 'modality', 'clinical_user',
+                      'output_type', 'procurement_path', 'jurisdiction', 'regulatory_decision',
+                      'prototype', 'provider_study', 'submission', 'paid_pilot', 'full_time_team',
+                      'round_size_band']
 
 
 def https(value):

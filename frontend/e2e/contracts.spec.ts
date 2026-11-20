@@ -5,7 +5,7 @@ test("directory paginates summaries and loads evidence only when opened", async 
   page.on("request", request => {
     if (/\/api\/ventures\/[^/?]+$/.test(request.url())) details.push(request.url());
   });
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await expect(page.locator(".venture-card")).toHaveCount(10);
   expect(details).toHaveLength(0);
   const firstName = await page.locator(".venture-open").first().textContent();
@@ -35,7 +35,7 @@ test("closing a loading profile prevents late evidence reopening the drawer", as
     await new Promise(resolve => setTimeout(resolve, 500));
     await route.continue();
   });
-  await page.goto("/");
+  await page.goto("/?mode=research");
   const opener = page.getByRole("button", {name: "Formus Labs", exact: true});
   await opener.click();
   await expect(page.getByRole("dialog")).toBeVisible();
@@ -58,7 +58,7 @@ test("historical profile preserves unknown and partial dates with review state",
     profile.observations[0].superseded = true;
     await route.fulfill({response, json: profile});
   });
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page.getByRole("button", {name: "Formus Labs", exact: true}).click();
   const evidence = page.locator(".profile .source").first();
   await expect(evidence).toContainText("Published Unknown / not recorded");
@@ -70,7 +70,7 @@ test("historical profile preserves unknown and partial dates with review state",
 
 
 test("exported comparison run replays against the recorded corpus", async ({page}) => {
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page.getByRole("button", {name: "Find comparisons", exact: true}).click();
   await page.getByLabel("Investigation description").fill("clinical images software surgical planning");
   await page.locator(".compare-form").getByRole("button", {name: "Find comparisons", exact: true}).click();
@@ -96,7 +96,7 @@ test("tab navigation retains directory inputs, page and completed comparison", a
   page.on("request", request => { if (request.url().endsWith("/api/compare")) comparisons++; });
   const browse = page.getByRole("button", {name: "Explore ventures", exact: true});
   const compare = page.getByRole("navigation", {name: "Main navigation"}).getByRole("button", {name: "Find comparisons", exact: true});
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page.getByLabel("Search ventures").fill("FormusLabs");
   await expect(page.locator(".venture-card")).toHaveCount(1);
   await page.getByRole("button", {name: "Data & exports", exact: true}).click();

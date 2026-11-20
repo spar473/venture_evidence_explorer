@@ -1,7 +1,7 @@
 import {test, expect} from '@playwright/test';
 
 async function openMRI(page: import('@playwright/test').Page) {
-  await page.goto('/');
+  await page.goto('/?mode=research');
   await page.getByRole('button', {name:'Research dossiers',exact:true}).click();
   await page.getByRole('button', {name:'Automated Breast MRI Reporting',exact:true}).click();
   const dossier = page.getByRole('dialog', {name:'Automated Breast MRI Reporting research dossier'});
@@ -63,7 +63,7 @@ test('historical cutoff clears future comparison content and sparse healthcare c
 test('MRI comparison recovers from API errors, downloads provenance and fits a narrow drawer', async ({page}, info) => {
   await page.setViewportSize({width:390,height:844});
   await page.route('**/api/research/subjects/subj_ht_mri/comparisons?**', async route => route.fulfill({status:503,body:'Temporary test failure'}));
-  await page.goto('/');
+  await page.goto('/?mode=research');
   await page.getByRole('button', {name:'Research dossiers',exact:true}).click();
   await page.getByRole('button', {name:'Automated Breast MRI Reporting',exact:true}).click();
   const dossier = page.getByRole('dialog', {name:'Automated Breast MRI Reporting research dossier'});
@@ -89,7 +89,7 @@ test('MRI comparison recovers from API errors, downloads provenance and fits a n
 });
 
 test('expanded university projects expose their own evidence, scoped precedents and sparse abstention', async ({page}) => {
-  await page.goto('/');
+  await page.goto('/?mode=research');
   await page.getByRole('button', {name:'Research dossiers',exact:true}).click();
   for (const [name,peer,count] of [['Neurofanos','Wellumio',2],['IVF Decision Support Tool','Alimetry',2],['VistaVision','Toku Eyes / Toku Inc. (unresolved)',1],['PulseMap PAD Detector','',0]] as const) {
     await page.getByRole('button', {name,exact:true}).click();
@@ -111,7 +111,7 @@ test('expanded university projects expose their own evidence, scoped precedents 
 });
 
 test('directory counts distinct ventures and opens the hospital feasibility evidence', async ({page}) => {
-  await page.goto('/');
+  await page.goto('/?mode=research');
   await page.getByRole('button', {name:'Research dossiers',exact:true}).click();
   const coverage = page.getByRole('region', {name:'Healthtech comparison coverage'});
   await expect(coverage).toContainText('4 of 5 university projects');

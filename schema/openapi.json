@@ -222,6 +222,143 @@
         "title": "Award",
         "type": "object"
       },
+      "BenchmarkDeal": {
+        "additionalProperties": false,
+        "properties": {
+          "deals": {
+            "title": "Deals",
+            "type": "integer"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "deals",
+          "description",
+          "url"
+        ],
+        "title": "BenchmarkDeal",
+        "type": "object"
+      },
+      "ChecklistResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "anchor_kind": {
+            "enum": [
+              "first_institutional_round",
+              "first_provider_or_clinical_study",
+              "first_regulatory_decision",
+              "first_paid_customer"
+            ],
+            "title": "Anchor Kind",
+            "type": "string"
+          },
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "similarity_version": {
+            "title": "Similarity Version",
+            "type": "string"
+          },
+          "subject": {
+            "$ref": "#/components/schemas/WorkbenchRow"
+          }
+        },
+        "required": [
+          "subject",
+          "as_of",
+          "anchor_kind",
+          "similarity_version"
+        ],
+        "title": "ChecklistResponse",
+        "type": "object"
+      },
+      "ClaimReview": {
+        "additionalProperties": false,
+        "properties": {
+          "analyst": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Analyst",
+            "type": "string"
+          },
+          "claim_id": {
+            "maxLength": 250,
+            "minLength": 1,
+            "title": "Claim Id",
+            "type": "string"
+          },
+          "decision": {
+            "const": "disputed",
+            "title": "Decision",
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 2400,
+            "minLength": 1,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "recorded_at": {
+            "title": "Recorded At",
+            "type": "string"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "review_id": {
+            "title": "Review Id",
+            "type": "string"
+          },
+          "subject_id": {
+            "title": "Subject Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "request_id",
+          "claim_id",
+          "analyst",
+          "rationale",
+          "review_id",
+          "subject_id",
+          "decision",
+          "recorded_at"
+        ],
+        "title": "ClaimReview",
+        "type": "object"
+      },
+      "CohortCompanies": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCompany"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "CohortCompanies",
+        "type": "object"
+      },
       "Comparison": {
         "additionalProperties": false,
         "properties": {
@@ -574,6 +711,53 @@
         "title": "ConnectionFacet",
         "type": "object"
       },
+      "DimensionScore": {
+        "additionalProperties": false,
+        "properties": {
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "different_fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Different Fields",
+            "type": "array"
+          },
+          "dimension": {
+            "title": "Dimension",
+            "type": "string"
+          },
+          "matched_fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Matched Fields",
+            "type": "array"
+          },
+          "similarity": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Similarity"
+          }
+        },
+        "required": [
+          "dimension",
+          "similarity",
+          "coverage",
+          "matched_fields",
+          "different_fields"
+        ],
+        "title": "DimensionScore",
+        "type": "object"
+      },
       "DiscoveryDetail": {
         "additionalProperties": false,
         "properties": {
@@ -836,6 +1020,42 @@
           "offset"
         ],
         "title": "DiscoveryPage",
+        "type": "object"
+      },
+      "DisputeRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "analyst": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Analyst",
+            "type": "string"
+          },
+          "claim_id": {
+            "maxLength": 250,
+            "minLength": 1,
+            "title": "Claim Id",
+            "type": "string"
+          },
+          "rationale": {
+            "maxLength": 2400,
+            "minLength": 1,
+            "title": "Rationale",
+            "type": "string"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "request_id",
+          "claim_id",
+          "analyst",
+          "rationale"
+        ],
+        "title": "DisputeRequest",
         "type": "object"
       },
       "Draft": {
@@ -1124,6 +1344,48 @@
         "title": "ElapsedEvidence",
         "type": "object"
       },
+      "EndpointGate": {
+        "additionalProperties": false,
+        "properties": {
+          "blockers": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Blockers",
+            "type": "array"
+          },
+          "events": {
+            "title": "Events",
+            "type": "integer"
+          },
+          "gate_ready": {
+            "title": "Gate Ready",
+            "type": "boolean"
+          },
+          "unknown_or_lost": {
+            "title": "Unknown Or Lost",
+            "type": "integer"
+          },
+          "unresolved_at_36_months": {
+            "title": "Unresolved At 36 Months",
+            "type": "integer"
+          },
+          "verified_observed_at_36_months": {
+            "title": "Verified Observed At 36 Months",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "events",
+          "unknown_or_lost",
+          "verified_observed_at_36_months",
+          "unresolved_at_36_months",
+          "gate_ready",
+          "blockers"
+        ],
+        "title": "EndpointGate",
+        "type": "object"
+      },
       "EventDate": {
         "additionalProperties": false,
         "properties": {
@@ -1279,7 +1541,19 @@
               "regulatory_class",
               "capital_raised_to_date",
               "lead_investor_type",
-              "description"
+              "description",
+              "modality",
+              "clinical_user",
+              "output_type",
+              "procurement_path",
+              "jurisdiction",
+              "regulatory_decision",
+              "prototype",
+              "provider_study",
+              "submission",
+              "paid_pilot",
+              "full_time_team",
+              "round_size_band"
             ],
             "title": "Name",
             "type": "string"
@@ -1780,6 +2054,38 @@
         "title": "Method",
         "type": "object"
       },
+      "MilestoneValue": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Claim Ids",
+            "type": "array"
+          },
+          "milestone": {
+            "title": "Milestone",
+            "type": "string"
+          },
+          "value": {
+            "enum": [
+              "yes",
+              "no",
+              "unknown"
+            ],
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "milestone",
+          "value",
+          "claim_ids"
+        ],
+        "title": "MilestoneValue",
+        "type": "object"
+      },
       "Observation": {
         "additionalProperties": false,
         "properties": {
@@ -1996,6 +2302,269 @@
           "rationale"
         ],
         "title": "ObservationRelation",
+        "type": "object"
+      },
+      "OutcomeCompany": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "sector": {
+            "title": "Sector",
+            "type": "string"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "sector"
+        ],
+        "title": "OutcomeCompany",
+        "type": "object"
+      },
+      "OutcomeCounts": {
+        "additionalProperties": false,
+        "properties": {
+          "denominator": {
+            "title": "Denominator",
+            "type": "integer"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "statuses": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Statuses",
+            "type": "object"
+          }
+        },
+        "required": [
+          "label",
+          "denominator",
+          "statuses"
+        ],
+        "title": "OutcomeCounts",
+        "type": "object"
+      },
+      "OutcomeLibrary": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "benchmarks": {
+            "items": {
+              "$ref": "#/components/schemas/BenchmarkDeal"
+            },
+            "title": "Benchmarks",
+            "type": "array"
+          },
+          "candidate_records": {
+            "title": "Candidate Records",
+            "type": "integer"
+          },
+          "cohort": {
+            "const": "A",
+            "default": "A",
+            "title": "Cohort",
+            "type": "string"
+          },
+          "cohort_entries": {
+            "title": "Cohort Entries",
+            "type": "integer"
+          },
+          "counts": {
+            "$ref": "#/components/schemas/OutcomeCounts"
+          },
+          "endpoint": {
+            "enum": [
+              "primary",
+              "secondary"
+            ],
+            "title": "Endpoint",
+            "type": "string"
+          },
+          "known_at_36_months": {
+            "title": "Known At 36 Months",
+            "type": "integer"
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "integer"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeRow"
+            },
+            "title": "Rows",
+            "type": "array"
+          },
+          "sectors": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Sectors",
+            "type": "array"
+          },
+          "sectors_comparison": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCounts"
+            },
+            "title": "Sectors Comparison",
+            "type": "array"
+          },
+          "stories": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeRow"
+            },
+            "title": "Stories",
+            "type": "array"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "verified_closures": {
+            "title": "Verified Closures",
+            "type": "integer"
+          },
+          "vintage_counts": {
+            "items": {
+              "$ref": "#/components/schemas/VintageCount"
+            },
+            "title": "Vintage Counts",
+            "type": "array"
+          },
+          "vintages": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Vintages",
+            "type": "array"
+          }
+        },
+        "required": [
+          "as_of",
+          "endpoint",
+          "candidate_records",
+          "cohort_entries",
+          "total",
+          "limit",
+          "offset",
+          "sectors",
+          "vintages",
+          "counts",
+          "verified_closures",
+          "known_at_36_months",
+          "rows",
+          "stories",
+          "vintage_counts",
+          "benchmarks",
+          "sectors_comparison"
+        ],
+        "title": "OutcomeLibrary",
+        "type": "object"
+      },
+      "OutcomeRow": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "notes": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Notes",
+            "type": "object"
+          },
+          "observed_at_36_months": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At 36 Months"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/WorkbenchPoint"
+            },
+            "title": "Points",
+            "type": "array"
+          },
+          "primary_status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Primary Status",
+            "type": "string"
+          },
+          "sector": {
+            "title": "Sector",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "verified_closure": {
+            "title": "Verified Closure",
+            "type": "boolean"
+          },
+          "vintage": {
+            "title": "Vintage",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "sector",
+          "vintage",
+          "status",
+          "primary_status",
+          "observed_at_36_months",
+          "verified_closure",
+          "points",
+          "notes"
+        ],
+        "title": "OutcomeRow",
         "type": "object"
       },
       "PartialDate": {
@@ -2394,6 +2963,8 @@
               "first_paid_customer",
               "provider_deployment",
               "regulatory_clearance",
+              "regulatory_decision",
+              "clinical_study",
               "closed_register_removal",
               "closed_liquidation",
               "closed_founder_announcement",
@@ -2709,6 +3280,102 @@
         "title": "PoolTrajectory",
         "type": "object"
       },
+      "PrecedentResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "abstention": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abstention"
+          },
+          "anchor_kind": {
+            "enum": [
+              "first_institutional_round",
+              "first_provider_or_clinical_study",
+              "first_regulatory_decision",
+              "first_paid_customer"
+            ],
+            "title": "Anchor Kind",
+            "type": "string"
+          },
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "comps": {
+            "items": {
+              "$ref": "#/components/schemas/SelectedComp"
+            },
+            "title": "Comps",
+            "type": "array"
+          },
+          "curated": {
+            "items": {
+              "$ref": "#/components/schemas/WorkbenchRow"
+            },
+            "title": "Curated",
+            "type": "array"
+          },
+          "no_verified_closure": {
+            "title": "No Verified Closure",
+            "type": "boolean"
+          },
+          "not_alignable": {
+            "items": {
+              "$ref": "#/components/schemas/UnalignedPeer"
+            },
+            "title": "Not Alignable",
+            "type": "array"
+          },
+          "peer_count_evaluated": {
+            "title": "Peer Count Evaluated",
+            "type": "integer"
+          },
+          "peers": {
+            "items": {
+              "$ref": "#/components/schemas/RankedPeer"
+            },
+            "title": "Peers",
+            "type": "array"
+          },
+          "questions": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Questions",
+            "type": "array"
+          },
+          "similarity_version": {
+            "title": "Similarity Version",
+            "type": "string"
+          },
+          "subject": {
+            "$ref": "#/components/schemas/WorkbenchRow"
+          }
+        },
+        "required": [
+          "subject",
+          "as_of",
+          "anchor_kind",
+          "similarity_version",
+          "peer_count_evaluated",
+          "peers",
+          "curated",
+          "comps",
+          "not_alignable",
+          "no_verified_closure",
+          "abstention",
+          "questions"
+        ],
+        "title": "PrecedentResponse",
+        "type": "object"
+      },
       "ProgrammeFacet": {
         "additionalProperties": false,
         "properties": {
@@ -2835,6 +3502,37 @@
           "scope"
         ],
         "title": "PromotionPreview",
+        "type": "object"
+      },
+      "RankedPeer": {
+        "additionalProperties": false,
+        "properties": {
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/DimensionScore"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "row": {
+            "$ref": "#/components/schemas/WorkbenchRow"
+          },
+          "similarity": {
+            "title": "Similarity",
+            "type": "number"
+          }
+        },
+        "required": [
+          "row",
+          "similarity",
+          "coverage",
+          "dimensions"
+        ],
+        "title": "RankedPeer",
         "type": "object"
       },
       "Recognition": {
@@ -5006,6 +5704,335 @@
         "title": "SaveDraft",
         "type": "object"
       },
+      "ScreeningAlternative": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/ScreeningMetadata"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "metadata"
+        ],
+        "title": "ScreeningAlternative",
+        "type": "object"
+      },
+      "ScreeningCriterion": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "order": {
+            "title": "Order",
+            "type": "integer"
+          },
+          "scale": {
+            "$ref": "#/components/schemas/ScreeningScale"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "order",
+          "scale"
+        ],
+        "title": "ScreeningCriterion",
+        "type": "object"
+      },
+      "ScreeningDraft": {
+        "additionalProperties": false,
+        "properties": {
+          "alternatives": {
+            "items": {
+              "$ref": "#/components/schemas/ScreeningAlternative"
+            },
+            "title": "Alternatives",
+            "type": "array"
+          },
+          "criteria": {
+            "items": {
+              "$ref": "#/components/schemas/ScreeningCriterion"
+            },
+            "title": "Criteria",
+            "type": "array"
+          },
+          "decision_maker": {
+            "title": "Decision Maker",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "performances": {
+            "items": {
+              "$ref": "#/components/schemas/ScreeningMeasurement"
+            },
+            "title": "Performances",
+            "type": "array"
+          },
+          "scenarios": {
+            "items": {},
+            "title": "Scenarios",
+            "type": "array"
+          },
+          "schema_version": {
+            "const": 1,
+            "title": "Schema Version",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "weight_profiles": {
+            "items": {},
+            "title": "Weight Profiles",
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "id",
+          "title",
+          "description",
+          "decision_maker",
+          "alternatives",
+          "criteria",
+          "performances",
+          "weight_profiles",
+          "scenarios"
+        ],
+        "title": "ScreeningDraft",
+        "type": "object"
+      },
+      "ScreeningMeasurement": {
+        "additionalProperties": false,
+        "properties": {
+          "alternative_id": {
+            "title": "Alternative Id",
+            "type": "string"
+          },
+          "criterion_id": {
+            "title": "Criterion Id",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "alternative_id",
+          "criterion_id",
+          "value"
+        ],
+        "title": "ScreeningMeasurement",
+        "type": "object"
+      },
+      "ScreeningMetadata": {
+        "additionalProperties": false,
+        "properties": {
+          "anchor_event": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WorkbenchAnchor"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "anchor_kind": {
+            "enum": [
+              "first_institutional_round",
+              "first_provider_or_clinical_study",
+              "first_regulatory_decision",
+              "first_paid_customer"
+            ],
+            "title": "Anchor Kind",
+            "type": "string"
+          },
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "coverage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coverage"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/DimensionScore"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "explanation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explanation"
+          },
+          "format_version": {
+            "const": "vee-screening-note:1",
+            "default": "vee-screening-note:1",
+            "title": "Format Version",
+            "type": "string"
+          },
+          "milestones": {
+            "items": {
+              "$ref": "#/components/schemas/MilestoneValue"
+            },
+            "title": "Milestones",
+            "type": "array"
+          },
+          "outcome_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome Label"
+          },
+          "role": {
+            "enum": [
+              "subject",
+              "ceiling",
+              "typical",
+              "floor"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "similarity": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Similarity"
+          },
+          "similarity_version": {
+            "title": "Similarity Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "company_id",
+          "anchor_kind",
+          "anchor_event",
+          "as_of",
+          "similarity_version",
+          "dimensions",
+          "milestones",
+          "outcome_label",
+          "explanation"
+        ],
+        "title": "ScreeningMetadata",
+        "type": "object"
+      },
+      "ScreeningScale": {
+        "additionalProperties": false,
+        "properties": {
+          "lower": {
+            "title": "Lower",
+            "type": "number"
+          },
+          "type": {
+            "const": "interval",
+            "title": "Type",
+            "type": "string"
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          },
+          "upper": {
+            "title": "Upper",
+            "type": "number"
+          }
+        },
+        "required": [
+          "type",
+          "unit",
+          "lower",
+          "upper"
+        ],
+        "title": "ScreeningScale",
+        "type": "object"
+      },
+      "SelectedComp": {
+        "additionalProperties": false,
+        "properties": {
+          "peer": {
+            "$ref": "#/components/schemas/RankedPeer"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "ceiling",
+              "typical",
+              "floor"
+            ],
+            "title": "Role",
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "peer",
+          "reason"
+        ],
+        "title": "SelectedComp",
+        "type": "object"
+      },
       "SelectedObservation": {
         "additionalProperties": false,
         "properties": {
@@ -5229,6 +6256,30 @@
           "effective_date"
         ],
         "title": "SuppliedClaim",
+        "type": "object"
+      },
+      "UnalignedPeer": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "reason"
+        ],
+        "title": "UnalignedPeer",
         "type": "object"
       },
       "ValidationError": {
@@ -5571,6 +6622,25 @@
         "title": "VentureSummary",
         "type": "object"
       },
+      "VintageCount": {
+        "additionalProperties": false,
+        "properties": {
+          "entries": {
+            "title": "Entries",
+            "type": "integer"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "year",
+          "entries"
+        ],
+        "title": "VintageCount",
+        "type": "object"
+      },
       "Witness": {
         "additionalProperties": false,
         "properties": {
@@ -5680,6 +6750,383 @@
           "meaning"
         ],
         "title": "WordingDifferences",
+        "type": "object"
+      },
+      "WorkbenchAnchor": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "$ref": "#/components/schemas/WorkbenchClaim"
+          },
+          "kind": {
+            "enum": [
+              "first_institutional_round",
+              "first_provider_or_clinical_study",
+              "first_regulatory_decision",
+              "first_paid_customer"
+            ],
+            "title": "Kind",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "claim"
+        ],
+        "title": "WorkbenchAnchor",
+        "type": "object"
+      },
+      "WorkbenchClaim": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "title": "Claim Id",
+            "type": "string"
+          },
+          "date_basis": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date Basis"
+          },
+          "date_precision": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date Precision"
+          },
+          "date_value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Date Value"
+          },
+          "field": {
+            "title": "Field",
+            "type": "string"
+          },
+          "lower_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower On"
+          },
+          "passage": {
+            "title": "Passage",
+            "type": "string"
+          },
+          "published_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published On"
+          },
+          "publisher": {
+            "title": "Publisher",
+            "type": "string"
+          },
+          "retrieved_on": {
+            "title": "Retrieved On",
+            "type": "string"
+          },
+          "review_events": {
+            "items": {
+              "$ref": "#/components/schemas/ClaimReview"
+            },
+            "title": "Review Events",
+            "type": "array"
+          },
+          "review_state": {
+            "default": "source_attributed",
+            "title": "Review State",
+            "type": "string"
+          },
+          "upper_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper On"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "title": "Value"
+          },
+          "witness": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Witness"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "claim_id",
+          "field",
+          "value",
+          "passage",
+          "publisher",
+          "url",
+          "published_on",
+          "retrieved_on"
+        ],
+        "title": "WorkbenchClaim",
+        "type": "object"
+      },
+      "WorkbenchGates": {
+        "additionalProperties": false,
+        "properties": {
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "entries": {
+            "title": "Entries",
+            "type": "integer"
+          },
+          "minimum_entries": {
+            "const": 150,
+            "default": 150,
+            "title": "Minimum Entries",
+            "type": "integer"
+          },
+          "minimum_events": {
+            "const": 30,
+            "default": 30,
+            "title": "Minimum Events",
+            "type": "integer"
+          },
+          "primary": {
+            "$ref": "#/components/schemas/EndpointGate"
+          },
+          "secondary": {
+            "$ref": "#/components/schemas/EndpointGate"
+          },
+          "validation_state": {
+            "const": "not_validated",
+            "default": "not_validated",
+            "title": "Validation State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "as_of",
+          "entries",
+          "primary",
+          "secondary"
+        ],
+        "title": "WorkbenchGates",
+        "type": "object"
+      },
+      "WorkbenchPoint": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "$ref": "#/components/schemas/WorkbenchClaim"
+          },
+          "is_anchor": {
+            "title": "Is Anchor",
+            "type": "boolean"
+          },
+          "lower_days": {
+            "title": "Lower Days",
+            "type": "integer"
+          },
+          "upper_days": {
+            "title": "Upper Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "claim",
+          "lower_days",
+          "upper_days",
+          "is_anchor"
+        ],
+        "title": "WorkbenchPoint",
+        "type": "object"
+      },
+      "WorkbenchRow": {
+        "additionalProperties": false,
+        "properties": {
+          "anchor": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WorkbenchAnchor"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "claims": {
+            "items": {
+              "$ref": "#/components/schemas/WorkbenchClaim"
+            },
+            "title": "Claims",
+            "type": "array"
+          },
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "gaps": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Gaps",
+            "type": "array"
+          },
+          "kind": {
+            "enum": [
+              "company",
+              "research_project"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "milestones": {
+            "items": {
+              "$ref": "#/components/schemas/MilestoneValue"
+            },
+            "title": "Milestones",
+            "type": "array"
+          },
+          "not_alignable": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Not Alignable"
+          },
+          "outcome_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome Label"
+          },
+          "outcome_rank": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome Rank"
+          },
+          "points": {
+            "items": {
+              "$ref": "#/components/schemas/WorkbenchPoint"
+            },
+            "title": "Points",
+            "type": "array"
+          },
+          "sector": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sector"
+          },
+          "snapshot": {
+            "items": {
+              "$ref": "#/components/schemas/WorkbenchClaim"
+            },
+            "title": "Snapshot",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "kind",
+          "sector",
+          "anchor",
+          "points",
+          "snapshot",
+          "claims",
+          "milestones",
+          "gaps",
+          "status",
+          "outcome_rank",
+          "outcome_label",
+          "not_alignable"
+        ],
+        "title": "WorkbenchRow",
         "type": "object"
       }
     }
@@ -6379,6 +7826,250 @@
         "summary": "Duplicates"
       }
     },
+    "/api/precedents/{subject_id}": {
+      "get": {
+        "operationId": "precedents_api_precedents__subject_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subject_id",
+            "required": true,
+            "schema": {
+              "title": "Subject Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "first_institutional_round",
+              "enum": [
+                "first_institutional_round",
+                "first_provider_or_clinical_study",
+                "first_regulatory_decision",
+                "first_paid_customer"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "as_of",
+            "required": true,
+            "schema": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "title": "As Of",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrecedentResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Precedents"
+      }
+    },
+    "/api/precedents/{subject_id}/checklist": {
+      "get": {
+        "operationId": "milestone_checklist_api_precedents__subject_id__checklist_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subject_id",
+            "required": true,
+            "schema": {
+              "title": "Subject Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "first_institutional_round",
+              "enum": [
+                "first_institutional_round",
+                "first_provider_or_clinical_study",
+                "first_regulatory_decision",
+                "first_paid_customer"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "as_of",
+            "required": true,
+            "schema": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "title": "As Of",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChecklistResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Milestone Checklist"
+      }
+    },
+    "/api/precedents/{subject_id}/disputes": {
+      "post": {
+        "operationId": "dispute_api_precedents__subject_id__disputes_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subject_id",
+            "required": true,
+            "schema": {
+              "title": "Subject Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DisputeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClaimReview"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Dispute"
+      }
+    },
+    "/api/precedents/{subject_id}/screening-note": {
+      "get": {
+        "operationId": "export_screening_note_api_precedents__subject_id__screening_note_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "subject_id",
+            "required": true,
+            "schema": {
+              "title": "Subject Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "anchor",
+            "required": false,
+            "schema": {
+              "default": "first_institutional_round",
+              "enum": [
+                "first_institutional_round",
+                "first_provider_or_clinical_study",
+                "first_regulatory_decision",
+                "first_paid_customer"
+              ],
+              "title": "Anchor",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "as_of",
+            "required": true,
+            "schema": {
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "title": "As Of",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScreeningDraft"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Export Screening Note"
+      }
+    },
     "/api/reference-pool": {
       "get": {
         "operationId": "reference_directory_api_reference_pool_get",
@@ -7013,6 +8704,149 @@
           }
         },
         "summary": "Venture"
+      }
+    },
+    "/api/workbench/cohort-companies": {
+      "get": {
+        "operationId": "cohort_companies_api_workbench_cohort_companies_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CohortCompanies"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Cohort Companies"
+      }
+    },
+    "/api/workbench/gates": {
+      "get": {
+        "operationId": "get_gates_api_workbench_gates_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkbenchGates"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Gates"
+      }
+    },
+    "/api/workbench/outcomes": {
+      "get": {
+        "operationId": "outcomes_api_workbench_outcomes_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sector",
+            "required": false,
+            "schema": {
+              "default": "",
+              "maxLength": 100,
+              "title": "Sector",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "vintage",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maximum": 2022,
+                  "minimum": 2012,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Vintage"
+            }
+          },
+          {
+            "in": "query",
+            "name": "endpoint",
+            "required": false,
+            "schema": {
+              "default": "primary",
+              "enum": [
+                "primary",
+                "secondary"
+              ],
+              "title": "Endpoint",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cohort",
+            "required": false,
+            "schema": {
+              "const": "A",
+              "default": "A",
+              "title": "Cohort",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 8,
+              "maximum": 40,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutcomeLibrary"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Outcomes"
       }
     }
   }

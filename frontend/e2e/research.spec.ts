@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { createHash } from "node:crypto";
 
 async function openResearch(page: import("@playwright/test").Page, subject: string) {
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page.getByRole("button", {name: "Research dossiers", exact: true}).click();
   const opener = page.getByRole("button", {name: subject, exact: true});
   await opener.click();
@@ -22,7 +22,7 @@ async function downloadedText(download: import("@playwright/test").Download) {
 test("research directory filters preserve quarantine, unknown identity and source responsibility", async ({page}) => {
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
-  await page.goto("/");
+  await page.goto("/?mode=research");
   await page.getByRole("button", {name: "Research dossiers", exact: true}).click();
   await expect(page.locator(".research-directory-row")).toHaveCount(12);
   await page.getByLabel("Research review state", {exact: true}).selectOption("accepted");
