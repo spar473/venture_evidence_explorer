@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 
 from backend.main import create_app
 from backend.precedent_contracts import CompOutcome, WorkbenchAnchor, WorkbenchClaim, WorkbenchRow
-from backend.precedent_evidence import checklist, points_for, select_anchor, snapshot_at
+from backend.precedent_evidence import checklist, contemporaneous_snapshot, points_for, select_anchor, snapshot_at
 from backend.precedent_similarity import MIN_COVERAGE, MIN_SIMILARITY, VERSION, corpus_idf, features, rank_peers, score, select_comps
 from backend.precedents import COMP_LABELS, PrecedentCatalog, comp_outcome
 from backend.reference_pool import EventDate, PoolEvent, Witness
@@ -74,17 +74,20 @@ def test_top_k_abstention_tie_break_unknown_and_verified_floor():
     assert [comp.role for comp in select_comps(mixed[:3])[0]] == ['ceiling', 'floor']
 
 
-def test_clinical_workflow_requires_comparable_fields_even_when_other_dimensions_clear_thresholds():
+def test_clinical_workflow_requires_quarter_similarity_even_when_other_dimensions_clear_thresholds():
     values = {'stage': 'seed', 'buyer': 'hospital', 'months_since_founding': 12, 'regulatory_class': 2}
     subject = row('subject', features={**values, 'modality': 'MRI'})
     no_workflow = row('missing_workflow', features=values)
     similarity, coverage, _ = score(features(subject), features(no_workflow), {})
     assert similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE
     differing_workflow = row('different_workflow', features={**values, 'modality': 'ultrasound'})
-    [peer] = rank_peers(subject, [no_workflow, differing_workflow])
-    assert peer.row.company_id == 'different_workflow'
-    workflow = peer.dimensions[0]
-    assert workflow.coverage == .25 and workflow.similarity == 0
+    assert rank_peers(subject, [no_workflow, differing_workflow]) == []
+    left = row('subject_exact', features={**values, 'modality': 'MRI', 'clinical_user': 'radiologist',
+               'output_type': 'report', 'description': 'breast assessment'})
+    right = row('quarter_match', features={**values, 'modality': 'MRI', 'clinical_user': 'neurologist',
+                'output_type': 'scan', 'description': 'brain triage'})
+    [peer] = rank_peers(left, [right])
+    assert peer.dimensions[0].similarity == .25
 
 
 def test_comp_status_uses_dated_evidence_beyond_the_window_and_respects_disputes():
@@ -153,7 +156,8 @@ def test_live_api_anchors_curation_and_snapshot_abstention(demo_db):
         assert payload['subject']['kind'] == 'research_project'
         assert payload['subject']['points'] == []
         assert len(payload['curated']) == 3 and payload['abstention']
-        assert payload['similarity_version'] == VERSION == 'witnessed-gower-b0:2'
+        assert payload['similarity_version'] == VERSION == 'witnessed-gower-b0:3'
+        assert payload['witness_mode'] == 'strict'
         date_result = client.get('/api/precedents/subj_ht_mri?as_of=2026-11-21&anchor=first_regulatory_decision').json()
         assert any(row['anchor']['claim']['date_value'] == '2023-03-31'
                    for row in date_result['curated'] if row['anchor'])
@@ -186,6 +190,11 @@ def test_outcome_library_reconciles_denominators_pagination_and_events(demo_db):
         assert subset['total'] < library['total'] and subset['endpoint'] == 'secondary'
         assert all(row['vintage'] == 2022 and row['sector'] == 'Healthtech' for row in subset['rows'])
         secondary = client.get('/api/workbench/outcomes?endpoint=secondary').json()
+        for endpoint in (library, secondary):
+            supie = next(row for row in endpoint['stories'] if row['company_id'] == 'public_supie')
+            registry = {point['claim']['field']: point['claim']['date_value'] for point in supie['points']}
+            assert registry['voluntary_administration'] == '2023-10-30'
+            assert registry['closed_liquidation'] == '2023-11-09' and supie['status'] == 'closed_before_outcome'
         halter = next(row for row in secondary['stories'] if row['company_id'] == 'discovery_halter')
         bounded = next(p for p in halter['points'] if p['claim']['field'] == 'secondary_timing_bound')
         assert bounded['claim']['lower_on'] == '2016-12-01'
@@ -285,7 +294,7 @@ def test_screening_note_download_round_trips_existing_measurement_draft(demo_db)
         assert [item.metadata.role for item in single.alternatives] == ['subject', 'representative']
 
 
-def test_analogy_uses_current_witnesses_and_toku_has_distinct_dated_comps(demo_db):
+def test_analogy_uses_current_witnesses_and_toku_excludes_zero_workflow_peers(demo_db):
     from backend.precedent_contracts import PrecedentResponse
 
     today = '2026-11-21'
@@ -306,24 +315,60 @@ def test_analogy_uses_current_witnesses_and_toku_has_distinct_dated_comps(demo_d
         conflict = client.get(f'/api/precedents/public_carepatron?as_of={today}').json()
         assert not any(item['claim_id'].startswith('witnessed:public_carepatron:')
                        for item in conflict['subject']['snapshot'])
-        result = client.get(f'/api/precedents/toku?as_of={today}')
-        result.raise_for_status()
-        ranked = PrecedentResponse.model_validate(result.json())
-        assert {peer.row.company_id for peer in ranked.peers} >= {
-            'discovery_heartlab', 'public_firstcheckltd', 'discovery_respiraq',
-        }
-        assert {item.role: item.peer.row.company_id for item in ranked.comps} == {
-            'ceiling': 'discovery_heartlab', 'typical': 'discovery_respiraq', 'floor': 'public_firstcheckltd',
-        }
-        assert all(peer.similarity >= MIN_SIMILARITY and peer.coverage >= MIN_COVERAGE for peer in ranked.peers)
-        firstcheck = ranked.comps[-1].peer.row
-        assert firstcheck.status == 'unknown'
-        assert (firstcheck.comp_outcome.label, firstcheck.comp_outcome.date_value) == ('Verified closure', '2021-10-13')
-        assert not ranked.no_verified_closure
-        assert features(ranked.subject)['provider_study'] == 'yes'
-        for peer in ranked.peers:
-            anchor = peer.row.anchor.claim.lower_on
-            assert all(item.witness.available_on <= anchor for item in peer.row.snapshot)
+        for mode in ('strict', 'contemporaneous'):
+            result = client.get(f'/api/precedents/toku?as_of={today}&witness_mode={mode}')
+            result.raise_for_status()
+            comparison = PrecedentResponse.model_validate(result.json())
+            assert comparison.peers == comparison.comps == []
+            assert features(comparison.subject)['provider_study'] == 'yes'
+            assert all(item.peer_witness_delay_days is None for item in comparison.subject.snapshot)
+        heartlab = client.get(f'/api/precedents/discovery_heartlab?as_of={today}').json()['subject']
+        assert heartlab['status'] == 'observed_no_outcome'
+        assert heartlab['comp_outcome']['label'] == 'Operating on seed'
+        assert heartlab['comp_outcome']['date_value'] == '2026-06-30'
+        heartlab_path = '/api/precedents/discovery_heartlab?as_of='
+        before = client.get(heartlab_path + '2026-06-29').json()['subject']['claims']
+        dated = client.get(heartlab_path + '2026-06-30').json()['subject']['claims']
+        assert not any(item['claim_id'] == 'heartlab_university_2026' for item in before)
+        [activity] = [item for item in dated if item['claim_id'] == 'heartlab_university_2026']
+        assert activity['witness']['available_on'] == '2026-06-30'
+        firstcheck = client.get(f'/api/precedents/public_firstcheckltd?as_of={today}').json()['subject']
+        assert firstcheck['status'] == 'unknown' and firstcheck['comp_outcome']['date_value'] == '2021-10-13'
+
+
+def test_contemporaneous_window_respects_earliest_bound_as_of_disputes_and_strict_fields():
+    anchor = WorkbenchAnchor(kind='first_institutional_round', claim=claim('seed').model_copy(
+        update={'date_value': '2020-01', 'date_precision': 'month', 'upper_on': '2020-01-31'}))
+
+    def later(field, on, **updates):
+        base = claim(field, 'later value')
+        return base.model_copy(update={'date_value': on, 'lower_on': on, 'upper_on': on, 'published_on': on,
+            'witness': base.witness.model_copy(update={'available_on': on}), **updates})
+
+    strict = [claim('clinical_user', 'radiologist')]
+    additions = [later('clinical_user', '2020-01-04'), later('buyer', '2020-03-31'),
+                 later('description', '2020-04-01'), later('modality', '2020-01-04', review_state='disputed')]
+    assert contemporaneous_snapshot(anchor, strict, additions, '2020-03-30') == strict
+    original, admitted = contemporaneous_snapshot(anchor, strict, additions, '2020-04-02')
+    assert original == strict[0] and admitted.field == 'buyer' and admitted.peer_witness_delay_days == 90
+    assert additions[1].peer_witness_delay_days is None
+
+
+def test_contemporaneous_preview_exposes_unranked_witnesses_and_keeps_subject_and_checklist_strict(demo_db):
+    with TestClient(create_app(demo_db)) as client:
+        path = '/api/precedents/subj_ht_mri'
+        query = '?as_of=2026-11-21'
+        contemporaneous_query = query + '&witness_mode=contemporaneous'
+        strict, extended = [client.get(path + suffix).json() for suffix in (query, contemporaneous_query)]
+        assert strict['subject'] == extended['subject'] and not strict['late_witness_peers']
+        late = {item['company_id']: item['snapshot'] for item in extended['late_witness_peers']}
+        assert {claim['peer_witness_delay_days'] for claim in late['discovery_theinsidescompany']} == {20}
+        assert {claim['peer_witness_delay_days'] for claim in late['discovery_respiraq']} == {None, 56}
+        assert extended['witness_mode'] == 'contemporaneous' and not extended['peers']
+        note = client.get(path + '/screening-note' + contemporaneous_query).json()
+        assert note['alternatives'][0]['metadata']['witness_mode'] == 'contemporaneous'
+        assert client.get(path + '/checklist' + contemporaneous_query).json()['subject'] == strict['subject']
+        assert client.get(path + query + '&witness_mode=invalid').status_code == 422
 
 
 def test_mri_peer_gaps_at_institutional_and_study_anchors(demo_db):

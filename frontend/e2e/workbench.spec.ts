@@ -82,23 +82,28 @@ test("screening note downloads the selected subject and anchor", async ({page}) 
   const draft = await response.json();
   expect(draft.alternatives[0].metadata).toMatchObject({
     company_id: "subj_ht_mri", anchor_kind: "first_institutional_round", as_of: "2026-11-21",
-    similarity_version: "witnessed-gower-b0:2", snapshot_basis: "subject_as_of",
+    similarity_version: "witnessed-gower-b0:3", snapshot_basis: "subject_as_of", witness_mode: "strict",
   });
   expect(draft.weight_profiles).toEqual([]);
 });
 
-test("Toku shows three distinct comps and dated status evidence", async ({page}) => {
+test("Toku excludes zero-workflow comps and late witness badges identify delayed evidence", async ({page}) => {
   await page.goto("/");
+  const mode = page.getByRole("combobox", {name: "Peer witness mode", exact: true});
+  await expect(mode).toHaveValue("strict");
+  await mode.selectOption("contemporaneous");
+  await expect(page.getByText("Late workflow and buyer evidence", {exact: false})).toBeVisible();
+  await page.getByRole("button", {name: "Evidence", exact: true}).click();
+  await page.getByRole("button", {name: "Comparison snapshots", exact: true}).click();
+  const candidate = page.getByRole("row").filter({hasText: "The Insides Company"});
+  await expect(candidate.getByText("+20 days", {exact: true}).first()).toBeVisible();
   await page.getByRole("searchbox", {name: "Search ventures"}).fill("Toku");
   await page.getByRole("button", {name: "Toku Eyes", exact: true}).click();
-  const cards = page.locator(".wb-comp");
-  await expect(cards).toHaveCount(3);
-  await expect(cards.nth(0)).toContainText("HeartLab");
-  await expect(cards.nth(1)).toContainText("RespirAq");
-  await expect(cards.nth(2)).toContainText("Firstcheck");
-  await expect(cards.nth(2)).toContainText("Verified closure");
-  await cards.nth(2).getByRole("button", {name: /Status evidence.*2021-10-13/}).click();
-  await expect(page.getByRole("dialog", {name: "Claim evidence"})).toContainText("2021-10-13");
+  await expect(page.getByRole("heading", {name: "Toku Eyes", exact: true})).toBeVisible();
+  await expect(page.getByText(/Fewer than 3 peers meet the clinical workflow/)).toBeVisible();
+  await expect(page.locator(".wb-comp")).toHaveCount(0);
+  await mode.selectOption("strict");
+  await expect(page.getByText("All 0 similar peers")).toBeVisible();
 });
 
 test("captures workbench screenshots for the README and PR", async ({page}, info) => {

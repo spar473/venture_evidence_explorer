@@ -87,8 +87,13 @@ def test_entry_does_not_use_outcomes_and_registry_requires_positive_source(tmp_p
     assert entry_only['decisions'] == original['decisions']
     assert entry_only['follow_up']['registry_confirmed_closures'] == 0
     assert original['follow_up']['registry_confirmed_closures'] >= 12
-    assert [row['status'] for row in statuses if row['company_id'] == 'public_supie'] == ['liquidation','removed']
+    assert [row['status'] for row in statuses if row['company_id'] == 'public_supie'] == [
+        'voluntary_administration', 'liquidation', 'removed',
+    ]
     assert [row['status'] for row in statuses if row['company_id'] == 'public_photonicinnovationsltd'] == ['removed']
+    evidence['registry_statuses'] = [row for row in statuses if row['status'] == 'voluntary_administration']
+    audit_input.write_text(json.dumps(evidence))
+    assert run_audit(staged, audit_input)['follow_up']['registry_confirmed_closures'] == 0
     evidence['registry_statuses'] = statuses
     evidence['sources']['supie_register']['url'] = 'https://example.org/7775376'
     with pytest.raises(ValueError, match='official company-number record'):

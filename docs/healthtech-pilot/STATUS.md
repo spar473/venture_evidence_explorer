@@ -285,3 +285,25 @@ Full verification ran on `main` (`eb0335f`) and `data/witnessed-snapshots` (`e72
 | Playwright | 45 of 46 passed | 46 of 47 before the locator fix; 47 of 47 after |
 
 The Playwright bundled headless shell could not be installed in this environment, so the suite ran with `CHROME_PATH` set to the local Google Chrome. The one failure on both branches used `getByLabel("Outcome", {exact: true})`. A label that wraps its select includes the option text, so that exact match finds nothing. The test now selects the combobox named Outcome. The three workbench captures are in [screenshots/](screenshots/).
+
+## Comp quality review · 21 November 2026
+
+[PR #2](https://github.com/spar473/venture_evidence_explorer/pull/2) merged the witnessed snapshots and round-review cleanup into `main` at `b2292ed`. Work for this review is on `data/comps-quality`.
+
+### Decisions
+
+| Decision | Basis |
+| --- | --- |
+| Keep HeartLab's latest verified status at operating on seed. Date the observation 30 June 2026. | The university dateline is 30 June even though the URL includes 1 July. Its report gives a cumulative $8 million and a signed contract. The July 2025 financing report labels the $2 million raise seed. The only derived audit timing change is the primary censor date, which moves one day earlier. [UoA](https://www.auckland.ac.nz/en/news/2026/07/01/student-startup-changing-heart-care.html) · [Medtech-iQ / NBR](https://www.medtechiq.co.nz/news/medtech-startup-heartlab-raises-2m-for-us-expansion) |
+| Record Supie's voluntary administration from 30 October 2023. Keep liquidation on 9 November as the competing closure event. | The Companies Register shows both intervals for company 7775376. The liquidators confirm both appointments. Both endpoint statuses and the registry closure count stay the same. [Companies Register](https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/7775376) · [Liquidators' report](https://www.pwc.co.nz/pdfs/2023/liquidators-first-report-supie-limited.pdf) |
+| Require clinical workflow similarity of at least 0.25 in `witnessed-gower-b0:3`. | Stage agreement alone previously qualified Toku's three peers despite zero workflow similarity. Overall similarity and weighted coverage thresholds remain 0.35 and 0.15. [Method](../design/COMPS_METHOD.md) |
+| Offer contemporaneous witnesses up to 90 days after the earliest peer anchor bound, with an as-of limit and delay badge. | Round announcements can document an already-described offering after the anchor. Strict evidence wins for existing fields. Late evidence fills only missing workflow and buyer fields in peer comparison views. It stays out of strict snapshots, validation, estimation and gates. [Method](../design/COMPS_METHOD.md) |
+| Admit round descriptions for The Insides Company and RespirAq. Keep later reference descriptions in current Evidence. | The round coverage is 20 and 56 days after the recorded earliest entry bounds. Reference context for Volpara, Formus, Alimetry and Wellumio has a dated round source but no admissible link to the selected first-round snapshot. [UoA](https://www.auckland.ac.nz/en/news/2019/08/21/velocity-alumnus-receives-investment-bowel-disease-technology.html) · [AUT](https://www.aut.ac.nz/news/stories/respiraq-secures-%241.5m-investment) |
+
+Toku and all five university watchlist projects return zero ranked peers in both witness modes. Cohort A retains 55 companies and two qualifying outcomes on each endpoint. Both gates are withheld.
+
+### Pending local verification
+
+| Change | Checks completed | Pending |
+| --- | --- | --- |
+| Comp quality | 191 pytest tests passed on Python 3.12. Production build, smoke checks, migration checks, API contract, before-and-after cohort audit and live workbench spot checks passed. Playwright discovered 47 tests. | The pinned Chromium 145 headless shell was unpacked in a clean temporary cache. This process could not launch it under the macOS Mach bootstrap restriction. Installed Chrome also exited before tests started. Full Playwright and a developer review are pending. |

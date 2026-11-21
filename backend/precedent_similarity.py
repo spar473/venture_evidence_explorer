@@ -5,12 +5,13 @@ from types import MappingProxyType
 from .precedent_contracts import DimensionScore, RankedPeer, SelectedComp
 from .retrieval import tokens
 
-VERSION = 'witnessed-gower-b0:2'
+VERSION = 'witnessed-gower-b0:3'
 TOP_K = 12
 MIN_SIMILARITY = .35
 MIN_COVERAGE = .15
 MIN_PEERS = 3
 CLINICAL_WORKFLOW = 'Clinical workflow'
+MIN_CLINICAL_SIMILARITY = .25
 DIMENSIONS = MappingProxyType({
     CLINICAL_WORKFLOW: (.25, ('modality', 'clinical_user', 'output_type', 'description')),
     'Buyer and sales path': (.20, ('buyer', 'procurement_path', 'business_model')),
@@ -81,7 +82,8 @@ def rank_peers(subject, eligible_rows):
     for row, values in peer_features:
         similarity, coverage, dimensions = score(left, values, idf)
         clinical = next(item for item in dimensions if item.dimension == CLINICAL_WORKFLOW)
-        if clinical.coverage > 0 and similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE:
+        if ((clinical.similarity or 0.) >= MIN_CLINICAL_SIMILARITY
+                and similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE):
             peers.append(RankedPeer(row=row, similarity=similarity, coverage=coverage, dimensions=dimensions))
     return sorted(peers, key=lambda peer: (-peer.similarity, peer.row.company_id))[:TOP_K]
 
@@ -91,7 +93,7 @@ def select_comps(peers):
     resolved = [peer for peer in peers if peer.row.comp_outcome is not None]
     no_closure = not any(peer.row.comp_outcome.rank == 0 for peer in resolved)
     if len(peers) < MIN_PEERS:
-        return [], no_closure, f'Fewer than {MIN_PEERS} peers meet the similarity and evidence coverage requirements.'
+        return [], no_closure, f'Fewer than {MIN_PEERS} peers meet the clinical workflow, overall similarity and evidence coverage requirements.'
     if not resolved:
         return [], no_closure, 'Outcome evidence is unresolved for all qualifying peers.'
     ranks = sorted(peer.row.comp_outcome.rank for peer in resolved)

@@ -2,7 +2,7 @@ import {useEffect, useState, type FormEvent} from "react";
 import type {ClaimReview, PrecedentResponse, WorkbenchClaim, WorkbenchRow} from "./api-schema";
 import {api} from "./api";
 import {label} from "./labels";
-import {downloadCsv, fieldLabel} from "./workbench-shared";
+import {downloadCsv, fieldLabel, WitnessDelay} from "./workbench-shared";
 
 const defaultFields = [
   {title: "Clinical workflow", match: ["modality", "clinical_user", "output_type", "description"]},
@@ -25,7 +25,8 @@ export function EvidenceMatrix({data, focusCompany, onClaim}: {
   const [fields, setFields] = useState<string[]>([]);
   const analogy = data.subject.kind === "research_project";
   const byId = new Map<string, WorkbenchRow>();
-  for (const row of [data.subject, ...data.comps.map(item => item.peer.row), ...data.curated, ...data.peers.map(item => item.row)]) {
+  for (const row of [data.subject, ...data.comps.map(item => item.peer.row), ...data.curated,
+    ...data.peers.map(item => item.row), ...(data.late_witness_peers ?? [])]) {
     if (!byId.has(row.company_id)) byId.set(row.company_id, row);
   }
   const rows = [...byId.values()];
@@ -43,29 +44,31 @@ export function EvidenceMatrix({data, focusCompany, onClaim}: {
 
   return <section className="wb-card">
     <div className="wb-toolbar"><h2>Evidence matrix</h2><button onClick={() => downloadCsv("precedent-evidence.csv", [
-      ["company", "mode", "field", "claim_id", "value", "publisher", "url", "witness_date", "as_of"],
+      ["company", "mode", "field", "claim_id", "value", "publisher", "url", "witness_date", "as_of", "peer_witness_delay_days"],
     ...dateRows.flatMap(({row, claims}, index) => shownFields.flatMap<(string | number | null | undefined)[]>(field => {
         const inField = claims.filter(claim => field.match.includes(claim.field));
       const mode = sameStage ? (analogy && index === 0 ? "subject_as_of" : "same_stage") : "current";
       if (!inField.length) return [[row.display_name, mode, field.title,
-          null, null, null, null, null, data.as_of]];
+        null, null, null, null, null, data.as_of, null]];
       return inField.map(claim => [row.display_name, mode, field.title,
-          claim.claim_id, claim.value, claim.publisher, claim.url, claim.witness?.available_on, data.as_of]);
+          claim.claim_id, claim.value, claim.publisher, claim.url, claim.witness?.available_on, data.as_of, claim.peer_witness_delay_days]);
       })),
     ])}>Export evidence CSV</button></div>
     <div className="wb-toolbar wb-chart-controls">
       <div className="wb-toggle" role="group" aria-label="Evidence time">
         <button aria-pressed={!sameStage} onClick={() => setSameStage(false)}>Everything known today</button>
-        <button aria-pressed={sameStage} onClick={() => setSameStage(true)}>{analogy ? "Comparison snapshots" : "What was public at the same stage"}</button>
+        <button aria-pressed={sameStage} onClick={() => setSameStage(true)}>{analogy || data.witness_mode === "contemporaneous" ? "Comparison snapshots" : "What was public at the same stage"}</button>
       </div>
       <label>Additional field<select value="" onChange={event => {
         const field = event.target.value;
         if (field) setFields(previous => [...previous, field]);
       }}><option value="">+ Add field</option>{choices.map(field => <option key={field} value={field}>{fieldLabel(field)}</option>)}</select></label>
     </div>
-    <p className="wb-muted">{sameStage ? (analogy ? `The subject uses witnessed evidence by ${data.as_of}. Peers use their earliest possible anchor date.` :
-      "Each row uses its earliest possible anchor date and a dated source availability witness.") :
-      `Source-attributed evidence available by ${data.as_of}.`}</p>
+    <p className="wb-muted">{!sameStage ? `Source-attributed evidence available by ${data.as_of}.` : <>
+      {analogy ? `The subject uses witnessed evidence by ${data.as_of}.` : "The subject uses evidence witnessed by its anchor."}{" "}
+      {data.witness_mode === "contemporaneous" ? "Peer workflow and buyer fields may use witnesses up to 90 days after their earliest possible anchor date. The table includes candidates with late witnesses even when they do not rank." :
+        "Peers use evidence witnessed by their earliest possible anchor date."}
+    </>}</p>
     <div className="wb-table-scroll wb-evidence-scroll"><table className="wb-table wb-matrix" aria-label="Evidence matrix">
       <thead><tr><th scope="col">Venture</th>{shownFields.map(field => <th scope="col" key={field.title}>{field.title}</th>)}</tr></thead>
       <tbody>{dateRows.map(({row, claims}, index) => <tr key={row.company_id} id={"wb-evidence-" + row.company_id} tabIndex={-1} className={index === 0 ? "wb-pinned" : undefined}>
@@ -77,7 +80,7 @@ export function EvidenceMatrix({data, focusCompany, onClaim}: {
             {sameStage ? "Not in public record" : "Not yet extracted"}</td>;
           return <td key={field.title}>{items.map(claim => <div key={claim.claim_id + claim.field} className="wb-cell-claim">
             <button className="wb-text-button" onClick={() => onClaim(row, claim)}>{claim.value}</button>
-            <small>{claim.publisher}</small><WitnessBadge claim={claim}/>
+            <small>{claim.publisher}</small><WitnessBadge claim={claim}/><WitnessDelay claim={claim}/>
             {claim.review_state === "disputed" && <small className="wb-disputed">Disputed</small>}
           </div>)}</td>;
         })}

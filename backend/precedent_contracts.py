@@ -9,6 +9,7 @@ from .workbench_reviews import ClaimReview
 
 AnchorKind = Literal['first_institutional_round', 'first_provider_or_clinical_study',
                      'first_regulatory_decision', 'first_paid_customer']
+WitnessMode = Literal['strict', 'contemporaneous']
 
 
 class WorkbenchClaim(StrictModel):
@@ -26,6 +27,7 @@ class WorkbenchClaim(StrictModel):
     lower_on: str | None = None
     upper_on: str | None = None
     date_basis: str | None = None
+    peer_witness_delay_days: int | None = None
     review_state: str = 'source_attributed'
     review_events: list[ClaimReview] = Field(default_factory=list)
 
@@ -106,9 +108,11 @@ class PrecedentResponse(StrictModel):
     as_of: str
     anchor_kind: AnchorKind
     similarity_version: str
+    witness_mode: WitnessMode = 'strict'
     peer_count_evaluated: int
     peers: list[RankedPeer]
     curated: list[WorkbenchRow]
+    late_witness_peers: list[WorkbenchRow] = Field(default_factory=list)
     comps: list[SelectedComp]
     not_alignable: list[UnalignedPeer]
     no_verified_closure: bool

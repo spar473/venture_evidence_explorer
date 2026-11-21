@@ -3,7 +3,7 @@ import type { CohortCompanies, HealthtechCoverage, PoolDirectory, PrecedentRespo
   ClaimReview, ResearchSubjectsResponse, WorkbenchClaim, WorkbenchGates } from "./api-schema";
 import { useResource } from "./hooks";
 import { Status } from "./shared";
-import { type AnchorKind, ClaimDrawer, fieldLabel } from "./workbench-shared";
+import { type AnchorKind, type WitnessMode, ClaimDrawer, fieldLabel } from "./workbench-shared";
 import { Overview } from "./workbench-overview";
 import { OutcomeLibraryPage } from "./workbench-outcomes";
 import { DisputeControl, EvidenceMatrix } from "./workbench-evidence";
@@ -23,6 +23,7 @@ export function Workbench() {
   const [tab, setTab] = useState<typeof tabs[number]>("Overview");
   const [subjectId, setSubjectId] = useState("subj_ht_mri");
   const [anchor, setAnchor] = useState<AnchorKind>("first_institutional_round");
+  const [witnessMode, setWitnessMode] = useState<WitnessMode>("strict");
   const [cohort, setCohort] = useState<"curated" | "similar">("curated");
   const [selectedDate, setSelectedDate] = useState("");
   const [query, setQuery] = useState("");
@@ -38,10 +39,10 @@ export function Workbench() {
     setEvidenceRevision(revision => revision + 1);
   }
   const asOf = selectedDate || gates.data?.as_of || "";
-  const path = asOf ? `/precedents/${encodeURIComponent(subjectId)}?${new URLSearchParams({anchor, as_of: asOf})}` : null;
+  const path = asOf ? `/precedents/${encodeURIComponent(subjectId)}?${new URLSearchParams({anchor, as_of: asOf, witness_mode: witnessMode})}` : null;
   const precedent = useResource<PrecedentResponse>(path, evidenceRevision);
   const data = precedent.data?.subject.company_id === subjectId && precedent.data.as_of === asOf
-    && precedent.data.anchor_kind === anchor ? precedent.data : null;
+    && precedent.data.anchor_kind === anchor && precedent.data.witness_mode === witnessMode ? precedent.data : null;
   const watched = watchlist.data?.projects.find(project => project.subject_id === subjectId);
   const companyNames = new Set(cohortCompanies.data?.items.map(company => company.display_name.toLowerCase()));
   const search = [...(watchlist.data?.projects ?? []).map(project => ({
@@ -111,7 +112,8 @@ export function Workbench() {
           setSelectedClaim({claim, subjectId: row.company_id, questions: row.company_id === data.subject.company_id
             ? [...row.gaps, ...data.questions] : row.gaps})}/>}
         {tab === "Overview" && data && <Overview data={data} gates={gates.data} gateError={gates.error}
-          cohort={cohort} onCohort={setCohort} onAnchor={setAnchor} onClaim={openClaim} onOutlook={() => setTab("Outlook")} onEvidence={companyId => { setEvidenceFocus(companyId); setTab("Evidence"); }}/>}
+          cohort={cohort} onCohort={setCohort} onAnchor={setAnchor} onWitnessMode={setWitnessMode}
+          onClaim={openClaim} onOutlook={() => setTab("Outlook")} onEvidence={companyId => { setEvidenceFocus(companyId); setTab("Evidence"); }}/>}
       </>}
     </main>
     {selectedClaim && <ClaimDrawer claim={selectedClaim.claim} questions={selectedClaim.questions}

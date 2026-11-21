@@ -143,15 +143,17 @@ class OutcomeEvidence(StrictModel):
 
 
 def registry_events(records):
+    kinds = {'voluntary_administration': 'voluntary_administration', 'liquidation': 'closed_liquidation',
+             'removed': 'closed_register_removal'}
     for record in records:
-        is_liquidation = record.status == 'liquidation'
+        kind = kinds[record.status]
         yield PoolEvent(
             event_id=f'register_{record.company_number}_{record.status}_{record.effective_on.replace("-", "")}',
             company_id=record.company_id, source_id=record.source_id, date_basis='reported_occurrence',
             date=EventDate(value=record.effective_on, precision='day'),
-            kind='closed_liquidation' if is_liquidation else 'closed_register_removal',
-            closure_evidence='liquidation_notice' if is_liquidation else 'register_removal',
-            claim=f'Companies Register records {record.status}.', passage=record.locator,
+            kind=kind,
+            closure_evidence={'liquidation':'liquidation_notice', 'removed':'register_removal'}.get(record.status),
+            claim=f"Companies Register records {record.status.replace('_', ' ')}.", passage=record.locator,
         )
 
 

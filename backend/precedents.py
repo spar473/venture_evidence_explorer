@@ -9,10 +9,10 @@ from .database import connect
 from .healthtech import compare_healthtech, load_selections
 from .ingestion import day
 from .precedent_contracts import (
-    AnchorKind, ChecklistResponse, CompOutcome, PrecedentResponse, UnalignedPeer, WorkbenchRow,
+    AnchorKind, ChecklistResponse, CompOutcome, PrecedentResponse, UnalignedPeer, WitnessMode, WorkbenchRow,
 )
 from .precedent_evidence import (
-    POOL_ANCHORS, checklist, fixture_feature_claims, points_for, pool_claim, research_claims,
+    POOL_ANCHORS, checklist, contemporaneous_snapshot, fixture_feature_claims, points_for, pool_claim, research_claims,
     select_anchor, snapshot_at, snapshot_by,
 )
 from .precedent_similarity import MILESTONES, VERSION, rank_peers, select_comps
@@ -161,7 +161,7 @@ class PrecedentCatalog:
             linked.add(cohort['company_id'])
         return fixture, cohort, linked
 
-    def row(self, key, kind, *, as_subject=False):
+    def row(self, key, kind, *, as_subject=False, witness_mode='strict'):
         fixture, entry, _ = self.identity(key)
         graph_id = fixture.research_subject_id if fixture else key if not entry else None
         graph = dossier(self.conn, graph_id) if graph_id else None
@@ -218,9 +218,13 @@ class PrecedentCatalog:
         events = self.apply_reviews(unique_events.values())
         prior_entry = select_anchor('first_institutional_round', events, entry_id, self.as_of) if entry_id else None
         profile_id = entry['company_id'] if entry else fixture.company_id if fixture else key
-        witnessed = self.witnessed.claims(profile_id, self.as_of, entry_anchor=prior_entry, is_project=is_project)
+        witnessed = self.witnessed.claims(profile_id, self.as_of, entry_anchor=prior_entry,
+                                         scope='project_as_of' if is_project else 'institutional_entry')
+        contemporaneous = self.witnessed.claims(profile_id, self.as_of, entry_anchor=prior_entry,
+                                               scope='institutional_entry_contemporaneous')
+        reference_context = self.witnessed.claims(fixture.company_id, self.as_of, scope='reference_round_context') if fixture else []
         features.extend(witnessed)
-        claims = self.apply_reviews([*claims, *witnessed])
+        claims = self.apply_reviews([*claims, *witnessed, *contemporaneous, *reference_context])
         features = self.apply_reviews(features)
         anchor = select_anchor(kind, events, entry_id, self.as_of)
         features.extend(claim.model_copy(update={
@@ -228,6 +232,8 @@ class PrecedentCatalog:
         }) for claim in events if claim.field in EVENT_FEATURES)
         analogy = is_project and as_subject
         comparable = snapshot_by(self.as_of, features) if analogy else snapshot_at(anchor, features)
+        if not as_subject and witness_mode == 'contemporaneous':
+            comparable = contemporaneous_snapshot(anchor, comparable, self.apply_reviews(contemporaneous), self.as_of)
         status, rank = self.comparison_outcome(entry, anchor, {
             key: value for key, value in audit_events.items() if key not in self.reviews
         })
@@ -279,27 +285,29 @@ class PrecedentCatalog:
             rank = max(rank, *ladder)
         return status, rank
 
-    def curated(self, subject_id, kind):
+    def curated(self, subject_id, kind, witness_mode='strict'):
         if subject_id not in self.by_research and not subject_id.startswith('subj_'):
             return []
         result = compare_healthtech(self.conn, subject_id, as_of=self.as_of)
-        return [self.row(self.by_research[peer['subject_id']], kind)
+        return [self.row(self.by_research[peer['subject_id']], kind, witness_mode=witness_mode)
                 for peer in result['peers'] if peer['subject_id'] in self.by_research]
 
 
 @read_consistently
-def response(conn, subject_id, kind, as_of):
+def response(conn, subject_id, kind, as_of, witness_mode='strict'):
     catalog = PrecedentCatalog(conn, as_of)
     subject = catalog.row(subject_id, kind, as_subject=True)
     _, _, identity = catalog.identity(subject_id)
-    rows = [catalog.row(company_id, kind) for company_id in catalog.entries
+    rows = [catalog.row(company_id, kind, witness_mode=witness_mode) for company_id in catalog.entries
             if not identity.intersection(catalog.identity(company_id)[2])]
     aligned = [row for row in rows if row.anchor]
     peers = rank_peers(subject, aligned)
     comps, no_closure, abstention = select_comps(peers)
-    curated = catalog.curated(subject_id, kind)
+    curated = catalog.curated(subject_id, kind, witness_mode)
     missing = {row.company_id: row for row in [*rows, *curated] if row.not_alignable}
     return PrecedentResponse(subject=subject, as_of=as_of, anchor_kind=kind, similarity_version=VERSION,
+        witness_mode=witness_mode,
+        late_witness_peers=[row for row in aligned if any(claim.peer_witness_delay_days for claim in row.snapshot)],
         peer_count_evaluated=len(aligned), peers=peers, curated=curated, comps=comps,
         not_alignable=[UnalignedPeer(company_id=row.company_id, display_name=row.display_name, reason=row.not_alignable)
                        for row in missing.values()],
@@ -308,11 +316,11 @@ def response(conn, subject_id, kind, as_of):
 
 
 def install(app, db):
-    def compute(subject_id, anchor, as_of, handler):
+    def compute(subject_id, anchor, as_of, handler, *args):
         try:
             cutoff = day(as_of)
             with closing(connect(db)) as conn:
-                return handler(conn, subject_id, anchor, cutoff)
+                return handler(conn, subject_id, anchor, cutoff, *args)
         except SubjectNotFound as error:
             raise HTTPException(404, str(error)) from error
         except ValueError as error:
@@ -320,8 +328,9 @@ def install(app, db):
 
     @app.get('/api/precedents/{subject_id}', response_model=PrecedentResponse)
     def precedents(subject_id: str, anchor: AnchorKind = 'first_institutional_round',
+                   witness_mode: WitnessMode = 'strict',
                    as_of: str = Query(..., pattern=r'^\d{4}-\d{2}-\d{2}$')):
-        return compute(subject_id, anchor, as_of, response)
+        return compute(subject_id, anchor, as_of, response, witness_mode)
 
     @app.get('/api/precedents/{subject_id}/checklist', response_model=ChecklistResponse)
     def milestone_checklist(subject_id: str, anchor: AnchorKind = 'first_institutional_round',
@@ -338,7 +347,8 @@ def install(app, db):
     @app.get('/api/precedents/{subject_id}/screening-note', response_model=ScreeningDraft)
     def export_screening_note(subject_id: str, response_headers: Response,
                               anchor: AnchorKind = 'first_institutional_round',
+                              witness_mode: WitnessMode = 'strict',
                               as_of: str = Query(..., pattern=r'^\d{4}-\d{2}-\d{2}$')):
-        data = compute(subject_id, anchor, as_of, response)
+        data = compute(subject_id, anchor, as_of, response, witness_mode)
         response_headers.headers['Content-Disposition'] = 'attachment; filename="venture-frame-screening-note.json"'
         return screening_draft(data)

@@ -27,7 +27,7 @@ Stage = Literal['pre_seed', 'seed', 'series_a', 'series_b', 'series_c_plus', 'se
                 'pre_series_a', 'seed_extension', 'bridge', 'convertible_note', 'grant', 'crowdfunding',
                 'other_financing', 'acquired', 'ipo', 'first_paid_customer', 'provider_deployment',
                 'regulatory_clearance', 'regulatory_decision', 'clinical_study', 'closed_register_removal', 'closed_liquidation',
-                'closed_founder_announcement', 'last_verified_activity']
+                'closed_founder_announcement', 'last_verified_activity', 'voluntary_administration']
 CLOSURES = {
     'closed_register_removal': 'registry_record',
     'closed_liquidation': 'liquidation_notice',

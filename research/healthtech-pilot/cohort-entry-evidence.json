@@ -6614,6 +6614,14 @@
       "company_id": "public_supie",
       "company_number": "7775376",
       "source_id": "supie_register",
+      "status": "voluntary_administration",
+      "effective_on": "2023-10-30",
+      "locator": "Company summary, View Previous Status, Voluntary Administration from 30 Oct 2023 to 09 Nov 2023"
+    },
+    {
+      "company_id": "public_supie",
+      "company_number": "7775376",
+      "source_id": "supie_register",
       "status": "liquidation",
       "effective_on": "2023-11-09",
       "locator": "Company summary, View Previous Status, In Liquidation interval starts 09 Nov 2023"

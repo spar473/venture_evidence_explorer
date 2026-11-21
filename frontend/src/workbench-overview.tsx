@@ -1,5 +1,5 @@
 import type {PrecedentResponse, WorkbenchClaim, WorkbenchGates, WorkbenchRow} from "./api-schema";
-import {type AnchorKind, anchors, dateLabel, downloadCsv, fieldLabel, GateProgress} from "./workbench-shared";
+import {type AnchorKind, type WitnessMode, anchors, dateLabel, downloadCsv, fieldLabel, GateProgress, WitnessDelay} from "./workbench-shared";
 import {Trajectory} from "./workbench-trajectory";
 
 const roleNames = {ceiling: "Ceiling", typical: "Typical", floor: "Floor", representative: "Representative comp"} as const;
@@ -59,7 +59,8 @@ function Comps({data, onClaim, onEvidence}: {
         <p><strong>Differences</strong> {differences.length ? differences.join(", ") : "No supported difference in available fields."}</p>
         <h4>Peer snapshot at anchor</h4>
         {row.snapshot.length ? <ul>{row.snapshot.map(claim => <li key={claim.claim_id + claim.field}><button
-          className="wb-text-button" onClick={() => onClaim(claim)}>{fieldLabel(claim.field)} · {claim.value}</button></li>)}</ul>
+          className="wb-text-button" onClick={() => onClaim(claim)}>{fieldLabel(claim.field)} · {claim.value}</button>
+          <WitnessDelay claim={claim}/></li>)}</ul>
           : <p>{row.gaps.find(gap => gap.startsWith("Same-stage")) || "Same-stage evidence is withheld."}</p>}
         <button onClick={() => onEvidence(row.company_id)}>Evidence matrix</button>
       </article>;
@@ -75,10 +76,11 @@ function Comps({data, onClaim, onEvidence}: {
   </section>;
 }
 
-export function Overview({data, gates, gateError, cohort, onCohort, onAnchor, onClaim, onOutlook, onEvidence}: {
+export function Overview({data, gates, gateError, cohort, onCohort, onAnchor, onWitnessMode, onClaim, onOutlook, onEvidence}: {
   data: PrecedentResponse; gates: WorkbenchGates | null; gateError: string;
   cohort: "curated" | "similar"; onCohort: (cohort: "curated" | "similar") => void;
   onAnchor: (kind: AnchorKind) => void; onClaim: (claim: WorkbenchClaim) => void;
+  onWitnessMode: (mode: WitnessMode) => void;
   onOutlook: () => void; onEvidence: (companyId: string) => void;
 }) {
   const peers = cohort === "curated" ? data.curated : data.peers.map(peer => peer.row);
@@ -102,12 +104,17 @@ export function Overview({data, gates, gateError, cohort, onCohort, onAnchor, on
         <label>Align at <select value={data.anchor_kind} onChange={event => onAnchor(event.target.value as AnchorKind)}>
           {Object.entries(anchors).map(([value, name]) => <option value={value} key={value}>{name}</option>)}
         </select></label>
+        <label>Peer witness mode <select value={data.witness_mode} onChange={event => onWitnessMode(event.target.value as WitnessMode)}>
+          <option value="strict">Strict · at anchor</option>
+          <option value="contemporaneous">Contemporaneous · up to 90 days later</option>
+        </select></label>
         <div className="wb-toggle" role="group" aria-label="Peer set">
           <button type="button" aria-pressed={cohort === "curated"} onClick={() => onCohort("curated")}>Curated precedents</button>
           <button type="button" aria-pressed={cohort === "similar"} onClick={() => onCohort("similar")}>Similar cohort</button>
         </div>
       </div>
       {data.subject.anchor && <p className="wb-muted">Subject anchor · {dateLabel(data.subject.anchor.claim)}</p>}
+      {data.witness_mode === "contemporaneous" && <p className="wb-muted">Late workflow and buyer evidence can fill gaps in peer snapshots. Badges show the witness delay.</p>}
       <Trajectory rows={rows} onClaim={onClaim} title="Aligned venture trajectories"/>
       {missing.length > 0 && <details><summary>Not alignable · {missing.length}</summary>
         <ul>{missing.map(row => <li key={row.company_id}><strong>{row.display_name}</strong> · {row.reason}</li>)}</ul>
