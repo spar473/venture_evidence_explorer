@@ -27,7 +27,12 @@ export function Workbench() {
   const cohortCompanies = useResource<CohortCompanies>("/workbench/cohort-companies");
   const gates = useResource<WorkbenchGates>("/workbench/gates");
   const names = new Map(subjects.data?.items.map((item) => [item.subject_id, item.display_name]));
-  const [page, setPage] = useState<"precedents" | "outcomes">("precedents");
+  // The demo opens on the Outcome library; `?page=precedents` opens the precedent workbench directly.
+  const [page, setPage] = useState<"precedents" | "outcomes">(() =>
+    new URLSearchParams(window.location.search).get("page") === "precedents"
+      ? "precedents"
+      : "outcomes",
+  );
   const [tab, setTab] = useState<(typeof tabs)[number]>("Overview");
   const [subjectId, setSubjectId] = useState("subj_ht_mri");
   const [anchor, setAnchor] = useState<AnchorKind>("first_institutional_round");
@@ -142,7 +147,11 @@ export function Workbench() {
         </nav>
         <div className="wb-sidebar-footer">
           <a href="/?mode=research">Research mode</a>
-          <span>Evidence as of {asOf || "unavailable"}</span>
+          <span>
+            {page === "outcomes"
+              ? `Present-day audit · ${gates.data?.as_of ?? "unavailable"}`
+              : `Evidence as of ${asOf || "unavailable"}`}
+          </span>
         </div>
       </aside>
       <main id="workspace-content" tabIndex={-1} className="wb-content">

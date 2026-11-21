@@ -1,4 +1,10 @@
-import type { PrecedentResponse, WorkbenchClaim, WorkbenchGates, WorkbenchRow } from "./api-schema";
+import type {
+  NearestCandidate,
+  PrecedentResponse,
+  WorkbenchClaim,
+  WorkbenchGates,
+  WorkbenchRow,
+} from "./api-schema";
 import {
   type AnchorKind,
   type WitnessMode,
@@ -100,6 +106,138 @@ export function Checklist({
   );
 }
 
+const score = (value: number | null | undefined) => (value == null ? "?" : value.toFixed(2));
+
+function Bar({
+  label,
+  value,
+  min,
+  met,
+}: {
+  label: string;
+  value: number | null;
+  min: number;
+  met: boolean;
+}) {
+  return (
+    <div className={met ? "wb-bar wb-bar-met" : "wb-bar"}>
+      <dt>{label}</dt>
+      <dd>
+        <strong>{score(value)}</strong> of {min.toFixed(2)} required · {met ? "clears" : "short"}
+      </dd>
+    </div>
+  );
+}
+
+function nextEvidence(candidate: NearestCandidate) {
+  const steps: string[] = [];
+  const clinical = candidate.dimensions.find((item) => item.dimension === "Clinical workflow");
+  if (!candidate.meets_clinical) {
+    steps.push(
+      clinical && clinical.coverage > 0
+        ? "The clinical workflow fields recorded on both sides do not match closely enough. A peer with the same modality, clinical user or output would clear this bar."
+        : "No clinical workflow field is witnessed on both sides. Witnessed modality, clinical user and output for both would let this bar be scored.",
+    );
+  }
+  if (candidate.missing_on_peer.length) {
+    steps.push(
+      `Witnessed values for this peer's ${candidate.missing_on_peer.map(fieldLabel).join(", ")} at its anchor.`,
+    );
+  }
+  if (!candidate.meets_coverage || !candidate.meets_similarity) {
+    steps.push("More fields witnessed on both sides, so more dimensions can be compared.");
+  }
+  return steps;
+}
+
+function WhyNoComps({ data }: { data: PrecedentResponse }) {
+  const t = data.thresholds;
+  const candidates = data.nearest_candidates ?? [];
+  const subjectGaps = candidates[0]?.missing_on_subject ?? [];
+  return (
+    <section className="wb-why" aria-labelledby="why-no-comps">
+      <h3 id="why-no-comps">Why no comps yet</h3>
+      <p>
+        A comp needs {t.min_peers} peers that each clear all three bars: clinical workflow
+        similarity of at least {t.min_clinical_similarity.toFixed(2)}, overall similarity of at
+        least {t.min_similarity.toFixed(2)} and weighted evidence coverage of at least{" "}
+        {t.min_coverage.toFixed(2)}. {data.peers.length} of {data.peer_count_evaluated} alignable
+        companies clear them at this anchor.
+      </p>
+      {candidates.length ? (
+        <>
+          <p className="wb-muted">
+            The nearest candidates are shown to explain the gap. They are not comps, and their
+            outcomes are not shown.
+          </p>
+          <div className="wb-candidates">
+            {candidates.map((candidate) => (
+              <article key={candidate.company_id} className="wb-candidate">
+                <h4>{candidate.display_name}</h4>
+                <dl className="wb-bars">
+                  <Bar
+                    label="Clinical workflow"
+                    value={candidate.clinical_similarity}
+                    min={t.min_clinical_similarity}
+                    met={candidate.meets_clinical}
+                  />
+                  <Bar
+                    label="Overall similarity"
+                    value={candidate.similarity}
+                    min={t.min_similarity}
+                    met={candidate.meets_similarity}
+                  />
+                  <Bar
+                    label="Evidence coverage"
+                    value={candidate.coverage}
+                    min={t.min_coverage}
+                    met={candidate.meets_coverage}
+                  />
+                </dl>
+                <details>
+                  <summary>Per-dimension breakdown</summary>
+                  <dl className="wb-dimensions">
+                    {candidate.dimensions.map((item) => (
+                      <div key={item.dimension}>
+                        <dt>{item.dimension}</dt>
+                        <dd>
+                          {score(item.similarity)} similarity · coverage {item.coverage.toFixed(2)}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </details>
+                <p>
+                  <strong>Missing on this peer</strong>{" "}
+                  {candidate.missing_on_peer.length
+                    ? candidate.missing_on_peer.map(fieldLabel).join(", ")
+                    : "Nothing the subject has."}
+                </p>
+                <p>
+                  <strong>What would clear the bar</strong>
+                </p>
+                <ul>
+                  {nextEvidence(candidate).map((step) => (
+                    <li key={step}>{step}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </>
+      ) : (
+        <p>No alignable company shares a witnessed comparison field with this subject yet.</p>
+      )}
+      {subjectGaps.length > 0 && (
+        <p>
+          <strong>Subject evidence to add</strong> {subjectGaps.map(fieldLabel).join(", ")}. Each
+          witnessed value adds a field that peers can be compared on. The thresholds do not change.
+        </p>
+      )}
+    </section>
+  );
+}
+
 function Comps({
   data,
   onClaim,
@@ -121,6 +259,7 @@ function Comps({
         </p>
       )}
       {data.abstention && <p className="wb-notice">{data.abstention}</p>}
+      {data.comps.length === 0 && <WhyNoComps data={data} />}
       {data.comps.length > 0 && (
         <div className="wb-comp-grid">
           {data.comps.map((comp) => {
@@ -368,6 +507,10 @@ export function Overview({
       </div>
       <section className="wb-card">
         <h2>Outcome rates locked</h2>
+        <p className="wb-muted">
+          Present-day gate{gates ? ` · audit ${gates.as_of}` : ""}. It does not change with the
+          As-of date.
+        </p>
         {gates ? <GateProgress gates={gates} /> : <p>{gateError || "Loading the cohort audit…"}</p>}
         <button onClick={onOutlook}>View Outlook</button>
       </section>

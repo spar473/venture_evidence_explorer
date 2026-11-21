@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("workbench opens with the five university projects and keeps research navigation", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?page=precedents");
   const main = page.getByRole("navigation", { name: "Main navigation" });
   const watchlist = page.getByRole("navigation", { name: "University watchlist" });
   await expect(main.getByRole("button", { name: "Precedents" })).toHaveAttribute(
@@ -30,7 +30,7 @@ test("realigns dated events, opens a keyboard-accessible claim and shows gate co
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("/?page=precedents");
   await expect(
     page.getByRole("heading", { name: "Where comparable NZ ventures went" }),
   ).toBeVisible();
@@ -77,7 +77,7 @@ test("same-stage evidence uses witnesses and Outlook withholds estimates", async
       json: { ...(await response.json()), synthetic_probability: 0.9876 },
     });
   });
-  await page.goto("/");
+  await page.goto("/?page=precedents");
   const views = page.getByRole("navigation", { name: "Precedent views" });
   await views.getByRole("button", { name: "Evidence" }).click();
   const matrix = page.getByRole("table", { name: "Evidence matrix" });
@@ -93,7 +93,7 @@ test("same-stage evidence uses witnesses and Outlook withholds estimates", async
 });
 
 test("screening note downloads the selected subject and anchor", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/?page=precedents");
   const exportLink = page.getByRole("link", { name: "Export screening note" });
   await expect(exportLink).toBeVisible();
   const href = await exportLink.getAttribute("href");
@@ -114,7 +114,7 @@ test("screening note downloads the selected subject and anchor", async ({ page }
 test("Toku excludes zero-workflow comps and late witness badges identify delayed evidence", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?page=precedents");
   const mode = page.getByRole("combobox", { name: "Peer witness mode", exact: true });
   await expect(mode).toHaveValue("strict");
   await mode.selectOption("contemporaneous");
@@ -132,9 +132,48 @@ test("Toku excludes zero-workflow comps and late witness badges identify delayed
   await expect(page.getByText("All 0 similar peers")).toBeVisible();
 });
 
+test("demo opens on the Outcome library with present-day and small-denominator notes", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const main = page.getByRole("navigation", { name: "Main navigation" });
+  await expect(main.getByRole("button", { name: "Outcome library" })).toHaveAttribute(
+    "aria-current",
+    "page",
+  );
+  await expect(page.getByRole("heading", { name: "Outcome library" })).toBeVisible();
+  await expect(
+    page.getByText(/Present-day view: counts come from the latest cohort audit/),
+  ).toBeVisible();
+  await expect(page.getByText(/Present-day audit · 2026-11-21/)).toBeVisible();
+  await expect(
+    page.getByText(/Small denominator: 0 of 12 healthtech entries reached the outcome/),
+  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Stories worth knowing" })).toBeVisible();
+});
+
+test("abstaining comps explain the nearest candidates against unchanged thresholds", async ({
+  page,
+}) => {
+  await page.goto("/?page=precedents");
+  await page.getByRole("searchbox", { name: "Search ventures" }).fill("Toku");
+  await page.getByRole("button", { name: "Toku Eyes", exact: true }).click();
+  const why = page.getByRole("region", { name: "Why no comps yet" });
+  await expect(why).toContainText("clinical workflow similarity of at least 0.25");
+  await expect(why).toContainText("overall similarity of at least 0.35");
+  await expect(why).toContainText("weighted evidence coverage of at least 0.15");
+  await expect(why).toContainText("0 of 55 alignable companies clear them");
+  const heartlab = why.locator(".wb-candidate").filter({ hasText: "HeartLab" });
+  await expect(heartlab).toContainText("0.00 of 0.25 required · short");
+  await expect(heartlab).toContainText("0.50 of 0.35 required · clears");
+  await expect(heartlab).toContainText("Missing on this peer");
+  await expect(why).toContainText("their outcomes are not shown");
+  await expect(page.locator(".wb-comp")).toHaveCount(0);
+});
+
 test("captures workbench screenshots for the README and PR", async ({ page }, info) => {
   await page.setViewportSize({ width: 1440, height: 960 });
-  await page.goto("/");
+  await page.goto("/?page=precedents");
   await expect(
     page.getByRole("heading", { name: "Where comparable NZ ventures went" }),
   ).toBeVisible();
@@ -149,4 +188,10 @@ test("captures workbench screenshots for the README and PR", async ({ page }, in
     page.getByRole("heading", { name: "36-month status · Series A or later" }),
   ).toBeVisible();
   await page.screenshot({ path: info.outputPath("workbench-outcome-library.png"), fullPage: true });
+  await page.getByRole("button", { name: "Precedents", exact: true }).click();
+  await page.getByRole("searchbox", { name: "Search ventures" }).fill("Toku");
+  await page.getByRole("button", { name: "Toku Eyes", exact: true }).click();
+  const why = page.getByRole("region", { name: "Why no comps yet" });
+  await expect(why).toBeVisible();
+  await why.screenshot({ path: info.outputPath("workbench-why-no-comps.png") });
 });

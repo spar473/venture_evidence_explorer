@@ -552,3 +552,42 @@
   font-weight: 650;
   text-decoration: none;
 }
+
+.wb-why {
+  margin-top: 12px;
+}
+.wb-why h3 {
+  margin: 0 0 6px;
+}
+.wb-candidates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.wb-candidate {
+  border: 1px dashed var(--wb-border);
+  border-radius: 10px;
+  padding: 12px;
+}
+.wb-candidate h4 {
+  margin: 0 0 8px;
+}
+.wb-bars {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 8px;
+}
+.wb-bar {
+  border-left: 3px solid var(--wb-muted);
+  padding-left: 8px;
+}
+.wb-bar-met {
+  border-left-color: var(--wb-primary);
+}
+.wb-bar dt {
+  font-weight: 650;
+}
+.wb-bar dd {
+  margin: 0;
+  color: var(--wb-muted);
+}

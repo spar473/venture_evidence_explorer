@@ -48,6 +48,24 @@ A missing feature is **missing**, never "No".
 - **Overall similarity:** s = Σ_d α_d s⁽ᵈ⁾ / Σ_d α_d, summed over dimensions with coverage. The α weights are fixed in advance and documented, and are tuned later on training vintages only.
 - The UI shows the per-dimension breakdown, because a venture can be a strong peer on procurement and a weak one on clinical validation.
 
+### 3.1 Dimension weights (α), as implemented in `witnessed-gower-b0:3`
+
+These are the fixed weights in `backend/precedent_similarity.py` (`DIMENSIONS`). They were set before any outcome was looked at. They have **not** been tuned, because no training vintage has complete follow-up yet. The weights sum to 1.00.
+
+| Dimension | α | Fields | Comparison per field |
+|---|---|---|---|
+| Clinical workflow | 0.25 | modality, clinical user, output type, description | Categorical exact match (case-insensitive); description uses IDF-weighted token overlap |
+| Buyer and sales path | 0.20 | buyer, procurement path, business model | Categorical exact match |
+| Regulatory path | 0.15 | regulatory class, jurisdiction, regulatory decision | Regulatory class is numeric (range 2), so 1 − \|a − b\| / 2; the others are exact match |
+| Stage evidence | 0.25 | stage, prototype, provider study, submission, paid pilot, full-time team | Exact match. Milestones enter only as an explicit Yes or No, never as an inferred "No" |
+| Funding context | 0.15 | months since founding, round size band, lead investor type | Months since founding is numeric (range 120), so 1 − \|a − b\| / 120; the others are exact match |
+
+- **Overall similarity** renormalises over the dimensions that have at least one comparable field: s = Σ α_d s⁽ᵈ⁾ / Σ α_d. A peer that shares only one dimension is therefore scored on that dimension alone. This is why the coverage minimum exists.
+- **Weighted coverage** is Σ α_d × (comparable fields in d ÷ fields in d), taken over all five dimensions. It does not renormalise. Its minimum is 0.15.
+- **IDF corpus.** Description IDF is computed over the subject plus the eligible, alignable peers in the same request (`corpus_idf`). It is not computed over the whole database. A different peer universe can therefore change text scores slightly.
+- **Regulatory class as numeric.** Classes are treated as ordered (0–2), so class 1 against class 2 scores 0.5 rather than 0. This is a deliberate choice. Changing it changes the version string.
+- **Thresholds.** The thresholds are clinical workflow ≥ 0.25, overall ≥ 0.35, weighted coverage ≥ 0.15, k = 12 and at least 3 peers for named roles. They are returned with every precedent response (`thresholds`). When the tool abstains, the response also returns up to three `nearest_candidates`. These are peers that share at least one witnessed field but fail a bar, with the per-dimension breakdown and the fields missing on each side. Nearest candidates are never comps, carry no outcome, and do not change the thresholds.
+
 ## 4. Peer set
 
 - Top k by similarity (default k = 12), with a minimum similarity and a minimum coverage.

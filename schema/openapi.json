@@ -690,6 +690,40 @@
         "title": "ComparisonRun",
         "type": "object"
       },
+      "ComparisonThresholds": {
+        "additionalProperties": false,
+        "properties": {
+          "min_clinical_similarity": {
+            "title": "Min Clinical Similarity",
+            "type": "number"
+          },
+          "min_coverage": {
+            "title": "Min Coverage",
+            "type": "number"
+          },
+          "min_peers": {
+            "title": "Min Peers",
+            "type": "integer"
+          },
+          "min_similarity": {
+            "title": "Min Similarity",
+            "type": "number"
+          },
+          "top_k": {
+            "title": "Top K",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "min_clinical_similarity",
+          "min_similarity",
+          "min_coverage",
+          "min_peers",
+          "top_k"
+        ],
+        "title": "ComparisonThresholds",
+        "type": "object"
+      },
       "Connection": {
         "additionalProperties": false,
         "properties": {
@@ -2127,6 +2161,87 @@
         "title": "MilestoneValue",
         "type": "object"
       },
+      "NearestCandidate": {
+        "additionalProperties": false,
+        "description": "A scored peer that did not clear the comparison bar. It is never a comp and carries no outcome.",
+        "properties": {
+          "clinical_similarity": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Clinical Similarity"
+          },
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/DimensionScore"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "meets_clinical": {
+            "title": "Meets Clinical",
+            "type": "boolean"
+          },
+          "meets_coverage": {
+            "title": "Meets Coverage",
+            "type": "boolean"
+          },
+          "meets_similarity": {
+            "title": "Meets Similarity",
+            "type": "boolean"
+          },
+          "missing_on_peer": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Peer",
+            "type": "array"
+          },
+          "missing_on_subject": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Subject",
+            "type": "array"
+          },
+          "similarity": {
+            "title": "Similarity",
+            "type": "number"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "similarity",
+          "coverage",
+          "clinical_similarity",
+          "meets_clinical",
+          "meets_similarity",
+          "meets_coverage",
+          "dimensions",
+          "missing_on_peer",
+          "missing_on_subject"
+        ],
+        "title": "NearestCandidate",
+        "type": "object"
+      },
       "Observation": {
         "additionalProperties": false,
         "properties": {
@@ -3371,6 +3486,13 @@
             "title": "Late Witness Peers",
             "type": "array"
           },
+          "nearest_candidates": {
+            "items": {
+              "$ref": "#/components/schemas/NearestCandidate"
+            },
+            "title": "Nearest Candidates",
+            "type": "array"
+          },
           "no_verified_closure": {
             "title": "No Verified Closure",
             "type": "boolean"
@@ -3407,6 +3529,9 @@
           "subject": {
             "$ref": "#/components/schemas/WorkbenchRow"
           },
+          "thresholds": {
+            "$ref": "#/components/schemas/ComparisonThresholds"
+          },
           "witness_mode": {
             "default": "strict",
             "enum": [
@@ -3429,7 +3554,8 @@
           "not_alignable",
           "no_verified_closure",
           "abstention",
-          "questions"
+          "questions",
+          "thresholds"
         ],
         "title": "PrecedentResponse",
         "type": "object"

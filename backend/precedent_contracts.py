@@ -99,6 +99,30 @@ class SelectedComp(StrictModel):
     reason: str
 
 
+class NearestCandidate(StrictModel):
+    """A scored peer that did not clear the comparison bar. It is never a comp and carries no outcome."""
+
+    company_id: str
+    display_name: str
+    similarity: float
+    coverage: float
+    clinical_similarity: float | None
+    meets_clinical: bool
+    meets_similarity: bool
+    meets_coverage: bool
+    dimensions: list[DimensionScore]
+    missing_on_peer: list[str]
+    missing_on_subject: list[str]
+
+
+class ComparisonThresholds(StrictModel):
+    min_clinical_similarity: float
+    min_similarity: float
+    min_coverage: float
+    min_peers: int
+    top_k: int
+
+
 class UnalignedPeer(StrictModel):
     company_id: str
     display_name: str
@@ -120,6 +144,8 @@ class PrecedentResponse(StrictModel):
     no_verified_closure: bool
     abstention: str | None
     questions: list[str]
+    thresholds: ComparisonThresholds
+    nearest_candidates: list[NearestCandidate] = Field(default_factory=list)
 
 
 class ChecklistResponse(StrictModel):

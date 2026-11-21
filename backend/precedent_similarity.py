@@ -3,7 +3,7 @@
 import math
 from types import MappingProxyType
 
-from .precedent_contracts import DimensionScore, RankedPeer, SelectedComp
+from .precedent_contracts import ComparisonThresholds, DimensionScore, NearestCandidate, RankedPeer, SelectedComp
 from .retrieval import tokens
 
 VERSION = 'witnessed-gower-b0:3'
@@ -87,21 +87,66 @@ def score(left, right, idf):
     return weighted_sum / available_weight if available_weight else 0.0, weighted_coverage, dimensions
 
 
-def rank_peers(subject, eligible_rows):
+THRESHOLDS = ComparisonThresholds(
+    min_clinical_similarity=MIN_CLINICAL_SIMILARITY,
+    min_similarity=MIN_SIMILARITY,
+    min_coverage=MIN_COVERAGE,
+    min_peers=MIN_PEERS,
+    top_k=TOP_K,
+)
+NEAREST_LIMIT = 3
+
+
+def scored_peers(subject, eligible_rows):
     left = features(subject)
     peer_features = [(row, features(row)) for row in eligible_rows]
     idf = corpus_idf([left, *(snapshot for _, snapshot in peer_features)])
-    peers = []
     for row, values in peer_features:
         similarity, coverage, dimensions = score(left, values, idf)
-        clinical = next(item for item in dimensions if item.dimension == CLINICAL_WORKFLOW)
-        if (
-            (clinical.similarity or 0.0) >= MIN_CLINICAL_SIMILARITY
-            and similarity >= MIN_SIMILARITY
-            and coverage >= MIN_COVERAGE
-        ):
-            peers.append(RankedPeer(row=row, similarity=similarity, coverage=coverage, dimensions=dimensions))
+        clinical = next(item for item in dimensions if item.dimension == CLINICAL_WORKFLOW).similarity
+        yield row, values, left, similarity, coverage, clinical, dimensions
+
+
+def qualifies(similarity, coverage, clinical):
+    return (clinical or 0.0) >= MIN_CLINICAL_SIMILARITY and similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE
+
+
+def rank_peers(subject, eligible_rows):
+    peers = [
+        RankedPeer(row=row, similarity=similarity, coverage=coverage, dimensions=dimensions)
+        for row, _, _, similarity, coverage, clinical, dimensions in scored_peers(subject, eligible_rows)
+        if qualifies(similarity, coverage, clinical)
+    ]
     return sorted(peers, key=lambda peer: (-peer.similarity, peer.row.company_id))[:TOP_K]
+
+
+def nearest_candidates(subject, eligible_rows, limit=NEAREST_LIMIT):
+    """Explain an abstention: the closest scored peers that share at least one comparable field but fail the bar.
+
+    Uses the same strict snapshots, scores and thresholds as rank_peers. Outcomes are deliberately not included.
+    """
+    fields = [field for _, names in DIMENSIONS.values() for field in names]
+    candidates = []
+    for row, values, left, similarity, coverage, clinical, dimensions in scored_peers(subject, eligible_rows):
+        if coverage <= 0 or qualifies(similarity, coverage, clinical):
+            continue
+        candidates.append(
+            NearestCandidate(
+                company_id=row.company_id,
+                display_name=row.display_name,
+                similarity=similarity,
+                coverage=coverage,
+                clinical_similarity=clinical,
+                meets_clinical=(clinical or 0.0) >= MIN_CLINICAL_SIMILARITY,
+                meets_similarity=similarity >= MIN_SIMILARITY,
+                meets_coverage=coverage >= MIN_COVERAGE,
+                dimensions=dimensions,
+                missing_on_peer=[field for field in fields if field in left and field not in values],
+                missing_on_subject=[field for field in fields if field not in left],
+            )
+        )
+    candidates.sort(key=lambda item: (-item.coverage * item.similarity, -item.coverage, item.company_id))
+    return candidates[:limit]
 
 
 def select_comps(peers):
