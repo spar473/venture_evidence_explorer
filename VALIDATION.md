@@ -33,7 +33,7 @@ Backend line coverage is about 95% overall. The modules that carry the compariso
 
 - **Data has not been re-verified end to end.**
   - The 2026-11-21 spot check found no contradiction in 17 entry claims.
-  - The seven PwC Young Company Finance rows still need a hand check, and three cited URLs are dead (see [STATUS.md](STATUS.md)).
+  - The seven PwC Young Company Finance rows were hand-checked against the PDFs on 2026-11-21, and all match. One cited URL (HiNZ) is still dead (see [STATUS.md](STATUS.md)).
   - Tests check rules and provenance structure, not the truth of what the publishers report.
 - **Browser coverage** is Chromium on Ubuntu 24.04 only. That pin is deliberate until Playwright is upgraded.
 - **Observed intermittent failure.** On 2026-11-21, one run of `healthtech.spec.ts › directory counts distinct ventures…` failed with a `socket hang up` on a CSV download through `page.request`. The rerun passed. That code path was unchanged. The likely cause is a reused keep-alive connection closed by the server; watch for it before changing the server config. Retries are deliberately not enabled.
