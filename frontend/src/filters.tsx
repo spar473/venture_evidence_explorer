@@ -1,8 +1,14 @@
 import type { Facets } from "./types";
 import { label } from "./labels";
 export type Filters = { programme: string; year: string; connection: string };
-export function FilterControls({ filters, setFilters, facets }: {
-  filters: Filters; setFilters: (filters: Filters) => void; facets: Facets | null;
+export function FilterControls({
+  filters,
+  setFilters,
+  facets,
+}: {
+  filters: Filters;
+  setFilters: (filters: Filters) => void;
+  facets: Facets | null;
 }) {
   const { programme, year, connection } = filters;
   return (

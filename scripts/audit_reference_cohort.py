@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Apply the public NZ entry rule and emit a reproducible coverage audit."""
+
 import argparse
 import json
 from pathlib import Path
@@ -16,7 +17,9 @@ def main():
     parser.add_argument('--evidence', type=Path, default=ENTRIES)
     parser.add_argument('--follow-up', type=Path, default=FOLLOW_UP)
     output = parser.add_mutually_exclusive_group()
-    output.add_argument('--include-decisions', action='store_true', help='Include every decision and its source reports.')
+    output.add_argument(
+        '--include-decisions', action='store_true', help='Include every decision and its source reports.'
+    )
     output.add_argument('--company-id', help='Show one decision and the sources cited by its financing reports.')
     args = parser.parse_args()
     try:
@@ -27,18 +30,27 @@ def main():
         decision = next((row for row in audit['decisions'] if row['company_id'] == args.company_id), None)
         if decision is None:
             parser.error('Unknown company ID')
-        cited = {source_id for report in decision['source_reports']
-                 for source_id in [report['source_id'], *report['corroborating_source_ids']]}
+        cited = {
+            source_id
+            for report in decision['source_reports']
+            for source_id in [report['source_id'], *report['corroborating_source_ids']]
+        }
         follow = audit['follow_up']['decisions'].get(args.company_id)
         follow_sources = set(follow['review']['source_ids']) if follow and follow['review'] else set()
         if follow:
             follow_sources.update(event['source_id'] for event in follow['events'])
         sources = {**audit['sources'], **audit['follow_up']['sources']}
         source_ids = cited | follow_sources
-        audit = {'decision':decision, 'follow_up':follow,
-                 'sources':{key:sources[key] for key in sorted(source_ids)},
-                 'witnesses':{key:witness for key, witness in audit['follow_up']['witnesses'].items()
-                              if witness['source_id'] in source_ids}}
+        audit = {
+            'decision': decision,
+            'follow_up': follow,
+            'sources': {key: sources[key] for key in sorted(source_ids)},
+            'witnesses': {
+                key: witness
+                for key, witness in audit['follow_up']['witnesses'].items()
+                if witness['source_id'] in source_ids
+            },
+        }
     elif not args.include_decisions:
         del audit['decisions']
         del audit['follow_up']['decisions']

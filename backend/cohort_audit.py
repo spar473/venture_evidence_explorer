@@ -1,4 +1,5 @@
 """Apply the frozen NZ entry rule to public evidence, independently of outcomes."""
+
 from collections import Counter, defaultdict
 import hashlib
 from pathlib import Path
@@ -105,7 +106,7 @@ class PublicEntryEvidence(StrictModel):
         for record in self.registry_statuses:
             source = self.sources.get(record.source_id)
             url = urlsplit(source.url) if source else urlsplit('')
-            if url.hostname != 'app.companiesoffice.govt.nz' or not url.path.endswith('/'+record.company_number):
+            if url.hostname != 'app.companiesoffice.govt.nz' or not url.path.endswith('/' + record.company_number):
                 raise ValueError('Registry status requires its official company-number record')
             if day(record.effective_on) > source.retrieved_on:
                 raise ValueError('Registry status takes effect after retrieval')
@@ -116,9 +117,14 @@ class PublicEntryEvidence(StrictModel):
 
 
 def seed_label(label):
-    return bool(label and re.fullmatch(
-        r'(?:pre[- ]?)?seed(?:\s+(?:equity|funding|financing|investment|capital|round|raise|money))*', label.strip(), re.I
-    ))
+    return bool(
+        label
+        and re.fullmatch(
+            r'(?:pre[- ]?)?seed(?:\s+(?:equity|funding|financing|investment|capital|round|raise|money))*',
+            label.strip(),
+            re.I,
+        )
+    )
 
 
 def gaps(report):
@@ -144,14 +150,16 @@ def decide(reports, identity_pending):
         return 'unresolved', None, sorted({gap for r in reports for gap in gaps(r)}) or ['dated_entry_evidence']
     # Multiple reports of a round may overlap. Avoid selecting a precise day when
     # the reports support different labels or the earlier lead is still open.
-    (_, upper), chosen = min(dated, key=lambda item:(item[0][1], item[0][0], item[1].source_id))
+    (_, upper), chosen = min(dated, key=lambda item: (item[0][1], item[0][0], item[1].source_id))
     lower, _ = chosen.date.bounds()
     for candidate in reports:
         if candidate is chosen or not seed_label(candidate.label):
             continue
         start, end = candidate.date.bounds()
-        if start is None or end < lower or (
-            start <= upper and candidate.label.lower().startswith('pre') != chosen.label.lower().startswith('pre')
+        if (
+            start is None
+            or end < lower
+            or (start <= upper and candidate.label.lower().startswith('pre') != chosen.label.lower().startswith('pre'))
         ):
             return 'unresolved', None, ['earlier_or_conflicting_round']
     if upper < ENTRY_START or lower > ENTRY_END:
@@ -167,11 +175,14 @@ def run_audit(discovery_path=PACK, evidence_path=ENTRIES, follow_up_path=FOLLOW_
     evidence = PublicEntryEvidence.model_validate(decode_packet(evidence_raw))
     discovery = decode_packet(discovery_raw)
     validate_packet(discovery, evidence.captured_on)
-    discovery_rows = {row['discovery_id']:row for row in discovery['candidates']}
-    cases = {company_id:row['display_name'] for company_id,row in discovery_rows.items()}
-    open_identity = {company_id for case in discovery['unresolved_cases']
-                     if case['status'] == 'open' and case['issue_type'] == 'possible_identity_link'
-                     for company_id in case.get('subjects', [])}
+    discovery_rows = {row['discovery_id']: row for row in discovery['candidates']}
+    cases = {company_id: row['display_name'] for company_id, row in discovery_rows.items()}
+    open_identity = {
+        company_id
+        for case in discovery['unresolved_cases']
+        if case['status'] == 'open' and case['issue_type'] == 'possible_identity_link'
+        for company_id in case.get('subjects', [])
+    }
     reports = defaultdict(list)
     for report in evidence.reports:
         if report.company_id.startswith('discovery_') and report.company_id not in cases:
@@ -184,51 +195,76 @@ def run_audit(discovery_path=PACK, evidence_path=ENTRIES, follow_up_path=FOLLOW_
         claims = reports[company_id]
         staged = discovery_rows.get(company_id)
         status, entry, reasons = decide(claims, company_id in open_identity or normalized[name_key(company_name)] > 1)
-        results.append(dict(company_id=company_id, name=company_name, status=status,
-                            evaluated_on=evidence.captured_on, gaps=reasons,
-                            discovery_source_ids=staged['source_ids'] if staged else [],
-                            entry=entry.model_dump() if entry else None,
-                            source_reports=[claim.model_dump() for claim in claims]))
+        results.append(
+            dict(
+                company_id=company_id,
+                name=company_name,
+                status=status,
+                evaluated_on=evidence.captured_on,
+                gaps=reasons,
+                discovery_source_ids=staged['source_ids'] if staged else [],
+                entry=entry.model_dump() if entry else None,
+                source_reports=[claim.model_dump() for claim in claims],
+            )
+        )
     included = [row['entry'] for row in results if row['status'] == 'included']
     counts = Counter(row['status'] for row in results)
     reason_counts = Counter(reason for row in results if row['status'] == 'unresolved' for reason in row['gaps'])
     unresolved_ids = {row['company_id'] for row in results if row['status'] == 'unresolved'}
-    named_round_one = {row.company_id for row in evidence.reports if row.company_id in unresolved_ids
-                       and row.first_basis == 'publisher_round_one' and row.institutional_investor and seed_label(row.label)}
+    named_round_one = {
+        row.company_id
+        for row in evidence.reports
+        if row.company_id in unresolved_ids
+        and row.first_basis == 'publisher_round_one'
+        and row.institutional_investor
+        and seed_label(row.label)
+    }
     evidence_by_source = Counter(report.source_id for report in evidence.reports)
     if any(record.company_id not in cases for record in evidence.registry_statuses):
         raise ValueError('Registry status references a company absent from the entry audit')
     included_ids = {entry['company_id'] for entry in included}
-    documented_closed = {record.company_id for record in evidence.registry_statuses
-                         if record.status in ('liquidation', 'removed')} & included_ids
+    documented_closed = {
+        record.company_id for record in evidence.registry_statuses if record.status in ('liquidation', 'removed')
+    } & included_ids
     follow_up = outcome_audit(included, evidence.registry_statuses, follow_up_path)
     if follow_up['as_of'] < evidence.captured_on:
         raise ValueError('Follow-up cutoff predates the source-covered entry audit')
     if evidence.sources.keys() & follow_up['sources'].keys():
         raise ValueError('Entry and follow-up source IDs must be distinct')
     return dict(
-        rule='nz-first-institutional-seed:1', evaluated_on=evidence.captured_on,
-        window={'start':ENTRY_START, 'end':ENTRY_END}, candidate_records=len(results),
+        rule='nz-first-institutional-seed:1',
+        evaluated_on=evidence.captured_on,
+        window={'start': ENTRY_START, 'end': ENTRY_END},
+        candidate_records=len(results),
         discovery_leads=len(discovery['candidates']),
         discovery_source_families=len(discovery['organisations']),
         discovery_listings=len(discovery['listings']),
-        discovery_listings_with_investment_date=sum(row['investment_date'] is not None for row in discovery['listings']),
-        discovery_family_scope={org['name']:org['coverage_status'] for org in discovery['organisations']},
-        counts={key:counts[key] for key in ('included','unresolved','outside_entry_window')},
+        discovery_listings_with_investment_date=sum(
+            row['investment_date'] is not None for row in discovery['listings']
+        ),
+        discovery_family_scope={org['name']: org['coverage_status'] for org in discovery['organisations']},
+        counts={key: counts[key] for key in ('included', 'unresolved', 'outside_entry_window')},
         unresolved_by_gap=dict(sorted(reason_counts.items())),
         unresolved_with_named_round_one=len(named_round_one),
-        included_by_vintage={str(year):sum(entry['date']['value'].startswith(str(year)) for entry in included)
-                             for year in range(2012, 2023)},
+        included_by_vintage={
+            str(year): sum(entry['date']['value'].startswith(str(year)) for entry in included)
+            for year in range(2012, 2023)
+        },
         included_by_sector=dict(sorted(Counter(entry['sector'] for entry in included).items())),
         inclusion_basis=dict(sorted(Counter(entry['first_basis'] for entry in included).items())),
         evidence_rows_by_source=dict(sorted(evidence_by_source.items())),
         reported_vintages=sorted(Counter(r.date.value[:4] for r in evidence.reports if r.date.value).items()),
-        input_sha256={'discovery':hashlib.sha256(discovery_raw).hexdigest(),
-                      'entry_evidence':hashlib.sha256(evidence_raw).hexdigest()},
+        input_sha256={
+            'discovery': hashlib.sha256(discovery_raw).hexdigest(),
+            'entry_evidence': hashlib.sha256(evidence_raw).hexdigest(),
+        },
         benchmark_deal_counts=[row.model_dump() for row in evidence.benchmarks],
-        follow_up={**follow_up, 'registry_confirmed_closures':len(documented_closed),
-                   'registry_statuses':[record.model_dump() for record in evidence.registry_statuses]},
+        follow_up={
+            **follow_up,
+            'registry_confirmed_closures': len(documented_closed),
+            'registry_statuses': [record.model_dump() for record in evidence.registry_statuses],
+        },
         outcome_gate='eligible_for_p3_review' if follow_up['gate_ready'] else 'withheld',
-        sources={key:source.model_dump() for key, source in evidence.sources.items()},
+        sources={key: source.model_dump() for key, source in evidence.sources.items()},
         decisions=results,
     )

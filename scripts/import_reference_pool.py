@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Dry-run or explicitly import the NZ reference pool fixture."""
+
 import argparse
 import json
 from pathlib import Path
@@ -18,10 +19,10 @@ def main():
     parser.add_argument('--apply', action='store_true')
     args = parser.parse_args()
     try:
-        result = import_pool(args.input,args.db,apply=args.apply)
-    except (ValueError,OSError,sqlite3.Error) as error:
+        result = import_pool(args.input, args.db, apply=args.apply)
+    except (ValueError, OSError, sqlite3.Error) as error:
         parser.error(str(error))
-    print(json.dumps(result,indent=2,ensure_ascii=False))
+    print(json.dumps(result, indent=2, ensure_ascii=False))
 
 
 if __name__ == '__main__':

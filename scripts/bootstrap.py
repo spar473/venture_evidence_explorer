@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Offline import CLI; strict contracts live in backend.ingestion. No model calls."""
+
 import argparse
 import csv
 import json
@@ -12,26 +13,31 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from backend.ingestion import TABLES, KEYS, require, validate, db_record, insert_immutable, load_seed
+from backend.ingestion import TABLES, load_seed
+
 
 def export_csv(conn, sql, destination):
     cursor = conn.execute(sql)
     rows = cursor.fetchall()
     destination.parent.mkdir(parents=True, exist_ok=True)
-    fd, pending = tempfile.mkstemp(prefix="."+destination.name, dir=destination.parent)
+    fd, pending = tempfile.mkstemp(prefix="." + destination.name, dir=destination.parent)
     try:
         with os.fdopen(fd, "w", encoding="utf-8", newline="") as stream:
             writer = csv.writer(stream)
             writer.writerow([item[0] for item in cursor.description])
             # Formula-leading strings are prefixed for safe spreadsheet opening.
-            writer.writerows([
-                "'" + val if isinstance(val, str) and val.startswith(("=", "+", "-", "@", "\t", "\r")) else val
-                for val in row
-            ] for row in rows)
+            writer.writerows(
+                [
+                    "'" + val if isinstance(val, str) and val.startswith(("=", "+", "-", "@", "\t", "\r")) else val
+                    for val in row
+                ]
+                for row in rows
+            )
         os.replace(pending, destination)
     finally:
         if os.path.exists(pending):
             os.unlink(pending)
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -46,8 +52,8 @@ def main():
         for sql_file in sorted((ROOT / "sql").glob("*.sql")):
             export_csv(conn, sql_file.read_text(), args.output_dir / "analyses" / (sql_file.stem + ".csv"))
         counts = {t: conn.execute("SELECT COUNT(*) FROM " + t).fetchone()[0] for t in TABLES}
-    print(json.dumps({"database":str(args.db), "rows":counts, "exports":str(args.output_dir)}, indent=2))
+    print(json.dumps({"database": str(args.db), "rows": counts, "exports": str(args.output_dir)}, indent=2))
+
 
 if __name__ == "__main__":
     main()
-

@@ -1,10 +1,19 @@
 """Venture Frame JSON with unweighted evidence-based screening measurements."""
+
 from hashlib import sha256
 from typing import Literal
 
 from .healthtech_scenarios import venture_frame_measurement_draft
 from .ingestion import StrictModel
-from .precedent_contracts import AnchorKind, CompOutcome, DimensionScore, MilestoneValue, PrecedentResponse, WitnessMode, WorkbenchAnchor
+from .precedent_contracts import (
+    AnchorKind,
+    CompOutcome,
+    DimensionScore,
+    MilestoneValue,
+    PrecedentResponse,
+    WitnessMode,
+    WorkbenchAnchor,
+)
 
 
 class ScreeningMetadata(StrictModel):
@@ -73,27 +82,57 @@ def screening_draft(data: PrecedentResponse):
 
     def alternative(role, row, peer=None, explanation=None):
         basis = 'subject_as_of' if role == 'subject' and row.kind == 'research_project' else 'anchor'
-        return ScreeningAlternative(id=f'screening-{role}', name=row.display_name,
-            metadata=ScreeningMetadata(role=role, company_id=row.company_id, anchor_kind=data.anchor_kind,
-                anchor_event=row.anchor, as_of=data.as_of, similarity_version=data.similarity_version, snapshot_basis=basis,
+        return ScreeningAlternative(
+            id=f'screening-{role}',
+            name=row.display_name,
+            metadata=ScreeningMetadata(
+                role=role,
+                company_id=row.company_id,
+                anchor_kind=data.anchor_kind,
+                anchor_event=row.anchor,
+                as_of=data.as_of,
+                similarity_version=data.similarity_version,
+                snapshot_basis=basis,
                 witness_mode=data.witness_mode,
-                similarity=peer.similarity if peer else None, coverage=peer.coverage if peer else None,
-                dimensions=peer.dimensions if peer else [], milestones=row.milestones,
+                similarity=peer.similarity if peer else None,
+                coverage=peer.coverage if peer else None,
+                dimensions=peer.dimensions if peer else [],
+                milestones=row.milestones,
                 outcome_label=row.comp_outcome.label if row.comp_outcome else None,
-                comp_outcome=row.comp_outcome, explanation=explanation))
+                comp_outcome=row.comp_outcome,
+                explanation=explanation,
+            ),
+        )
 
     alternatives = [alternative('subject', data.subject, explanation=data.abstention)]
     alternatives.extend(alternative(comp.role, comp.peer.row, comp.peer, comp.reason) for comp in data.comps)
-    criteria_names = dict.fromkeys(score.dimension for item in alternatives for score in item.metadata.dimensions
-                                   if score.similarity is not None)
-    criteria = [ScreeningCriterion(id=f'similarity-{i+1}', name=f'{name} similarity', order=i,
-                scale=ScreeningScale(type='interval', unit='similarity', lower=0., upper=1.))
-                for i, name in enumerate(criteria_names)]
+    criteria_names = dict.fromkeys(
+        score.dimension for item in alternatives for score in item.metadata.dimensions if score.similarity is not None
+    )
+    criteria = [
+        ScreeningCriterion(
+            id=f'similarity-{i + 1}',
+            name=f'{name} similarity',
+            order=i,
+            scale=ScreeningScale(type='interval', unit='similarity', lower=0.0, upper=1.0),
+        )
+        for i, name in enumerate(criteria_names)
+    ]
     criterion_map = dict(zip(criteria_names, (criterion.id for criterion in criteria), strict=True))
-    measurements = [ScreeningMeasurement(alternative_id=item.id, criterion_id=criterion_map[score.dimension],
-                    value=score.similarity) for item in alternatives for score in item.metadata.dimensions
-                    if score.similarity is not None]
-    project = venture_frame_measurement_draft(project_id, f'{data.subject.display_name} screening note',
+    measurements = [
+        ScreeningMeasurement(
+            alternative_id=item.id, criterion_id=criterion_map[score.dimension], value=score.similarity
+        )
+        for item in alternatives
+        for score in item.metadata.dimensions
+        if score.similarity is not None
+    ]
+    project = venture_frame_measurement_draft(
+        project_id,
+        f'{data.subject.display_name} screening note',
         'Unweighted screening evidence and raw historical peer similarities for analyst review.',
-        alternatives, criteria, measurements)
+        alternatives,
+        criteria,
+        measurements,
+    )
     return ScreeningDraft.model_validate(project)

@@ -1,4 +1,5 @@
 """Internal kernel-weighted cumulative incidence. No workbench API publishes it."""
+
 from collections import defaultdict
 from dataclasses import dataclass
 from math import floor, fsum, isfinite
@@ -36,8 +37,8 @@ class OutlookEstimate:
 def weighted_cif(peers, weights, horizon):
     """Aalen–Johansen with tied events and censoring leaving a shared risk set."""
     at_risk = sum(weights)
-    survival = 1.
-    incidence = dict.fromkeys(CAUSES, 0.)
+    survival = 1.0
+    incidence = dict.fromkeys(CAUSES, 0.0)
     groups = defaultdict(lambda: defaultdict(float))
     for peer, weight in zip(peers, weights, strict=True):
         if peer.duration <= horizon and weight:
@@ -49,9 +50,9 @@ def weighted_cif(peers, weights, horizon):
         increments = {cause: group[cause] / at_risk for cause in CAUSES}
         for cause, increment in increments.items():
             incidence[cause] += survival * increment
-        survival *= max(0., 1 - sum(increments.values()))
+        survival *= max(0.0, 1 - sum(increments.values()))
         at_risk -= sum(group.values())
-    return {cause: min(1., value) for cause, value in incidence.items()}
+    return {cause: min(1.0, value) for cause, value in incidence.items()}
 
 
 def percentile(ordered, probability):
@@ -61,8 +62,9 @@ def percentile(ordered, probability):
     return ordered[lower] + (index - lower) * (ordered[upper] - ordered[lower])
 
 
-def estimate_outlook(peers, *, gate_ready, base_rate, horizon=36., gamma=2., prior_strength=4.,
-                     bootstrap_samples=500, seed=0):
+def estimate_outlook(
+    peers, *, gate_ready, base_rate, horizon=36.0, gamma=2.0, prior_strength=4.0, bootstrap_samples=500, seed=0
+):
     """Use supplied training parameters and a fixed horizon in the peer duration unit.
 
     Intervals are evaluated by calling separately with the lower and upper
@@ -70,11 +72,17 @@ def estimate_outlook(peers, *, gate_ready, base_rate, horizon=36., gamma=2., pri
     """
     if not gate_ready:
         return None
-    if (not all(isfinite(x) for x in (base_rate, horizon, gamma, prior_strength))
-        or not 0 <= base_rate <= 1 or horizon <= 0 or gamma <= 0 or prior_strength < 0
-        or not isinstance(bootstrap_samples, int) or bootstrap_samples < 2):
+    if (
+        not all(isfinite(x) for x in (base_rate, horizon, gamma, prior_strength))
+        or not 0 <= base_rate <= 1
+        or horizon <= 0
+        or gamma <= 0
+        or prior_strength < 0
+        or not isinstance(bootstrap_samples, int)
+        or bootstrap_samples < 2
+    ):
         raise ValueError('Invalid estimator configuration')
-    weighted = [(peer, weight) for peer in peers if (weight := peer.similarity ** gamma) > 0]
+    weighted = [(peer, weight) for peer in peers if (weight := peer.similarity**gamma) > 0]
     if not weighted:
         return None
     peers, weights = zip(*weighted)
@@ -96,6 +104,10 @@ def estimate_outlook(peers, *, gate_ready, base_rate, horizon=36., gamma=2., pri
         cif = weighted_cif(sample, sample_weights, horizon)
         replicates.append(shrunk(cif['outcome'], sum(sample_weights)))
     replicates.sort()
-    return OutlookEstimate(incidences=incidences, shrunk_outcome=shrunk(incidences['outcome'], weight_sum),
-        interval_90=(percentile(replicates, .05), percentile(replicates, .95)),
-        effective_sample_size=effective, horizon=horizon)
+    return OutlookEstimate(
+        incidences=incidences,
+        shrunk_outcome=shrunk(incidences['outcome'], weight_sum),
+        interval_90=(percentile(replicates, 0.05), percentile(replicates, 0.95)),
+        effective_sample_size=effective,
+        horizon=horizon,
+    )

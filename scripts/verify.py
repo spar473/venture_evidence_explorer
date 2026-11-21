@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """Verify integrity, repeat import and atomic conflict refusal on temporary data."""
+
 import copy
 import json
 import sqlite3
 import tempfile
 from pathlib import Path
-from bootstrap import ROOT, TABLES, load_seed
+from bootstrap import TABLES, load_seed
+
 
 def counts(db):
     with sqlite3.connect(db) as conn:
-        return {t:conn.execute("SELECT COUNT(*) FROM " + t).fetchone()[0] for t in (*TABLES, "imports")}
+        return {t: conn.execute("SELECT COUNT(*) FROM " + t).fetchone()[0] for t in (*TABLES, "imports")}
+
 
 def main():
     with tempfile.TemporaryDirectory() as temp:
@@ -22,7 +25,12 @@ def main():
         with sqlite3.connect(db) as conn:
             assert conn.execute("PRAGMA integrity_check").fetchone()[0] == "ok"
             assert not conn.execute("PRAGMA foreign_key_check").fetchall()
-            assert conn.execute("SELECT COUNT(*) FROM ventures WHERE current_funding_stage IS NOT NULL OR current_operating_status IS NOT NULL").fetchone()[0] == 0
+            assert (
+                conn.execute(
+                    "SELECT COUNT(*) FROM ventures WHERE current_funding_stage IS NOT NULL OR current_operating_status IS NOT NULL"
+                ).fetchone()[0]
+                == 0
+            )
             # Link tables must support multiple relationships without implying exclusive cohorts.
             assert conn.execute("SELECT COUNT(*) FROM connections").fetchone()[0] == 10
 
@@ -50,8 +58,10 @@ def main():
         else:
             raise AssertionError("Wrong-subject evidence was accepted")
         assert counts(db) == first
-    print("PASS: referential integrity, unknown handling, idempotent imports, atomic conflict refusal and evidence-subject checks")
+    print(
+        "PASS: referential integrity, unknown handling, idempotent imports, atomic conflict refusal and evidence-subject checks"
+    )
+
 
 if __name__ == "__main__":
     main()
-

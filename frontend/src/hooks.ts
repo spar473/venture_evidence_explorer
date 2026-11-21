@@ -10,23 +10,51 @@ export function useResource<T>(path: string | null, retry = 0, delay = 0) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (path === null) { setData(null); setError(""); setLoading(false); return; }
+    if (path === null) {
+      setData(null);
+      setError("");
+      setLoading(false);
+      return;
+    }
     let live = true;
     const controller = new AbortController();
-    setLoading(true); setError(""); setData(null);
+    setLoading(true);
+    setError("");
+    setData(null);
     const timer = setTimeout(() => {
       api<T>(path, { signal: controller.signal })
-        .then(value => { if (live) setData(value); })
-        .catch((e: Error) => { if (live && e.name !== "AbortError") setError(e.message); })
-        .finally(() => { if (live) setLoading(false); });
+        .then((value) => {
+          if (live) setData(value);
+        })
+        .catch((e: Error) => {
+          if (live && e.name !== "AbortError") setError(e.message);
+        })
+        .finally(() => {
+          if (live) setLoading(false);
+        });
     }, delay);
-    return () => { live = false; clearTimeout(timer); controller.abort(); };
+    return () => {
+      live = false;
+      clearTimeout(timer);
+      controller.abort();
+    };
   }, [path, retry, delay]);
   return { data, error, loading };
 }
 
-export function useVenturePage(filters: Partial<Filters> & { q?: string }, offset: number, limit: number, retry = 0) {
-  const params = new URLSearchParams({ q: filters.q || "", programme: filters.programme || "", connection_type: filters.connection || "", limit: String(limit), offset: String(offset) });
+export function useVenturePage(
+  filters: Partial<Filters> & { q?: string },
+  offset: number,
+  limit: number,
+  retry = 0,
+) {
+  const params = new URLSearchParams({
+    q: filters.q || "",
+    programme: filters.programme || "",
+    connection_type: filters.connection || "",
+    limit: String(limit),
+    offset: String(offset),
+  });
   if (filters.year) params.set("year", filters.year);
   return useResource<VenturePage>("/ventures?" + params.toString(), retry, 120);
 }
@@ -43,9 +71,13 @@ export type ComparisonSession = {
   comparisonKey: string | null;
 };
 
-export function useComparison(session: ComparisonSession, setSession: Dispatch<SetStateAction<ComparisonSession>>, filters: Filters) {
-  const {subject, description, mode} = session;
-  const {programme, year, connection} = filters;
+export function useComparison(
+  session: ComparisonSession,
+  setSession: Dispatch<SetStateAction<ComparisonSession>>,
+  filters: Filters,
+) {
+  const { subject, description, mode } = session;
+  const { programme, year, connection } = filters;
   const configKey = JSON.stringify([subject, description, mode, programme, year, connection]);
   const request = useRef(0);
   const pending = useRef<AbortController | null>(null);
@@ -53,13 +85,19 @@ export function useComparison(session: ComparisonSession, setSession: Dispatch<S
   const [compareError, setCompareError] = useState("");
   const comparison = session.comparisonKey === configKey ? session.comparison : null;
   function setComparison(value: Comparison | null) {
-    setSession(s => ({...s, comparison: value, comparisonKey: value ? configKey : null}));
+    setSession((s) => ({ ...s, comparison: value, comparisonKey: value ? configKey : null }));
   }
   useEffect(() => {
-    request.current++; pending.current?.abort();
-    if (session.comparisonKey !== configKey) setSession(s => ({...s, comparison: null, comparisonKey: null}));
-    setBusy(false); setCompareError("");
-    return () => { request.current++; pending.current?.abort(); };
+    request.current++;
+    pending.current?.abort();
+    if (session.comparisonKey !== configKey)
+      setSession((s) => ({ ...s, comparison: null, comparisonKey: null }));
+    setBusy(false);
+    setCompareError("");
+    return () => {
+      request.current++;
+      pending.current?.abort();
+    };
     // Session data is keyed to these inputs; completing a request must not reset it.
   }, [subject, description, mode, programme, year, connection]);
   async function runCompare(event: React.FormEvent) {
@@ -68,19 +106,30 @@ export function useComparison(session: ComparisonSession, setSession: Dispatch<S
     const controller = new AbortController();
     pending.current = controller;
     const current = ++request.current;
-    setBusy(true); setCompareError(""); setComparison(null);
+    setBusy(true);
+    setCompareError("");
+    setComparison(null);
     try {
       const value = await api<Comparison>("/compare", {
-        method: "POST", signal: controller.signal,
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({subject_id: subject || null, query: description, mode, programme, year: year ? Number(year) : null, connection_type: connection}),
+        method: "POST",
+        signal: controller.signal,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject_id: subject || null,
+          query: description,
+          mode,
+          programme,
+          year: year ? Number(year) : null,
+          connection_type: connection,
+        }),
       });
       if (current === request.current) setComparison(value);
     } catch (e) {
-      if (current === request.current && (e as Error).name !== "AbortError") setCompareError((e as Error).message);
+      if (current === request.current && (e as Error).name !== "AbortError")
+        setCompareError((e as Error).message);
     } finally {
       if (current === request.current) setBusy(false);
     }
   }
-  return {comparison, setComparison, busy, compareError, runCompare};
+  return { comparison, setComparison, busy, compareError, runCompare };
 }

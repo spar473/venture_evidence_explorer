@@ -1,4 +1,5 @@
 """Exported API contracts. Input assertions are separately typed in ingestion."""
+
 from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 

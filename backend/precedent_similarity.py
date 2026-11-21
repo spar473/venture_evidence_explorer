@@ -1,4 +1,5 @@
 """Versioned mixed-feature similarity over witnessed snapshots."""
+
 import math
 from types import MappingProxyType
 
@@ -7,18 +8,23 @@ from .retrieval import tokens
 
 VERSION = 'witnessed-gower-b0:3'
 TOP_K = 12
-MIN_SIMILARITY = .35
-MIN_COVERAGE = .15
+MIN_SIMILARITY = 0.35
+MIN_COVERAGE = 0.15
 MIN_PEERS = 3
 CLINICAL_WORKFLOW = 'Clinical workflow'
-MIN_CLINICAL_SIMILARITY = .25
-DIMENSIONS = MappingProxyType({
-    CLINICAL_WORKFLOW: (.25, ('modality', 'clinical_user', 'output_type', 'description')),
-    'Buyer and sales path': (.20, ('buyer', 'procurement_path', 'business_model')),
-    'Regulatory path': (.15, ('regulatory_class', 'jurisdiction', 'regulatory_decision')),
-    'Stage evidence': (.25, ('stage', 'prototype', 'provider_study', 'submission', 'paid_pilot', 'full_time_team')),
-    'Funding context': (.15, ('months_since_founding', 'round_size_band', 'lead_investor_type')),
-})
+MIN_CLINICAL_SIMILARITY = 0.25
+DIMENSIONS = MappingProxyType(
+    {
+        CLINICAL_WORKFLOW: (0.25, ('modality', 'clinical_user', 'output_type', 'description')),
+        'Buyer and sales path': (0.20, ('buyer', 'procurement_path', 'business_model')),
+        'Regulatory path': (0.15, ('regulatory_class', 'jurisdiction', 'regulatory_decision')),
+        'Stage evidence': (
+            0.25,
+            ('stage', 'prototype', 'provider_study', 'submission', 'paid_pilot', 'full_time_team'),
+        ),
+        'Funding context': (0.15, ('months_since_founding', 'round_size_band', 'lead_investor_type')),
+    }
+)
 NUMERIC_RANGES = MappingProxyType({'months_since_founding': 120, 'regulatory_class': 2})
 MILESTONES = {
     'prototype': 'What dated record establishes a working prototype?',
@@ -36,11 +42,11 @@ def features(row):
 
 
 def corpus_idf(snapshots):
-    documents = [tokens(str(snapshot.get('description', ''))) for snapshot in snapshots
-                 if snapshot.get('description')]
+    documents = [tokens(str(snapshot.get('description', ''))) for snapshot in snapshots if snapshot.get('description')]
     vocabulary = set().union(*documents)
-    return {term: 1 + math.log((len(documents) + 1) / (1 + sum(term in doc for doc in documents)))
-            for term in vocabulary}
+    return {
+        term: 1 + math.log((len(documents) + 1) / (1 + sum(term in doc for doc in documents))) for term in vocabulary
+    }
 
 
 def feature_similarity(key, left, right, idf):
@@ -49,18 +55,19 @@ def feature_similarity(key, left, right, idf):
         total = sum(idf[term] for term in sorted(a | b))
         return sum(idf[term] for term in sorted(a & b)) / total if total else None
     if key in NUMERIC_RANGES and isinstance(left, int) and isinstance(right, int):
-        return max(0., 1 - abs(left - right) / NUMERIC_RANGES[key])
+        return max(0.0, 1 - abs(left - right) / NUMERIC_RANGES[key])
     return float(str(left).strip().casefold() == str(right).strip().casefold())
 
 
 def score(left, right, idf):
     dimensions = []
-    weighted_sum = 0.
-    available_weight = 0.
-    weighted_coverage = 0.
+    weighted_sum = 0.0
+    available_weight = 0.0
+    weighted_coverage = 0.0
     for dimension, (weight, fields) in DIMENSIONS.items():
-        scores = {key: feature_similarity(key, left[key], right[key], idf)
-                  for key in fields if key in left and key in right}
+        scores = {
+            key: feature_similarity(key, left[key], right[key], idf) for key in fields if key in left and key in right
+        }
         scores = {key: value for key, value in scores.items() if value is not None}
         coverage = len(scores) / len(fields)
         similarity = sum(scores.values()) / len(scores) if scores else None
@@ -68,10 +75,16 @@ def score(left, right, idf):
         if similarity is not None:
             weighted_sum += weight * similarity
             available_weight += weight
-        dimensions.append(DimensionScore(dimension=dimension, similarity=similarity, coverage=coverage,
-            matched_fields=[key for key, value in scores.items() if value > 0],
-            different_fields=[key for key, value in scores.items() if value < 1]))
-    return weighted_sum / available_weight if available_weight else 0., weighted_coverage, dimensions
+        dimensions.append(
+            DimensionScore(
+                dimension=dimension,
+                similarity=similarity,
+                coverage=coverage,
+                matched_fields=[key for key, value in scores.items() if value > 0],
+                different_fields=[key for key, value in scores.items() if value < 1],
+            )
+        )
+    return weighted_sum / available_weight if available_weight else 0.0, weighted_coverage, dimensions
 
 
 def rank_peers(subject, eligible_rows):
@@ -82,8 +95,11 @@ def rank_peers(subject, eligible_rows):
     for row, values in peer_features:
         similarity, coverage, dimensions = score(left, values, idf)
         clinical = next(item for item in dimensions if item.dimension == CLINICAL_WORKFLOW)
-        if ((clinical.similarity or 0.) >= MIN_CLINICAL_SIMILARITY
-                and similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE):
+        if (
+            (clinical.similarity or 0.0) >= MIN_CLINICAL_SIMILARITY
+            and similarity >= MIN_SIMILARITY
+            and coverage >= MIN_COVERAGE
+        ):
             peers.append(RankedPeer(row=row, similarity=similarity, coverage=coverage, dimensions=dimensions))
     return sorted(peers, key=lambda peer: (-peer.similarity, peer.row.company_id))[:TOP_K]
 
@@ -93,13 +109,24 @@ def select_comps(peers):
     resolved = [peer for peer in peers if peer.row.comp_outcome is not None]
     no_closure = not any(peer.row.comp_outcome.rank == 0 for peer in resolved)
     if len(peers) < MIN_PEERS:
-        return [], no_closure, f'Fewer than {MIN_PEERS} peers meet the clinical workflow, overall similarity and evidence coverage requirements.'
+        return (
+            [],
+            no_closure,
+            f'Fewer than {MIN_PEERS} peers meet the clinical workflow, overall similarity and evidence coverage requirements.',
+        )
     if not resolved:
         return [], no_closure, 'Outcome evidence is unresolved for all qualifying peers.'
     ranks = sorted(peer.row.comp_outcome.rank for peer in resolved)
     if ranks[0] == ranks[-1]:
-        return [SelectedComp(role='representative', peer=resolved[0],
-            reason='closest resolved peers share the same outcome')], no_closure, None
+        return (
+            [
+                SelectedComp(
+                    role='representative', peer=resolved[0], reason='closest resolved peers share the same outcome'
+                )
+            ],
+            no_closure,
+            None,
+        )
 
     ceiling = max(resolved, key=lambda peer: peer.row.comp_outcome.rank)
     floor = min(resolved, key=lambda peer: peer.row.comp_outcome.rank)
@@ -108,9 +135,22 @@ def select_comps(peers):
     if remaining:
         median = ranks[(len(ranks) - 1) // 2]
         typical = min(remaining, key=lambda peer: abs(peer.row.comp_outcome.rank - median))
-        comps.append(SelectedComp(role='typical', peer=typical,
-            reason='Closest available outcome rank to the median among resolved peers.'))
-    comps.append(SelectedComp(role='floor', peer=floor, reason=(
-        'Lowest verified status among the closest peers.' if no_closure
-        else 'Closest peer with verified closure.')))
+        comps.append(
+            SelectedComp(
+                role='typical',
+                peer=typical,
+                reason='Closest available outcome rank to the median among resolved peers.',
+            )
+        )
+    comps.append(
+        SelectedComp(
+            role='floor',
+            peer=floor,
+            reason=(
+                'Lowest verified status among the closest peers.'
+                if no_closure
+                else 'Closest peer with verified closure.'
+            ),
+        )
+    )
     return comps, no_closure, None

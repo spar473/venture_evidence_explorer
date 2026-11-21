@@ -1,0 +1,16 @@
+# Ruff config. Formatting is mechanical; lint is limited to correctness rules.
+line-length = 120
+target-version = "py310"
+extend-exclude = ["handover", "frontend", "outputs", "evaluation", "research", "data", "stage_records", "docs"]
+
+[format]
+quote-style = "preserve"
+
+[lint]
+select = ["E4", "E7", "E9", "F"]
+# Lambdas bound to names are used as small local helpers; scripts and tests set sys.path before importing.
+ignore = ["E731"]
+
+[lint.per-file-ignores]
+"scripts/*" = ["E402"]
+"tests/*" = ["E402"]

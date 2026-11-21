@@ -1,4 +1,5 @@
 """Explicit, checksummed migrations shared by the importer and application."""
+
 import hashlib
 import sqlite3
 import re
@@ -38,7 +39,14 @@ def migrate(conn):
                     if char == ';' and sqlite3.complete_statement(statement):
                         # Migration files must not escape our transaction ownership.
                         meaningful = re.sub(r'--[^\n]*|/\*.*?\*/', '', statement, flags=re.S).strip()
-                        if meaningful.split(None, 1)[0].upper().rstrip(';') in {'BEGIN', 'COMMIT', 'END', 'ROLLBACK', 'SAVEPOINT', 'RELEASE'}:
+                        if meaningful.split(None, 1)[0].upper().rstrip(';') in {
+                            'BEGIN',
+                            'COMMIT',
+                            'END',
+                            'ROLLBACK',
+                            'SAVEPOINT',
+                            'RELEASE',
+                        }:
                             raise ValueError('Transaction control in migration: ' + path.name)
                         conn.execute(statement)
                         statement = ''
