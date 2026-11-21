@@ -1,3 +1,5 @@
+Superseded by [STATUS.md](../STATUS.md) on 21 Nov 2026.
+
 # Precedent & Outcome Workbench
 
 Base branch `main` · compare branch `implementation/precedent-workbench`
@@ -26,4 +28,4 @@ Both outcome gates remain closed. The source-covered cohort has 55 of the 150 re
 
 Current university projects have curated precedent timelines and abstain from ranked comps when comparable witnessed features are insufficient. The workbench uses B0-based text similarity, the earliest bound of an uncertain anchor for witness eligibility and a system font stack. Alternate-anchor snapshots publish only witnessed features. Alternate-anchor outcome ranks need positive dated results from the selected window.
 
-See the [decisions and verification log](STATUS.md#workbench-continuation--21-november-2026) and the [comparison method](../design/COMPS_METHOD.md).
+See the [decisions and verification log](../STATUS.md#workbench-continuation--21-november-2026) and the [comparison method](../../design/COMPS_METHOD.md).

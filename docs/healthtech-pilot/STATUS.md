@@ -229,7 +229,7 @@ The real MRI screening note and a synthetic note with all three comp roles both 
 
 The built Overview rendered in an offline replay of the real in-process demo API responses. The screenshot preview opened in Firefox, but the tab was no longer available when saving. A later file navigation in the in-app browser was blocked by its URL policy. Workbench PNGs are pending with the socket-dependent browser suite. The README retains the older Research mode image under the demo steps, with its view identified in the caption.
 
-The PR body is in [PR_DESCRIPTION.md](PR_DESCRIPTION.md).
+The PR body is in [PR_DESCRIPTION.md](archive/PR_DESCRIPTION.md) (archived after PR #1 merged).
 
 ## Witnessed snapshots · 21 November 2026
 
@@ -272,4 +272,16 @@ The real MRI and Toku screening notes survived load, save and reload through Ven
 
 | Change | Checks run in this environment | Deferred |
 | --- | --- | --- |
-| Comp method v2 | 189 pytest tests passed. Production build, smoke verification, migrations, API contract, in-process ranking and gates, and Venture Frame round trips passed. Playwright discovered 47 tests. | Playwright execution, running app inspection, browser screenshots, and push of `data/witnessed-snapshots` |
+| Comp method v2 | 187 pytest tests passed and 2 skipped. Production build, smoke verification, migrations, API contract, in-process ranking and gates, and Venture Frame round trips passed. Playwright discovered 47 tests. | Playwright execution, running app inspection, browser screenshots, and push of `data/witnessed-snapshots` |
+
+## Round review · 21 November 2026
+
+Full verification ran on `main` (`eb0335f`) and `data/witnessed-snapshots` (`e727490` plus the uncommitted review changes). Frozen outcome definitions, gates, cohort data and source records were not changed. The audit output matches the counts above: 55 entries; 2 reached, 1 closed first, 0 exits, 9 observed, 10 lost and 33 unknown for Series A or later; 2, 1, 0, 5, 6 and 41 for the next priced round; both gates withheld.
+
+| Check | `main` | `data/witnessed-snapshots` |
+| --- | --- | --- |
+| pytest | 182 passed, 2 skipped | 187 passed, 2 skipped |
+| Production build, smoke verification, migrations, API contract | Passed | Passed |
+| Playwright | 45 of 46 passed | 46 of 47 before the locator fix; 47 of 47 after |
+
+The Playwright bundled headless shell could not be installed in this environment, so the suite ran with `CHROME_PATH` set to the local Google Chrome. The one failure on both branches used `getByLabel("Outcome", {exact: true})`. A label that wraps its select includes the option text, so that exact match finds nothing. The test now selects the combobox named Outcome. The three workbench captures are in [screenshots/](screenshots/).

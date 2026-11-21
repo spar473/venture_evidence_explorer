@@ -45,7 +45,7 @@ test("outcome library reconciles filtered counts and retains post-window source 
   await expect(page.getByText(/Post-window closure · primary unknown/).first()).toBeVisible();
   await page.getByRole("button", {name: "Next companies"}).click();
   await expect(page.getByText("9–16 of 55")).toBeVisible();
-  await page.getByLabel("Outcome", {exact: true}).selectOption("secondary");
+  await page.getByRole("combobox", {name: "Outcome", exact: true}).selectOption("secondary");
   await expect(page.getByRole("heading", {name: /36-month status · Next priced equity round/})).toBeVisible();
   await page.getByLabel("Entry vintage").selectOption("2022");
   await expect(page.getByText("11 of 55")).toBeVisible();

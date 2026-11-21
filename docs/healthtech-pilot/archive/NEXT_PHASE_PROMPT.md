@@ -1,3 +1,5 @@
+Superseded by [NEXT_PHASE_PLAN.md](../NEXT_PHASE_PLAN.md) on 21 Nov 2026.
+
 # Copy-paste prompt for the coding agent
 
 Paste everything below the line into the coding agent, with the repository folder connected.

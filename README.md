@@ -6,7 +6,9 @@ Inspect dated evidence, known outcomes and unanswered diligence questions.<br>
 Export an unweighted screening note for Venture Frame. Outcome rates require cohort coverage and held-out validation.<br>
 Start with **Precedents → Automated Breast MRI Reporting → Overview**. [Comparison method](docs/design/COMPS_METHOD.md)
 
-Workbench screenshot capture is included in the [browser tests](frontend/e2e/workbench.spec.ts). The [verification log](docs/healthtech-pilot/STATUS.md#pending-local-verification) records the current capture status.
+![Precedent workbench Overview for Automated Breast MRI Reporting, with the curated trajectory, comp abstention, milestone checklist and locked outcome rates](docs/healthtech-pilot/screenshots/workbench-overview.png)
+
+More captures: [Evidence](docs/healthtech-pilot/screenshots/workbench-evidence.png) · [Outcome library](docs/healthtech-pilot/screenshots/workbench-outcome-library.png). The [browser tests](frontend/e2e/workbench.spec.ts) regenerate them. The [verification log](docs/healthtech-pilot/STATUS.md#round-review--21-november-2026) records the latest run.
 
 ## Two-dossier integration pilot · Prompt 1
 
@@ -74,12 +76,14 @@ Start the disposable demo from the checkout after building the frontend.
 ```
 
 1. At [the local demo](http://127.0.0.1:8006), open **Precedents → Automated Breast MRI Reporting**. Switch the trajectory from the first institutional round to the first regulatory decision and open an event.
-2. Open **Evidence**, then select **What was public at the same stage**. Compare the source witnesses and the open cells. The five university projects remain analogy queries.
+2. Open **Evidence**, then select **Comparison snapshots**. Compare the source witnesses and the open cells. The five university projects remain analogy queries; for a company subject the same toggle reads **What was public at the same stage**.
 3. Open **Outcome library**. Inspect Partly, Halter, Supie and Tiro Lifesciences, then change the outcome from Series A or later to the next priced equity round.
 4. Return to **Precedents → Outlook** for the current cohort counts and permissioned data requirements.
 5. Select **Export screening note** and open the JSON in Venture Frame through **Projects → Import**.
 
-The previous directory, comparison and full dossier views are available through **Research mode** in the sidebar.
+The previous directory, comparison and full dossier views are available through **Research mode** in the sidebar (`/?mode=research`).
+
+Research mode:
 
 ![Research mode dossier showing the Formus comparison and links to source claims](docs/healthtech-pilot/mri-comparison.png)
 
@@ -150,7 +154,7 @@ The current-state review fixes (F1–F3) and dossier/discovery presentation refi
 
 ## Continue from another computer
 
-The implemented source and complete handover are on `implementation/vee-workbench`. Start with [handover/DESKTOP_START.md](handover/DESKTOP_START.md) for Windows PowerShell and macOS/Linux instructions. [handover/README.md](handover/README.md) indexes supplied documents, verification history, captures, original archives and the consistent evidence snapshot. Runtime databases/dependencies stay local; the restore script refuses to overwrite an existing database.
+The 18 November handover was prepared on `implementation/vee-workbench`; current development continues from `main`. Start with [handover/DESKTOP_START.md](handover/DESKTOP_START.md) for Windows PowerShell and macOS/Linux instructions. [handover/README.md](handover/README.md) indexes supplied documents, verification history, captures, original archives and the consistent evidence snapshot. Runtime databases/dependencies stay local; the restore script refuses to overwrite an existing database.
 
 ## Consolidated project handover · 18 November 2026
 
