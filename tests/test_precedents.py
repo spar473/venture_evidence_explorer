@@ -584,3 +584,27 @@ def test_snapshot_packet_refuses_late_or_mismatched_witness_and_anchor():
         update={'claim': matching.claim.model_copy(update={'lower_on': '2021-06-28'})}
     )
     assert not catalog.claims('toku', '2026-11-21', entry_anchor=mismatched_date)
+
+
+def test_abstention_explains_nearest_candidates_without_outcomes_or_threshold_changes(demo_db):
+    from backend.precedent_similarity import MIN_CLINICAL_SIMILARITY, MIN_PEERS, TOP_K
+
+    with TestClient(create_app(demo_db)) as client:
+        data = client.get('/api/precedents/toku', params={'as_of': '2026-11-21'}).json()
+    assert data['comps'] == [] and data['abstention']
+    assert data['thresholds'] == {
+        'min_clinical_similarity': MIN_CLINICAL_SIMILARITY,
+        'min_similarity': MIN_SIMILARITY,
+        'min_coverage': MIN_COVERAGE,
+        'min_peers': MIN_PEERS,
+        'top_k': TOP_K,
+    }
+    candidates = data['nearest_candidates']
+    assert 0 < len(candidates) <= 3
+    for candidate in candidates:
+        assert 'comp_outcome' not in candidate and 'row' not in candidate
+        assert candidate['coverage'] > 0
+        assert not (candidate['meets_clinical'] and candidate['meets_similarity'] and candidate['meets_coverage'])
+    heartlab = next(item for item in candidates if item['display_name'] == 'HeartLab')
+    assert heartlab['clinical_similarity'] == 0 and heartlab['meets_similarity'] and not heartlab['meets_clinical']
+    assert 'stage' in heartlab['missing_on_peer']

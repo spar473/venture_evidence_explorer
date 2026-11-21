@@ -57,3 +57,9 @@ Seven entry rows rest on PwC YCF PDFs: Halter (2019 p.12), Tiro Lifesciences (20
 | HiNZ May 2019 (HeartLab entry features) | 404 | None found yet |
 
 Re-sourcing these is data work, so it is listed here and not applied.
+
+## Decision log
+
+- **2026-11-21 · As-of scope: labelled, not wired.** `/api/workbench/outcomes` and `/api/workbench/gates` still ignore the precedent As-of date. The Outcome library, the sidebar footer on that page, and both "Outcome rates locked" cards now say "present-day". Making the audit as-of aware would mean re-running the frozen classification at arbitrary cutoffs, a larger change that touches the outcome rules, so the smaller labelling change was taken. Revisit after the demo if analysts need historical cohort views.
+- **2026-11-21 · Default landing.** The workbench now opens on the Outcome library. `/?page=precedents` opens the precedent workbench directly.
+- **2026-11-21 · Abstention explained, thresholds unchanged.** When comps abstain, the precedent response returns up to three nearest candidates with their per-dimension breakdown and missing fields. They are not comps, and no outcome is attached.

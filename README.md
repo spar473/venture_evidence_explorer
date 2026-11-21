@@ -4,7 +4,7 @@ Compare early NZ ventures against sourced company histories in the Precedent & O
 Align peers at institutional funding, provider or clinical study, regulatory decision or first paid customer.<br>
 Inspect dated evidence, known outcomes and unanswered diligence questions.<br>
 Export an unweighted screening note for Venture Frame. Outcome rates require cohort coverage and held-out validation.<br>
-Start with **Precedents → Automated Breast MRI Reporting → Overview**. [Comparison method](docs/design/COMPS_METHOD.md)
+Start with the **Outcome library**, which is the default landing page. [Demo path](#demo-path) · [Comparison method](docs/design/COMPS_METHOD.md)
 
 ![Precedent workbench Overview for Automated Breast MRI Reporting, with the curated trajectory, comp abstention, milestone checklist and locked outcome rates](docs/healthtech-pilot/screenshots/workbench-overview.png)
 
@@ -75,11 +75,16 @@ Start the disposable demo from the checkout after building the frontend.
 .venv/bin/python scripts/healthtech_demo.py --serve --port 8006
 ```
 
-1. At [the local demo](http://127.0.0.1:8006), open **Precedents → Automated Breast MRI Reporting**. Switch the trajectory from the first institutional round to the first regulatory decision and open an event.
-2. Open **Evidence**, then select **Comparison snapshots**. Compare the source witnesses and the open cells. The five university projects remain analogy queries; for a company subject the same toggle reads **What was public at the same stage**.
-3. Open **Outcome library**. Inspect Partly, Halter, Supie and Tiro Lifesciences, then change the outcome from Series A or later to the next priced equity round.
-4. Return to **Precedents → Outlook** for the current cohort counts and permissioned data requirements.
-5. Select **Export screening note** and open the JSON in Venture Frame through **Projects → Import**.
+Three minutes, in this order:
+
+1. **Outcome library** (0:00). [The local demo](http://127.0.0.1:8006) opens here. Point to the status bar: every count is linked to a dated source. Read the healthtech small-denominator note aloud.
+2. **Stories worth knowing** (0:40). Open **Supie** (Icehouse-led seed, then liquidation; click the Companies Office link), then **Halter** (seed 2016, then Series A in January 2018).
+3. **Outcome toggle** (1:20). Switch **Outcome** from *Series A or later* to *Next priced equity round*. The counts move; the definitions are frozen.
+4. **Precedents ▸ Evidence** (1:40). Open **Precedents**, then **Evidence → Comparison snapshots**. Show the witness date, publisher and locator. Switch **Peer witness mode** to show the `+n days` late-witness badges.
+5. **Comps abstention** (2:20). Search **Toku Eyes**, then open **Overview**. Under **Why no comps yet**, HeartLab clears overall similarity (0.50) and coverage, but its clinical workflow similarity is 0.00 against the 0.25 required. The thresholds do not move.
+6. **Outlook** (2:40). Rates stay locked until there are 150 companies, 30 outcomes and under 25% unknown or lost. Export the screening note if asked.
+
+`/?page=precedents` opens the precedent workbench directly.
 
 The previous directory, comparison and full dossier views are available through **Research mode** in the sidebar (`/?mode=research`).
 

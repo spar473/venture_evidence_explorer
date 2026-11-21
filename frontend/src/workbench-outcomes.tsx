@@ -93,6 +93,10 @@ export function OutcomeLibraryPage({ onClaim }: { onClaim: (claim: WorkbenchClai
       <header className="wb-header">
         <h1>Outcome library</h1>
         <p>Public follow-up on NZ companies from first institutional pre-seed or seed.</p>
+        <p className="wb-muted">
+          Present-day view: counts come from the latest cohort audit and do not change with the
+          precedent As-of date.
+        </p>
       </header>
       <div className="wb-card wb-filters">
         <label>
@@ -279,6 +283,17 @@ export function OutcomeLibraryPage({ onClaim }: { onClaim: (claim: WorkbenchClai
               <section className="wb-card">
                 <h2>Cohort comparison</h2>
                 <p>{vintage || "All vintages"} · Rates locked</p>
+                {data.sectors_comparison
+                  .filter((group) => group.label.startsWith("Healthtech"))
+                  .map((group) => (
+                    <p key={group.label} className="wb-muted">
+                      Small denominator: {group.statuses.reached_outcome ?? 0} of{" "}
+                      {group.denominator} healthtech entries reached the outcome. With{" "}
+                      {group.denominator} entries, one company moves the share by about{" "}
+                      {Math.round(100 / Math.max(group.denominator, 1))} points, so read these as
+                      counts, not rates.
+                    </p>
+                  ))}
                 <div className="wb-table-scroll">
                   <table className="wb-table">
                     <thead>

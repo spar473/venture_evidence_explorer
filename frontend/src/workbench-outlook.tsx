@@ -90,6 +90,10 @@ export function Outlook({ gates, error }: { gates: WorkbenchGates | null; error:
     <>
       <section className="wb-card">
         <h2>Outcome rates locked</h2>
+        <p className="wb-muted">
+          Present-day gate: counts come from the latest cohort audit
+          {gates ? ` (${gates.as_of})` : ""} and do not change with the As-of date.
+        </p>
         <p>
           Release requires cohort coverage for the selected endpoint and successful validation on
           later entry vintages.

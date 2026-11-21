@@ -30,7 +30,7 @@ from .precedent_evidence import (
     snapshot_at,
     snapshot_by,
 )
-from .precedent_similarity import MILESTONES, VERSION, rank_peers, select_comps
+from .precedent_similarity import MILESTONES, THRESHOLDS, VERSION, nearest_candidates, rank_peers, select_comps
 from .reference_pool import CLOSURES, OUTCOMES, EventDate, PoolEvent, PoolSource, Witness, plus_months
 from .reference_pool_api import latest_fixture
 from .research_repository import dossier, read_consistently
@@ -447,6 +447,7 @@ def response(conn, subject_id, kind, as_of, witness_mode='strict'):
     aligned = [row for row in rows if row.anchor]
     peers = rank_peers(subject, aligned)
     comps, no_closure, abstention = select_comps(peers)
+    nearest = nearest_candidates(subject, aligned) if not comps else []
     curated = catalog.curated(subject_id, kind, witness_mode)
     missing = {row.company_id: row for row in [*rows, *curated] if row.not_alignable}
     return PrecedentResponse(
@@ -467,6 +468,8 @@ def response(conn, subject_id, kind, as_of, witness_mode='strict'):
         no_verified_closure=no_closure,
         abstention=abstention,
         questions=[MILESTONES[item.milestone] for item in subject.milestones if item.value != 'yes'],
+        thresholds=THRESHOLDS,
+        nearest_candidates=nearest,
     )
 
 
