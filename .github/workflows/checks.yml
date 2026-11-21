@@ -2,7 +2,7 @@ name: Engineering contracts
 on: [push, pull_request]
 jobs:
   backend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         python: ['3.10', '3.11', '3.12', '3.13']
@@ -28,7 +28,7 @@ jobs:
       - run: python scripts/evaluation_workbench.py run --bundle outputs/frozen-evaluation --split held_out --output outputs/held-out-status.json
       - run: python scripts/academic_demo.py
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -47,5 +47,16 @@ jobs:
         working-directory: frontend
       - run: npx playwright install --with-deps chromium
         working-directory: frontend
-      - run: npx playwright test
+      - run: npx playwright test --reporter=list,html
         working-directory: frontend
+        env:
+          PLAYWRIGHT_HTML_OPEN: never
+      - name: Upload Playwright results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: |
+            frontend/playwright-report
+            outputs/browser-tests
+          retention-days: 14
