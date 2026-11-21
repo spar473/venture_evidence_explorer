@@ -2,6 +2,13 @@
 
 This is the project history, moved out of the README on 2026-11-21. Sections are kept as they were written, oldest framing first and later sections appended, so some statements are now out of date. Examples: "No remote repository" (there is now a GitHub remote with CI), the root SHA-256 manifests (now in `archive/manifests/`) and `handover/` (now a release asset; the retired handover notes and completion reports remain in Git history at `090b8d0`). The current state is in the [README](../README.md), [STATUS.md](../STATUS.md) and [VALIDATION.md](../VALIDATION.md).
 
+## 22 November 2026 · Historical evidence research follow-up
+
+- Expanded the separate packet from 20 to 72 proposed fields: 69 strict and three lenient-only. Actual pre-entry capture bodies support additional evidence for Narrative, Parcelport, Vidapp, Myovolt, Marama Labs and First AML; dated sources add Firstcheck, StretchSense, Formus and Inhibit proposals.
+- Nine Partly-eligible peers now have at least five strict proposals, up from two. None is human-confirmed; six more sufficiently covered peers are still needed even if every current proposal is accepted. The gate remains at 0 of 15.
+- Added a field-by-field review with source versions and interpretation limits. Retained late, revised and inaccessible-source investigations. Partly's subject snapshot remains empty; 1Centre's three descriptors remain lenient-only.
+- No scorer, endpoint, backtest or UI was implemented. Source PDFs and full article bodies are not redistributed; existing application packets and b0:3 are unchanged.
+
 ## 22 November 2026 · Time Machine preregistration and evidence checkpoint
 
 - Preserved the original brief and committed the retrospective protocol before any Time Machine scoring run, including clocks, weights, vocabulary, thresholds, review requirements and evaluation rules.

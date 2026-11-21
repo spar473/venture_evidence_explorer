@@ -42,6 +42,117 @@
       "kind": "news_article",
       "published_on": "2019-05-21",
       "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_firstcheck_cio_2016",
+      "title": "Kiwi startup develops app for early detection of skin cancer",
+      "publisher": "CIO New Zealand",
+      "url": "https://www.cio.com/article/204127/kiwi-startup-develops-app-for-early-detection-of-skin-cancer.html",
+      "kind": "news_article",
+      "published_on": "2016-11-14",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_stretchsense_uninews_2013",
+      "title": "StretchSense up for innovation award, UniNews Vol 43 Issue 18",
+      "publisher": "University of Auckland / UniNews",
+      "url": "https://www.auckland.ac.nz/assets/about-us/about-the-university/the-university/official-publications/uninews/2013/uoa-news-issue-18-2013.pdf",
+      "kind": "news_article",
+      "published_on": "2013-10-17",
+      "retrieved_on": "2026-11-22",
+      "revised_on": "2013-10-18"
+    },
+    {
+      "source_id": "bt_myovolt_isbs_2018",
+      "title": "Myovolt product showcase, ISBS 2018 Conference Magazine 4",
+      "publisher": "Auckland University of Technology / ISBS",
+      "url": "https://sprinz.aut.ac.nz/__data/assets/pdf_file/0005/192821/ISBS-2018-conference-Magazine-4-040818.pdf",
+      "kind": "news_article",
+      "published_on": "2018-08-04",
+      "retrieved_on": "2026-11-22",
+      "revised_on": "2018-09-01"
+    },
+    {
+      "source_id": "bt_flux_nzentrepreneur_2017",
+      "title": "The Icehouse’s Flux Accelerator Picks 6 Start-Ups for 2017 Cohort",
+      "publisher": "NZ Entrepreneur / Flux media release",
+      "url": "https://nzentrepreneur.co.nz/icehouses-flux-accelerator-picks-6-start-ups-2017-cohort/",
+      "kind": "news_article",
+      "published_on": "2017-04-03",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_narrative_slr_archive_2019",
+      "title": "Narrative Blogging App: hands-on review (inspected 2019 archive version)",
+      "publisher": "SLR Lounge / Jay Henington",
+      "url": "https://www.slrlounge.com/narrative-blogging-app-a-hands-on-review/",
+      "kind": "news_article",
+      "published_on": "2019-04-17",
+      "revised_on": "2019-04-19",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_parcelport_archive_2017",
+      "title": "Parcelport / formerly Payport homepage, October 2017 capture",
+      "publisher": "Parcelport / Payport",
+      "url": "https://www.payport.co.nz/",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_vidapp_archive_2017",
+      "title": "Vidapp homepage and pricing, June 2017 capture",
+      "publisher": "Vidapp",
+      "url": "https://vidapp.com/",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_myovolt_archive_2019",
+      "title": "Myovolt homepage and physical-kit shop links, November 2019 capture",
+      "publisher": "Myovolt Limited",
+      "url": "https://www.myovolt.com/",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_formus_flagstaff_2018",
+      "title": "Interview: innovator and scientist Thor Besier",
+      "publisher": "The Devonport Flagstaff",
+      "url": "https://devonportflagstaff.co.nz/interview-innovator-and-scientist-thor-besier/",
+      "kind": "news_article",
+      "published_on": "2018-06-29",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_marama_archive_2018",
+      "title": "Marama Labs CloudSpec homepage, August 2018 capture",
+      "publisher": "Marama Labs",
+      "url": "https://maramalabs.com/",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_inhibit_silver_2018",
+      "title": "Silver Institute to Sponsor Silver Technology Symposium at TechConnect World Innovation Conference 2018",
+      "publisher": "The Silver Institute",
+      "url": "https://silverinstitute.org/silver-institute-sponsor-silver-technology-symposium-techconnect-world-innovation-conference-2018/",
+      "kind": "press_release",
+      "published_on": "2018-03-19",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_firstaml_archive_2019",
+      "title": "First AML outsourced customer due diligence homepage, January 2019 capture",
+      "publisher": "First AML",
+      "url": "https://www.firstaml.co.nz/",
+      "kind": "company_page",
+      "published_on": null,
+      "retrieved_on": "2026-11-22"
     }
   ],
   "witnesses": [
@@ -76,6 +187,108 @@
       "available_on": "2019-05-21",
       "url": "https://www.nbr.co.nz/investment/peter-thiel-led-fund-backs-local-creative-tech-startup-narrative/",
       "locator": "Visible dateline: Tue, 21 May 2019; only the public opening is used"
+    },
+    {
+      "witness_id": "w_bt_firstcheck_cio_2016",
+      "source_id": "bt_firstcheck_cio_2016",
+      "kind": "publisher_dated",
+      "available_on": "2016-11-14",
+      "url": "https://www.cio.com/article/204127/kiwi-startup-develops-app-for-early-detection-of-skin-cancer.html",
+      "locator": "News dateline 14 Nov 2016; full article read"
+    },
+    {
+      "witness_id": "w_bt_stretchsense_uninews_2013",
+      "source_id": "bt_stretchsense_uninews_2013",
+      "kind": "publisher_dated",
+      "available_on": "2013-10-18",
+      "url": "https://www.auckland.ac.nz/assets/about-us/about-the-university/the-university/official-publications/uninews/2013/uoa-news-issue-18-2013.pdf",
+      "locator": "Fixed dated university-news article, printed p.2 (17 October 2013). Current PDF metadata identifies a revision on 18 October 2013; that later day is used conservatively."
+    },
+    {
+      "witness_id": "w_bt_myovolt_isbs_2018",
+      "source_id": "bt_myovolt_isbs_2018",
+      "kind": "publisher_dated",
+      "available_on": "2018-09-01",
+      "url": "https://sprinz.aut.ac.nz/__data/assets/pdf_file/0005/192821/ISBS-2018-conference-Magazine-4-040818.pdf",
+      "locator": "Fixed magazine product-showcase item on printed p.28; issue footer says 4 August 2018. PDF creation/modification metadata is 1 September 2018; use the later date conservatively."
+    },
+    {
+      "witness_id": "w_bt_flux_nzentrepreneur_2017",
+      "source_id": "bt_flux_nzentrepreneur_2017",
+      "kind": "publisher_dated",
+      "available_on": "2017-04-03",
+      "url": "https://nzentrepreneur.co.nz/icehouses-flux-accelerator-picks-6-start-ups-2017-cohort/",
+      "locator": "Visible publication date: April 3, 2017; cohort list"
+    },
+    {
+      "witness_id": "w_bt_narrative_slr_archive_2019",
+      "source_id": "bt_narrative_slr_archive_2019",
+      "kind": "archived_capture",
+      "available_on": "2019-05-04",
+      "captured_at": "2019-05-04T18:04:48Z",
+      "url": "https://web.archive.org/web/20190504180448/https://www.slrlounge.com/narrative-blogging-app-a-hands-on-review/",
+      "locator": "Read the complete archived article. Original HTML records publication 17 April and modification 19 April 2019; Pricing, Interface and Conclusion sections inspected."
+    },
+    {
+      "witness_id": "w_bt_parcelport_archive_2017",
+      "source_id": "bt_parcelport_archive_2017",
+      "kind": "archived_capture",
+      "available_on": "2017-10-11",
+      "captured_at": "2017-10-11T02:27:16Z",
+      "url": "https://web.archive.org/web/20171011022716/http://www.payport.co.nz:80/",
+      "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials"
+    },
+    {
+      "witness_id": "w_bt_vidapp_archive_2017",
+      "source_id": "bt_vidapp_archive_2017",
+      "kind": "archived_capture",
+      "available_on": "2017-06-16",
+      "captured_at": "2017-06-16T22:10:58Z",
+      "url": "https://web.archive.org/web/20170616221058/http://vidapp.com:80/",
+      "locator": "Homepage: Vid-apps Published Through Our Platform; customer testimonials; Ongoing Support Pricing"
+    },
+    {
+      "witness_id": "w_bt_myovolt_archive_2019",
+      "source_id": "bt_myovolt_archive_2019",
+      "kind": "archived_capture",
+      "available_on": "2019-11-15",
+      "captured_at": "2019-11-15T09:51:16Z",
+      "url": "https://web.archive.org/web/20191115095116/https://www.myovolt.com/",
+      "locator": "Homepage: Shop Now links for Shoulder, Elbow & Wrist, Knee & Leg, and Back kits"
+    },
+    {
+      "witness_id": "w_bt_formus_flagstaff_2018",
+      "source_id": "bt_formus_flagstaff_2018",
+      "kind": "publisher_dated",
+      "available_on": "2018-06-29",
+      "url": "https://devonportflagstaff.co.nz/interview-innovator-and-scientist-thor-besier/",
+      "locator": "Closing Formus Labs paragraphs; article dateline and source edition 29 June 2018"
+    },
+    {
+      "witness_id": "w_bt_marama_archive_2018",
+      "source_id": "bt_marama_archive_2018",
+      "kind": "archived_capture",
+      "available_on": "2018-08-07",
+      "captured_at": "2018-08-07T19:51:27Z",
+      "url": "https://web.archive.org/web/20180807195127/http://maramalabs.com/",
+      "locator": "Homepage: CloudSpec introduction, Advantages, About us and Contact"
+    },
+    {
+      "witness_id": "w_bt_inhibit_silver_2018",
+      "source_id": "bt_inhibit_silver_2018",
+      "kind": "publisher_dated",
+      "available_on": "2018-03-19",
+      "url": "https://silverinstitute.org/silver-institute-sponsor-silver-technology-symposium-techconnect-world-innovation-conference-2018/",
+      "locator": "Dateline and Session 2 entry naming Eldon Tate and Inhibit Coatings Ltd"
+    },
+    {
+      "witness_id": "w_bt_firstaml_archive_2019",
+      "source_id": "bt_firstaml_archive_2019",
+      "kind": "archived_capture",
+      "available_on": "2019-01-27",
+      "captured_at": "2019-01-27T16:09:33Z",
+      "url": "https://web.archive.org/web/20190127160933/https://www.firstaml.co.nz/",
+      "locator": "Homepage: First AML Overview, Why Work with First AML, Services and How it works"
     }
   ],
   "profiles": [
@@ -364,6 +577,45 @@
           "review_state": "proposed",
           "source_id": "bt_narrative_nbr_2019",
           "witness_id": "w_bt_narrative_nbr_2019"
+        },
+        {
+          "name": "business_model",
+          "value": "saas",
+          "raw_value": "Monthly subscription with hosted publishing",
+          "derivation": "normalised",
+          "rationale": "Hosted software subscriptions map to saas. No present-day pricing is used.",
+          "source_id": "bt_narrative_slr_archive_2019",
+          "witness_id": "w_bt_narrative_slr_archive_2019",
+          "passage": "The archived pricing section lists monthly plans and hosted blog publishing.",
+          "locator": "Archived article, Pricing and Post Submission sections",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Reviewer used the app to create and publish blog posts",
+          "derivation": "normalised",
+          "rationale": "Hands-on operation establishes a working product, not clinical performance or company revenue.",
+          "source_id": "bt_narrative_slr_archive_2019",
+          "witness_id": "w_bt_narrative_slr_archive_2019",
+          "passage": "The reviewer describes direct use of the functioning application.",
+          "locator": "Archived article, Interface, Post Submission and Conclusion",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "buyer",
+          "value": "business",
+          "raw_value": "Professional photographers purchasing blogging plans",
+          "derivation": "normalised",
+          "rationale": "Proposed intended purchaser classification: professional photography businesses buying workflow software. This does not identify a named paying customer.",
+          "source_id": "bt_narrative_slr_archive_2019",
+          "witness_id": "w_bt_narrative_slr_archive_2019",
+          "passage": "The review addresses professional photographers and describes priced plans for their blogging work.",
+          "locator": "Archived article, opening and Pricing sections",
+          "timing": "strict",
+          "review_state": "proposed"
         }
       ]
     },
@@ -388,6 +640,763 @@
       "anchor_source_id": "ycf_2019",
       "anchor_locator": "PDF page 12, Dec-16 row for Halter",
       "features": []
+    },
+    {
+      "company_id": "public_firstcheckltd",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2017-05",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2017",
+      "anchor_locator": "PDF page 2, May-17 row for Firstcheck Ltd",
+      "features": [
+        {
+          "name": "description",
+          "value": "A mobile service routes skin photographs to New Zealand specialists for remote review.",
+          "raw_value": "Remote specialist skin checks",
+          "derivation": "stated",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_firstcheck_cio_2016",
+          "witness_id": "w_bt_firstcheck_cio_2016",
+          "passage": "Patients submit photographs and receive a specialist response.",
+          "locator": "Opening and app-process paragraphs",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "workflow",
+          "raw_value": "Photo-to-specialist consultation app",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_firstcheck_cio_2016",
+          "witness_id": "w_bt_firstcheck_cio_2016",
+          "passage": "The app routes photographs to doctors rather than automatically diagnosing images.",
+          "locator": "App-process paragraphs",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "healthtech",
+          "raw_value": "Teledermatology service",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_firstcheck_cio_2016",
+          "witness_id": "w_bt_firstcheck_cio_2016",
+          "passage": "The reported service provides remote skin-specialist consultations.",
+          "locator": "Opening and app-process paragraphs",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "market_focus",
+          "value": "new_zealand",
+          "raw_value": "New Zealand specialist network",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_firstcheck_cio_2016",
+          "witness_id": "w_bt_firstcheck_cio_2016",
+          "passage": "The launch serves New Zealand users through specialists in multiple NZ cities.",
+          "locator": "Opening and doctor-network paragraphs",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Launched app; completed user testing",
+          "derivation": "normalised",
+          "rationale": "Completed use supports a working product; no clinical accuracy or payment conclusion is inferred.",
+          "source_id": "bt_firstcheck_cio_2016",
+          "witness_id": "w_bt_firstcheck_cio_2016",
+          "passage": "The article reports launch and completed tests with users.",
+          "locator": "Launch and final-testing paragraphs",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "discovery_stretchsense",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2014-11",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2019",
+      "anchor_locator": "PDF page 20, November 2014 row for StretchSense",
+      "features": [
+        {
+          "name": "description",
+          "value": "Wireless flexible sensors measure body movement and transmit measurements to mobile software.",
+          "raw_value": "Wireless stretch sensors for body motion",
+          "derivation": "stated",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_stretchsense_uninews_2013",
+          "witness_id": "w_bt_stretchsense_uninews_2013",
+          "passage": "The article describes soft sensors and a Bluetooth connection to an Android app.",
+          "locator": "Printed p.2, StretchSense article, left column",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "hardware",
+          "raw_value": "Soft sensors with Bluetooth circuitry",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_stretchsense_uninews_2013",
+          "witness_id": "w_bt_stretchsense_uninews_2013",
+          "passage": "The described offering combines physical sensors with transmission circuitry.",
+          "locator": "Printed p.2, left column",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "manufacturing",
+          "raw_value": "Sensor hardware",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_stretchsense_uninews_2013",
+          "witness_id": "w_bt_stretchsense_uninews_2013",
+          "passage": "The contemporaneous offering is sensor hardware; retain raw cohort sector Sensors.",
+          "locator": "Printed p.2, left and middle columns",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "market_focus",
+          "value": "international",
+          "raw_value": "Local sales and US customers",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_stretchsense_uninews_2013",
+          "witness_id": "w_bt_stretchsense_uninews_2013",
+          "passage": "The article distinguishes local sales from customers gained in the United States.",
+          "locator": "Printed p.2, middle column",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Developed sensors in use",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_stretchsense_uninews_2013",
+          "witness_id": "w_bt_stretchsense_uninews_2013",
+          "passage": "The article describes developed sensors and existing customers.",
+          "locator": "Printed p.2, left and middle columns",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "paid_pilot_or_revenue",
+          "value": "yes",
+          "raw_value": "First local sales in January 2013",
+          "derivation": "normalised",
+          "rationale": "Reported sales establish some revenue; no amount or profitability is inferred.",
+          "source_id": "bt_stretchsense_uninews_2013",
+          "witness_id": "w_bt_stretchsense_uninews_2013",
+          "passage": "The dated article explicitly reports local sales that year.",
+          "locator": "Printed p.2, middle column, operating-history paragraph",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "public_myovoltlimited",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2019-12",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2020",
+      "anchor_locator": "PDF page 4, Dec-19 row for Myovolt Limited",
+      "features": [
+        {
+          "name": "description",
+          "value": "A wearable device applies vibration for muscle massage.",
+          "raw_value": "Wearable muscle massage system",
+          "derivation": "stated",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_myovolt_isbs_2018",
+          "witness_id": "w_bt_myovolt_isbs_2018",
+          "passage": "The showcase describes a body-worn vibration massage product.",
+          "locator": "Printed p.28, Myovolt item",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "medical_device",
+          "raw_value": "Wearable vibration-therapy device",
+          "derivation": "normalised",
+          "rationale": "Proposed product category only; it is not a regulatory approval or effectiveness claim.",
+          "source_id": "bt_myovolt_isbs_2018",
+          "witness_id": "w_bt_myovolt_isbs_2018",
+          "passage": "The item describes a physical wearable therapy device.",
+          "locator": "Printed p.28, Myovolt item",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "healthtech",
+          "raw_value": "Wearable muscle-therapy technology",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_myovolt_isbs_2018",
+          "witness_id": "w_bt_myovolt_isbs_2018",
+          "passage": "The offering is wearable physical-therapy technology.",
+          "locator": "Printed p.28, Myovolt item",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Shown and described wearable massage system",
+          "derivation": "normalised",
+          "rationale": "A described physical demonstrator supports prototype yes; this does not validate clinical claims.",
+          "source_id": "bt_myovolt_isbs_2018",
+          "witness_id": "w_bt_myovolt_isbs_2018",
+          "passage": "The showcase depicts the product and describes how it is worn and operated.",
+          "locator": "Printed p.28, product item and photograph",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "business_model",
+          "value": "hardware_sale",
+          "raw_value": "Physical recovery kits offered through Shop Now and product-page links",
+          "derivation": "normalised",
+          "rationale": "Proposed hardware-sale model follows the explicit physical-kit shop offering; no purchase, price or revenue amount is claimed.",
+          "source_id": "bt_myovolt_archive_2019",
+          "witness_id": "w_bt_myovolt_archive_2019",
+          "passage": "The captured homepage offers physical recovery kits through its online shop.",
+          "locator": "Homepage: Shop Now links for Shoulder, Elbow & Wrist, Knee & Leg, and Back kits",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "public_vidapp",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2017-09",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2017",
+      "anchor_locator": "PDF page 5, Sep-17 row for VidApp",
+      "features": [
+        {
+          "name": "description",
+          "value": "A platform lets video producers distribute and sell content through customised video apps.",
+          "raw_value": "Custom video apps for video producers",
+          "derivation": "stated",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_flux_nzentrepreneur_2017",
+          "witness_id": "w_bt_flux_nzentrepreneur_2017",
+          "passage": "The Vidapp cohort entry describes producer-owned video apps and global selling.",
+          "locator": "Cohort list, Vidapp bullet",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "workflow",
+          "raw_value": "Customised video apps",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_flux_nzentrepreneur_2017",
+          "witness_id": "w_bt_flux_nzentrepreneur_2017",
+          "passage": "The offering is software for publishing and distributing video content.",
+          "locator": "Cohort list, Vidapp bullet",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "enterprise_software",
+          "raw_value": "Creator software",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_flux_nzentrepreneur_2017",
+          "witness_id": "w_bt_flux_nzentrepreneur_2017",
+          "passage": "The stated offering supports content-production businesses.",
+          "locator": "Cohort list, Vidapp bullet",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "market_focus",
+          "value": "international",
+          "raw_value": "Global selling by video producers",
+          "derivation": "normalised",
+          "rationale": "Target market geography, not proof of overseas customers or revenue.",
+          "source_id": "bt_flux_nzentrepreneur_2017",
+          "witness_id": "w_bt_flux_nzentrepreneur_2017",
+          "passage": "The statement explicitly frames the intended reach as worldwide.",
+          "locator": "Cohort list, Vidapp bullet",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "buyer",
+          "value": "small_business",
+          "raw_value": "Small publisher testimonial describes a service price within its budget",
+          "derivation": "normalised",
+          "rationale": "Small-business buyer is supported by an explicit priced-service customer account, not by the app audience.",
+          "source_id": "bt_vidapp_archive_2017",
+          "witness_id": "w_bt_vidapp_archive_2017",
+          "passage": "The named publisher discusses purchasing Vidapp services for its video catalogue.",
+          "locator": "Homepage: Vid-apps Published Through Our Platform; customer testimonials; Ongoing Support Pricing",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "business_model",
+          "value": "subscription",
+          "raw_value": "Ongoing support charged per active user each month with minimum and maximum fees",
+          "derivation": "normalised",
+          "rationale": "Subscription is the broad declared node for the recurring plan; other revenue-share plans coexist.",
+          "source_id": "bt_vidapp_archive_2017",
+          "witness_id": "w_bt_vidapp_archive_2017",
+          "passage": "The historical pricing section includes a monthly recurring support plan.",
+          "locator": "Homepage: Vid-apps Published Through Our Platform; customer testimonials; Ongoing Support Pricing",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Published video apps with release dates and customer accounts",
+          "derivation": "stated",
+          "rationale": "Released apps and named customers establish product operation, without inferring a payment milestone.",
+          "source_id": "bt_vidapp_archive_2017",
+          "witness_id": "w_bt_vidapp_archive_2017",
+          "passage": "The page lists live apps and describes customer use of the platform.",
+          "locator": "Homepage: Vid-apps Published Through Our Platform; customer testimonials; Ongoing Support Pricing",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "public_1centre",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2017-Q2",
+        "precision": "quarter"
+      },
+      "anchor_source_id": "onecentre_ci",
+      "anchor_locator": "Founder Incubators, Flux and 1Centre paragraph; compare April YCF row",
+      "features": [
+        {
+          "name": "description",
+          "value": "Software streamlines opening and managing trade accounts.",
+          "raw_value": "Trade-account setup and management",
+          "derivation": "stated",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_flux_nzentrepreneur_2017",
+          "witness_id": "w_bt_flux_nzentrepreneur_2017",
+          "passage": "The cohort list describes ongoing trade-account administration.",
+          "locator": "Cohort list, 1Centre bullet",
+          "timing": "lenient",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "workflow",
+          "raw_value": "Trade-account management software",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_flux_nzentrepreneur_2017",
+          "witness_id": "w_bt_flux_nzentrepreneur_2017",
+          "passage": "The stated product supports trade-account workflows.",
+          "locator": "Cohort list, 1Centre bullet",
+          "timing": "lenient",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "fintech",
+          "raw_value": "Trade-account technology",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_flux_nzentrepreneur_2017",
+          "witness_id": "w_bt_flux_nzentrepreneur_2017",
+          "passage": "The described offering administers trade accounts; current raw sector Fintech is retained separately.",
+          "locator": "Cohort list, 1Centre bullet",
+          "timing": "lenient",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "public_parcelport",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2017-12",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2017",
+      "anchor_locator": "PDF page 8, Dec-17 row for Parcelport",
+      "features": [
+        {
+          "name": "description",
+          "value": "Online courier booking and freight management platform integrating shop orders, shipping labels and parcel tracking.",
+          "raw_value": "Online courier booking and freight management",
+          "derivation": "stated",
+          "rationale": "Short offering summary of the inspected historical company page.",
+          "source_id": "bt_parcelport_archive_2017",
+          "witness_id": "w_bt_parcelport_archive_2017",
+          "passage": "The homepage describes an operating shipping workflow and integrations with online shops.",
+          "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "workflow",
+          "raw_value": "Shipping and fulfilment management software",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_parcelport_archive_2017",
+          "witness_id": "w_bt_parcelport_archive_2017",
+          "passage": "Software covers booking, labels, parcel collection and tracking.",
+          "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "buyer",
+          "value": "business",
+          "raw_value": "Shop integrations and named business customer testimonials",
+          "derivation": "normalised",
+          "rationale": "Business purchase context comes from invoicing and merchant customer accounts, not from parcel recipients.",
+          "source_id": "bt_parcelport_archive_2017",
+          "witness_id": "w_bt_parcelport_archive_2017",
+          "passage": "The page addresses merchants and quotes business customers using the service.",
+          "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "business_model",
+          "value": "pay_per_use",
+          "raw_value": "Pay As You Go; invoice due the following month",
+          "derivation": "normalised",
+          "rationale": "Classifies the stated charging arrangement; does not claim verified revenue.",
+          "source_id": "bt_parcelport_archive_2017",
+          "witness_id": "w_bt_parcelport_archive_2017",
+          "passage": "The service is offered on a pay-as-you-go invoicing basis.",
+          "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "enterprise_software",
+          "raw_value": "Freight management software integrated with business systems",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_parcelport_archive_2017",
+          "witness_id": "w_bt_parcelport_archive_2017",
+          "passage": "The platform streamlines order dispatch and shipping management for businesses.",
+          "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "market_focus",
+          "value": "international",
+          "raw_value": "New Zealand and 200 countries worldwide",
+          "derivation": "normalised",
+          "rationale": "Geographic offering coverage, not proof of overseas customer revenue.",
+          "source_id": "bt_parcelport_archive_2017",
+          "witness_id": "w_bt_parcelport_archive_2017",
+          "passage": "The stated freight service reach includes New Zealand and international destinations.",
+          "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Customer accounts describe using the shipping system",
+          "derivation": "stated",
+          "rationale": "Actual customer operation supports a functioning product; no payment milestone inferred.",
+          "source_id": "bt_parcelport_archive_2017",
+          "witness_id": "w_bt_parcelport_archive_2017",
+          "passage": "Named customer testimonials describe bookings, collections and deliveries through the system.",
+          "locator": "Homepage: introduction, How It Works, Integration Partners and customer testimonials",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "discovery_formuslabs",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2019",
+        "precision": "year"
+      },
+      "anchor_source_id": "entry_formuslabs_punakaikifund",
+      "anchor_locator": "Historical funding and NZ spinout paragraphs",
+      "features": [
+        {
+          "name": "description",
+          "value": "Developing customised orthotics using 3D-printing technology.",
+          "raw_value": "Customised orthotics with 3D printing",
+          "derivation": "stated",
+          "rationale": "Summarises only the Formus section, not the separate IMeasureU venture described earlier.",
+          "source_id": "bt_formus_flagstaff_2018",
+          "witness_id": "w_bt_formus_flagstaff_2018",
+          "passage": "The closing section identifies Formus Labs and its orthotics development work.",
+          "locator": "Closing Formus Labs paragraphs after the IMeasureU acquisition discussion",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "physical_goods",
+          "raw_value": "Customised orthotics",
+          "derivation": "normalised",
+          "rationale": "Broad frozen physical-goods node; no later software offering or device regulatory status inferred.",
+          "source_id": "bt_formus_flagstaff_2018",
+          "witness_id": "w_bt_formus_flagstaff_2018",
+          "passage": "The stated offering is physical orthotics, with 3D-printing assistance.",
+          "locator": "Closing Formus Labs paragraphs after the IMeasureU acquisition discussion",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "healthtech",
+          "raw_value": "Orthotics and hip design",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_formus_flagstaff_2018",
+          "witness_id": "w_bt_formus_flagstaff_2018",
+          "passage": "Orthopaedic design supports a proposed healthtech grouping.",
+          "locator": "Closing Formus Labs paragraphs after the IMeasureU acquisition discussion",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "discovery_maramalabs",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2019-02",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2020",
+      "anchor_locator": "PDF page 2, Feb-19 row for Marama Labs",
+      "features": [
+        {
+          "name": "description",
+          "value": "CloudSpec optical instrument measures absorption, extinction and scattering spectra in clear or turbid liquids.",
+          "raw_value": "CloudSpec UV-Vis spectrophotometer",
+          "derivation": "stated",
+          "rationale": "Offering summary from the actual company capture, not the later alumni-page revision.",
+          "source_id": "bt_marama_archive_2018",
+          "witness_id": "w_bt_marama_archive_2018",
+          "passage": "The historical company page describes its instrument and measurement capabilities.",
+          "locator": "Homepage: CloudSpec introduction, Advantages, About us and Contact",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "industrial_equipment",
+          "raw_value": "Scientific measurement instrument",
+          "derivation": "normalised",
+          "rationale": "Proposed frozen equipment category for a scientific instrument; no software-only or clinical-device claim.",
+          "source_id": "bt_marama_archive_2018",
+          "witness_id": "w_bt_marama_archive_2018",
+          "passage": "CloudSpec is a physical laboratory spectrophotometer.",
+          "locator": "Homepage: CloudSpec introduction, Advantages, About us and Contact",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "manufacturing",
+          "raw_value": "Scientific instrument development",
+          "derivation": "normalised",
+          "rationale": "Broad equipment-manufacturing grouping; no future life-sciences pivot backfilled.",
+          "source_id": "bt_marama_archive_2018",
+          "witness_id": "w_bt_marama_archive_2018",
+          "passage": "The company develops optical measurement equipment.",
+          "locator": "Homepage: CloudSpec introduction, Advantages, About us and Contact",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Company says it has developed CloudSpec and describes measurements obtained within seconds",
+          "derivation": "stated",
+          "rationale": "Company-reported product operation, not independent performance validation or evidence of payment.",
+          "source_id": "bt_marama_archive_2018",
+          "witness_id": "w_bt_marama_archive_2018",
+          "passage": "The captured text describes a developed instrument with a working measurement process.",
+          "locator": "Homepage: CloudSpec introduction, Advantages, About us and Contact",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "discovery_inhibitcoatings",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2019-12",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2020",
+      "anchor_locator": "PDF page 3, Dec-19 row for Inhibit Coatings Limited",
+      "features": [
+        {
+          "name": "description",
+          "value": "Developing coatings that suppress microbes and marine fouling for industrial applications.",
+          "raw_value": "Antimicrobial and antifouling coatings for industrial applications",
+          "derivation": "stated",
+          "rationale": "Short scope summary; a scheduled presentation does not prove tested or marketed performance.",
+          "source_id": "bt_inhibit_silver_2018",
+          "witness_id": "w_bt_inhibit_silver_2018",
+          "passage": "The dated announcement names Inhibit Coatings and the subject of its planned presentation.",
+          "locator": "Session 2: Eldon Tate, Inhibit Coatings Ltd, New Zealand",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "materials",
+          "raw_value": "Industrial surface coatings",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_inhibit_silver_2018",
+          "witness_id": "w_bt_inhibit_silver_2018",
+          "passage": "The named company is presenting coatings for industrial use.",
+          "locator": "Session 2: Eldon Tate, Inhibit Coatings Ltd, New Zealand",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "advanced_materials",
+          "raw_value": "Specialist antimicrobial coatings",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_inhibit_silver_2018",
+          "witness_id": "w_bt_inhibit_silver_2018",
+          "passage": "Proposed grouping follows the technical surface-coating offering.",
+          "locator": "Session 2: Eldon Tate, Inhibit Coatings Ltd, New Zealand",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
+    },
+    {
+      "company_id": "public_firstaml",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2019-03",
+        "precision": "month"
+      },
+      "anchor_source_id": "entry_firstaml_firstamlviascoop",
+      "anchor_locator": "Flux Accelerator paragraph and dateline",
+      "features": [
+        {
+          "name": "description",
+          "value": "Technology-assisted outsourced customer due diligence and identity verification for regulated firms.",
+          "raw_value": "Outsourced AML customer due diligence and identity verification",
+          "derivation": "stated",
+          "rationale": "Preserves the historical managed-service offering; does not backfill the later self-service platform.",
+          "source_id": "bt_firstaml_archive_2019",
+          "witness_id": "w_bt_firstaml_archive_2019",
+          "passage": "The historical homepage describes an outsourced compliance service supported by information-capture software.",
+          "locator": "Homepage: First AML Overview, Why Work with First AML, Services and How it works",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "product_type",
+          "value": "professional_service",
+          "raw_value": "Outsourced due diligence and verification service",
+          "derivation": "normalised",
+          "rationale": "The historical primary offering is a managed professional service, even though software supports delivery.",
+          "source_id": "bt_firstaml_archive_2019",
+          "witness_id": "w_bt_firstaml_archive_2019",
+          "passage": "The company offers to assess, coordinate verification and report results on client firms’ behalf.",
+          "locator": "Homepage: First AML Overview, Why Work with First AML, Services and How it works",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "buyer",
+          "value": "business",
+          "raw_value": "Law, accounting, real estate and financial firms",
+          "derivation": "normalised",
+          "rationale": "Client firms buying outsourced services are distinguished from individuals undergoing identity checks.",
+          "source_id": "bt_firstaml_archive_2019",
+          "witness_id": "w_bt_firstaml_archive_2019",
+          "passage": "The company explicitly serves firms outsourcing their due diligence work.",
+          "locator": "Homepage: First AML Overview, Why Work with First AML, Services and How it works",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "fintech",
+          "raw_value": "AML customer onboarding and identity verification",
+          "derivation": "normalised",
+          "rationale": "Proposed classification of the cited offering; human confirmation required.",
+          "source_id": "bt_firstaml_archive_2019",
+          "witness_id": "w_bt_firstaml_archive_2019",
+          "passage": "The service supports financial-crime compliance and regulated customer onboarding.",
+          "locator": "Homepage: First AML Overview, Why Work with First AML, Services and How it works",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "market_focus",
+          "value": "new_zealand",
+          "raw_value": "New Zealand AML obligations and local client-firm service",
+          "derivation": "normalised",
+          "rationale": "Proposed intended service market from the jurisdiction-specific offering; no exclusivity or overseas revenue claim.",
+          "source_id": "bt_firstaml_archive_2019",
+          "witness_id": "w_bt_firstaml_archive_2019",
+          "passage": "The page frames its offering around New Zealand’s AML changes.",
+          "locator": "Homepage: First AML Overview, Why Work with First AML, Services and How it works",
+          "timing": "strict",
+          "review_state": "proposed"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Developed information-capture software and described operating service",
+          "derivation": "stated",
+          "rationale": "Company-reported developed service and software; no independent performance, customer count or payment milestone inferred.",
+          "source_id": "bt_firstaml_archive_2019",
+          "witness_id": "w_bt_firstaml_archive_2019",
+          "passage": "The homepage reports developed technology and describes the customer verification workflow.",
+          "locator": "Homepage: First AML Overview, Why Work with First AML, Services and How it works",
+          "timing": "strict",
+          "review_state": "proposed"
+        }
+      ]
     }
   ],
   "investigations": [
@@ -446,6 +1455,146 @@
       "url": "https://web.archive.org/cdx/search/cdx?url=nzentrepreneur.co.nz%2Fpartly-raises-1-7-million-seed-funding-from-all-star-consortium%2F&output=json&filter=statuscode%3A200&to=20201008&collapse=digest",
       "disposition": "access_blocked",
       "note": "The archive query was inaccessible through the research tool. No capture list or archived page was inspected; this is not evidence that a capture does not exist."
+    },
+    {
+      "company_id": "public_firstcheckltd",
+      "checked_on": "2026-11-22",
+      "url": "https://www.cio.com/article/204127/kiwi-startup-develops-app-for-early-detection-of-skin-cancer.html",
+      "disposition": "proposals_recorded",
+      "note": "Read the dated full article. Five proposed fields; neither download availability nor donation wording is used as proof of revenue."
+    },
+    {
+      "company_id": "discovery_stretchsense",
+      "checked_on": "2026-11-22",
+      "url": "https://www.auckland.ac.nz/assets/about-us/about-the-university/the-university/official-publications/uninews/2013/uoa-news-issue-18-2013.pdf",
+      "disposition": "proposals_recorded",
+      "note": "Inspected rendered page 2 and issue date. This is a fixed university-news article, not a mutable company page. PDF SHA-256 f137fc8d8aabdb1d90869188ac41dee1cd207159988248316cd2837732addf51. PDF modification metadata is retained as a conservative version date, not an archived-capture claim. All extracts remain proposals."
+    },
+    {
+      "company_id": "public_myovoltlimited",
+      "checked_on": "2026-11-22",
+      "url": "https://sprinz.aut.ac.nz/__data/assets/pdf_file/0005/192821/ISBS-2018-conference-Magazine-4-040818.pdf",
+      "disposition": "proposals_recorded",
+      "note": "Inspected rendered magazine page 28. Four fields proposed; no buyer, revenue or geography is inferred from the showcase. PDF SHA-256 264833e5c668e14e0102b8e241d3408d8624fde197884c8e71421e6e146d977d. No archived capture is claimed."
+    },
+    {
+      "company_id": "public_vidapp",
+      "checked_on": "2026-11-22",
+      "url": "https://nzentrepreneur.co.nz/icehouses-flux-accelerator-picks-6-start-ups-2017-cohort/",
+      "disposition": "proposals_recorded",
+      "note": "Read the dated cohort announcement. Four proposed fields; participation does not prove a working product, revenue, full-time employment or a company-specific funding amount."
+    },
+    {
+      "company_id": "public_1centre",
+      "checked_on": "2026-11-22",
+      "url": "https://nzentrepreneur.co.nz/icehouses-flux-accelerator-picks-6-start-ups-2017-cohort/",
+      "disposition": "proposals_recorded",
+      "note": "The source is two days after the earliest day of the Q2 2017 anchor. Three descriptor proposals are lenient only; none contributes to the strict gate."
+    },
+    {
+      "company_id": "public_narrative",
+      "checked_on": "2026-11-22",
+      "url": "https://www.slrlounge.com/narrative-blogging-app-a-hands-on-review/",
+      "disposition": "proposals_recorded",
+      "note": "An inspected archive capture at 2019-05-04T18:04:48Z precedes the 21 May entry cutoff. Three new fields are based solely on that captured version; current HTML metadata reports a 2026 revision and is not used. Archived HTML SHA-256 bb0692a4ae35c0663db9542f33412aa77ae8dd9e444f87729c00d86a86cd1da4."
+    },
+    {
+      "company_id": "public_partly",
+      "checked_on": "2026-11-22",
+      "url": "https://archive.org/wayback/available?url=https%3A%2F%2Fnzentrepreneur.co.nz%2Fpartly-raises-1-7-million-seed-funding-from-all-star-consortium%2F&timestamp=20201008",
+      "disposition": "too_late",
+      "note": "The availability API returned a closest capture at 2020-10-22T17:18:37Z, fourteen days after entry. Only the listing was read; no feature accepted and no claim that all archive variants have been exhausted."
+    },
+    {
+      "company_id": "public_partly",
+      "checked_on": "2026-11-22",
+      "url": "https://archive.org/wayback/available?url=https%3A%2F%2Fwww.scoop.co.nz%2Fstories%2FBU2010%2FS00131%2Fpartly-raises-17-million-in-seed-funding-from-all-star-consortium-of-investors.htm&timestamp=20201008",
+      "disposition": "too_late",
+      "note": "The availability API returned a closest capture at 2020-10-11T21:11:08Z, three days after entry. A later capture does not qualify for the strict subject snapshot. No capture body was used for features."
+    },
+    {
+      "company_id": "public_parcelport",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/web/20171011022716/http://www.payport.co.nz:80/",
+      "disposition": "proposals_recorded",
+      "note": "Inspected actual capture body; SHA-256 4c88cb1314eced5c74b866b6242e2dc37d9b8125971d4787c824a4c6cad0ddde. No inference from the availability listing alone. The captured page identifies Parcelport as formerly Payport, resolving the trade-name link within the same historical source. Seven proposed fields; no paid milestone inferred from usage or pricing."
+    },
+    {
+      "company_id": "public_vidapp",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/web/20170616221058/http://vidapp.com:80/",
+      "disposition": "proposals_recorded",
+      "note": "Inspected actual capture body; SHA-256 43a15831659815a9c4cc81a5f8cc839044116b2a6335a5b96a6986bd26d60e9c. No inference from the availability listing alone. Three additional strict proposals support seven fields in total. A different nearest capture dated 2 September is after the 1 September cutoff; that later capture is not used."
+    },
+    {
+      "company_id": "public_myovoltlimited",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/web/20191115095116/https://www.myovolt.com/",
+      "disposition": "proposals_recorded",
+      "note": "Inspected actual capture body; SHA-256 03d26d66fefa69e4201f20ff25403f4eb39b976e2c0ad83df542caeadcf3913f. No inference from the availability listing alone. Adds a proposed hardware-sale business model to the four conference-magazine fields. Homepage shop links do not establish actual payment, buyer identity or price."
+    },
+    {
+      "company_id": "discovery_formuslabs",
+      "checked_on": "2026-11-22",
+      "url": "https://devonportflagstaff.co.nz/interview-innovator-and-scientist-thor-besier/",
+      "disposition": "proposals_recorded",
+      "note": "Three strict proposals only. The article names four staff but does not establish full-time employment. A design-time comparison is not treated as explicit prototype testing or payment evidence. Founding year remains imprecise; no invented founding-month feature."
+    },
+    {
+      "company_id": "discovery_inhibitcoatings",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/web/20180825151527/https://www.inhibitcoatings.com/",
+      "disposition": "insufficient_fields",
+      "note": "Actual capture HTML was inspected, but contained only the company-page title and Wix application loader; no product-body text was available. No feature extracted from current text or from the archive listing."
+    },
+    {
+      "company_id": "discovery_maramalabs",
+      "checked_on": "2026-11-22",
+      "url": "https://www.nbr.co.nz/irish-researcher-gets-kiwi-funding-to-commercialise-spectroscopy-instrument/",
+      "disposition": "insufficient_fields",
+      "note": "The public 6 October 2016 article describes Darby’s working CloudSpec prototype but explicitly places company formation in the future. No field attributed to the later accepted company without a contemporaneous identity link; research lead retained, not a confirmed company snapshot."
+    },
+    {
+      "company_id": "discovery_maramalabs",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/web/20180807195127/http://maramalabs.com/",
+      "disposition": "proposals_recorded",
+      "note": "Inspected actual capture body; SHA-256 7d4841a285308f32b774cc303e724fa778a1f53255235edc2df342006af1ef9a. Four strict proposals. No price, payment, purchaser identity, intended sales geography or full-time team evidence. Current alumni page updated in June 2019 is not used."
+    },
+    {
+      "company_id": "discovery_inhibitcoatings",
+      "checked_on": "2026-11-22",
+      "url": "https://silverinstitute.org/silver-institute-sponsor-silver-technology-symposium-techconnect-world-innovation-conference-2018/",
+      "disposition": "proposals_recorded",
+      "note": "Three strict proposals from the full dated release. The planned conference presentation does not establish prototype, revenue, lead investor, customer purchase or full-time team. No material performance claim imported from later product pages."
+    },
+    {
+      "company_id": "discovery_formuslabs",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/web/20190101031612/https://www.formuslabs.com/",
+      "disposition": "insufficient_fields",
+      "note": "Capture day is within the conservative 1 January 2019 cutoff, but inspected HTML contains only a homepage title and application loader. It supplies no additional product fields."
+    },
+    {
+      "company_id": "public_firstaml",
+      "checked_on": "2026-11-22",
+      "url": "https://www.firstaml.com/au/about/company/our-story/?l=en-au",
+      "disposition": "later_revision",
+      "note": "Current timeline includes 2025 and 2026 events. Its dated 2018 milestones cannot themselves witness the historical version; none is extracted from this current page."
+    },
+    {
+      "company_id": "public_firstaml",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/web/20190127160933/https://www.firstaml.co.nz/",
+      "disposition": "proposals_recorded",
+      "note": "Inspected actual capture body; SHA-256 66ff3090e31587aaf683d6da11fa018f9f711f7ceba5ade379f940444f72ee5d. Six strict proposals. The 2019 offering is an outsourced professional service supported by software, not the present self-service product. No fee, paid customer, full-time employment or founding month inferred."
+    },
+    {
+      "company_id": "public_partly",
+      "checked_on": "2026-11-22",
+      "url": "https://www.blackbird.vc/blog/investment-notes-partly",
+      "disposition": "too_late",
+      "note": "The investor article is dated 13 October 2020, five days after the fixed 8 October subject cutoff. Its descriptor and revenue details are not admitted to the strict subject snapshot; the subject has no lenient mode."
     }
   ]
 }

@@ -8,15 +8,15 @@ The protocol was committed as `d0c7c27` before any Time Machine scoring run. See
 
 | Subject | Date-eligible earlier peers | Peers with ≥5 confirmed strict fields | Peers that could clear after proposal review | Subject confirmed / proposed fields |
 |---|---:|---:|---:|---:|
-| Partly | 32 | 0 | 2 | 0 / 0 |
-| Supie | 39 | 0 | 2 | 0 / 6 |
-| Halter | 8 | 0 | 0 | 0 / 0 |
+| Partly | 32 | 0 | 9 | 0 / 0 |
+| Supie | 39 | 0 | 9 | 0 / 6 |
+| Halter | 8 | 0 | 1 | 0 / 0 |
 
-Twenty field extractions for CodeLingo, Social Club, Narrative and Supie are recorded as **proposed**, with sources, locators and normalisation rationale. No human confirmation is claimed. CodeLingo has five proposals and Social Club six; Narrative has three. Supie is a subject and is not an earlier peer for Partly.
+Seventy-two field extractions across fourteen companies are recorded as **proposed**, with sources, locators and normalisation rationale: 69 strict and three lenient-only. The [field review](docs/healthtech-pilot/BACKTEST_REVIEW.md) presents all values and source versions. Nine Partly-eligible peers have at least five strict proposals: CodeLingo, First AML, Firstcheck, Myovolt, Narrative, Parcelport, Social Club, StretchSense and Vidapp. Supie is a subject and is not an earlier peer for Partly. No human confirmation is claimed.
 
-The fixed Phase 1 gate requires **15 Partly-eligible peers with at least five confirmed strict fields each**. It is not met. Even confirming every current proposal would leave thirteen more covered peers to research. This is the coverage of this research pass, not proof that the remaining historical evidence does not exist. No general matcher, Time Machine endpoint, backtest result or UI is released. The existing app's source packets and thresholds are unchanged.
+The fixed Phase 1 gate requires **15 Partly-eligible peers with at least five confirmed strict fields each**. It is not met. Even confirming every current proposal would leave six more sufficiently covered peers to research. This is the coverage of this research pass, not proof that the remaining historical evidence does not exist. No general matcher, Time Machine endpoint, backtest result or UI is released. The existing app's source packets and thresholds are unchanged.
 
-Partly's current NZ Entrepreneur page shows a 2021 update, so it was excluded from the 2020 snapshot. Scoop and archive access were unavailable through the research tool; no original version was inspected. Halter has no qualifying pre-entry source in this pass. A later biography cannot fill its 2016 snapshot.
+Partly's current NZ Entrepreneur page shows a 2021 update, so it was excluded from the 2020 snapshot. Archive availability queries returned 11 and 22 October captures, after its 8 October cutoff; no qualifying original body was inspected. The Blackbird note is also too late. Actual pre-entry archive bodies were inspected for six other companies. Halter still has no qualifying pre-entry source. A later biography cannot fill its 2016 snapshot. 1Centre's three descriptors are lenient-only and add nothing to strict coverage.
 
 Sector normalisation separately preserves all 33 raw labels and their source records: 31 editorial mapping proposals, with `Foodtech` and `Software & Services` still unresolved. These mappings do not count as historical evidence. Reproduce the audit with `.venv/bin/python scripts/audit_backtest_coverage.py --output outputs/backtest-coverage.json`; `--require-gate` exits 1 until the unchanged data bar passes.
 
