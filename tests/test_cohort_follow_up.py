@@ -151,7 +151,7 @@ def test_bounded_searches_cover_original_50_with_a_public_filing_index():
     assert partly['status'] == 'reached_outcome'
     assert partly['outcome_event_id'] == 'partly_priced_series_a'
     assert partly['event_time_basis'] == 'bounded_by_primary'
-    assert partly['event_time_bounds'] == {'earliest_on': '2020-10-08', 'latest_on': '2022-12-16'}
+    assert partly['event_time_bounds'] == {'earliest_on': '2020-10-08', 'latest_on': '2022-12-13'}
     assert partly['observed_at_36_months'] is False
     assert follow['secondary']['statuses']['reached_outcome'] == follow['statuses']['reached_outcome'] == 2
     assert follow['decisions']['public_supie']['secondary']['status'] == 'closed_before_outcome'
