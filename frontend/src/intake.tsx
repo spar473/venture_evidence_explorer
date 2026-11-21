@@ -41,7 +41,11 @@ export function IntakeWorkspace(){
  },[editor.editor_id,editor.draft_id,retry]);
  const conflict=!!(editor.draft_id&&saved&&saved.revision_number!==editor.base_revision&&!editor.pending);
  const locked=busy||!!editor.pending;
- function open(d:Draft){if(locked)return;generation.current++;setComparison(null);setError("");setSaved(old=>old?.draft_id===d.draft_id&&old.revision_number>d.revision_number?old:d);setRestoreError(false);commit(newEditor(current.current.legacy?current.current.form:draftForm(d),d));}
+ function open(d:Draft){if(locked)return;generation.current++;setComparison(null);setError("");setSaved(old=>old?.draft_id===d.draft_id&&old.revision_number>d.revision_number?old:d);setRestoreError(false);
+  // Lock the form in the same render that installs the draft. Setting this only in the
+  // identity-check effect left a window where the form was enabled, then disabled, and a
+  // keystroke typed in between was silently dropped before the next save.
+  setChecking(true);commit(newEditor(current.current.legacy?current.current.form:draftForm(d),d));}
  function start(){if(locked)return;generation.current++;setSaved(null);setComparison(null);setError("");setChecking(false);setRestoreError(false);commit(newEditor());}
  function claim(i:number,key:keyof SuppliedClaim,value:string){setForm(f=>({...f,claims:f.claims.map((c,n)=>n===i?{...c,source:{...c.source,[key]:value}}:c)}));}
  async function save(e:React.FormEvent){
