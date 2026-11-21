@@ -1,6 +1,6 @@
 # NZ healthtech comparison pilot
 
-This branch starts from `implementation/vee-workbench` at `bff2c0624907ef58e45a9cb617f0e3c56bf29e4d`. It begins with a [source-checked cohort inventory](cohort.json) and a [copy-ready implementation prompt](IMPLEMENTATION_PROMPT.md). The inventory is evidence preparation for the existing research adapter.
+This branch starts from `implementation/vee-workbench` at `bff2c0624907ef58e45a9cb617f0e3c56bf29e4d`. It begins with a [source-checked cohort inventory](cohort.json) and a [copy-ready implementation prompt](archive/IMPLEMENTATION_PROMPT.md) (now archived). The inventory is evidence preparation for the existing research adapter.
 
 ## First release
 

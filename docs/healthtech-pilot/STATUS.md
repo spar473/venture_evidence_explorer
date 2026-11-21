@@ -229,4 +229,59 @@ The real MRI screening note and a synthetic note with all three comp roles both 
 
 The built Overview rendered in an offline replay of the real in-process demo API responses. The screenshot preview opened in Firefox, but the tab was no longer available when saving. A later file navigation in the in-app browser was blocked by its URL policy. Workbench PNGs are pending with the socket-dependent browser suite. The README retains the older Research mode image under the demo steps, with its view identified in the caption.
 
-The PR body is in [PR_DESCRIPTION.md](PR_DESCRIPTION.md).
+The PR body is in [PR_DESCRIPTION.md](archive/PR_DESCRIPTION.md) (archived after PR #1 merged).
+
+## Witnessed snapshots · 21 November 2026
+
+Created `data/witnessed-snapshots` from main at `2404f2d` and merged `implementation/precedent-workbench` at `1c66a4a` locally because main did not yet include the workbench. The packet adds 12 publisher-dated sources and 50 features across seven company snapshots and all five current university project profiles. Entry decisions, follow-up statuses, ranking thresholds, top-k, witness rules and release gates retain their existing values.
+
+The in-process API calculation returns zero ranked peers for Automated Breast MRI Reporting because its institutional-round anchor is unverified. Toku Eyes returns three qualifying ranked peers. HeartLab appears in all three comp roles under the existing tie-break and outcome rules. See the [field-by-field evidence gap report](WITNESSED_SNAPSHOT_AUDIT.md).
+
+### Decisions
+
+| Date | Decision | Reason | Alternative considered |
+| --- | --- | --- | --- |
+| 21 November 2026 | Merge the workbench prerequisite locally into the branch created from main. | Main predates the ranking API. A combined checkout can verify the result through the actual workbench. | Commit an unwired data packet on main. |
+| 21 November 2026 | Keep current university profiles out of the historical ranking input. | None has a verified institutional-round anchor. | Treat a current research profile or an award date as an institutional entry. |
+| 21 November 2026 | Admit early published antecedent technology for RespirAq and Tiro only where later institutional sources establish continuity. | The older articles establish the technical claims and their availability. Later accounts identify the spinout connection. | Borrow the earlier research programme’s financing or later clinical progress. |
+| 21 November 2026 | Withhold July 2022 Carepatron additions pending closing-date reconciliation. | The lead investor’s later account dates its pre-seed to May. | Use July evidence based solely on the existing reporting proxy. |
+| 21 November 2026 | Record archive lookups as unresolved. | No pre-entry captured page and timestamp could be inspected. | Infer historical availability from a current company page. |
+
+### Pending local verification
+
+| Change | Checks run in this environment | Deferred |
+| --- | --- | --- |
+| Witnessed snapshot enrichment | 186 pytest tests passed. Production build, smoke verification, migrations, API contract and in-process demo and ranking checks passed. Playwright discovered 46 tests. | Playwright execution, running app inspection, browser screenshots, branch push |
+
+## Comp method v2 · 21 November 2026
+
+[Workbench PR #1](https://github.com/spar473/venture_evidence_explorer/pull/1) was created from the published workbench branch and merged on GitHub with merge commit `eb0335f`. The fetched `origin/main` was merged into `data/witnessed-snapshots` before editing the [method spec](../design/COMPS_METHOD.md).
+
+| Date | Method decision | Reason |
+| --- | --- | --- |
+| 21 November 2026 | Use subject-as-of evidence for university analogies and keep peer evidence at the selected anchor. | A university project can have witnessed workflow evidence before a qualifying financing or study event. The peer witness cutoff remains the earliest possible anchor date. |
+| 21 November 2026 | Rank comp outcomes on the dated as-of ladder. Preserve the separate 36-month statuses for rates and gates. | A post-window exit, priced round or verified closure can be relevant to a named comp. The card carries the supporting event date, or the dated search cutoff for a quiet classification. |
+| 21 November 2026 | Choose different companies for ceiling, typical and floor. Use a single representative if all resolved peers share one rank. | Repeated examples imply a range the evidence cannot support. Use the closest remaining rank to the lower median for typical. With only two resolved ranks and two companies, show ceiling and floor. |
+| 21 November 2026 | Require positive clinical workflow coverage and publish `witnessed-gower-b0:2`. | A peer must have at least one comparable workflow field. Existing weights, B0 token overlap, thresholds and minimum peer count still apply. |
+
+MRI ranks zero peers under both the institutional and study anchors. The [v2 audit](COMPS_V2_AUDIT.md) records every missing comparable field and the threshold results. Toku's distinct comps are HeartLab, RespirAq and Firstcheck. Firstcheck's post-window verified closure supplies the as-of floor while its primary window status stays unknown.
+
+The real MRI and Toku screening notes survived load, save and reload through Venture Frame at `cf1068a`. MRI retained its subject and Toku retained four alternatives and six measurements. Both frozen gates remained closed with 43 and 47 unknown or lost entries respectively.
+
+### Pending local verification
+
+| Change | Checks run in this environment | Deferred |
+| --- | --- | --- |
+| Comp method v2 | 187 pytest tests passed and 2 skipped. Production build, smoke verification, migrations, API contract, in-process ranking and gates, and Venture Frame round trips passed. Playwright discovered 47 tests. | Playwright execution, running app inspection, browser screenshots, and push of `data/witnessed-snapshots` |
+
+## Round review · 21 November 2026
+
+Full verification ran on `main` (`eb0335f`) and `data/witnessed-snapshots` (`e727490` plus the uncommitted review changes). Frozen outcome definitions, gates, cohort data and source records were not changed. The audit output matches the counts above: 55 entries; 2 reached, 1 closed first, 0 exits, 9 observed, 10 lost and 33 unknown for Series A or later; 2, 1, 0, 5, 6 and 41 for the next priced round; both gates withheld.
+
+| Check | `main` | `data/witnessed-snapshots` |
+| --- | --- | --- |
+| pytest | 182 passed, 2 skipped | 187 passed, 2 skipped |
+| Production build, smoke verification, migrations, API contract | Passed | Passed |
+| Playwright | 45 of 46 passed | 46 of 47 before the locator fix; 47 of 47 after |
+
+The Playwright bundled headless shell could not be installed in this environment, so the suite ran with `CHROME_PATH` set to the local Google Chrome. The one failure on both branches used `getByLabel("Outcome", {exact: true})`. A label that wraps its select includes the option text, so that exact match finds nothing. The test now selects the combobox named Outcome. The three workbench captures are in [screenshots/](screenshots/).

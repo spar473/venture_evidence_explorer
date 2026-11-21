@@ -92,7 +92,6 @@ export function Workbench() {
               {data.subject.sector && ` · ${data.subject.sector}`}
               {data.subject.anchor ? ` · ${fieldLabel(data.subject.anchor.claim.field)} · ${data.subject.anchor.claim.date_value}` :
                 data.subject.kind === "research_project" ? " · Research stage" : ""}</p>
-            {data.subject.kind === "research_project" && <p>Analogy query · No verified funding round yet</p>}
             <dl className="wb-metrics">
               <div><dd>{data.curated.length}</dd><dt>Curated precedents</dt></div>
               <div><dd>{data.subject.claims.length}</dd><dt>Cited claims</dt></div>

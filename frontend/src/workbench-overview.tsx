@@ -1,9 +1,8 @@
 import type {PrecedentResponse, WorkbenchClaim, WorkbenchGates, WorkbenchRow} from "./api-schema";
-import {type AnchorKind, anchors, dateLabel, downloadCsv, fieldLabel, GateProgress, OutcomeStatus} from "./workbench-shared";
+import {type AnchorKind, anchors, dateLabel, downloadCsv, fieldLabel, GateProgress} from "./workbench-shared";
 import {Trajectory} from "./workbench-trajectory";
 
-const roleNames = {ceiling: "Ceiling", typical: "Typical", floor: "Floor"} as const;
-const roles = Object.keys(roleNames) as (keyof typeof roleNames)[];
+const roleNames = {ceiling: "Ceiling", typical: "Typical", floor: "Floor", representative: "Representative comp"} as const;
 
 function checkLabel(value: string) { return value === "unknown" ? "?" : value === "yes" ? "Yes" : "No"; }
 
@@ -37,25 +36,28 @@ function Comps({data, onClaim, onEvidence}: {
 }) {
   return <section className="wb-card">
     <header className="wb-toolbar"><h2>Ceiling, typical and floor comps</h2></header>
+    {data.subject.kind === "research_project" && <p className="wb-muted">
+      Subject today vs peers at their {anchors[data.anchor_kind].toLowerCase()} · Subject as of {data.as_of}
+    </p>}
     {data.abstention && <p className="wb-notice">{data.abstention}</p>}
-    {data.comps.length > 0 && <div className="wb-comp-grid">{roles.map(role => {
-      const comp = data.comps.find(item => item.role === role);
-      if (!comp) return <article key={role} className="wb-comp">
-        <h3>{roleNames[role]}</h3><p>No observed floor comp is supported in the peer set.</p></article>;
+    {data.comps.length > 0 && <div className="wb-comp-grid">{data.comps.map(comp => {
       const {row, similarity, coverage, dimensions} = comp.peer;
+      const outcome = row.comp_outcome;
       const matches = [...new Set(dimensions.flatMap(item => item.matched_fields))].map(fieldLabel);
       const differences = [...new Set(dimensions.flatMap(item => item.different_fields))].map(fieldLabel);
       return <article key={comp.role} className="wb-comp">
         <span className="wb-role">{roleNames[comp.role]}</span>
         <h3>{row.display_name}</h3>
-        <OutcomeStatus status={row.status}/>
-        <p>{row.outcome_label} · {comp.reason}</p>
+        {outcome && <p><strong>{outcome.label}</strong> · <button className="wb-text-button"
+          onClick={() => onClaim(outcome.claim)} aria-label={`Status evidence for ${row.display_name} (${outcome.date_value})`}>
+          {outcome.date_value} ({outcome.date_precision} precision)</button></p>}
+        <p>{comp.reason}</p>
         <p><strong>{similarity.toFixed(2)}</strong> similarity · {coverage.toFixed(2)} comparable coverage</p>
         <dl className="wb-dimensions">{dimensions.map(item => <div key={item.dimension}>
           <dt>{item.dimension}</dt><dd>{item.similarity?.toFixed(2) ?? "?"} · coverage {item.coverage.toFixed(2)}</dd></div>)}</dl>
         <p><strong>Matches</strong> {matches.length ? matches.join(", ") : "No shared match recorded."}</p>
         <p><strong>Differences</strong> {differences.length ? differences.join(", ") : "No supported difference in available fields."}</p>
-        <h4>Same-stage snapshot</h4>
+        <h4>Peer snapshot at anchor</h4>
         {row.snapshot.length ? <ul>{row.snapshot.map(claim => <li key={claim.claim_id + claim.field}><button
           className="wb-text-button" onClick={() => onClaim(claim)}>{fieldLabel(claim.field)} · {claim.value}</button></li>)}</ul>
           : <p>{row.gaps.find(gap => gap.startsWith("Same-stage")) || "Same-stage evidence is withheld."}</p>}
@@ -66,8 +68,9 @@ function Comps({data, onClaim, onEvidence}: {
     <details className="wb-peers">
       <summary>All {data.peers.length} similar peers</summary>
       {!data.peers.length && <p>{data.peer_count_evaluated} alignable companies reviewed for witnessed similarity.</p>}
-      <ol>{data.peers.map(peer => <li key={peer.row.company_id}><strong>{peer.row.display_name}</strong>
-        {" · "}{peer.similarity.toFixed(2)} similarity · {peer.coverage.toFixed(2)} coverage · <OutcomeStatus status={peer.row.status}/></li>)}</ol>
+      <ol>{data.peers.map(({row, similarity, coverage}) => <li key={row.company_id}><strong>{row.display_name}</strong>
+        {" · "}{similarity.toFixed(2)} similarity · {coverage.toFixed(2)} coverage · {row.comp_outcome ?
+          `${row.comp_outcome.label} · ${row.comp_outcome.date_value}` : "Current status unresolved"}</li>)}</ol>
     </details>
   </section>;
 }

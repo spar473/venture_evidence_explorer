@@ -1,6 +1,8 @@
+Superseded by [STATUS.md](../STATUS.md) on 21 Nov 2026.
+
 # Code agent prompt for the healthtech pilot
 
-Work in `spar473/venture_evidence_explorer` on `implementation/healthtech-pilot`. The branch starts at the November 18 workbench handover. Read [the pilot plan](README.md), [cohort.json](cohort.json), [research import](../research_import.md), [research API](../research_api.md), [evidence contract](../evidence_contract.md) and the root README. Read any local repository instructions and check the worktree before editing. Preserve the frozen handover and its manifests.
+Work in `spar473/venture_evidence_explorer` on `implementation/healthtech-pilot`. The branch starts at the November 18 workbench handover. Read [the pilot plan](../README.md), [cohort.json](../cohort.json), [research import](../../research_import.md), [research API](../../research_api.md), [evidence contract](../../evidence_contract.md) and the root README. Read any local repository instructions and check the worktree before editing. Preserve the frozen handover and its manifests.
 
 ## Implement the first research comparison end to end
 

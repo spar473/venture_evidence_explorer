@@ -1,3 +1,5 @@
+Superseded by [docs/design/COMPS_METHOD.md](../../design/COMPS_METHOD.md) on 21 Nov 2026.
+
 # Copy-paste prompt: Precedent & Outcome Workbench (v2)
 
 Paste everything below the line into the coding agent, with the `venture_evidence_explorer` folder connected. This replaces the earlier draft of this file.

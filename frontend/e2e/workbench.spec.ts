@@ -7,6 +7,7 @@ test("workbench opens with the five university projects and keeps research navig
   await expect(main.getByRole("button", { name: "Precedents" })).toHaveAttribute("aria-current", "page");
   await expect(watchlist.getByRole("button")).toHaveCount(5);
   await expect(page.getByRole("heading", { name: "Automated Breast MRI Reporting" })).toBeVisible();
+  await expect(page.getByText("Subject today vs peers at their first institutional round", {exact: false})).toBeVisible();
   await watchlist.getByRole("button", { name: "Neurofanos" }).click();
   await expect(page.getByRole("heading", { name: "Neurofanos" })).toBeVisible();
   await page.getByRole("button", { name: /Outlook/ }).click();
@@ -44,7 +45,7 @@ test("outcome library reconciles filtered counts and retains post-window source 
   await expect(page.getByText(/Post-window closure · primary unknown/).first()).toBeVisible();
   await page.getByRole("button", {name: "Next companies"}).click();
   await expect(page.getByText("9–16 of 55")).toBeVisible();
-  await page.getByLabel("Outcome", {exact: true}).selectOption("secondary");
+  await page.getByRole("combobox", {name: "Outcome", exact: true}).selectOption("secondary");
   await expect(page.getByRole("heading", {name: /36-month status · Next priced equity round/})).toBeVisible();
   await page.getByLabel("Entry vintage").selectOption("2022");
   await expect(page.getByText("11 of 55")).toBeVisible();
@@ -61,7 +62,8 @@ test("same-stage evidence uses witnesses and Outlook withholds estimates", async
   await views.getByRole("button", {name: "Evidence"}).click();
   const matrix = page.getByRole("table", {name: "Evidence matrix"});
   await expect(matrix.getByRole("row").nth(1)).toContainText("Automated Breast MRI Reporting");
-  await page.getByRole("button", {name: "What was public at the same stage"}).click();
+  await page.getByRole("button", {name: "Comparison snapshots"}).click();
+  await expect(matrix.getByRole("row").nth(1)).toContainText("As of 2026-11-21");
   await expect(matrix.getByText("Not in public record").first()).toBeVisible();
   await expect(matrix.getByText("No dated witness")).toHaveCount(0);
   await views.getByRole("button", {name: /Outlook/}).click();
@@ -80,8 +82,23 @@ test("screening note downloads the selected subject and anchor", async ({page}) 
   const draft = await response.json();
   expect(draft.alternatives[0].metadata).toMatchObject({
     company_id: "subj_ht_mri", anchor_kind: "first_institutional_round", as_of: "2026-11-21",
+    similarity_version: "witnessed-gower-b0:2", snapshot_basis: "subject_as_of",
   });
   expect(draft.weight_profiles).toEqual([]);
+});
+
+test("Toku shows three distinct comps and dated status evidence", async ({page}) => {
+  await page.goto("/");
+  await page.getByRole("searchbox", {name: "Search ventures"}).fill("Toku");
+  await page.getByRole("button", {name: "Toku Eyes", exact: true}).click();
+  const cards = page.locator(".wb-comp");
+  await expect(cards).toHaveCount(3);
+  await expect(cards.nth(0)).toContainText("HeartLab");
+  await expect(cards.nth(1)).toContainText("RespirAq");
+  await expect(cards.nth(2)).toContainText("Firstcheck");
+  await expect(cards.nth(2)).toContainText("Verified closure");
+  await cards.nth(2).getByRole("button", {name: /Status evidence.*2021-10-13/}).click();
+  await expect(page.getByRole("dialog", {name: "Claim evidence"})).toContainText("2021-10-13");
 });
 
 test("captures workbench screenshots for the README and PR", async ({page}, info) => {
