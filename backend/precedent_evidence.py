@@ -114,10 +114,11 @@ def points_for(anchor, events, as_of):
 
 
 def snapshot_at(anchor, claims):
-    if not anchor:
-        return []
-    cutoff = anchor.claim.lower_on
     # Requiring the earliest possible anchor date prevents look-ahead for partial dates.
+    return snapshot_by(anchor.claim.lower_on, claims) if anchor else []
+
+
+def snapshot_by(cutoff, claims):
     candidates = [claim for claim in claims if claim.witness and claim.witness.available_on <= cutoff
         and (claim.published_on is None or claim.published_on <= cutoff)
         and (claim.upper_on is None or claim.upper_on <= cutoff)

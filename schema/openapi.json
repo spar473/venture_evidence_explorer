@@ -359,6 +359,47 @@
         "title": "CohortCompanies",
         "type": "object"
       },
+      "CompOutcome": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "$ref": "#/components/schemas/WorkbenchClaim"
+          },
+          "date_precision": {
+            "title": "Date Precision",
+            "type": "string"
+          },
+          "date_value": {
+            "title": "Date Value",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "rank": {
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "title": "Rank",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "rank",
+          "label",
+          "date_value",
+          "date_precision",
+          "claim"
+        ],
+        "title": "CompOutcome",
+        "type": "object"
+      },
       "Comparison": {
         "additionalProperties": false,
         "properties": {
@@ -5877,6 +5918,16 @@
             "title": "As Of",
             "type": "string"
           },
+          "comp_outcome": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompOutcome"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "company_id": {
             "title": "Company Id",
             "type": "string"
@@ -5939,7 +5990,8 @@
               "subject",
               "ceiling",
               "typical",
-              "floor"
+              "floor",
+              "representative"
             ],
             "title": "Role",
             "type": "string"
@@ -5957,6 +6009,15 @@
           },
           "similarity_version": {
             "title": "Similarity Version",
+            "type": "string"
+          },
+          "snapshot_basis": {
+            "default": "anchor",
+            "enum": [
+              "anchor",
+              "subject_as_of"
+            ],
+            "title": "Snapshot Basis",
             "type": "string"
           }
         },
@@ -6019,7 +6080,8 @@
             "enum": [
               "ceiling",
               "typical",
-              "floor"
+              "floor",
+              "representative"
             ],
             "title": "Role",
             "type": "string"
@@ -7008,6 +7070,16 @@
             },
             "title": "Claims",
             "type": "array"
+          },
+          "comp_outcome": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompOutcome"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "company_id": {
             "title": "Company Id",

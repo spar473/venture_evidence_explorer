@@ -48,6 +48,14 @@ class MilestoneValue(StrictModel):
     claim_ids: list[str]
 
 
+class CompOutcome(StrictModel):
+    rank: Literal[0, 1, 2, 3, 4, 5]
+    label: str
+    date_value: str
+    date_precision: str
+    claim: WorkbenchClaim
+
+
 class WorkbenchRow(StrictModel):
     company_id: str
     display_name: str
@@ -62,6 +70,7 @@ class WorkbenchRow(StrictModel):
     status: Status
     outcome_rank: int | None
     outcome_label: str | None
+    comp_outcome: CompOutcome | None = None
     not_alignable: str | None
 
 
@@ -81,7 +90,7 @@ class RankedPeer(StrictModel):
 
 
 class SelectedComp(StrictModel):
-    role: Literal['ceiling', 'typical', 'floor']
+    role: Literal['ceiling', 'typical', 'floor', 'representative']
     peer: RankedPeer
     reason: str
 

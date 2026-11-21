@@ -4,10 +4,11 @@ import pytest
 from fastapi.testclient import TestClient
 
 from backend.main import create_app
-from backend.precedent_contracts import WorkbenchAnchor, WorkbenchClaim, WorkbenchRow
+from backend.precedent_contracts import CompOutcome, WorkbenchAnchor, WorkbenchClaim, WorkbenchRow
 from backend.precedent_evidence import checklist, points_for, select_anchor, snapshot_at
-from backend.precedent_similarity import corpus_idf, rank_peers, score, select_comps
-from backend.reference_pool import Witness
+from backend.precedent_similarity import MIN_COVERAGE, MIN_SIMILARITY, VERSION, corpus_idf, features, rank_peers, score, select_comps
+from backend.precedents import COMP_LABELS, PrecedentCatalog, comp_outcome
+from backend.reference_pool import EventDate, PoolEvent, Witness
 from scripts.healthtech_demo import prepare_demo
 
 
@@ -30,9 +31,12 @@ def row(key, status='observed_no_outcome', rank=2, features=None):
         'stage': 'seed', 'buyer': 'hospital', 'months_since_founding': 12,
         'description': 'imaging surgical planning', 'regulatory_class': 2,
     }).items()]
+    evidence = claim('last_verified_activity', 'Supported status')
+    outcome = CompOutcome(rank=rank, label=COMP_LABELS[rank], date_value=evidence.date_value,
+                          date_precision=evidence.date_precision, claim=evidence) if rank is not None else None
     return WorkbenchRow(company_id=key, display_name=key, kind='company', sector='Healthtech',
         anchor=None, points=[], snapshot=snapshot, claims=snapshot, milestones=checklist(snapshot),
-        gaps=[], status=status, outcome_rank=rank, outcome_label=None, not_alignable=None)
+        gaps=[], status=status, outcome_rank=rank, outcome_label=None, comp_outcome=outcome, not_alignable=None)
 
 
 def test_gower_missingness_numeric_ranges_and_deterministic_text():
@@ -52,7 +56,9 @@ def test_top_k_abstention_tie_break_unknown_and_verified_floor():
     assert len(peers) == 12 and peers[0].row.company_id == 'company_00'
     comps, no_closure, abstains = select_comps(peers)
     assert no_closure and abstains is None
-    assert {comp.peer.row.company_id for comp in comps} == {'company_00'}
+    [comp] = comps
+    assert comp.role == 'representative' and comp.peer.row.company_id == 'company_00'
+    assert comp.reason == 'closest resolved peers share the same outcome'
     assert select_comps(peers[:2])[2]
     mixed = rank_peers(subject, [row('a_unknown','unknown',None), row('b_closed','closed_before_outcome',0),
                                 row('c_exit','acquired_or_ipo_before_outcome',5), row('d_observed')])
@@ -61,7 +67,61 @@ def test_top_k_abstention_tie_break_unknown_and_verified_floor():
     assert {comp.role:comp.peer.row.company_id for comp in comps} == {
         'ceiling':'c_exit', 'typical':'d_observed', 'floor':'b_closed',
     }
-    assert rank_peers(subject, [row('only_stage', features={'stage':'seed'})]) == []
+    varied = rank_peers(subject, [row('a_seed'), row('b_seed'), row('c_series', rank=3)])
+    assert [(comp.role, comp.peer.row.company_id) for comp in select_comps(varied)[0]] == [
+        ('ceiling', 'c_series'), ('typical', 'b_seed'), ('floor', 'a_seed'),
+    ]
+    assert [comp.role for comp in select_comps(mixed[:3])[0]] == ['ceiling', 'floor']
+
+
+def test_clinical_workflow_requires_comparable_fields_even_when_other_dimensions_clear_thresholds():
+    values = {'stage': 'seed', 'buyer': 'hospital', 'months_since_founding': 12, 'regulatory_class': 2}
+    subject = row('subject', features={**values, 'modality': 'MRI'})
+    no_workflow = row('missing_workflow', features=values)
+    similarity, coverage, _ = score(features(subject), features(no_workflow), {})
+    assert similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE
+    differing_workflow = row('different_workflow', features={**values, 'modality': 'ultrasound'})
+    [peer] = rank_peers(subject, [no_workflow, differing_workflow])
+    assert peer.row.company_id == 'different_workflow'
+    workflow = peer.dimensions[0]
+    assert workflow.coverage == .25 and workflow.similarity == 0
+
+
+def test_comp_status_uses_dated_evidence_beyond_the_window_and_respects_disputes():
+    anchor = WorkbenchAnchor(kind='first_institutional_round', claim=claim('seed'))
+
+    def record(kind, on, *, instrument='unknown', link='supported', precision='day', disputed=False):
+        event_date = EventDate(value=on, precision=precision)
+        lower, upper = event_date.bounds()
+        event = PoolEvent(event_id=kind, company_id='example', source_id='publisher', kind=kind,
+                          date=event_date, date_basis='reported_occurrence', claim='Dated event.', passage='Test.',
+                          instrument=instrument, entity_link=link)
+        evidence = claim(kind, witnessed=False).model_copy(update={'date_value': on, 'date_precision': precision,
+            'published_on': upper,
+            'lower_on': lower, 'upper_on': upper, 'review_state': 'disputed' if disputed else 'source_attributed'})
+        return event, evidence
+
+    series_a = record('series_a', '2022-02', instrument='priced_equity', precision='month')
+    series_b = record('series_b', '2024-06-01', instrument='priced_equity')
+    closure = record('closed_liquidation', '2025-08-01')
+    exit_event = record('acquired', '2025-02-01')
+    proposed = record('ipo', '2025-09-01', link='proposed')
+    disputed = record('closed_register_removal', '2024-07-01', disputed=True)
+    observations = [series_a, series_b, exit_event, closure, proposed, disputed]
+    for cutoff, rank, on in [('2022-02-12', None, None), ('2023-01-01', 3, '2022-02'),
+                             ('2024-12-01', 4, '2024-06-01'), ('2025-03-01', 5, '2025-02-01'),
+                             ('2026-11-21', 0, '2025-08-01')]:
+        result = comp_outcome(anchor, observations, None, cutoff)
+        assert ((result.rank, result.date_value) if result else (None, None)) == (rank, on)
+    unknown_financing = record('series_a', '2024-06-01')
+    assert comp_outcome(anchor, [unknown_financing], None, '2026-11-21') is None
+    activity = record('last_verified_activity', '2023-01-01')
+    review = {'activity_event_id': 'last_verified_activity', 'reviewed_on': '2025-01-10', 'searched_through': '2025-01-01'}
+    assert comp_outcome(anchor, [activity], review, '2024-12-31').rank == 2
+    quiet = comp_outcome(anchor, [activity], review, '2025-01-10')
+    assert (quiet.rank, quiet.date_value, quiet.claim.date_value) == (1, '2025-01-01', '2023-01-01')
+    recent = record('provider_deployment', '2024-10-15')
+    assert comp_outcome(anchor, [activity, recent], review, '2025-01-10').rank == 2
 
 
 def test_witness_is_required_by_earliest_anchor_bound_and_no_requires_dated_explicit_claim():
@@ -93,7 +153,7 @@ def test_live_api_anchors_curation_and_snapshot_abstention(demo_db):
         assert payload['subject']['kind'] == 'research_project'
         assert payload['subject']['points'] == []
         assert len(payload['curated']) == 3 and payload['abstention']
-        assert payload['similarity_version'] == 'witnessed-gower-b0:1'
+        assert payload['similarity_version'] == VERSION == 'witnessed-gower-b0:2'
         date_result = client.get('/api/precedents/subj_ht_mri?as_of=2026-11-21&anchor=first_regulatory_decision').json()
         assert any(row['anchor']['claim']['date_value'] == '2023-03-31'
                    for row in date_result['curated'] if row['anchor'])
@@ -198,6 +258,7 @@ def test_screening_note_download_round_trips_existing_measurement_draft(demo_db)
         assert subject.metadata.role == 'subject' and subject.metadata.company_id == 'subj_ht_mri'
         assert subject.metadata.anchor_kind == 'first_regulatory_decision'
         assert subject.metadata.anchor_event is None and subject.metadata.as_of == '2026-11-21'
+        assert subject.metadata.snapshot_basis == 'subject_as_of'
         assert draft.performances == draft.weight_profiles == draft.scenarios == []
 
         real = PrecedentResponse.model_validate(client.get(path + query).json())
@@ -216,11 +277,15 @@ def test_screening_note_download_round_trips_existing_measurement_draft(demo_db)
         assert by_role['ceiling'].anchor_event.claim.claim_id == 'claim_regulatory_clearance'
         assert by_role['ceiling'].milestones[0].claim_ids == ['claim_prototype']
         assert by_role['ceiling'].dimensions == ranked[0].dimensions
+        assert by_role['ceiling'].comp_outcome == best.comp_outcome
         assert restored.performances and not restored.weight_profiles
 
+        representative, _, _ = select_comps(rank_peers(row('subject'), [row(f'peer_{i}') for i in range(3)]))
+        single = screening_draft(real.model_copy(update={'comps': representative}))
+        assert [item.metadata.role for item in single.alternatives] == ['subject', 'representative']
 
-def test_event_witness_enrichment_ranks_company_peers_and_keeps_projects_as_analogies(demo_db):
-    from backend.precedent_similarity import MIN_COVERAGE, MIN_SIMILARITY, features
+
+def test_analogy_uses_current_witnesses_and_toku_has_distinct_dated_comps(demo_db):
     from backend.precedent_contracts import PrecedentResponse
 
     today = '2026-11-21'
@@ -233,8 +298,9 @@ def test_event_witness_enrichment_ranks_company_peers_and_keeps_projects_as_anal
             current = [item for item in payload.subject.claims if item.claim_id.startswith(f'witnessed:{key}:')]
             assert current and all(item.witness and item.witness.available_on <= today for item in current)
             assert payload.subject.anchor is None
-            assert payload.subject.snapshot == payload.peers == payload.comps == []
+            assert payload.subject.snapshot == current
         historical = client.get('/api/precedents/subj_ht_mri?as_of=2026-10-27').json()
+        assert not historical['subject']['snapshot']
         assert not any(claim['claim_id'].startswith('witnessed:subj_ht_mri:') for claim in historical['subject']['claims'])
 
         conflict = client.get(f'/api/precedents/public_carepatron?as_of={today}').json()
@@ -246,13 +312,42 @@ def test_event_witness_enrichment_ranks_company_peers_and_keeps_projects_as_anal
         assert {peer.row.company_id for peer in ranked.peers} >= {
             'discovery_heartlab', 'public_firstcheckltd', 'discovery_respiraq',
         }
-        assert {item.role for item in ranked.comps} == {'ceiling', 'typical', 'floor'}
+        assert {item.role: item.peer.row.company_id for item in ranked.comps} == {
+            'ceiling': 'discovery_heartlab', 'typical': 'discovery_respiraq', 'floor': 'public_firstcheckltd',
+        }
         assert all(peer.similarity >= MIN_SIMILARITY and peer.coverage >= MIN_COVERAGE for peer in ranked.peers)
-        assert all(comp.peer.row.status != 'unknown' for comp in ranked.comps)
+        firstcheck = ranked.comps[-1].peer.row
+        assert firstcheck.status == 'unknown'
+        assert (firstcheck.comp_outcome.label, firstcheck.comp_outcome.date_value) == ('Verified closure', '2021-10-13')
+        assert not ranked.no_verified_closure
         assert features(ranked.subject)['provider_study'] == 'yes'
         for peer in ranked.peers:
             anchor = peer.row.anchor.claim.lower_on
             assert all(item.witness.available_on <= anchor for item in peer.row.snapshot)
+
+
+def test_mri_peer_gaps_at_institutional_and_study_anchors(demo_db):
+    from contextlib import closing
+    from backend.database import connect
+    from backend.precedents import response
+
+    today = '2026-11-21'
+    with closing(connect(demo_db)) as conn:
+        catalog = PrecedentCatalog(conn, today)
+        entry = response(conn, 'subj_ht_mri', 'first_institutional_round', today)
+        study = response(conn, 'subj_ht_mri', 'first_provider_or_clinical_study', today)
+        left = features(entry.subject)
+        assert left == features(study.subject)
+        assert set(left) == {'modality', 'clinical_user', 'output_type', 'description'}
+        assert entry.peer_count_evaluated == 55 and study.peer_count_evaluated == 1
+        assert entry.peers == entry.comps == study.peers == study.comps == []
+        assert not features(catalog.row('discovery_formuslabs', entry.anchor_kind))
+        assert set(left) - features(catalog.row('discovery_formuslabs', study.anchor_kind)).keys() == {
+            'modality', 'clinical_user', 'output_type',
+        }
+        tiro = features(catalog.row('public_tirolifesciencesltd', entry.anchor_kind))
+        assert set(left) - tiro.keys() == {'clinical_user', 'output_type'}
+        assert score(left, tiro, corpus_idf([left, tiro]))[1] == .125
 
 
 def test_snapshot_packet_refuses_late_or_mismatched_witness_and_anchor():

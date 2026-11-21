@@ -252,3 +252,24 @@ The in-process API calculation returns zero ranked peers for Automated Breast MR
 | Change | Checks run in this environment | Deferred |
 | --- | --- | --- |
 | Witnessed snapshot enrichment | 186 pytest tests passed. Production build, smoke verification, migrations, API contract and in-process demo and ranking checks passed. Playwright discovered 46 tests. | Playwright execution, running app inspection, browser screenshots, branch push |
+
+## Comp method v2 · 21 November 2026
+
+[Workbench PR #1](https://github.com/spar473/venture_evidence_explorer/pull/1) was created from the published workbench branch and merged on GitHub with merge commit `eb0335f`. The fetched `origin/main` was merged into `data/witnessed-snapshots` before editing the [method spec](../design/COMPS_METHOD.md).
+
+| Date | Method decision | Reason |
+| --- | --- | --- |
+| 21 November 2026 | Use subject-as-of evidence for university analogies and keep peer evidence at the selected anchor. | A university project can have witnessed workflow evidence before a qualifying financing or study event. The peer witness cutoff remains the earliest possible anchor date. |
+| 21 November 2026 | Rank comp outcomes on the dated as-of ladder. Preserve the separate 36-month statuses for rates and gates. | A post-window exit, priced round or verified closure can be relevant to a named comp. The card carries the supporting event date, or the dated search cutoff for a quiet classification. |
+| 21 November 2026 | Choose different companies for ceiling, typical and floor. Use a single representative if all resolved peers share one rank. | Repeated examples imply a range the evidence cannot support. Use the closest remaining rank to the lower median for typical. With only two resolved ranks and two companies, show ceiling and floor. |
+| 21 November 2026 | Require positive clinical workflow coverage and publish `witnessed-gower-b0:2`. | A peer must have at least one comparable workflow field. Existing weights, B0 token overlap, thresholds and minimum peer count still apply. |
+
+MRI ranks zero peers under both the institutional and study anchors. The [v2 audit](COMPS_V2_AUDIT.md) records every missing comparable field and the threshold results. Toku's distinct comps are HeartLab, RespirAq and Firstcheck. Firstcheck's post-window verified closure supplies the as-of floor while its primary window status stays unknown.
+
+The real MRI and Toku screening notes survived load, save and reload through Venture Frame at `cf1068a`. MRI retained its subject and Toku retained four alternatives and six measurements. Both frozen gates remained closed with 43 and 47 unknown or lost entries respectively.
+
+### Pending local verification
+
+| Change | Checks run in this environment | Deferred |
+| --- | --- | --- |
+| Comp method v2 | 189 pytest tests passed. Production build, smoke verification, migrations, API contract, in-process ranking and gates, and Venture Frame round trips passed. Playwright discovered 47 tests. | Playwright execution, running app inspection, browser screenshots, and push of `data/witnessed-snapshots` |

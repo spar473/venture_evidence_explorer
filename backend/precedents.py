@@ -1,7 +1,6 @@
 """Build stage-aligned views from the audited cohort and curated fixture."""
 from collections import defaultdict
 from contextlib import closing
-from datetime import date
 
 from fastapi import HTTPException, Query, Response
 
@@ -10,11 +9,11 @@ from .database import connect
 from .healthtech import compare_healthtech, load_selections
 from .ingestion import day
 from .precedent_contracts import (
-    AnchorKind, ChecklistResponse, PrecedentResponse, UnalignedPeer, WorkbenchRow,
+    AnchorKind, ChecklistResponse, CompOutcome, PrecedentResponse, UnalignedPeer, WorkbenchRow,
 )
 from .precedent_evidence import (
     POOL_ANCHORS, checklist, fixture_feature_claims, points_for, pool_claim, research_claims,
-    select_anchor, snapshot_at,
+    select_anchor, snapshot_at, snapshot_by,
 )
 from .precedent_similarity import MILESTONES, VERSION, rank_peers, select_comps
 from .reference_pool import CLOSURES, OUTCOMES, EventDate, PoolEvent, PoolSource, Witness, plus_months
@@ -40,6 +39,10 @@ RANK_LABEL = {0: 'Verified closure first', 1: 'Lost to follow-up', 2: 'Observed 
               3: 'Series A', 4: 'Series B or later', 5: 'Acquisition or IPO'}
 STATUS_RANK = {'closed_before_outcome': 0, 'lost_to_follow_up': 1, 'observed_no_outcome': 2,
                'reached_outcome': 3, 'acquired_or_ipo_before_outcome': 5}
+COMP_LABELS = {0: 'Verified closure', 1: 'Lost or quiet', 2: 'Operating on seed',
+               3: 'Series A', 4: 'Series B+', 5: 'Exit or IPO'}
+ACTIVITY = {'last_verified_activity', 'clinical_study', 'provider_deployment',
+            'first_paid_customer', 'regulatory_clearance', 'regulatory_decision'}
 EVENT_FEATURES = {'clinical_study': 'provider_study', 'provider_deployment': 'provider_study',
                   'first_paid_customer': 'paid_pilot', 'regulatory_clearance': 'submission',
                   'pre_seed': 'stage', 'seed': 'stage', 'series_a': 'stage', 'series_b': 'stage',
@@ -65,6 +68,49 @@ def cohort_source(source_id, raw):
     return PoolSource(source_id=source_id, title=raw['scope'], publisher=raw['publisher'],
                       url=raw['url'], kind='dated_report', published_on=published_upper,
                       retrieved_on=raw['retrieved_on'])
+
+
+def comp_outcome(entry_anchor, records, review, as_of):
+    if not entry_anchor:
+        return None
+    dated = [(event, claim) for event, claim in records if event.entity_link == 'supported'
+             and claim.review_state != 'disputed' and claim.lower_on and claim.upper_on
+             and entry_anchor.claim.upper_on <= claim.lower_on <= claim.upper_on <= as_of]
+
+    def latest(candidates):
+        return max(candidates, key=lambda claim: (claim.upper_on, claim.lower_on, claim.claim_id), default=None)
+
+    def status(rank, claim, *, searched_on=None):
+        return CompOutcome(rank=rank, label=COMP_LABELS[rank], claim=claim,
+            date_value=searched_on or claim.date_value, date_precision='day' if searched_on else claim.date_precision)
+
+    closure = latest(claim for event, claim in dated if event.kind in CLOSURES)
+    exit_event = latest(claim for event, claim in dated if event.kind in ('acquired', 'ipo'))
+    if closure and exit_event:
+        if closure.lower_on > exit_event.upper_on:
+            return status(0, closure)
+        if exit_event.lower_on > closure.upper_on:
+            return status(5, exit_event)
+        return None
+    if closure:
+        return status(0, closure)
+    if exit_event:
+        return status(5, exit_event)
+
+    for rank in (4, 3):
+        financing = latest(claim for event, claim in dated if event.kind in OUTCOMES
+                           and event.instrument == 'priced_equity' and STAGE_RANK[event.kind] == rank)
+        if financing:
+            return status(rank, financing)
+
+    reviewed_id = review['activity_event_id'] if review and review['reviewed_on'] <= as_of else None
+    activity = latest(claim for event, claim in dated if event.kind in ACTIVITY or event.event_id == reviewed_id)
+    if activity:
+        if (reviewed_id and any(event.event_id == reviewed_id for event, _ in dated)
+                and plus_months(activity.upper_on, 18) <= review['searched_through']):
+            return status(1, activity, searched_on=review['searched_through'])
+        return status(2, activity)
+    return None
 
 
 class SubjectNotFound(LookupError):
@@ -115,7 +161,7 @@ class PrecedentCatalog:
             linked.add(cohort['company_id'])
         return fixture, cohort, linked
 
-    def row(self, key, kind):
+    def row(self, key, kind, *, as_subject=False):
         fixture, entry, _ = self.identity(key)
         graph_id = fixture.research_subject_id if fixture else key if not entry else None
         graph = dossier(self.conn, graph_id) if graph_id else None
@@ -127,6 +173,7 @@ class PrecedentCatalog:
         is_project = key in self.projects
         claims = research_claims(graph, graph_id, self.as_of)
         events = [claim for claim in claims if claim.field in PLOT_FIELDS]
+        records = []
         features = []
         if fixture:
             for event in self.fixture_events[fixture.company_id]:
@@ -135,6 +182,7 @@ class PrecedentCatalog:
                     claims.append(claim)
                     if event.entity_link == 'supported':
                         events.append(claim)
+                        records.append((event, claim))
             features = fixture_feature_claims(self.conn, self.digest, self.packet, fixture.company_id, self.as_of)
             claims.extend(features)
         entry_id = fixture.entry_event_id if fixture else None
@@ -158,6 +206,7 @@ class PrecedentCatalog:
                     claims.append(claim)
                     if event.entity_link == 'supported':
                         events.append(claim)
+                        records.append((event, claim))
                         audit_events[event.event_id] = event
         # Research observations with the same source and dated occurrence can
         # repeat an imported fixture event. Retain both claims in Evidence.
@@ -170,16 +219,15 @@ class PrecedentCatalog:
         prior_entry = select_anchor('first_institutional_round', events, entry_id, self.as_of) if entry_id else None
         profile_id = entry['company_id'] if entry else fixture.company_id if fixture else key
         witnessed = self.witnessed.claims(profile_id, self.as_of, entry_anchor=prior_entry, is_project=is_project)
-        # A current project profile has no verified financing anchor. Keep its
-        # controls and timeline separate from the historical ranking input.
-        if not is_project:
-            features.extend(witnessed)
+        features.extend(witnessed)
         claims = self.apply_reviews([*claims, *witnessed])
         features = self.apply_reviews(features)
         anchor = select_anchor(kind, events, entry_id, self.as_of)
-        comparable = snapshot_at(anchor, features + [claim.model_copy(update={
+        features.extend(claim.model_copy(update={
             'field': EVENT_FEATURES[claim.field], 'value': claim.field if EVENT_FEATURES[claim.field] == 'stage' else 'yes',
-        }) for claim in events if claim.field in EVENT_FEATURES])
+        }) for claim in events if claim.field in EVENT_FEATURES)
+        analogy = is_project and as_subject
+        comparable = snapshot_by(self.as_of, features) if analogy else snapshot_at(anchor, features)
         status, rank = self.comparison_outcome(entry, anchor, {
             key: value for key, value in audit_events.items() if key not in self.reviews
         })
@@ -187,11 +235,16 @@ class PrecedentCatalog:
         if not anchor:
             gaps.append('No supported dated anchor in the public record at this cutoff.')
         if not comparable:
-            gaps.append('Same-stage evidence needs a source availability witness on or before the earliest anchor date.')
+            gaps.append('The subject profile needs a source availability witness by the as-of date.' if analogy else
+                        'Same-stage evidence needs a source availability witness on or before the earliest anchor date.')
+        decision = self.follow_up['decisions'].get(entry['company_id']) if entry else None
+        undisputed = [(event, claim) for event, claim in records if claim.claim_id not in self.reviews]
+        latest_outcome = comp_outcome(prior_entry, undisputed, decision['review'] if decision else None, self.as_of)
         return WorkbenchRow(company_id=key, display_name=name, kind='research_project' if is_project else 'company',
             sector=sector, anchor=anchor, points=points_for(anchor, events, self.as_of), snapshot=comparable,
             claims=claims, milestones=checklist(comparable), gaps=gaps, status=status,
-            outcome_rank=rank, outcome_label=RANK_LABEL.get(rank), not_alignable=gaps[0] if not anchor else None)
+            outcome_rank=rank, outcome_label=RANK_LABEL.get(rank), comp_outcome=latest_outcome,
+            not_alignable=gaps[0] if not anchor else None)
 
     def comparison_outcome(self, entry, anchor, events):
         if not (entry and anchor and self.follow_up['as_of'] <= self.as_of):
@@ -237,7 +290,7 @@ class PrecedentCatalog:
 @read_consistently
 def response(conn, subject_id, kind, as_of):
     catalog = PrecedentCatalog(conn, as_of)
-    subject = catalog.row(subject_id, kind)
+    subject = catalog.row(subject_id, kind, as_subject=True)
     _, _, identity = catalog.identity(subject_id)
     rows = [catalog.row(company_id, kind) for company_id in catalog.entries
             if not identity.intersection(catalog.identity(company_id)[2])]
@@ -276,7 +329,7 @@ def install(app, db):
         @read_consistently
         def read(conn, key, kind, cutoff):
             catalog = PrecedentCatalog(conn, cutoff)
-            return ChecklistResponse(subject=catalog.row(key, kind), as_of=cutoff, anchor_kind=kind,
+            return ChecklistResponse(subject=catalog.row(key, kind, as_subject=True), as_of=cutoff, anchor_kind=kind,
                                      similarity_version=VERSION)
 
         return compute(subject_id, anchor, as_of, read)

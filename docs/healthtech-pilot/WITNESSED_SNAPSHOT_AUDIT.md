@@ -2,7 +2,9 @@
 
 The audit covers the five named references, 12 healthtech/medtech Cohort A companies and five university projects. Formus Labs belongs to both reference lists. The [snapshot packet](../../research/healthtech-pilot/witnessed-snapshots.json) adds 50 source-attributed feature values across seven entry snapshots and five university profiles. All 12 new witnesses are publisher-dated. The Wayback availability service could not be inspected for Formus, OPUM, The Insides Company, AuramerBio, Myovolt, Tiro or Volpara. That leaves archive coverage unresolved for those URLs.
 
-## Ranking result
+## Ranking result under method v1
+
+See the [method v2 audit](COMPS_V2_AUDIT.md) for the current ranking and the effect of asymmetric anchoring.
 
 Automated Breast MRI Reporting returns **0 ranked peers** under the institutional-round comparison. The university reports its breast MRI modality, radiologist user, draft report output and software description. The project has no verified first institutional round. The as-of profile appears under **Evidence → Everything known today**. The historical snapshot and ranked comparison abstain at this anchor. Adding more peer features alone cannot resolve this. [University of Auckland](https://www.auckland.ac.nz/en/news/2026/10/28/snoring-success-leads-ABI-double-success-velocity.html)
 

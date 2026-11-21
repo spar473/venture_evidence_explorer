@@ -1,17 +1,18 @@
-"""Versioned mixed-feature similarity over witnessed, same-stage snapshots."""
+"""Versioned mixed-feature similarity over witnessed snapshots."""
 import math
 from types import MappingProxyType
 
 from .precedent_contracts import DimensionScore, RankedPeer, SelectedComp
 from .retrieval import tokens
 
-VERSION = 'witnessed-gower-b0:1'
+VERSION = 'witnessed-gower-b0:2'
 TOP_K = 12
 MIN_SIMILARITY = .35
 MIN_COVERAGE = .15
 MIN_PEERS = 3
+CLINICAL_WORKFLOW = 'Clinical workflow'
 DIMENSIONS = MappingProxyType({
-    'Clinical workflow': (.25, ('modality', 'clinical_user', 'output_type', 'description')),
+    CLINICAL_WORKFLOW: (.25, ('modality', 'clinical_user', 'output_type', 'description')),
     'Buyer and sales path': (.20, ('buyer', 'procurement_path', 'business_model')),
     'Regulatory path': (.15, ('regulatory_class', 'jurisdiction', 'regulatory_decision')),
     'Stage evidence': (.25, ('stage', 'prototype', 'provider_study', 'submission', 'paid_pilot', 'full_time_team')),
@@ -79,36 +80,35 @@ def rank_peers(subject, eligible_rows):
     peers = []
     for row, values in peer_features:
         similarity, coverage, dimensions = score(left, values, idf)
-        if similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE:
+        clinical = next(item for item in dimensions if item.dimension == CLINICAL_WORKFLOW)
+        if clinical.coverage > 0 and similarity >= MIN_SIMILARITY and coverage >= MIN_COVERAGE:
             peers.append(RankedPeer(row=row, similarity=similarity, coverage=coverage, dimensions=dimensions))
     return sorted(peers, key=lambda peer: (-peer.similarity, peer.row.company_id))[:TOP_K]
 
 
 def select_comps(peers):
     peers = sorted(peers, key=lambda peer: (-peer.similarity, peer.row.company_id))[:TOP_K]
-    no_closure = not any(peer.row.status == 'closed_before_outcome' for peer in peers)
+    resolved = [peer for peer in peers if peer.row.comp_outcome is not None]
+    no_closure = not any(peer.row.comp_outcome.rank == 0 for peer in resolved)
     if len(peers) < MIN_PEERS:
         return [], no_closure, f'Fewer than {MIN_PEERS} peers meet the similarity and evidence coverage requirements.'
-    resolved = [peer for peer in peers if peer.row.outcome_rank is not None and peer.row.status != 'unknown']
     if not resolved:
         return [], no_closure, 'Outcome evidence is unresolved for all qualifying peers.'
-    # For an even set, use the lower median outcome rank. The closest peer
-    # represents each selected rank, even when several peers share it.
-    ranks = sorted(peer.row.outcome_rank for peer in resolved)
-    best_by_rank = {}
-    for peer in resolved:
-        best_by_rank.setdefault(peer.row.outcome_rank, peer)
-    ceiling = best_by_rank[ranks[-1]]
-    typical = best_by_rank[ranks[(len(ranks) - 1) // 2]]
-    comps = [
-        SelectedComp(role='ceiling', peer=ceiling, reason='Highest outcome rank among the closest peers.'),
-        SelectedComp(role='typical', peer=typical, reason='Median outcome rank among the closest peers with a classified outcome.'),
-    ]
-    floor_pool = [peer for peer in resolved if (peer.row.status != 'lost_to_follow_up' if no_closure
-                  else peer.row.status == 'closed_before_outcome')]
-    if floor_pool:
-        floor = min(floor_pool, key=lambda peer: peer.row.outcome_rank)
-        comps.append(SelectedComp(role='floor', peer=floor, reason=(
-            'Lowest observed outcome among the closest peers.' if no_closure
-            else 'Closest peer with verified closure before the outcome.')))
+    ranks = sorted(peer.row.comp_outcome.rank for peer in resolved)
+    if ranks[0] == ranks[-1]:
+        return [SelectedComp(role='representative', peer=resolved[0],
+            reason='closest resolved peers share the same outcome')], no_closure, None
+
+    ceiling = max(resolved, key=lambda peer: peer.row.comp_outcome.rank)
+    floor = min(resolved, key=lambda peer: peer.row.comp_outcome.rank)
+    comps = [SelectedComp(role='ceiling', peer=ceiling, reason='Highest outcome rank among the closest peers.')]
+    remaining = [peer for peer in resolved if peer.row.company_id not in {ceiling.row.company_id, floor.row.company_id}]
+    if remaining:
+        median = ranks[(len(ranks) - 1) // 2]
+        typical = min(remaining, key=lambda peer: abs(peer.row.comp_outcome.rank - median))
+        comps.append(SelectedComp(role='typical', peer=typical,
+            reason='Closest available outcome rank to the median among resolved peers.'))
+    comps.append(SelectedComp(role='floor', peer=floor, reason=(
+        'Lowest verified status among the closest peers.' if no_closure
+        else 'Closest peer with verified closure.')))
     return comps, no_closure, None

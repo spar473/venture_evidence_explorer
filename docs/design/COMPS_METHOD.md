@@ -1,6 +1,6 @@
 # Ceiling, typical and floor comps: method
 
-Status: method spec, 21 November 2026. Implementation and display are gated as described below. Nothing here permits showing a probability before a release gate in `docs/healthtech-pilot/NEXT_PHASE_PLAN.md` passes.
+Method v2, 21 November 2026. The comp response records similarity version `witnessed-gower-b0:2`. Probabilities remain subject to the release gates in `docs/healthtech-pilot/NEXT_PHASE_PLAN.md`.
 
 ## Inspiration and terms
 
@@ -11,22 +11,22 @@ Status: method spec, 21 November 2026. Implementation and display are gated as d
 | **Similarity-based projection** | FiveThirtyEight's CARMELO approach: find the most similar historical players, then project from what happened to them. |
 | **Similarity-weighted k-nearest neighbours (k-NN)** | The practical implementation: take the k most similar historical ventures and give closer ones more weight. |
 
-VC adaptation: **named comps first** (always available, honest), **probabilities later** (only when the cohort supports them).
+The workbench shows named comps when the witnessed peer set supports them. Probability display requires the corresponding release gate.
 
 ## 1. Start the clock (anchor event)
 
-Every comparison is made at a comparable stage, chosen with the UI's "Align at" selector:
+The UI's "Align at" selector chooses the peer stage:
 
 - `first_institutional_round` (default)
 - `first_provider_or_clinical_study`
 - `first_regulatory_decision`
 - `first_paid_customer`
 
-For each venture, the anchor date is the date of that event, with its precision. Partial dates become intervals. A venture without a dated anchor event is listed as "Not alignable", never dropped silently.
+For each peer, the anchor date is the date of that event, with its precision. Partial dates become intervals. Peers without a dated anchor stay visible under "Not alignable". A company subject uses the same event on its own timeline. A university analogy subject uses its witnessed profile at the selected as-of date and can be compared before it has a qualifying anchor. The UI labels this comparison "Subject today vs peers at their <anchor>" and shows the subject cutoff. Trajectories still require a dated event to establish day zero.
 
 ## 2. Snapshot at the anchor
 
-Features come only from sources whose **availability witness** is dated on or before the anchor date (see the witness contract). There are five dimensions:
+Features require a dated **availability witness** under the existing witness contract. For peers and company subjects, the witness, publication when known, and latest possible occurrence when known must be on or before the earliest possible anchor date. For an analogy subject, the same tests use the selected as-of date. Disputed claims are excluded. There are five dimensions:
 
 | Dimension | Example features | Type |
 |---|---|---|
@@ -40,27 +40,27 @@ A missing feature is **missing**, never "No".
 
 ## 3. Similarity
 
-- **Per-dimension similarity** s⁽ᵈ⁾ ∈ [0, 1], using Gower similarity for mixed types. Numeric features use range-normalised absolute difference. Categorical features use a match score. Text uses cosine similarity of a **local** sentence-embedding model over witnessed descriptions, with B0 kept as the baseline.
+- **Per-dimension similarity** s⁽ᵈ⁾ ∈ [0, 1], using Gower similarity for mixed types. Numeric features use range-normalised absolute difference. Categorical features use a match score. Text uses the B0 symmetric IDF-weighted token overlap over witnessed descriptions.
 - Features missing for either venture are excluded from that pair's average. The share of features available is reported as **coverage**.
+- **Clinical workflow is required.** At least one clinical workflow field must be comparable for the pair, even when its value differs. The existing similarity minimum of 0.35 and weighted coverage minimum of 0.15 also apply.
 - **Overall similarity:** s = Σ_d α_d s⁽ᵈ⁾ / Σ_d α_d, summed over dimensions with coverage. The α weights are fixed in advance and documented, and are tuned later on training vintages only.
 - The UI shows the per-dimension breakdown, because a venture can be a strong peer on procurement and a weak one on clinical validation.
 
 ## 4. Peer set
 
 - Top k by similarity (default k = 12), with a minimum similarity and a minimum coverage.
-- Fewer peers are returned when evidence is thin. If fewer than 3 qualify, the tool abstains.
+- The ranked list includes any qualifying peers. If fewer than three qualify, the tool abstains from selecting named roles.
 - The subject is excluded, and so is any peer whose identity is linked to it.
 
 ## 5. Ceiling, typical and floor
 
 Choose only from inside the top-k. **No reaching outside the peer set** for a better story.
 
-- **Outcome ladder** at the chosen horizon: exit or IPO > Series B+ > Series A > observed with no outcome > lost to follow-up > closed.
-- **Ceiling:** the best-ranked outcome; ties go to the higher similarity.
-- **Floor:** the worst-ranked *resolved* outcome, with verified closure preferred. If no closure exists among the top-k, show the worst observed case and say "No verified closure among the closest peers".
-- **Typical:** the median outcome rank among resolved peers.
-- Each card shows why it matches, where it differs, its similarity breakdown, its same-stage snapshot (or why that is withheld), and a link to its evidence.
-- `unknown` peers are listed but never chosen as a comp.
+- **Outcome ladder as of the requested date** goes from exit or IPO, to Series B+, Series A, operating on seed, lost or quiet, and verified closure. This display ladder uses dated, linked, undisputed evidence available by the cutoff, including events beyond 36 months. Labelled priced equity establishes Series A or B+. A verified terminal event supersedes operating and financing evidence. Where an exit and closure have overlapping date intervals, the order is unresolved. Subsequent ordinary activity leaves the last verified financing rank in place.
+- Operating on seed requires a dated operating event on or after institutional entry. A quiet classification requires the nominated activity and a completed, dated follow-up search with at least 18 months since the last verified activity. Its status date is the search cutoff. An operating, financing, exit or closure card uses the relevant event's reported date and precision. Peers without enough evidence for a status stay in the ranked list and are ineligible for cards.
+- Ceiling and floor select the highest and lowest resolved ranks. A verified closure takes the floor whenever present. Each rank breaks ties by higher similarity, then stable company ID. The typical card uses the unused peer closest to the lower median outcome rank, breaking ties by similarity then company ID. With only two resolved peers of different ranks, show ceiling and floor.
+- If all resolved peers share one rank, show the closest as a single **Representative comp** with the note "closest resolved peers share the same outcome". Keep the "No verified closure among the closest peers" flag where applicable.
+- Each card shows its verified status date and evidence link, matching and differing fields, similarity breakdown and anchor snapshot. The 36-month primary and secondary outcome classifications remain the basis for outcome rates and gates.
 
 ## 6. Probability (built and tested, displayed only after a gate passes)
 
