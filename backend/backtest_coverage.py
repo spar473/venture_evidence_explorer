@@ -87,13 +87,26 @@ def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None):
         if investigation.company_id not in entries:
             raise ValueError('Investigation references a company outside the accepted cohort')
     witnesses = {item.witness_id: item for item in packet.witnesses}
+    sources = {item.source_id: item for item in packet.sources}
+
+    def known_by(feature, cutoff):
+        source = sources[feature.source_id]
+        return all(
+            value is None or value <= cutoff
+            for value in (
+                witnesses[feature.witness_id].available_on,
+                source.published_on,
+                source.revised_on,
+                feature.effective_on,
+            )
+        )
 
     def coverage(company_id, historical_cutoff):
         profile = profiles.get(company_id)
         features = profile.features if profile else []
         # The common calendar cap applies even in lenient mode. Review dates are
         # present-day extraction metadata, not historical availability dates.
-        available = [f for f in features if witnesses[f.witness_id].available_on <= historical_cutoff]
+        available = [f for f in features if known_by(f, historical_cutoff)]
         confirmed = sorted(f.name for f in available if f.timing == 'strict' and f.review_state == 'confirmed')
         proposed = sorted(f.name for f in available if f.timing == 'strict' and f.review_state == 'proposed')
         return dict(

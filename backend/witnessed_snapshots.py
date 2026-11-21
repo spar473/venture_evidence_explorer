@@ -307,6 +307,9 @@ class BacktestSnapshotPacket(StrictModel):
             if witness.source_id not in sources:
                 raise ValueError('Backtest witness requires a known source')
             witness.check_source(sources[witness.source_id])
+            published = sources[witness.source_id].published_on
+            if published and witness.available_on < published:
+                raise ValueError('Backtest witness predates source publication')
         for profile in self.profiles:
             start, end = profile.entry_date.bounds()
             if start is None or end > self.compiled_on:

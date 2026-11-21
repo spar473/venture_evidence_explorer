@@ -126,7 +126,7 @@ def test_gate_counts_distinct_confirmed_peers_not_citations_or_proposals(evidenc
     'mutation,match',
     [
         ('late_witness', 'entry evidence cutoff'),
-        ('late_publication', 'entry evidence cutoff'),
+        ('late_publication', 'source publication'),
         ('late_effective', 'entry evidence cutoff'),
         ('mutable_old_date', 'dated version'),
         ('duplicate_field', 'Duplicate name'),
@@ -196,7 +196,8 @@ def test_cohort_input_change_requires_review(evidence, tmp_path):
         audit_coverage(write_packet(tmp_path, packet), cohort=cohort)
 
 
-def test_lenient_cannot_fill_strict_gate_and_is_capped_at_subject_date(evidence, tmp_path):
+@pytest.mark.parametrize('late_clock', ['witness', 'effective'])
+def test_lenient_cannot_fill_strict_gate_and_is_capped_at_subject_date(evidence, tmp_path, late_clock):
     packet, cohort = evidence
     confirm(packet)
     # This peer entered before Partly, but its descriptor was public afterwards.
@@ -205,8 +206,9 @@ def test_lenient_cannot_fill_strict_gate_and_is_capped_at_subject_date(evidence,
     next(row for row in cohort['decisions'] if row['company_id'] == peer['company_id'])['entry']['date'] = peer[
         'entry_date'
     ]
+    available_on = '2020-11-01' if late_clock == 'witness' else '2020-10-01'
     packet['sources'].append(
-        {**packet['sources'][0], 'source_id': 'later', 'url': 'https://example.org/later', 'published_on': '2020-11-01'}
+        {**packet['sources'][0], 'source_id': 'later', 'url': 'https://example.org/later', 'published_on': available_on}
     )
     packet['witnesses'].append(
         {
@@ -214,10 +216,12 @@ def test_lenient_cannot_fill_strict_gate_and_is_capped_at_subject_date(evidence,
             'witness_id': 'later_w',
             'source_id': 'later',
             'url': 'https://example.org/later',
-            'available_on': '2020-11-01',
+            'available_on': available_on,
         }
     )
     peer['features'][0].update(source_id='later', witness_id='later_w', timing='lenient')
+    if late_clock == 'effective':
+        peer['features'][0]['effective_on'] = '2020-11-01'
     report = audit_coverage(write_packet(tmp_path, packet), cohort=cohort)
     partly = report['subjects']['public_partly']
     row = next(row for row in partly['peers'] if row['company_id'] == peer['company_id'])

@@ -15,7 +15,7 @@ The first browser attempts could not start because the default system Python lac
 
 ## Time Machine coverage checkpoint
 
-The new packet and audit have 21 regression cases covering proposed versus confirmed data, fixed peer counts, duplicate fields, source/witness timing, partial entry dates, mutable-page old dates, review chronology, changed anchors and cohort input digests, unknown vocabulary, and lenient evidence excluded from strict coverage. The full Python 3.11 suite passed with **232 passed, 2 skipped**; API contract, Ruff, frontend build and Prettier checks passed. The actual packet has no human-confirmed fields; a passing validator is not acceptance of the proposed facts.
+The new packet and audit have 22 regression cases covering proposed versus confirmed data, fixed peer counts, duplicate fields, source/witness timing, partial entry dates, mutable-page old dates, review chronology, changed anchors and cohort input digests, unknown vocabulary, and lenient evidence excluded from strict coverage. The common subject cutoff applies to witness, publication, revision and effective dates; a backtest archive witness cannot predate publication. The full Python 3.11 suite passed with **233 passed, 2 skipped**; API contract, Ruff, frontend build and Prettier checks passed. The actual packet has no human-confirmed fields; a passing validator is not acceptance of the proposed facts.
 
 The existing 49 Playwright tests passed. Twenty-four canonical b0:3 API responses (six subjects, two anchors and both witness modes at 2026-11-21) were byte-identical against `main` at `0b7e5d8`; combined SHA-256 `7c619d8a04d7859199b3661b9f2283e7e0481577a2d6511b25d0b437db20f4ca`. This checks the existing profile, not the unimplemented general profile.
 
@@ -26,7 +26,7 @@ The coverage command validates the graph and reports the shortfall with exit 0 f
 | Job | What it checks |
 |---|---|
 | `lint` | `ruff check` and `ruff format --check` on `backend/`, `scripts/` and `tests/`; `prettier --check` on `frontend/src` and `frontend/e2e` |
-| `backend` (Python 3.10, 3.11, 3.12, 3.13) | bootstrap, `verify.py`, `check_migrations.py`, research example validation, `verify_research.py`, Time Machine packet/coverage audit, **pytest (234 tests)**, `export_contract.py --check` (OpenAPI and generated TypeScript in sync), evaluation, research and discovery imports, frozen evaluation workbench, academic demo |
+| `backend` (Python 3.10, 3.11, 3.12, 3.13) | bootstrap, `verify.py`, `check_migrations.py`, research example validation, `verify_research.py`, Time Machine packet/coverage audit, **pytest (235 tests)**, `export_contract.py --check` (OpenAPI and generated TypeScript in sync), evaluation, research and discovery imports, frozen evaluation workbench, academic demo |
 | `browser` (Ubuntu 24.04, Chromium) | production build, then **49 Playwright tests** against a disposable database, with screenshots and the HTML report uploaded as an artifact |
 
 ## Coverage of the critical rules
