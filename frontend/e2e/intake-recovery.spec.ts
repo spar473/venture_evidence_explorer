@@ -1,16 +1,21 @@
 import {test,expect,type Page,type APIRequestContext} from '@playwright/test';
 const input=(name:string)=>({request_id:crypto.randomUUID(),name,description:'Synthetic clinical images software query',aliases:[]});
 async function create(api:APIRequestContext,name:string){const r=await api.post('/api/intake/drafts',{data:input(name)});expect(r.ok()).toBeTruthy();return r.json();}
-async function enter(page:Page,name?:string){await page.goto('/?mode=research');await page.getByRole('button',{name:'Add venture',exact:true}).click();if(name)await page.getByRole('button',{name:name+' · revision 1',exact:true}).click();}
+// Selecting a saved draft starts an identity/revision check (GET /api/intake/drafts/:id) that
+// keeps the form disabled. Wait for that exact response and the editable form before typing,
+// so a fill can never land while the form is locked.
+const draftCheck=(page:Page)=>page.waitForResponse(r=>r.request().method()==='GET'&&/\/api\/intake\/drafts\/[^/?]+$/.test(new URL(r.url()).pathname));
+async function enter(page:Page,name?:string){await page.goto('/?mode=research');await page.getByRole('button',{name:'Add venture',exact:true}).click();if(name){const checked=draftCheck(page);await page.getByRole('button',{name:name+' · revision 1',exact:true}).click();expect((await checked).ok()).toBeTruthy();await expect(page.getByText('Checking saved draft identity and revision…')).toHaveCount(0);await expect(page.getByLabel('Description',{exact:true})).toBeEditable();}}
+const typeDescription=async(page:Page,text:string)=>{const field=page.getByLabel('Description',{exact:true});await field.fill(text);await expect(field).toHaveValue(text);};
 const save=(page:Page)=>page.getByRole('button',{name:'Save revision',exact:true});
 
 test('delayed save prevents switching draft identity and preserves both histories',async({page})=>{
- const a=await create(page.request,'Synthetic race A'),b=await create(page.request,'Synthetic race B');await enter(page,a.content.name);await page.getByLabel('Description',{exact:true}).fill('Synthetic A changed');
+ const a=await create(page.request,'Synthetic race A'),b=await create(page.request,'Synthetic race B');await enter(page,a.content.name);await typeDescription(page,'Synthetic A changed');
  let release=()=>{};let notify=()=>{};const held=new Promise<void>(r=>notify=r);const gate=new Promise<void>(r=>release=r);
  await page.route('**/api/intake/drafts/'+a.draft_id+'/revisions',async route=>{const response=await route.fetch();notify();await gate;await route.fulfill({response});});
  await save(page).click();await held;
  try{await expect(page.getByRole('button',{name:b.content.name+' · revision 1',exact:true})).toBeDisabled();await expect(page.getByLabel('Venture or project name')).toHaveValue(a.content.name);}finally{release();}
- await expect(save(page)).toBeEnabled();await page.getByRole('button',{name:b.content.name+' · revision 1',exact:true}).click();await page.getByLabel('Description',{exact:true}).fill('Synthetic B changed');await save(page).click();await expect(save(page)).toBeEnabled();
+ await expect(save(page)).toBeEnabled();await page.getByRole('button',{name:b.content.name+' · revision 1',exact:true}).click();await typeDescription(page,'Synthetic B changed');await save(page).click();await expect(save(page)).toBeEnabled();
  const aa=await (await page.request.get('/api/intake/drafts/'+a.draft_id)).json(),bb=await (await page.request.get('/api/intake/drafts/'+b.draft_id)).json();expect([aa.content.name,aa.revision_number,aa.content.description]).toEqual([a.content.name,2,'Synthetic A changed']);expect([bb.content.name,bb.revision_number,bb.content.description]).toEqual([b.content.name,2,'Synthetic B changed']);
 });
 
@@ -36,7 +41,14 @@ for(const kind of ['create','revision'] as const){test('lost '+kind+' response s
  });}
 
 test('unmounted delayed save cannot replace the restored editor session',async({page})=>{
- const a=await create(page.request,'Synthetic delayed unmount');await enter(page,a.content.name);await page.getByLabel('Description',{exact:true}).fill('Synthetic pending revision');let release=()=>{};let notify=()=>{};const held=new Promise<void>(r=>notify=r),gate=new Promise<void>(r=>release=r);await page.route('**/api/intake/drafts/'+a.draft_id+'/revisions',async route=>{const response=await route.fetch();notify();await gate;await route.fulfill({response});});await save(page).click();await held;await page.getByRole('button',{name:'Explore ventures',exact:true}).click();release();await page.getByRole('button',{name:'Add venture',exact:true}).click();await expect(page.getByRole('button',{name:'Retry uncertain save'})).toBeVisible();await page.unroute('**/api/intake/drafts/'+a.draft_id+'/revisions');await page.getByRole('button',{name:'Retry uncertain save'}).click();await expect(save(page)).toBeEnabled();const after=await (await page.request.get('/api/intake/drafts/'+a.draft_id)).json();expect(after.revision_number).toBe(2);expect(after.content.description).toBe('Synthetic pending revision');
+ const a=await create(page.request,'Synthetic delayed unmount');await enter(page,a.content.name);await typeDescription(page,'Synthetic pending revision');
+ const revisions='**/api/intake/drafts/'+a.draft_id+'/revisions';let submitted:any;let release=()=>{};let notify=()=>{};const held=new Promise<void>(r=>notify=r),delivered=new Promise<void>(r=>release=r);
+ // Hold the first save's response until the editor has unmounted, then deliver it to the stale component.
+ await page.route(revisions,async route=>{submitted=route.request().postDataJSON();const response=await route.fetch();notify();await delivered;await route.fulfill({response});});
+ await save(page).click();await held;expect(submitted.description).toBe('Synthetic pending revision');
+ await page.getByRole('button',{name:'Explore ventures',exact:true}).click();await expect(page.getByRole('button',{name:'Add venture',exact:true})).toBeVisible();await expect(save(page)).toHaveCount(0);release();
+ await page.getByRole('button',{name:'Add venture',exact:true}).click();await expect(page.getByRole('button',{name:'Retry uncertain save'})).toBeVisible();await expect(page.getByLabel('Description',{exact:true})).toHaveValue('Synthetic pending revision');await page.unroute(revisions);
+ const retried=page.waitForResponse(r=>r.request().method()==='POST'&&new URL(r.url()).pathname==='/api/intake/drafts/'+a.draft_id+'/revisions');await page.getByRole('button',{name:'Retry uncertain save'}).click();const r=await retried;expect(r.ok()).toBeTruthy();expect(r.request().postDataJSON()).toEqual(submitted);await expect(page.getByRole('button',{name:'Retry uncertain save'})).toHaveCount(0);await expect(save(page)).toBeEnabled();const after=await (await page.request.get('/api/intake/drafts/'+a.draft_id)).json();expect(after.revision_number).toBe(2);expect(after.content.description).toBe('Synthetic pending revision');
 });
 
 test('legacy field recovery requires explicit identity selection',async({page})=>{
