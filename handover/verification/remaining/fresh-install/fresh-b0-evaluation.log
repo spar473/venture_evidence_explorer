@@ -1,3 +1,0 @@
-$ ['/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python', 'scripts/evaluate.py', '--db', 'outputs/venture_evidence.sqlite', '--output', '/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/development-evaluation.json']
-CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source
-{"output": "/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/outputs/remaining/fresh-install/development-evaluation.json", "operational": {"queries": 6, "abstentions": 4}, "relevance_status": "pending_human_judgments"}

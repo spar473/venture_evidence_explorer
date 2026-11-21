@@ -18,7 +18,11 @@ def main():
     source = a.source.resolve()
     destination = a.destination.resolve()
     if not source.is_file():
-        p.error('Snapshot not found: ' + str(source))
+        p.error(
+            'Snapshot not found: '
+            + str(source)
+            + '. handover/ moved to the GitHub release archive/handover-2026-11-21; see docs/archive/HANDOVER.md.'
+        )
     destination.parent.mkdir(parents=True, exist_ok=True)
     try:
         destination.touch(exist_ok=False)
