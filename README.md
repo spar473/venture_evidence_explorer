@@ -13,7 +13,7 @@ Start the demo server as shown under [Run it](#run-it), then:
 1. **Outcome library** (0:00). The app opens here. Every count links to a dated source; note the healthtech small-denominator line.
 2. **Stories worth knowing** (0:40). Open Supie (Icehouse-led seed, then liquidation; click the Companies Office link), then Halter (seed 2016, Series A January 2018).
 3. **Outcome toggle** (1:20). Switch *Series A or later* to *Next priced equity round*. The counts move; the definitions are frozen.
-4. **Precedents ▸ Evidence** (1:40). Open **Evidence → Comparison snapshots** for witness date, publisher and locator. Switch **Peer witness mode** to see the `+n days` late-witness badges.
+4. **Precedents ▸ Evidence** (1:40). Open **Evidence → Comparison snapshots** for the **Public by** date, publisher and locator. Switch **Peer evidence** to see the `+n days` late-evidence badges.
 5. **Comps abstention** (2:20). Search **Toku Eyes**, then open **Overview → Why no comps yet**. HeartLab clears overall similarity (0.50) but scores 0.00 on clinical workflow against 0.25 required. The thresholds do not move.
 6. **Outlook** (2:40). Rates stay locked until there are 150 companies, 30 outcomes and under 25% unknown or lost.
 
@@ -39,8 +39,8 @@ Checks (all run in CI):
 ```sh
 .venv/bin/python -m pytest -q
 .venv/bin/python scripts/export_contract.py --check
-(cd frontend && npx playwright install chromium && npx playwright test)
-ruff check backend scripts tests && ruff format --check backend scripts tests   # pip install -r requirements-dev.txt
+(cd frontend && npx playwright install chromium && VEE_PYTHON="$PWD/../.venv/bin/python" npx playwright test)
+.venv/bin/ruff check backend scripts tests && .venv/bin/ruff format --check backend scripts tests   # .venv/bin/python -m pip install -r requirements-dev.txt
 (cd frontend && npm run format:check)
 ```
 
@@ -56,4 +56,4 @@ ruff check backend scripts tests && ruff format --check backend scripts tests   
 
 More captures: [Precedent overview](docs/healthtech-pilot/screenshots/workbench-overview.png) · [Evidence](docs/healthtech-pilot/screenshots/workbench-evidence.png).
 
-Copyright © 2026. All rights reserved; see [LICENSE](LICENSE).
+Code and associated documentation: [MIT licence](LICENSE). Curated evidence and third-party sources have separate terms; see [DATA_USE.md](DATA_USE.md).

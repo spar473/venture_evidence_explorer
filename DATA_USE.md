@@ -2,6 +2,18 @@
 
 Venture Evidence Explorer records **where** a public fact about an early New Zealand venture was published, **when** it became public, and a short paraphrase of what the source says. It does not republish the sources themselves.
 
+## Code licence and data boundary
+
+The [MIT licence](LICENSE) covers this project's original software and associated documentation. It does **not** license the curated evidence packets in `data/` and `research/`, the cohort in `docs/healthtech-pilot/cohort.json`, or evidence exported from those records. Synthetic fixtures and schemas remain part of the software. Third-party articles, reports, register records, quotations, images and other source material retain their owners' rights.
+
+No blanket open-data licence is granted for the curated collection. A public citation is not permission to redistribute its source, and a short passage is not automatically exempt from copyright or source terms. Check the specific source's terms and any required permission before reusing its content. Keep source attribution, locators, dates and uncertainty with any permitted reuse.
+
+### Source-terms review · 22 November 2026
+
+- **Companies Office:** its [copyright policy](https://www.companiesoffice.govt.nz/about-us/copyright/) excludes public notices and register contents from the general website licence. Do not describe register evidence as CC BY merely because it appears on that website. The [Companies Register terms](https://companies-register.companiesoffice.govt.nz/about/terms-and-conditions/) also apply to use of the service.
+- **PwC:** the [global website terms](https://www.pwc.com/gx/en/legal-notices/terms-and-conditions.html) restrict reuse of content on sites that link to them. Applicability to each cited NZ report and permission to redistribute report-derived material have not been confirmed. This project links to reports and records hand-checked claims; it does not redistribute the PDFs or grant rights to their content.
+- **Other publishers and company or university websites:** the collection does not establish redistribution permission for each source. Their material is excluded from MIT. Preserve the existing manual-research restrictions below; publication of this code is not a source-rights clearance.
+
 ## What goes in
 
 - **Public sources only.** Sources include news articles, press releases, fund portfolio pages, university and institute pages, published reports (for example PwC / NZGCP Young Company Finance tables) and the NZ Companies Office register. Every claim carries its URL, its publisher, its publication or capture date, and the date we retrieved it.

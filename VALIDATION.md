@@ -2,6 +2,17 @@
 
 Current record, refreshed on 2026-11-21 after the pre-demo polish sprint. CI is the source of truth: every pull request and every push to `main` runs the workflow in `.github/workflows/checks.yml`. The original 17 November release record is kept in [docs/archive/VALIDATION-2026-11-17.md](docs/archive/VALIDATION-2026-11-17.md).
 
+## 22 November 2026 · Pre-demo cleanup verification
+
+Local macOS checks after the repository and language cleanup:
+
+- Python 3.11: **211 passed, 2 skipped**; the OpenAPI and generated TypeScript check passed.
+- Production TypeScript/Vite build, Ruff lint and formatting, Prettier and `git diff --check` passed.
+- **49 Playwright tests passed**, using the project's `.venv` and the matching bundled Chromium build (`PLAYWRIGHT_BROWSERS_PATH=/private/tmp/vee-playwright-pinned.wdrZyd`). This includes sidebar overflow checks at desktop and 390 px width and the updated evidence labels. No system Chrome override was used.
+- A credential-pattern scan found no matches in 266 tracked files and 953 historical blobs across locally available refs. This is a limited pattern scan, not a guarantee that every sensitive value is detectable.
+
+The first browser attempts could not start because the default system Python lacked dependencies and Chromium's headless shell was missing from the default cache. The successful run used `VEE_PYTHON` and the matching preinstalled browser cache. README check commands now explicitly select the project's Python.
+
 ## What CI runs
 
 | Job | What it checks |

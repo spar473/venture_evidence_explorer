@@ -136,16 +136,18 @@ function nextEvidence(candidate: NearestCandidate) {
     steps.push(
       clinical && clinical.coverage > 0
         ? "The clinical workflow fields recorded on both sides do not match closely enough. A peer with the same modality, clinical user or output would clear this bar."
-        : "No clinical workflow field is witnessed on both sides. Witnessed modality, clinical user and output for both would let this bar be scored.",
+        : "No clinical workflow field has dated public evidence on both sides. Evidence of modality, clinical user and output for both would let this bar be scored.",
     );
   }
   if (candidate.missing_on_peer.length) {
     steps.push(
-      `Witnessed values for this peer's ${candidate.missing_on_peer.map(fieldLabel).join(", ")} at its anchor.`,
+      `Dated public evidence for this peer's ${candidate.missing_on_peer.map(fieldLabel).join(", ")} at its comparison date.`,
     );
   }
   if (!candidate.meets_coverage || !candidate.meets_similarity) {
-    steps.push("More fields witnessed on both sides, so more dimensions can be compared.");
+    steps.push(
+      "More fields with dated public evidence on both sides, so more dimensions can be compared.",
+    );
   }
   return steps;
 }
@@ -161,7 +163,7 @@ function WhyNoComps({ data }: { data: PrecedentResponse }) {
         A comp needs {t.min_peers} peers that each clear all three bars: clinical workflow
         similarity of at least {t.min_clinical_similarity.toFixed(2)}, overall similarity of at
         least {t.min_similarity.toFixed(2)} and weighted evidence coverage of at least{" "}
-        {t.min_coverage.toFixed(2)}. {data.peers.length} of {data.peer_count_evaluated} alignable
+        {t.min_coverage.toFixed(2)}. {data.peers.length} of {data.peer_count_evaluated} comparable
         companies clear them at this anchor.
       </p>
       {candidates.length ? (
@@ -226,12 +228,15 @@ function WhyNoComps({ data }: { data: PrecedentResponse }) {
           </div>
         </>
       ) : (
-        <p>No alignable company shares a witnessed comparison field with this subject yet.</p>
+        <p>
+          No comparable company shares a field with dated public evidence with this subject yet.
+        </p>
       )}
       {subjectGaps.length > 0 && (
         <p>
           <strong>Subject evidence to add</strong> {subjectGaps.map(fieldLabel).join(", ")}. Each
-          witnessed value adds a field that peers can be compared on. The thresholds do not change.
+          value with dated public evidence adds a field that peers can be compared on. The
+          thresholds do not change.
         </p>
       )}
     </section>
@@ -342,7 +347,9 @@ function Comps({
       <details className="wb-peers">
         <summary>All {data.peers.length} similar peers</summary>
         {!data.peers.length && (
-          <p>{data.peer_count_evaluated} alignable companies reviewed for witnessed similarity.</p>
+          <p>
+            {data.peer_count_evaluated} comparable companies reviewed using dated public evidence.
+          </p>
         )}
         <ol>
           {data.peers.map(({ row, similarity, coverage }) => (
@@ -452,13 +459,13 @@ export function Overview({
             </select>
           </label>
           <label>
-            Peer witness mode{" "}
+            Peer evidence{" "}
             <select
               value={data.witness_mode}
               onChange={(event) => onWitnessMode(event.target.value as WitnessMode)}
             >
-              <option value="strict">Strict · at anchor</option>
-              <option value="contemporaneous">Contemporaneous · up to 90 days later</option>
+              <option value="strict">Only info public at the time</option>
+              <option value="contemporaneous">Include evidence up to 90 days later</option>
             </select>
           </label>
           <div className="wb-toggle" role="group" aria-label="Peer set">
@@ -490,7 +497,7 @@ export function Overview({
         <Trajectory rows={rows} onClaim={onClaim} title="Aligned venture trajectories" />
         {missing.length > 0 && (
           <details>
-            <summary>Not alignable · {missing.length}</summary>
+            <summary>Not comparable · {missing.length}</summary>
             <ul>
               {missing.map((row) => (
                 <li key={row.company_id}>

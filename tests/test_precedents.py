@@ -308,7 +308,7 @@ def test_outcome_library_reconciles_denominators_pagination_and_events(demo_db):
         assert all(sum(item['statuses'].values()) == item['denominator'] for item in library['sectors_comparison'])
         assert [item['deals'] for item in library['benchmarks']] == [66, 76]
         tiro = next(item for item in library['stories'] if item['company_id'] == 'public_tirolifesciencesltd')
-        assert tiro['status'] == 'unknown' and all('primary unknown' in note for note in tiro['notes'].values())
+        assert tiro['status'] == 'unknown' and all('Series A status unknown' in note for note in tiro['notes'].values())
         next_page = client.get('/api/workbench/outcomes?limit=3&offset=3').json()
         assert not {item['company_id'] for item in next_page['rows']} & {item['company_id'] for item in library['rows']}
         subset = client.get('/api/workbench/outcomes?vintage=2022&sector=Healthtech&endpoint=secondary').json()

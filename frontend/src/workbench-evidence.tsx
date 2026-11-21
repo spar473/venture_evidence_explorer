@@ -57,8 +57,8 @@ function WitnessBadge({ claim }: { claim: WorkbenchClaim }) {
   return (
     <small className={claim.witness ? "wb-witness" : "wb-witness wb-unwitnessed"}>
       {claim.witness
-        ? `${label(claim.witness.kind)} · ${claim.witness.available_on}`
-        : "No dated witness"}
+        ? `Public by ${claim.witness.available_on} · ${label(claim.witness.kind)}`
+        : "Public date unverified"}
     </small>
   );
 }
@@ -201,11 +201,11 @@ export function EvidenceMatrix({
         ) : (
           <>
             {analogy
-              ? `The subject uses witnessed evidence by ${data.as_of}.`
-              : "The subject uses evidence witnessed by its anchor."}{" "}
+              ? `The subject uses evidence public by ${data.as_of}.`
+              : "The subject uses evidence public by its comparison date."}{" "}
             {data.witness_mode === "contemporaneous"
-              ? "Peer workflow and buyer fields may use witnesses up to 90 days after their earliest possible anchor date. The table includes candidates with late witnesses even when they do not rank."
-              : "Peers use evidence witnessed by their earliest possible anchor date."}
+              ? "Peer workflow and buyer fields may use evidence public up to 90 days after their earliest possible comparison date. The table includes candidates with late evidence even when they do not rank."
+              : "Peers use only evidence public by their earliest possible comparison date."}
           </>
         )}
       </p>
@@ -245,7 +245,7 @@ export function EvidenceMatrix({
                   if (!items.length)
                     return (
                       <td key={field.title} className="wb-missing">
-                        {sameStage ? "Not in public record" : "Not yet extracted"}
+                        {sameStage ? "Not in public record" : "Not researched yet"}
                       </td>
                     );
                   return (

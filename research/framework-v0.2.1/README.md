@@ -2,7 +2,7 @@
 
 Prepared 18 November 2026. The research package is ready for a bounded integration pilot. Direct import, accepted identity mappings and research dossier screens are still pending.
 
-Start with [Implementation_TODOs.md](Implementation_TODOs.md): it separates existing functionality, work completed here and the ordered pilot gates. [Implementation_Note.md](Implementation_Note.md) maps the research model to the current codebase. [Local_Code_Review_Record.md](Local_Code_Review_Record.md) distinguishes checks rerun here from the attributed [engineering_completion.md](engineering_completion.md).
+Start with [Implementation_TODOs.md](Implementation_TODOs.md): it separates existing functionality, work completed here and the ordered pilot gates. [Implementation_Note.md](Implementation_Note.md) maps the research model to the current codebase. The retired review and engineering reports remain in [Git history](https://github.com/spar473/venture_evidence_explorer/tree/090b8d0/research/framework-v0.2.1). Current verification is described in [VALIDATION.md](../../VALIDATION.md).
 
 ## What changed
 

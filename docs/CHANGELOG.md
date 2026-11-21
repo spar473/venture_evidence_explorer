@@ -1,6 +1,13 @@
 # Changelog
 
-This is the project history, moved out of the README on 2026-11-21. Sections are kept as they were written, oldest framing first and later sections appended, so some statements are now out of date. Examples: "No remote repository" (there is now a GitHub remote with CI), the root SHA-256 manifests (now in `archive/manifests/`) and `handover/` (now a release asset; see `archive/HANDOVER.md`). The current state is in the [README](../README.md), [STATUS.md](../STATUS.md) and [VALIDATION.md](../VALIDATION.md).
+This is the project history, moved out of the README on 2026-11-21. Sections are kept as they were written, oldest framing first and later sections appended, so some statements are now out of date. Examples: "No remote repository" (there is now a GitHub remote with CI), the root SHA-256 manifests (now in `archive/manifests/`) and `handover/` (now a release asset; the retired handover notes and completion reports remain in Git history at `090b8d0`). The current state is in the [README](../README.md), [STATUS.md](../STATUS.md) and [VALIDATION.md](../VALIDATION.md).
+
+## 22 November 2026 · Pre-demo repository and language cleanup
+
+- Licensed original code and associated documentation under MIT, with a separate data boundary and source-terms review in `DATA_USE.md`. The curated evidence has no blanket open-data licence.
+- Removed the listed agent completion and handover records, restoration script, stage records and tracked generated outputs. Git history retains the historical records; runtime output stays ignored.
+- Fixed long sidebar subject labels by allowing text to wrap within the sidebar at desktop and mobile widths.
+- Replaced the workbench's main jargon labels with “Public by”, “Only info public at the time”, “comparable”, “Series A status unknown” and “Not researched yet”. API field names, witness rules, outcomes and similarity thresholds are unchanged.
 
 ## 2026-11-21 · Pre-demo polish sprint
 

@@ -5,8 +5,9 @@ frontend/node_modules/
 frontend/dist/
 outputs/*.sqlite*
 
-# Generated runtime output; historical tracked outputs remain versioned.
+# Generated runtime output belongs outside the tracked source tree.
 outputs/
+stage_records/
 .DS_Store
 .env
 .env.*

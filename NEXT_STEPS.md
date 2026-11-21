@@ -1,6 +1,12 @@
 # Next steps
 
-Updated 2026-11-21, after the pre-demo polish sprint. These are in priority order. Data decisions waiting on the owner are listed in [STATUS.md](STATUS.md).
+Updated 2026-11-22. Data decisions waiting on the owner are listed in [STATUS.md](STATUS.md).
+
+## Improvement checklist sequence
+
+The first pass covers the six pre-demo repository and language fixes. Code now uses MIT with a separate data notice; the listed agent records and generated outputs are removed, the sidebar wraps long names, and the five main jargon labels use plain language. Publication follows verified cleanup and the owner's explicit approval. Only merged branches may be deleted; unmerged work must be preserved.
+
+The next pass is the **Time machine**. Before running a backtest, review the existing local prompt and commit `docs/design/BACKTEST_PREREG.md` with fixed eligibility rules, weights and thresholds. Then research entry snapshots. The acceptance gate is at least 15 Partly-eligible peers with at least five witnessed fields each; stop and report any shortfall rather than lower the bar. No backtest or threshold change is part of the pre-demo cleanup.
 
 ## Before the demo
 

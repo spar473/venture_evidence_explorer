@@ -13,4 +13,4 @@ These six manifests used to sit at the repository root. They recorded file diges
 
 They are kept unchanged as provenance records. To see them alongside the files they described, check out the commit that last changed each one (`git log -- <name>`).
 
-Integrity is now carried by git history and CI. The handover package's own manifests (`PACKAGE_SHA256SUMS.txt` and the per-folder sums) moved with `handover/`; see [HANDOVER.md](../HANDOVER.md).
+Integrity is now carried by git history and CI. The handover notes and other retired agent records were removed from the current tree on 2026-11-22. They remain available in [the historical tree](https://github.com/spar473/venture_evidence_explorer/tree/090b8d0/docs/archive), alongside the context for these unchanged manifests.

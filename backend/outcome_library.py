@@ -96,7 +96,9 @@ def row_notes(points, anchor, primary_status):
         claim = point.claim
         if claim.field in CLOSURES and claim.lower_on > latest_horizon:
             notes[claim.claim_id] = (
-                'Post-window closure · primary unknown' if primary_status == 'unknown' else 'Post-window closure'
+                'Post-window closure · Series A status unknown'
+                if primary_status == 'unknown'
+                else 'Post-window closure'
             )
         elif (
             not point.is_anchor

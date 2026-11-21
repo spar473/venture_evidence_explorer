@@ -12,6 +12,10 @@ test("workbench opens with the five university projects and keeps research navig
   );
   await expect(watchlist.getByRole("button")).toHaveCount(5);
   await expect(page.getByRole("heading", { name: "Automated Breast MRI Reporting" })).toBeVisible();
+  const sidebar = page.getByRole("complementary", { name: "Workbench sidebar" });
+  expect(await sidebar.evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(
+    true,
+  );
   await expect(
     page.getByText("Subject today vs peers at their first institutional round", { exact: false }),
   ).toBeVisible();
@@ -49,6 +53,10 @@ test("realigns dated events, opens a keyboard-accessible claim and shows gate co
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
     true,
   );
+  const sidebar = page.getByRole("complementary", { name: "Workbench sidebar" });
+  expect(await sidebar.evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(
+    true,
+  );
 });
 
 test("outcome library reconciles filtered counts and retains post-window source notes", async ({
@@ -57,7 +65,9 @@ test("outcome library reconciles filtered counts and retains post-window source 
   await page.goto("/");
   await page.getByRole("button", { name: "Outcome library", exact: true }).click();
   await expect(page.getByText("55 of 55")).toBeVisible();
-  await expect(page.getByText(/Post-window closure · primary unknown/).first()).toBeVisible();
+  await expect(
+    page.getByText(/Post-window closure · Series A status unknown/).first(),
+  ).toBeVisible();
   await page.getByRole("button", { name: "Next companies" }).click();
   await expect(page.getByText("9–16 of 55")).toBeVisible();
   await page.getByRole("combobox", { name: "Outcome", exact: true }).selectOption("secondary");
@@ -84,8 +94,9 @@ test("same-stage evidence uses witnesses and Outlook withholds estimates", async
   await expect(matrix.getByRole("row").nth(1)).toContainText("Automated Breast MRI Reporting");
   await page.getByRole("button", { name: "Comparison snapshots" }).click();
   await expect(matrix.getByRole("row").nth(1)).toContainText("As of 2026-11-21");
+  await expect(matrix.getByText(/^Public by /).first()).toBeVisible();
   await expect(matrix.getByText("Not in public record").first()).toBeVisible();
-  await expect(matrix.getByText("No dated witness")).toHaveCount(0);
+  await expect(matrix.getByText("Public date unverified")).toHaveCount(0);
   await views.getByRole("button", { name: /Outlook/ }).click();
   await expect(page.getByRole("heading", { name: "Outcome rates locked" })).toBeVisible();
   await expect(page.getByText(/Dated signed closing records or cap-table/)).toBeVisible();
@@ -115,7 +126,7 @@ test("Toku excludes zero-workflow comps and late witness badges identify delayed
   page,
 }) => {
   await page.goto("/?page=precedents");
-  const mode = page.getByRole("combobox", { name: "Peer witness mode", exact: true });
+  const mode = page.getByRole("combobox", { name: "Peer evidence", exact: true });
   await expect(mode).toHaveValue("strict");
   await mode.selectOption("contemporaneous");
   await expect(page.getByText("Late workflow and buyer evidence", { exact: false })).toBeVisible();
@@ -162,7 +173,7 @@ test("abstaining comps explain the nearest candidates against unchanged threshol
   await expect(why).toContainText("clinical workflow similarity of at least 0.25");
   await expect(why).toContainText("overall similarity of at least 0.35");
   await expect(why).toContainText("weighted evidence coverage of at least 0.15");
-  await expect(why).toContainText("0 of 55 alignable companies clear them");
+  await expect(why).toContainText("0 of 55 comparable companies clear them");
   const heartlab = why.locator(".wb-candidate").filter({ hasText: "HeartLab" });
   await expect(heartlab).toContainText("0.00 of 0.25 required · short");
   await expect(heartlab).toContainText("0.50 of 0.35 required · clears");

@@ -1,8 +1,0 @@
-award_id,venture_id,programme,award_year,award_label,place,event_date,source_id,locator,review_status
-v_ivf_tool_velocity_100k_2025,v_ivf_tool,velocity_100k,2025,Place 1,1,2025-10-15,src_100k_2025,First-place IVF team; paragraphs on clinical testing,source_checked_owner_review_pending
-v_space_optics_velocity_100k_2025,v_space_optics,velocity_100k,2025,Place 2,2,2025-10-15,src_100k_2025,Runner-up Deployable Space Optics section,source_checked_owner_review_pending
-v_pollsport_velocity_100k_2025,v_pollsport,velocity_100k,2025,Place 3,3,2025-10-15,src_100k_2025,Third-place Pollsport section,source_checked_owner_review_pending
-v_quickmas_velocity_100k_2024,v_quickmas,velocity_100k,2024,Place 1,1,2024-10-16,src_100k_2024,QuickMas first-place section,source_checked_owner_review_pending
-v_agriphage_velocity_ideas_2025,v_agriphage,velocity_ideas,2025,Winner (category not recorded),,2025-05-22,src_ideas_2025,Winners 2025 > AgriPhage,source_checked_owner_review_pending
-v_biosleeve_velocity_ideas_2026,v_biosleeve,velocity_ideas,2026,Winner (category not recorded),,,src_ideas_2026,Winners 2026 > BioSleeve,source_checked_owner_review_pending
-v_atlasor_velocity_ideas_2026,v_atlasor,velocity_ideas,2026,Winner (category not recorded),,,src_ideas_2026,Winners 2026 > AtlasOR: Revolutionising Anatomy Education,source_checked_owner_review_pending

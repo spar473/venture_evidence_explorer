@@ -26,6 +26,7 @@
   background: var(--wb-navy);
   color: #e8eef9;
   padding: 24px 16px 16px;
+  min-width: 0;
 }
 .wb-brand {
   font-size: 17px;
@@ -38,10 +39,13 @@
   align-items: center;
   min-height: 44px;
   color: #fff;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .wb-sidebar nav {
   display: grid;
   gap: 3px;
+  min-width: 0;
 }
 .wb-sidebar h2 {
   margin: 0 8px 4px;
@@ -55,6 +59,11 @@
   background: transparent;
   color: inherit;
   border-radius: 8px;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  padding: 8px;
 }
 .wb-sidebar button:hover,
 .wb-sidebar button[aria-current] {
