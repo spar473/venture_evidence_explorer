@@ -4,13 +4,13 @@ Updated 2026-11-21, after the pre-demo polish sprint. These are in priority orde
 
 ## Before the demo
 
-1. **Hand-check the seven PwC Young Company Finance rows** (Halter, Tiro Lifesciences, Firstcheck, Inhibit Coatings, TDRI, Koti Technologies, Social Club), and record the result in STATUS.md. pwc.co.nz blocks automated access.
-2. **Decide on Partly's "Series A" label.** The source does not use that label. Either find a dated source that does, or reclassify the round as `series_a_equivalent`, which moves primary reached from 2 to 1.
+1. ~~Hand-check the seven PwC Young Company Finance rows.~~ Done 2026-11-21: all 7 match (STATUS.md).
+2. ~~Decide on Partly's "Series A" label.~~ Done 2026-11-21: a publisher-dated NZ Herald source states it (STATUS.md).
 3. **Rehearse the 3-minute path** in the README on a fresh `healthtech_demo.py` database.
 
 ## Next 4–6 weeks: data, not thresholds
 
-4. **Archive every cited URL.** Add a Wayback or hashed-text `archived_capture` witness for each source. Re-source the three dead links (HiNZ, and Kindrik for Partly and First AML; First AML's own Series B page is a live replacement).
+4. **Archive every cited URL.** Add a Wayback or hashed-text `archived_capture` witness for each source. Re-source the remaining dead link (HiNZ, for HeartLab). Both Kindrik links were replaced on 2026-11-21.
 5. **First live comps.** Add witnessed workflow and buyer features (modality, clinical user, output, buyer, procurement path) for the 12 healthtech entries, until at least one subject clears the existing bars. The "Why no comps yet" panel shows which fields are missing. Do not change the thresholds.
 6. **Grow the cohort toward the gate:** 150 companies, 30 primary outcomes, and unknown plus lost below 25%. Use public portfolio pages, register closures and hand-read announcements only (see DATA_USE.md). Report coverage by vintage and sector as it grows.
 

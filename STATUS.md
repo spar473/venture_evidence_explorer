@@ -2,7 +2,7 @@
 
 Last updated 2026-11-21. This file records the pre-demo data checks and open data decisions.
 
-The first round of checks, against 6f2e1bd, changed no packet. A follow-up data-hygiene change re-sourced three events in `cohort-follow-up.json` through the sourced-event path: Partly's Series A, Partly's pre-Series A and First AML's Series B. **The audit counts are unchanged.**
+The first round of checks, against 6f2e1bd, changed no packet. The PwC rows were then hand-checked (all match), and a follow-up data-hygiene change re-sourced three events in `cohort-follow-up.json` through the sourced-event path: Partly's Series A, Partly's pre-Series A and First AML's Series B. **The audit counts are unchanged.**
 
 Current audit (`run_audit()`, as of 2026-11-21, 55 included entries):
 
@@ -15,11 +15,23 @@ The outcome gate stays withheld: fewer than 150 companies, fewer than 30 outcome
 
 ## Pre-demo checks
 
-### PwC Young Company Finance rows: pending hand check
+### PwC Young Company Finance rows: hand-checked, all match
 
-**Status 2026-11-21: still pending.** The owner's hand-check results have not been recorded yet, so no row was marked ✓ or ✗ and nothing was changed.
+Checked 2026-11-21 against PDFs the owner downloaded by hand: YCF 2017 Results, YCF deals 2019 and YCF deal data 2020, the same files as the stored source URLs. Each cited page was read and compared with the stored date, label, round number, location and named investors.
 
-Seven entry rows rest on PwC YCF PDFs: Halter (2019 p.12), Tiro Lifesciences (2019 p.19–20), Firstcheck (2017 p.2; 2019 p.6), Inhibit Coatings (2020 p.3), TDRI (2019 p.5), Koti Technologies (2019 p.21, 25, 26) and Social Club (2017 p.1; 2019 p.6). pwc.co.nz refuses automated access and serves the PDFs only as downloads, so these rows have **not** been re-verified. Check them by hand: open each PDF, confirm the date, label, round number and location on the cited page, and note the result here.
+| Company | Cited row | PDF shows | Result |
+|---|---|---|---|
+| Halter | 2019 p.12, Dec-16 | Dec-16 · Auckland · Seed · round 1. The sector cell reads "Health Care Equipment & Services"; the stored passage already notes this and reconciles the sector to agritech. | ✓ |
+| Tiro Lifesciences | 2019 p.19, Aug-14; p.20, Nov-14 | Aug-14 · Christchurch · Seed · round 1. Nov-14 · Seed · round T1. | ✓ |
+| Firstcheck | 2017 p.2, May-17; 2019 p.6, May-17 | 2017: May-17 · New Plymouth · Seed · round 1 · lead Launch Taranaki, syndicate Launch Taranaki, Angel HQ, MIG and SCIF. 2019: May-17 · Seed · round 1. | ✓ |
+| Inhibit Coatings | 2020 p.3, Dec-19 | Dec-19 · Wellington · Seed · round 1 · syndicate Enterprise Angels, AngelHQ, Ice Angels and SCIF | ✓ |
+| TDRI | 2019 p.5, Nov-18 | Nov-18 · Christchurch · Seed · round 1 | ✓ |
+| Koti Technologies | 2019 p.25, Jun-12; p.26, Nov-12; p.21, Mar-13 | Jun-12 · Christchurch · Seed · round 1. Nov-12 · Seed · round T1. Mar-13 · Seed · round T1. | ✓ |
+| Social Club | 2017 p.1, Mar-17; 2019 p.6, Mar-17 | 2017: Mar-17 · Auckland · Seed · round 1 · lead Ice Angels, with private investors. 2019: Mar-17 · Seed · round 1. | ✓ |
+
+**Result:** 7 of 7 companies match, and all 17 cited rows agree with the stored claims. No sourced-event correction was needed and no count changed.
+
+The same tables also show later rounds, which do not affect the entry decisions: Halter Oct-17 round 2 (Start-up), Tiro Apr-16 round 2, Firstcheck Dec-17 round 2 and Jul-19 round 3, Koti Nov-14 round 2 and Feb-15 round 3, and Social Club Dec-17 round 2.
 
 ### Partly Series A: label now stated (decision closed)
 
