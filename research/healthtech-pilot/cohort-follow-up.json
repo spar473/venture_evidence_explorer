@@ -3,6 +3,15 @@
   "as_of": "2026-11-21",
   "sources": [
     {
+      "source_id": "partly_herald_2022",
+      "publisher": "NZ Herald",
+      "title": "Partly, founded by ex-Rocket Lab engineer, closes largest Series A raise in NZ history",
+      "url": "https://www.nzherald.co.nz/business/partly-founded-an-ex-rocket-lab-engineer-closes-largest-series-a-raise-in-nz-history/KXWKLU3NLBFDHMW436L3FTMXDE/",
+      "kind": "news_article",
+      "published_on": "2022-12-13",
+      "retrieved_on": "2026-11-21"
+    },
+    {
       "source_id": "partly_idealog",
       "publisher": "Idealog",
       "title": "Partly becomes New Zealand’s fastest growing start-up",
@@ -264,13 +273,13 @@
       "retrieved_on": "2026-11-20"
     },
     {
-      "source_id": "partly_counsel_2021",
-      "publisher": "Kindrik Partners",
-      "title": "Partly pre-Series A investment",
-      "url": "https://kindrik.co.nz/blogs/kindrik-partners-advises-blackbird-ventures-on-pre-series-a-investment-into-partly/",
-      "kind": "press_release",
-      "published_on": "2021-10-27",
-      "retrieved_on": "2026-11-20"
+      "source_id": "partly_startupdaily_2021",
+      "publisher": "Startup Daily",
+      "title": "New Zealand car parts data startup Partly raises NZ$3.7 million pre-series A to go global",
+      "url": "https://www.startupdaily.net/topic/funding/new-zealand-car-parts-data-startup-partly-raises-nz3-7-million-pre-series-a-to-go-global/",
+      "kind": "news_article",
+      "published_on": "2021-10-12",
+      "retrieved_on": "2026-11-21"
     },
     {
       "source_id": "runn_shearwater_2023",
@@ -354,13 +363,13 @@
       "retrieved_on": "2026-11-20"
     },
     {
-      "source_id": "firstaml_kindrik_2021",
-      "publisher": "Kindrik Partners",
-      "title": "Kindrik Partners advises Blackbird Ventures on Series B investment into First AML",
-      "url": "https://kindrik.co.nz/blogs/kindrik-partners-advises-blackbird-ventures-on-series-b-investment-into-first-aml/",
+      "source_id": "firstaml_series_b_2021",
+      "publisher": "First AML",
+      "title": "Creating a product so groundbreaking, one of your customers leads your $30 million Series B",
+      "url": "https://www.firstaml.com/resources/series-b-funding",
       "kind": "press_release",
-      "published_on": "2021-11-11",
-      "retrieved_on": "2026-11-20"
+      "published_on": "2021-11-02",
+      "retrieved_on": "2026-11-21"
     },
     {
       "source_id": "miruku_techcrunch_2024",
@@ -513,13 +522,13 @@
       "company_id": "public_partly",
       "kind": "series_a",
       "date": {
-        "value": "2022-12-16",
+        "value": "2022-12-13",
         "precision": "day"
       },
       "date_basis": "completed_at_announcement",
-      "source_id": "partly_idealog",
-      "passage": "Opening financing and valuation paragraphs",
-      "claim": "The article reports a completed Series A at an approximately NZ$180 million valuation.",
+      "source_id": "partly_herald_2022",
+      "passage": "Headline and opening paragraph (publisher dateline 13 Dec 2022).",
+      "claim": "The headline and opening paragraph state that Partly closed a Series A, raising $37 million at a $180 million valuation. The label is stated by the publisher; Idealog (16 Dec 2022) separately reports the same raise and valuation.",
       "round_label": "Series A",
       "institutional_investor": "Octopus Ventures",
       "instrument": "priced_equity"
@@ -899,13 +908,13 @@
       "company_id": "public_partly",
       "kind": "pre_series_a",
       "date": {
-        "value": "2021-10-27",
+        "value": "2021-10-12",
         "precision": "day"
       },
-      "date_basis": "reported_occurrence",
-      "source_id": "partly_counsel_2021",
-      "passage": "Heading, dated byline and paragraphs describing the investment.",
-      "claim": "Blackbird’s counsel reports a distinct capital raise, without share price, instrument terms or exact closing day.",
+      "date_basis": "completed_at_announcement",
+      "source_id": "partly_startupdaily_2021",
+      "passage": "Headline, publisher date and opening paragraphs.",
+      "claim": "Startup Daily reports a NZ$3.7 million pre-series A led by existing investor Blackbird Ventures, without share price, instrument terms or valuation.",
       "round_label": "pre-series A",
       "institutional_investor": "Blackbird Ventures",
       "instrument": "unknown"
@@ -1051,13 +1060,13 @@
       "company_id": "public_firstaml",
       "kind": "series_b",
       "date": {
-        "value": "2021-11-11",
+        "value": "2021-11-02",
         "precision": "day"
       },
-      "date_basis": "reported_occurrence",
-      "source_id": "firstaml_kindrik_2021",
-      "passage": "2021 byline and opening paragraphs.",
-      "claim": "Investor counsel reports NZ$30 million raised in Series B. Share price and valuation are undisclosed.",
+      "date_basis": "completed_at_announcement",
+      "source_id": "firstaml_series_b_2021",
+      "passage": "Headline, publisher date (02 November 2021) and announcement paragraph.",
+      "claim": "First AML announces a NZ$30 million Series B led by Blackbird Ventures, with Headline and existing investors. Share price and valuation are undisclosed.",
       "round_label": "Series B",
       "institutional_investor": "Blackbird Ventures",
       "instrument": "equity_unspecified"
@@ -1506,11 +1515,11 @@
     },
     {
       "company_id": "public_partly",
-      "reviewed_on": "2026-11-20",
+      "reviewed_on": "2026-11-21",
       "searched_through": "2026-11-20",
-      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches. Re-reviewed 2026-11-21: a dead counsel link was replaced with a live, publisher-dated source.",
       "source_ids": [
-        "partly_counsel_2021"
+        "partly_startupdaily_2021"
       ],
       "activity_event_id": null
     },
@@ -1577,11 +1586,11 @@
     },
     {
       "company_id": "public_firstaml",
-      "reviewed_on": "2026-11-20",
+      "reviewed_on": "2026-11-21",
       "searched_through": "2026-11-20",
-      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches.",
+      "scope": "Bounded public financing and legal history screen, with company-specific scope in searches. Re-reviewed 2026-11-21: a dead counsel link was replaced with a live, publisher-dated source.",
       "source_ids": [
-        "firstaml_kindrik_2021"
+        "firstaml_series_b_2021"
       ],
       "activity_event_id": "firstaml_b_2021"
     },
@@ -2969,8 +2978,8 @@
   "next_round_proofs": [
     {
       "event_id": "partly_priced_series_a",
-      "priced_at": "Idealog profile, funding paragraph: reports NZ$180m valuation.",
-      "new_company_equity": "Same paragraph reports NZ$37m raised by Partly in the Series A.",
+      "priced_at": "NZ Herald opening paragraph: $37 million raised at a $180 million valuation. Idealog's funding paragraph (16 Dec 2022) reports the same valuation.",
+      "new_company_equity": "Same NZ Herald paragraph reports $37 million raised by Partly in the Series A.",
       "distinct_from_entry": "The 2022 Series A has a later date and different lead and size from the 2020 Seed round."
     }
   ],
@@ -3070,6 +3079,30 @@
       "available_on": "2024-02-12",
       "url": "https://www.nzx.com/announcements/426045",
       "locator": "Publication date in the NZX announcement header"
+    },
+    {
+      "witness_id": "witness_partly_herald_2022",
+      "source_id": "partly_herald_2022",
+      "kind": "publisher_dated",
+      "available_on": "2022-12-13",
+      "url": "https://www.nzherald.co.nz/business/partly-founded-an-ex-rocket-lab-engineer-closes-largest-series-a-raise-in-nz-history/KXWKLU3NLBFDHMW436L3FTMXDE/",
+      "locator": "Publisher dateline and structured publication date, read 2026-11-21."
+    },
+    {
+      "witness_id": "witness_firstaml_series_b_2021",
+      "source_id": "firstaml_series_b_2021",
+      "kind": "publisher_dated",
+      "available_on": "2021-11-02",
+      "url": "https://www.firstaml.com/resources/series-b-funding",
+      "locator": "Publisher dateline and structured publication date, read 2026-11-21."
+    },
+    {
+      "witness_id": "witness_partly_startupdaily_2021",
+      "source_id": "partly_startupdaily_2021",
+      "kind": "publisher_dated",
+      "available_on": "2021-10-12",
+      "url": "https://www.startupdaily.net/topic/funding/new-zealand-car-parts-data-startup-partly-raises-nz3-7-million-pre-series-a-to-go-global/",
+      "locator": "Publisher dateline and structured publication date, read 2026-11-21."
     }
   ]
 }
