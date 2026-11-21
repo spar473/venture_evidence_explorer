@@ -78,6 +78,8 @@ export function Workbench() {
       ? precedent.data
       : null;
   const watched = watchlist.data?.projects.find((project) => project.subject_id === subjectId);
+  // A database built only by bootstrap.py has no research packets, so no subject can be compared.
+  const noResearch = watchlist.data?.projects.length === 0;
   const companyNames = new Set(
     cohortCompanies.data?.items.map((company) => company.display_name.toLowerCase()),
   );
@@ -254,12 +256,21 @@ export function Workbench() {
                 </button>
               ))}
             </nav>
-            {(watchlist.error || subjects.error || precedent.error || gates.error) && (
-              <Status error>
-                {watchlist.error || subjects.error || precedent.error || gates.error}
-              </Status>
+            {noResearch && (
+              <p className="wb-notice" role="status">
+                This database has no research packets loaded, so there is no subject to compare.
+                Stop the server and start the demo database instead:{" "}
+                <code>.venv/bin/python scripts/healthtech_demo.py --serve --port 8000</code>. The
+                Outcome library works without it.
+              </p>
             )}
-            {!data && !precedent.error && !gates.error && tab !== "Outlook" && (
+            {!noResearch &&
+              (watchlist.error || subjects.error || precedent.error || gates.error) && (
+                <Status error>
+                  {watchlist.error || subjects.error || precedent.error || gates.error}
+                </Status>
+              )}
+            {!noResearch && !data && !precedent.error && !gates.error && tab !== "Outlook" && (
               <Status>Loading precedent evidence…</Status>
             )}
             {tab === "Outlook" && <Outlook gates={gates.data} error={gates.error} />}

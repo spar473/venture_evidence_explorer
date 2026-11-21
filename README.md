@@ -8,9 +8,7 @@ A local workbench that compares an early New Zealand venture against sourced com
 
 ## 3-minute demo
 
-```sh
-.venv/bin/python scripts/healthtech_demo.py --serve --port 8006   # disposable demo database
-```
+Start the demo server as shown under [Run it](#run-it), then:
 
 1. **Outcome library** (0:00). The app opens here. Every count links to a dated source; note the healthtech small-denominator line.
 2. **Stories worth knowing** (0:40). Open Supie (Icehouse-led seed, then liquidation; click the Companies Office link), then Halter (seed 2016, Series A January 2018).
@@ -25,15 +23,16 @@ A local workbench that compares an early New Zealand venture against sourced com
 
 ## Run it
 
-Python 3.10–3.13 and Node 22.12+. The built app needs no network, credentials or paid APIs, and binds to loopback only.
+Python 3.10–3.13 and Node 22.12+. The built app needs no network, credentials or paid APIs, and binds to loopback only. Use the project's own `.venv`, not a system or Anaconda Python, whose packages may be too old.
 
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.lock.txt
-.venv/bin/python scripts/bootstrap.py && .venv/bin/python scripts/verify.py
 (cd frontend && npm ci && npm run build)
-.venv/bin/python scripts/serve.py            # http://127.0.0.1:8000
+.venv/bin/python scripts/healthtech_demo.py --serve --port 8000   # http://127.0.0.1:8000
 ```
+
+`healthtech_demo.py` builds a fresh, disposable database on every start, with the research packets, cohort and reference pool loaded. Use it for local testing and for the demo. `scripts/bootstrap.py` followed by `scripts/serve.py` serves only the base evidence database: the Outcome library works there, but Precedents and the University watchlist stay empty until research packets are imported (see [docs/research_import.md](docs/research_import.md)).
 
 Checks (all run in CI):
 
