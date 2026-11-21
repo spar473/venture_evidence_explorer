@@ -2,6 +2,14 @@
 
 This is the project history, moved out of the README on 2026-11-21. Sections are kept as they were written, oldest framing first and later sections appended, so some statements are now out of date. Examples: "No remote repository" (there is now a GitHub remote with CI), the root SHA-256 manifests (now in `archive/manifests/`) and `handover/` (now a release asset; the retired handover notes and completion reports remain in Git history at `090b8d0`). The current state is in the [README](../README.md), [STATUS.md](../STATUS.md) and [VALIDATION.md](../VALIDATION.md).
 
+## 22 November 2026 · Time Machine preregistration and evidence checkpoint
+
+- Preserved the original brief and committed the retrospective protocol before any Time Machine scoring run, including clocks, weights, vocabulary, thresholds, review requirements and evaluation rules.
+- Added a separate `backtest_entry` packet contract and coverage audit. Proposals cannot pass as confirmed fields; late evidence, unsupported review metadata, duplicate features and changed cohort anchors are refused.
+- Recorded twenty proposed fields for four companies, with explicit empty Partly/Halter snapshots and source-access limitations. Added proposed sector mappings with all raw labels and source references preserved.
+- The fixed data gate is **not met**: 0 of 32 Partly-eligible peers have five confirmed strict fields; two could clear after proposal review. No general scorer, backtest endpoint or UI was implemented. This pass does not exhaust historical research.
+- Added the coverage validator to CI; the optional `--require-gate` command exits nonzero on the shortfall. Existing b0:3 responses and source packets are preserved.
+
 ## 22 November 2026 · Pre-demo repository and language cleanup
 
 - Licensed original code and associated documentation under MIT, with a separate data boundary and source-terms review in `DATA_USE.md`. The curated evidence has no blanket open-data licence.

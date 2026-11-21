@@ -4,9 +4,11 @@ Updated 2026-11-22. Data decisions waiting on the owner are listed in [STATUS.md
 
 ## Improvement checklist sequence
 
-The first pass covers the six pre-demo repository and language fixes. Code now uses MIT with a separate data notice; the listed agent records and generated outputs are removed, the sidebar wraps long names, and the five main jargon labels use plain language. Publication follows verified cleanup and the owner's explicit approval. Only merged branches may be deleted; unmerged work must be preserved.
+The six pre-demo repository and language fixes are complete. Code uses MIT with a separate data notice; the listed agent records and generated outputs are removed, the sidebar wraps long names, and the five main jargon labels use plain language. The repo is public. Eleven explicitly approved merged branches were removed; the unmerged test branch and implementation branches were preserved.
 
-The next pass is the **Time machine**. Before running a backtest, review the existing local prompt and commit `docs/design/BACKTEST_PREREG.md` with fixed eligibility rules, weights and thresholds. Then research entry snapshots. The acceptance gate is at least 15 Partly-eligible peers with at least five witnessed fields each; stop and report any shortfall rather than lower the bar. No backtest or threshold change is part of the pre-demo cleanup.
+**Time Machine Phase 0 is complete:** the original brief is preserved and `docs/design/BACKTEST_PREREG.md` was committed as `d0c7c27` before scoring. **Phase 1's gate is not met:** 0 of 32 Partly-eligible peers have five confirmed strict fields; two could clear if their proposals were confirmed. The [coverage checkpoint](docs/healthtech-pilot/BACKTEST_COVERAGE.md) lists every eligible peer and the evidence collected.
+
+Continue evidence work: obtain an inspectable original Partly source, research at least thirteen additional sufficiently covered peers, and get explicit human confirmation of the extracted values. Run `scripts/audit_backtest_coverage.py --require-gate` before the general matcher, endpoint or UI. Do not lower the 15-peer/five-field bar, promote proposals automatically or reconstruct entry features from later sources. No Time Machine scoring run has been performed.
 
 ## Before the demo
 

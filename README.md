@@ -49,6 +49,7 @@ Checks (all run in CI):
 - [Comparison method](docs/design/COMPS_METHOD.md): anchors, witnessed snapshots, Gower similarity and α weights (§3.1), the comps rules, and the locked estimator.
 - [Outcome rules and cohort plan](docs/healthtech-pilot/NEXT_PHASE_PLAN.md): the frozen entry rule, primary and secondary outcomes, and the release gate.
 - [Data status](STATUS.md): the latest data checks and open data decisions.
+- [Time Machine preregistration](docs/design/BACKTEST_PREREG.md) and [coverage checkpoint](docs/healthtech-pilot/BACKTEST_COVERAGE.md): retrospective replay research; the 15-peer evidence gate is not met, so this feature is not implemented.
 - [Data use](DATA_USE.md): public sources only, paraphrased passages, no bulk extraction, and how to request a correction.
 - [Validation](VALIDATION.md) · [Next steps](NEXT_STEPS.md) · [Changelog](docs/CHANGELOG.md) · [API contracts](docs/research_api.md)
 

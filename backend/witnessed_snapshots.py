@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from pathlib import Path
 from typing import Literal
 
-from pydantic import Field, model_validator
+from pydantic import Field, StrictInt, model_validator
 
 from .database import ROOT
 from .ingestion import StrictModel, Text, day
@@ -120,3 +120,224 @@ class WitnessedSnapshots:
             if claim:
                 claims.append(claim)
         return claims
+
+
+# Separate packet and review contract: nothing below is loaded by b0:3 or the app.
+BACKTEST_PACKET = ROOT / 'research/healthtech-pilot/backtest-snapshots.json'
+BACKTEST_FIELDS = (
+    'description',
+    'product_type',
+    'buyer',
+    'business_model',
+    'sector_normalised',
+    'market_focus',
+    'prototype',
+    'paid_pilot_or_revenue',
+    'full_time_team',
+    'round_size_band',
+    'lead_investor_type',
+    'months_since_founding',
+)
+BACKTEST_DESCRIPTORS = set(BACKTEST_FIELDS[:6])
+BACKTEST_MILESTONES = set(BACKTEST_FIELDS[6:9])
+BACKTEST_CATEGORIES = {
+    'product_type': {
+        'software',
+        'analytics',
+        'workflow',
+        'marketplace',
+        'hardware',
+        'medical_device',
+        'industrial_equipment',
+        'physical_goods',
+        'food_beverage',
+        'materials',
+        'service',
+        'financial_service',
+        'professional_service',
+    },
+    'buyer': {
+        'business',
+        'small_business',
+        'enterprise',
+        'consumer',
+        'individual',
+        'household',
+        'public_sector',
+        'government',
+        'education',
+        'clinician',
+        'radiologist',
+        'optometrist',
+        'general_practitioner',
+        'surgeon',
+    },
+    'business_model': {
+        'subscription',
+        'saas',
+        'membership',
+        'transaction',
+        'marketplace_commission',
+        'retail_margin',
+        'sales',
+        'hardware_sale',
+        'licensing',
+        'service_fee',
+        'professional_fee',
+        'pay_per_use',
+    },
+    'sector_normalised': {
+        'digital',
+        'enterprise_software',
+        'fintech',
+        'retail_ecommerce',
+        'media',
+        'science',
+        'healthtech',
+        'biotech',
+        'agritech',
+        'cleantech',
+        'advanced_materials',
+        'industrial',
+        'manufacturing',
+        'aerospace',
+        'energy',
+        'consumer',
+        'food_beverage',
+        'consumer_products',
+    },
+    'market_focus': {'new_zealand', 'australia_new_zealand', 'international'},
+    'lead_investor_type': {
+        'institutional',
+        'venture_capital',
+        'angel_network',
+        'corporate_venture',
+        'other',
+        'public_fund',
+        'accelerator',
+    },
+    'round_size_band': {'lt0.5m', '0.5m_to_lt2m', '2m_to_lt5m', '5m_to_lt10m', 'gte10m'},
+}
+
+
+class BacktestFeature(StrictModel):
+    name: Text
+    value: Text | StrictInt
+    raw_value: Text | StrictInt
+    derivation: Literal['stated', 'normalised', 'calculated']
+    rationale: Text
+    source_id: Id
+    witness_id: Id
+    passage: Text
+    locator: Text
+    effective_on: str | None = None
+    timing: Literal['strict', 'lenient'] = 'strict'
+    review_state: Literal['proposed', 'confirmed', 'rejected', 'disputed'] = 'proposed'
+    reviewer: Text | None = None
+    reviewed_on: str | None = None
+    review_reference: Text | None = None
+
+    @model_validator(mode='after')
+    def field_and_review(self):
+        if self.name not in BACKTEST_FIELDS:
+            raise ValueError('Unknown backtest feature')
+        if self.name in BACKTEST_MILESTONES and self.value not in ('yes', 'no'):
+            raise ValueError('Backtest milestones require explicit yes or no')
+        if self.name in BACKTEST_CATEGORIES and self.value not in BACKTEST_CATEGORIES[self.name]:
+            raise ValueError('Backtest categorical value is outside the registered vocabulary')
+        if self.name == 'months_since_founding' and (type(self.value) is not int or self.value < 0):
+            raise ValueError('Founding age requires nonnegative integer months')
+        if self.effective_on is not None:
+            day(self.effective_on)
+        reviewed = (self.reviewer, self.reviewed_on, self.review_reference)
+        if self.review_state == 'proposed':
+            if any(value is not None for value in reviewed):
+                raise ValueError('A proposal cannot claim a completed human review')
+        elif not all(reviewed):
+            raise ValueError('Reviewed features require reviewer, date and review reference')
+        if self.reviewed_on is not None:
+            day(self.reviewed_on)
+        return self
+
+
+class BacktestProfile(StrictModel):
+    company_id: Id
+    scope: Literal['backtest_entry']
+    entry_date: EventDate
+    anchor_source_id: Id
+    anchor_locator: Text
+    features: list[BacktestFeature]
+
+
+class BacktestInvestigation(StrictModel):
+    company_id: Id
+    checked_on: str
+    url: Text
+    disposition: Literal['proposals_recorded', 'later_revision', 'access_blocked', 'insufficient_fields', 'too_late']
+    note: Text
+
+
+class BacktestSnapshotPacket(StrictModel):
+    format_version: Literal['backtest-snapshots:1']
+    compiled_on: str
+    preregistration_commit: str = Field(pattern=r'^[0-9a-f]{40}$')
+    cohort_input_sha256: dict[str, str]
+    sources: list[PoolSource]
+    witnesses: list[Witness]
+    profiles: list[BacktestProfile]
+    investigations: list[BacktestInvestigation] = Field(default_factory=list)
+
+    @model_validator(mode='after')
+    def validate_backtest_graph(self):
+        import re
+        from .reference_pool import https
+
+        day(self.compiled_on)
+        if set(self.cohort_input_sha256) != {'discovery', 'entry_evidence'} or any(
+            not re.fullmatch(r'[0-9a-f]{64}', value) for value in self.cohort_input_sha256.values()
+        ):
+            raise ValueError('Backtest requires both frozen cohort input digests')
+        sources = unique_index(self.sources, 'source_id')
+        witnesses = unique_index(self.witnesses, 'witness_id')
+        unique_index(self.profiles, 'company_id')
+        for source in sources.values():
+            if source.retrieved_on > self.compiled_on:
+                raise ValueError('Source retrieval exceeds compilation')
+        for witness in witnesses.values():
+            if witness.source_id not in sources:
+                raise ValueError('Backtest witness requires a known source')
+            witness.check_source(sources[witness.source_id])
+        for profile in self.profiles:
+            start, end = profile.entry_date.bounds()
+            if start is None or end > self.compiled_on:
+                raise ValueError('Backtest entry requires a known historical interval')
+            unique_index(profile.features, 'name')
+            for feature in profile.features:
+                witness = witnesses.get(feature.witness_id)
+                if not witness or witness.source_id != feature.source_id:
+                    raise ValueError('Backtest feature requires a matching source-version witness')
+                source = sources[feature.source_id]
+                cutoff = start
+                if feature.timing == 'lenient':
+                    if feature.name not in BACKTEST_DESCRIPTORS:
+                        raise ValueError('Lenient evidence is limited to offering, buyer and market descriptors')
+                    cutoff = (date.fromisoformat(start) + timedelta(days=90)).isoformat()
+                    if witness.available_on <= start:
+                        raise ValueError('Lenient evidence must actually be later than entry')
+                if any(
+                    value and value > cutoff
+                    for value in (
+                        witness.available_on,
+                        source.published_on,
+                        source.revised_on,
+                        feature.effective_on,
+                    )
+                ):
+                    raise ValueError('Backtest feature exceeds its entry evidence cutoff')
+                if feature.reviewed_on and not source.retrieved_on <= feature.reviewed_on <= self.compiled_on:
+                    raise ValueError('Feature review must follow source retrieval and precede compilation')
+        for investigation in self.investigations:
+            https(investigation.url)
+            if day(investigation.checked_on) > self.compiled_on:
+                raise ValueError('Investigation follows compilation')
+        return self

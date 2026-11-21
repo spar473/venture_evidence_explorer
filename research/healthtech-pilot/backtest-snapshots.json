@@ -1,0 +1,451 @@
+{
+  "format_version": "backtest-snapshots:1",
+  "compiled_on": "2026-11-22",
+  "preregistration_commit": "d0c7c27a7bbd58069ddaa1b72e79791470f5b385",
+  "cohort_input_sha256": {
+    "discovery": "98cfe2fa99d3cc67e42e2660f895a58e0f2024e08bd1523f0c48a4319503f8fa",
+    "entry_evidence": "3849a6c3ce5c636ffd111ce31d0bdb0e25307b974afb125d76eb73901a3fa803"
+  },
+  "sources": [
+    {
+      "source_id": "bt_codelingo_rcc_2018",
+      "title": "Dunedin startup CodeLingo raises NZ$540000 from Reinventure and Right Click Capital",
+      "publisher": "Right Click Capital",
+      "url": "https://www.rightclickcapital.com/2018/01/24/dunedin-startup-codelingo-raises-nz540000-from-reinventure-and-right-click-capital/",
+      "kind": "news_article",
+      "published_on": "2018-01-24",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_socialclub_idealog_2016",
+      "title": "The Social Club talks the rise of influencer marketing in New Zealand",
+      "publisher": "Idealog",
+      "url": "https://idealog.co.nz/venture/2016/12/social-club-talks-rise-influencer-marketing-new-zealand",
+      "kind": "news_article",
+      "published_on": "2016-12-15",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_supie_supermarketnews_2021",
+      "title": "Supie Puts $2.5m Towards Growth",
+      "publisher": "Supermarket News",
+      "url": "https://supermarketnews.co.nz/news/supie-puts-2-5m-towards-growth/",
+      "kind": "news_article",
+      "published_on": "2021-11-09",
+      "retrieved_on": "2026-11-22"
+    },
+    {
+      "source_id": "bt_narrative_nbr_2019",
+      "title": "Peter Thiel-led fund backs local creative tech startup Narrative",
+      "publisher": "NBR",
+      "url": "https://www.nbr.co.nz/investment/peter-thiel-led-fund-backs-local-creative-tech-startup-narrative/",
+      "kind": "news_article",
+      "published_on": "2019-05-21",
+      "retrieved_on": "2026-11-22"
+    }
+  ],
+  "witnesses": [
+    {
+      "witness_id": "w_bt_codelingo_rcc_2018",
+      "source_id": "bt_codelingo_rcc_2018",
+      "kind": "publisher_dated",
+      "available_on": "2018-01-24",
+      "url": "https://www.rightclickcapital.com/2018/01/24/dunedin-startup-codelingo-raises-nz540000-from-reinventure-and-right-click-capital/",
+      "locator": "Byline: Daphne on 24 January, 2018"
+    },
+    {
+      "witness_id": "w_bt_socialclub_idealog_2016",
+      "source_id": "bt_socialclub_idealog_2016",
+      "kind": "publisher_dated",
+      "available_on": "2016-12-15",
+      "url": "https://idealog.co.nz/venture/2016/12/social-club-talks-rise-influencer-marketing-new-zealand",
+      "locator": "Date immediately below the title: December 15, 2016"
+    },
+    {
+      "witness_id": "w_bt_supie_supermarketnews_2021",
+      "source_id": "bt_supie_supermarketnews_2021",
+      "kind": "publisher_dated",
+      "available_on": "2021-11-09",
+      "url": "https://supermarketnews.co.nz/news/supie-puts-2-5m-towards-growth/",
+      "locator": "FMCG News / Local News dateline: 09/11/2021"
+    },
+    {
+      "witness_id": "w_bt_narrative_nbr_2019",
+      "source_id": "bt_narrative_nbr_2019",
+      "kind": "publisher_dated",
+      "available_on": "2019-05-21",
+      "url": "https://www.nbr.co.nz/investment/peter-thiel-led-fund-backs-local-creative-tech-startup-narrative/",
+      "locator": "Visible dateline: Tue, 21 May 2019; only the public opening is used"
+    }
+  ],
+  "profiles": [
+    {
+      "company_id": "public_codelingolimited",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2018-01-24",
+        "precision": "day"
+      },
+      "anchor_source_id": "entry_codelingolimited_rightclickcapital",
+      "anchor_locator": "Dateline, company background and opening financing paragraphs",
+      "features": [
+        {
+          "name": "description",
+          "value": "Software that helps development teams automate code-quality review and debugging.",
+          "raw_value": "Developer code-quality platform",
+          "derivation": "stated",
+          "rationale": "Short paraphrase of the product description.",
+          "passage": "The company addresses technical debt by scaling development teams’ code review and debugging processes.",
+          "locator": "Company background paragraph beginning Founded in 2016",
+          "review_state": "proposed",
+          "source_id": "bt_codelingo_rcc_2018",
+          "witness_id": "w_bt_codelingo_rcc_2018"
+        },
+        {
+          "name": "product_type",
+          "value": "workflow",
+          "raw_value": "Code-quality review and debugging platform",
+          "derivation": "normalised",
+          "rationale": "Proposed editorial mapping of the cited offering to the preregistered general vocabulary; requires human confirmation.",
+          "passage": "The offering supports software quality-assurance processes.",
+          "locator": "Company background and investor comments",
+          "review_state": "proposed",
+          "source_id": "bt_codelingo_rcc_2018",
+          "witness_id": "w_bt_codelingo_rcc_2018"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "enterprise_software",
+          "raw_value": "Developer software",
+          "derivation": "normalised",
+          "rationale": "Historical offering supports a proposed enterprise-software grouping; current cohort raw sector Developer software is retained separately.",
+          "passage": "The offering is software for development-team productivity.",
+          "locator": "Company background",
+          "review_state": "proposed",
+          "source_id": "bt_codelingo_rcc_2018",
+          "witness_id": "w_bt_codelingo_rcc_2018"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Early alpha clients in the preceding year",
+          "derivation": "normalised",
+          "rationale": "An alpha product used by clients supports an existing prototype; it does not establish payment.",
+          "passage": "The article reports early alpha clients before this financing announcement.",
+          "locator": "Paragraph beginning The startup brought on",
+          "review_state": "proposed",
+          "source_id": "bt_codelingo_rcc_2018",
+          "witness_id": "w_bt_codelingo_rcc_2018"
+        },
+        {
+          "name": "round_size_band",
+          "value": "0.5m_to_lt2m",
+          "raw_value": "NZD 540000",
+          "derivation": "calculated",
+          "rationale": "540000 NZD falls in the preregistered 0.5m to less-than-2m band; no currency conversion.",
+          "passage": "The dated opening reports NZ$540,000 in seed funding.",
+          "locator": "Headline and first paragraph",
+          "review_state": "proposed",
+          "source_id": "bt_codelingo_rcc_2018",
+          "witness_id": "w_bt_codelingo_rcc_2018"
+        }
+      ]
+    },
+    {
+      "company_id": "public_socialclub",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2017-03",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2017",
+      "anchor_locator": "PDF page 1, Mar-17 row for Social Club",
+      "features": [
+        {
+          "name": "description",
+          "value": "An online platform matching brands and social-media influencers for advertising campaigns.",
+          "raw_value": "Brand and influencer campaign platform",
+          "derivation": "stated",
+          "rationale": "Paraphrase of the described live product.",
+          "passage": "Brands and influencers create profiles and find campaign collaborators.",
+          "locator": "Opening product and process paragraphs",
+          "review_state": "proposed",
+          "source_id": "bt_socialclub_idealog_2016",
+          "witness_id": "w_bt_socialclub_idealog_2016"
+        },
+        {
+          "name": "product_type",
+          "value": "marketplace",
+          "raw_value": "Two-sided online advertising marketplace",
+          "derivation": "normalised",
+          "rationale": "Proposed editorial mapping of the cited offering to the preregistered general vocabulary; requires human confirmation.",
+          "passage": "The article describes a two-sided marketplace for campaign collaborations.",
+          "locator": "Paragraph beginning The website works",
+          "review_state": "proposed",
+          "source_id": "bt_socialclub_idealog_2016",
+          "witness_id": "w_bt_socialclub_idealog_2016"
+        },
+        {
+          "name": "buyer",
+          "value": "business",
+          "raw_value": "Advertising brands",
+          "derivation": "normalised",
+          "rationale": "Brands commission the campaigns; influencer users are not treated as the buyer.",
+          "passage": "The reported campaigns serve brands, including named commercial brands.",
+          "locator": "Opening brand examples and campaign discussion",
+          "review_state": "proposed",
+          "source_id": "bt_socialclub_idealog_2016",
+          "witness_id": "w_bt_socialclub_idealog_2016"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "enterprise_software",
+          "raw_value": "Marketing software",
+          "derivation": "normalised",
+          "rationale": "Proposed enterprise-software grouping from the contemporaneous offering; retain the current raw label Marketing software separately.",
+          "passage": "The described marketplace supports business advertising workflows.",
+          "locator": "Opening product and brand paragraphs",
+          "review_state": "proposed",
+          "source_id": "bt_socialclub_idealog_2016",
+          "witness_id": "w_bt_socialclub_idealog_2016"
+        },
+        {
+          "name": "market_focus",
+          "value": "new_zealand",
+          "raw_value": "New Zealand brands; overseas expansion planned for 2017",
+          "derivation": "normalised",
+          "rationale": "Proposed editorial mapping of the cited offering to the preregistered general vocabulary; requires human confirmation.",
+          "passage": "The article distinguishes its New Zealand market from planned overseas expansion.",
+          "locator": "Opening brand coverage and final Looking ahead paragraphs",
+          "review_state": "proposed",
+          "source_id": "bt_socialclub_idealog_2016",
+          "witness_id": "w_bt_socialclub_idealog_2016"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Operating platform with influencers and brands",
+          "derivation": "normalised",
+          "rationale": "Actual platform use supports prototype yes; the founders’ personal employment and company revenue remain unrecorded.",
+          "passage": "Profiles, matching and actual campaign examples establish a working platform.",
+          "locator": "Process paragraphs and campaign examples",
+          "review_state": "proposed",
+          "source_id": "bt_socialclub_idealog_2016",
+          "witness_id": "w_bt_socialclub_idealog_2016"
+        }
+      ]
+    },
+    {
+      "company_id": "public_supie",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2021-11-09",
+        "precision": "day"
+      },
+      "anchor_source_id": "entry_supie_supermarketnews",
+      "anchor_locator": "Dateline, company background and opening financing paragraphs",
+      "features": [
+        {
+          "name": "description",
+          "value": "An online supermarket supplying groceries directly to Auckland households.",
+          "raw_value": "Online supermarket serving Auckland",
+          "derivation": "stated",
+          "rationale": "Short paraphrase of the product and customers.",
+          "passage": "The article describes an already launched online grocer with household customers.",
+          "locator": "Opening three paragraphs",
+          "review_state": "proposed",
+          "source_id": "bt_supie_supermarketnews_2021",
+          "witness_id": "w_bt_supie_supermarketnews_2021"
+        },
+        {
+          "name": "product_type",
+          "value": "food_beverage",
+          "raw_value": "Grocery product range",
+          "derivation": "normalised",
+          "rationale": "Proposed editorial mapping of the cited offering to the preregistered general vocabulary; requires human confirmation.",
+          "passage": "The launch offered supermarket groceries rather than a software product sold to other retailers.",
+          "locator": "Paragraph beginning Founded by Pukekohe",
+          "review_state": "proposed",
+          "source_id": "bt_supie_supermarketnews_2021",
+          "witness_id": "w_bt_supie_supermarketnews_2021"
+        },
+        {
+          "name": "buyer",
+          "value": "household",
+          "raw_value": "Auckland households",
+          "derivation": "normalised",
+          "rationale": "Proposed editorial mapping of the cited offering to the preregistered general vocabulary; requires human confirmation.",
+          "passage": "The founder identifies households spending on groceries as customers.",
+          "locator": "Founder comment beginning We are providing a choice",
+          "review_state": "proposed",
+          "source_id": "bt_supie_supermarketnews_2021",
+          "witness_id": "w_bt_supie_supermarketnews_2021"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "retail_ecommerce",
+          "raw_value": "Grocery retail",
+          "derivation": "normalised",
+          "rationale": "Proposed normalisation grounded in the dated offering; retain Grocery retail as the raw cohort label.",
+          "passage": "The online-supermarket offering is retail ecommerce.",
+          "locator": "Opening paragraphs",
+          "review_state": "proposed",
+          "source_id": "bt_supie_supermarketnews_2021",
+          "witness_id": "w_bt_supie_supermarketnews_2021"
+        },
+        {
+          "name": "market_focus",
+          "value": "new_zealand",
+          "raw_value": "Auckland region",
+          "derivation": "normalised",
+          "rationale": "Proposed editorial mapping of the cited offering to the preregistered general vocabulary; requires human confirmation.",
+          "passage": "The reported launch serves Auckland.",
+          "locator": "Paragraph beginning Founded by Pukekohe",
+          "review_state": "proposed",
+          "source_id": "bt_supie_supermarketnews_2021",
+          "witness_id": "w_bt_supie_supermarketnews_2021"
+        },
+        {
+          "name": "prototype",
+          "value": "yes",
+          "raw_value": "Launched and delivering groceries",
+          "derivation": "normalised",
+          "rationale": "A live delivery service supports prototype yes. Membership counts alone do not establish paid memberships or revenue.",
+          "passage": "The article reports a launched service delivering thousands of products to members.",
+          "locator": "Launch paragraph and final growth paragraph",
+          "review_state": "proposed",
+          "source_id": "bt_supie_supermarketnews_2021",
+          "witness_id": "w_bt_supie_supermarketnews_2021"
+        }
+      ]
+    },
+    {
+      "company_id": "public_narrative",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2019-05-21",
+        "precision": "day"
+      },
+      "anchor_source_id": "entry_narrative_nbr",
+      "anchor_locator": "Dateline, company background and opening financing paragraphs",
+      "features": [
+        {
+          "name": "description",
+          "value": "Workflow software intended to improve photographers’ productivity.",
+          "raw_value": "Photographer workflow tools",
+          "derivation": "stated",
+          "rationale": "Only the openly readable lead is used; no paywalled detail is inferred.",
+          "passage": "The public opening describes productivity tools for photographers.",
+          "locator": "First visible paragraph above subscription boundary",
+          "review_state": "proposed",
+          "source_id": "bt_narrative_nbr_2019",
+          "witness_id": "w_bt_narrative_nbr_2019"
+        },
+        {
+          "name": "product_type",
+          "value": "workflow",
+          "raw_value": "Photographer workflow services",
+          "derivation": "normalised",
+          "rationale": "Proposed editorial mapping of the cited offering to the preregistered general vocabulary; requires human confirmation.",
+          "passage": "The lead frames the offering around photographer workflows.",
+          "locator": "First visible paragraph above subscription boundary",
+          "review_state": "proposed",
+          "source_id": "bt_narrative_nbr_2019",
+          "witness_id": "w_bt_narrative_nbr_2019"
+        },
+        {
+          "name": "sector_normalised",
+          "value": "enterprise_software",
+          "raw_value": "Photography software",
+          "derivation": "normalised",
+          "rationale": "Proposed grouping of professional workflow software; retain Photography software as raw. Buyers and payment are unconfirmed.",
+          "passage": "The public lead describes workflow productivity software.",
+          "locator": "First visible paragraph above subscription boundary",
+          "review_state": "proposed",
+          "source_id": "bt_narrative_nbr_2019",
+          "witness_id": "w_bt_narrative_nbr_2019"
+        }
+      ]
+    },
+    {
+      "company_id": "public_partly",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2020-10-08",
+        "precision": "day"
+      },
+      "anchor_source_id": "entry_partly_nzentrepreneur",
+      "anchor_locator": "First date and opening paragraphs",
+      "features": []
+    },
+    {
+      "company_id": "discovery_halter",
+      "scope": "backtest_entry",
+      "entry_date": {
+        "value": "2016-12",
+        "precision": "month"
+      },
+      "anchor_source_id": "ycf_2019",
+      "anchor_locator": "PDF page 12, Dec-16 row for Halter",
+      "features": []
+    }
+  ],
+  "investigations": [
+    {
+      "company_id": "public_codelingolimited",
+      "checked_on": "2026-11-22",
+      "url": "https://www.rightclickcapital.com/2018/01/24/dunedin-startup-codelingo-raises-nz540000-from-reinventure-and-right-click-capital/",
+      "disposition": "proposals_recorded",
+      "note": "Read the dated public text; extracted only the fields listed in this profile. All values await human confirmation."
+    },
+    {
+      "company_id": "public_socialclub",
+      "checked_on": "2026-11-22",
+      "url": "https://idealog.co.nz/venture/2016/12/social-club-talks-rise-influencer-marketing-new-zealand",
+      "disposition": "proposals_recorded",
+      "note": "Read the dated public text; extracted only the fields listed in this profile. All values await human confirmation."
+    },
+    {
+      "company_id": "public_supie",
+      "checked_on": "2026-11-22",
+      "url": "https://supermarketnews.co.nz/news/supie-puts-2-5m-towards-growth/",
+      "disposition": "proposals_recorded",
+      "note": "Read the dated public text; extracted only the fields listed in this profile. All values await human confirmation."
+    },
+    {
+      "company_id": "public_narrative",
+      "checked_on": "2026-11-22",
+      "url": "https://www.nbr.co.nz/investment/peter-thiel-led-fund-backs-local-creative-tech-startup-narrative/",
+      "disposition": "proposals_recorded",
+      "note": "Read the dated public text; extracted only the fields listed in this profile. All values await human confirmation."
+    },
+    {
+      "company_id": "public_partly",
+      "checked_on": "2026-11-22",
+      "url": "https://nzentrepreneur.co.nz/partly-raises-1-7-million-seed-funding-from-all-star-consortium/",
+      "disposition": "later_revision",
+      "note": "Read the page. It displays 8 October 2020 and 20 August 2021. The current text is excluded from the October 2020 snapshot without an inspected earlier version."
+    },
+    {
+      "company_id": "public_partly",
+      "checked_on": "2026-11-22",
+      "url": "https://www.scoop.co.nz/stories/BU2010/S00131/partly-raises-17-million-in-seed-funding-from-all-star-consortium-of-investors.htm",
+      "disposition": "access_blocked",
+      "note": "Direct article fetch returned a JavaScript robot check; mobile fetch returned HTTP 403. Search-index text is discovery only. No feature or historical witness was accepted from it."
+    },
+    {
+      "company_id": "discovery_halter",
+      "checked_on": "2026-11-22",
+      "url": "https://www.ey.com/en_nz/entrepreneur-of-the-year/new-zealand/finalists-2024/craig-piggott",
+      "disposition": "too_late",
+      "note": "Search found a 2024 founder profile. It cannot establish the product at the December 2016 entry; no feature extracted. Searches for Craig Piggott before 2 December 2016 found no qualifying source in this pass."
+    },
+    {
+      "company_id": "public_partly",
+      "checked_on": "2026-11-22",
+      "url": "https://web.archive.org/cdx/search/cdx?url=nzentrepreneur.co.nz%2Fpartly-raises-1-7-million-seed-funding-from-all-star-consortium%2F&output=json&filter=statuscode%3A200&to=20201008&collapse=digest",
+      "disposition": "access_blocked",
+      "note": "The archive query was inaccessible through the research tool. No capture list or archived page was inspected; this is not evidence that a capture does not exist."
+    }
+  ]
+}

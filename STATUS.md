@@ -1,6 +1,24 @@
 # Data status
 
-Last updated 2026-11-21. This file records the pre-demo data checks and open data decisions.
+Last updated 2026-11-22. This file records the pre-demo data checks and open data decisions. The outcome audit below remains frozen at 2026-11-21.
+
+## Time Machine: preregistered, data gate not met
+
+The protocol was committed as `d0c7c27` before any Time Machine scoring run. See [preregistration](docs/design/BACKTEST_PREREG.md) and [coverage checkpoint](docs/healthtech-pilot/BACKTEST_COVERAGE.md) for exact rules, sources, input digests and the full Partly research queue.
+
+| Subject | Date-eligible earlier peers | Peers with ≥5 confirmed strict fields | Peers that could clear after proposal review | Subject confirmed / proposed fields |
+|---|---:|---:|---:|---:|
+| Partly | 32 | 0 | 2 | 0 / 0 |
+| Supie | 39 | 0 | 2 | 0 / 6 |
+| Halter | 8 | 0 | 0 | 0 / 0 |
+
+Twenty field extractions for CodeLingo, Social Club, Narrative and Supie are recorded as **proposed**, with sources, locators and normalisation rationale. No human confirmation is claimed. CodeLingo has five proposals and Social Club six; Narrative has three. Supie is a subject and is not an earlier peer for Partly.
+
+The fixed Phase 1 gate requires **15 Partly-eligible peers with at least five confirmed strict fields each**. It is not met. Even confirming every current proposal would leave thirteen more covered peers to research. This is the coverage of this research pass, not proof that the remaining historical evidence does not exist. No general matcher, Time Machine endpoint, backtest result or UI is released. The existing app's source packets and thresholds are unchanged.
+
+Partly's current NZ Entrepreneur page shows a 2021 update, so it was excluded from the 2020 snapshot. Scoop and archive access were unavailable through the research tool; no original version was inspected. Halter has no qualifying pre-entry source in this pass. A later biography cannot fill its 2016 snapshot.
+
+Sector normalisation separately preserves all 33 raw labels and their source records: 31 editorial mapping proposals, with `Foodtech` and `Software & Services` still unresolved. These mappings do not count as historical evidence. Reproduce the audit with `.venv/bin/python scripts/audit_backtest_coverage.py --output outputs/backtest-coverage.json`; `--require-gate` exits 1 until the unchanged data bar passes.
 
 The first round of checks, against 6f2e1bd, changed no packet. The PwC rows were then hand-checked (all match), and a follow-up data-hygiene change re-sourced three events in `cohort-follow-up.json` through the sourced-event path: Partly's Series A, Partly's pre-Series A and First AML's Series B. **The audit counts are unchanged.**
 

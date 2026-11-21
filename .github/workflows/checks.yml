@@ -54,6 +54,7 @@ jobs:
       - run: python scripts/check_migrations.py
       - run: python research/framework-v0.2.1/validate_research_example.py --as-of 2026-11-18
       - run: python scripts/verify_research.py
+      - run: python scripts/audit_backtest_coverage.py --output outputs/backtest-coverage.json
       - run: python -m pytest -q
       - run: python scripts/export_contract.py --check
       - run: python scripts/evaluate.py --db outputs/venture_evidence.sqlite --output outputs/development-evaluation.json
