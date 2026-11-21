@@ -1,9 +1,0 @@
-$ ['/Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-env/bin/python', 'scripts/evaluation_workbench.py', 'review-materials', '--bundle', 'outputs/frozen-evaluation', '--output-dir', 'outputs/human-review']
-CWD /Users/kevinnn.park/Documents/Codex/2026-11-18/read-vee-engineering-review-implementation-handover/work/remaining/fresh-source
-{
-  "manifest_id": "12ac21cd1c76c3cf38e7c8d24b18a13592031a0ae4495ac56ae316dd7d1ac2b2",
-  "review_rows": 60,
-  "held_out_pending": [
-    "heldout_unseen_cohort_01"
-  ]
-}
