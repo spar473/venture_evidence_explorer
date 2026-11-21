@@ -1,6 +1,6 @@
 """Source and date projections for same-stage comparisons."""
 from collections import defaultdict
-from datetime import date
+from datetime import date, timedelta
 import json
 
 from .precedent_contracts import MilestoneValue, WorkbenchAnchor, WorkbenchClaim, WorkbenchPoint
@@ -8,6 +8,7 @@ from .precedent_similarity import MILESTONES
 from .reference_pool import EventDate
 from .research_adapter import research_time_interval
 
+CONTEMPORANEOUS_WINDOW_DAYS = 90
 POOL_ANCHORS = {
     'first_provider_or_clinical_study': {'provider_deployment', 'clinical_study'},
     'first_regulatory_decision': {'regulatory_clearance', 'regulatory_decision'},
@@ -124,6 +125,21 @@ def snapshot_by(cutoff, claims):
         and (claim.upper_on is None or claim.upper_on <= cutoff)
         and claim.review_state != 'disputed']
     return candidates
+
+
+def contemporaneous_snapshot(anchor, strict, additions, as_of):
+    if not anchor:
+        return strict
+    start = date.fromisoformat(anchor.claim.lower_on)
+    end = min(as_of, (start + timedelta(days=CONTEMPORANEOUS_WINDOW_DAYS)).isoformat())
+    fields = {claim.field for claim in strict}
+    extended = list(strict)
+    for claim in sorted(snapshot_by(end, additions), key=lambda item: (item.witness.available_on, item.claim_id)):
+        delay = (date.fromisoformat(claim.witness.available_on) - start).days
+        if delay > 0 and claim.field not in fields:
+            extended.append(claim.model_copy(update={'peer_witness_delay_days': delay}))
+            fields.add(claim.field)
+    return extended
 
 
 def checklist(snapshot):

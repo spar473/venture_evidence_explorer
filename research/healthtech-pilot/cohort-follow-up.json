@@ -197,7 +197,7 @@
       "title": "The student startup changing heart care",
       "url": "https://www.auckland.ac.nz/en/news/2026/07/01/student-startup-changing-heart-care.html",
       "kind": "news_article",
-      "published_on": "2026-07-01",
+      "published_on": "2026-06-30",
       "retrieved_on": "2026-11-20"
     },
     {
@@ -788,13 +788,13 @@
       "company_id": "discovery_heartlab",
       "kind": "last_verified_activity",
       "date": {
-        "value": "2026-07-01",
+        "value": "2026-06-30",
         "precision": "day"
       },
-      "date_basis": "reported_occurrence",
+      "date_basis": "completed_at_announcement",
       "source_id": "heartlab_university_2026",
-      "passage": "Dateline and narrative on the company’s software and customers.",
-      "claim": "University reports commercial activity by the NZ startup."
+      "passage": "Visible 30 June dateline and paragraph on the Advara HeartCare contract and total capital raised.",
+      "claim": "The university reports a signed contract to supply Advara HeartCare and $8 million in cumulative venture capital. The article gives no round label or individual round amount."
     },
     {
       "event_id": "respiraq_booster_2026",
@@ -2975,6 +2975,14 @@
     }
   ],
   "witnesses": [
+    {
+      "witness_id": "witness_heartlab_university_2026",
+      "source_id": "heartlab_university_2026",
+      "kind": "publisher_dated",
+      "available_on": "2026-06-30",
+      "url": "https://www.auckland.ac.nz/en/news/2026/07/01/student-startup-changing-heart-care.html",
+      "locator": "Visible 30 June 2026 publisher dateline above the story."
+    },
     {
       "witness_id": "witness_halter_idealog_2018",
       "source_id": "halter_idealog_2018",

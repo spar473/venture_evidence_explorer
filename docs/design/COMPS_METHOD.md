@@ -1,6 +1,6 @@
 # Ceiling, typical and floor comps: method
 
-Method v2, 21 November 2026. The comp response records similarity version `witnessed-gower-b0:2`. Probabilities remain subject to the release gates in `docs/healthtech-pilot/NEXT_PHASE_PLAN.md`.
+Method v3, 21 November 2026. The comp response records similarity version `witnessed-gower-b0:3` and the selected witness mode. Probabilities remain subject to the release gates in `docs/healthtech-pilot/NEXT_PHASE_PLAN.md`.
 
 ## Inspiration and terms
 
@@ -38,11 +38,13 @@ Features require a dated **availability witness** under the existing witness con
 
 A missing feature is **missing**, never "No".
 
+**Strict** is the default witness mode. **Contemporaneous** is an optional mode for peer comparison cards, rankings and their evidence and exports. It can fill missing clinical workflow or buyer and sales fields with a qualifying source witnessed within 90 calendar days of the peer's earliest possible anchor date and by the selected as-of date. The source must describe the offering or intended buyer at that stage. Later sales, pilots, clearances, financing and other milestone events leave the anchor snapshot as it was. Strict evidence takes priority for fields it already supports. Each admitted late claim displays `+n days` from the earliest possible anchor date. The subject, estimator, validation snapshots, frozen outcome classifications and release gates use their original cutoffs.
+
 ## 3. Similarity
 
 - **Per-dimension similarity** s⁽ᵈ⁾ ∈ [0, 1], using Gower similarity for mixed types. Numeric features use range-normalised absolute difference. Categorical features use a match score. Text uses the B0 symmetric IDF-weighted token overlap over witnessed descriptions.
 - Features missing for either venture are excluded from that pair's average. The share of features available is reported as **coverage**.
-- **Clinical workflow is required.** At least one clinical workflow field must be comparable for the pair, even when its value differs. The existing similarity minimum of 0.35 and weighted coverage minimum of 0.15 also apply.
+- **Clinical workflow similarity must be at least 0.25.** The dimension needs comparable evidence and sufficient similarity on its own. The overall similarity minimum of 0.35 and weighted coverage minimum of 0.15 also apply.
 - **Overall similarity:** s = Σ_d α_d s⁽ᵈ⁾ / Σ_d α_d, summed over dimensions with coverage. The α weights are fixed in advance and documented, and are tuned later on training vintages only.
 - The UI shows the per-dimension breakdown, because a venture can be a strong peer on procurement and a weak one on clinical validation.
 

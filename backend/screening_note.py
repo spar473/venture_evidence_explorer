@@ -4,7 +4,7 @@ from typing import Literal
 
 from .healthtech_scenarios import venture_frame_measurement_draft
 from .ingestion import StrictModel
-from .precedent_contracts import AnchorKind, CompOutcome, DimensionScore, MilestoneValue, PrecedentResponse, WorkbenchAnchor
+from .precedent_contracts import AnchorKind, CompOutcome, DimensionScore, MilestoneValue, PrecedentResponse, WitnessMode, WorkbenchAnchor
 
 
 class ScreeningMetadata(StrictModel):
@@ -15,6 +15,7 @@ class ScreeningMetadata(StrictModel):
     anchor_event: WorkbenchAnchor | None
     as_of: str
     similarity_version: str
+    witness_mode: WitnessMode = 'strict'
     snapshot_basis: Literal['anchor', 'subject_as_of'] = 'anchor'
     similarity: float | None = None
     coverage: float | None = None
@@ -66,6 +67,8 @@ class ScreeningDraft(StrictModel):
 
 def screening_draft(data: PrecedentResponse):
     key = f'{data.subject.company_id}|{data.anchor_kind}|{data.as_of}'
+    if data.witness_mode != 'strict':
+        key += f'|{data.witness_mode}'
     project_id = 'vee-screening-' + sha256(key.encode()).hexdigest()[:16]
 
     def alternative(role, row, peer=None, explanation=None):
@@ -73,6 +76,7 @@ def screening_draft(data: PrecedentResponse):
         return ScreeningAlternative(id=f'screening-{role}', name=row.display_name,
             metadata=ScreeningMetadata(role=role, company_id=row.company_id, anchor_kind=data.anchor_kind,
                 anchor_event=row.anchor, as_of=data.as_of, similarity_version=data.similarity_version, snapshot_basis=basis,
+                witness_mode=data.witness_mode,
                 similarity=peer.similarity if peer else None, coverage=peer.coverage if peer else None,
                 dimensions=peer.dimensions if peer else [], milestones=row.milestones,
                 outcome_label=row.comp_outcome.label if row.comp_outcome else None,

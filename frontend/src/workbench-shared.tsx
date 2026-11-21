@@ -3,6 +3,7 @@ import type {PrecedentResponse, WorkbenchClaim, WorkbenchGates} from "./api-sche
 import {label} from "./labels";
 
 export type AnchorKind = PrecedentResponse["anchor_kind"];
+export type WitnessMode = NonNullable<PrecedentResponse["witness_mode"]>;
 
 export const anchors: Record<AnchorKind, string> = {
   first_institutional_round: "First institutional round",
@@ -35,6 +36,7 @@ const eventLabels: Record<string, string> = {
   clinical_study: "Clinical study evidence",
   provider_deployment: "Provider deployment",
   closed_founder_announcement: "Closure announcement",
+  voluntary_administration: "Voluntary administration",
   closed_register_removal: "Register removal",
   closed_liquidation: "Liquidation",
   other_financing: "Financing disclosure",
@@ -49,6 +51,11 @@ export function dateLabel(claim: WorkbenchClaim) {
 
 export function claimLink(claim: WorkbenchClaim) {
   return <a href={claim.url} target="_blank" rel="noreferrer">Open source</a>;
+}
+
+export function WitnessDelay({claim}: {claim: WorkbenchClaim}) {
+  const delay = claim.peer_witness_delay_days;
+  return delay ? <small className="wb-witness" title="Days after the earliest possible peer anchor date">+{delay} days</small> : null;
 }
 
 export function ClaimDrawer({claim, onClose, questions, children}: {

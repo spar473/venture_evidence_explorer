@@ -109,6 +109,60 @@
       "kind": "news_article",
       "published_on": "2004-05-06",
       "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_resp_aut_2022_round",
+      "title": "RespirAq secures $1.5m investment",
+      "publisher": "Auckland University of Technology",
+      "url": "https://www.aut.ac.nz/news/stories/respiraq-secures-%241.5m-investment",
+      "kind": "news_article",
+      "published_on": "2022-01-26",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_insides_uoa_2019_round",
+      "title": "Velocity alumnus receives $4.3m in investment to take bowel disease technology to the world",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2019/08/21/velocity-alumnus-receives-investment-bowel-disease-technology.html",
+      "kind": "news_article",
+      "published_on": "2019-08-21",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_alimetry_uoa_2021_round",
+      "title": "Guts and glory – the rise of gastric biotech start-up Alimetry",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2021/04/20/guts-glory-rise-biotech-start-up-alimetry.html",
+      "kind": "news_article",
+      "published_on": "2021-04-20",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_volpara_asx_2016_ipo",
+      "title": "Volpara Health Technologies Limited Prospectus",
+      "publisher": "Volpara Health Technologies via ASX",
+      "url": "https://announcements.asx.com.au/asxpdf/20160426/pdf/436rdv4w14m77c.pdf",
+      "kind": "press_release",
+      "published_on": "2016-04-26",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_formus_uoa_2022_round",
+      "title": "Bioengineers use Artificial Intelligence to transform hip surgery",
+      "publisher": "University of Auckland",
+      "url": "https://www.auckland.ac.nz/en/news/2022/02/10/bioengineers-use-artificial-intelligence-for-hip-surgery.html",
+      "kind": "news_article",
+      "published_on": "2022-02-10",
+      "retrieved_on": "2026-11-21"
+    },
+    {
+      "source_id": "ws_wellumio_nbr_2023_round",
+      "title": "Wellumio on mission to make MRI machines truly mobile",
+      "publisher": "National Business Review",
+      "url": "https://www.nbr.co.nz/tech/wellumio-on-mission-to-make-mri-machines-truly-mobile/",
+      "kind": "news_article",
+      "published_on": "2023-08-24",
+      "retrieved_on": "2026-11-21"
     }
   ],
   "witnesses": [
@@ -207,6 +261,54 @@
       "available_on": "2004-05-06",
       "url": "https://digitalvoyages.canterbury.ac.nz/files/original/cacda018dbd4c06d15a085ccfebd221dcebb2b80.pdf",
       "locator": "Print cover date and 7 May 2004 University of Canterbury Library stamp"
+    },
+    {
+      "witness_id": "witness_ws_resp_aut_2022_round",
+      "source_id": "ws_resp_aut_2022_round",
+      "kind": "publisher_dated",
+      "available_on": "2022-01-26",
+      "url": "https://www.aut.ac.nz/news/stories/respiraq-secures-%241.5m-investment",
+      "locator": "Visible 26 Jan, 2022 article date."
+    },
+    {
+      "witness_id": "witness_ws_insides_uoa_2019_round",
+      "source_id": "ws_insides_uoa_2019_round",
+      "kind": "publisher_dated",
+      "available_on": "2019-08-21",
+      "url": "https://www.auckland.ac.nz/en/news/2019/08/21/velocity-alumnus-receives-investment-bowel-disease-technology.html",
+      "locator": "Visible 21 August 2019 dateline."
+    },
+    {
+      "witness_id": "witness_ws_alimetry_uoa_2021_round",
+      "source_id": "ws_alimetry_uoa_2021_round",
+      "kind": "publisher_dated",
+      "available_on": "2021-04-20",
+      "url": "https://www.auckland.ac.nz/en/news/2021/04/20/guts-glory-rise-biotech-start-up-alimetry.html",
+      "locator": "Visible 20 April 2021 dateline."
+    },
+    {
+      "witness_id": "witness_ws_volpara_asx_2016_ipo",
+      "source_id": "ws_volpara_asx_2016_ipo",
+      "kind": "publisher_dated",
+      "available_on": "2016-04-26",
+      "url": "https://announcements.asx.com.au/asxpdf/20160426/pdf/436rdv4w14m77c.pdf",
+      "locator": "ASX prospectus publication dated 26 April 2016."
+    },
+    {
+      "witness_id": "witness_ws_formus_uoa_2022_round",
+      "source_id": "ws_formus_uoa_2022_round",
+      "kind": "publisher_dated",
+      "available_on": "2022-02-10",
+      "url": "https://www.auckland.ac.nz/en/news/2022/02/10/bioengineers-use-artificial-intelligence-for-hip-surgery.html",
+      "locator": "Visible 10 February 2022 dateline."
+    },
+    {
+      "witness_id": "witness_ws_wellumio_nbr_2023_round",
+      "source_id": "ws_wellumio_nbr_2023_round",
+      "kind": "publisher_dated",
+      "available_on": "2023-08-24",
+      "url": "https://www.nbr.co.nz/tech/wellumio-on-mission-to-make-mri-machines-truly-mobile/",
+      "locator": "Public publisher preview dated 24 August 2023."
     }
   ],
   "profiles": [
@@ -648,6 +750,197 @@
           "source_id": "ws_tiro_ucchronicle_2004",
           "witness_id": "w_ws_tiro_ucchronicle_2004",
           "passage": "Breast screening story, tissue motion and computer-based digital imaging paragraphs. The later University of Canterbury DIET impact story links this research programme to Tiro."
+        }
+      ]
+    },
+    {
+      "subject_id": "discovery_respiraq",
+      "scope": "institutional_entry_contemporaneous",
+      "cutoff": "2021-12-01",
+      "anchor_claim_id": "cohort_entry:discovery_respiraq",
+      "features": [
+        {
+          "name": "output_type",
+          "value": "humidified breathing gas for respiratory support",
+          "source_id": "ws_resp_aut_2022_round",
+          "witness_id": "witness_ws_resp_aut_2022_round",
+          "passage": "Offering paragraphs describe humidifying air supplied to patients on respiratory support."
+        }
+      ]
+    },
+    {
+      "subject_id": "discovery_theinsidescompany",
+      "scope": "institutional_entry_contemporaneous",
+      "cutoff": "2019-08-01",
+      "anchor_claim_id": "cohort_entry:discovery_theinsidescompany",
+      "features": [
+        {
+          "name": "modality",
+          "value": "postoperative bowel support device",
+          "source_id": "ws_insides_uoa_2019_round",
+          "witness_id": "witness_ws_insides_uoa_2019_round",
+          "passage": "Opening and Active-Link sections identify devices for bowel-surgery recovery."
+        },
+        {
+          "name": "output_type",
+          "value": "restored gut use after bowel surgery",
+          "source_id": "ws_insides_uoa_2019_round",
+          "witness_id": "witness_ws_insides_uoa_2019_round",
+          "passage": "Opening describes restoring use of the gut after surgery."
+        },
+        {
+          "name": "description",
+          "value": "Surgical Design Studio develops Active-Link, a device intended to help patients regain gut function following bowel surgery.",
+          "source_id": "ws_insides_uoa_2019_round",
+          "witness_id": "witness_ws_insides_uoa_2019_round",
+          "passage": "Opening and discussion of Active-Link as the first device for commercial launch."
+        }
+      ]
+    },
+    {
+      "subject_id": "alimetry",
+      "scope": "reference_round_context",
+      "cutoff": "2021-04-20",
+      "features": [
+        {
+          "name": "modality",
+          "value": "non-invasive gastric electrical sensing",
+          "source_id": "ws_alimetry_uoa_2021_round",
+          "witness_id": "witness_ws_alimetry_uoa_2021_round",
+          "passage": "Gastric Alimetry senses stomach activity from the body surface."
+        },
+        {
+          "name": "clinical_user",
+          "value": "clinician",
+          "source_id": "ws_alimetry_uoa_2021_round",
+          "witness_id": "witness_ws_alimetry_uoa_2021_round",
+          "passage": "Clinicians use the analysed data to investigate gastric symptoms."
+        },
+        {
+          "name": "output_type",
+          "value": "analysed gastric activity for clinical assessment",
+          "source_id": "ws_alimetry_uoa_2021_round",
+          "witness_id": "witness_ws_alimetry_uoa_2021_round",
+          "passage": "The article describes cloud analysis used to assess causes of gastric symptoms."
+        },
+        {
+          "name": "description",
+          "value": "A wearable surface sensor and cloud analysis help clinicians assess gastric symptoms.",
+          "source_id": "ws_alimetry_uoa_2021_round",
+          "witness_id": "witness_ws_alimetry_uoa_2021_round",
+          "passage": "First-device and cloud-analysis paragraphs."
+        }
+      ]
+    },
+    {
+      "subject_id": "volpara",
+      "scope": "reference_round_context",
+      "cutoff": "2016-04-26",
+      "features": [
+        {
+          "name": "modality",
+          "value": "digital mammography",
+          "source_id": "ws_volpara_asx_2016_ipo",
+          "witness_id": "witness_ws_volpara_asx_2016_ipo",
+          "passage": "Prospectus sections 2.4 and 3 describe analysis of mammography images."
+        },
+        {
+          "name": "clinical_user",
+          "value": "radiologist",
+          "source_id": "ws_volpara_asx_2016_ipo",
+          "witness_id": "witness_ws_volpara_asx_2016_ipo",
+          "passage": "Prospectus section 3.9 identifies radiologists as end users of VolparaDensity."
+        },
+        {
+          "name": "output_type",
+          "value": "quantitative breast density assessment",
+          "source_id": "ws_volpara_asx_2016_ipo",
+          "witness_id": "witness_ws_volpara_asx_2016_ipo",
+          "passage": "Prospectus section 3 describes the breast density measurement output."
+        },
+        {
+          "name": "description",
+          "value": "VolparaDensity software derives breast density measures from mammograms for breast screening.",
+          "source_id": "ws_volpara_asx_2016_ipo",
+          "witness_id": "witness_ws_volpara_asx_2016_ipo",
+          "passage": "Company and products overview describes the scope of VolparaDensity."
+        },
+        {
+          "name": "buyer",
+          "value": "breast centre manager",
+          "source_id": "ws_volpara_asx_2016_ipo",
+          "witness_id": "witness_ws_volpara_asx_2016_ipo",
+          "passage": "Prospectus section 3.9 identifies the breast centre manager as the budget holder."
+        },
+        {
+          "name": "procurement_path",
+          "value": "direct sales and distribution or equipment partners",
+          "source_id": "ws_volpara_asx_2016_ipo",
+          "witness_id": "witness_ws_volpara_asx_2016_ipo",
+          "passage": "Prospectus section 3.8 describes direct sales, distributors and equipment manufacturer partnerships."
+        }
+      ]
+    },
+    {
+      "subject_id": "formus",
+      "scope": "reference_round_context",
+      "cutoff": "2022-02-10",
+      "features": [
+        {
+          "name": "clinical_user",
+          "value": "orthopaedic surgeon",
+          "source_id": "ws_formus_uoa_2022_round",
+          "witness_id": "witness_ws_formus_uoa_2022_round",
+          "passage": "Article describes surgeons using the platform to plan joint replacements."
+        },
+        {
+          "name": "output_type",
+          "value": "3D pre-operative joint replacement plan",
+          "source_id": "ws_formus_uoa_2022_round",
+          "witness_id": "witness_ws_formus_uoa_2022_round",
+          "passage": "First-product and pre-operative planning paragraphs."
+        },
+        {
+          "name": "description",
+          "value": "Formus Hip automates 3D planning for orthopaedic joint replacement surgery.",
+          "source_id": "ws_formus_uoa_2022_round",
+          "witness_id": "witness_ws_formus_uoa_2022_round",
+          "passage": "Lead and product paragraphs describe the intended workflow."
+        },
+        {
+          "name": "procurement_path",
+          "value": "commercial launch with Zimmer Biomet",
+          "source_id": "ws_formus_uoa_2022_round",
+          "witness_id": "witness_ws_formus_uoa_2022_round",
+          "passage": "The issuer partnership is named for the Australia and New Zealand launch."
+        }
+      ]
+    },
+    {
+      "subject_id": "wellumio",
+      "scope": "reference_round_context",
+      "cutoff": "2023-08-24",
+      "features": [
+        {
+          "name": "modality",
+          "value": "portable brain MRI",
+          "source_id": "ws_wellumio_nbr_2023_round",
+          "witness_id": "witness_ws_wellumio_nbr_2023_round",
+          "passage": "Public lead describes a portable MRI machine for stroke detection."
+        },
+        {
+          "name": "output_type",
+          "value": "stroke detection at point of care",
+          "source_id": "ws_wellumio_nbr_2023_round",
+          "witness_id": "witness_ws_wellumio_nbr_2023_round",
+          "passage": "Public lead describes a stroke-sensitive device intended for ambulances."
+        },
+        {
+          "name": "description",
+          "value": "Wellumio is developing a portable MRI device intended to detect stroke in ambulances.",
+          "source_id": "ws_wellumio_nbr_2023_round",
+          "witness_id": "witness_ws_wellumio_nbr_2023_round",
+          "passage": "Public lead links the seed financing with its intended medical device."
         }
       ]
     }

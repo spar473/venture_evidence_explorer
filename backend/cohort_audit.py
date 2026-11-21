@@ -56,7 +56,7 @@ class RegistryStatus(StrictModel):
     company_id: Id
     company_number: str = Field(pattern=r'^[0-9]+$')
     source_id: Id
-    status: Literal['liquidation', 'removed']
+    status: Literal['voluntary_administration', 'liquidation', 'removed']
     effective_on: str
     locator: Text
 
@@ -199,7 +199,8 @@ def run_audit(discovery_path=PACK, evidence_path=ENTRIES, follow_up_path=FOLLOW_
     if any(record.company_id not in cases for record in evidence.registry_statuses):
         raise ValueError('Registry status references a company absent from the entry audit')
     included_ids = {entry['company_id'] for entry in included}
-    documented_closed = {record.company_id for record in evidence.registry_statuses} & included_ids
+    documented_closed = {record.company_id for record in evidence.registry_statuses
+                         if record.status in ('liquidation', 'removed')} & included_ids
     follow_up = outcome_audit(included, evidence.registry_statuses, follow_up_path)
     if follow_up['as_of'] < evidence.captured_on:
         raise ValueError('Follow-up cutoff predates the source-covered entry audit')
