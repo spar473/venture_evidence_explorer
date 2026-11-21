@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Calculate conditional cash cases and optionally export a Venture Frame draft."""
+
 import argparse
 import json
 import sys

@@ -1,4 +1,5 @@
 """Healthtech pilot regressions; all mutations use disposable/synthetic fixtures."""
+
 import copy
 import hashlib
 import json
@@ -13,8 +14,14 @@ from backend.ingestion import load_seed
 from backend.main import create_app
 from backend.research_adapter import EXAMPLE, dry_run_research, import_research
 from backend.research_validation import validate_research_packet
-from backend.healthtech import (SELECTION_PATH, Selections, HealthtechComparison,
-    compare_healthtech, evidence_eligible, time_proves_by)
+from backend.healthtech import (
+    SELECTION_PATH,
+    Selections,
+    HealthtechComparison,
+    compare_healthtech,
+    evidence_eligible,
+    time_proves_by,
+)
 from backend.retrieval import compare
 
 PACKET = ROOT / 'research/healthtech-pilot/packet.json'
@@ -24,8 +31,10 @@ MRI = 'subj_ht_mri'
 
 def snapshot(path):
     with sqlite3.connect(path) as conn:
-        return {r[0]: conn.execute('SELECT * FROM "' + r[0] + '" ORDER BY rowid').fetchall()
-            for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")}
+        return {
+            r[0]: conn.execute('SELECT * FROM "' + r[0] + '" ORDER BY rowid').fetchall()
+            for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")
+        }
 
 
 @pytest.fixture
@@ -98,7 +107,9 @@ def test_two_pathways_have_provenance_and_distinct_later_reports(pilot):
     assert reports['obs_ht_formus_reg23']['source']['published_time']['value'] is None
     assert reports['obs_ht_formus_reg26']['observation']['effective_time']['value'] is None
     assert reports['obs_ht_formus_reg26']['source']['published_time']['value'] == '2026-05-22'
-    assert any(c['case_id'] == 'case_ht_formus_clearance' and not c['aggregation_allowed'] for c in formus['unresolved_cases'])
+    assert any(
+        c['case_id'] == 'case_ht_formus_clearance' and not c['aggregation_allowed'] for c in formus['unresolved_cases']
+    )
     assert reports['obs_ht_formus_validation23']['observation']['source_relationship'] == 'company'
     assert reports['obs_ht_formus_validation23']['source']['publisher_role'] == 'regulator'
     assert snapshot(pilot) == before
@@ -107,20 +118,22 @@ def test_two_pathways_have_provenance_and_distinct_later_reports(pilot):
 def test_historical_and_sparse_subjects_abstain_without_leaking(pilot):
     client = TestClient(create_app(pilot))
     for cutoff in ['2010-10-07', '2022-02-02', '2026-11-18', AS_OF]:
-        result = client.get(f'/api/research/subjects/{MRI}/comparisons', params={'as_of': cutoff, 'view': 'historical'}).json()
+        result = client.get(
+            f'/api/research/subjects/{MRI}/comparisons', params={'as_of': cutoff, 'view': 'historical'}
+        ).json()
         assert result['status'] == 'abstain'
         assert result['subject_evidence'] == result['peers'] == []
         assert 'availability witness' in result['gaps'][0]
         assert 'K213272' not in json.dumps(result)
         assert 'acquisition' not in json.dumps(result)
-    early = client.get(f'/api/research/subjects/{MRI}/comparisons', params={'as_of':'2026-11-18'}).json()
+    early = client.get(f'/api/research/subjects/{MRI}/comparisons', params={'as_of': '2026-11-18'}).json()
     assert early['peers'] == early['subject_evidence'] == []
     for sid in ['subj_quickmas', 'subj_rosterlab', 'subj_ht_formus']:
         result = client.get(f'/api/research/subjects/{sid}/comparisons', params={'as_of': AS_OF}).json()
         assert result['peers'] == [] and result['status'] == 'abstain'
         assert 'Shared healthcare wording alone' in result['gaps'][0]
-    assert client.get('/api/research/subjects/missing/comparisons', params={'as_of':AS_OF}).status_code == 404
-    for params in [{'as_of':'2026-02-30'}, {'as_of':AS_OF,'view':'guess'}, {}]:
+    assert client.get('/api/research/subjects/missing/comparisons', params={'as_of': AS_OF}).status_code == 404
+    for params in [{'as_of': '2026-02-30'}, {'as_of': AS_OF, 'view': 'guess'}, {}]:
         assert client.get(f'/api/research/subjects/{MRI}/comparisons', params=params).status_code == 422
 
 
@@ -129,49 +142,78 @@ def test_partial_date_upper_bound_and_future_evidence_exclusion():
     observation = packet['observations'][0]
     source = next(s for s in packet['sources'] if s['source_id'] == observation['source_id'])
     assert evidence_eligible(observation, source, AS_OF, 'research')
-    for key in ['published_time','updated_time']:
+    for key in ['published_time', 'updated_time']:
         s = copy.deepcopy(source)
-        s[key] = dict(value='2026',precision='year',basis='Synthetic unresolved partial date.',unknown_reason=None)
+        s[key] = dict(value='2026', precision='year', basis='Synthetic unresolved partial date.', unknown_reason=None)
         assert not evidence_eligible(observation, s, AS_OF, 'research')
-    for key in ['context_time','effective_time']:
+    for key in ['context_time', 'effective_time']:
         o = copy.deepcopy(observation)
-        o[key] = dict(value='2026-11',precision='month',basis='Synthetic partial date.',unknown_reason=None)
+        o[key] = dict(value='2026-11', precision='month', basis='Synthetic partial date.', unknown_reason=None)
         assert not evidence_eligible(o, source, AS_OF, 'research')
-    s = copy.deepcopy(source); s['retrieved_on'] = '2026-11-20'
+    s = copy.deepcopy(source)
+    s['retrieved_on'] = '2026-11-20'
     assert not evidence_eligible(observation, s, AS_OF, 'research')
-    o = copy.deepcopy(observation); o['review']['checked_on'] = '2026-11-20'
+    o = copy.deepcopy(observation)
+    o['review']['checked_on'] = '2026-11-20'
     assert not evidence_eligible(o, source, AS_OF, 'research')
-    for value, cutoff, expected in [('2026','2026-12-31',True),('2026','2026-11-19',False),('2026-02','2026-02-28',True),(None,AS_OF,False)]:
-        precision = {4:'year',7:'month'}.get(len(value or ''),'unknown')
-        assert time_proves_by(dict(value=value,precision=precision,basis='Synthetic.',unknown_reason=None if value else 'not_researched_this_pass'),cutoff) == expected
+    for value, cutoff, expected in [
+        ('2026', '2026-12-31', True),
+        ('2026', '2026-11-19', False),
+        ('2026-02', '2026-02-28', True),
+        (None, AS_OF, False),
+    ]:
+        precision = {4: 'year', 7: 'month'}.get(len(value or ''), 'unknown')
+        assert (
+            time_proves_by(
+                dict(
+                    value=value,
+                    precision=precision,
+                    basis='Synthetic.',
+                    unknown_reason=None if value else 'not_researched_this_pass',
+                ),
+                cutoff,
+            )
+            == expected
+        )
     # Even falsifying the boolean cannot replace a dated witness with a locator.
-    s = copy.deepcopy(source); s['historical_availability_verified'] = True
+    s = copy.deepcopy(source)
+    s['historical_availability_verified'] = True
     assert not evidence_eligible(observation, s, AS_OF, 'historical')
 
 
 def test_selection_manifest_rejects_self_duplicates_and_excess_peers():
     original = json.loads(SELECTION_PATH.read_bytes())
     Selections.model_validate(original)
-    for mutation in ['self','duplicate','excess']:
+    for mutation in ['self', 'duplicate', 'excess']:
         value = copy.deepcopy(original)
         selection = value['selections'][0]
-        if mutation == 'self': selection['peers'][0]['subject_id'] = selection['subject_id']
-        elif mutation == 'duplicate': selection['peers'][1]['subject_id'] = selection['peers'][0]['subject_id']
-        else: selection['peers'] *= 2
-        with pytest.raises(ValidationError): Selections.model_validate(value)
+        if mutation == 'self':
+            selection['peers'][0]['subject_id'] = selection['subject_id']
+        elif mutation == 'duplicate':
+            selection['peers'][1]['subject_id'] = selection['peers'][0]['subject_id']
+        else:
+            selection['peers'] *= 2
+        with pytest.raises(ValidationError):
+            Selections.model_validate(value)
 
 
 def test_missing_or_future_basis_withholds_whole_claimed_analogy(pilot, monkeypatch):
     from backend import healthtech
     from backend.research_repository import dossier
+
     with connect(pilot) as conn:
         base = dossier(conn, MRI)
     for field in ['missing', 'future', 'partial']:
         graph = copy.deepcopy(base)
-        o = next(o for o in graph['packet']['observations'] if o['observation_id']=='obs_ht_formus_validation23')
-        if field == 'missing': graph['packet']['observations'].remove(o)
-        elif field == 'future': o['review']['checked_on'] = '2026-11-20'
-        else: o['context_time'] = dict(value='2026',precision='year',basis='Synthetic partial context.',unknown_reason=None)
+        o = next(o for o in graph['packet']['observations'] if o['observation_id'] == 'obs_ht_formus_validation23')
+        if field == 'missing':
+            graph['packet']['observations'].remove(o)
+        elif field == 'future':
+            o['review']['checked_on'] = '2026-11-20'
+        else:
+            o['context_time'] = dict(
+                value='2026', precision='year', basis='Synthetic partial context.', unknown_reason=None
+            )
         monkeypatch.setattr(healthtech, 'dossier', lambda *args: graph)
         with connect(pilot) as conn:
             result = compare_healthtech(conn, MRI, as_of=AS_OF)
@@ -180,7 +222,7 @@ def test_missing_or_future_basis_withholds_whole_claimed_analogy(pilot, monkeypa
 
 
 def test_extension_shares_stable_reference_records_and_all_projects_are_selectable(pilot):
-    extension = ROOT/'research/healthtech-pilot/extension.json'
+    extension = ROOT / 'research/healthtech-pilot/extension.json'
     before = snapshot(pilot)
     before_bytes = pilot.read_bytes()
     dry = dry_run_research(extension, pilot, as_of=AS_OF)
@@ -190,92 +232,132 @@ def test_extension_shares_stable_reference_records_and_all_projects_are_selectab
     after = snapshot(pilot)
     import_research(pilot, extension, as_of=AS_OF)
     assert snapshot(pilot) == after
-    for table in ['ventures','sources','observations','awards','annotations']:
+    for table in ['ventures', 'sources', 'observations', 'awards', 'annotations']:
         assert after[table] == before[table]
     assert all(row in after['research_records'] for row in before['research_records'])
     client = TestClient(create_app(pilot))
     directory = client.get('/api/research/subjects').json()
     assert directory['total_subjects'] == 10
-    expected = {'subj_ht_neurofanos':['subj_ht_formus'], 'subj_ht_ivf':['subj_ht_formus'],
-        'subj_ht_vistavision':['subj_ht_toku'], 'subj_ht_pulsemap':[]}
+    expected = {
+        'subj_ht_neurofanos': ['subj_ht_formus'],
+        'subj_ht_ivf': ['subj_ht_formus'],
+        'subj_ht_vistavision': ['subj_ht_toku'],
+        'subj_ht_pulsemap': [],
+    }
     for subject_id, peers in expected.items():
         record = next(s for s in directory['items'] if s['subject_id'] == subject_id)
-        dossier = client.get('/api/research/subjects/'+subject_id).json()
+        dossier = client.get('/api/research/subjects/' + subject_id).json()
         assert dossier['subject']['proposed_application_id'] and dossier['subject']['legal_name']['value'] is None
         assert dossier['packet']['observations'] and dossier['packet']['unknowns']
-        result = client.get('/api/research/subjects/'+subject_id+'/comparisons',params={'as_of':AS_OF,'packet_sha256':record['packet_digest']}).json()
+        result = client.get(
+            '/api/research/subjects/' + subject_id + '/comparisons',
+            params={'as_of': AS_OF, 'packet_sha256': record['packet_digest']},
+        ).json()
         assert [p['subject_id'] for p in result['peers']] == peers
         assert all(p['subject_id'] != subject_id for p in result['peers'])
-    pulse = client.get('/api/research/subjects/subj_ht_pulsemap/comparisons',params={'as_of':AS_OF}).json()
-    assert pulse['status']=='abstain' and 'measurement modality' in pulse['gaps'][0]
+    pulse = client.get('/api/research/subjects/subj_ht_pulsemap/comparisons', params={'as_of': AS_OF}).json()
+    assert pulse['status'] == 'abstain' and 'measurement modality' in pulse['gaps'][0]
     neuro = client.get('/api/research/subjects/subj_ht_neurofanos').json()
-    grant = next(o for o in neuro['packet']['observations'] if o['observation_id']=='obs_ht_neuro_grant')
-    assert grant['money'] is None and grant['field']=='outcome'
-    assert grant['effective_time']['value']=='2023-09' and grant['effective_time']['precision']=='month'
+    grant = next(o for o in neuro['packet']['observations'] if o['observation_id'] == 'obs_ht_neuro_grant')
+    assert grant['money'] is None and grant['field'] == 'outcome'
+    assert grant['effective_time']['value'] == '2023-09' and grant['effective_time']['precision'] == 'month'
     assert 'research team' in grant['paraphrase'] and 'not a reported equity investment' in grant['paraphrase']
-    assert not any(e['event_kind']=='financing' and e['subject_id']=='subj_ht_neurofanos' for e in neuro['packet']['events'])
+    assert not any(
+        e['event_kind'] == 'financing' and e['subject_id'] == 'subj_ht_neurofanos' for e in neuro['packet']['events']
+    )
     ivf = client.get('/api/research/subjects/subj_ht_ivf').json()
-    assert ivf['subject']['proposed_application_id']=='v_ivf_tool'
-    intention = next(o for o in ivf['packet']['observations'] if o['observation_id']=='obs_ht_ivf_evaluation_plan')
-    assert intention['assertion_nature']=='intention_target' and intention['effective_time']['value'] is None
+    assert ivf['subject']['proposed_application_id'] == 'v_ivf_tool'
+    intention = next(o for o in ivf['packet']['observations'] if o['observation_id'] == 'obs_ht_ivf_evaluation_plan')
+    assert intention['assertion_nature'] == 'intention_target' and intention['effective_time']['value'] is None
 
 
 def test_disposable_demo_and_existing_evaluation_workflow_keep_human_fields_blank(tmp_path):
     import csv
     import importlib.util
-    spec=importlib.util.spec_from_file_location('healthtech_demo',ROOT/'scripts/healthtech_demo.py')
-    demo=importlib.util.module_from_spec(spec);spec.loader.exec_module(demo)
-    output=tmp_path/'demo'
-    summary=demo.prepare_demo(output)
-    assert len(summary['imports'])==5
-    before=snapshot(Path(summary['database']))
-    with pytest.raises(ValueError,match='never replaced'): demo.prepare_demo(output)
-    assert snapshot(Path(summary['database']))==before
-    result=demo.export_evaluation(Path(summary['database']),output/'evaluation')
-    assert result['status']=='not_evaluated' and result['tasks']==6
-    research=json.loads((output/'evaluation/research-results.json').read_text())
-    assert research['human_judgments']==research['manual_research_observations']==[]
-    rows=list(csv.DictReader((output/'evaluation/research-review.csv').open()))
-    assert len(rows)==10
-    human_fields=['reviewer_id','relevance_grade','material_evidence_errors','rationale','supporting_observation_ids','reviewed_on','manual_research_minutes','useful_result_minutes']
+
+    spec = importlib.util.spec_from_file_location('healthtech_demo', ROOT / 'scripts/healthtech_demo.py')
+    demo = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(demo)
+    output = tmp_path / 'demo'
+    summary = demo.prepare_demo(output)
+    assert len(summary['imports']) == 5
+    before = snapshot(Path(summary['database']))
+    with pytest.raises(ValueError, match='never replaced'):
+        demo.prepare_demo(output)
+    assert snapshot(Path(summary['database'])) == before
+    result = demo.export_evaluation(Path(summary['database']), output / 'evaluation')
+    assert result['status'] == 'not_evaluated' and result['tasks'] == 6
+    research = json.loads((output / 'evaluation/research-results.json').read_text())
+    assert research['human_judgments'] == research['manual_research_observations'] == []
+    rows = list(csv.DictReader((output / 'evaluation/research-review.csv').open()))
+    assert len(rows) == 10
+    human_fields = [
+        'reviewer_id',
+        'relevance_grade',
+        'material_evidence_errors',
+        'rationale',
+        'supporting_observation_ids',
+        'reviewed_on',
+        'manual_research_minutes',
+        'useful_result_minutes',
+    ]
     assert all(not row[field] for row in rows for field in human_fields)
-    baseline=json.loads((output/'evaluation/lexical-results.json').read_text())
-    assert baseline['status']=='not_evaluated' and baseline['reason']=='judgments_missing'
-    assert baseline['coverage']['tasks_run']==6
-    runs = list(csv.DictReader((output/'evaluation/task-runs.csv').open()))
+    baseline = json.loads((output / 'evaluation/lexical-results.json').read_text())
+    assert baseline['status'] == 'not_evaluated' and baseline['reason'] == 'judgments_missing'
+    assert baseline['coverage']['tasks_run'] == 6
+    runs = list(csv.DictReader((output / 'evaluation/task-runs.csv').open()))
     assert len(runs) == 18
-    assert {row['method'] for row in runs} == {'manual','lexical_b0','curated_dossiers'}
+    assert {row['method'] for row in runs} == {'manual', 'lexical_b0', 'curated_dossiers'}
     assert all(not row['analyst_id'] and not row['elapsed_seconds'] and not row['usefulness_grade'] for row in runs)
-    review_inputs = json.loads((output/'evaluation/task-review-inputs.json').read_text())
+    review_inputs = json.loads((output / 'evaluation/task-review-inputs.json').read_text())
     assert review_inputs['held_out_pending'] == ['ht_held_out_pending']
     assert all(q['aggregate_metrics']['ndcg_at_3'] is None for q in baseline['queries'])
-    sparse=next(r for r in research['results'] if r['query_id']=='ht_pulsemap')
-    assert sparse['result']['peers']==[] and sparse['result']['status']=='abstain'
+    sparse = next(r for r in research['results'] if r['query_id'] == 'ht_pulsemap')
+    assert sparse['result']['peers'] == [] and sparse['result']['status'] == 'abstain'
 
 
 def test_possible_shared_identity_and_later_review_decisions_cannot_supply_a_peer(pilot, monkeypatch):
     from backend import healthtech
     from backend.research_repository import dossier
+
     with connect(pilot) as conn:
         base = dossier(conn, MRI)
     graph = copy.deepcopy(base)
-    next(s for s in graph['packet']['subjects'] if s['subject_id']=='subj_ht_formus')['proposed_application_id'] = graph['subject']['proposed_application_id']
+    next(s for s in graph['packet']['subjects'] if s['subject_id'] == 'subj_ht_formus')['proposed_application_id'] = (
+        graph['subject']['proposed_application_id']
+    )
     monkeypatch.setattr(healthtech, 'dossier', lambda *args: graph)
     with connect(pilot) as conn:
         result = compare_healthtech(conn, MRI, as_of=AS_OF)
     assert [p['subject_id'] for p in result['peers']] == ['subj_ht_volpara']
     assert any('self-comparison' in gap for gap in result['gaps'])
-    for target_type, target_id in [('observation','obs_ht_formus_validation23'),('readiness','ready_ht_mri_formus'),('conclusion','conclusion_ht_mri_formus_1'),('subject','subj_ht_formus')]:
+    for target_type, target_id in [
+        ('observation', 'obs_ht_formus_validation23'),
+        ('readiness', 'ready_ht_mri_formus'),
+        ('conclusion', 'conclusion_ht_mri_formus_1'),
+        ('subject', 'subj_ht_formus'),
+    ]:
         graph = copy.deepcopy(base)
-        graph['packet']['review_events']=[dict(review_event_id='review_synthetic',target_type=target_type,target_id=target_id,actor_role='owner',reviewer_id='synthetic_test_fixture',decision='disputed',reviewed_on=AS_OF,rationale='Synthetic code regression only.')]
+        graph['packet']['review_events'] = [
+            dict(
+                review_event_id='review_synthetic',
+                target_type=target_type,
+                target_id=target_id,
+                actor_role='owner',
+                reviewer_id='synthetic_test_fixture',
+                decision='disputed',
+                reviewed_on=AS_OF,
+                rationale='Synthetic code regression only.',
+            )
+        ]
         with connect(pilot) as conn:
             result = compare_healthtech(conn, MRI, as_of=AS_OF)
         assert [p['subject_id'] for p in result['peers']] == ['subj_ht_volpara']
         # A future review cannot change the earlier recorded review state.
-        graph['packet']['review_events'][0]['reviewed_on']='2026-11-20'
+        graph['packet']['review_events'][0]['reviewed_on'] = '2026-11-20'
         with connect(pilot) as conn:
             result = compare_healthtech(conn, MRI, as_of=AS_OF)
-        assert len(result['peers'])==2
+        assert len(result['peers']) == 2
 
 
 def test_coverage_counts_openable_pairs_across_imports_and_reviews(tmp_path):
@@ -295,8 +377,8 @@ def test_coverage_counts_openable_pairs_across_imports_and_reviews(tmp_path):
             path = f"/api/research/subjects/{project['subject_id']}/comparisons"
             result = client.get(path, params={'as_of': summary['as_of']}).json()
             assert project['peers'] == [
-                {'subject_id': peer['subject_id'], 'display_name': peer['display_name']}
-                for peer in result['peers']]
+                {'subject_id': peer['subject_id'], 'display_name': peer['display_name']} for peer in result['peers']
+            ]
         return summary
 
     check_counts((0, 0, 0, 0))
@@ -314,9 +396,18 @@ def test_coverage_counts_openable_pairs_across_imports_and_reviews(tmp_path):
     assert client.get(mri, params={'as_of': '2026-11-18'}).json()['peers'] == []
 
     packet = json.loads(studies.read_bytes())
-    packet['review_events'].append(dict(review_event_id='review_synthetic_signal', target_type='observation',
-        target_id='obs_ht_well_signal', actor_role='owner', reviewer_id='synthetic_test_fixture',
-        decision='disputed', reviewed_on=AS_OF, rationale='Synthetic regression fixture.'))
+    packet['review_events'].append(
+        dict(
+            review_event_id='review_synthetic_signal',
+            target_type='observation',
+            target_id='obs_ht_well_signal',
+            actor_role='owner',
+            reviewer_id='synthetic_test_fixture',
+            decision='disputed',
+            reviewed_on=AS_OF,
+            rationale='Synthetic regression fixture.',
+        )
+    )
     review_packet = tmp_path / 'review.json'
     review_packet.write_text(json.dumps(packet))
     import_research(db, review_packet, as_of=AS_OF)
@@ -344,7 +435,10 @@ def test_provider_follow_up_preserves_proposals_and_date_roles(pilot):
     assert volpara['follow_up'][0]['readiness']['readiness_id'] == 'ready_ht_mri_volpara_followup'
     assert volpara['early_stage_anchor'] is None
     assert {i['observation']['observation_id'] for i in formus['follow_up'][0]['evidence']} >= {
-        'obs_ht_formus_wire_clearance', 'obs_ht_formus_reg26', 'obs_ht_formus_reg23'}
+        'obs_ht_formus_wire_clearance',
+        'obs_ht_formus_reg26',
+        'obs_ht_formus_reg23',
+    }
     elapsed = {(r['date_type'], r['observation_id']): r for r in formus['elapsed_evidence']}
     assert elapsed['document_context', 'obs_ht_formus_solution']['lower_days'] == 0
     decision = elapsed['reported_occurrence', 'obs_ht_formus_reg23']
@@ -352,9 +446,11 @@ def test_provider_follow_up_preserves_proposals_and_date_roles(pilot):
     assert elapsed['reported_occurrence', 'obs_ht_formus_reg26']['lower_days'] is None
     assert elapsed['prospective_target', 'obs_ht_formus_tr_target']['time']['value'] == '2026-07-06'
     assert ('reported_occurrence', 'obs_ht_formus_tr_target') not in elapsed
-    old_view = client.get(endpoint, params={'as_of': AS_OF, 'packet_sha256': hashlib.sha256(PACKET.read_bytes()).hexdigest()}).json()
+    old_view = client.get(
+        endpoint, params={'as_of': AS_OF, 'packet_sha256': hashlib.sha256(PACKET.read_bytes()).hexdigest()}
+    ).json()
     assert [p['follow_up'] for p in old_view['peers']] == [[], []]
-    past = client.get(endpoint, params={'as_of':'2023-06-01', 'view':'historical'}).json()
+    past = client.get(endpoint, params={'as_of': '2023-06-01', 'view': 'historical'}).json()
     assert past['peers'] == past['subject_evidence'] == []
 
 
@@ -363,17 +459,31 @@ def test_three_method_review_summary_requires_submitted_human_records(tmp_path):
     from backend.evaluation_protocol import file_sha
     from backend.healthtech_review import COLUMNS, METHODS, report_task_review
 
-    for name in ('task-cards.json','lexical-evidence.json','research-results.json'):
-        (tmp_path/name).write_text('{}\n')
-    manifest = dict(format_version='healthtech-task-review:1', research_cutoff=AS_OF,
-        lexical_manifest_id='synthetic', tasks=['synthetic'], methods=list(METHODS),
-        held_out_pending=['held_out_pending'], files={
-            name:file_sha(tmp_path/name) for name in ('task-cards.json','lexical-evidence.json','research-results.json')})
-    (tmp_path/'task-review-inputs.json').write_text(json.dumps(manifest))
-    reviewers = tmp_path/'reviewers.json'
-    reviewers.write_text(json.dumps([dict(reviewer_id=name,role='independent_reviewer',
-        independent_of_author=True,is_human=True) for name in ('a','b','c','r')]))
-    runs = tmp_path/'task-runs.csv'
+    for name in ('task-cards.json', 'lexical-evidence.json', 'research-results.json'):
+        (tmp_path / name).write_text('{}\n')
+    manifest = dict(
+        format_version='healthtech-task-review:1',
+        research_cutoff=AS_OF,
+        lexical_manifest_id='synthetic',
+        tasks=['synthetic'],
+        methods=list(METHODS),
+        held_out_pending=['held_out_pending'],
+        files={
+            name: file_sha(tmp_path / name)
+            for name in ('task-cards.json', 'lexical-evidence.json', 'research-results.json')
+        },
+    )
+    (tmp_path / 'task-review-inputs.json').write_text(json.dumps(manifest))
+    reviewers = tmp_path / 'reviewers.json'
+    reviewers.write_text(
+        json.dumps(
+            [
+                dict(reviewer_id=name, role='independent_reviewer', independent_of_author=True, is_human=True)
+                for name in ('a', 'b', 'c', 'r')
+            ]
+        )
+    )
+    runs = tmp_path / 'task-runs.csv'
 
     def write(rows):
         with runs.open('w', newline='') as stream:
@@ -381,16 +491,29 @@ def test_three_method_review_summary_requires_submitted_human_records(tmp_path):
             writer.writerow(COLUMNS)
             writer.writerows(rows)
 
-    write([['synthetic', method, *(['']*9)] for method in METHODS])
+    write([['synthetic', method, *([''] * 9)] for method in METHODS])
     report = report_task_review(tmp_path, runs, reviewers, AS_OF)
     assert report['status'] == 'not_evaluated'
     assert report['complete_task_ids'] == []
     assert all(r['median_seconds_to_useful_answer'] is None for r in report['summary'].values())
     assert all(r['material_errors_on_complete_tasks'] is None for r in report['summary'].values())
 
-    rows = [['synthetic',method,analyst,str(seconds),'Synthetic answer','Synthetic source locator',
-             'r','2',str(errors),'Synthetic evaluation only.',AS_OF]
-            for method,analyst,seconds,errors in zip(METHODS, ('a','b','c'), (50,30,20), (0,1,0))]
+    rows = [
+        [
+            'synthetic',
+            method,
+            analyst,
+            str(seconds),
+            'Synthetic answer',
+            'Synthetic source locator',
+            'r',
+            '2',
+            str(errors),
+            'Synthetic evaluation only.',
+            AS_OF,
+        ]
+        for method, analyst, seconds, errors in zip(METHODS, ('a', 'b', 'c'), (50, 30, 20), (0, 1, 0))
+    ]
     write(rows[:2])
     assert report_task_review(tmp_path, runs, reviewers, AS_OF)['complete_task_ids'] == []
     write(rows)
@@ -409,7 +532,7 @@ def test_three_method_review_summary_requires_submitted_human_records(tmp_path):
 def test_scenarios_model_cash_receipts_and_export_measurements():
     from backend.healthtech_scenarios import ProviderScenarios, scenario_report, venture_frame_project
 
-    raw = json.loads((ROOT/'docs/healthtech-pilot/scenario-example.json').read_text())
+    raw = json.loads((ROOT / 'docs/healthtech-pilot/scenario-example.json').read_text())
     model = ProviderScenarios.model_validate(raw)
     report = scenario_report(model)
     assert scenario_report(model) == report
@@ -425,11 +548,18 @@ def test_scenarios_model_cash_receipts_and_export_measurements():
     assert no_conversion['modelled_first_receipt_month'] is None
     assert not any(row['provider_receipt_nzd'] for row in no_conversion['months'])
     assert report['ranges_across_supplied_cases']['modelled_first_receipt_month'] == {
-        'minimum': 6, 'maximum': 9, 'applicable_cases': 2}
+        'minimum': 6,
+        'maximum': 9,
+        'applicable_cases': 2,
+    }
     project = venture_frame_project(report)
     assert project['weight_profiles'] == project['scenarios'] == []
-    timing = [row['alternative_id'] for row in project['performances'] if row['criterion_id']=='modelled_first_receipt_month']
-    assert timing == ['conversion','delay']
+    timing = [
+        row['alternative_id']
+        for row in project['performances']
+        if row['criterion_id'] == 'modelled_first_receipt_month'
+    ]
+    assert timing == ['conversion', 'delay']
     raw['cases'][-1]['payment_lag_months'] = 0
     with pytest.raises(ValidationError, match='no-conversion case'):
         ProviderScenarios.model_validate(raw)

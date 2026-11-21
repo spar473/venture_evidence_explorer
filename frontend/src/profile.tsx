@@ -23,9 +23,7 @@ export function Profile({
         Venture or project · identity: {label(v.identity_review_status)}
         <br />
         Selected for: {label(v.selection_bucket)}
-        {v.aliases.length > 0 && (
-          <> · Source spellings: {v.aliases.join(", ")}</>
-        )}
+        {v.aliases.length > 0 && <> · Source spellings: {v.aliases.join(", ")}</>}
       </p>
       <button className="primary" onClick={() => onCompare(v)}>
         Compare this venture
@@ -44,12 +42,11 @@ export function Profile({
         ))}
       </div>
       <p className="notice">
-        Historical descriptions are summaries of publisher reports. Retrieval in
-        2026 does not verify current status or historical availability.
+        Historical descriptions are summaries of publisher reports. Retrieval in 2026 does not
+        verify current status or historical availability.
       </p>
       <h3>
-        Source observations{" "}
-        <span className="count">{v.observations.length}</span>
+        Source observations <span className="count">{v.observations.length}</span>
       </h3>
       {v.observations.map((o) => (
         <Observation key={o.observation_id} e={o} />
@@ -59,8 +56,7 @@ export function Profile({
       </h3>
       {!v.awards.length && (
         <p className="muted">
-          No award recorded in this sample. Participation and awards elsewhere
-          are unknown.
+          No award recorded in this sample. Participation and awards elsewhere are unknown.
         </p>
       )}
       {v.awards.map((a) => (
@@ -72,15 +68,14 @@ export function Profile({
             {a.award_label} · Placement: {a.place ?? "Unranked / not recorded"}
           </p>
           <p className="muted">
-            Event date: {dateLabel(a.event_date, a.event_interval)} · Award year is not an
-            event date.
+            Event date: {dateLabel(a.event_date, a.event_interval)} · Award year is not an event
+            date.
           </p>
           <Source e={a} />
         </article>
       ))}
       <h3>
-        University relationships{" "}
-        <span className="count">{v.connections.length}</span>
+        University relationships <span className="count">{v.connections.length}</span>
       </h3>
       {v.connections.map((c) => (
         <article className="evidence" key={c.connection_id}>
@@ -91,13 +86,10 @@ export function Profile({
         </article>
       ))}
       <details className="proposals">
-        <summary>
-          Proposed analyst annotations · {v.proposed_annotations.length}{" "}
-          proposals
-        </summary>
+        <summary>Proposed analyst annotations · {v.proposed_annotations.length} proposals</summary>
         <p>
-          Unreviewed hypotheses and suggested questions. Excluded from
-          comparison inputs and curated analytical fields.
+          Unreviewed hypotheses and suggested questions. Excluded from comparison inputs and curated
+          analytical fields.
         </p>
         {v.proposed_annotations.map((a) => (
           <div className="proposal" key={a.annotation_id}>
@@ -117,4 +109,3 @@ export function Profile({
     </section>
   );
 }
-

@@ -1,4 +1,5 @@
 """Relevance metrics require explicit human grades; unjudged items stay unknown."""
+
 import csv
 import math
 from collections import defaultdict
@@ -40,22 +41,31 @@ def relevance_report(rankings, judgments, k=3):
         query_id = ranking['query_id']
         returned = ranking['ranked_ids'][:k]
         eligible = ranking['eligible_ids']
-        grades = {vid: sum(values.values()) / len(values)
-                  for (qid, vid), values in judgments.items() if qid == query_id}
+        grades = {
+            vid: sum(values.values()) / len(values) for (qid, vid), values in judgments.items() if qid == query_id
+        }
         complete_results = bool(returned) and all(vid in grades for vid in returned)
         complete_corpus = bool(eligible) and all(vid in grades for vid in eligible)
-        item = {'query_id': query_id, 'returned': len(returned),
-                'judged_returned': sum(vid in grades for vid in returned),
-                'eligible': len(eligible), 'judged_eligible': sum(vid in grades for vid in eligible),
-                'precision_at_returned': None, 'ndcg_at_3': None}
+        item = {
+            'query_id': query_id,
+            'returned': len(returned),
+            'judged_returned': sum(vid in grades for vid in returned),
+            'eligible': len(eligible),
+            'judged_eligible': sum(vid in grades for vid in eligible),
+            'precision_at_returned': None,
+            'ndcg_at_3': None,
+        }
         if complete_results:
             item['precision_at_returned'] = sum(grades[vid] >= 1 for vid in returned) / len(returned)
         if complete_results and complete_corpus:
-            dcg = lambda values: sum((2 ** grade - 1) / math.log2(i + 2) for i, grade in enumerate(values))
+            dcg = lambda values: sum((2**grade - 1) / math.log2(i + 2) for i, grade in enumerate(values))
             ideal = dcg(sorted((grades[vid] for vid in eligible), reverse=True)[:k])
             item['ndcg_at_3'] = dcg([grades[vid] for vid in returned]) / ideal if ideal else None
         item['status'] = 'measured' if item['ndcg_at_3'] is not None else 'pending_human_judgments'
         reports.append(item)
-    return {'status': 'pending_human_judgments' if not judgments else 'partial_or_complete_human_judgments',
-            'judgment_pairs': len(judgments), 'queries': reports,
-            'policy': 'No unjudged=irrelevant assumption. Grades 0–3; mean of supplied reviewers; precision denominator is returned items, not fixed k. nDCG requires complete eligible-corpus judgments. Abstentions have no relevance metric.'}
+    return {
+        'status': 'pending_human_judgments' if not judgments else 'partial_or_complete_human_judgments',
+        'judgment_pairs': len(judgments),
+        'queries': reports,
+        'policy': 'No unjudged=irrelevant assumption. Grades 0–3; mean of supplied reviewers; precision denominator is returned items, not fixed k. nDCG requires complete eligible-corpus judgments. Abstentions have no relevance metric.',
+    }

@@ -1,4 +1,5 @@
 """Typed workbench projections. Claim IDs remain stable across views."""
+
 from typing import Literal
 
 from pydantic import Field
@@ -7,8 +8,9 @@ from .ingestion import StrictModel
 from .reference_pool import Status, Witness
 from .workbench_reviews import ClaimReview
 
-AnchorKind = Literal['first_institutional_round', 'first_provider_or_clinical_study',
-                     'first_regulatory_decision', 'first_paid_customer']
+AnchorKind = Literal[
+    'first_institutional_round', 'first_provider_or_clinical_study', 'first_regulatory_decision', 'first_paid_customer'
+]
 WitnessMode = Literal['strict', 'contemporaneous']
 
 

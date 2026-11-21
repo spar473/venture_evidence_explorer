@@ -1,4 +1,5 @@
 """Portable deterministic run records; runtime database remains read only."""
+
 import hashlib
 import json
 
@@ -20,7 +21,12 @@ def corpus_digest(conn):
     so changed evidence, candidate filters or a new import conservatively invalidate
     an exported run. Binary import bytes are represented losslessly as hex.
     """
-    tables = [r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name")]
+    tables = [
+        r[0]
+        for r in conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name"
+        )
+    ]
     snapshots = {}
     for table in tables:
         quoted = '"' + table.replace('"', '""') + '"'
@@ -33,15 +39,35 @@ def corpus_digest(conn):
 
 
 def result_signature(response):
-    return {'abstention_reason': response['abstention_reason'], 'subject_id': response['subject']['venture_id'] if response['subject'] else None, 'results': [dict(venture_id=r['venture']['venture_id'], ranking_score=r['ranking_score'], query_token_coverage=r['query_token_coverage'], matched_terms=r['matched_terms'], observation_ids=[e['observation']['observation_id'] for e in r['evidence']]) for r in response['results']]}
+    return {
+        'abstention_reason': response['abstention_reason'],
+        'subject_id': response['subject']['venture_id'] if response['subject'] else None,
+        'results': [
+            dict(
+                venture_id=r['venture']['venture_id'],
+                ranking_score=r['ranking_score'],
+                query_token_coverage=r['query_token_coverage'],
+                matched_terms=r['matched_terms'],
+                observation_ids=[e['observation']['observation_id'] for e in r['evidence']],
+            )
+            for r in response['results']
+        ],
+    }
 
 
 def comparison_record(conn, request, corpus, response):
-    selected = [{'observation_id': o['observation_id'], 'review_status': o.get('effective_review_status', o['review_status'])} for v in corpus for o in v['observations'] if o['field'] in response['method']['fields'].get(request['mode'], [])]
+    selected = [
+        {'observation_id': o['observation_id'], 'review_status': o.get('effective_review_status', o['review_status'])}
+        for v in corpus
+        for o in v['observations']
+        if o['field'] in response['method']['fields'].get(request['mode'], [])
+    ]
     record = {
-        'record_version': RUN_VERSION, 'method_version': response['method']['version'],
+        'record_version': RUN_VERSION,
+        'method_version': response['method']['version'],
         'policy_version': response['evidence_policy']['version'],
-        'corpus_digest': corpus_digest(conn), 'request': request,
+        'corpus_digest': corpus_digest(conn),
+        'request': request,
         'selected_observations': sorted(selected, key=lambda o: o['observation_id']),
         'result_signature': result_signature(response),
     }
@@ -50,11 +76,16 @@ def comparison_record(conn, request, corpus, response):
 
 def replay(conn, record):
     from .retrieval import METHOD, compare
+
     supplied = dict(record)
     run_id = supplied.pop('run_id', None)
     if run_id != digest(supplied):
         raise ValueError('Comparison run checksum mismatch')
-    if supplied['record_version'] != RUN_VERSION or supplied['method_version'] != METHOD['version'] or supplied['policy_version'] != 'evidence-selection-1.0':
+    if (
+        supplied['record_version'] != RUN_VERSION
+        or supplied['method_version'] != METHOD['version']
+        or supplied['policy_version'] != 'evidence-selection-1.0'
+    ):
         raise ValueError('Unsupported comparison method, policy or record version')
     if supplied['corpus_digest'] != corpus_digest(conn):
         raise ValueError('Corpus changed; replay requires the recorded corpus snapshot')

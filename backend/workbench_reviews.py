@@ -1,4 +1,5 @@
 """Append-only analyst disputes, stored beside immutable source records."""
+
 from contextlib import closing
 from datetime import datetime, timezone
 import sqlite3
@@ -50,12 +51,14 @@ def append_dispute(db, subject_id, body):
         migrate(conn)
         conn.execute('BEGIN IMMEDIATE')
         try:
-            existing = conn.execute('SELECT * FROM workbench_claim_reviews WHERE request_id=?',
-                                    (body.request_id,)).fetchone()
+            existing = conn.execute(
+                'SELECT * FROM workbench_claim_reviews WHERE request_id=?', (body.request_id,)
+            ).fetchone()
             if existing:
                 review = ClaimReview.model_validate(dict(existing))
-                if review.subject_id != subject_id or any(getattr(review, key) != val
-                        for key, val in body.model_dump().items()):
+                if review.subject_id != subject_id or any(
+                    getattr(review, key) != val for key, val in body.model_dump().items()
+                ):
                     raise ValueError('Dispute request ID was already used for different content')
                 return review
             now = datetime.now(timezone.utc)
@@ -64,12 +67,20 @@ def append_dispute(db, subject_id, body):
             row = catalog.row(subject_id, 'first_institutional_round')
             if not any(claim.claim_id == body.claim_id for claim in row.claims):
                 raise SubjectNotFound('Claim is unavailable for this subject')
-            review = ClaimReview(**body.model_dump(), review_id=str(uuid4()), subject_id=subject_id,
-                                 decision='disputed', recorded_at=now.isoformat())
+            review = ClaimReview(
+                **body.model_dump(),
+                review_id=str(uuid4()),
+                subject_id=subject_id,
+                decision='disputed',
+                recorded_at=now.isoformat(),
+            )
             record = review.model_dump()
-            conn.execute("""INSERT INTO workbench_claim_reviews
+            conn.execute(
+                """INSERT INTO workbench_claim_reviews
                 (review_id, request_id, subject_id, claim_id, decision, analyst, rationale, recorded_at)
-                VALUES (:review_id, :request_id, :subject_id, :claim_id, :decision, :analyst, :rationale, :recorded_at)""", record)
+                VALUES (:review_id, :request_id, :subject_id, :claim_id, :decision, :analyst, :rationale, :recorded_at)""",
+                record,
+            )
             conn.execute('COMMIT')
             return review
         finally:

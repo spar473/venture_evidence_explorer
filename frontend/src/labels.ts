@@ -14,8 +14,7 @@ const labels: Record<string, string> = {
   stage_milestone: "Stage / milestone",
   source_checked_owner_review_pending: "Source checked; owner review pending",
   needs_owner_review: "Owner review pending",
-  historical_description_at_publication:
-    "Historical description at publication",
+  historical_description_at_publication: "Historical description at publication",
   relationship_reported_at_publication: "Relationship reported at publication",
   "100k_award": "Recorded $100K recognition",
   ideas_award: "Recorded Ideas recognition",
@@ -44,11 +43,16 @@ export const label = (s: string) => labels[s] || s.replaceAll("_", " ");
 export const unknown = (s: string | null | undefined) => s || "Unknown / unverified";
 
 /** Retain date precision: display a year/month without implying a day. */
-export function dateLabel(raw: string | null | undefined, interval?: {precision: string; lower_bound?: string | null} | null) {
+export function dateLabel(
+  raw: string | null | undefined,
+  interval?: { precision: string; lower_bound?: string | null } | null,
+) {
   if (interval?.precision === "unknown") return "Unknown / not recorded";
   if (interval?.lower_bound) {
-    if (interval.precision === "year") return interval.lower_bound.slice(0, 4) + " (year precision)";
-    if (interval.precision === "month") return interval.lower_bound.slice(0, 7) + " (month precision)";
+    if (interval.precision === "year")
+      return interval.lower_bound.slice(0, 4) + " (year precision)";
+    if (interval.precision === "month")
+      return interval.lower_bound.slice(0, 7) + " (month precision)";
     return interval.lower_bound;
   }
   return raw || "Unknown / not recorded";

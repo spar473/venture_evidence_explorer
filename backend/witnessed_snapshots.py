@@ -1,4 +1,5 @@
 """Validate source-backed entry features and present-day project profiles."""
+
 from datetime import date, timedelta
 from pathlib import Path
 from typing import Literal
@@ -15,7 +16,9 @@ from .research_validation import decode_packet
 PACKET = ROOT / 'research/healthtech-pilot/witnessed-snapshots.json'
 FEATURES = {field for _, fields in DIMENSIONS.values() for field in fields}
 CONTEMPORANEOUS_FIELDS = set(DIMENSIONS[CLINICAL_WORKFLOW][1]) | set(DIMENSIONS['Buyer and sales path'][1])
-ProfileScope = Literal['institutional_entry', 'project_as_of', 'institutional_entry_contemporaneous', 'reference_round_context']
+ProfileScope = Literal[
+    'institutional_entry', 'project_as_of', 'institutional_entry_contemporaneous', 'reference_round_context'
+]
 ANCHORED = {'institutional_entry', 'institutional_entry_contemporaneous'}
 
 
@@ -54,17 +57,24 @@ class WitnessedSnapshotPacket(StrictModel):
                 raise ValueError('Entry profiles require a specific existing anchor claim')
             contemporaneous = profile.scope == 'institutional_entry_contemporaneous'
             round_day = date.fromisoformat(profile.cutoff)
-            cutoff = (round_day + timedelta(days=CONTEMPORANEOUS_WINDOW_DAYS)).isoformat() if contemporaneous else profile.cutoff
+            cutoff = (
+                (round_day + timedelta(days=CONTEMPORANEOUS_WINDOW_DAYS)).isoformat()
+                if contemporaneous
+                else profile.cutoff
+            )
             cutoff = min(cutoff, self.compiled_on)
             unique_index(profile.features, 'name')
             for feature in profile.features:
                 witness = witnesses.get(feature.witness_id)
-                if (not witness or witness.source_id != feature.source_id or witness.available_on > cutoff):
+                if not witness or witness.source_id != feature.source_id or witness.available_on > cutoff:
                     raise ValueError('Feature requires a source-version witness by its profile cutoff')
                 published = sources[feature.source_id].published_on
                 if published and published > cutoff:
                     raise ValueError('Feature source publication exceeds its profile cutoff')
-                if profile.scope in ('institutional_entry_contemporaneous', 'reference_round_context') and feature.name not in CONTEMPORANEOUS_FIELDS:
+                if (
+                    profile.scope in ('institutional_entry_contemporaneous', 'reference_round_context')
+                    and feature.name not in CONTEMPORANEOUS_FIELDS
+                ):
                     raise ValueError('Round descriptions are limited to clinical workflow and buyer fields')
                 if contemporaneous and witness.available_on <= profile.cutoff:
                     raise ValueError('Contemporaneous profiles require a later workflow or buyer witness')
@@ -86,17 +96,27 @@ class WitnessedSnapshots:
         profile = self.profiles.get((subject_id, scope))
         if profile is None:
             return []
-        if scope in ANCHORED and (entry_anchor is None or entry_anchor.kind != 'first_institutional_round'
-                                  or entry_anchor.claim.claim_id != profile.anchor_claim_id
-                                  or entry_anchor.claim.lower_on != profile.cutoff):
+        if scope in ANCHORED and (
+            entry_anchor is None
+            or entry_anchor.kind != 'first_institutional_round'
+            or entry_anchor.claim.claim_id != profile.anchor_claim_id
+            or entry_anchor.claim.lower_on != profile.cutoff
+        ):
             return []
         claims = []
         for feature in profile.features:
             witness = self.witnesses[feature.witness_id]
-            claim = pool_claim(f'witnessed:{subject_id}:{feature.name}:{feature.source_id}', feature.name, feature.value,
-                feature.passage, self.sources[feature.source_id], [witness],
+            claim = pool_claim(
+                f'witnessed:{subject_id}:{feature.name}:{feature.source_id}',
+                feature.name,
+                feature.value,
+                feature.passage,
+                self.sources[feature.source_id],
+                [witness],
                 when=EventDate(value=witness.available_on, precision='day'),
-                basis='Evidence available by this day', as_of=as_of)
+                basis='Evidence available by this day',
+                as_of=as_of,
+            )
             if claim:
                 claims.append(claim)
         return claims

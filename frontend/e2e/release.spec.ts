@@ -4,24 +4,18 @@ test("browse, filter, inspect and unknowns", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/?mode=research");
-  await expect(
-    page.getByRole("heading", { name: "Venture directory" }),
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Venture directory" })).toBeVisible();
   await expect(page.locator(".venture-card")).toHaveCount(10);
   await page.getByLabel("Recorded programme").selectOption("velocity_ideas");
   await page.getByLabel("Award year", { exact: true }).selectOption("2026");
   await expect(page.locator(".venture-card")).toHaveCount(2);
-  await page
-    .getByRole("button", { name: "Reset filters", exact: true })
-    .click();
+  await page.getByRole("button", { name: "Reset filters", exact: true }).click();
   await expect(page.locator(".venture-card")).toHaveCount(10);
   await page.getByLabel("Search ventures").fill("FormusLabs");
   await expect(page.locator(".venture-card")).toHaveCount(1);
   await page.locator(".venture-open").click();
   await expect(
-    page
-      .locator(".profile")
-      .getByRole("heading", { name: "Formus Labs", exact: true }),
+    page.locator(".profile").getByRole("heading", { name: "Formus Labs", exact: true }),
   ).toBeVisible();
   await expect(page.locator(".profile")).toContainText("Unknown / unverified");
   await expect(page.locator(".profile")).toContainText("No award recorded");
@@ -29,31 +23,19 @@ test("browse, filter, inspect and unknowns", async ({ page }) => {
   await expect(source).toHaveAttribute("href", /formuslabs-raises/);
   await expect(page.locator(".profile")).toContainText("Published 2022-06-29");
   await expect(page.locator(".profile")).toContainText("Retrieved 2026-11-16");
-  await page
-    .getByText("Proposed analyst annotations · 5 proposals", { exact: true })
-    .click();
-  await expect(page.locator(".proposals")).toContainText(
-    "Excluded from comparison inputs",
-  );
-  await page
-    .getByRole("button", { name: "Close profile", exact: true })
-    .click();
+  await page.getByText("Proposed analyst annotations · 5 proposals", { exact: true }).click();
+  await expect(page.locator(".proposals")).toContainText("Excluded from comparison inputs");
+  await page.getByRole("button", { name: "Close profile", exact: true }).click();
   await expect(page.locator(".venture-open")).toBeFocused();
-  await page
-    .getByRole("button", { name: "Reset filters", exact: true })
-    .click();
+  await page.getByRole("button", { name: "Reset filters", exact: true }).click();
   await page.getByLabel("Search ventures").fill("nothingmatches");
   await expect(page.getByRole("status")).toContainText("No ventures match");
   expect(errors).toEqual([]);
 });
 
-test("comparison, source evidence, fewer than three and stage abstention", async ({
-  page,
-}) => {
+test("comparison, source evidence, fewer than three and stage abstention", async ({ page }) => {
   await page.goto("/?mode=research");
-  await page
-    .getByRole("button", { name: "Find comparisons", exact: true })
-    .click();
+  await page.getByRole("button", { name: "Find comparisons", exact: true }).click();
   await page
     .getByLabel("Investigation description")
     .fill("clinical images software surgical planning");
@@ -61,9 +43,7 @@ test("comparison, source evidence, fewer than three and stage abstention", async
     .locator(".compare-form")
     .getByRole("button", { name: "Find comparisons", exact: true })
     .click();
-  await expect(
-    page.getByRole("heading", { name: /comparison candidates/ }),
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: /comparison candidates/ })).toBeVisible();
   await expect(page.locator(".comparison-card")).toHaveCount(2);
   await expect(page.locator(".method")).toContainText("b0-token-overlap-1.0");
   await page
@@ -81,9 +61,9 @@ test("comparison, source evidence, fewer than three and stage abstention", async
     .click();
   await expect(page.locator(".subject-evidence")).toContainText("Formus Labs");
   await expect(page.locator(".comparison-card")).toHaveCount(1);
-  expect(
-    (await page.locator(".comparison-card").allTextContents()).join(" "),
-  ).not.toContain("Formus Labs");
+  expect((await page.locator(".comparison-card").allTextContents()).join(" ")).not.toContain(
+    "Formus Labs",
+  );
   await page.getByLabel("Investigation mode").selectOption("stage_milestone");
   await page
     .locator(".compare-form")
@@ -102,9 +82,7 @@ test("analytics and real CSV download", async ({ page }) => {
     page.getByRole("heading", { name: "Programme recognition", exact: true }),
   ).toBeVisible();
   const download = page.waitForEvent("download");
-  await page
-    .locator('a[href="/api/exports/programme_recognition.csv"]')
-    .click();
+  await page.locator('a[href="/api/exports/programme_recognition.csv"]').click();
   const file = await download;
   expect(file.suggestedFilename()).toBe("programme_recognition.csv");
   expect(await file.failure()).toBeNull();
@@ -128,9 +106,7 @@ test("loading and recoverable API error states", async ({ page }) => {
     await route.continue();
   });
   await page.getByLabel("Search ventures").fill("RosterLab");
-  await expect(page.getByRole("status")).toContainText(
-    "Loading venture records",
-  );
+  await expect(page.getByRole("status")).toContainText("Loading venture records");
   await expect(page.locator(".venture-card")).toHaveCount(1);
 });
 
@@ -138,11 +114,9 @@ test("narrow layout has no page overflow", async ({ page }, testInfo) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/?mode=research");
   await expect(page.locator(".venture-card")).toHaveCount(10);
-  expect(
-    await page.evaluate(
-      () => document.documentElement.scrollWidth <= window.innerWidth,
-    ),
-  ).toBe(true);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
+    true,
+  );
   await page.screenshot({ path: testInfo.outputPath("mobile.png"), fullPage: true });
 });
 
@@ -153,13 +127,9 @@ test("desktop release capture", async ({ page }, testInfo) => {
   await page.screenshot({ path: testInfo.outputPath("desktop.png"), fullPage: true });
 });
 
-test("changing a comparison query invalidates stale results", async ({
-  page,
-}) => {
+test("changing a comparison query invalidates stale results", async ({ page }) => {
   await page.goto("/?mode=research");
-  await page
-    .getByRole("button", { name: "Find comparisons", exact: true })
-    .click();
+  await page.getByRole("button", { name: "Find comparisons", exact: true }).click();
   await page
     .getByLabel("Investigation description")
     .fill("clinical images software surgical planning");
@@ -178,21 +148,15 @@ test("changing a comparison query invalidates stale results", async ({
   await expect(page.locator(".comparison-results")).toHaveCount(0);
 });
 
-test("evidence drawer supports Escape and returns keyboard focus", async ({
-  page,
-}) => {
+test("evidence drawer supports Escape and returns keyboard focus", async ({ page }) => {
   await page.goto("/?mode=research");
   const subject = page.getByRole("button", {
     name: "Formus Labs",
     exact: true,
   });
   await subject.click();
-  await expect(
-    page.getByRole("dialog", { name: "Formus Labs", exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Close profile", exact: true }),
-  ).toBeFocused();
+  await expect(page.getByRole("dialog", { name: "Formus Labs", exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Close profile", exact: true })).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(subject).toBeFocused();

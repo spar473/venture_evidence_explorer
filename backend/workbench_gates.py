@@ -1,4 +1,5 @@
 """Expose cohort release requirements as source-covered counts."""
+
 from typing import Literal
 
 from .cohort_audit import run_audit
@@ -29,13 +30,21 @@ def gate_progress(audit):
 
     def endpoint(value):
         statuses = value['statuses']
-        return EndpointGate(events=statuses['reached_outcome'], unknown_or_lost=statuses['unknown'] +
-            statuses['lost_to_follow_up'], verified_observed_at_36_months=value['verified_observed_at_36_months'],
-            unresolved_at_36_months=value['unresolved_at_36_months'], gate_ready=value['gate_ready'],
-            blockers=value['gate_blockers'])
+        return EndpointGate(
+            events=statuses['reached_outcome'],
+            unknown_or_lost=statuses['unknown'] + statuses['lost_to_follow_up'],
+            verified_observed_at_36_months=value['verified_observed_at_36_months'],
+            unresolved_at_36_months=value['unresolved_at_36_months'],
+            gate_ready=value['gate_ready'],
+            blockers=value['gate_blockers'],
+        )
 
-    return WorkbenchGates(as_of=follow_up['as_of'], entries=audit['counts']['included'],
-                          primary=endpoint(follow_up), secondary=endpoint(follow_up['secondary']))
+    return WorkbenchGates(
+        as_of=follow_up['as_of'],
+        entries=audit['counts']['included'],
+        primary=endpoint(follow_up),
+        secondary=endpoint(follow_up['secondary']),
+    )
 
 
 def install(app):

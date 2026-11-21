@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate completed analyst worksheets and report the task outcomes."""
+
 import argparse
 import json
 import sys

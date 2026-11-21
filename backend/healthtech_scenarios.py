@@ -1,4 +1,5 @@
 """Deterministic monthly cash scenarios and a Venture Frame measurement export."""
+
 from typing import Annotated, Literal
 
 from pydantic import Field, StrictInt, model_validator
@@ -60,19 +61,33 @@ def _calculate_case(model, case):
 
     balance = model.opening_cash_nzd
     months = []
-    for month in range(1, model.horizon_months+1):
+    for month in range(1, model.horizon_months + 1):
         evaluation_cost = case.evaluation_cost_nzd if month == model.evaluation_start_month else 0
         implementation = case.implementation_cost_nzd if month == service_month else 0
         receipt = case.monthly_provider_charge_nzd if receipt_month is not None and month >= receipt_month else 0
         balance += receipt - model.monthly_operating_outflow_nzd - evaluation_cost - implementation
-        months.append(dict(month=month, operating_outflow_nzd=model.monthly_operating_outflow_nzd,
-            evaluation_outflow_nzd=evaluation_cost, implementation_outflow_nzd=implementation,
-            provider_receipt_nzd=receipt, closing_cash_nzd=balance))
+        months.append(
+            dict(
+                month=month,
+                operating_outflow_nzd=model.monthly_operating_outflow_nzd,
+                evaluation_outflow_nzd=evaluation_cost,
+                implementation_outflow_nzd=implementation,
+                provider_receipt_nzd=receipt,
+                closing_cash_nzd=balance,
+            )
+        )
     minimum = min([model.opening_cash_nzd] + [row['closing_cash_nzd'] for row in months])
-    return dict(case_id=case.case_id, label=case.label, modelled_service_month=service_month,
+    return dict(
+        case_id=case.case_id,
+        label=case.label,
+        modelled_service_month=service_month,
         modelled_first_receipt_month=receipt_month,
         first_month_below_zero=next((row['month'] for row in months if row['closing_cash_nzd'] < 0), None),
-        closing_cash_nzd=balance, minimum_cash_nzd=minimum, funding_gap_nzd=max(0, -minimum), months=months)
+        closing_cash_nzd=balance,
+        minimum_cash_nzd=minimum,
+        funding_gap_nzd=max(0, -minimum),
+        months=months,
+    )
 
 
 MEASUREMENTS = {
@@ -88,12 +103,19 @@ def scenario_report(model: ProviderScenarios):
     ranges = {}
     for key in MEASUREMENTS:
         values = [case[key] for case in cases if case[key] is not None]
-        ranges[key] = dict(minimum=min(values) if values else None, maximum=max(values) if values else None,
-            applicable_cases=len(values))
-    return dict(format_version='provider-scenario-report:1', assumptions=model.model_dump(),
-        cases=cases, ranges_across_supplied_cases=ranges,
+        ranges[key] = dict(
+            minimum=min(values) if values else None,
+            maximum=max(values) if values else None,
+            applicable_cases=len(values),
+        )
+    return dict(
+        format_version='provider-scenario-report:1',
+        assumptions=model.model_dump(),
+        cases=cases,
+        ranges_across_supplied_cases=ranges,
         timing='Cash is calculated at month end. Evaluation cost falls at its start, setup cost at paid service start, and receipts follow the entered payment lag.',
-        scope='An arithmetic exercise using supplied assumptions. Deficits show the amount needed to keep modelled month-end cash at or above zero.')
+        scope='An arithmetic exercise using supplied assumptions. Deficits show the amount needed to keep modelled month-end cash at or above zero.',
+    )
 
 
 def venture_frame_measurement_draft(project_id, title, description, alternatives, criteria, performances):
@@ -115,14 +137,18 @@ def venture_frame_project(report):
     """Package unweighted assumption-based measurements for Projects → Import."""
     cases = report['cases']
     alternatives = [
-        {'id': case['case_id'], 'name': case['label'], 'metadata': {
-            'basis': report['assumptions']['assumption_note'],
-            'assumptions': assumptions,
-            'horizon_months': report['assumptions']['horizon_months'],
-            'evaluation_start_month': report['assumptions']['evaluation_start_month'],
-            'opening_cash_nzd': report['assumptions']['opening_cash_nzd'],
-            'monthly_operating_outflow_nzd': report['assumptions']['monthly_operating_outflow_nzd'],
-        }}
+        {
+            'id': case['case_id'],
+            'name': case['label'],
+            'metadata': {
+                'basis': report['assumptions']['assumption_note'],
+                'assumptions': assumptions,
+                'horizon_months': report['assumptions']['horizon_months'],
+                'evaluation_start_month': report['assumptions']['evaluation_start_month'],
+                'opening_cash_nzd': report['assumptions']['opening_cash_nzd'],
+                'monthly_operating_outflow_nzd': report['assumptions']['monthly_operating_outflow_nzd'],
+            },
+        }
         for case, assumptions in zip(cases, report['assumptions']['cases'], strict=True)
     ]
     criteria = [
@@ -131,8 +157,15 @@ def venture_frame_project(report):
     ]
     performances = [
         {'alternative_id': case['case_id'], 'criterion_id': key, 'value': case[key]}
-        for case in cases for key in MEASUREMENTS if case[key] is not None
+        for case in cases
+        for key in MEASUREMENTS
+        if case[key] is not None
     ]
-    return venture_frame_measurement_draft('healthtech-provider-scenarios', report['assumptions']['label'],
+    return venture_frame_measurement_draft(
+        'healthtech-provider-scenarios',
+        report['assumptions']['label'],
         'Assumption-based provider evaluation cases. Raw measurements are supplied for analyst review.',
-        alternatives, criteria, performances)
+        alternatives,
+        criteria,
+        performances,
+    )

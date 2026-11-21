@@ -1,4 +1,5 @@
 """Prepare and assess the pilot's three-method analyst exercise."""
+
 import csv
 import json
 from collections import defaultdict
@@ -14,8 +15,19 @@ from .research_validation import decode_packet
 from .retrieval import compare
 
 METHODS = ('manual', 'lexical_b0', 'curated_dossiers')
-COLUMNS = ('query_id', 'method', 'analyst_id', 'elapsed_seconds', 'answer', 'evidence_and_search_log',
-           'reviewer_id', 'usefulness_grade', 'material_errors', 'review_rationale', 'reviewed_on')
+COLUMNS = (
+    'query_id',
+    'method',
+    'analyst_id',
+    'elapsed_seconds',
+    'answer',
+    'evidence_and_search_log',
+    'reviewer_id',
+    'usefulness_grade',
+    'material_errors',
+    'review_rationale',
+    'reviewed_on',
+)
 BRIEF = (
     'Identify up to three relevant healthtech references for the project and question. '
     'Describe what each evaluation or deployment source establishes and one material limit. '
@@ -32,34 +44,48 @@ def export_task_review(output: Path, research_results):
     by_query = {row['query_id']: row['result'] for row in research_results}
     if set(by_query) != {task.query_id for task in tasks} or len(by_query) != len(research_results):
         raise ValueError('Lexical and research task IDs must agree')
-    rubric = dict(brief=BRIEF, usefulness={
-        '0': 'Unusable answer or unsupported claim central to the decision.',
-        '1': 'Relevant lead with a material gap in sourcing, applicability or outcome description.',
-        '2': 'A useful sourced result or justified abstention with a concrete next evidence gap.',
-        '3': 'A useful sourced result that also makes the applicable workflow, evidence and timing clear.',
-    })
+    rubric = dict(
+        brief=BRIEF,
+        usefulness={
+            '0': 'Unusable answer or unsupported claim central to the decision.',
+            '1': 'Relevant lead with a material gap in sourcing, applicability or outcome description.',
+            '2': 'A useful sourced result or justified abstention with a concrete next evidence gap.',
+            '3': 'A useful sourced result that also makes the applicable workflow, evidence and timing clear.',
+        },
+    )
     cards = []
     results = []
-    with closing(connect(bundle/'corpus.sqlite')) as conn:
+    with closing(connect(bundle / 'corpus.sqlite')) as conn:
         for task in tasks:
             comparison = by_query[task.query_id]
             if comparison['as_of'] != manifest['evidence_as_of']:
                 raise ValueError('The dossier and lexical task cutoffs must agree')
             subject = dossier(conn, comparison['subject_id'])['subject']
-            cards.append(dict(query_id=task.query_id, project_subject_id=subject['subject_id'],
-                project_name=subject['display_name'], project_description=task.query_text,
-                question=comparison['question'], focus=task.inclusion_criteria,
-                research_cutoff=manifest['evidence_as_of']))
-            results.append(dict(query_id=task.query_id,
-                result=compare(conn, query=task.query_text, mode=task.mode, policy=manifest['policy'])))
-    (output/'task-cards.json').write_text(json.dumps(dict(rubric=rubric, tasks=cards), indent=2)+'\n')
-    (output/'lexical-evidence.json').write_text(json.dumps(results, indent=2)+'\n')
-    with (output/'task-runs.csv').open('w', newline='') as stream:
+            cards.append(
+                dict(
+                    query_id=task.query_id,
+                    project_subject_id=subject['subject_id'],
+                    project_name=subject['display_name'],
+                    project_description=task.query_text,
+                    question=comparison['question'],
+                    focus=task.inclusion_criteria,
+                    research_cutoff=manifest['evidence_as_of'],
+                )
+            )
+            results.append(
+                dict(
+                    query_id=task.query_id,
+                    result=compare(conn, query=task.query_text, mode=task.mode, policy=manifest['policy']),
+                )
+            )
+    (output / 'task-cards.json').write_text(json.dumps(dict(rubric=rubric, tasks=cards), indent=2) + '\n')
+    (output / 'lexical-evidence.json').write_text(json.dumps(results, indent=2) + '\n')
+    with (output / 'task-runs.csv').open('w', newline='') as stream:
         writer = csv.writer(stream)
         writer.writerow(COLUMNS)
         for task in tasks:
             for method in METHODS:
-                writer.writerow([task.query_id, method, *([''] * (len(COLUMNS)-2))])
+                writer.writerow([task.query_id, method, *([''] * (len(COLUMNS) - 2))])
     inputs = ('task-cards.json', 'lexical-evidence.json', 'research-results.json')
     review = {
         'format_version': 'healthtech-task-review:1',
@@ -67,10 +93,10 @@ def export_task_review(output: Path, research_results):
         'lexical_manifest_id': manifest['manifest_id'],
         'tasks': [task.query_id for task in tasks],
         'methods': list(METHODS),
-        'files': {name:file_sha(output/name) for name in inputs},
+        'files': {name: file_sha(output / name) for name in inputs},
         'held_out_pending': [task.query_id for task in bank.tasks if task.status == 'awaiting_evidence'],
     }
-    (output/'task-review-inputs.json').write_text(json.dumps(review, indent=2)+'\n')
+    (output / 'task-review-inputs.json').write_text(json.dumps(review, indent=2) + '\n')
 
 
 def _nonnegative_int(value, label):
@@ -82,15 +108,15 @@ def _nonnegative_int(value, label):
 def report_task_review(directory: Path, runs: Path, reviewers_file: Path, as_of: str):
     """Summarise submitted human observations with explicit task denominators."""
     day(as_of)
-    inputs = decode_packet((directory/'task-review-inputs.json').read_bytes())
-    expected_files = {'task-cards.json','lexical-evidence.json','research-results.json'}
+    inputs = decode_packet((directory / 'task-review-inputs.json').read_bytes())
+    expected_files = {'task-cards.json', 'lexical-evidence.json', 'research-results.json'}
     if inputs['format_version'] != 'healthtech-task-review:1' or set(inputs['files']) != expected_files:
         raise ValueError('Unsupported task review inputs')
     for name, expected in inputs['files'].items():
-        if file_sha(directory/name) != expected:
-            raise ValueError('Task review inputs changed: '+name)
+        if file_sha(directory / name) != expected:
+            raise ValueError('Task review inputs changed: ' + name)
     registry = [Reviewer.model_validate(d) for d in decode_packet(reviewers_file.read_bytes())]
-    reviewers = {r.reviewer_id:r for r in registry}
+    reviewers = {r.reviewer_id: r for r in registry}
     if len(registry) != len(reviewers):
         raise ValueError('Duplicate reviewer registration')
 
@@ -103,17 +129,27 @@ def report_task_review(directory: Path, runs: Path, reviewers_file: Path, as_of:
             raise ValueError('Task-run worksheet columns differ from the supplied template')
         for row in reader:
             key = (row['query_id'], row['method'])
-            if None in row or None in row.values() or key[0] not in inputs['tasks'] or key[1] not in METHODS or key in rows_seen:
+            if (
+                None in row
+                or None in row.values()
+                or key[0] not in inputs['tasks']
+                or key[1] not in METHODS
+                or key in rows_seen
+            ):
                 raise ValueError('Invalid or duplicate task/method row')
             rows_seen.add(key)
             if all(not row[column].strip() for column in COLUMNS[2:]):
                 continue
             if any(not row[column].strip() for column in COLUMNS[2:]):
-                raise ValueError('Complete the analyst and reviewer fields for '+str(key))
+                raise ValueError('Complete the analyst and reviewer fields for ' + str(key))
             analyst = reviewers.get(row['analyst_id'])
             reviewer = reviewers.get(row['reviewer_id'])
-            if (not analyst or not reviewer or analyst.reviewer_id == reviewer.reviewer_id
-                or not reviewer.independent_of_author):
+            if (
+                not analyst
+                or not reviewer
+                or analyst.reviewer_id == reviewer.reviewer_id
+                or not reviewer.independent_of_author
+            ):
                 raise ValueError('A registered analyst and a separate registered independent reviewer are required')
             analyst_task = (analyst.reviewer_id, key[0])
             if analyst_task in analysts_seen:
@@ -144,10 +180,18 @@ def report_task_review(directory: Path, runs: Path, reviewers_file: Path, as_of:
             'median_seconds_to_useful_answer': median(row['elapsed_seconds'] for row in useful) if useful else None,
             'material_errors_on_complete_tasks': sum(row['material_errors'] for row in paired) if paired else None,
         }
-    return dict(format_version='healthtech-task-review-report:1',
+    return dict(
+        format_version='healthtech-task-review-report:1',
         status='human_review_supplied' if records else 'not_evaluated',
         observations=[records[key] for key in sorted(records)],
-        complete_task_ids=complete, expected_task_count=len(inputs['tasks']), summary=summary,
-        input_sha256s=dict(manifest=file_sha(directory/'task-review-inputs.json'), task_runs=file_sha(runs), reviewers=file_sha(reviewers_file)),
+        complete_task_ids=complete,
+        expected_task_count=len(inputs['tasks']),
+        summary=summary,
+        input_sha256s=dict(
+            manifest=file_sha(directory / 'task-review-inputs.json'),
+            task_runs=file_sha(runs),
+            reviewers=file_sha(reviewers_file),
+        ),
         scope='Descriptive results on complete development tasks using different evidence corpora.',
-        held_out_pending=inputs['held_out_pending'])
+        held_out_pending=inputs['held_out_pending'],
+    )

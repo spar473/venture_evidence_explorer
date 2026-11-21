@@ -1,12 +1,61 @@
-import {test,expect} from '@playwright/test';
-test('dossier leads with attributed solution and users while preserving identity disclosure',async({page},info)=>{
- await page.goto('/?mode=research');await page.getByRole('button',{name:'Research dossiers',exact:true}).click();await page.getByRole('button',{name:'RosterLab',exact:true}).click();const dialog=page.getByRole('dialog',{name:'RosterLab research dossier'});const overview=dialog.getByRole('region',{name:'Attributed venture overview'});
- await expect(overview.getByRole('heading',{name:'Venture at a glance'})).toBeInViewport();await expect(overview).toContainText('Payer not established');await expect(overview.getByRole('link').first()).toHaveAttribute('href',/^https:\/\//);await expect(dialog.locator('.research-identity-details')).not.toHaveAttribute('open','');await expect(dialog).toContainText('Legal identity remains separate and unverified');await dialog.screenshot({path:info.outputPath('rosterlab-overview.png')});
- await dialog.getByText('Identity, legal unknowns and mapping review',{exact:true}).click();await expect(dialog.getByText('No human decision supplied',{exact:true})).toBeVisible();await expect(dialog.locator('.research-identity')).toBeVisible();
+import { test, expect } from "@playwright/test";
+test("dossier leads with attributed solution and users while preserving identity disclosure", async ({
+  page,
+}, info) => {
+  await page.goto("/?mode=research");
+  await page.getByRole("button", { name: "Research dossiers", exact: true }).click();
+  await page.getByRole("button", { name: "RosterLab", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "RosterLab research dossier" });
+  const overview = dialog.getByRole("region", { name: "Attributed venture overview" });
+  await expect(overview.getByRole("heading", { name: "Venture at a glance" })).toBeInViewport();
+  await expect(overview).toContainText("Payer not established");
+  await expect(overview.getByRole("link").first()).toHaveAttribute("href", /^https:\/\//);
+  await expect(dialog.locator(".research-identity-details")).not.toHaveAttribute("open", "");
+  await expect(dialog).toContainText("Legal identity remains separate and unverified");
+  await dialog.screenshot({ path: info.outputPath("rosterlab-overview.png") });
+  await dialog.getByText("Identity, legal unknowns and mapping review", { exact: true }).click();
+  await expect(dialog.getByText("No human decision supplied", { exact: true })).toBeVisible();
+  await expect(dialog.locator(".research-identity")).toBeVisible();
 });
-test('compact timeline preserves target precision and unknown occurrence on mobile',async({page},info)=>{
- await page.setViewportSize({width:390,height:844});await page.goto('/?mode=research');await page.getByRole('button',{name:'Research dossiers',exact:true}).click();await page.getByRole('button',{name:'QuickMas',exact:true}).click();const dialog=page.getByRole('dialog',{name:'QuickMas research dossier'});const timeline=dialog.locator('.research-timeline');await expect(timeline).toContainText('Target / intention');await expect(timeline).toContainText('2025 (year precision)');await expect(timeline).toContainText('Unknown / not established');await expect(timeline).not.toContainText('2025-01-01');expect(await dialog.evaluate(n=>n.scrollWidth<=n.clientWidth)).toBe(true);await dialog.screenshot({path:info.outputPath('quickmas-overview-mobile.png')});
+test("compact timeline preserves target precision and unknown occurrence on mobile", async ({
+  page,
+}, info) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/?mode=research");
+  await page.getByRole("button", { name: "Research dossiers", exact: true }).click();
+  await page.getByRole("button", { name: "QuickMas", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "QuickMas research dossier" });
+  const timeline = dialog.locator(".research-timeline");
+  await expect(timeline).toContainText("Target / intention");
+  await expect(timeline).toContainText("2025 (year precision)");
+  await expect(timeline).toContainText("Unknown / not established");
+  await expect(timeline).not.toContainText("2025-01-01");
+  expect(await dialog.evaluate((n) => n.scrollWidth <= n.clientWidth)).toBe(true);
+  await dialog.screenshot({ path: info.outputPath("quickmas-overview-mobile.png") });
 });
-test('discovery labels are readable and stable IDs remain available in disclosures and exports',async({page},info)=>{
- await page.goto('/?mode=research');await page.getByRole('button',{name:'Discovery queue',exact:true}).click();await expect(page.locator('.discovery-table')).toContainText('Awaiting review');expect(await page.locator('.discovery-table').innerText()).not.toMatch(/pending_review|source_observations|source_capture/);await page.getByLabel('Candidate status').selectOption({label:'Awaiting review'});await page.getByLabel('Evidence gap').selectOption({label:'Dated NZ inclusion'});await expect(page.getByLabel('Evidence gap')).toHaveValue('nz_inclusion');await page.getByLabel('Search discovery leads').fill('Kura');await expect(page.locator('.discovery-table tbody tr')).toHaveCount(2);const row=page.locator('.discovery-table tbody tr').first();await expect(row.locator('code')).not.toBeVisible();await row.getByText('Record ID',{exact:true}).click();await expect(row.locator('code')).toBeVisible();await page.evaluate(()=>{window.scrollTo(0,0);(document.activeElement as HTMLElement)?.blur();});await page.screenshot({path:info.outputPath('discovery-readable.png'),fullPage:true});const csv=await page.request.get('/api/discovery/exports/candidates.csv');expect(await csv.text()).toContain('discovery_kura');
+test("discovery labels are readable and stable IDs remain available in disclosures and exports", async ({
+  page,
+}, info) => {
+  await page.goto("/?mode=research");
+  await page.getByRole("button", { name: "Discovery queue", exact: true }).click();
+  await expect(page.locator(".discovery-table")).toContainText("Awaiting review");
+  expect(await page.locator(".discovery-table").innerText()).not.toMatch(
+    /pending_review|source_observations|source_capture/,
+  );
+  await page.getByLabel("Candidate status").selectOption({ label: "Awaiting review" });
+  await page.getByLabel("Evidence gap").selectOption({ label: "Dated NZ inclusion" });
+  await expect(page.getByLabel("Evidence gap")).toHaveValue("nz_inclusion");
+  await page.getByLabel("Search discovery leads").fill("Kura");
+  await expect(page.locator(".discovery-table tbody tr")).toHaveCount(2);
+  const row = page.locator(".discovery-table tbody tr").first();
+  await expect(row.locator("code")).not.toBeVisible();
+  await row.getByText("Record ID", { exact: true }).click();
+  await expect(row.locator("code")).toBeVisible();
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+    (document.activeElement as HTMLElement)?.blur();
+  });
+  await page.screenshot({ path: info.outputPath("discovery-readable.png"), fullPage: true });
+  const csv = await page.request.get("/api/discovery/exports/candidates.csv");
+  expect(await csv.text()).toContain("discovery_kura");
 });
