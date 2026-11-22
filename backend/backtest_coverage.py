@@ -9,6 +9,7 @@ from .research_validation import decode_packet
 from .witnessed_snapshots import BACKTEST_FIELDS, BACKTEST_PACKET, BacktestSnapshotPacket
 
 SECTOR_MAPPING = BACKTEST_PACKET.with_name('sector-normalisation.json')
+PREVIEW_LABEL = 'Provisional preview: AI-adjudicated evidence, not human-confirmed; strict evidence gate not passed.'
 SECTORS = {
     'enterprise_software',
     'fintech',
@@ -67,9 +68,17 @@ def audit_sector_mapping(path: Path = SECTOR_MAPPING, *, cohort=None):
     )
 
 
-def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None):
+def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None, decisions: Path | None = None):
     raw = Path(path).read_bytes()
     packet = BacktestSnapshotPacket.model_validate(decode_packet(raw))
+    if decisions is not None:
+        from .backtest_review import apply_review
+
+        packet = apply_review(packet, decisions)
+    return audit_packet(packet, hashlib.sha256(raw).hexdigest(), cohort=cohort)
+
+
+def audit_packet(packet: BacktestSnapshotPacket, packet_sha256: str, *, cohort=None):
     cohort = run_audit() if cohort is None else cohort
     if packet.cohort_input_sha256 != cohort['input_sha256']:
         raise ValueError('Cohort inputs changed from the registered snapshot; review before proceeding')
@@ -109,12 +118,16 @@ def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None):
         available = [f for f in features if known_by(f, historical_cutoff)]
         confirmed = sorted(f.name for f in available if f.timing == 'strict' and f.review_state == 'confirmed')
         proposed = sorted(f.name for f in available if f.timing == 'strict' and f.review_state == 'proposed')
+        adjudicated = {
+            f.name: f.value for f in available if f.timing == 'strict' and f.review_state == 'ai_adjudicated'
+        }
         return dict(
             company_id=company_id,
             name=entries[company_id]['name'],
             entry=entries[company_id]['entry']['date'],
             strict_confirmed_fields=confirmed,
             strict_proposed_fields=proposed,
+            preview_fields=adjudicated,
             lenient_confirmed_fields=sorted(
                 f.name for f in available if f.timing == 'lenient' and f.review_state == 'confirmed'
             ),
@@ -122,7 +135,7 @@ def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None):
             rejected_or_disputed_fields=sorted(f.name for f in features if f.review_state in ('rejected', 'disputed')),
             missing_confirmed_fields=[name for name in BACKTEST_FIELDS if name not in confirmed],
             clears_field_bar=len(confirmed) >= REQUIRED_FIELDS,
-            would_clear_if_proposals_confirmed=len(confirmed) + len(proposed) >= REQUIRED_FIELDS,
+            would_clear_if_proposals_confirmed=len(confirmed) + len(proposed) + len(adjudicated) >= REQUIRED_FIELDS,
         )
 
     subjects = {}
@@ -148,6 +161,7 @@ def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None):
             subject=coverage(company_id, cutoff),
             eligible_peer_count=len(peers),
             confirmed_peers_at_field_bar=sum(peer['clears_field_bar'] for peer in peers),
+            preview_peers_at_field_bar=sum(len(peer['preview_fields']) >= REQUIRED_FIELDS for peer in peers),
             potential_peers_after_review=sum(peer['would_clear_if_proposals_confirmed'] for peer in peers),
             peers=peers,
             excluded=excluded,
@@ -157,10 +171,18 @@ def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None):
         audit_version='backtest-coverage:1',
         compiled_on=packet.compiled_on,
         preregistration_commit=packet.preregistration_commit,
-        packet_sha256=hashlib.sha256(raw).hexdigest(),
+        packet_sha256=packet_sha256,
         cohort_input_sha256=packet.cohort_input_sha256,
         included_companies=len(entries),
         subjects=subjects,
+        preview_gate=dict(
+            provisional=True,
+            label=PREVIEW_LABEL,
+            actual_peers=partly['preview_peers_at_field_bar'],
+            required_peers=REQUIRED_PEERS,
+            required_fields=REQUIRED_FIELDS,
+            shortfall=max(0, REQUIRED_PEERS - partly['preview_peers_at_field_bar']),
+        ),
         gate=dict(
             passed=partly['confirmed_peers_at_field_bar'] >= REQUIRED_PEERS,
             required_peers=REQUIRED_PEERS,

@@ -9,18 +9,21 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from backend.backtest_coverage import audit_coverage, audit_sector_mapping
+from backend.backtest_review import DECISIONS
 from backend.witnessed_snapshots import BACKTEST_PACKET
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input', type=Path, default=BACKTEST_PACKET)
+    parser.add_argument('--decisions', type=Path, help='Apply these AI decisions to the input packet')
     parser.add_argument('--output', type=Path)
     parser.add_argument(
         '--require-gate', action='store_true', help='Exit 1 when the validated packet misses the fixed gate'
     )
     args = parser.parse_args()
-    report = audit_coverage(args.input)
+    decisions = args.decisions or (DECISIONS if args.input.resolve() == BACKTEST_PACKET else None)
+    report = audit_coverage(args.input, decisions=decisions)
     report['sector_normalisation'] = audit_sector_mapping()
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -34,6 +37,10 @@ def main():
         'PASS: Phase 1 gate'
         if report['gate']['passed']
         else 'STOP: Phase 1 requires 15 covered Partly peers; do not run a backtest'
+    )
+    preview = report['preview_gate']
+    print(
+        f"{preview['label']} {preview['actual_peers']} of {preview['required_peers']} Partly peers have five AI-adjudicated fields."
     )
     return 1 if args.require_gate and not report['gate']['passed'] else 0
 

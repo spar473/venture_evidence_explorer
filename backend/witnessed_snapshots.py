@@ -232,10 +232,16 @@ class BacktestFeature(StrictModel):
     locator: Text
     effective_on: str | None = None
     timing: Literal['strict', 'lenient'] = 'strict'
-    review_state: Literal['proposed', 'confirmed', 'rejected', 'disputed'] = 'proposed'
+    review_state: Literal['proposed', 'confirmed', 'rejected', 'disputed', 'ai_adjudicated'] = 'proposed'
     reviewer: Text | None = None
     reviewed_on: str | None = None
     review_reference: Text | None = None
+    proposed_value: Text | StrictInt | None = None
+    decided_by: Text | None = None
+    review_date: str | None = None
+    second_reading_value: str | None = None
+    readings_match: Text | None = None
+    human_confirmed: bool | None = None
 
     @model_validator(mode='after')
     def field_and_review(self):
@@ -243,14 +249,26 @@ class BacktestFeature(StrictModel):
             raise ValueError('Unknown backtest feature')
         if self.name in BACKTEST_MILESTONES and self.value not in ('yes', 'no'):
             raise ValueError('Backtest milestones require explicit yes or no')
-        if self.name in BACKTEST_CATEGORIES and self.value not in BACKTEST_CATEGORIES[self.name]:
+        if (
+            self.name in BACKTEST_CATEGORIES
+            and self.value not in BACKTEST_CATEGORIES[self.name]
+            and self.review_state != 'ai_adjudicated'
+        ):
             raise ValueError('Backtest categorical value is outside the registered vocabulary')
         if self.name == 'months_since_founding' and (type(self.value) is not int or self.value < 0):
             raise ValueError('Founding age requires nonnegative integer months')
         if self.effective_on is not None:
             day(self.effective_on)
         reviewed = (self.reviewer, self.reviewed_on, self.review_reference)
-        if self.review_state == 'proposed':
+        if self.decided_by is not None:
+            if not self.review_date or not self.readings_match or self.human_confirmed is not False or any(reviewed):
+                raise ValueError('AI decisions require dated review metadata and cannot claim human confirmation')
+            if self.review_state not in ('ai_adjudicated', 'proposed', 'rejected'):
+                raise ValueError('AI decisions cannot assign a human review state')
+            day(self.review_date)
+        elif self.review_state == 'ai_adjudicated':
+            raise ValueError('AI-adjudicated features require decision metadata')
+        elif self.review_state == 'proposed':
             if any(value is not None for value in reviewed):
                 raise ValueError('A proposal cannot claim a completed human review')
         elif not all(reviewed):
@@ -339,6 +357,8 @@ class BacktestSnapshotPacket(StrictModel):
                     raise ValueError('Backtest feature exceeds its entry evidence cutoff')
                 if feature.reviewed_on and not source.retrieved_on <= feature.reviewed_on <= self.compiled_on:
                     raise ValueError('Feature review must follow source retrieval and precede compilation')
+                if feature.review_date and feature.review_date < source.retrieved_on:
+                    raise ValueError('AI adjudication must follow source retrieval')
         for investigation in self.investigations:
             https(investigation.url)
             if day(investigation.checked_on) > self.compiled_on:
