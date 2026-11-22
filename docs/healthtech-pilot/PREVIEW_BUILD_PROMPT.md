@@ -4,6 +4,8 @@ Written 23 Nov 2026 for branch `codex/time-machine`. Paste everything below the 
 
 ---
 
+**How this phase is judged:** the work is done only when every **blocking** check in Phase E passes and `PREVIEW_EVALUATION.md` shows the evidence. The target state is described in **Ideal outcome** at the end. Read both before you start, and build towards them rather than auditing at the end.
+
 You are continuing Venture Evidence Explorer (VEE) on branch `codex/time-machine`. The project owner has chosen to build a **provisional preview** of the Time Machine before the strict evidence gate passes. Read **Amendment 1** at the end of `docs/design/BACKTEST_PREREG.md` first. It is authoritative for this phase. Everything else in the preregistration stays frozen.
 
 ## Step 0: commit what is already in the working tree
@@ -76,3 +78,81 @@ Build the page as specified there (`?page=timemachine`, subject picker, snapshot
   3. find a pre-8 Oct 2020 Partly source;
   4. resolve the Parcelport product_type inconsistency.
 - Open a PR to `main` titled "Time Machine: provisional preview", summarising each phase's results, including abstentions.
+
+## Phase E: evaluate before you hand over
+
+Write `docs/healthtech-pilot/PREVIEW_EVALUATION.md` with one table: criterion, result (pass / fail / not applicable), and evidence (test name, command and its output summary, or screenshot path). Claims without evidence count as fail. **Blocking** criteria must all pass. If one cannot pass, stop, leave it as fail with the reason, and say so at the top of the PR. Never weaken a test to make it pass.
+
+### E1. Integrity (blocking)
+- [ ] **Provenance walk.** An automated test renders the preview payload for every subject and asserts that every displayed field value has a source, a witness date, a locator and a review state. Values with no provenance fail the test.
+- [ ] **No leakage.** All leakage tests from TIME_MACHINE_PROMPT phase 3 pass, plus one new test: with `peer_history=as_of_anchor`, no event or text dated after the subject's cutoff appears anywhere in the response except the `reveal` block.
+- [ ] **Strict track untouched.** `--require-gate` still exits 1. The strict gate ignores `ai_adjudicated`. `witnessed-gower-b0:3` golden payloads are byte-identical to `main`.
+- [ ] **Labelling.** The provisional banner is present on every preview screen and in every preview API response. "Nearest available" items never carry the words ceiling, typical or floor.
+- [ ] **No forbidden claims.** No "%", "probability", "likely", "predict", "success rate" or "validated" anywhere in the rendered preview (checked by Playwright on the DOM text).
+
+### E2. Method correctness (blocking)
+- [ ] **Hand-checked scores.** In `PREVIEW_EVALUATION.md`, compute the `general-gower-b1:1` similarity and coverage by hand for two real pairs: Supie vs its top-ranked peer, and Narrative vs Social Club. Show each dimension. A unit test asserts that the code produces the same numbers to 3 decimal places.
+- [ ] **Vocabulary.** Tests cover: identical node = 1.0; parent/child or meaningful siblings = 0.5; different branches = 0; artificial root never gives credit; unknown token treated as missing and reported.
+- [ ] **Determinism.** Running the preview twice on the same inputs produces byte-identical JSON. Record the output SHA-256.
+- [ ] **Adjustability.** Changing one row in `backtest-review-decisions.csv` and re-running the ingest changes exactly that field, and the audit and preview output change accordingly. Prove it in a test using a temporary copy.
+
+### E3. What a visitor sees (blocking)
+- [ ] **First screen tells the story.** At 1440×900, without scrolling, `?page=timemachine` (default subject Supie) shows four things: the banner, one plain sentence saying what happened (comps found, or no close comps and why), the subject snapshot, and the Reveal button. Commit the screenshot.
+- [ ] **60-second demo path** written in the README and walked in Playwright: open the page, read the snapshot, see comps or "nearest available", reveal, open one source link.
+- [ ] **Plain language.** No UI text uses: witness, witnessed, anchor, alignable, Gower, IDF, n_eff, α, snapshot scope, as-of-anchor. Those words may appear only in the method docs and in tooltips that explain them. Enforce with a Playwright text check.
+- [ ] **Partly and Halter** appear with a one-line, dated reason. They are never silently missing.
+
+### E4. Design and accessibility (blocking where marked)
+- [ ] **(blocking)** axe-core in Playwright: zero serious or critical violations on the Time Machine page.
+- [ ] **(blocking)** Keyboard only: reach the subject picker, the toggle, the Reveal button (real `<button aria-expanded>`) and every source link. Every chart has a "View as table" fallback.
+- [ ] **(blocking)** At 390 px width there's no horizontal overflow, and the reveal and banner stay readable. Commit the screenshot.
+- [ ] Uses the existing design tokens and components. No new global CSS file; new styles live with the page.
+- [ ] Each comp or nearest card shows at most 3 matched and 3 differing fields. Similarity is a number plus a band ("close" ≥ 0.6, "loose" 0.35–0.6, "not a comp" below the bars), never a bare decimal.
+- [ ] Empty and abstention states say why, and name the evidence that would change the result.
+
+### E5. Engineering (blocking where marked)
+- [ ] **(blocking)** The full CI matrix is green: Python 3.10–3.13, Playwright, ruff, prettier, `export_contract.py --check`.
+- [ ] **(blocking)** New Python modules pass pyright (basic) with zero errors. Add pyright to CI for those modules only.
+- [ ] Every new module has tests. Measure coverage on new code only and report it.
+- [ ] No new runtime dependencies. If one is unavoidable, justify it in the PR.
+- [ ] The backtest endpoint responds in under 300 ms (p95 of 20 calls) on the demo database. Report the number.
+- [ ] Legacy views and `?mode=research` behave as before (existing tests unchanged and passing).
+
+### E6. Documentation and reviewability
+- [ ] `PREVIEW_RESULTS.md` explains, per subject in plain English: what happened, which peers were closest, which bars failed, and what evidence would change it. Write misses and abstentions as plainly as hits.
+- [ ] The PR description has before/after screenshots, the E1–E5 results table, the provisional status and known gaps.
+- [ ] `STATUS.md`, `NEXT_STEPS.md` and `CHANGELOG.md` are updated, and the README's 3-minute demo starts with the Time Machine.
+
+### E7. Fresh-eyes review
+Before opening the PR, review the running page and docs as two specific readers. If you can start a separate reviewer agent that has not seen the build, use it.
+- **An Icehouse software engineer / data analyst.** Typical questions: how is similarity computed? What stops hindsight leaking? Who checked the facts? What happens with sparse data? Is it reproducible?
+- **An Icehouse investment analyst screening a new company.** Typical questions: what does this tell me in 30 seconds? Which past company is this most like, and how did it go? How much should I trust it? Where's the source?
+
+List each reader's top 5 questions in `PREVIEW_EVALUATION.md`, with where the page or docs answer each one. Fix what you can. List the rest as known gaps.
+
+## Ideal outcome
+
+**For this phase.** Someone opens the demo and lands on the Time Machine:
+- The banner says plainly that this is a provisional preview built on AI-checked evidence.
+- The first line says something true and specific, for example "It's 9 November 2021. Supie has just raised its first round. No past NZ venture in the pool is a close match; here are the three nearest and why they fall short."
+- The snapshot shows what was public then, each fact one click from its source and date.
+- They press **Reveal** and see Supie's real path on the same clock: voluntary administration, then liquidation in November 2023.
+- Within 60 seconds they understand the idea: compare a young company only with what was knowable at the time, show your evidence, and don't pretend when the match is weak.
+- An engineer who clones the repo can run one command to reproduce the result byte for byte, change one decision in the CSV and watch it flow through, and find every number explained in `PREVIEW_EVALUATION.md`.
+
+**Beyond this phase, the state this preview should make easy to reach:**
+1. A human confirms the 72 fields (at least the 21 archive-based ones), 6 more peers are researched, and a pre-8 Oct 2020 Partly source is found.
+2. The strict audit passes. The same page then switches from "provisional preview" to the strict track by configuration alone: the banner goes, the badges read "human-confirmed", and no page code changes.
+3. Partly runs as the main case, with ceiling, typical and floor comps and a reveal of its Series A.
+4. The project reads as a confident, honest research tool that an Icehouse engineer would want to discuss and an analyst would actually open while screening.
+
+**Scorecard targets** (from the 21 Nov review):
+
+| Dimension | Before | Target after this phase |
+|---|---|---|
+| What a visitor sees | D+ | B: real evidence, a reveal, honest abstention |
+| UX and visual design | C+ | B: plain language, first screen tells the story, accessible |
+| Method and data rigour | B+ | A−: hand-checked scores, deterministic, adjustable, labelled |
+| Engineering | B+ | A−: typed, tested, CI green, fast |
+
+Report your own honest grade against each target at the end of `PREVIEW_EVALUATION.md`, with one line of evidence per grade.
