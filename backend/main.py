@@ -231,6 +231,14 @@ def create_app(db_path=None):
 
     install_backtest(app)
 
+    @app.get('/time-machine/method', include_in_schema=False)
+    def time_machine_method():
+        return FileResponse(ROOT / 'docs/design/BACKTEST_PREREG.md', media_type='text/plain')
+
+    @app.get('/time-machine/results', include_in_schema=False)
+    def time_machine_results():
+        return FileResponse(ROOT / 'docs/healthtech-pilot/PREVIEW_RESULTS.md', media_type='text/plain')
+
     dist = ROOT / 'frontend/dist'
     if (dist / 'assets').is_dir():
         app.mount('/assets', StaticFiles(directory=dist / 'assets'), name='assets')

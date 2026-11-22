@@ -1,20 +1,20 @@
 # Data status
 
-Last updated 2026-11-22. This file records the pre-demo data checks and open data decisions. The outcome audit below remains frozen at 2026-11-21.
+Last updated 2026-11-23. This file records the pre-demo data checks and open data decisions. The outcome audit below remains frozen at 2026-11-21.
 
-## Time Machine: preregistered, data gate not met
+## Time Machine provisional preview
 
 The protocol was committed as `d0c7c27` before any Time Machine scoring run. See [preregistration](docs/design/BACKTEST_PREREG.md) and [coverage checkpoint](docs/healthtech-pilot/BACKTEST_COVERAGE.md) for exact rules, sources, input digests and the full Partly research queue.
 
-| Subject | Date-eligible earlier peers | Peers with ≥5 confirmed strict fields | Peers that could clear after proposal review | Subject confirmed / proposed fields |
+| Subject | Date-eligible earlier peers | Peers with ≥5 confirmed strict fields | Peers with ≥5 strict AI-adjudicated fields | Subject confirmed / AI-adjudicated fields |
 |---|---:|---:|---:|---:|
 | Partly | 32 | 0 | 9 | 0 / 0 |
 | Supie | 39 | 0 | 9 | 0 / 6 |
 | Halter | 8 | 0 | 1 | 0 / 0 |
 
-Seventy-two field extractions across fourteen companies are recorded as **proposed**, with sources, locators and normalisation rationale: 69 strict and three lenient-only. The [field review](docs/healthtech-pilot/BACKTEST_REVIEW.md) presents all values and source versions. Nine Partly-eligible peers have at least five strict proposals: CodeLingo, First AML, Firstcheck, Myovolt, Narrative, Parcelport, Social Club, StretchSense and Vidapp. Supie is a subject and is not an earlier peer for Partly. No human confirmation is claimed.
+Seventy-two field extractions across fourteen companies have review decisions. The CSV accepts 61, corrects seven, leaves three open and rejects one. Nine Partly-eligible peers have at least five AI-adjudicated strict fields. They are CodeLingo, First AML, Firstcheck, Myovolt, Narrative, Parcelport, Social Club, StretchSense and VidApp. Twenty-one archive-based fields have had no independent second reading. Human review is pending for all 72. [Field review](docs/healthtech-pilot/BACKTEST_REVIEW.md).
 
-The fixed Phase 1 gate requires **15 Partly-eligible peers with at least five confirmed strict fields each**. It is not met. Even confirming every current proposal would leave six more sufficiently covered peers to research. This is the coverage of this research pass, not proof that the remaining historical evidence does not exist. No general matcher, Time Machine endpoint, backtest result or UI is released. The existing app's source packets and thresholds are unchanged.
+The provisional Time Machine opens on Supie. Its six usable facts allow scoring. No peer clears the product and customer check, so the page offers three nearest cases and a separate reveal. Partly and Halter have empty entry snapshots and dated abstention reasons. The strict track still needs **15 Partly-eligible peers with at least five human-confirmed strict fields each** and currently has zero. [Case results](docs/healthtech-pilot/PREVIEW_RESULTS.md).
 
 Partly's current NZ Entrepreneur page shows a 2021 update, so it was excluded from the 2020 snapshot. Archive availability queries returned 11 and 22 October captures, after its 8 October cutoff; no qualifying original body was inspected. The Blackbird note is also too late. Actual pre-entry archive bodies were inspected for six other companies. Halter still has no qualifying pre-entry source. A later biography cannot fill its 2016 snapshot. 1Centre's three descriptors are lenient-only and add nothing to strict coverage.
 

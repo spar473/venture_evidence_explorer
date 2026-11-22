@@ -81,6 +81,7 @@ class BacktestReviewMetadata(StrictModel):
     field: str
     reviewed_by: str
     reviewed_on: str
+    second_reading_result: str | None = None
 
 
 class BacktestReveal(StrictModel):

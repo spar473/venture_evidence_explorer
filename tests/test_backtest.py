@@ -108,6 +108,16 @@ def test_strict_refusal_and_labelled_preview_errors():
             assert response.json()['provisional'] and response.json()['label'] == PREVIEW_LABEL
 
 
+def test_time_machine_links_serve_local_method_and_case_results():
+    with TestClient(create_app()) as client:
+        method = client.get('/time-machine/method')
+        results = client.get('/time-machine/results')
+        assert method.status_code == results.status_code == 200
+        assert 'Amendment 1' in method.text and 'Time Machine provisional results' in results.text
+        assert method.headers['Content-Type'].startswith('text/plain')
+        assert results.headers['Content-Type'].startswith('text/plain')
+
+
 def test_vocabulary_exact_partial_cross_branch_flat_root_and_unknown():
     assert categorical_score('buyer', 'enterprise', 'enterprise') == 1
     assert categorical_score('buyer', 'business', 'enterprise') == 0.5

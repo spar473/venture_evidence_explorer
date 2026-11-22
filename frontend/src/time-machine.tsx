@@ -25,7 +25,6 @@ const track = import.meta.env.VITE_TIME_MACHINE_TRACK === "strict" ? "strict" : 
 const defaultSubject =
   subjects.find((subject) => subject.id === import.meta.env.VITE_TIME_MACHINE_SUBJECT)?.id ??
   "public_supie";
-const docs = "https://github.com/spar473/venture_evidence_explorer/blob/codex/time-machine/docs";
 const formatDay = new Intl.DateTimeFormat("en-NZ", {
   day: "numeric",
   month: "long",
@@ -37,6 +36,14 @@ const formatMonth = new Intl.DateTimeFormat("en-NZ", {
   year: "numeric",
   timeZone: "UTC",
 });
+const formatScore = new Intl.NumberFormat("en-NZ", {
+  minimumFractionDigits: 3,
+  maximumFractionDigits: 3,
+});
+
+function scoreText(value: number) {
+  return formatScore.format(Number(value.toFixed(12)));
+}
 
 const fieldLabels: Record<string, string> = {
   description: "What it offered",
@@ -151,13 +158,57 @@ function ReviewBadge({
   );
 }
 
+function EvidenceDetails({
+  companyId,
+  fields,
+  reviews,
+}: {
+  companyId: string;
+  fields: BacktestField[];
+  reviews: Map<string, BacktestReviewMetadata>;
+}) {
+  if (!fields.length) return null;
+  return (
+    <details className="tm-evidence-details">
+      <summary>Review and source details</summary>
+      <dl>
+        {fields.map((field) => {
+          const review = reviews.get(`${companyId}:${field.name}`);
+          const second = review?.second_reading_result;
+          return (
+            <div key={field.name}>
+              <dt>{fieldLabels[field.name]}</dt>
+              <dd>{field.source.locator}</dd>
+              {review && (
+                <dd>
+                  Checked by {review.reviewed_by} on {dateText(review.reviewed_on)}.
+                  {second && (
+                    <>
+                      {" "}
+                      {second.startsWith("Not compared")
+                        ? "No second comparison was recorded."
+                        : second === "Yes"
+                          ? "The second reading matched."
+                          : "The second reading differed."}
+                    </>
+                  )}
+                </dd>
+              )}
+            </div>
+          );
+        })}
+      </dl>
+    </details>
+  );
+}
+
 function story(data: BacktestResponse) {
   const name = data.subject.display_name;
   const date = dateText(data.subject.cutoff);
   if (data.abstention === "strict_gate")
     return "The strict evidence gate is still open for review.";
   if (data.abstention === "no_subject_evidence")
-    return `No qualifying evidence about ${name} was public by ${date}, so there is no comparison.`;
+    return `We found no qualifying evidence about ${name} that was public by ${date}, so there is no comparison.`;
   const context = data.subject.entry_round_source
     ? `On ${date}, ${name} has just reported a seed round`
     : `It's ${date}`;
@@ -209,6 +260,12 @@ function EventList({ items }: { items: BacktestEvent[] }) {
             {event.hindsight && <span className="tm-review">Hindsight</span>}
             <br />
             <SourceLink source={event.source} label={fieldLabel(event.kind)} />
+            {event.hindsight && (
+              <small className="tm-event-date">
+                {event.source.witness_id ? "Public by" : "Source checked"}{" "}
+                {dateText(event.source.available_on)}
+              </small>
+            )}
           </span>
         </li>
       ))}
@@ -240,8 +297,8 @@ function Timeline({ name, events }: { name: string; events: BacktestEvent[] }) {
       <summary>Show time chart</summary>
       <Trajectory
         rows={[{ company_id: name, display_name: name, points }]}
-        title={`${name} since its first recorded round`}
-        axisNote="Time begins at the first recorded round. Bands show dates known only within a range."
+        title={`${name} since its recorded institutional round`}
+        axisNote="Time begins at the recorded institutional round. Bands show dates known only within a range."
         onClaim={(claim) => window.open(claim.url, "_blank", "noopener,noreferrer")}
       />
     </details>
@@ -305,12 +362,14 @@ function PeerCard({
         <h3>{peer.display_name}</h3>
         <span className="tm-role">{isNearest ? "Not a comp" : roleLabels[peer.role]}</span>
       </header>
-      <p className="wb-muted">First recorded round · {dateText(peer.entry.value!)}</p>
+      <p className="wb-muted">Recorded institutional round · {dateText(peer.entry.value!)}</p>
       <p className="tm-score">
         <strong>
-          {peer.similarity.toFixed(3)} · {matchBand(peer)}
+          {scoreText(peer.similarity)} · {matchBand(peer)}
         </strong>
-        <span>Shared evidence {peer.coverage.toFixed(3)}</span>
+        <span title="A score of 1 means all fields could be compared.">
+          Shared evidence {scoreText(peer.coverage)}
+        </span>
       </p>
       {isNearest && (
         <p className="tm-missed">
@@ -332,11 +391,12 @@ function PeerCard({
           {comparisons(different)}
         </>
       )}
+      <EvidenceDetails companyId={peer.company_id} fields={peer.fields} reviews={reviews} />
       <h4>What happened next</h4>
       <EventList items={peer.history.events} />
       <p className="wb-muted">
-        Time covered by this view · {Math.floor(peer.history.follow_up_days / (365.25 / 12))} months
-        from the round
+        This view ends {Math.floor(peer.history.follow_up_days / (365.25 / 12))} months after the
+        recorded round.
       </p>
     </article>
   );
@@ -478,9 +538,25 @@ export function TimeMachine() {
                     </div>
                   ))}
                 </dl>
+              ) : data.abstention === "no_subject_evidence" ? (
+                <>
+                  <p>
+                    No entry facts met the evidence requirements. {data.covered_peer_ids?.length} of{" "}
+                    {data.eligible_peer_ids?.length} earlier companies have at least five usable
+                    facts.
+                  </p>
+                  {data.subject.entry.precision === "month" && (
+                    <p>The entry record gives only a month. The search stops on its first day.</p>
+                  )}
+                </>
               ) : (
                 <p>{nextEvidence(data)}</p>
               )}
+              <EvidenceDetails
+                companyId={subjectId}
+                fields={data.subject.fields}
+                reviews={reviews}
+              />
             </section>
           </div>
           {revealed && data.reveal && <Timeline name={name} events={data.reveal.events} />}
@@ -491,7 +567,9 @@ export function TimeMachine() {
               <p>{nextEvidence(comparison)}</p>
               {!!comparison.nearest_candidates?.length && (
                 <table>
-                  <caption className="tm-sr-only">Nearest candidates and missed checks</caption>
+                  <caption>
+                    This table gives more weight to cases with more shared evidence.
+                  </caption>
                   <thead>
                     <tr>
                       <th scope="col">Company</th>
@@ -504,8 +582,8 @@ export function TimeMachine() {
                         <th scope="row">
                           {peer.display_name}
                           <span className="wb-muted">
-                            {peer.similarity.toFixed(3)} · {matchBand(peer)} · Shared evidence{" "}
-                            {peer.coverage.toFixed(3)}
+                            {scoreText(peer.similarity)} · {matchBand(peer)} · Shared evidence{" "}
+                            {scoreText(peer.coverage)}
                           </span>
                         </th>
                         <td>{failedChecks(peer)}</td>
@@ -537,6 +615,9 @@ export function TimeMachine() {
                   ? "Hindsight is on. Later additions are marked."
                   : `Only what was known by ${dateText(data.subject.cutoff)}.`}
               </p>
+              {comparison?.abstention && !!visiblePeers.length && (
+                <p className="wb-muted">These cases are ordered by similarity score.</p>
+              )}
               {peerData ? (
                 <div className="tm-peer-grid">
                   {visiblePeers.map((peer) => (
@@ -564,9 +645,12 @@ export function TimeMachine() {
       )}
 
       <footer className="tm-footer">
-        <span>Historical comparison. The method was registered on 22 November 2026.</span>
-        <a href={`${docs}/design/BACKTEST_PREREG.md`}>Read the method</a>
-        <a href={`${docs}/healthtech-pilot/PREVIEW_RESULTS.md`}>See the case results</a>
+        <span>
+          Three historical cases, selected with their outcomes already known. The method was
+          registered on 22 November 2026.
+        </span>
+        <a href="/time-machine/method">Read the method</a>
+        <a href="/time-machine/results">See the case results</a>
       </footer>
     </div>
   );

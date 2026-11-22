@@ -44,8 +44,8 @@ test("the first screen and 60-second demo show evidence, abstention and the sour
     expect(box!.y + box!.height).toBeLessThanOrEqual(900);
   }
   expect(await page.evaluate(() => window.scrollY)).toBe(0);
-  await expect(snapshot.locator("dt")).toHaveCount(6);
-  for (const fact of await snapshot.locator("dl > div").all()) {
+  await expect(snapshot.locator(".tm-facts dt")).toHaveCount(6);
+  for (const fact of await snapshot.locator(".tm-facts > div").all()) {
     const link = fact.getByRole("link");
     await expect(link).toHaveAttribute("href", /^https:\/\//);
     await expect(link).toHaveAttribute("title", /\S/);
@@ -67,10 +67,20 @@ test("the first screen and 60-second demo show evidence, abstention and the sour
 
   const captureDir = process.env.VEE_CAPTURE_PREVIEW;
   if (captureDir) await page.screenshot({ path: join(captureDir, "time-machine-desktop.png") });
+  const inspect = snapshot.getByText("Review and source details", { exact: true });
+  await inspect.click();
+  await expect(snapshot.getByText("Opening three paragraphs").first()).toBeVisible();
+  await expect(snapshot.getByText(/No second comparison was recorded/).first()).toBeVisible();
+  await inspect.click();
 
   const candidates = page.getByRole("region", { name: "Nearest available, not comps" });
   await expect(candidates.getByRole("article")).toHaveCount(3);
   await expect(candidates.getByRole("heading", { name: "Social Club" })).toBeVisible();
+  await expect(candidates.getByText("Shared evidence 0.513", { exact: true })).toHaveCount(2);
+  await expect(page.getByRole("table")).toHaveAccessibleName(
+    "This table gives more weight to cases with more shared evidence.",
+  );
+  await expect(candidates.getByText("These cases are ordered by similarity score.")).toBeVisible();
   for (const card of await candidates.getByRole("article").all()) {
     await expect(card.getByText("Product and customer match below 0.25")).toBeVisible();
     await expect(card.getByText(/0\.\d{3} · Loose/)).toBeVisible();
@@ -108,6 +118,7 @@ test("the historical toggle marks later evidence and every subject keeps the ban
   await page.getByRole("checkbox", { name: "Include what we know today" }).check();
   await history;
   await expect(page.getByText("Hindsight", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("Source checked 20 November 2026").first()).toBeVisible();
   await expect(page.getByText(provisional)).toBeVisible();
   await assertLanguage(page);
   await page.getByRole("checkbox", { name: "Include what we know today" }).uncheck();
@@ -121,7 +132,7 @@ test("the historical toggle marks later evidence and every subject keeps the ban
     await expect(page.getByText(provisional)).toBeVisible();
     await expect(
       page.getByText(
-        `No qualifying evidence about ${name} was public by ${cutoff}, so there is no comparison.`,
+        `We found no qualifying evidence about ${name} that was public by ${cutoff}, so there is no comparison.`,
       ),
     ).toBeVisible();
     await expect(page.getByRole("heading", { name: "Why no comps yet" })).toBeVisible();
@@ -130,6 +141,10 @@ test("the historical toggle marks later evidence and every subject keeps the ban
     await expect(page.getByText("Series A", { exact: true })).toBeVisible();
     await assertLanguage(page);
   }
+  await expect(
+    page.getByText(/1 of 8 earlier companies have at least five usable facts/),
+  ).toBeVisible();
+  await expect(page.getByText(/The search stops on its first day/)).toBeVisible();
 });
 
 test("keyboard can operate every control and reach every source including revealed events", async ({
@@ -187,6 +202,7 @@ test("keyboard can operate every control and reach every source including reveal
     if (
       active === "summary:Events after 36 months" ||
       active === "summary:Show time chart" ||
+      active === "summary:Review and source details" ||
       active === "table"
     ) {
       await page.keyboard.press("Enter");

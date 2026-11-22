@@ -1,5 +1,11 @@
 # Changelog
 
+## 23 November 2026 · Time Machine provisional preview
+
+- Added CSV-driven AI adjudication to the entry packet and a separate preview count beside the strict evidence gate.
+- Added the fixed general similarity profile, read-only backtest endpoint and reproducible preview run. Supie, Partly and Halter all abstain.
+- Added the Time Machine page with dated sources, nearest available cases, a peer-history toggle and a separate outcome reveal. [Case results](healthtech-pilot/PREVIEW_RESULTS.md) and [acceptance evidence](healthtech-pilot/PREVIEW_EVALUATION.md).
+
 This is the project history, moved out of the README on 2026-11-21. Sections are kept as they were written, oldest framing first and later sections appended, so some statements are now out of date. Examples: "No remote repository" (there is now a GitHub remote with CI), the root SHA-256 manifests (now in `archive/manifests/`) and `handover/` (now a release asset; the retired handover notes and completion reports remain in Git history at `090b8d0`). The current state is in the [README](../README.md), [STATUS.md](../STATUS.md) and [VALIDATION.md](../VALIDATION.md).
 
 ## 22 November 2026 · Historical evidence research follow-up

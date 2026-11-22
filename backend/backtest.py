@@ -126,6 +126,7 @@ def entry_evidence(
                     field=feature.name,
                     reviewed_by=checked_by,
                     reviewed_on=reviewed_on,
+                    second_reading_result=feature.readings_match,
                 )
             )
     values, unknown = normalise({name: item.value for name, item in fields.items()})
@@ -389,7 +390,7 @@ def render_backtest(
         return result
 
     left = inputs.evidence(company_id, cutoff, 'strict')
-    subject.fields = list(left.fields.values())
+    subject.fields = [left.fields[name] for name in left.values]
     # An entry announcement is displayed only when the same dated source exists in the strict evidence.
     subject.entry_round_source = next(
         (

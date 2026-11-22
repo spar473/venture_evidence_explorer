@@ -952,6 +952,17 @@
           "reviewed_on": {
             "title": "Reviewed On",
             "type": "string"
+          },
+          "second_reading_result": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Second Reading Result"
           }
         },
         "required": [
