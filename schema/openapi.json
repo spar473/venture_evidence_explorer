@@ -222,6 +222,899 @@
         "title": "Award",
         "type": "object"
       },
+      "BacktestComp": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/DimensionScore"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "entry": {
+            "$ref": "#/components/schemas/EventDate"
+          },
+          "failed_bars": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Failed Bars",
+            "type": "array"
+          },
+          "field_scores": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Field Scores",
+            "type": "object"
+          },
+          "fields": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestField"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "history": {
+            "$ref": "#/components/schemas/BacktestHistory"
+          },
+          "missing_on_peer": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Peer",
+            "type": "array"
+          },
+          "missing_on_subject": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Subject",
+            "type": "array"
+          },
+          "role": {
+            "enum": [
+              "ceiling",
+              "typical",
+              "floor",
+              "representative"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "similarity": {
+            "title": "Similarity",
+            "type": "number"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "entry",
+          "similarity",
+          "coverage",
+          "dimensions",
+          "field_scores",
+          "fields",
+          "failed_bars",
+          "missing_on_peer",
+          "missing_on_subject",
+          "role",
+          "history"
+        ],
+        "title": "BacktestComp",
+        "type": "object"
+      },
+      "BacktestEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/EventDate"
+          },
+          "event_id": {
+            "title": "Event Id",
+            "type": "string"
+          },
+          "hindsight": {
+            "default": false,
+            "title": "Hindsight",
+            "type": "boolean"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "lower_days": {
+            "title": "Lower Days",
+            "type": "integer"
+          },
+          "review_state": {
+            "enum": [
+              "dated_source",
+              "source_recorded"
+            ],
+            "title": "Review State",
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/BacktestSource"
+          },
+          "upper_days": {
+            "title": "Upper Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "event_id",
+          "kind",
+          "date",
+          "source",
+          "lower_days",
+          "upper_days",
+          "review_state"
+        ],
+        "title": "BacktestEvent",
+        "type": "object"
+      },
+      "BacktestExclusion": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "company_id",
+          "reason"
+        ],
+        "title": "BacktestExclusion",
+        "type": "object"
+      },
+      "BacktestField": {
+        "additionalProperties": false,
+        "properties": {
+          "delay_days": {
+            "title": "Delay Days",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          },
+          "raw_value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "title": "Raw Value"
+          },
+          "review_state": {
+            "enum": [
+              "ai_adjudicated",
+              "confirmed",
+              "proposed"
+            ],
+            "title": "Review State",
+            "type": "string"
+          },
+          "second_reading_matched": {
+            "title": "Second Reading Matched",
+            "type": "boolean"
+          },
+          "source": {
+            "$ref": "#/components/schemas/BacktestSource"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "raw_value",
+          "rationale",
+          "source",
+          "review_state",
+          "second_reading_matched",
+          "delay_days"
+        ],
+        "title": "BacktestField",
+        "type": "object"
+      },
+      "BacktestHistory": {
+        "additionalProperties": false,
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestEvent"
+            },
+            "title": "Events",
+            "type": "array"
+          },
+          "follow_up_days": {
+            "title": "Follow Up Days",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "events",
+          "follow_up_days",
+          "status"
+        ],
+        "title": "BacktestHistory",
+        "type": "object"
+      },
+      "BacktestNearest": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/DimensionScore"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "entry": {
+            "$ref": "#/components/schemas/EventDate"
+          },
+          "failed_bars": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Failed Bars",
+            "type": "array"
+          },
+          "field_scores": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Field Scores",
+            "type": "object"
+          },
+          "fields": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestField"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "history": {
+            "$ref": "#/components/schemas/BacktestHistory"
+          },
+          "missing_on_peer": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Peer",
+            "type": "array"
+          },
+          "missing_on_subject": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Subject",
+            "type": "array"
+          },
+          "not_a_comp": {
+            "const": true,
+            "default": true,
+            "title": "Not A Comp",
+            "type": "boolean"
+          },
+          "similarity": {
+            "title": "Similarity",
+            "type": "number"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "entry",
+          "similarity",
+          "coverage",
+          "dimensions",
+          "field_scores",
+          "fields",
+          "failed_bars",
+          "missing_on_peer",
+          "missing_on_subject",
+          "history"
+        ],
+        "title": "BacktestNearest",
+        "type": "object"
+      },
+      "BacktestPeerScore": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/DimensionScore"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "entry": {
+            "$ref": "#/components/schemas/EventDate"
+          },
+          "failed_bars": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Failed Bars",
+            "type": "array"
+          },
+          "field_scores": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Field Scores",
+            "type": "object"
+          },
+          "fields": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestField"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "missing_on_peer": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Peer",
+            "type": "array"
+          },
+          "missing_on_subject": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing On Subject",
+            "type": "array"
+          },
+          "similarity": {
+            "title": "Similarity",
+            "type": "number"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "entry",
+          "similarity",
+          "coverage",
+          "dimensions",
+          "field_scores",
+          "fields",
+          "failed_bars",
+          "missing_on_peer",
+          "missing_on_subject"
+        ],
+        "title": "BacktestPeerScore",
+        "type": "object"
+      },
+      "BacktestResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "abstention": {
+            "anyOf": [
+              {
+                "enum": [
+                  "strict_gate",
+                  "no_subject_evidence",
+                  "too_few_subject_fields",
+                  "too_few_peers",
+                  "no_outcomes"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abstention"
+          },
+          "comps": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestComp"
+            },
+            "title": "Comps",
+            "type": "array"
+          },
+          "corpus_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Corpus Ids",
+            "type": "array"
+          },
+          "corpus_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Corpus Sha256"
+          },
+          "covered_peer_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Covered Peer Ids",
+            "type": "array"
+          },
+          "eligible_peer_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Eligible Peer Ids",
+            "type": "array"
+          },
+          "excluded": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestExclusion"
+            },
+            "title": "Excluded",
+            "type": "array"
+          },
+          "hindsight": {
+            "title": "Hindsight",
+            "type": "boolean"
+          },
+          "input_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Input Sha256",
+            "type": "object"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Label"
+          },
+          "nearest_available": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestNearest"
+            },
+            "title": "Nearest Available",
+            "type": "array"
+          },
+          "nearest_candidates": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestPeerScore"
+            },
+            "title": "Nearest Candidates",
+            "type": "array"
+          },
+          "peer_history": {
+            "enum": [
+              "as_of_anchor",
+              "today"
+            ],
+            "title": "Peer History",
+            "type": "string"
+          },
+          "preregistration_commit": {
+            "title": "Preregistration Commit",
+            "type": "string"
+          },
+          "preview_peers": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preview Peers"
+          },
+          "provisional": {
+            "title": "Provisional",
+            "type": "boolean"
+          },
+          "qualifying_count": {
+            "default": 0,
+            "title": "Qualifying Count",
+            "type": "integer"
+          },
+          "ranked_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Ranked Ids",
+            "type": "array"
+          },
+          "required_peers": {
+            "title": "Required Peers",
+            "type": "integer"
+          },
+          "reveal": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BacktestReveal"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "similarity_version": {
+            "title": "Similarity Version",
+            "type": "string"
+          },
+          "strict_gate_passed": {
+            "title": "Strict Gate Passed",
+            "type": "boolean"
+          },
+          "subject": {
+            "$ref": "#/components/schemas/BacktestSubject"
+          },
+          "thresholds": {
+            "$ref": "#/components/schemas/BacktestThresholds"
+          },
+          "track": {
+            "enum": [
+              "preview",
+              "strict"
+            ],
+            "title": "Track",
+            "type": "string"
+          },
+          "unknown_tokens": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  }
+                ]
+              },
+              "type": "object"
+            },
+            "title": "Unknown Tokens",
+            "type": "object"
+          },
+          "witness_mode": {
+            "enum": [
+              "strict",
+              "lenient"
+            ],
+            "title": "Witness Mode",
+            "type": "string"
+          }
+        },
+        "required": [
+          "track",
+          "witness_mode",
+          "peer_history",
+          "hindsight",
+          "provisional",
+          "strict_gate_passed",
+          "required_peers",
+          "similarity_version",
+          "preregistration_commit",
+          "input_sha256",
+          "thresholds",
+          "subject"
+        ],
+        "title": "BacktestResponse",
+        "type": "object"
+      },
+      "BacktestReveal": {
+        "additionalProperties": false,
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestEvent"
+            },
+            "title": "Events",
+            "type": "array"
+          },
+          "evidence_reviews": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestReviewMetadata"
+            },
+            "title": "Evidence Reviews",
+            "type": "array"
+          },
+          "later_events": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestEvent"
+            },
+            "title": "Later Events",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "through": {
+            "title": "Through",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "through",
+          "events",
+          "later_events",
+          "evidence_reviews"
+        ],
+        "title": "BacktestReveal",
+        "type": "object"
+      },
+      "BacktestReviewMetadata": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "field": {
+            "title": "Field",
+            "type": "string"
+          },
+          "reviewed_by": {
+            "title": "Reviewed By",
+            "type": "string"
+          },
+          "reviewed_on": {
+            "title": "Reviewed On",
+            "type": "string"
+          }
+        },
+        "required": [
+          "company_id",
+          "field",
+          "reviewed_by",
+          "reviewed_on"
+        ],
+        "title": "BacktestReviewMetadata",
+        "type": "object"
+      },
+      "BacktestSource": {
+        "additionalProperties": false,
+        "properties": {
+          "available_on": {
+            "title": "Available On",
+            "type": "string"
+          },
+          "locator": {
+            "title": "Locator",
+            "type": "string"
+          },
+          "published_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Published On"
+          },
+          "publisher": {
+            "title": "Publisher",
+            "type": "string"
+          },
+          "source_id": {
+            "title": "Source Id",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "witness_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Witness Id"
+          },
+          "witness_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Witness On"
+          }
+        },
+        "required": [
+          "source_id",
+          "publisher",
+          "url",
+          "locator",
+          "available_on"
+        ],
+        "title": "BacktestSource",
+        "type": "object"
+      },
+      "BacktestSubject": {
+        "additionalProperties": false,
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "cutoff": {
+            "title": "Cutoff",
+            "type": "string"
+          },
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "entry": {
+            "$ref": "#/components/schemas/EventDate"
+          },
+          "entry_round_source": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BacktestSource"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "fields": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestField"
+            },
+            "title": "Fields",
+            "type": "array"
+          }
+        },
+        "required": [
+          "company_id",
+          "display_name",
+          "entry",
+          "cutoff",
+          "fields"
+        ],
+        "title": "BacktestSubject",
+        "type": "object"
+      },
+      "BacktestThresholds": {
+        "additionalProperties": false,
+        "properties": {
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "fields": {
+            "title": "Fields",
+            "type": "integer"
+          },
+          "peers": {
+            "title": "Peers",
+            "type": "integer"
+          },
+          "product_customer": {
+            "title": "Product Customer",
+            "type": "number"
+          },
+          "similarity": {
+            "title": "Similarity",
+            "type": "number"
+          },
+          "top_k": {
+            "title": "Top K",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "similarity",
+          "coverage",
+          "product_customer",
+          "fields",
+          "peers",
+          "top_k"
+        ],
+        "title": "BacktestThresholds",
+        "type": "object"
+      },
       "BenchmarkDeal": {
         "additionalProperties": false,
         "properties": {
@@ -7404,6 +8297,87 @@
           }
         },
         "summary": "Get Analytics"
+      }
+    },
+    "/api/backtest/{company_id}": {
+      "get": {
+        "operationId": "backtest_api_backtest__company_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "company_id",
+            "required": true,
+            "schema": {
+              "title": "Company Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "track",
+            "required": false,
+            "schema": {
+              "default": "preview",
+              "enum": [
+                "preview",
+                "strict"
+              ],
+              "title": "Track",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "witness_mode",
+            "required": false,
+            "schema": {
+              "default": "strict",
+              "enum": [
+                "strict",
+                "lenient"
+              ],
+              "title": "Witness Mode",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "peer_history",
+            "required": false,
+            "schema": {
+              "default": "as_of_anchor",
+              "enum": [
+                "as_of_anchor",
+                "today"
+              ],
+              "title": "Peer History",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BacktestResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Backtest"
       }
     },
     "/api/compare": {

@@ -227,6 +227,10 @@ def create_app(db_path=None):
 
     install_workbench_reviews(app, path)
 
+    from .backtest_api import install as install_backtest
+
+    install_backtest(app)
+
     dist = ROOT / 'frontend/dist'
     if (dist / 'assets').is_dir():
         app.mount('/assets', StaticFiles(directory=dist / 'assets'), name='assets')

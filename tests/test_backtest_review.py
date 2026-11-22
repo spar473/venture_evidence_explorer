@@ -5,6 +5,7 @@ import sys
 import pytest
 
 from backend.backtest_coverage import PREVIEW_LABEL, audit_coverage
+from backend.backtest import BacktestInputs, render_backtest
 from backend.backtest_review import DECISIONS, apply_review
 from backend.witnessed_snapshots import BACKTEST_PACKET, BacktestSnapshotPacket
 
@@ -98,3 +99,10 @@ def test_one_csv_edit_changes_only_one_packet_field_and_the_audit(tmp_path):
     assert old['gate'] == new['gate']
     assert old['subjects']['public_supie']['subject']['preview_fields']['buyer'] == 'household'
     assert new['subjects']['public_supie']['subject']['preview_fields']['buyer'] == 'consumer'
+    original = render_backtest(BacktestInputs(), 'public_supie')
+    updated = render_backtest(BacktestInputs(decisions=decisions), 'public_supie')
+    assert [
+        field.name for field, changed in zip(original.subject.fields, updated.subject.fields) if field != changed
+    ] == ['buyer']
+    assert updated.input_sha256['decisions'] != original.input_sha256['decisions']
+    assert next(field.value for field in updated.subject.fields if field.name == 'buyer') == 'consumer'

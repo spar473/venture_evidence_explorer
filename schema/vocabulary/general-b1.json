@@ -1,0 +1,62 @@
+{
+  "version": "general-gower-b1:1",
+  "fields": {
+    "product_type": {
+      "families": {
+        "software": ["analytics", "workflow", "marketplace"],
+        "hardware": ["medical_device", "industrial_equipment"],
+        "physical_goods": ["food_beverage", "materials"],
+        "service": ["financial_service", "professional_service"]
+      }
+    },
+    "buyer": {
+      "families": {
+        "business": ["small_business", "enterprise"],
+        "consumer": ["individual", "household"],
+        "public_sector": ["government", "education"],
+        "clinician": ["radiologist", "optometrist", "general_practitioner", "surgeon"]
+      },
+      "aliases": {
+        "radiologists": "radiologist",
+        "clinicians": "clinician",
+        "optometrists": "optometrist",
+        "surgeons": "surgeon",
+        "smes": "small_business",
+        "smbs": "small_business"
+      }
+    },
+    "business_model": {
+      "families": {
+        "subscription": ["saas", "membership"],
+        "transaction": ["marketplace_commission", "retail_margin"],
+        "sales": ["hardware_sale", "licensing"],
+        "service_fee": ["professional_fee", "pay_per_use"]
+      }
+    },
+    "sector_normalised": {
+      "families": {
+        "digital": ["enterprise_software", "fintech", "retail_ecommerce", "media"],
+        "science": ["healthtech", "biotech", "agritech", "cleantech", "advanced_materials"],
+        "industrial": ["manufacturing", "aerospace", "energy"],
+        "consumer": ["food_beverage", "consumer_products"]
+      },
+      "aliases": {
+        "clean technology": "cleantech",
+        "healthtech software": "healthtech",
+        "health technology": "healthtech"
+      }
+    },
+    "market_focus": {
+      "flat": true,
+      "families": {
+        "geographic": ["new_zealand", "australia_new_zealand", "international"]
+      }
+    },
+    "lead_investor_type": {
+      "families": {
+        "institutional": ["venture_capital", "angel_network", "corporate_venture"],
+        "other": ["public_fund", "accelerator"]
+      }
+    }
+  }
+}

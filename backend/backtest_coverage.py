@@ -2,6 +2,7 @@
 
 import hashlib
 from pathlib import Path
+from typing import Any, cast
 
 from .cohort_audit import run_audit
 from .reference_pool import EventDate
@@ -37,7 +38,7 @@ REQUIRED_FIELDS = 5
 
 
 def audit_sector_mapping(path: Path = SECTOR_MAPPING, *, cohort=None):
-    cohort = run_audit() if cohort is None else cohort
+    cohort = cast(dict[str, Any], run_audit()) if cohort is None else cohort
     mapping = decode_packet(Path(path).read_bytes())
     if mapping['cohort_input_sha256'] != cohort['input_sha256']:
         raise ValueError('Sector mapping references changed cohort inputs')
@@ -78,8 +79,8 @@ def audit_coverage(path: Path = BACKTEST_PACKET, *, cohort=None, decisions: Path
     return audit_packet(packet, hashlib.sha256(raw).hexdigest(), cohort=cohort)
 
 
-def audit_packet(packet: BacktestSnapshotPacket, packet_sha256: str, *, cohort=None):
-    cohort = run_audit() if cohort is None else cohort
+def audit_packet(packet: BacktestSnapshotPacket, packet_sha256: str, *, cohort=None) -> dict[str, Any]:
+    cohort = cast(dict[str, Any], run_audit()) if cohort is None else cohort
     if packet.cohort_input_sha256 != cohort['input_sha256']:
         raise ValueError('Cohort inputs changed from the registered snapshot; review before proceeding')
     entries = {row['company_id']: row for row in cohort['decisions'] if row['status'] == 'included'}
@@ -144,10 +145,12 @@ def audit_packet(packet: BacktestSnapshotPacket, packet_sha256: str, *, cohort=N
         if not entry or entry['date'] != {'value': value, 'precision': precision}:
             raise ValueError('Registered subject anchor changed: ' + company_id)
         cutoff = EventDate.model_validate(entry['date']).bounds()[0]
+        assert cutoff is not None  # The registered subjects have known entry intervals.
         peers = []
         excluded = []
         for peer_id, row in entries.items():
             _, latest = EventDate.model_validate(row['entry']['date']).bounds()
+            assert latest is not None  # The accepted cohort rule requires known entry intervals.
             if peer_id == company_id:
                 continue
             if latest >= cutoff:
