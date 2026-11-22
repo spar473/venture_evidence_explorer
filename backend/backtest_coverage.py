@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any, cast
 
 from .cohort_audit import run_audit
+from .precedent_similarity_general import normalise
 from .reference_pool import EventDate
 from .research_validation import decode_packet
 from .witnessed_snapshots import BACKTEST_FIELDS, BACKTEST_PACKET, BacktestSnapshotPacket
@@ -122,13 +123,15 @@ def audit_packet(packet: BacktestSnapshotPacket, packet_sha256: str, *, cohort=N
         adjudicated = {
             f.name: f.value for f in available if f.timing == 'strict' and f.review_state == 'ai_adjudicated'
         }
+        recognised, unknown = normalise(adjudicated)
         return dict(
             company_id=company_id,
             name=entries[company_id]['name'],
             entry=entries[company_id]['entry']['date'],
             strict_confirmed_fields=confirmed,
             strict_proposed_fields=proposed,
-            preview_fields=adjudicated,
+            preview_fields={name: adjudicated[name] for name in recognised},
+            preview_unknown_fields=unknown,
             lenient_confirmed_fields=sorted(
                 f.name for f in available if f.timing == 'lenient' and f.review_state == 'confirmed'
             ),
@@ -136,7 +139,7 @@ def audit_packet(packet: BacktestSnapshotPacket, packet_sha256: str, *, cohort=N
             rejected_or_disputed_fields=sorted(f.name for f in features if f.review_state in ('rejected', 'disputed')),
             missing_confirmed_fields=[name for name in BACKTEST_FIELDS if name not in confirmed],
             clears_field_bar=len(confirmed) >= REQUIRED_FIELDS,
-            would_clear_if_proposals_confirmed=len(confirmed) + len(proposed) + len(adjudicated) >= REQUIRED_FIELDS,
+            would_clear_if_proposals_confirmed=len(confirmed) + len(proposed) + len(recognised) >= REQUIRED_FIELDS,
         )
 
     subjects = {}

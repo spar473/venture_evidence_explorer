@@ -16,7 +16,9 @@ import { Overview } from "./workbench-overview";
 import { OutcomeLibraryPage } from "./workbench-outcomes";
 import { DisputeControl, EvidenceMatrix } from "./workbench-evidence";
 import { Outlook } from "./workbench-outlook";
+import { TimeMachine } from "./time-machine";
 import "./workbench.css";
+import "./time-machine.css";
 
 const tabs = ["Overview", "Evidence", "Outlook"] as const;
 
@@ -27,12 +29,10 @@ export function Workbench() {
   const cohortCompanies = useResource<CohortCompanies>("/workbench/cohort-companies");
   const gates = useResource<WorkbenchGates>("/workbench/gates");
   const names = new Map(subjects.data?.items.map((item) => [item.subject_id, item.display_name]));
-  // The demo opens on the Outcome library; `?page=precedents` opens the precedent workbench directly.
-  const [page, setPage] = useState<"precedents" | "outcomes">(() =>
-    new URLSearchParams(window.location.search).get("page") === "precedents"
-      ? "precedents"
-      : "outcomes",
-  );
+  const [page, setPage] = useState<"precedents" | "outcomes" | "timemachine">(() => {
+    const requested = new URLSearchParams(window.location.search).get("page");
+    return requested === "precedents" || requested === "timemachine" ? requested : "outcomes";
+  });
   const [tab, setTab] = useState<(typeof tabs)[number]>("Overview");
   const [subjectId, setSubjectId] = useState("subj_ht_mri");
   const [anchor, setAnchor] = useState<AnchorKind>("first_institutional_round");
@@ -111,7 +111,7 @@ export function Workbench() {
   }
 
   return (
-    <div className="workbench">
+    <div className={page === "timemachine" ? "workbench wb-time-machine" : "workbench"}>
       <a className="skip-link" href="#workspace-content">
         Skip to workspace
       </a>
@@ -132,6 +132,9 @@ export function Workbench() {
           >
             Outcome library
           </button>
+          <a href="/?page=timemachine" aria-current={page === "timemachine" ? "page" : undefined}>
+            Time Machine
+          </a>
         </nav>
         <nav aria-label="University watchlist">
           <h2>University watchlist</h2>
@@ -150,14 +153,18 @@ export function Workbench() {
         <div className="wb-sidebar-footer">
           <a href="/?mode=research">Research mode</a>
           <span>
-            {page === "outcomes"
-              ? `Present-day audit · ${gates.data?.as_of ?? "unavailable"}`
-              : `Evidence as of ${asOf || "unavailable"}`}
+            {page === "timemachine"
+              ? "Historical cases"
+              : page === "outcomes"
+                ? `Present-day audit · ${gates.data?.as_of ?? "unavailable"}`
+                : `Evidence as of ${asOf || "unavailable"}`}
           </span>
         </div>
       </aside>
       <main id="workspace-content" tabIndex={-1} className="wb-content">
-        {page === "outcomes" ? (
+        {page === "timemachine" ? (
+          <TimeMachine />
+        ) : page === "outcomes" ? (
           <OutcomeLibraryPage onClaim={openClaim} />
         ) : (
           <>

@@ -106,3 +106,20 @@ def test_one_csv_edit_changes_only_one_packet_field_and_the_audit(tmp_path):
     ] == ['buyer']
     assert updated.input_sha256['decisions'] != original.input_sha256['decisions']
     assert next(field.value for field in updated.subject.fields if field.name == 'buyer') == 'consumer'
+
+
+def test_ingest_cli_keeps_input_and_is_byte_identical_on_rerun(tmp_path):
+    raw = BACKTEST_PACKET.read_bytes()
+    source = tmp_path / 'proposals.json'
+    source.write_bytes(raw)
+    destination = tmp_path / 'reviewed.json'
+    command = [sys.executable, 'scripts/ingest_backtest_review.py', '--input', str(source), '--output']
+    subprocess.run([*command, str(destination)], check=True, capture_output=True)
+    first = destination.read_bytes()
+    subprocess.run([*command, str(destination)], check=True, capture_output=True)
+    assert destination.read_bytes() == first
+    assert source.read_bytes() == raw
+    refusal = subprocess.run([*command, str(source)], capture_output=True, text=True)
+    assert refusal.returncode == 2
+    assert 'separate output path' in refusal.stderr
+    assert source.read_bytes() == raw

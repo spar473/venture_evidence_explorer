@@ -1,6 +1,7 @@
 """Apply the provisional field decisions to the immutable proposal packet."""
 
 import csv
+from io import StringIO
 from pathlib import Path
 from typing import Annotated, Literal
 
@@ -27,9 +28,9 @@ class Decision(BaseModel):
     human_confirmed: Literal['no']
 
 
-def apply_review(packet: BacktestSnapshotPacket, decisions: Path = DECISIONS) -> BacktestSnapshotPacket:
-    with decisions.open(encoding='utf-8', newline='') as stream:
-        rows = [Decision.model_validate(row) for row in csv.DictReader(stream)]
+def apply_review(packet: BacktestSnapshotPacket, decisions: Path | bytes = DECISIONS) -> BacktestSnapshotPacket:
+    raw = decisions if isinstance(decisions, bytes) else decisions.read_bytes()
+    rows = [Decision.model_validate(row) for row in csv.DictReader(StringIO(raw.decode('utf-8'), newline=''))]
     by_key = {row.key: row for row in rows}
     expected = {f'{profile.company_id}:{feature.name}' for profile in packet.profiles for feature in profile.features}
     if len(by_key) != len(rows) or expected != by_key.keys():

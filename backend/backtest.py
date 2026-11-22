@@ -309,8 +309,9 @@ class BacktestInputs:
             'vocabulary': VOCABULARY_DIGEST,
         }
         if track == 'preview':
-            self.digests['decisions'] = sha256(decisions.read_bytes()).hexdigest()
-            packet = apply_review(packet, decisions)
+            review_csv = decisions.read_bytes()
+            self.digests['decisions'] = sha256(review_csv).hexdigest()
+            packet = apply_review(packet, review_csv)
         self.cohort = cast(dict[str, Any], run_audit())
         self.audit = audit_packet(packet, self.digests['packet'], cohort=self.cohort)
         self.history = History(self.cohort['follow_up'], self.cohort['sources'])

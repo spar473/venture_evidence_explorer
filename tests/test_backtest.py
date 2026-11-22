@@ -215,7 +215,10 @@ def test_witnessed_profile_http_bytes_match_main(tmp_path):
     cases = (Path(__file__).parent / 'fixtures/witnessed-b0-main.jsonl').read_text().splitlines()
     with TestClient(create_app(prepare_demo(tmp_path)['database'])) as client:
         for case in cases:
-            path, digest = json.loads(case)
+            path, before_312, from_312 = json.loads(case)
+            # Python 3.12 changed float summation. Use the byte hash captured
+            # from main on the matching interpreter, with no score normalization.
+            digest = from_312 if sys.version_info >= (3, 12) else before_312
             response = client.get(path)
             assert response.status_code == 200
             assert response.json()['similarity_version'] == 'witnessed-gower-b0:3'
