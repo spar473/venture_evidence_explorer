@@ -96,3 +96,26 @@ Run strict/as-of-anchor first. Keep lenient and hindsight results separate. Leav
 Before the first scoring run, record this preregistration's commit ID, baseline input digests, vocabulary version and execution environment. Every result records its own input digests and configuration. Thresholds, fields, vocabulary, weights, subject anchors, outcome definitions and hit rules cannot change after that first run without an appended dated amendment, rationale and retention of the original results. Fixes to code that violated the frozen specification must retain affected run records and describe the defect.
 
 No Time Machine scoring run has been performed at registration. Phase 0 does not validate the weights or promise that Phase 1 can pass.
+
+## Amendment 1, 23 November 2026: provisional preview on AI-adjudicated evidence
+
+**Decision by the project owner (Kevin Park).** To see the Time Machine working before the evidence is complete, the owner has chosen to build and run a clearly labelled **provisional preview**. This amendment records that choice. It does not change the strict rules above; it adds a second, separately labelled track.
+
+**How the fields were decided.**
+
+1. *First reading:* the proposals in `backtest-snapshots.json` (packet SHA-256 `380d9c5217434639db0f466aeed69ed5652ecbd5a6c59de2fe79ff493d0f6bbf`), written by Codex.
+2. *Blind second reading:* on 22 November 2026, a separate Claude agent re-extracted 53 priority fields from the cited sources without access to the packet or review file. It could read the 7 live sources. It could not read any web.archive.org capture or the AUT ISBS PDF, so 21 archive-based fields (all of Parcelport, First AML and Myovolt, plus 3 VidApp fields) have no independent reading.
+3. *Adjudication:* on 23 November 2026, Codex chose a final decision for all 72 fields (61 Accept, 7 Correct, 3 Unsure, 1 Reject).
+4. *Human review:* **not performed.** No field in this track is human-confirmed.
+
+Decisions: `research/healthtech-pilot/backtest-review-decisions.csv`. Each row records the decision, any corrected value, whether a blind second reading exists and whether it matched, `decided_by = codex`, `review_kind = ai_adjudicated` and `human_confirmed = no`.
+
+**Rules for the preview track.**
+
+- Fields with `Accept` or `Correct` count as **AI-adjudicated**, a review state distinct from `confirmed`. `Unsure` stays proposed and `Reject` is excluded.
+- The strict Phase 1 gate (15 peers with five human-confirmed fields) is unchanged and still **not passed**. With AI-adjudicated fields, 9 Partly-eligible peers reach five fields.
+- The preview may run the frozen `general-gower-b1:1` scorer, the backtest endpoint and the Time Machine page with fewer than 15 peers. Weights, vocabulary, admission bars, k, subjects, anchors, clocks and hit rules stay exactly as frozen above.
+- Every preview output, API response and screen is labelled **"Provisional preview: AI-adjudicated evidence, not human-confirmed; strict evidence gate not passed."** Preview results are stored separately and are **not** the preregistered first scoring run.
+- Any field can be changed later by editing the decisions file and re-running the ingest and audit. After preview results exist, a change to a decision is recorded with its date, and the earlier preview results are kept.
+
+**Known limits at the time of this amendment.** Partly has no qualifying subject evidence, so its case abstains. Supie has 6 AI-adjudicated subject fields and is the only subject that can be scored. Halter has no qualifying evidence. One open inconsistency: Parcelport's sector note says merchants use free software and pay for freight, which conflicts with `product_type = workflow` (accepted).
