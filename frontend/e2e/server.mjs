@@ -78,7 +78,7 @@ if (discovery.status !== 0 || discovery.error) {
 }
 const child = spawn(python, ["scripts/serve.py", "--port", process.env.VEE_TEST_PORT || "8138"], {
   cwd: root,
-  env: { ...process.env, VEE_DB: db },
+  env: { ...process.env, VEE_DB: db, VEE_LEGACY_ROUTES: process.env.VEE_LEGACY_ROUTES || "1" },
   stdio: "inherit",
 });
 for (const signal of ["SIGTERM", "SIGINT"]) process.on(signal, () => child.kill(signal));

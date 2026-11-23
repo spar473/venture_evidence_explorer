@@ -1,5 +1,9 @@
 # Next steps
 
+## Analytics rollout
+
+The [analytics evaluation](docs/ANALYTICS_EVALUATION.md) records the browser checks, seeded outputs and Pages status. The next evidence work is human review of the entry facts, six more well-covered earlier peers for Partly and a dated Partly offering and buyer source.
+
 Updated 2026-11-23. Data decisions waiting on the owner are listed in [STATUS.md](STATUS.md).
 
 ## Improvement checklist sequence

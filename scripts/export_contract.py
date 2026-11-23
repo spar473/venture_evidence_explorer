@@ -25,6 +25,8 @@ def typescript(node):
             return '(' + ' | '.join(typescript(v) for v in node[union]) + ')'
     kind = node.get('type')
     if kind == 'array':
+        if 'prefixItems' in node:
+            return '[' + ', '.join(typescript(item) for item in node['prefixItems']) + ']'
         return '(' + typescript(node['items']) + ')[]'
     if kind == 'object' or 'properties' in node:
         required = set(node.get('required', []))

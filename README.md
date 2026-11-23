@@ -1,23 +1,21 @@
+[Open Venture Evidence Explorer on GitHub Pages](https://spar473.github.io/venture_evidence_explorer/)
+
 # Venture Evidence Explorer
 
 A local workbench that compares an early New Zealand venture against sourced company histories. Every fact carries its source, its publication or witness date and a locator. Comparisons use only what was public at the same stage. The workbench abstains from naming comps or showing rates until the evidence clears fixed, published bars.
 
 **For:** seed and pre-seed investors, and university commercialisation teams, who want to see what happened to comparable NZ ventures, and why, without hindsight or paid databases.
 
-![Time Machine on first load with Supie's dated snapshot and Reveal button](docs/healthtech-pilot/screenshots/time-machine-desktop.png)
+![Company profile at Supie’s first round](docs/analytics-screenshots/profile-1440.png)
 
 ## 3-minute demo
 
-Start the server under [Run it](#run-it).
+1. **Company profile** · 0:00–1:00. Open [Supie at its first round](https://spar473.github.io/venture_evidence_explorer/?view=profile&company=public_supie&asof=2021-11-09). Read the provisional banner and the comparison checks. Select a peer mark to see its scored facts, then move playback to **Today**. Open the **Liquidation** mark and follow its Companies Office source.
+2. **Cohort explorer** · 1:00–1:40. Select a vintage segment to list its companies. Switch the event strip to **Outcome** and use **View as table** on the evidence heatmap.
+3. **Scenario lab** · 1:40–2:30. Select **Business buyer**, then change **Business model** to **Subscription**. The counts move from four to five qualifying peers. Inspect the later dated records and the four-way tie in the recorded ranking.
+4. **Method lab** · 2:30–3:00. Check the three real audit counts, then inspect the synthetic curves, interval and held-out plot.
 
-1. **Time Machine** (0:00–1:00). Open [Supie in the Time Machine](http://127.0.0.1:8000/?page=timemachine). Read the provisional banner and the snapshot dated 9 November 2021. Scroll to **Nearest available, not comps** to see why even Social Club misses the product and customer check. Select **Reveal what happened to Supie** and open the Companies Office link beside Liquidation.
-2. **Outcome library** (1:00). Open **Stories worth knowing** and find Halter's Series A. Switch *Series A or later* to *Next priced equity round* to see how the two definitions change the counts.
-3. **Precedents ▸ Evidence** (1:45). Open **Evidence → Comparison snapshots** for the **Public by** date, publisher and locator. Switch **Peer evidence** to see the `+n days` late-evidence badges.
-4. **Comps abstention and Outlook** (2:25). Search **Toku Eyes** and open **Overview → Why no comps yet**. HeartLab's clinical workflow score is 0.00 against a 0.25 requirement. **Outlook** lists the separate data requirements.
-
-`/?page=precedents` opens the precedent workbench directly; `/?mode=research` opens the older research views.
-
-![Why no comps yet: nearest candidates scored against unchanged thresholds](docs/healthtech-pilot/screenshots/workbench-why-no-comps.png)
+The four analytics views run locally and on GitHub Pages. `?page=timemachine` and `?page=precedents` open Company profile. Add `?mode=workbench` for the previous server-backed workbench or `?mode=research` for the research workspace.
 
 ## Run it
 
@@ -31,6 +29,16 @@ python3 -m venv .venv
 ```
 
 `healthtech_demo.py` builds a fresh, disposable database on every start, with the research packets, cohort and reference pool loaded. Use it for local testing and for the demo. `scripts/bootstrap.py` followed by `scripts/serve.py` serves only the base evidence database: the Outcome library works there, but Precedents and the University watchlist stay empty until research packets are imported (see [docs/research_import.md](docs/research_import.md)).
+
+To build the static demo locally, run the export and serve the build directory over HTTP. The Pages workflow runs these steps and publishes after changes reach `main`.
+
+```sh
+.venv/bin/python scripts/export_static.py
+(cd frontend && node --experimental-strip-types --test test/scorer-parity.mjs && npm run build:static)
+.venv/bin/python -m http.server 8000 --bind 127.0.0.1 --directory frontend/dist
+```
+
+The export includes all three registered subjects, entry and later event clocks, presets, seed-7 weight checks and a SHA-256 manifest. Custom scenario scoring runs in the browser on the static build. Run `.venv/bin/python scripts/synthetic_cohort.py --seed 7` to reproduce the labelled Method lab files.
 
 Checks (all run in CI):
 
@@ -60,7 +68,7 @@ The run is saved under `outputs/preview/` with its SHA-256 in the file name. To 
 - [Data use](DATA_USE.md): public sources only, paraphrased passages, no bulk extraction, and how to request a correction.
 - [Validation](VALIDATION.md) · [Next steps](NEXT_STEPS.md) · [Changelog](docs/CHANGELOG.md) · [API contracts](docs/research_api.md)
 
-**Limits.** The cohort is 55 confirmed entries, with 2 primary outcomes and 33 unknown, so no rate is shown. No real subject has comps yet; the abstention panel shows what evidence is missing. The Outcome library and the gates are present-day views and ignore the As-of date. Sources are public and can go offline; archived captures are the next data task.
+**Limits.** The cohort has 55 confirmed entries, 2 verified primary outcomes, 33 unknown and 10 lost to follow-up. Supie has zero qualifying peers on its recorded facts. Partly and Halter have no scoreable entry facts. The audit gate covers the full cohort. The date filter changes event playback and cohort follow-up. Scenario scores use the same frozen entry cutoff. See the [analytics evaluation](docs/ANALYTICS_EVALUATION.md) for evidence and known gaps.
 
 More captures are available for the [Outcome library](docs/healthtech-pilot/screenshots/workbench-outcome-library.png), [Precedent overview](docs/healthtech-pilot/screenshots/workbench-overview.png) and [Evidence](docs/healthtech-pilot/screenshots/workbench-evidence.png).
 

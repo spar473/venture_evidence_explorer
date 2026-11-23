@@ -1,6 +1,443 @@
 {
   "components": {
     "schemas": {
+      "AnalyticsCohort": {
+        "properties": {
+          "audit_date": {
+            "title": "Audit Date",
+            "type": "string"
+          },
+          "candidate_records": {
+            "title": "Candidate Records",
+            "type": "integer"
+          },
+          "companies": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsCompany"
+            },
+            "title": "Companies",
+            "type": "array"
+          },
+          "fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "gates": {
+            "$ref": "#/components/schemas/WorkbenchGates"
+          },
+          "input_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Input Sha256",
+            "type": "object"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "preview_peers": {
+            "title": "Preview Peers",
+            "type": "integer"
+          },
+          "provisional": {
+            "const": true,
+            "title": "Provisional",
+            "type": "boolean"
+          },
+          "reveal": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/AnalyticsHistory"
+            },
+            "title": "Reveal",
+            "type": "object"
+          },
+          "strict_gate_passed": {
+            "title": "Strict Gate Passed",
+            "type": "boolean"
+          },
+          "subjects": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Subjects",
+            "type": "array"
+          }
+        },
+        "required": [
+          "provisional",
+          "label",
+          "audit_date",
+          "candidate_records",
+          "fields",
+          "subjects",
+          "companies",
+          "reveal",
+          "gates",
+          "preview_peers",
+          "strict_gate_passed",
+          "input_sha256"
+        ],
+        "title": "AnalyticsCohort",
+        "type": "object"
+      },
+      "AnalyticsCompany": {
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "end": {
+            "title": "End",
+            "type": "string"
+          },
+          "entry": {
+            "$ref": "#/components/schemas/BacktestEvent"
+          },
+          "horizon": {
+            "title": "Horizon",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "sector": {
+            "title": "Sector",
+            "type": "string"
+          },
+          "sector_group": {
+            "title": "Sector Group",
+            "type": "string"
+          },
+          "start": {
+            "title": "Start",
+            "type": "string"
+          },
+          "year": {
+            "title": "Year",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "company_id",
+          "name",
+          "sector",
+          "sector_group",
+          "entry",
+          "start",
+          "end",
+          "year",
+          "horizon"
+        ],
+        "title": "AnalyticsCompany",
+        "type": "object"
+      },
+      "AnalyticsHistory": {
+        "properties": {
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestEvent"
+            },
+            "title": "Events",
+            "type": "array"
+          },
+          "fields": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/HeatmapFact"
+            },
+            "title": "Fields",
+            "type": "object"
+          },
+          "outcome_event_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outcome Event Id"
+          },
+          "status": {
+            "enum": [
+              "reached_outcome",
+              "closed_before_outcome",
+              "acquired_or_ipo_before_outcome",
+              "observed_no_outcome",
+              "lost_to_follow_up",
+              "unknown"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "status_clock": {
+            "items": {
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "enum": [
+                    "reached_outcome",
+                    "closed_before_outcome",
+                    "acquired_or_ipo_before_outcome",
+                    "observed_no_outcome",
+                    "lost_to_follow_up",
+                    "unknown"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              ],
+              "type": "array"
+            },
+            "title": "Status Clock",
+            "type": "array"
+          }
+        },
+        "required": [
+          "events",
+          "fields",
+          "status",
+          "outcome_event_id",
+          "status_clock"
+        ],
+        "title": "AnalyticsHistory",
+        "type": "object"
+      },
+      "AnalyticsMethod": {
+        "properties": {
+          "calibration": {
+            "items": {
+              "$ref": "#/components/schemas/SyntheticCalibration"
+            },
+            "title": "Calibration",
+            "type": "array"
+          },
+          "curves": {
+            "items": {
+              "$ref": "#/components/schemas/SyntheticCurvePoint"
+            },
+            "title": "Curves",
+            "type": "array"
+          },
+          "estimate": {
+            "$ref": "#/components/schemas/SyntheticEstimate"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "reference_n": {
+            "title": "Reference N",
+            "type": "integer"
+          },
+          "seed": {
+            "title": "Seed",
+            "type": "integer"
+          },
+          "sizes": {
+            "items": {
+              "$ref": "#/components/schemas/SyntheticInterval"
+            },
+            "title": "Sizes",
+            "type": "array"
+          },
+          "synthetic": {
+            "const": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "synthetic",
+          "label",
+          "seed",
+          "reference_n",
+          "curves",
+          "sizes",
+          "calibration",
+          "estimate"
+        ],
+        "title": "AnalyticsMethod",
+        "type": "object"
+      },
+      "AnalyticsPeer": {
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/DimensionScore"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "failed_bars": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Failed Bars",
+            "type": "array"
+          },
+          "field_scores": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Field Scores",
+            "type": "object"
+          },
+          "product_customer": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Product Customer"
+          },
+          "qualifies": {
+            "title": "Qualifies",
+            "type": "boolean"
+          },
+          "shared_fields": {
+            "title": "Shared Fields",
+            "type": "integer"
+          },
+          "similarity": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Similarity"
+          }
+        },
+        "required": [
+          "company_id",
+          "similarity",
+          "coverage",
+          "product_customer",
+          "shared_fields",
+          "field_scores",
+          "dimensions",
+          "qualifies",
+          "failed_bars"
+        ],
+        "title": "AnalyticsPeer",
+        "type": "object"
+      },
+      "AnalyticsProfile": {
+        "properties": {
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "covered_peer_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Covered Peer Ids",
+            "type": "array"
+          },
+          "cutoff": {
+            "title": "Cutoff",
+            "type": "string"
+          },
+          "fields": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestField"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "input_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Input Sha256",
+            "type": "object"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "peer_facts": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/BacktestField"
+              },
+              "type": "array"
+            },
+            "title": "Peer Facts",
+            "type": "object"
+          },
+          "presets": {
+            "items": {
+              "$ref": "#/components/schemas/PresetScenario"
+            },
+            "title": "Presets",
+            "type": "array"
+          },
+          "provisional": {
+            "const": true,
+            "title": "Provisional",
+            "type": "boolean"
+          },
+          "recorded": {
+            "$ref": "#/components/schemas/AnalyticsScenario"
+          },
+          "reveal": {
+            "$ref": "#/components/schemas/AnalyticsReviewReveal"
+          },
+          "scorer": {
+            "$ref": "#/components/schemas/ScorerInput"
+          }
+        },
+        "required": [
+          "provisional",
+          "label",
+          "company_id",
+          "cutoff",
+          "input_sha256",
+          "fields",
+          "covered_peer_ids",
+          "peer_facts",
+          "reveal",
+          "recorded",
+          "presets",
+          "scorer"
+        ],
+        "title": "AnalyticsProfile",
+        "type": "object"
+      },
       "AnalyticsResponse": {
         "additionalProperties": false,
         "properties": {
@@ -17,6 +454,220 @@
           "tables"
         ],
         "title": "AnalyticsResponse",
+        "type": "object"
+      },
+      "AnalyticsReviewReveal": {
+        "properties": {
+          "evidence_reviews": {
+            "items": {
+              "$ref": "#/components/schemas/BacktestReviewMetadata"
+            },
+            "title": "Evidence Reviews",
+            "type": "array"
+          }
+        },
+        "required": [
+          "evidence_reviews"
+        ],
+        "title": "AnalyticsReviewReveal",
+        "type": "object"
+      },
+      "AnalyticsRobustness": {
+        "properties": {
+          "baseline_ranks": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "title": "Baseline Ranks",
+            "type": "array"
+          },
+          "boundary_ties": {
+            "items": {
+              "$ref": "#/components/schemas/BoundaryTie"
+            },
+            "title": "Boundary Ties",
+            "type": "array"
+          },
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "cutoff": {
+            "title": "Cutoff",
+            "type": "string"
+          },
+          "draws": {
+            "title": "Draws",
+            "type": "integer"
+          },
+          "input_sha256": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Input Sha256",
+            "type": "object"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "membership": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Membership",
+            "type": "object"
+          },
+          "perturbations": {
+            "items": {
+              "$ref": "#/components/schemas/WeightPerturbation"
+            },
+            "title": "Perturbations",
+            "type": "array"
+          },
+          "provisional": {
+            "const": true,
+            "title": "Provisional",
+            "type": "boolean"
+          },
+          "ranges": {
+            "additionalProperties": {
+              "additionalProperties": {
+                "maxItems": 2,
+                "minItems": 2,
+                "prefixItems": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "type": "array"
+              },
+              "type": "object"
+            },
+            "title": "Ranges",
+            "type": "object"
+          },
+          "seed": {
+            "title": "Seed",
+            "type": "integer"
+          },
+          "similarity_version": {
+            "title": "Similarity Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "provisional",
+          "label",
+          "company_id",
+          "cutoff",
+          "similarity_version",
+          "input_sha256",
+          "draws",
+          "seed",
+          "baseline_ranks",
+          "membership",
+          "ranges",
+          "perturbations",
+          "boundary_ties"
+        ],
+        "title": "AnalyticsRobustness",
+        "type": "object"
+      },
+      "AnalyticsScenario": {
+        "properties": {
+          "changed_roles": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ChangedRole"
+            },
+            "title": "Changed Roles",
+            "type": "object"
+          },
+          "company_id": {
+            "title": "Company Id",
+            "type": "string"
+          },
+          "cutoff": {
+            "title": "Cutoff",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "overrides": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Overrides",
+            "type": "object"
+          },
+          "peers": {
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsPeer"
+            },
+            "title": "Peers",
+            "type": "array"
+          },
+          "provisional": {
+            "const": true,
+            "title": "Provisional",
+            "type": "boolean"
+          },
+          "qualifying_count": {
+            "title": "Qualifying Count",
+            "type": "integer"
+          },
+          "roles": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "title": "Roles",
+            "type": "object"
+          },
+          "scenario": {
+            "title": "Scenario",
+            "type": "boolean"
+          },
+          "similarity_version": {
+            "title": "Similarity Version",
+            "type": "string"
+          },
+          "thresholds": {
+            "$ref": "#/components/schemas/BacktestThresholds"
+          }
+        },
+        "required": [
+          "provisional",
+          "label",
+          "company_id",
+          "cutoff",
+          "scenario",
+          "similarity_version",
+          "thresholds",
+          "overrides",
+          "qualifying_count",
+          "peers",
+          "roles",
+          "changed_roles"
+        ],
+        "title": "AnalyticsScenario",
         "type": "object"
       },
       "AnalyticsTables": {
@@ -1153,6 +1804,51 @@
           "url"
         ],
         "title": "BenchmarkDeal",
+        "type": "object"
+      },
+      "BoundaryTie": {
+        "properties": {
+          "companies": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Companies",
+            "type": "array"
+          },
+          "draws": {
+            "title": "Draws",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "companies",
+          "draws"
+        ],
+        "title": "BoundaryTie",
+        "type": "object"
+      },
+      "ChangedRole": {
+        "properties": {
+          "recorded": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Recorded",
+            "type": "array"
+          },
+          "scenario": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Scenario",
+            "type": "array"
+          }
+        },
+        "required": [
+          "recorded",
+          "scenario"
+        ],
+        "title": "ChangedRole",
         "type": "object"
       },
       "ChecklistResponse": {
@@ -2824,6 +3520,76 @@
         "title": "HealthtechCoverage",
         "type": "object"
       },
+      "HeatmapFact": {
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "review_state": {
+            "enum": [
+              "proposed",
+              "confirmed",
+              "rejected",
+              "disputed",
+              "ai_adjudicated"
+            ],
+            "title": "Review State",
+            "type": "string"
+          },
+          "reviewed_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed By"
+          },
+          "reviewed_on": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed On"
+          },
+          "second_reading_matched": {
+            "title": "Second Reading Matched",
+            "type": "boolean"
+          },
+          "source": {
+            "$ref": "#/components/schemas/BacktestSource"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "review_state",
+          "second_reading_matched",
+          "reviewed_by",
+          "reviewed_on",
+          "source"
+        ],
+        "title": "HeatmapFact",
+        "type": "object"
+      },
       "HistoricalDate": {
         "additionalProperties": false,
         "properties": {
@@ -4462,6 +5228,28 @@
           "thresholds"
         ],
         "title": "PrecedentResponse",
+        "type": "object"
+      },
+      "PresetScenario": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "result": {
+            "$ref": "#/components/schemas/AnalyticsScenario"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "result"
+        ],
+        "title": "PresetScenario",
         "type": "object"
       },
       "ProgrammeFacet": {
@@ -6792,6 +7580,209 @@
         "title": "SaveDraft",
         "type": "object"
       },
+      "ScenarioBody": {
+        "additionalProperties": false,
+        "properties": {
+          "overrides": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Overrides",
+            "type": "object"
+          }
+        },
+        "required": [
+          "overrides"
+        ],
+        "title": "ScenarioBody",
+        "type": "object"
+      },
+      "ScorerDimension": {
+        "properties": {
+          "fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "weight": {
+            "title": "Weight",
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "weight",
+          "fields"
+        ],
+        "title": "ScorerDimension",
+        "type": "object"
+      },
+      "ScorerInput": {
+        "properties": {
+          "bands": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Bands",
+            "type": "array"
+          },
+          "dimensions": {
+            "items": {
+              "$ref": "#/components/schemas/ScorerDimension"
+            },
+            "title": "Dimensions",
+            "type": "array"
+          },
+          "inflections": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Inflections",
+            "type": "object"
+          },
+          "options": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "title": "Options",
+            "type": "object"
+          },
+          "peers": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ScorerPeer"
+            },
+            "title": "Peers",
+            "type": "object"
+          },
+          "stop": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Stop",
+            "type": "array"
+          },
+          "subject": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Subject",
+            "type": "object"
+          },
+          "vocabulary": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ScorerVocabulary"
+            },
+            "title": "Vocabulary",
+            "type": "object"
+          }
+        },
+        "required": [
+          "dimensions",
+          "vocabulary",
+          "bands",
+          "stop",
+          "inflections",
+          "options",
+          "subject",
+          "peers"
+        ],
+        "title": "ScorerInput",
+        "type": "object"
+      },
+      "ScorerPeer": {
+        "properties": {
+          "rank": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rank"
+          },
+          "values": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Values",
+            "type": "object"
+          }
+        },
+        "required": [
+          "values",
+          "rank"
+        ],
+        "title": "ScorerPeer",
+        "type": "object"
+      },
+      "ScorerVocabulary": {
+        "properties": {
+          "aliases": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Aliases",
+            "type": "object"
+          },
+          "flat": {
+            "title": "Flat",
+            "type": "boolean"
+          },
+          "nodes": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "title": "Nodes",
+            "type": "object"
+          }
+        },
+        "required": [
+          "nodes",
+          "flat",
+          "aliases"
+        ],
+        "title": "ScorerVocabulary",
+        "type": "object"
+      },
       "ScreeningAlternative": {
         "additionalProperties": false,
         "properties": {
@@ -7376,6 +8367,136 @@
         "title": "SuppliedClaim",
         "type": "object"
       },
+      "SyntheticCalibration": {
+        "properties": {
+          "estimate": {
+            "title": "Estimate",
+            "type": "number"
+          },
+          "group": {
+            "title": "Group",
+            "type": "integer"
+          },
+          "held_out_n": {
+            "title": "Held Out N",
+            "type": "integer"
+          },
+          "observed": {
+            "title": "Observed",
+            "type": "number"
+          }
+        },
+        "required": [
+          "group",
+          "estimate",
+          "observed",
+          "held_out_n"
+        ],
+        "title": "SyntheticCalibration",
+        "type": "object"
+      },
+      "SyntheticCurvePoint": {
+        "properties": {
+          "cause": {
+            "title": "Cause",
+            "type": "string"
+          },
+          "month": {
+            "title": "Month",
+            "type": "integer"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "month",
+          "cause",
+          "value"
+        ],
+        "title": "SyntheticCurvePoint",
+        "type": "object"
+      },
+      "SyntheticEstimate": {
+        "properties": {
+          "effective_sample_size": {
+            "title": "Effective Sample Size",
+            "type": "number"
+          },
+          "horizon": {
+            "title": "Horizon",
+            "type": "number"
+          },
+          "incidences": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Incidences",
+            "type": "object"
+          },
+          "interval_90": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "title": "Interval 90",
+            "type": "array"
+          },
+          "shrunk_outcome": {
+            "title": "Shrunk Outcome",
+            "type": "number"
+          }
+        },
+        "required": [
+          "incidences",
+          "shrunk_outcome",
+          "interval_90",
+          "effective_sample_size",
+          "horizon"
+        ],
+        "title": "SyntheticEstimate",
+        "type": "object"
+      },
+      "SyntheticInterval": {
+        "properties": {
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "lower": {
+            "title": "Lower",
+            "type": "number"
+          },
+          "n": {
+            "title": "N",
+            "type": "integer"
+          },
+          "upper": {
+            "title": "Upper",
+            "type": "number"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "label",
+          "n",
+          "value",
+          "lower",
+          "upper"
+        ],
+        "title": "SyntheticInterval",
+        "type": "object"
+      },
       "UnalignedPeer": {
         "additionalProperties": false,
         "properties": {
@@ -7757,6 +8878,62 @@
           "entries"
         ],
         "title": "VintageCount",
+        "type": "object"
+      },
+      "WeightPerturbation": {
+        "properties": {
+          "changed_roles": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Changed Roles",
+            "type": "array"
+          },
+          "delta": {
+            "title": "Delta",
+            "type": "number"
+          },
+          "dimension": {
+            "title": "Dimension",
+            "type": "string"
+          },
+          "ranks": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "title": "Ranks",
+            "type": "array"
+          },
+          "roles": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "title": "Roles",
+            "type": "object"
+          },
+          "weights": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Weights",
+            "type": "object"
+          }
+        },
+        "required": [
+          "dimension",
+          "delta",
+          "weights",
+          "ranks",
+          "roles",
+          "changed_roles"
+        ],
+        "title": "WeightPerturbation",
         "type": "object"
       },
       "Witness": {
@@ -9815,6 +10992,116 @@
         "summary": "Healthtech Comparisons"
       }
     },
+    "/api/robustness/{company_id}": {
+      "get": {
+        "operationId": "perturbations_api_robustness__company_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "company_id",
+            "required": true,
+            "schema": {
+              "title": "Company Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "draws",
+            "required": false,
+            "schema": {
+              "default": 2000,
+              "maximum": 10000,
+              "minimum": 1,
+              "title": "Draws",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "seed",
+            "required": false,
+            "schema": {
+              "default": 7,
+              "title": "Seed",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsRobustness"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Perturbations"
+      }
+    },
+    "/api/scenario/{company_id}": {
+      "post": {
+        "operationId": "scenario_api_scenario__company_id__post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "company_id",
+            "required": true,
+            "schema": {
+              "title": "Company Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScenarioBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsScenario"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Scenario"
+      }
+    },
     "/api/ventures": {
       "get": {
         "operationId": "ventures_api_ventures_get",
@@ -9952,6 +11239,81 @@
           }
         },
         "summary": "Venture"
+      }
+    },
+    "/api/views/cohort": {
+      "get": {
+        "operationId": "cohort_api_views_cohort_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsCohort"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Cohort"
+      }
+    },
+    "/api/views/method": {
+      "get": {
+        "operationId": "method_api_views_method_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsMethod"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Method"
+      }
+    },
+    "/api/views/profile/{company_id}": {
+      "get": {
+        "operationId": "profile_api_views_profile__company_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "company_id",
+            "required": true,
+            "schema": {
+              "title": "Company Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalyticsProfile"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Profile"
       }
     },
     "/api/workbench/cohort-companies": {

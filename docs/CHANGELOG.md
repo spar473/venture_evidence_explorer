@@ -1,5 +1,11 @@
 # Changelog
 
+## 23 November 2026 · Analytics views
+
+- Added a date slider, peer map, development curves, dated source drawers and keyboard-accessible chart tables.
+- Added cohort count charts, an event strip and an evidence heatmap. Added deterministic scenarios, seeded weight checks and a synthetic-only estimator demo.
+- Added a static export and Pages workflow with six-place Python and TypeScript scorer parity. The historical clinical scorer and strict evidence gate retain their existing tests and contracts.
+
 ## 23 November 2026 · Time Machine provisional preview
 
 - Added CSV-driven AI adjudication to the entry packet and a separate preview count beside the strict evidence gate.

@@ -1,5 +1,9 @@
 # Data status
 
+## Analytics preview · 23 November 2026
+
+Company profile, Cohort explorer, Scenario lab and Method lab use the same provisional entry and cohort evidence. Supie has zero qualifying peers on recorded facts. Partly and Halter lack a dated offering and buyer snapshot. The strict evidence gate stays unmet. The Method lab shows the real audit counts and runs the estimator on a separate generated cohort. See the [analytics evaluation](docs/ANALYTICS_EVALUATION.md).
+
 Last updated 2026-11-23. This file records the pre-demo data checks and open data decisions. The outcome audit below remains frozen at 2026-11-21.
 
 ## Time Machine provisional preview

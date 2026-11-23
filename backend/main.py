@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from .contracts import (
     AnalyticsResponse,
@@ -231,6 +231,10 @@ def create_app(db_path=None):
 
     install_backtest(app)
 
+    from .analytics_api import install as install_analytics_views
+
+    install_analytics_views(app)
+
     @app.get('/time-machine/method', include_in_schema=False)
     def time_machine_method():
         return FileResponse(ROOT / 'docs/design/BACKTEST_PREREG.md', media_type='text/plain')
@@ -247,6 +251,9 @@ def create_app(db_path=None):
     def index():
         if not (dist / 'index.html').exists():
             raise HTTPException(503, 'Frontend not built. Run npm ci and npm run build in frontend/.')
+        if os.environ.get('VEE_LEGACY_ROUTES') == '1':
+            index_html = (dist / 'index.html').read_text()
+            return HTMLResponse(index_html.replace('</head>', '<meta name="vee-legacy-routes"></head>'))
         return FileResponse(dist / 'index.html')
 
     return app

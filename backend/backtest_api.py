@@ -19,6 +19,16 @@ def install(app: FastAPI) -> None:
                 {'provisional': True, 'label': PREVIEW_LABEL, 'detail': exc.errors()},
                 status_code=response.status_code,
             )
+        if request.url.path.startswith(('/api/views/profile/', '/api/scenario/', '/api/robustness/')):
+            return JSONResponse(
+                {
+                    'provisional': True,
+                    'label': PREVIEW_LABEL,
+                    **({'scenario': True} if request.url.path.startswith('/api/scenario/') else {}),
+                    'detail': exc.errors(),
+                },
+                status_code=response.status_code,
+            )
         return response
 
     @app.get('/api/backtest/{company_id}', response_model=BacktestResponse)

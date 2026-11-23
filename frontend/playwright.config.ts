@@ -15,8 +15,10 @@ export default defineConfig({
     launchOptions: process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {},
   },
   webServer: process.env.VEE_URL ? undefined : {
-    command: "node e2e/server.mjs",
-    url: baseURL + "/api/health",
+    command: process.env.VEE_STATIC
+      ? [process.env.VEE_PYTHON || "python3", "-m http.server", testPort, "--bind 127.0.0.1 --directory dist"].join(" ")
+      : "node e2e/server.mjs",
+    url: baseURL + (process.env.VEE_STATIC ? "/" : "/api/health"),
     reuseExistingServer: false,
     timeout: 30000,
   },
