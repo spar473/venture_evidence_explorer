@@ -207,7 +207,10 @@ def main():
         import uvicorn
         from backend.main import create_app
 
-        print(f'Open http://127.0.0.1:{args.port} · disposable database {result["database"]}', flush=True)
+        print(
+            f'Open http://127.0.0.1:{args.port}/?page=timemachine · disposable database {result["database"]}',
+            flush=True,
+        )
         uvicorn.run(create_app(result['database']), host='127.0.0.1', port=args.port)
 
 

@@ -1,12 +1,23 @@
 # Next steps
 
-Updated 2026-11-22. Data decisions waiting on the owner are listed in [STATUS.md](STATUS.md).
+## Analytics rollout
+
+The [analytics evaluation](docs/ANALYTICS_EVALUATION.md) records the browser checks, seeded outputs and Pages status. The next evidence work is human review of the entry facts, six more well-covered earlier peers for Partly and a dated Partly offering and buyer source.
+
+Updated 2026-11-23. Data decisions waiting on the owner are listed in [STATUS.md](STATUS.md).
 
 ## Improvement checklist sequence
 
-The first pass covers the six pre-demo repository and language fixes. Code now uses MIT with a separate data notice; the listed agent records and generated outputs are removed, the sidebar wraps long names, and the five main jargon labels use plain language. Publication follows verified cleanup and the owner's explicit approval. Only merged branches may be deleted; unmerged work must be preserved.
+The six pre-demo repository and language fixes are complete. Code uses MIT with a separate data notice; the listed agent records and generated outputs are removed, the sidebar wraps long names, and the five main jargon labels use plain language. The repo is public. Eleven explicitly approved merged branches were removed; the unmerged test branch and implementation branches were preserved.
 
-The next pass is the **Time machine**. Before running a backtest, review the existing local prompt and commit `docs/design/BACKTEST_PREREG.md` with fixed eligibility rules, weights and thresholds. Then research entry snapshots. The acceptance gate is at least 15 Partly-eligible peers with at least five witnessed fields each; stop and report any shortfall rather than lower the bar. No backtest or threshold change is part of the pre-demo cleanup.
+## Time Machine evidence priorities
+
+1. Review all 72 field decisions with a named human reviewer. Start with the 21 archive-based fields that have had no independent reading. [Field review](docs/healthtech-pilot/BACKTEST_REVIEW.md).
+2. Research six additional Partly-eligible peers with at least five sourced facts each. Marama has four strict proposals and Formus and Inhibit have three each. The 1Centre material is available only in the lenient view. [Coverage checkpoint](docs/healthtech-pilot/BACKTEST_COVERAGE.md).
+3. Find an inspectable Partly source from before 8 October 2020 that establishes entry facts about the offering, customers or stage.
+4. Resolve Parcelport's product type. Its charge was for freight while dispatch software was supplied free. Check the source again and record the classification with a rationale.
+
+Use `scripts/audit_backtest_coverage.py --require-gate` before enabling the strict view. The current preview runs have a separate output directory and a visible AI review label. [Preview evaluation](docs/healthtech-pilot/PREVIEW_EVALUATION.md).
 
 ## Before the demo
 

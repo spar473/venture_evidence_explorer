@@ -19,6 +19,7 @@ No blanket open-data licence is granted for the curated collection. A public cit
 - **Public sources only.** Sources include news articles, press releases, fund portfolio pages, university and institute pages, published reports (for example PwC / NZGCP Young Company Finance tables) and the NZ Companies Office register. Every claim carries its URL, its publisher, its publication or capture date, and the date we retrieved it.
 - **Short paraphrased passages.** Passages are written in our own words and point to a locator (a page, row or paragraph). Any direct quote is kept under about 25 words, and most claims contain none. Images in the repository are captures of this application only, with no third-party logos or photos.
 - **Hand-checked entries.** Each entry and follow-up event is added by a person through the sourced-event path. Packet validation checks dates, labels and witness rules before anything is imported.
+- **Separate proposed extractions.** The Time Machine research packet contains AI-proposed fields with source versions, witness dates, locators and rationale. These are not human-accepted cohort entries or application features. They remain excluded from confirmed coverage until a person explicitly reviews the fields, with reviewer, date and review reference recorded. The review document paraphrases claims; archived page bodies and downloaded source PDFs stay outside the repository.
 
 ## What stays out
 

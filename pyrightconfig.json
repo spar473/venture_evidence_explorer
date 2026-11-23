@@ -1,0 +1,19 @@
+{
+  "typeCheckingMode": "basic",
+  "pythonVersion": "3.10",
+  "include": [
+    "backend/backtest.py",
+    "backend/backtest_api.py",
+    "backend/backtest_contracts.py",
+    "backend/backtest_review.py",
+    "backend/precedent_similarity_general.py",
+    "scripts/ingest_backtest_review.py",
+    "scripts/preview_backtest.py",
+    "backend/analytics_views.py",
+    "backend/analytics_api.py",
+    "backend/analytics_contracts.py",
+    "backend/synthetic_method.py",
+    "scripts/export_static.py",
+    "scripts/synthetic_cohort.py"
+  ]
+}

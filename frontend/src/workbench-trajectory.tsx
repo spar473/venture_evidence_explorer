@@ -14,10 +14,12 @@ export function Trajectory({
   rows,
   onClaim,
   title,
+  axisNote = "Bands show date intervals. A band at month zero identifies a partial-date anchor.",
 }: {
   rows: TimelineRow[];
   onClaim: (claim: WorkbenchClaim) => void;
   title: string;
+  axisNote?: string;
 }) {
   const [table, setTable] = useState(false);
   const [hover, setHover] = useState<{ company: string; claim: WorkbenchClaim } | null>(null);
@@ -205,9 +207,7 @@ export function Trajectory({
           </svg>
         </div>
       )}
-      <p className="wb-muted">
-        Bands show date intervals. A band at month zero identifies a partial-date anchor.
-      </p>
+      <p className="wb-muted">{axisNote}</p>
       {hover && !table && (
         <p role="status" className="wb-tooltip">
           {hover.company} · {fieldLabel(hover.claim.field)} · {dateLabel(hover.claim)} ·{" "}

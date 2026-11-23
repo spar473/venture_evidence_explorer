@@ -87,3 +87,33 @@ The default `witness_mode=strict` applies the original witness cutoff. `witness_
 `GET /api/precedents/{subject_id}/screening-note` downloads a Venture Frame schema v1 JSON measurement draft with the same subject, anchor and as-of query as the workbench. Alternative metadata preserves roles, snapshot basis, dated comp outcomes, evidence-backed checklist values and claim IDs, and the similarity method and breakdown. The draft includes raw dimension similarities only where comparable evidence supports them. It has no supplied weights or screening score.
 
 The [witnessed snapshot packet](../research/healthtech-pilot/witnessed-snapshots.json) adds evidence from publisher-dated sources. Entry features must match the existing institutional anchor claim and its earliest possible date. Dated university project profiles supply analogy features as of the selected cutoff. Round context for curated references with a missing or inapplicable anchor is visible in current Evidence. The [witnessed snapshot audit](healthtech-pilot/WITNESSED_SNAPSHOT_AUDIT.md) and [method v2 audit](healthtech-pilot/COMPS_V2_AUDIT.md) record prior results.
+
+### Time Machine
+
+`GET /api/backtest/{company_id}` accepts the registered IDs `public_supie`,
+`public_partly` and `discovery_halter`. Defaults are
+`track=preview&witness_mode=strict&peer_history=as_of_anchor`.
+
+- The preview includes only AI-adjudicated entry evidence. Its `provisional`
+  flag and `label` are also present on preview validation and unknown-subject
+  responses. A strict request currently returns `abstention: "strict_gate"`
+  and no scores or reveal.
+- Strict evidence mode uses each company's entry evidence clock. Lenient
+  mode can add a peer's offering, buyer or market field up to 90 days
+  after that peer's entry and never beyond the subject's cutoff. A subject
+  always uses strict evidence. Each field includes its source, locator,
+  version date, review state, and any delay.
+- Historical peer histories filter event occurrence and source availability
+  before assigning any roles. `peer_history=today` is explicitly marked as
+  hindsight, with a separate flag on each later addition. Neither setting
+  can change the entry scores. The isolated `reveal` contains the subject's
+  subsequent events, its 36-month status, and non-historical reviewer
+  metadata used in the badges.
+- `nearest_candidates` explains failed admission checks and contains no
+  outcome history. On abstention the preview also exposes up to three scored
+  `nearest_available` peers in similarity order. Every such peer has
+  `not_a_comp: true`. `corpus_ids` and the digests identify the exact entry
+  description inputs. Score thresholds and the eligible and excluded IDs
+  are included on each run.
+
+See [the frozen clocks and scoring profile](design/BACKTEST_PREREG.md).

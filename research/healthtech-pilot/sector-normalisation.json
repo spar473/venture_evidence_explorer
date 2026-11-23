@@ -1,0 +1,551 @@
+{
+  "format_version": "sector-normalisation:1",
+  "compiled_on": "2026-11-22",
+  "preregistration_commit": "d0c7c27a7bbd58069ddaa1b72e79791470f5b385",
+  "cohort_input_sha256": {
+    "discovery": "98cfe2fa99d3cc67e42e2660f895a58e0f2024e08bd1523f0c48a4319503f8fa",
+    "entry_evidence": "3849a6c3ce5c636ffd111ce31d0bdb0e25307b974afb125d76eb73901a3fa803"
+  },
+  "policy": "Preserve raw labels and provenance. Editorial grouping proposals do not substitute for witnessed, confirmed historical sector features.",
+  "mappings": [
+    {
+      "raw_label": "Advanced manufacturing",
+      "normalised": "manufacturing",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_foundrylab",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 5, Nov-18 row for Foundry Lab"
+        }
+      ]
+    },
+    {
+      "raw_label": "Advanced materials",
+      "normalised": "advanced_materials",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_inhibitcoatings",
+          "source_id": "ycf_2020",
+          "locator": "PDF page 3, Dec-19 row for Inhibit Coatings Limited"
+        },
+        {
+          "company_id": "public_hiaspect",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 10, Apr-16 row for Hi-Aspect"
+        },
+        {
+          "company_id": "public_kotitechnologies",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 25, Jun-12 row for Koti Technologies"
+        }
+      ]
+    },
+    {
+      "raw_label": "Agritech",
+      "normalised": "agritech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_cropsy",
+          "source_id": "entry_cropsy_ttakiaucklandunlimited",
+          "locator": "Cropsy paragraph, corroborated by NZTE first capital raise"
+        },
+        {
+          "company_id": "discovery_halter",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 12, Dec-16 row for Halter"
+        }
+      ]
+    },
+    {
+      "raw_label": "Automotive software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_partly",
+          "source_id": "entry_partly_nzentrepreneur",
+          "locator": "First date and opening paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Clean technology",
+      "normalised": "cleantech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_aplenty",
+          "source_id": "hotlime_pvl",
+          "locator": "Annual Report 2019, Hot Lime Labs, Powerhouse Impact"
+        },
+        {
+          "company_id": "discovery_liquium",
+          "source_id": "liquium_climatevc_2022",
+          "locator": "Dateline and closed seed round announcement"
+        }
+      ]
+    },
+    {
+      "raw_label": "Cleantech",
+      "normalised": "cleantech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_aspiringmaterials",
+          "source_id": "entry_aspiringmaterials_startupdaily",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        },
+        {
+          "company_id": "discovery_cetogenix",
+          "source_id": "entry_cetogenix_cetogenixviascoop",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        },
+        {
+          "company_id": "discovery_mintinnovation",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 6, Mar-17 row for Mint Innovation"
+        },
+        {
+          "company_id": "discovery_vertusenergy",
+          "source_id": "entry_vertusenergy_nzministryoftransport",
+          "locator": "26 May 2022 meeting note, paragraph reporting 2021 raise"
+        },
+        {
+          "company_id": "discovery_vortexpowersystems",
+          "source_id": "ycf_2020",
+          "locator": "May 2019 Vortex Power Systems Limited row, Stage and investor columns"
+        },
+        {
+          "company_id": "discovery_zincovery",
+          "source_id": "entry_zincovery_climateventurecapitalfund",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Consumer products",
+      "normalised": "consumer_products",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_cleanery",
+          "source_id": "entry_cleanery_cleaneryviascoop",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Creator software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_vidapp",
+          "source_id": "ycf_2017",
+          "locator": "PDF page 5, Sep-17 row for VidApp"
+        }
+      ]
+    },
+    {
+      "raw_label": "Developer software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_codelingolimited",
+          "source_id": "entry_codelingolimited_rightclickcapital",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Diagnostic imaging",
+      "normalised": "healthtech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_tirolifesciencesltd",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 19, Aug-14 row for Tiro Lifesciences Ltd"
+        }
+      ]
+    },
+    {
+      "raw_label": "Education software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_fluentscientificltd",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 14, Apr-15 row for Fluent Scientific Ltd"
+        }
+      ]
+    },
+    {
+      "raw_label": "Energy",
+      "normalised": "energy",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_energybank",
+          "source_id": "entry_energybank_blackbird",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Energy storage",
+      "normalised": "energy",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_tasmanion",
+          "source_id": "tasmanion_pacific",
+          "locator": "Opening funding and university spinout paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Fintech",
+      "normalised": "fintech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_sharesies",
+          "source_id": "ycf_2017",
+          "locator": "PDF page 3, May-17 row for Sharesies"
+        },
+        {
+          "company_id": "public_1centre",
+          "source_id": "onecentre_ci",
+          "locator": "Founder Incubators, Flux and 1Centre paragraph; compare April YCF row"
+        }
+      ]
+    },
+    {
+      "raw_label": "Foodtech",
+      "normalised": null,
+      "review_state": "unmapped",
+      "rationale": "Raw label is too broad to assign a preregistered leaf without additional offering evidence.",
+      "source_records": [
+        {
+          "company_id": "discovery_miruku",
+          "source_id": "entry_miruku_mirukuviaprnewswire",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Grocery retail",
+      "normalised": "retail_ecommerce",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_supie",
+          "source_id": "entry_supie_supermarketnews",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Healthtech",
+      "normalised": "healthtech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_formuslabs",
+          "source_id": "entry_formuslabs_punakaikifund",
+          "locator": "Historical funding and NZ spinout paragraphs"
+        },
+        {
+          "company_id": "discovery_heartlab",
+          "source_id": "entry_heartlab_techcrunch",
+          "locator": "Dateline, opening and total capital paragraph"
+        },
+        {
+          "company_id": "discovery_opumtechnology",
+          "source_id": "ycf_2020",
+          "locator": "May 2019 Opum Technologies Limited row, T1 and named investors"
+        },
+        {
+          "company_id": "discovery_respiraq",
+          "source_id": "entry_respiraq_kiwinet",
+          "locator": "RespirAq profile, entry financing paragraph"
+        },
+        {
+          "company_id": "discovery_tamorx",
+          "source_id": "tamorx_issuer",
+          "locator": "Opening round announcement, cross-checked to Healthtech deals in Startup Investment"
+        },
+        {
+          "company_id": "discovery_theinsidescompany",
+          "source_id": "entry_theinsidescompany_youngcompanyfinance",
+          "locator": "2019 deal table, The Insides Company Ltd / SDS Push, August row"
+        },
+        {
+          "company_id": "public_auramerbio",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 9, Feb-16 row for AuramerBio"
+        },
+        {
+          "company_id": "public_avaliaimmunotherapiesltd",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 15, Sep-15 row for Avalia Immunotherapies Ltd"
+        },
+        {
+          "company_id": "public_firstcheckltd",
+          "source_id": "ycf_2017",
+          "locator": "PDF page 2, May-17 row for Firstcheck Ltd"
+        }
+      ]
+    },
+    {
+      "raw_label": "Healthtech software",
+      "normalised": "healthtech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_carepatron",
+          "source_id": "entry_carepatron_startupdaily",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Industrial sensing",
+      "normalised": "manufacturing",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_tdri",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 5, Nov-18 row for TDRI"
+        }
+      ]
+    },
+    {
+      "raw_label": "Insurtech",
+      "normalised": "fintech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_quashed",
+          "source_id": "entry_quashed_quashed",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Logistics software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_parcelport",
+          "source_id": "ycf_2017",
+          "locator": "PDF page 8, Dec-17 row for Parcelport"
+        }
+      ]
+    },
+    {
+      "raw_label": "Marketing software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_evouch",
+          "source_id": "entry_evouch_startupdaily",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        },
+        {
+          "company_id": "public_socialclub",
+          "source_id": "ycf_2017",
+          "locator": "PDF page 1, Mar-17 row for Social Club"
+        }
+      ]
+    },
+    {
+      "raw_label": "Payments",
+      "normalised": "fintech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_immersve",
+          "source_id": "entry_immersve_immersve",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Photography software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_narrative",
+          "source_id": "entry_narrative_nbr",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Property software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_jasper",
+          "source_id": "ycf_2020",
+          "locator": "PDF page 2, Apr-19 row for Jasper"
+        }
+      ]
+    },
+    {
+      "raw_label": "Regtech",
+      "normalised": "fintech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_firstaml",
+          "source_id": "entry_firstaml_firstamlviascoop",
+          "locator": "Flux Accelerator paragraph and dateline"
+        }
+      ]
+    },
+    {
+      "raw_label": "Scientific instrumentation",
+      "normalised": "manufacturing",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_maramalabs",
+          "source_id": "ycf_2020",
+          "locator": "PDF page 2, Feb-19 row for Marama Labs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Security education",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_safestack",
+          "source_id": "entry_safestack_safestack",
+          "locator": "Cross-check with YCF September 2021 SafeStack Limited round 1 row"
+        }
+      ]
+    },
+    {
+      "raw_label": "Sensors",
+      "normalised": "manufacturing",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_stretchsense",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 20, November 2014 row for StretchSense"
+        },
+        {
+          "company_id": "public_photonicinnovationsltd",
+          "source_id": "ycf_2019",
+          "locator": "PDF page 24, Dec-13 row for Photonic Innovations Ltd"
+        }
+      ]
+    },
+    {
+      "raw_label": "Software & Services",
+      "normalised": null,
+      "review_state": "unmapped",
+      "rationale": "Raw label is too broad to assign a preregistered leaf without additional offering evidence.",
+      "source_records": [
+        {
+          "company_id": "public_rocos",
+          "source_id": "ycf_2017",
+          "locator": "PDF page 6, Nov-17 row for Rocos"
+        }
+      ]
+    },
+    {
+      "raw_label": "Space technology",
+      "normalised": "aerospace",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "discovery_astrix",
+          "source_id": "entry_astrix_astrixastronautics",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        },
+        {
+          "company_id": "discovery_dawnaerospace",
+          "source_id": "entry_dawnaerospace_nbr",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    },
+    {
+      "raw_label": "Wearable healthtech",
+      "normalised": "healthtech",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_myovoltlimited",
+          "source_id": "ycf_2020",
+          "locator": "PDF page 4, Dec-19 row for Myovolt Limited"
+        }
+      ]
+    },
+    {
+      "raw_label": "Workforce software",
+      "normalised": "enterprise_software",
+      "review_state": "proposed",
+      "rationale": "Proposed editorial grouping into the preregistered sector vocabulary; does not assert historical availability or add a scored feature.",
+      "source_records": [
+        {
+          "company_id": "public_excellent",
+          "source_id": "entry_excellent_startupdaily",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        },
+        {
+          "company_id": "public_runnio",
+          "source_id": "entry_runnio_startupdaily",
+          "locator": "Dateline, company background and opening financing paragraphs"
+        }
+      ]
+    }
+  ]
+}

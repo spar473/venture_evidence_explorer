@@ -15,3 +15,6 @@ stage_records/
 
 # Ignore dependency directories and temporary local dependency symlinks.
 frontend/node_modules
+
+# Generated GitHub Pages payloads
+frontend/public/analytics-data/

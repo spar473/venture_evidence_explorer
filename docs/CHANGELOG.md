@@ -1,6 +1,33 @@
 # Changelog
 
+## 23 November 2026 · Analytics views
+
+- Added a date slider, peer map, development curves, dated source drawers and keyboard-accessible chart tables.
+- Added cohort count charts, an event strip and an evidence heatmap. Added deterministic scenarios, seeded weight checks and a synthetic-only estimator demo.
+- Added a static export and Pages workflow with six-place Python and TypeScript scorer parity. The historical clinical scorer and strict evidence gate retain their existing tests and contracts.
+
+## 23 November 2026 · Time Machine provisional preview
+
+- Added CSV-driven AI adjudication to the entry packet and a separate preview count beside the strict evidence gate.
+- Added the fixed general similarity profile, read-only backtest endpoint and reproducible preview run. Supie, Partly and Halter all abstain.
+- Added the Time Machine page with dated sources, nearest available cases, a peer-history toggle and a separate outcome reveal. [Case results](healthtech-pilot/PREVIEW_RESULTS.md) and [acceptance evidence](healthtech-pilot/PREVIEW_EVALUATION.md).
+
 This is the project history, moved out of the README on 2026-11-21. Sections are kept as they were written, oldest framing first and later sections appended, so some statements are now out of date. Examples: "No remote repository" (there is now a GitHub remote with CI), the root SHA-256 manifests (now in `archive/manifests/`) and `handover/` (now a release asset; the retired handover notes and completion reports remain in Git history at `090b8d0`). The current state is in the [README](../README.md), [STATUS.md](../STATUS.md) and [VALIDATION.md](../VALIDATION.md).
+
+## 22 November 2026 · Historical evidence research follow-up
+
+- Expanded the separate packet from 20 to 72 proposed fields: 69 strict and three lenient-only. Actual pre-entry capture bodies support additional evidence for Narrative, Parcelport, Vidapp, Myovolt, Marama Labs and First AML; dated sources add Firstcheck, StretchSense, Formus and Inhibit proposals.
+- Nine Partly-eligible peers now have at least five strict proposals, up from two. None is human-confirmed; six more sufficiently covered peers are still needed even if every current proposal is accepted. The gate remains at 0 of 15.
+- Added a field-by-field review with source versions and interpretation limits. Retained late, revised and inaccessible-source investigations. Partly's subject snapshot remains empty; 1Centre's three descriptors remain lenient-only.
+- No scorer, endpoint, backtest or UI was implemented. Source PDFs and full article bodies are not redistributed; existing application packets and b0:3 are unchanged.
+
+## 22 November 2026 · Time Machine preregistration and evidence checkpoint
+
+- Preserved the original brief and committed the retrospective protocol before any Time Machine scoring run, including clocks, weights, vocabulary, thresholds, review requirements and evaluation rules.
+- Added a separate `backtest_entry` packet contract and coverage audit. Proposals cannot pass as confirmed fields; late evidence, unsupported review metadata, duplicate features and changed cohort anchors are refused.
+- Recorded twenty proposed fields for four companies, with explicit empty Partly/Halter snapshots and source-access limitations. Added proposed sector mappings with all raw labels and source references preserved.
+- The fixed data gate is **not met**: 0 of 32 Partly-eligible peers have five confirmed strict fields; two could clear after proposal review. No general scorer, backtest endpoint or UI was implemented. This pass does not exhaust historical research.
+- Added the coverage validator to CI; the optional `--require-gate` command exits nonzero on the shortfall. Existing b0:3 responses and source packets are preserved.
 
 ## 22 November 2026 · Pre-demo repository and language cleanup
 

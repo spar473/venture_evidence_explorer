@@ -1,6 +1,28 @@
 # Data status
 
-Last updated 2026-11-21. This file records the pre-demo data checks and open data decisions.
+## Analytics preview · 23 November 2026
+
+Company profile, Cohort explorer, Scenario lab and Method lab use the same provisional entry and cohort evidence. Supie has zero qualifying peers on recorded facts. Partly and Halter lack a dated offering and buyer snapshot. The strict evidence gate stays unmet. The Method lab shows the real audit counts and runs the estimator on a separate generated cohort. See the [analytics evaluation](docs/ANALYTICS_EVALUATION.md).
+
+Last updated 2026-11-23. This file records the pre-demo data checks and open data decisions. The outcome audit below remains frozen at 2026-11-21.
+
+## Time Machine provisional preview
+
+The protocol was committed as `d0c7c27` before any Time Machine scoring run. See [preregistration](docs/design/BACKTEST_PREREG.md) and [coverage checkpoint](docs/healthtech-pilot/BACKTEST_COVERAGE.md) for exact rules, sources, input digests and the full Partly research queue.
+
+| Subject | Date-eligible earlier peers | Peers with ≥5 confirmed strict fields | Peers with ≥5 strict AI-adjudicated fields | Subject confirmed / AI-adjudicated fields |
+|---|---:|---:|---:|---:|
+| Partly | 32 | 0 | 9 | 0 / 0 |
+| Supie | 39 | 0 | 9 | 0 / 6 |
+| Halter | 8 | 0 | 1 | 0 / 0 |
+
+Seventy-two field extractions across fourteen companies have review decisions. The CSV accepts 61, corrects seven, leaves three open and rejects one. Nine Partly-eligible peers have at least five AI-adjudicated strict fields. They are CodeLingo, First AML, Firstcheck, Myovolt, Narrative, Parcelport, Social Club, StretchSense and VidApp. Twenty-one archive-based fields have had no independent second reading. Human review is pending for all 72. [Field review](docs/healthtech-pilot/BACKTEST_REVIEW.md).
+
+The provisional Time Machine opens on Supie. Its six usable facts allow scoring. No peer clears the product and customer check, so the page offers three nearest cases and a separate reveal. Partly and Halter have empty entry snapshots and dated abstention reasons. The strict track still needs **15 Partly-eligible peers with at least five human-confirmed strict fields each** and currently has zero. [Case results](docs/healthtech-pilot/PREVIEW_RESULTS.md).
+
+Partly's current NZ Entrepreneur page shows a 2021 update, so it was excluded from the 2020 snapshot. Archive availability queries returned 11 and 22 October captures, after its 8 October cutoff; no qualifying original body was inspected. The Blackbird note is also too late. Actual pre-entry archive bodies were inspected for six other companies. Halter still has no qualifying pre-entry source. A later biography cannot fill its 2016 snapshot. 1Centre's three descriptors are lenient-only and add nothing to strict coverage.
+
+Sector normalisation separately preserves all 33 raw labels and their source records: 31 editorial mapping proposals, with `Foodtech` and `Software & Services` still unresolved. These mappings do not count as historical evidence. Reproduce the audit with `.venv/bin/python scripts/audit_backtest_coverage.py --output outputs/backtest-coverage.json`; `--require-gate` exits 1 until the unchanged data bar passes.
 
 The first round of checks, against 6f2e1bd, changed no packet. The PwC rows were then hand-checked (all match), and a follow-up data-hygiene change re-sourced three events in `cohort-follow-up.json` through the sourced-event path: Partly's Series A, Partly's pre-Series A and First AML's Series B. **The audit counts are unchanged.**
 
