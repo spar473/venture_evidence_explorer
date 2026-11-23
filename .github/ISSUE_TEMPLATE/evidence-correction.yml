@@ -1,0 +1,27 @@
+name: Evidence correction
+description: Flag a company fact, source, date, outcome, or record that needs correction.
+title: "[Evidence] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For private requests, contact the project owner through the channel you received the project from. See the [data-use policy](https://github.com/spar473/venture_evidence_explorer/blob/main/DATA_USE.md#requesting-a-correction-or-removal).
+  - type: input
+    id: record
+    attributes:
+      label: Company and record
+      description: Name the company and the fact, chart, or view you are referring to.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Explain what should change and why.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Public source
+      description: Share the link, publication date, and relevant page or passage if available.

@@ -1,0 +1,30 @@
+name: App bug
+description: Report a reproducible problem in the demo or local workspace.
+title: "[Bug] "
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Where did this happen?
+      description: Paste the view URL or the local command you ran.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include any filters, company selection, or playback date that matters.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened?
+      description: Include what you expected to see.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser and operating system, or Python and Node.js versions for a local setup.
