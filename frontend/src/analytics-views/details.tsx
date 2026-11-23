@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useState, useRef, type ReactNode } from "react";
 import type { BacktestEvent, BacktestSource } from "../api-schema";
-import { eventLabels } from "../charts/encoding";
+import { eventLabels, eventTimingLabels, type EventTiming } from "../charts/encoding";
 import type { Detail } from "../charts/figure";
 import {
   type Fact,
@@ -88,16 +88,20 @@ export function FactDetails({ facts }: { facts: Fact[] }) {
   );
 }
 
-export function eventDetail(name: string, event: BacktestEvent, hindsight: boolean): Detail {
+export function eventDetail(
+  name: string,
+  event: BacktestEvent,
+  timing: EventTiming = "known",
+): Detail {
   const review = reviewNames[event.review_state];
   return {
     heading: `${name} · ${eventLabels[event.kind] ?? textValue(event.kind)}`,
-    hint: `${hindsight ? "Hindsight · " : ""}${review} · ${event.source.publisher}`,
+    hint: `${review} · ${event.source.publisher}`,
     content: (
       <>
         <p>
           {formatDate(event.date.value ?? "")}
-          {hindsight ? " · Hindsight" : ""}
+          {timing !== "known" ? ` · ${eventTimingLabels[timing]}` : ""}
         </p>
         <Source source={event.source} review={review} />
       </>

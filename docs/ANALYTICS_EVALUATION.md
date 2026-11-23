@@ -15,13 +15,13 @@
 | E4 · Chart accessibility | Pass | Playwright focused a mark and toggled the table fallback on each chart. SVGs have accessible summaries. Axe reported zero serious or critical findings at 1440 and 390 px in the four default views. |
 | E4 · Mobile, styles and abstention | Pass | Playwright measured a 390 px scroll width on all four views at a 390 px viewport. Styles are scoped to the analytics page and use the existing base focus and type tokens. Peer details show the score band and up to three shared features and three differences. Entry abstentions name the evidence that would help. |
 | E5 · Local engineering | Pass | Python 3.11, `pytest -q` (**264 passed, 2 skipped**), ruff check and format, Prettier, generated contracts and scoped pyright (zero errors). New Python analytics code measured **93% statement coverage** in the targeted suite. The synthetic CLI ran twice in an isolated subprocess. Chromium coverage remapped through the static production source map exercised **2,256 of 2,346 mapped lines** in the new chart and analytics modules across all views and three profiles. |
-| E5 · Hosted matrix | Pass | Commit `d01624a` passed Python 3.10–3.13, lint, contract checks and Playwright in [Engineering contracts](https://github.com/spar473/venture_evidence_explorer/actions/runs/45086985147). The static build, offline scorer parity and all eight browser checks passed in [Analytics on GitHub Pages](https://github.com/spar473/venture_evidence_explorer/actions/runs/45086985178). |
+| E5 · Hosted matrix | Pass | Commit `d01624a` passed Python 3.10–3.13, lint, contract checks and Playwright in [Engineering contracts](https://github.com/spar473/venture_evidence_explorer/actions/runs/45086985147). The initial static build and scorer parity passed in [Analytics on GitHub Pages](https://github.com/spar473/venture_evidence_explorer/actions/runs/45086985178). The [PR checks](https://github.com/spar473/venture_evidence_explorer/pull/15/checks) record the fix-pass matrix. |
 | E5 · Runtime budget | Pass | Observable Plot is the single added direct runtime dependency. In a loopback disposable demo, nearest-rank p95 over 20 warm GETs was **3.19 ms** for backtest, **3.95 ms** for profile, **3.34 ms** for cohort, **0.95 ms** for robustness and **0.90 ms** for synthetic figures. |
-| E5 · Legacy and static behavior | Pass | The live Playwright suite passed **62** checks. Its one production-redirect check runs in the static suite. The original specs use the compatibility router, including the local research workspace. The production router separately verifies redirects for the old Time Machine, Precedents and Outcomes links. Static Playwright passed **8 of 8**. |
+| E5 · Legacy and static behavior | Pass | The live Playwright suite passed **66** checks. Its one production-redirect check runs in the static suite. The original specs use the compatibility router, including the local research workspace. The production router separately verifies redirects for the old Time Machine, Precedents and Outcomes links. Static Playwright passed **12 of 12**. |
 | E6 · Review materials | Pass | [PR #15](https://github.com/spar473/venture_evidence_explorer/pull/15), [previous case results](healthtech-pilot/PREVIEW_RESULTS.md), [screenshots](#screenshots), [status](../STATUS.md), [next steps](../NEXT_STEPS.md), [changelog](CHANGELOG.md) and [README](../README.md). |
 | E7 · Fresh-eyes review | Pass | An independent reviewer opened the running views and the three cases in local Chromium. The questions and fixes are recorded below. |
 
-Playwright counted **39**, **41**, **48** and **30** words of visible body copy for Profile, Cohort, Scenario and Method, respectively. The count covers the provisional banner and visible prose. Chart data, field labels, navigation and controls are interface labels. The forbidden-language check also scans chart and control text outside the labelled synthetic figures.
+Playwright counted **53**, **41**, **48** and **30** words of visible body copy for Profile, Cohort, Scenario and Method, respectively. The count covers the provisional banner and visible prose. Chart data, field labels, navigation and controls are interface labels. The forbidden-language check also scans chart and control text outside the labelled synthetic figures.
 
 ## Screenshots
 
@@ -32,7 +32,7 @@ Playwright counted **39**, **41**, **48** and **30** words of visible body copy 
 | Scenario lab | [Desktop](analytics-screenshots/scenario-1440.png) | [Mobile](analytics-screenshots/scenario-390.png) |
 | Method lab | [Desktop](analytics-screenshots/method-1440.png) | [Mobile](analytics-screenshots/method-390.png) |
 
-[Before redesign, Time Machine first screen](healthtech-pilot/screenshots/time-machine-desktop.png)
+[Profile curve labels, timing styles and research note on mobile](analytics-screenshots/profile-curves-390.png) · [Before redesign, Time Machine first screen](healthtech-pilot/screenshots/time-machine-desktop.png)
 
 ## Hand checks and case results
 
@@ -47,7 +47,7 @@ The weighted sum includes only dimensions with a defined score and divides by th
 
 Supie and Social Club share `online`. Its weight is 2.01160091 and the 14-term union weighs 36.48017893 using the ten-record entry corpus. The final similarity is `(0.35 × 0.01838077 + 0.15 × 0.75 + 0.30 × 1) / 0.80 = 0.52366659` with coverage **0.5125**. Product and customer misses 0.25. Narrative shares zero terms with Social Club. Its similarity is `(0.35 × 0.50 + 0.15 × 0.50 + 0.30 × 1) / 0.80 = 0.6875` with coverage **0.4375**.
 
-- **Supie.** Zero of 39 eligible peers qualify on recorded facts. Nine have enough entry facts. Formus Labs and Inhibit Coatings tie on the product-and-customer ordering at 0.250 on that dimension and 0.175 overall. They miss overall similarity, shared evidence and peer fact checks. Social Club leads overall similarity with a product-and-customer score of 0.018. A dated offering and buyer record for closer peers could change the result.
+- **Supie.** Zero of 39 eligible peers qualify on recorded facts. Nine reach the five-fact bar. Social Club leads the displayed ranking at 0.018 for product and customer and 0.524 overall, followed by Parcelport and First AML. Formus Labs and Inhibit Coatings each score 0.250 on product and customer. Their peer evidence falls below the field bar, so they appear in a separate research note.
 - **Partly, 8 October 2020.** No scoreable subject facts. Nine of 32 earlier peers reach the field bar on this track. A dated offering and intended-buyer source is needed.
 - **Halter, 1 December 2016.** No scoreable subject facts. One of eight earlier peers reaches the field bar. The entry month is imprecise. The score uses its earliest day and needs a dated offering and intended-buyer source by then.
 - **Cohort explorer.** The full audit includes 453 candidates and 55 entries, with 2 verified Series A or later within 36 months, 33 unknown and 10 lost to follow-up. Historical entry counts use retrospectively accepted entry dates. Follow-up uses source availability and the selected date. The heatmap withholds later reviews.
@@ -92,9 +92,20 @@ Run `scripts/preview_backtest.py`, `scripts/export_static.py` and `scripts/synth
 - GitHub Pages uses the GitHub Actions publishing source and a main-only deployment environment. The static demo is checked locally. Its first Pages deployment follows a push to `main`.
 - Production source links are external. The browser walk-through checked navigation and local provenance. The fresh-eyes reviewer did not re-verify third-party source contents.
 
+## PR #15 fix pass
+
+| Change | Verification |
+| --- | --- |
+| Nearest KPI and peer charts | `profile ranks evidence-ready peers and defers the lower chart` checks all nine ranked rows, the top three, the four-way tie and the separate evidence research note. |
+| Development curves | `development curves label the selected companies and distinguish all three clocks` checks the four company labels and colours. First AML’s Series B is solid and known by the cutoff. Social Club’s removal has a solid segment and hollow marker because the event occurred before the cutoff and the source was found later. Parcelport’s later activity is dashed and labelled Hindsight. Subject events still appear as playback reaches their dates. |
+| Mobile performance | `profile reserves mobile plot space before evidence arrives` checks the reserved plot height against the rendered frame. The ranking test also checks that the lower chart starts undrawn and renders on approach. The chart library loads separately from the initial profile, and the static profile projection transfers 70,625 bytes instead of the 174,597-byte full scenario payload. |
+| Scenario and method | The scenario test checks human option labels, vocabulary-code tooltips and unchanged qualifying counts. The Method test checks the Locked badge and the three real audit meters. |
+| Cohort | `cohort event strip scrolls all dated companies and preserves outcome sorting` checks all 55 dated entry rows, keyboard scrolling and the updated order. |
+| Frozen inputs | The eight original static response hashes match the previous PR build, including the full scenario payloads and seeded robustness. The export test verifies that the compact profile is an exact projection of the existing response. |
+
 ## Lighthouse
 
-Lighthouse 13.6.0, default mobile simulation against the loopback static build. Medians over three cold runs against the final bundle were **64** for Profile and **100** each for Cohort, Scenario and Method. Profile scored 64 in each run, with simulated largest contentful paint around 5.6 seconds and a layout shift around 0.31. Method varied between 79 and 100. The performance threshold is non-blocking.
+Lighthouse 13.6.0 used default mobile simulation against the loopback static build. Profile scored **81, 100 and 100** in three cold runs, a **median of 100** against the target of 85. Cumulative layout shift was **0** in each run. Simulated largest contentful paint varied between 0.9 and 5.2 seconds. The initial PR build recorded a Profile median of 64. The initial medians for Cohort, Scenario and Method were 100 each.
 
 ## Self-assessment
 
@@ -102,7 +113,7 @@ Targets were visitor B+, UX A−, method A− and engineering A−.
 
 | View | Visitor | UX | Method | Engineering | Basis |
 | --- | --- | --- | --- | --- | --- |
-| Company profile | B+ | A− | A− | B+ | The entry story, tie and source walk work on both widths. Partly and Halter remain sparse. Static mobile performance missed the target. |
+| Company profile | B+ | A− | A− | A− | Evidence-ready rankings, playback and source details work at both widths. The mobile performance median meets the target. Partly and Halter remain sparse. |
 | Cohort explorer | B+ | B+ | A− | A− | Count drilldowns are clear. The 12 heatmap columns use abbreviations on narrow screens and expand in the table. |
 | Scenario lab | B+ | A− | A− | A− | Preset counts, source-linked events and the weighting tie are inspectable. The three empty recorded cases constrain comparisons. |
 | Method lab | B+ | A− | A− | A− | The synthetic charts and real counts are clearly labelled. The sample-size demonstration uses one seeded draw of each nested group. |

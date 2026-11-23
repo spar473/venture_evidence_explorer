@@ -1,4 +1,4 @@
-import { useId, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import * as Plot from "@observablehq/plot";
 import { patternMarker } from "./encoding";
 
@@ -17,6 +17,10 @@ type FigureProps = {
   marks: (width: number) => Plot.PlotOptions;
   onDetail: (detail: Detail) => void;
   synthetic?: string;
+  reserve?: boolean;
+  defer?: boolean;
+  placeholderHeight?: number;
+  plotScrollLabel?: string;
   children?: ReactNode;
 };
 
@@ -59,15 +63,32 @@ export function Figure({
   marks,
   onDetail,
   synthetic,
+  reserve = false,
+  defer = false,
+  placeholderHeight,
+  plotScrollLabel,
   children,
 }: FigureProps) {
   const id = useId();
   const [table, setTable] = useState(false);
+  const [near, setNear] = useState(false);
   const host = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!defer || near || table || !host.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setNear(true);
+      },
+      { rootMargin: "120px" },
+    );
+    observer.observe(host.current);
+    return () => observer.disconnect();
+  }, [defer, near, table]);
 
   useLayoutEffect(() => {
     const container = host.current;
-    if (!container || table || !rows.length) return;
+    if (!container || table || !rows.length || (defer && !near)) return;
     const lookup = new Map(markRows.map((row) => [titleFor(row), row]));
     let previousWidth = 0;
     const render = () => {
@@ -86,6 +107,7 @@ export function Figure({
           background: "transparent",
         },
         ...marks(width),
+        ...(reserve ? { height: Math.round(container.getBoundingClientRect().height) } : {}),
       }) as SVGSVGElement;
       svg.setAttribute("role", "group");
       svg.setAttribute("aria-label", summary);
@@ -118,7 +140,7 @@ export function Figure({
     const observer = new ResizeObserver(render);
     observer.observe(container);
     return () => observer.disconnect();
-  }, [table, marks, rows, markRows, summary, onDetail, id]);
+  }, [table, marks, rows, markRows, summary, onDetail, id, defer, near, reserve]);
 
   return (
     <figure className={`vee-figure${synthetic ? " vee-synthetic" : ""}`} aria-label={summary}>
@@ -139,8 +161,12 @@ export function Figure({
       {!rows.length && <p className="vee-empty">No matching records.</p>}
       <div
         id={id}
-        className={table ? "vee-table-scroll" : "vee-plot"}
-        tabIndex={table ? 0 : undefined}
+        className={
+          table ? "vee-table-scroll" : plotScrollLabel ? "vee-plot vee-plot-scroll" : "vee-plot"
+        }
+        role={!table && plotScrollLabel ? "region" : undefined}
+        aria-label={!table ? plotScrollLabel : undefined}
+        tabIndex={table || plotScrollLabel ? 0 : undefined}
       >
         {table ? (
           <table>
@@ -177,7 +203,13 @@ export function Figure({
             </tbody>
           </table>
         ) : (
-          <div ref={host} />
+          <div
+            ref={host}
+            className={reserve ? "vee-plot-frame" : undefined}
+            style={
+              rows.length && placeholderHeight ? { minBlockSize: placeholderHeight } : undefined
+            }
+          />
         )}
       </div>
     </figure>

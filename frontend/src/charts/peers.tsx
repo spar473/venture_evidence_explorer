@@ -1,11 +1,20 @@
 import * as Plot from "@observablehq/plot";
+import { eventLastDate, eventTiming } from "./event-clock";
 import { Figure, titleFor, type Row } from "./figure";
-import { eventLabels, eventStyle, eventStyles, patternMarker } from "./encoding";
+import {
+  developmentColors,
+  eventLabels,
+  eventStyle,
+  eventStyles,
+  eventTimingLabels,
+  patternMarker,
+  type EventTiming,
+} from "./encoding";
 import {
   formatDate,
   scoreBand,
   scoreValue,
-  uiOrder,
+  rankablePeers,
   type Company,
   type Peer,
   type Scenario,
@@ -22,6 +31,7 @@ type PeerProps = {
   companies: Map<string, Company>;
   facts: Record<string, Fact[]>;
   subjectFacts: Fact[];
+  coveredPeers: ReadonlySet<string>;
 };
 
 export function PeerChart({
@@ -29,12 +39,12 @@ export function PeerChart({
   companies,
   facts,
   subjectFacts,
+  coveredPeers,
   productOnly = false,
-}: PeerProps & { productOnly?: boolean }) {
+  reserve = false,
+}: PeerProps & { productOnly?: boolean; reserve?: boolean }) {
   const open = useDetail();
-  const peers = uiOrder(
-    scenario.peers.filter((peer) => peer.similarity != null && peer.product_customer != null),
-  );
+  const peers = rankablePeers(scenario.peers, coveredPeers);
   const groupMap = new Map<string, Peer[]>();
   for (const peer of peers) {
     const key = keyFor(peer);
@@ -98,7 +108,9 @@ export function PeerChart({
     peer,
     row: byId.get(peer.company_id)!,
     name: companies.get(peer.company_id)!.name,
+    tie: groupMap.get(keyFor(peer))?.length ?? 1,
   }));
+  const chartHeight = Math.max(195, 58 + display.length * 24);
   const bar = scenario.thresholds.product_customer;
   const min = scenario.thresholds.similarity;
   const maxX = Math.min(
@@ -117,10 +129,13 @@ export function PeerChart({
       rows={rows}
       markRows={allMarks}
       onDetail={open}
+      reserve={reserve}
+      defer={productOnly || reserve}
+      placeholderHeight={productOnly ? chartHeight : undefined}
       marks={(width) =>
         productOnly
           ? {
-              height: Math.max(195, 58 + display.length * 24),
+              height: chartHeight,
               marginLeft: width < 420 ? 108 : 148,
               x: { label: "Product and customer", domain: [0, maxX], grid: true },
               y: {
@@ -138,6 +153,20 @@ export function PeerChart({
                   insetTop: 4,
                   insetBottom: 4,
                 }),
+                Plot.text(
+                  display.filter(
+                    (item, index) =>
+                      item.tie > 1 && display[index - 1]?.row.values[5] !== item.row.values[5],
+                  ),
+                  {
+                    x: ({ peer }) => peer.product_customer ?? 0,
+                    y: "name",
+                    text: ({ tie }) => `${tie} tied`,
+                    textAnchor: "start",
+                    dx: 7,
+                    fill: "#364c70",
+                  },
+                ),
               ],
             }
           : {
@@ -208,14 +237,21 @@ export function PeerChart({
   );
 }
 
-export type EventSeries = { company: Company; events: BacktestEvent[]; subject?: boolean };
+export type EventSeries = {
+  company: Company;
+  events: BacktestEvent[];
+  subject?: boolean;
+  color?: string;
+};
 type EventPoint = {
   name: string;
+  companyId: string;
+  color: string;
   month: number;
   stage: string;
   track: string;
   kind: string;
-  hindsight: boolean;
+  timing: EventTiming;
   review: Row;
 };
 const stages = ["Seed", "Extra round", "Series A", "Series B", "Closed"];
@@ -234,24 +270,18 @@ function calendarMonths(start: string, date: string) {
   return Math.max(0, (year - entryYear) * 12 + month - entryMonth + (day - entryDay) / 31);
 }
 
-function eventLastDate(company: Company, event: BacktestEvent) {
-  const entry = new Date(company.start + "T00:00:00Z");
-  entry.setUTCDate(entry.getUTCDate() + event.upper_days);
-  return entry.toISOString().slice(0, 10);
-}
-
 export function eventPoints(
   series: EventSeries[],
   asof: string,
-  hindsightPeers: boolean,
+  showLaterPeers: boolean,
 ): EventPoint[] {
-  return series.flatMap(({ company, events, subject }) => {
+  return series.flatMap(({ company, events, subject, color }) => {
     let stage = 0;
     const visible = [company.entry, ...events].filter(
       (event) =>
         event.event_id === company.entry.event_id ||
-        (hindsightPeers
-          ? !subject || eventLastDate(company, event) <= asof
+        (showLaterPeers
+          ? !subject || eventTiming(company, event, asof) !== "hindsight"
           : event.source.available_on <= asof),
     );
     return visible.map((event) => {
@@ -259,7 +289,7 @@ export function eventPoints(
       else if (["series_b", "series_c_plus"].includes(event.kind)) stage = Math.max(stage, 3);
       else if (["series_a", "series_a_equivalent"].includes(event.kind)) stage = Math.max(stage, 2);
       else if (roundKinds.has(event.kind)) stage = Math.max(stage, 1);
-      const hindsight = event.source.available_on > asof;
+      const timing = eventTiming(company, event, asof);
       const eventName = eventLabels[event.kind] ?? event.kind.replaceAll("_", " ");
       const month =
         event.event_id === company.entry.event_id
@@ -267,11 +297,13 @@ export function eventPoints(
           : calendarMonths(company.start, eventLastDate(company, event));
       return {
         name: company.name,
+        companyId: company.company_id,
+        color: color ?? developmentColors.other,
         month,
         stage: stages[stage],
         track: subject ? "Subject" : "Peer",
         kind: event.kind,
-        hindsight,
+        timing,
         review: {
           key: event.event_id,
           values: [
@@ -279,9 +311,9 @@ export function eventPoints(
             eventName,
             formatDate(event.date.value ?? ""),
             Math.round(month),
-            hindsight ? "Hindsight" : "Known by date",
+            eventTimingLabels[timing],
           ],
-          detail: eventDetail(company.name, event, hindsight),
+          detail: eventDetail(company.name, event, timing),
         },
       };
     });
@@ -294,9 +326,11 @@ function eventDots(points: EventPoint[], y: "stage" | "name") {
     y,
     r: (point) => (point.track === "Subject" ? 5.5 : 4.2),
     fill: (point) =>
-      eventStyle(point.kind) === "unknown"
-        ? patternMarker
-        : eventStyles[eventStyle(point.kind)].fill,
+      point.timing === "late_source"
+        ? "#fff"
+        : eventStyle(point.kind) === "unknown"
+          ? patternMarker
+          : eventStyles[eventStyle(point.kind)].fill,
     stroke: (point) => eventStyles[eventStyle(point.kind)].stroke,
     symbol: (point: EventPoint) => eventStyles[eventStyle(point.kind)].symbol,
     strokeWidth: 1.4,
@@ -326,11 +360,14 @@ export function StatusLegend({ strip = false }: { strip?: boolean }) {
 export function Development({ series, asof }: { series: EventSeries[]; asof: string }) {
   const open = useDetail();
   const data = eventPoints(series, asof, true);
+  const endpoints: EventPoint[] = [];
   const lines = series.flatMap(({ company }) => {
-    const points = data.filter((point) => point.name === company.name);
+    const points = data.filter((point) => point.companyId === company.company_id);
+    if (!points.length) return [];
+    endpoints.push(points[points.length - 1]);
     return points.slice(1).flatMap((point, i) => [
-      { ...points[i], segment: point.review.key, dashed: point.hindsight },
-      { ...point, segment: point.review.key, dashed: point.hindsight },
+      { ...points[i], segment: point.review.key, dashed: point.timing === "hindsight" },
+      { ...point, segment: point.review.key, dashed: point.timing === "hindsight" },
     ]);
   });
   const visibleMax = Math.max(36, ...data.map((point) => point.month + 3));
@@ -342,32 +379,83 @@ export function Development({ series, asof }: { series: EventSeries[]; asof: str
         y: "stage",
         z: "segment",
         curve: "step-after",
-        stroke: (point) => (point.track === "Subject" ? "#254891" : "#8192ac"),
-        strokeWidth: (point) => (point.track === "Subject" ? 2.6 : 1.6),
+        stroke: "color",
+        strokeWidth: (point) => (point.track === "Subject" ? 2.6 : 1.8),
         ...(dashed ? { strokeDasharray: "5 4" } : {}),
       },
     );
   return (
     <Figure
       title="Development curves"
-      summary="Dated funding and closure milestones months after each company’s first round."
+      summary="Funding and closure milestones from each company’s first round. Each line is labelled at its last point."
       columns={["Company", "Event", "Date", "Month", "Timing"]}
       rows={data.map((point) => point.review)}
       onDetail={open}
-      marks={() => ({
-        height: 258,
-        marginLeft: 80,
-        x: { label: "Months from first round", domain: [0, visibleMax], grid: true, ticks: 6 },
-        y: { label: null, domain: [...stages].reverse(), grid: true },
-        marks: [line(false), line(true), eventDots([...data].reverse(), "stage")],
-      })}
+      reserve
+      defer
+      marks={(width) => {
+        const marginRight = Math.min(
+          width * 0.37,
+          Math.max(80, ...endpoints.map(({ name }) => name.length * 5.6 + 12)),
+        );
+        const marginLeft = width < 420 ? 67 : 80;
+        const monthWidth = (width - marginLeft - marginRight) / visibleMax;
+        const labels = stages.flatMap((stage) => {
+          const atStage = endpoints
+            .filter((point) => point.stage === stage)
+            .sort((a, b) => a.month - b.month);
+          return atStage.map((point) => {
+            const neighbours = atStage.filter(
+              (other) => Math.abs(other.month - point.month) * monthWidth < marginRight,
+            );
+            const slot = neighbours.indexOf(point);
+            const offset = neighbours.length > 1 ? (slot - (neighbours.length - 1) / 2) * 13 : 0;
+            return Plot.text([point], {
+              x: "month",
+              y: "stage",
+              text: "name",
+              dx: 8,
+              dy: offset,
+              textAnchor: "start",
+              fill: "color",
+              fontSize: 10,
+              fontWeight: 650,
+              stroke: "#fff",
+              strokeWidth: 3,
+              lineWidth: (marginRight - 10) / 10,
+              textOverflow: "ellipsis",
+              title: (item) => item.name,
+            });
+          });
+        });
+        return {
+          height: 258,
+          marginLeft,
+          marginRight,
+          marginBottom: 43,
+          x: {
+            label: "Months from first round",
+            domain: [0, visibleMax],
+            grid: true,
+            ticks: width < 420 ? 4 : 6,
+          },
+          y: { label: null, domain: [...stages].reverse(), grid: true },
+          marks: [line(false), line(true), eventDots([...data].reverse(), "stage"), ...labels],
+        };
+      }}
     >
       <div className="vee-legend">
         <span>
-          <i className="vee-line" /> Known by date
+          <i className="vee-line" />
+          {eventTimingLabels.known}
         </span>
         <span>
-          <i className="vee-line dashed" /> Hindsight
+          <i className="vee-dot" />
+          Source found later
+        </span>
+        <span>
+          <i className="vee-line dashed" />
+          {eventTimingLabels.hindsight}
         </span>
       </div>
     </Figure>
@@ -379,11 +467,13 @@ export function EventStrip({
   asof,
   title = "Event strip",
   hindsight = false,
+  scroll = false,
 }: {
   series: EventSeries[];
   asof: string;
   title?: string;
   hindsight?: boolean;
+  scroll?: boolean;
 }) {
   const open = useDetail();
   const points = eventPoints(series, asof, hindsight).filter((point) => point.month <= 150);
@@ -394,11 +484,15 @@ export function EventStrip({
       columns={["Company", "Event", "Date", "Month", "Timing"]}
       rows={points.map((point) => point.review)}
       onDetail={open}
+      plotScrollLabel={scroll ? "Scroll company event timeline" : undefined}
       marks={(width) => ({
         height: Math.max(156, series.length * 26 + 62),
+        marginTop: scroll ? 42 : undefined,
+        marginBottom: scroll ? 14 : undefined,
         marginLeft: width < 440 ? 106 : 175,
         x: {
           label: "Months from first round",
+          axis: scroll ? "top" : "bottom",
           domain: [0, 150],
           grid: true,
           ticks: width < 440 ? 4 : 7,

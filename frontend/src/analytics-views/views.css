@@ -787,3 +787,44 @@
     font-size: 11px;
   }
 }
+
+.vee-plot-frame {
+  aspect-ratio: 4 / 3;
+  min-block-size: 244px;
+  max-block-size: 258px;
+}
+.vee-profile-loading {
+  min-block-size: 840px;
+}
+.vee-profile-loading-controls {
+  block-size: 392px;
+}
+.vee-profile-slots .vee-figure {
+  padding-block-start: 55px;
+}
+.vee-profile-slots .vee-plot-frame {
+  background: var(--surface);
+  border: 1px solid var(--vee-line);
+  border-radius: 11px;
+}
+.vee-research-note {
+  padding: 10px 12px;
+  margin: 0 0 14px;
+  border: 1px solid var(--vee-line);
+  border-radius: 8px;
+  color: var(--vee-muted);
+  background: var(--surface);
+}
+.vee-plot-scroll {
+  max-block-size: min(31rem, 72vh);
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+@media (max-width: 670px) {
+  .vee-main[data-view="profile"] .vee-banner {
+    min-block-size: 68px;
+  }
+  .vee-profile-loading-controls {
+    block-size: 555px;
+  }
+}

@@ -12,6 +12,7 @@ import type {
 } from "../api-schema";
 
 export type { Cohort, Company, CompanyDetail, Method, Peer, Profile, Robustness, Scenario, Scorer };
+export type ProfileOverview = Omit<Profile, "presets" | "scorer">;
 export type Value = string | number;
 export type Snapshot = Record<string, Value>;
 export type RoleMap = Record<string, string[]>;
@@ -30,7 +31,7 @@ export const STATIC = import.meta.env.MODE === "static";
 export function resourceURL(path: string) {
   return STATIC ? `${import.meta.env.BASE_URL}analytics-data${path}.json` : `/api${path}`;
 }
-export function profileEvidence(profile: Profile) {
+export function profileEvidence(profile: ProfileOverview) {
   const reviews = new Map(
     profile.reveal.evidence_reviews.map((review) => [
       review.company_id + ":" + review.field,
@@ -70,6 +71,24 @@ export function today() {
 export function textValue(value: Value) {
   return typeof value === "string" ? value.replaceAll("_", " ") : String(value);
 }
+const vocabularyLabels: Record<string, string> = {
+  food_beverage: "Food and beverage",
+  household: "Households",
+  individual: "Individuals",
+  saas: "SaaS",
+  new_zealand: "New Zealand",
+  australia_new_zealand: "Australia and New Zealand",
+  "lt0.5m": "Below NZ$0.5m",
+  "0.5m_to_lt2m": "NZ$0.5m to under NZ$2m",
+  "2m_to_lt5m": "NZ$2m to under NZ$5m",
+  "5m_to_lt10m": "NZ$5m to under NZ$10m",
+  gte10m: "NZ$10m or more",
+};
+export function vocabularyLabel(value: Value) {
+  const label = textValue(value);
+  return vocabularyLabels[String(value)] ?? label.charAt(0).toUpperCase() + label.slice(1);
+}
+
 export const fieldNames: Record<string, string> = {
   description: "Offering",
   product_type: "Product",
@@ -113,6 +132,20 @@ export function uiOrder(peers: Peer[]) {
     (a, b) =>
       (b.product_customer ?? -1) - (a.product_customer ?? -1) ||
       (b.similarity ?? -1) - (a.similarity ?? -1),
+  );
+}
+export function samePeerRank(a: Peer, b: Peer) {
+  return (
+    a.product_customer?.toFixed(12) === b.product_customer?.toFixed(12) &&
+    a.similarity?.toFixed(12) === b.similarity?.toFixed(12)
+  );
+}
+export function rankablePeers(peers: Peer[], covered: ReadonlySet<string>) {
+  return uiOrder(
+    peers.filter(
+      (peer) =>
+        covered.has(peer.company_id) && peer.similarity != null && peer.product_customer != null,
+    ),
   );
 }
 export function statusAt(

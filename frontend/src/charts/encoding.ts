@@ -58,3 +58,16 @@ export const reviewFill: Record<string, string> = {
 };
 
 export const patternMarker = "url(#vee-hatch)";
+
+export const developmentColors = {
+  subject: "#254891",
+  nearest: ["#0e766e", "#8e3a78", "#9a4d14"],
+  other: "#64748b",
+} as const;
+
+export const eventTimingLabels = {
+  known: "Known by date",
+  late_source: "Happened before; source found later",
+  hindsight: "Hindsight",
+} as const;
+export type EventTiming = keyof typeof eventTimingLabels;

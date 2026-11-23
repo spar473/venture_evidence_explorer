@@ -51,10 +51,7 @@ export function CohortStack({
                   info.events.find((item) => item.event_id === eventId) ?? company.entry;
                 return (
                   <li key={company.company_id}>
-                    <button
-                      type="button"
-                      onClick={() => open(eventDetail(company.name, event, false))}
-                    >
+                    <button type="button" onClick={() => open(eventDetail(company.name, event))}>
                       {company.name} · {formatDate(event.date.value ?? "")}
                     </button>
                   </li>

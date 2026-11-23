@@ -31,7 +31,14 @@ def export(destination: Path) -> None:
     write('views/cohort', cohort_payload(inputs))
     write('views/method', method_lab(7))
     for company in SUBJECTS:
-        write(f'views/profile/{company}', profile_payload(inputs, company))
+        profile = profile_payload(inputs, company)
+        write(f'views/profile/{company}', profile)
+        # Profile playback needs the recorded scores and sources. Keep scenario presets and
+        # their offline scorer inputs out of the initial download.
+        write(
+            f'views/overview/{company}',
+            {key: value for key, value in profile.items() if key not in ('presets', 'scorer')},
+        )
         write(f'robustness/{company}', robustness(inputs, company, 2000, 7))
     write('manifest', {'sha256': digests})
     (destination / 'method.txt').write_bytes((ROOT / 'docs/design/BACKTEST_PREREG.md').read_bytes())

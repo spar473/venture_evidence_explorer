@@ -143,6 +143,7 @@ def test_export_covers_all_views_subjects_and_presets(tmp_path):
         'views/cohort',
         'views/method',
         *(f'views/profile/{company_id}' for company_id in SUBJECTS),
+        *(f'views/overview/{company_id}' for company_id in SUBJECTS),
         *(f'robustness/{company_id}' for company_id in SUBJECTS),
     }
     for path, digest in manifest.items():
@@ -151,3 +152,6 @@ def test_export_covers_all_views_subjects_and_presets(tmp_path):
         result = json.loads(contents)
         if path.startswith('views/profile/'):
             assert len(result['presets']) == len(PRESETS)
+            overview_path = path.replace('views/profile/', 'views/overview/')
+            overview = json.loads((tmp_path / f'{overview_path}.json').read_bytes())
+            assert overview == {key: value for key, value in result.items() if key not in ('presets', 'scorer')}

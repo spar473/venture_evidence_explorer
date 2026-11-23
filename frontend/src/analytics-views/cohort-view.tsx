@@ -39,7 +39,6 @@ function PageControl({
 
 export function CohortExplorer({ cohort, filters }: { cohort: Cohort; filters: Filters }) {
   const [order, setOrder] = useState("vintage");
-  const [strip, setStrip] = useState(0);
   const [heat, setHeat] = useState(0);
   const selected: ObservedCompany[] = cohort.companies
     .filter((company) => matchesFilter(company, filters) && company.end <= filters.asof)
@@ -61,7 +60,6 @@ export function CohortExplorer({ cohort, filters }: { cohort: Cohort; filters: F
             Object.keys(statuses).indexOf(a.status) - Object.keys(statuses).indexOf(b.status),
         );
   const lastPage = Math.max(0, Math.ceil(selected.length / PAGE_SIZE) - 1);
-  const stripPage = Math.min(strip, lastPage);
   const heatPage = Math.min(heat, lastPage);
   return (
     <>
@@ -95,25 +93,17 @@ export function CohortExplorer({ cohort, filters }: { cohort: Cohort; filters: F
               value={order}
               onChange={(event) => {
                 setOrder(event.currentTarget.value);
-                setStrip(0);
               }}
             >
               <option value="vintage">Vintage</option>
               <option value="outcome">Outcome</option>
             </select>
           </label>
-          <PageControl
-            page={stripPage}
-            setPage={setStrip}
-            total={selected.length}
-            label="Event strip pages"
-          />
         </div>
         <EventStrip
           asof={filters.asof}
-          series={ordered
-            .slice(stripPage * PAGE_SIZE, (stripPage + 1) * PAGE_SIZE)
-            .map(({ company, info }) => ({ company, events: info.events }))}
+          scroll
+          series={ordered.map(({ company, info }) => ({ company, events: info.events }))}
         />
       </section>
       <section aria-label="Review coverage">

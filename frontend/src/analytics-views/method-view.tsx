@@ -37,7 +37,7 @@ export function MethodLab({ cohort }: { cohort: Cohort }) {
         <section className="vee-panel vee-gates">
           <div className="vee-section-heading">
             <h2>Real evidence gate</h2>
-            <span className="vee-tag">{gates.primary.gate_ready ? "Met" : "Open"}</span>
+            <span className="vee-tag">{gates.primary.gate_ready ? "Met" : "Locked"}</span>
           </div>
           <p className="vee-note">Cohort audit · {formatDate(cohort.audit_date)}</p>
           {metrics.map((metric, i) => (

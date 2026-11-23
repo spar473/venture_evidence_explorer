@@ -1,11 +1,15 @@
 import { KPI, matchesFilter, type Filters } from "./shell";
-import { Development, PeerChart, type EventSeries } from "../charts/peers";
+import { lazy, Suspense } from "react";
+import type { EventSeries } from "../charts/peers";
+import { eventTiming } from "../charts/event-clock";
+import { developmentColors } from "../charts/encoding";
 import { FactDetails, badge, eventDetail, useDetail } from "./details";
 import {
   type Cohort,
   type Company,
-  type Peer,
-  type Profile,
+  type ProfileOverview,
+  rankablePeers,
+  samePeerRank,
   type Robustness,
   formatDate,
   profileEvidence,
@@ -14,6 +18,26 @@ import {
   textValue,
   uiOrder,
 } from "./data";
+
+const PeerChart = lazy(() =>
+  import("../charts/peers").then(({ PeerChart }) => ({ default: PeerChart })),
+);
+const Development = lazy(() =>
+  import("../charts/peers").then(({ Development }) => ({ default: Development })),
+);
+
+export function ProfileChartSlots() {
+  return (
+    <div className="vee-columns vee-profile-slots" aria-hidden="true">
+      <div className="vee-figure">
+        <div className="vee-plot-frame" />
+      </div>
+      <div className="vee-figure">
+        <div className="vee-plot-frame" />
+      </div>
+    </div>
+  );
+}
 
 const DAY = 86400000;
 const asDay = (date: string) => Math.round(Date.parse(date + "T00:00:00Z") / DAY);
@@ -29,10 +53,6 @@ function moveMonth(date: string, delta: number) {
   return next.toISOString().slice(0, 10);
 }
 
-const sameRank = (a: Peer, b: Peer) =>
-  a.product_customer?.toFixed(12) === b.product_customer?.toFixed(12) &&
-  a.similarity?.toFixed(12) === b.similarity?.toFixed(12);
-
 export function CompanyProfile({
   profile,
   subject,
@@ -44,7 +64,7 @@ export function CompanyProfile({
   onDate,
   robustness,
 }: {
-  profile: Profile;
+  profile: ProfileOverview;
   subject: Company;
   cohort: Cohort;
   companies: Map<string, Company>;
@@ -60,16 +80,22 @@ export function CompanyProfile({
       matchesFilter(companies.get(peer.company_id)!, filters),
     ),
   );
-  const ranked = peers
-    .filter((peer) => peer.similarity !== null)
-    .filter((peer) => peer.product_customer !== null);
+  const coveredPeers = new Set(profile.covered_peer_ids);
+  const ranked = rankablePeers(peers, coveredPeers);
   const qualifying = ranked.filter((peer) => peer.qualifies);
-  const pool = qualifying.length ? qualifying : ranked;
-  const shown = pool.filter((peer, i) => i < 3 || sameRank(peer, pool[2]));
-  const nearest = pool[0];
-  const tied = nearest && pool.filter((peer) => sameRank(peer, nearest));
+  const nearest = ranked[0];
+  const tied = nearest ? ranked.filter((peer) => samePeerRank(peer, nearest)) : [];
+  const boundary = ranked[2];
+  const boundaryTied = ranked[3] && samePeerRank(ranked[3], boundary);
+  const insufficient = peers.filter(
+    (peer) => !coveredPeers.has(peer.company_id) && peer.product_customer != null,
+  );
+  const closestToResearch = insufficient
+    .filter((peer) => peer.product_customer === insufficient[0]?.product_customer)
+    .map((peer) => companies.get(peer.company_id)!.name.replace(/\s+Limited$/i, ""))
+    .sort((a, b) => a.localeCompare(b));
   const stability = robustness?.boundary_ties.reduce((count, tie) => count + tie.draws, 0);
-  const covered = peers.filter((peer) => profile.covered_peer_ids.includes(peer.company_id)).length;
+  const covered = peers.filter((peer) => coveredPeers.has(peer.company_id)).length;
   const { subjectFacts: caseFacts, peerFacts } = profileEvidence(profile);
   const hasSharedSource =
     caseFacts.length > 0 &&
@@ -79,17 +105,34 @@ export function CompanyProfile({
         fact.source.witness_on === caseFacts[0].source.witness_on &&
         fact.source.available_on === caseFacts[0].source.available_on,
     );
-  const shownCompanies = [subject, ...shown.map((peer) => companies.get(peer.company_id)!)];
-  const series: EventSeries[] = shownCompanies.map((company) => ({
-    company,
-    events: cohort.reveal[company.company_id].events,
-    subject: company.company_id === subject.company_id,
-  }));
+  const series: EventSeries[] = [
+    {
+      company: subject,
+      events: cohort.reveal[subject.company_id].events,
+      subject: true,
+      color: developmentColors.subject,
+    },
+    ...ranked.flatMap((peer, index) => {
+      const inBoundaryTie = boundaryTied && samePeerRank(peer, boundary);
+      if (index >= 3 && !inBoundaryTie && !peer.qualifies) return [];
+      return [
+        {
+          company: companies.get(peer.company_id)!,
+          events: cohort.reveal[peer.company_id].events,
+          color:
+            index < 3 && !inBoundaryTie
+              ? developmentColors.nearest[index]
+              : developmentColors.other,
+        },
+      ];
+    }),
+  ];
   const chart = {
     scenario: { ...profile.recorded, peers, qualifying_count: qualifying.length },
     companies,
     facts: peerFacts,
     subjectFacts: caseFacts,
+    coveredPeers,
   };
   return (
     <>
@@ -167,10 +210,18 @@ export function CompanyProfile({
             ? "No comps clear all checks. Dated offering and buyer evidence would help."
             : `${qualifying.length} peers clear all checks. Scores use entry-date evidence.`}
       </p>
-      <div className="vee-columns vee-profile-hero">
-        <PeerChart {...chart} />
-        <Development series={series} asof={playback} />
-      </div>
+      <Suspense fallback={<ProfileChartSlots />}>
+        <div className="vee-columns vee-profile-hero">
+          <PeerChart {...chart} reserve />
+          <Development series={series} asof={playback} />
+        </div>
+      </Suspense>
+      {closestToResearch.length > 0 && (
+        <p className="vee-research-note">
+          Closest product match, not enough evidence yet: {closestToResearch.join(", ")}. Research
+          these next.
+        </p>
+      )}
       <section className="vee-evidence vee-panel">
         <div className="vee-section-heading">
           <h2>Entry evidence</h2>
@@ -179,7 +230,11 @@ export function CompanyProfile({
             onClick={() =>
               open({
                 heading: `${subject.name} · first round`,
-                content: eventDetail(subject.name, subject.entry, false).content,
+                content: eventDetail(
+                  subject.name,
+                  subject.entry,
+                  eventTiming(subject, subject.entry, playback),
+                ).content,
               })
             }
           >
@@ -225,7 +280,11 @@ export function CompanyProfile({
           </>
         )}
       </section>
-      {!qualifying.length && <PeerChart {...chart} productOnly />}
+      {!qualifying.length && (
+        <Suspense fallback={null}>
+          <PeerChart {...chart} productOnly />
+        </Suspense>
+      )}
     </>
   );
 }

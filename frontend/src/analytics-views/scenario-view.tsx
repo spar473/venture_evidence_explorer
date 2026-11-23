@@ -8,7 +8,7 @@ import {
   fieldNames,
   formatDate,
   profileEvidence,
-  textValue,
+  vocabularyLabel,
   uiOrder,
   type Cohort,
   type Company,
@@ -100,11 +100,13 @@ export function ScenarioLab({
   function fieldSelect(field: string) {
     const recorded = profile.scorer.subject[field];
     const choices = profile.scorer.options[field] ?? [];
+    const current = activeOverrides[field] ?? recorded;
     return (
       <label key={field} className="vee-fact-toggle">
         <span>{fieldNames[field]}</span>
         <select
           aria-label={fieldNames[field]}
+          title={current == null ? undefined : String(current)}
           disabled={!subjectFacts.length}
           value={String(activeOverrides[field] ?? "")}
           onChange={(event) => {
@@ -116,14 +118,14 @@ export function ScenarioLab({
             setSelected("custom");
           }}
         >
-          <option value="">
-            {recorded != null ? `${textValue(recorded)} · recorded` : "Unrecorded"}
+          <option value="" title={recorded == null ? undefined : String(recorded)}>
+            {recorded != null ? `${vocabularyLabel(recorded)} · recorded` : "Unrecorded"}
           </option>
           {choices
             .filter((value) => value !== recorded)
             .map((value) => (
-              <option key={value} value={value}>
-                {textValue(value)}
+              <option key={value} value={value} title={value}>
+                {vocabularyLabel(value)}
               </option>
             ))}
         </select>
@@ -171,6 +173,7 @@ export function ScenarioLab({
         companies={companies}
         facts={peerFacts}
         subjectFacts={subjectFacts}
+        coveredPeers={new Set(profile.covered_peer_ids)}
       />
       {qualifiers.length > 0 && (
         <>

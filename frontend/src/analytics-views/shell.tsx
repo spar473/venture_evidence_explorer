@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Details } from "./details";
 import {
   STATIC,
@@ -8,13 +8,21 @@ import {
   type Cohort,
   type Company,
   type Profile,
+  type ProfileOverview,
   type Robustness,
 } from "./data";
-import { CompanyProfile } from "./profile-view";
-import { CohortExplorer } from "./cohort-view";
-import { ScenarioLab } from "./scenario-view";
-import { MethodLab } from "./method-view";
+import { CompanyProfile, ProfileChartSlots } from "./profile-view";
 import "./views.css";
+
+const CohortExplorer = lazy(() =>
+  import("./cohort-view").then(({ CohortExplorer }) => ({ default: CohortExplorer })),
+);
+const ScenarioLab = lazy(() =>
+  import("./scenario-view").then(({ ScenarioLab }) => ({ default: ScenarioLab })),
+);
+const MethodLab = lazy(() =>
+  import("./method-view").then(({ MethodLab }) => ({ default: MethodLab })),
+);
 
 const views = {
   profile: "Company profile",
@@ -127,11 +135,20 @@ export function AnalyticsViews() {
     : "public_supie";
   const companies = new Map(cohort?.companies.map((company) => [company.company_id, company]));
   const subject = companies.get(companyId);
-  const profileResource = useAnalytics<Profile>(withSubject ? `/views/profile/${companyId}` : null);
+  const profileResource = useAnalytics<ProfileOverview>(
+    view === "profile" ? `/views/${STATIC ? "overview" : "profile"}/${companyId}` : null,
+  );
+  const scenarioResource = useAnalytics<Profile>(
+    view === "scenario" ? `/views/profile/${companyId}` : null,
+  );
   const robustnessResource = useAnalytics<Robustness>(
     withSubject ? `/robustness/${companyId}` : null,
   );
   const profile = profileResource?.data;
+  const scenario = scenarioResource?.data;
+  const viewError = cohortResource?.error ?? profileResource?.error ?? scenarioResource?.error;
+  const loadingProfile =
+    view === "profile" && !viewError && (!cohort || !subject || !profile || !robustnessResource);
   const last = today();
   const firstRound = view === "profile" ? subject?.start : undefined;
   const defaultAsOf = firstRound ?? last;
@@ -207,7 +224,7 @@ export function AnalyticsViews() {
           </a>
         </div>
       </header>
-      <main id="vee-main" className="vee-main" tabIndex={-1}>
+      <main id="vee-main" className="vee-main" data-view={view} tabIndex={-1}>
         <div className="vee-banner">
           <span className="vee-banner-dot" aria-hidden="true" />
           <strong>Provisional preview</strong>
@@ -219,135 +236,154 @@ export function AnalyticsViews() {
           </span>
         </div>
         <Details>
-          <div className="vee-page-heading">
-            <div>
-              {view === "profile" && subject && (
-                <div className="vee-eyebrow">
-                  {subject.sector} <span>·</span> First round{" "}
-                  {formatDate(subject.entry.date.value ?? subject.start)}
-                </div>
-              )}
-              <h1>{view === "profile" ? (subject?.name ?? views.profile) : views[view]}</h1>
-              {view === "profile" && (
-                <p>
-                  {profile?.fields.find(({ name }) => name === "description")?.value ??
-                    (subject ? `Entry sector · ${subject.sector}` : "")}
-                </p>
-              )}
-              {view === "cohort" && (
-                <p>New Zealand seed entries · 36-month follow-up through the selected date.</p>
-              )}
-              {view === "scenario" && <p>Change an entry fact and inspect the same peer pool.</p>}
-              {view === "method" && <p>Evidence requirements and a synthetic estimator demo.</p>}
+          {loadingProfile ? (
+            <div
+              className="vee-profile-loading"
+              role="status"
+              aria-label="Loading company evidence"
+            >
+              <div className="vee-profile-loading-controls" aria-hidden="true" />
+              <ProfileChartSlots />
             </div>
-            {withSubject && (
-              <label className="vee-select-label">
-                Company
-                <select
-                  value={companyId}
-                  disabled={!cohort}
-                  onChange={(event) => set({ company: event.currentTarget.value })}
-                >
-                  {(cohort?.subjects ?? [companyId]).map((id) => (
-                    <option key={id} value={id}>
-                      {companies.get(id)?.name ?? "Supie"}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            )}
-          </div>
-          {view !== "method" && (
-            <div className="vee-filters" aria-label="Shared filters">
-              <div className="vee-filter-chips" role="group" aria-label="Sectors">
-                {["Healthtech", "Other sectors"].map((sector) => (
-                  <button
-                    key={sector}
-                    type="button"
-                    aria-pressed={filters.sectors.includes(sector)}
-                    onClick={() => switchSector(sector)}
-                  >
-                    {sector}
-                  </button>
-                ))}
-              </div>
-              <div className="vee-vintage-filter" role="group" aria-label="Vintage range">
-                <span>Vintage</span>
-                <select
-                  aria-label="First vintage"
-                  value={filters.from}
-                  onChange={(event) => {
-                    const from = Number(event.currentTarget.value);
-                    set({ from: String(from), to: String(Math.max(from, filters.to)) });
-                  }}
-                >
-                  {(years.length ? years : [filters.from]).map((year) => (
-                    <option key={year}>{year}</option>
-                  ))}
-                </select>
-                <span aria-hidden="true">–</span>
-                <select
-                  aria-label="Last vintage"
-                  value={filters.to}
-                  onChange={(event) => {
-                    const to = Number(event.currentTarget.value);
-                    set({ from: String(Math.min(to, filters.from)), to: String(to) });
-                  }}
-                >
-                  {(years.length ? years : [filters.to]).map((year) => (
-                    <option key={year}>{year}</option>
-                  ))}
-                </select>
-              </div>
-              <label className="vee-date-filter">
-                As of{" "}
-                <input
-                  aria-label="As of date"
-                  type="date"
-                  min={firstRound}
-                  max={last}
-                  value={asof}
-                  onChange={(event) => set({ asof: event.currentTarget.value })}
-                />
-              </label>
-            </div>
-          )}
-          {cohortResource?.error || (withSubject && profileResource?.error) ? (
-            <p role="alert">{cohortResource?.error ?? profileResource?.error}</p>
-          ) : !cohort || (withSubject && (!profile || !subject)) ? (
-            <p role="status">Loading evidence…</p>
           ) : (
             <>
-              {view === "profile" && profile && subject && (
-                <CompanyProfile
-                  {...{
-                    profile,
-                    subject,
-                    cohort,
-                    companies,
-                    filters,
-                    playback: asof,
-                    latest: last,
-                    onDate: (asof: string) => set({ asof }, true),
-                    robustness: robustnessResource?.data,
-                  }}
-                />
+              <div className="vee-page-heading">
+                <div>
+                  {view === "profile" && subject && (
+                    <div className="vee-eyebrow">
+                      {subject.sector} <span>·</span> First round{" "}
+                      {formatDate(subject.entry.date.value ?? subject.start)}
+                    </div>
+                  )}
+                  <h1>{view === "profile" ? (subject?.name ?? views.profile) : views[view]}</h1>
+                  {view === "profile" && (
+                    <p>
+                      {profile?.fields.find(({ name }) => name === "description")?.value ??
+                        (subject ? `Entry sector · ${subject.sector}` : "")}
+                    </p>
+                  )}
+                  {view === "cohort" && (
+                    <p>New Zealand seed entries · 36-month follow-up through the selected date.</p>
+                  )}
+                  {view === "scenario" && (
+                    <p>Change an entry fact and inspect the same peer pool.</p>
+                  )}
+                  {view === "method" && (
+                    <p>Evidence requirements and a synthetic estimator demo.</p>
+                  )}
+                </div>
+                {withSubject && (
+                  <label className="vee-select-label">
+                    Company
+                    <select
+                      value={companyId}
+                      disabled={!cohort}
+                      onChange={(event) => set({ company: event.currentTarget.value })}
+                    >
+                      {(cohort?.subjects ?? [companyId]).map((id) => (
+                        <option key={id} value={id}>
+                          {companies.get(id)?.name ?? "Supie"}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                )}
+              </div>
+              {view !== "method" && (
+                <div className="vee-filters" aria-label="Shared filters">
+                  <div className="vee-filter-chips" role="group" aria-label="Sectors">
+                    {["Healthtech", "Other sectors"].map((sector) => (
+                      <button
+                        key={sector}
+                        type="button"
+                        aria-pressed={filters.sectors.includes(sector)}
+                        onClick={() => switchSector(sector)}
+                      >
+                        {sector}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="vee-vintage-filter" role="group" aria-label="Vintage range">
+                    <span>Vintage</span>
+                    <select
+                      aria-label="First vintage"
+                      value={filters.from}
+                      onChange={(event) => {
+                        const from = Number(event.currentTarget.value);
+                        set({ from: String(from), to: String(Math.max(from, filters.to)) });
+                      }}
+                    >
+                      {(years.length ? years : [filters.from]).map((year) => (
+                        <option key={year}>{year}</option>
+                      ))}
+                    </select>
+                    <span aria-hidden="true">–</span>
+                    <select
+                      aria-label="Last vintage"
+                      value={filters.to}
+                      onChange={(event) => {
+                        const to = Number(event.currentTarget.value);
+                        set({ from: String(Math.min(to, filters.from)), to: String(to) });
+                      }}
+                    >
+                      {(years.length ? years : [filters.to]).map((year) => (
+                        <option key={year}>{year}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <label className="vee-date-filter">
+                    As of{" "}
+                    <input
+                      aria-label="As of date"
+                      type="date"
+                      min={firstRound}
+                      max={last}
+                      value={asof}
+                      onChange={(event) => set({ asof: event.currentTarget.value })}
+                    />
+                  </label>
+                </div>
               )}
-              {view === "cohort" && <CohortExplorer cohort={cohort} filters={filters} />}
-              {view === "scenario" && profile && subject && (
-                <ScenarioLab
-                  key={companyId}
-                  {...{
-                    profile,
-                    subject,
-                    cohort,
-                    companies,
-                    filters,
-                    robustness: robustnessResource?.data,
-                  }}
-                />
+              {viewError ? (
+                <p role="alert">{viewError}</p>
+              ) : !cohort || (view === "scenario" && (!scenario || !subject)) ? (
+                <p role="status">Loading evidence…</p>
+              ) : (
+                <>
+                  {view === "profile" && profile && subject && (
+                    <CompanyProfile
+                      {...{
+                        profile,
+                        subject,
+                        cohort,
+                        companies,
+                        filters,
+                        playback: asof,
+                        latest: last,
+                        onDate: (asof: string) => set({ asof }, true),
+                        robustness: robustnessResource?.data,
+                      }}
+                    />
+                  )}
+                  <Suspense fallback={<p role="status">Loading charts…</p>}>
+                    {view === "cohort" && <CohortExplorer cohort={cohort} filters={filters} />}
+                    {view === "scenario" && scenario && subject && (
+                      <ScenarioLab
+                        key={companyId}
+                        {...{
+                          profile: scenario,
+                          subject,
+                          cohort,
+                          companies,
+                          filters,
+                          robustness: robustnessResource?.data,
+                        }}
+                      />
+                    )}
+                    {view === "method" && <MethodLab cohort={cohort} />}
+                  </Suspense>
+                </>
               )}
-              {view === "method" && <MethodLab cohort={cohort} />}
             </>
           )}
         </Details>
