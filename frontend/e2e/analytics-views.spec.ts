@@ -311,3 +311,108 @@ test("profile reserves mobile plot space before evidence arrives", async ({ page
   expect((await profileFrames.first().boundingBox())!.height).toBe(reserved);
   await expect(page.locator(".vee-profile-hero figure").first().locator("svg")).toBeVisible();
 });
+
+test("venture outlook changes subjects, replays dated analogues and keeps scenario inputs explicit", async ({
+  page,
+}) => {
+  await page.goto("/?view=rookie");
+  await expect(page.getByRole("heading", { name: "Venture outlook" })).toBeVisible();
+  const timeline = page.locator("figure").filter({ hasText: "What happened to the precedents?" });
+  await timeline.getByRole("button", { name: "View as table" }).click();
+  await expect(timeline.getByText("Pilot procurement constraint")).toBeVisible();
+  await page.getByLabel("Peer follow-up").selectOption("1");
+  await expect(timeline.getByText("Pilot procurement constraint")).toHaveCount(0);
+  await page.getByLabel("Peer follow-up").selectOption("15");
+  await expect(timeline.getByText("Share acquisition").first()).toBeVisible();
+  for (const [category, venture] of [
+    ["education", "writewise"],
+    ["climate", "neocrete"],
+    ["agriculture", "agriphage"],
+    ["health", "pulsemap"],
+  ]) {
+    await page.getByRole("combobox", { name: "Category", exact: true }).selectOption(category);
+    const subjects = page.getByRole("combobox", { name: "NZ venture" });
+    await expect(subjects.locator("option")).toHaveCount(2);
+    await subjects.selectOption(venture);
+    await expect(page).toHaveURL(new RegExp("venture=" + venture));
+    await expect(page.getByText(/^10 precedents in/)).toBeVisible();
+  }
+  await page.getByText(/^10 precedents in/).click();
+  await page.getByRole("button", { name: "Alimetry · New Zealand", exact: true }).click();
+  await expect(
+    page.getByRole("dialog").getByRole("link", { name: "FDA decision letter" }),
+  ).toHaveAttribute("href", /K240946/);
+  await page.getByRole("button", { name: "Close details" }).click();
+  const model = page.getByRole("region", { name: "Conditional simulator" });
+  await expect(model.getByText(/no fitted estimate/)).toBeVisible();
+  const initial = await model.getByText(/^At 36 months/).innerText();
+  await model.getByRole("button", { name: "Slower progress" }).click();
+  await expect(model.getByText(/^At 36 months/)).not.toHaveText(initial);
+  await model.getByRole("combobox", { name: "Steps to target" }).selectOption("1");
+  await expect(model.getByLabel(/Advance per quarter/)).toHaveValue("10");
+  await expect(model.getByText(/^At 36 months/)).toContainText("37% reach the target");
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  expect(await seriousViolations(page)).toEqual([]);
+});
+
+test("outlook retrieves a starting-record match and opens the funding ledger", async ({ page }) => {
+  await page.goto("/?view=rookie&venture=breast-mri");
+  const retrieval = page.getByRole("region", { name: "Find more precedents" });
+  const query = retrieval.getByRole("searchbox");
+  await query.fill("zzzzz xxxxx");
+  await expect(retrieval.getByRole("status")).toContainText("No shared terms");
+  await query.fill("gastric diagnostic device");
+  await expect(retrieval.getByRole("link", { name: "Alimetry", exact: true })).toBeVisible();
+  await retrieval.getByRole("button", { name: "Plot Alimetry", exact: true }).click();
+  const timeline = page.locator("figure").filter({ hasText: "What happened to the precedents?" });
+  await expect(timeline.getByText(/Added for inspection.*Alimetry/)).toBeVisible();
+  await timeline.getByRole("button", { name: "View as table" }).click();
+  await expect(timeline.getByRole("rowheader", { name: "Alimetry" }).first()).toBeVisible();
+  await timeline.getByRole("button", { name: "Remove added venture" }).click();
+  await expect(timeline.getByRole("rowheader", { name: "Alimetry" })).toHaveCount(0);
+
+  const formus = page.locator(".vee-rookie-peers section").filter({
+    has: page.getByRole("heading", { name: "Formus Labs" }),
+  });
+  await formus.getByRole("link", { name: "Funding & outcomes" }).click();
+  await expect(page).toHaveURL(/view=evidence&case=formus-labs/);
+  await expect(page.getByRole("heading", { name: "Formus Labs" })).toBeVisible();
+  await page.getByRole("combobox", { name: "Evidence type" }).selectOption("equity");
+  await expect(page.getByText("1 sourced record")).toBeVisible();
+  await expect(page.getByText("US$5 million", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Company launch announcement" })).toHaveAttribute(
+    "href",
+    /formus.com/,
+  );
+});
+
+test("funding and outcomes browses the full catalogue and suggests a review label", async ({
+  page,
+}) => {
+  await page.goto("/?view=evidence");
+  await expect(page.getByRole("heading", { name: "Funding & outcomes" })).toBeVisible();
+  await expect(page.getByText("149 sourced records")).toBeVisible();
+  await expect(page.getByText("40 ventures", { exact: true })).toBeVisible();
+  await page.getByRole("combobox", { name: "Category" }).selectOption("agriculture");
+  await expect(page.getByText("10 ventures", { exact: true })).toBeVisible();
+  await page.getByRole("combobox", { name: "Origin" }).selectOption("nz");
+  await expect(page.getByText("3 ventures", { exact: true })).toBeVisible();
+  await page.getByRole("searchbox", { name: "Search ventures" }).fill("Halter");
+  await expect(page.getByText("1 venture", { exact: true })).toBeVisible();
+  await page.getByRole("combobox", { name: "Evidence type" }).selectOption("equity");
+  await expect(page.getByText("NZ$377 million", { exact: true })).toBeVisible();
+  await page.getByText("Suggest a type for new evidence", { exact: true }).click();
+  const excerpt = page.getByRole("textbox", { name: "Paste a public source excerpt" });
+  await excerpt.fill("zzzzz xxxxx");
+  await page.getByRole("button", { name: "Suggest type" }).click();
+  await expect(page.getByRole("status")).toContainText("Too little overlap");
+  await excerpt.fill(
+    "The venture announced a Series B funding round led by an institutional investor.",
+  );
+  await page.getByRole("button", { name: "Suggest type" }).click();
+  await expect(page.getByRole("status")).toContainText("Suggested type");
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  expect(await seriousViolations(page)).toEqual([]);
+});

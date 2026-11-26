@@ -661,6 +661,9 @@
     gap: 12px;
     width: min(100% - 32px, 1320px);
   }
+  .vee-header nav {
+    flex-wrap: wrap;
+  }
   .vee-header nav a {
     padding-inline: 8px;
     font-size: 13px;

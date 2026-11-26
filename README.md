@@ -4,7 +4,7 @@
 
 **Sourced comparisons for early New Zealand ventures.**
 
-Compare a company at its first institutional round with earlier ventures, inspect the sources behind each match, and replay what happened next. Built for seed investors, university commercialisation teams, and researchers who want to see both the evidence and its gaps.
+Compare early New Zealand ventures with historical pathways, inspect funding and outcome evidence, and replay what happened next. Built for seed investors, university commercialisation teams, and researchers who want to see both the evidence and its gaps.
 
 [![Engineering checks](https://github.com/spar473/venture_evidence_explorer/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/spar473/venture_evidence_explorer/actions/workflows/checks.yml) [![GitHub Pages](https://github.com/spar473/venture_evidence_explorer/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/spar473/venture_evidence_explorer/actions/workflows/pages.yml)
 
@@ -21,7 +21,9 @@ Compare a company at its first institutional round with earlier ventures, inspec
 | [Scenario lab](https://spar473.github.io/venture_evidence_explorer/?view=scenario&company=public_supie) | Try the hypothetical **Business buyer** preset. Supie goes from zero to four qualifying peers. Add **Subscription** to see the count move to five. |
 | [Method lab](https://spar473.github.io/venture_evidence_explorer/?view=method) | Compare the real cohort audit with the synthetic charts that demonstrate how the estimator behaves. |
 
-[Desktop and mobile screenshots for all four views](docs/ANALYTICS_EVALUATION.md#screenshots)
+Open **Venture outlook** at `/?view=rookie` to replay global peer paths, search comparable starting records and test scenarios. Use **Funding & outcomes** at `/?view=evidence` to browse the 40-venture catalogue, follow the original sources and try an evidence-type suggestion. [Research and model notes](docs/VENTURE_OUTLOOK.md).
+
+[Desktop and mobile screenshots for the original analytics views](docs/ANALYTICS_EVALUATION.md#screenshots)
 
 <a id="method-and-limits"></a>
 

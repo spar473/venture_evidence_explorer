@@ -24,7 +24,12 @@ const MethodLab = lazy(() =>
   import("./method-view").then(({ MethodLab }) => ({ default: MethodLab })),
 );
 
+const RookieOutlook = lazy(() => import("./rookie-view"));
+const VentureEvidence = lazy(() => import("./venture-evidence-view"));
+
 const views = {
+  rookie: "Venture outlook",
+  evidence: "Funding & outcomes",
   profile: "Company profile",
   cohort: "Cohort explorer",
   scenario: "Scenario lab",
@@ -128,7 +133,8 @@ export function AnalyticsViews() {
   const requested = params.get("view") as View | null;
   const view = requested && Object.hasOwn(views, requested) ? requested : "profile";
   const withSubject = view === "profile" || view === "scenario";
-  const cohortResource = useAnalytics<Cohort>("/views/cohort");
+  const withCohort = view !== "rookie" && view !== "evidence";
+  const cohortResource = useAnalytics<Cohort>(withCohort ? "/views/cohort" : null);
   const cohort = cohortResource?.data;
   const companyId = cohort?.subjects.includes(params.get("company") ?? "")
     ? params.get("company")!
@@ -225,18 +231,31 @@ export function AnalyticsViews() {
         </div>
       </header>
       <main id="vee-main" className="vee-main" data-view={view} tabIndex={-1}>
-        <div className="vee-banner">
-          <span className="vee-banner-dot" aria-hidden="true" />
-          <strong>Provisional preview</strong>
-          <span>
-            AI-checked evidence · human review pending ·{" "}
-            {cohort?.strict_gate_passed
-              ? "Strict evidence gate met"
-              : `strict evidence gate unmet${cohort ? ` (${cohort.preview_peers} of 15 earlier Partly peers AI-checked)` : ""}`}
-          </span>
-        </div>
+        {withCohort && (
+          <div className="vee-banner">
+            <span className="vee-banner-dot" aria-hidden="true" />
+            <strong>Provisional preview</strong>
+            <span>
+              AI-checked evidence · human review pending ·{" "}
+              {cohort?.strict_gate_passed
+                ? "Strict evidence gate met"
+                : `strict evidence gate unmet${cohort ? ` (${cohort.preview_peers} of 15 earlier Partly peers AI-checked)` : ""}`}
+            </span>
+          </div>
+        )}
         <Details>
-          {loadingProfile ? (
+          {view === "evidence" ? (
+            <Suspense fallback={<p role="status">Loading the evidence catalogue…</p>}>
+              <VentureEvidence caseId={params.get("case")} onCase={(id) => set({ case: id })} />
+            </Suspense>
+          ) : view === "rookie" ? (
+            <Suspense fallback={<p role="status">Loading venture outlook…</p>}>
+              <RookieOutlook
+                subjectId={params.get("venture")}
+                onSubject={(venture) => set({ venture })}
+              />
+            </Suspense>
+          ) : loadingProfile ? (
             <div
               className="vee-profile-loading"
               role="status"
@@ -389,7 +408,7 @@ export function AnalyticsViews() {
         </Details>
       </main>
       <footer className="vee-footer">
-        <span>Venture Evidence Explorer · New Zealand seed cohort</span>
+        <span>Venture Evidence Explorer{withCohort && " · New Zealand seed cohort"}</span>
         <div>
           <a
             href={

@@ -1,0 +1,1852 @@
+[
+  {
+    "id": "volpara-health-technologies",
+    "name": "Volpara Health Technologies",
+    "country": "New Zealand",
+    "focus": "Breast imaging workflow",
+    "category": "health",
+    "events": [
+      {
+        "id": "volpara-health-technologies-1",
+        "date": "2009",
+        "title": "Origin",
+        "description": "Founded to commercialise breast-density measurement research. The origin date comes from later company records.",
+        "source": "ASX company timeline",
+        "url": "https://announcements.asx.com.au/asxpdf/20190628/pdf/4465yd03c5rxx8.pdf",
+        "start": "2009-01-01",
+        "end": "2009-12-31"
+      },
+      {
+        "id": "volpara-health-technologies-2",
+        "date": "Oct 2016",
+        "title": "First reported enterprise SaaS sales",
+        "description": "Reported first VolparaEnterprise software-as-a-service sales. The product combined breast imaging quality tools and VolparaDensity.",
+        "source": "ASX announcement",
+        "url": "https://announcements.asx.com.au/asxpdf/20161004/pdf/43bpw8jwlc6ntl.pdf",
+        "start": "2016-10-01",
+        "end": "2016-10-31"
+      },
+      {
+        "id": "volpara-health-technologies-3",
+        "date": "21 May 2024",
+        "title": "Share acquisition completed",
+        "description": "The scheme transferred all Volpara shares to Lunit. This is a completed company transaction.",
+        "source": "ASX scheme implementation",
+        "url": "https://announcements.asx.com.au/asxpdf/20240521/pdf/063s525vlw9kq0.pdf",
+        "start": "2024-05-21",
+        "end": "2024-05-21"
+      }
+    ]
+  },
+  {
+    "id": "alimetry",
+    "name": "Alimetry",
+    "country": "New Zealand",
+    "focus": "Diagnostic device and clinical workflow",
+    "category": "health",
+    "events": [
+      {
+        "id": "alimetry-1",
+        "date": "2019",
+        "title": "Founding",
+        "description": "Company history dates the founding to 2019, following University of Auckland gastric research.",
+        "source": "Company history",
+        "url": "https://www.alimetry.com/about",
+        "start": "2019-01-01",
+        "end": "2019-12-31"
+      },
+      {
+        "id": "alimetry-2",
+        "date": "3 Jul 2024",
+        "title": "Regulatory determination",
+        "description": "FDA issued a substantially-equivalent determination for Gastric Alimetry, K240946.",
+        "source": "FDA decision letter",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf24/K240946.pdf",
+        "start": "2024-07-03",
+        "end": "2024-07-03"
+      },
+      {
+        "id": "alimetry-3",
+        "date": "5 Dec 2025",
+        "title": "Later regulatory decision",
+        "description": "FDA records a separate Gastric Alimetry decision under K252504.",
+        "source": "FDA K252504",
+        "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K252504",
+        "start": "2025-12-05",
+        "end": "2025-12-05"
+      },
+      {
+        "id": "alimetry-4",
+        "date": "4 Sep 2026",
+        "title": "Later regulatory decision",
+        "description": "FDA records another Gastric Alimetry decision under K262292. Preserve the version and submission identity for each record.",
+        "source": "FDA K262292",
+        "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K262292",
+        "start": "2026-09-04",
+        "end": "2026-09-04"
+      }
+    ]
+  },
+  {
+    "id": "formus-labs",
+    "name": "Formus Labs",
+    "country": "New Zealand",
+    "focus": "Imaging-based surgical planning",
+    "category": "health",
+    "events": [
+      {
+        "id": "formus-labs-1",
+        "date": "Feb 2022",
+        "title": "Commercial launch and financing reported",
+        "description": "The ABI-linked spinout announced a US$5 million raise and public launch of its automated 3D orthopaedic planning platform, with a Zimmer Biomet partnership.",
+        "source": "Company launch announcement",
+        "url": "https://www.formus.com/news/formus-labs-raises-5-million-to-automate-orthopedic-surgery-planning-partners-with-zimmer-biomet-to-supercharge-global-launch",
+        "start": "2022-02-01",
+        "end": "2022-02-28"
+      },
+      {
+        "id": "formus-labs-2",
+        "date": "31 Mar 2023",
+        "title": "Regulatory determination",
+        "description": "FDA records a substantially-equivalent decision for Formus Hip under K213272.",
+        "source": "FDA K213272",
+        "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K213272",
+        "start": "2023-03-31",
+        "end": "2023-03-31"
+      },
+      {
+        "id": "formus-labs-3",
+        "date": "22 May 2026",
+        "title": "Later company product announcement",
+        "description": "The company announced clearance for its hip platform. Treat as a separate announcement and leave submission-level reconciliation open.",
+        "source": "Formus announcement",
+        "url": "https://www.formus.com/news/formus-labs-hip-platform-receives-fda-clearance",
+        "start": "2026-05-22",
+        "end": "2026-05-22"
+      }
+    ]
+  },
+  {
+    "id": "qlarity-imaging",
+    "name": "Qlarity Imaging",
+    "country": "United States",
+    "focus": "Breast MRI decision support",
+    "category": "health",
+    "events": [
+      {
+        "id": "qlarity-imaging-1",
+        "date": "19 Jul 2017",
+        "title": "Predecessor product regulatory decision",
+        "description": "FDA granted QuantX De Novo classification to Quantitative Insights. Store this under the predecessor product lineage.",
+        "source": "FDA De Novo decision letter",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf17/DEN170022.pdf",
+        "start": "2017-07-19",
+        "end": "2017-07-19"
+      },
+      {
+        "id": "qlarity-imaging-2",
+        "date": "17 Jul 2019",
+        "title": "Product transfer and company launch",
+        "description": "Paragon announced Qlarity's launch and Qlarity's acquisition of QuantX, which originated in University of Chicago research.",
+        "source": "Paragon announcement",
+        "url": "https://paragonbiosci.com/2019/07/17/paragon-biosciences-launches-qlarity-imaging-to-advance-the-first-fda-cleared-artificial-intelligence-breast-cancer-diagnosis-system/",
+        "start": "2019-07-17",
+        "end": "2019-07-17"
+      },
+      {
+        "id": "qlarity-imaging-3",
+        "date": "8 Nov 2019",
+        "title": "Regulatory decision for later applicant",
+        "description": "FDA issued a separate substantially-equivalent determination, K191959, under Qlarity.",
+        "source": "FDA K191959",
+        "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K191959",
+        "start": "2019-11-08",
+        "end": "2019-11-08"
+      }
+    ]
+  },
+  {
+    "id": "kheiron-medical-technologies",
+    "name": "Kheiron Medical Technologies",
+    "country": "United Kingdom",
+    "focus": "Mammography AI and procurement",
+    "category": "health",
+    "events": [
+      {
+        "id": "kheiron-medical-technologies-1",
+        "date": "2018",
+        "title": "Provider test-bed setup",
+        "description": "NHS EMRAD and partners began planning and testing AI in a breast screening programme.",
+        "source": "NHS diagnostics review",
+        "url": "https://www.england.nhs.uk/statistics/wp-content/uploads/2020/11/diagnostics-recovery-and-renewal-independent-review-of-diagnostic-services-for-nhs-england-2.pdf",
+        "start": "2018-01-01",
+        "end": "2018-12-31"
+      },
+      {
+        "id": "kheiron-medical-technologies-2",
+        "date": "2018–20",
+        "title": "Pilot procurement constraint",
+        "description": "The external test-bed evaluation identifies unresolved pricing and a missing procurement mechanism for clinical use in that programme.",
+        "source": "EMRAD evaluation, exploitation discussion",
+        "url": "https://emrad.nhs.uk/images/AI_in_Breast_Screening_Evaluation_Final_Report_-_Full_technical.pdf",
+        "start": "2018-01-01",
+        "end": "2020-12-31"
+      },
+      {
+        "id": "kheiron-medical-technologies-3",
+        "date": "14 Oct 2024",
+        "title": "Share acquisition",
+        "description": "RadNet reports acquiring all equity in Kheiron. DeepHealth's later announcement date belongs in separate provenance fields.",
+        "source": "RadNet annual filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/790526/000162828026013337/rdnt-20251231.htm",
+        "start": "2024-10-14",
+        "end": "2024-10-14"
+      }
+    ]
+  },
+  {
+    "id": "screenpoint-medical",
+    "name": "ScreenPoint Medical",
+    "country": "Netherlands",
+    "focus": "Breast screening validation",
+    "category": "health",
+    "events": [
+      {
+        "id": "screenpoint-medical-1",
+        "date": "2014",
+        "title": "Founding",
+        "description": "Company history dates its formation to 2014, with founders in quantitative breast imaging and AI.",
+        "source": "Company history",
+        "url": "https://screenpoint-medical.com/about-us/",
+        "start": "2014-01-01",
+        "end": "2014-12-31"
+      },
+      {
+        "id": "screenpoint-medical-2",
+        "date": "21 Nov 2018",
+        "title": "Regulatory determination",
+        "description": "FDA records the Transpara K181704 substantially-equivalent decision.",
+        "source": "FDA K181704",
+        "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=k181704",
+        "start": "2018-11-21",
+        "end": "2018-11-21"
+      },
+      {
+        "id": "screenpoint-medical-3",
+        "date": "2026",
+        "title": "Randomised screening follow-up published",
+        "description": "The Swedish MASAI study published interval-cancer and screening-accuracy results for AI-supported mammography versus standard double reading.",
+        "source": "Peer-reviewed MASAI paper",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41620232/",
+        "start": "2026-01-01",
+        "end": "2026-12-31"
+      }
+    ]
+  },
+  {
+    "id": "icad",
+    "name": "iCAD",
+    "country": "United States",
+    "focus": "Breast imaging platform consolidation",
+    "category": "health",
+    "events": [
+      {
+        "id": "icad-1",
+        "date": "2018",
+        "title": "Initial ProFound AI milestone",
+        "description": "Company investor materials record the ProFound AI milestone in its dated breast imaging product timeline.",
+        "source": "iCAD investor presentation, product timeline",
+        "url": "https://www.icadmed.com/wp-content/uploads/2025/03/iCAD-IR-Deck-March-2025.pdf",
+        "start": "2018-01-01",
+        "end": "2018-12-31"
+      },
+      {
+        "id": "icad-2",
+        "date": "12 Mar 2021",
+        "title": "Product-version regulatory decision",
+        "description": "FDA issued its decision for ProFound AI v3.0.",
+        "source": "FDA decision letter",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf20/K203822.pdf",
+        "start": "2021-03-12",
+        "end": "2021-03-12"
+      },
+      {
+        "id": "icad-3",
+        "date": "17 Jul 2025",
+        "title": "Share acquisition completed",
+        "description": "DeepHealth acquired iCAD, as disclosed by RadNet.",
+        "source": "SEC-filed transaction announcement",
+        "url": "https://www.sec.gov/Archives/edgar/data/749660/000119380525001039/e664682_ex99-1.htm",
+        "start": "2025-07-17",
+        "end": "2025-07-17"
+      }
+    ]
+  },
+  {
+    "id": "viz-ai",
+    "name": "Viz.ai",
+    "country": "United States",
+    "focus": "Time-sensitive hospital workflow and reimbursement",
+    "category": "health",
+    "events": [
+      {
+        "id": "viz-ai-1",
+        "date": "13 Feb 2018",
+        "title": "Regulatory decision",
+        "description": "FDA permitted marketing of software alerting providers to a potential stroke for review.",
+        "source": "FDA announcement",
+        "url": "https://www.fda.gov/news-events/press-announcements/fda-permits-marketing-clinical-decision-support-software-alerting-providers-potential-stroke",
+        "start": "2018-02-13",
+        "end": "2018-02-13"
+      },
+      {
+        "id": "viz-ai-2",
+        "date": "2020",
+        "title": "Payment pathway reported",
+        "description": "The company announced that Medicare granted a New Technology Add-on Payment for the qualifying technology. This is a US payment milestone.",
+        "source": "Viz.ai announcement",
+        "url": "https://www.viz.ai/news/viz-granted-medicare-ntap",
+        "start": "2020-01-01",
+        "end": "2020-12-31"
+      },
+      {
+        "id": "viz-ai-3",
+        "date": "7 Apr 2022",
+        "title": "Follow-on financing",
+        "description": "Reported a US$100 million Series D, led by Tiger Global and Insight Partners.",
+        "source": "Company financing announcement",
+        "url": "https://www.viz.ai/news/viz-ai-raises-100-million-in-series-d-funding",
+        "start": "2022-04-07",
+        "end": "2022-04-07"
+      }
+    ]
+  },
+  {
+    "id": "olive-ai",
+    "name": "Olive AI",
+    "country": "United States",
+    "focus": "Hospital enterprise automation",
+    "category": "health",
+    "events": [
+      {
+        "id": "olive-ai-1",
+        "date": "2012",
+        "title": "Company origin reconstructed",
+        "description": "Trade reporting dates the venture's origins to CrossChx and traces its later move into healthcare automation.",
+        "source": "Becker's historical timeline",
+        "url": "https://www.beckershospitalreview.com/healthcare-information-technology/digital-health/the-rise-and-fall-of-olive-ai-a-timeline/?trk=article-ssr-frontend-pulse_little-text-block",
+        "start": "2012-01-01",
+        "end": "2012-12-31"
+      },
+      {
+        "id": "olive-ai-2",
+        "date": "2021",
+        "title": "Fundraising and expansion",
+        "description": "The historical timeline documents a large funding round during Olive's expansion into hospital automation.",
+        "source": "Becker's historical timeline",
+        "url": "https://www.beckershospitalreview.com/healthcare-information-technology/digital-health/the-rise-and-fall-of-olive-ai-a-timeline/?trk=article-ssr-frontend-pulse_little-text-block",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+      },
+      {
+        "id": "olive-ai-3",
+        "date": "2023",
+        "title": "Wind-down and asset transactions",
+        "description": "The adviser reports sale of substantially all assets to Waystar and Humata Health. Contemporary reporting documents the announced wind-down.",
+        "source": "Transaction adviser",
+        "url": "https://www.lincolninternational.com/transactions/olive-ai-has-sold-substantially-all-of-its-assets-to-waystar-and-humata-health/",
+        "start": "2023-01-01",
+        "end": "2023-12-31"
+      },
+      {
+        "id": "olive-ai-4",
+        "date": "Nov 2023",
+        "title": "Wind-down reported",
+        "description": "Healthcare Dive reported that Olive announced the shutdown and sale of business units.",
+        "source": "Contemporary trade reporting",
+        "url": "https://www.healthcaredive.com/news/olive-ai-shuts-down/698455/",
+        "start": "2023-11-01",
+        "end": "2023-11-30"
+      }
+    ]
+  },
+  {
+    "id": "butterfly-network",
+    "name": "Butterfly Network",
+    "country": "United States",
+    "focus": "Diagnostic hardware and product generations",
+    "category": "health",
+    "events": [
+      {
+        "id": "butterfly-network-1",
+        "date": "2011",
+        "title": "Founding",
+        "description": "SEC materials date the founding of Legacy Butterfly to 2011.",
+        "source": "SEC-filed company materials",
+        "url": "https://www.sec.gov/Archives/edgar/data/1804176/000110465920127635/tm2036512d1_ex99-1.htm",
+        "start": "2011-01-01",
+        "end": "2011-12-31"
+      },
+      {
+        "id": "butterfly-network-2",
+        "date": "Oct 2017",
+        "title": "iQ clearance reported",
+        "description": "Company materials identify the October 2017 FDA clearance for its initial handheld ultrasound device.",
+        "source": "Company system-description report",
+        "url": "https://support.butterflynetwork.com/hc/en-us/article_attachments/44305987648923",
+        "start": "2017-10-01",
+        "end": "2017-10-31"
+      },
+      {
+        "id": "butterfly-network-3",
+        "date": "12 Feb 2021",
+        "title": "Public-market transaction",
+        "description": "Completed a business combination, as disclosed in the annual filing.",
+        "source": "SEC annual filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1804176/000110465922047408/tm2212648d1_10ka.htm",
+        "start": "2021-02-12",
+        "end": "2021-02-12"
+      },
+      {
+        "id": "butterfly-network-4",
+        "date": "13 Feb 2024",
+        "title": "Third-generation commercial launch",
+        "description": "Butterfly announced US availability of iQ3 through direct sales and ecommerce.",
+        "source": "Company launch announcement",
+        "url": "https://www.butterflynetwork.com/press-releases/butterfly-network-launches-butterfly-iq3",
+        "start": "2024-02-13",
+        "end": "2024-02-13"
+      }
+    ]
+  },
+  {
+    "id": "kami",
+    "name": "Kami",
+    "country": "New Zealand",
+    "focus": "Educator-led classroom workflow",
+    "category": "education",
+    "events": [
+      {
+        "id": "kami-1",
+        "date": "2013",
+        "title": "Product origin reconstructed",
+        "description": "Kami traces its early product to a document annotation problem and the Notable name.",
+        "source": "Company timeline",
+        "url": "https://www.kamiapp.com/about-us/",
+        "start": "2013-01-01",
+        "end": "2013-12-31"
+      },
+      {
+        "id": "kami-2",
+        "date": "Feb 2015",
+        "title": "Investment",
+        "description": "NZGCP records investing alongside other investors.",
+        "source": "NZGCP portfolio record",
+        "url": "https://www.nzgcp.co.nz/portfolio/case-study/kami",
+        "start": "2015-02-01",
+        "end": "2015-02-28"
+      },
+      {
+        "id": "kami-3",
+        "date": "21 Aug 2024",
+        "title": "Growth investment",
+        "description": "Kami announced a significant investment from BV Investment Partners. NZGCP separately recorded a realisation in its annual reporting.",
+        "source": "Kami transaction announcement",
+        "url": "https://www.kamiapp.com/blog/kami-growth-investment/",
+        "start": "2024-08-21",
+        "end": "2024-08-21"
+      },
+      {
+        "id": "kami-4",
+        "date": "2024 reporting period",
+        "title": "Investor realisation disclosed",
+        "description": "NZGCP identified Kami as a significant exit realisation after its reporting year end. This supports an investor-level event without disclosing a venture-wide return in this case file.",
+        "source": "NZGCP annual report",
+        "url": "https://www.nzgcp.co.nz/assets/Media/NZGCP-Annual-Report-2024.pdf",
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      }
+    ]
+  },
+  {
+    "id": "education-perfect",
+    "name": "Education Perfect",
+    "country": "New Zealand",
+    "focus": "School curriculum and assessment",
+    "category": "education",
+    "events": [
+      {
+        "id": "education-perfect-1",
+        "date": "2007–09",
+        "title": "Origins and early launch",
+        "description": "The Dunedin business began as Language Perfect. Its later company account places the launch of the language product in 2009, following earlier startup activity.",
+        "source": "Company history in ANZ white paper",
+        "url": "https://www.educationperfect.com/wp-content/uploads/2025/09/ep-anz-whitepaper-the-next-iteration-of-learning-tools-in-school_0925_A4_HR.pdf",
+        "start": "2007-01-01",
+        "end": "2009-12-31"
+      },
+      {
+        "id": "education-perfect-2",
+        "date": "2014",
+        "title": "Curriculum expansion",
+        "description": "The company dates expansion beyond languages into other curriculum subjects to 2014.",
+        "source": "Company history",
+        "url": "https://www.educationperfect.com/wp-content/uploads/2025/09/ep-anz-whitepaper-the-next-iteration-of-learning-tools-in-school_0925_A4_HR.pdf",
+        "start": "2014-01-01",
+        "end": "2014-12-31"
+      },
+      {
+        "id": "education-perfect-3",
+        "date": "Jun 2021",
+        "title": "Institutional investment announced",
+        "description": "KKR announced an agreement to invest in the ANZ-focused edtech business.",
+        "source": "KKR announcement",
+        "url": "https://media.kkr.com/news-details?download=1&news_id=73a56caf-f1f5-47a8-8eb1-33b6f622a60d",
+        "start": "2021-06-01",
+        "end": "2021-06-30"
+      },
+      {
+        "id": "education-perfect-4",
+        "date": "Mar 2024",
+        "title": "Curriculum and product expansion",
+        "description": "Education Perfect announced additional curriculum-aligned content and platform changes.",
+        "source": "Company announcement",
+        "url": "https://www.educationperfect.com/news/education-perfect-announces-enhanced-platform-experience-and-new-curriculum-aligned-content/",
+        "start": "2024-03-01",
+        "end": "2024-03-31"
+      }
+    ]
+  },
+  {
+    "id": "banqer",
+    "name": "Banqer",
+    "country": "New Zealand",
+    "focus": "Financial capability simulation",
+    "category": "education",
+    "events": [
+      {
+        "id": "banqer-1",
+        "date": "2015",
+        "title": "Early product development",
+        "description": "Contemporaneous 2020 news coverage retrospectively dates the development of Banqer's money-management simulation to 2015.",
+        "source": "Newshub founder coverage",
+        "url": "https://www.1news.co.nz/2020/08/26/secondary-school-students-gain-real-world-finacial-experience-through-banqer-programme/",
+        "start": "2015-01-01",
+        "end": "2015-12-31"
+      },
+      {
+        "id": "banqer-2",
+        "date": "Mar 2017",
+        "title": "Named school partnership",
+        "description": "Equifax announced a financial literacy initiative with Banqer at Murray's Bay Intermediate School.",
+        "source": "Partner announcement",
+        "url": "https://www.equifax.co.nz/news-media/school-students-to-become-credit-smart",
+        "start": "2017-03-01",
+        "end": "2017-03-31"
+      },
+      {
+        "id": "banqer-3",
+        "date": "2020",
+        "title": "Secondary classroom implementation reported",
+        "description": "Banqer documented a school incorporating its simulation into secondary financial literacy teaching.",
+        "source": "Banqer case study",
+        "url": "https://banqer.co/nz/high/junior/case-studies/joy-and-financial-literacy-in-the-same-sentence",
+        "start": "2020-01-01",
+        "end": "2020-12-31"
+      },
+      {
+        "id": "banqer-4",
+        "date": "12 Aug 2022",
+        "title": "Innovation support documented",
+        "description": "Education New Zealand reported innovation funding to develop the secondary school platform. Preserve it as programme support.",
+        "source": "Education New Zealand programme profile",
+        "url": "https://www.enz.govt.nz/news-and-research/ed-news/financial-education-platform-for-secondary-schools",
+        "start": "2022-08-12",
+        "end": "2022-08-12"
+      },
+      {
+        "id": "banqer-5",
+        "date": "2023 reporting year",
+        "title": "Investor profile",
+        "description": "NZGCP's annual report profiles Banqer as a school financial education venture.",
+        "source": "NZGCP annual report",
+        "url": "https://www.nzgcp.co.nz/assets/Media/NZGCP-Annual-Report-2023_FINAL.pdf",
+        "start": "2023-01-01",
+        "end": "2023-12-31"
+      }
+    ]
+  },
+  {
+    "id": "labster",
+    "name": "Labster",
+    "country": "Denmark",
+    "focus": "Virtual laboratories and curriculum",
+    "category": "education",
+    "events": [
+      {
+        "id": "labster-1",
+        "date": "2012",
+        "title": "Company origin reconstructed",
+        "description": "Labster marked a decade in 2022 and traced the idea to science teaching.",
+        "source": "Company anniversary account",
+        "url": "https://www.labster.com/news/10-year-anniversary",
+        "start": "2012-01-01",
+        "end": "2012-12-31"
+      },
+      {
+        "id": "labster-2",
+        "date": "2014",
+        "title": "Learning evaluation published",
+        "description": "Bonde and colleagues published an evaluation of gamified laboratory simulations. Preserve study setting and authorship.",
+        "source": "Publication indexed in PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25004234/",
+        "start": "2014-01-01",
+        "end": "2014-12-31"
+      },
+      {
+        "id": "labster-3",
+        "date": "Apr 2022",
+        "title": "Funding tranche announced",
+        "description": "Labster reported an additional $47 million financing tranche.",
+        "source": "Company financing announcement",
+        "url": "https://www.labster.com/news/new-funding-april-2022",
+        "start": "2022-04-01",
+        "end": "2022-04-30"
+      },
+      {
+        "id": "labster-4",
+        "date": "Oct 2022",
+        "title": "Content portfolio milestone",
+        "description": "Labster reported over 300 curriculum-aligned science simulation titles.",
+        "source": "Company product update",
+        "url": "https://www.labster.com/news/300-simulations-announced",
+        "start": "2022-10-01",
+        "end": "2022-10-31"
+      }
+    ]
+  },
+  {
+    "id": "edmodo",
+    "name": "Edmodo",
+    "country": "United States",
+    "focus": "K–12 social learning and service continuity",
+    "category": "education",
+    "events": [
+      {
+        "id": "edmodo-1",
+        "date": "Sep 2009",
+        "title": "Public launch",
+        "description": "A contemporaneous 2010 release dates the public launch and describes sharing assignments and materials.",
+        "source": "Early company release",
+        "url": "https://www.prnewswire.com/news-releases/edmodo-microblogging-platform-for-educators-merges-with-revolution-learnings-fusion-project-84022217.html",
+        "start": "2009-09-01",
+        "end": "2009-09-30"
+      },
+      {
+        "id": "edmodo-2",
+        "date": "2018",
+        "title": "Acquisition by NetDragon",
+        "description": "Parent filings document the 2018 acquisition.",
+        "source": "Mynd annual filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1708441/000170844126000055/mynd-20251231.htm",
+        "start": "2018-01-01",
+        "end": "2018-12-31"
+      },
+      {
+        "id": "edmodo-3",
+        "date": "22 Sep 2022",
+        "title": "Free platform shutdown",
+        "description": "The parent announced the effective shutdown of its free B2C platform. Separate any other service lines.",
+        "source": "Parent-company release",
+        "url": "https://file.download.99.com/down/ir_en_20220818.pdf",
+        "start": "2022-09-22",
+        "end": "2022-09-22"
+      },
+      {
+        "id": "edmodo-4",
+        "date": "2023",
+        "title": "Privacy case settled",
+        "description": "The FTC's public case file records a stipulated order following its complaint. The legal proceeding and service closure remain separate milestones.",
+        "source": "FTC case file",
+        "url": "https://www.ftc.gov/legal-library/browse/cases-proceedings/202-3129-edmodo-llc-us-v",
+        "start": "2023-01-01",
+        "end": "2023-12-31"
+      },
+      {
+        "id": "edmodo-5",
+        "date": "2024",
+        "title": "Remaining operations closed",
+        "description": "A later Mynd filing describes remaining operations closing in 2024. The FTC's 2023 settlement record is an additional labelled compliance event, with no single-cause inference.",
+        "source": "Mynd annual filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1708441/000170844126000055/mynd-20251231.htm",
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      }
+    ]
+  },
+  {
+    "id": "instructure",
+    "name": "Instructure",
+    "country": "United States",
+    "focus": "Institutional LMS replacement",
+    "category": "education",
+    "events": [
+      {
+        "id": "instructure-1",
+        "date": "2008",
+        "title": "Founding",
+        "description": "Early filings date the company's founding to 2008.",
+        "source": "SEC quarterly report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1355754/000156459016026971/inst-10q_20160930.htm",
+        "start": "2008-01-01",
+        "end": "2008-12-31"
+      },
+      {
+        "id": "instructure-2",
+        "date": "2011",
+        "title": "Canvas launch",
+        "description": "Instructure launched the Canvas learning management system.",
+        "source": "SEC registration statement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1355754/000119312515370129/d932934ds1a.htm",
+        "start": "2011-01-01",
+        "end": "2011-12-31"
+      },
+      {
+        "id": "instructure-3",
+        "date": "24 Mar 2020",
+        "title": "Private-equity acquisition",
+        "description": "Thoma Bravo completed its acquisition.",
+        "source": "Buyer announcement",
+        "url": "https://www.thomabravo.com/press-releases/thoma-bravo-completes-acquisition-of-instructure",
+        "start": "2020-03-24",
+        "end": "2020-03-24"
+      },
+      {
+        "id": "instructure-4",
+        "date": "13 Nov 2024",
+        "title": "Subsequent acquisition",
+        "description": "Funds managed by KKR and Dragoneer completed the acquisition.",
+        "source": "Instructure transaction announcement",
+        "url": "https://www.instructure.com/press-release/kkr-and-dragoneer-complete-acquisition-instructure",
+        "start": "2024-11-13",
+        "end": "2024-11-13"
+      }
+    ]
+  },
+  {
+    "id": "duolingo",
+    "name": "Duolingo",
+    "country": "United States",
+    "focus": "Consumer language learning",
+    "category": "education",
+    "events": [
+      {
+        "id": "duolingo-1",
+        "date": "18 Aug 2011",
+        "title": "Incorporation",
+        "description": "SEC filing reports company formation.",
+        "source": "SEC quarterly report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053603/duol-20260630.htm",
+        "start": "2011-08-18",
+        "end": "2011-08-18"
+      },
+      {
+        "id": "duolingo-2",
+        "date": "19 Jun 2012",
+        "title": "Public app launch",
+        "description": "The same filing dates the public app release.",
+        "source": "SEC quarterly report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053603/duol-20260630.htm",
+        "start": "2012-06-19",
+        "end": "2012-06-19"
+      },
+      {
+        "id": "duolingo-3",
+        "date": "30 Jul 2021",
+        "title": "IPO completed",
+        "description": "The company reported completion of its IPO.",
+        "source": "SEC filing",
+        "url": "https://www.sec.gov/ixviewer/ix.html?doc=%2FArchives%2Fedgar%2Fdata%2F1562088%2F000156208824000050%2Fduol-20231231.htm",
+        "start": "2021-07-30",
+        "end": "2021-07-30"
+      },
+      {
+        "id": "duolingo-4",
+        "date": "2026 filing",
+        "title": "Product breadth reported",
+        "description": "The June 2026 quarterly filing describes more than 250 courses. This is breadth of offering within the filing's reporting context.",
+        "source": "SEC quarterly report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053603/duol-20260630.htm",
+        "start": "2026-01-01",
+        "end": "2026-12-31"
+      }
+    ]
+  },
+  {
+    "id": "coursera",
+    "name": "Coursera",
+    "country": "United States",
+    "focus": "University content partnerships and online credentials",
+    "category": "education",
+    "events": [
+      {
+        "id": "coursera-1",
+        "date": "Fall 2011",
+        "title": "Pre-company course milestone",
+        "description": "Stanford online courses preceded the company's formation and are kept under a predecessor-project relationship.",
+        "source": "Coursera registration timeline",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001651562/9480be57-ad46-4b1f-ad22-da877623692d.pdf",
+        "start": "2011-01-01",
+        "end": "2011-12-31"
+      },
+      {
+        "id": "coursera-2",
+        "date": "2012",
+        "title": "Company founded",
+        "description": "University faculty founded Coursera to deliver online courses at scale.",
+        "source": "Coursera registration timeline",
+        "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001651562/9480be57-ad46-4b1f-ad22-da877623692d.pdf",
+        "start": "2012-01-01",
+        "end": "2012-12-31"
+      },
+      {
+        "id": "coursera-3",
+        "date": "Apr 2021",
+        "title": "IPO",
+        "description": "The company reported IPO proceeds in April 2021.",
+        "source": "Coursera SEC annual filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1651562/000095017022002807/cour-20211231.htm",
+        "start": "2021-04-01",
+        "end": "2021-04-30"
+      },
+      {
+        "id": "coursera-4",
+        "date": "11 May 2026",
+        "title": "Merger completion announced",
+        "description": "Coursera announced completion of its combination with Udemy, following 2026 shareholder approval.",
+        "source": "SEC-filed announcement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1651562/000114036126020399/ef20072971_ex99-1.htm",
+        "start": "2026-05-11",
+        "end": "2026-05-11"
+      }
+    ]
+  },
+  {
+    "id": "2u",
+    "name": "2U",
+    "country": "United States",
+    "focus": "University programme services and restructuring",
+    "category": "education",
+    "events": [
+      {
+        "id": "2u-1",
+        "date": "2008",
+        "title": "Company origin",
+        "description": "Company media materials date its founding to 2008.",
+        "source": "2U media kit",
+        "url": "https://www.edx.org/media-kit/download.pdf",
+        "start": "2008-01-01",
+        "end": "2008-12-31"
+      },
+      {
+        "id": "2u-2",
+        "date": "16 Nov 2021",
+        "title": "edX transaction completed",
+        "description": "2U and edX announced completion of the combination.",
+        "source": "Joint completion announcement",
+        "url": "https://press.edx.org/2u-inc.-and-edx-complete-industry-redefining-combination",
+        "start": "2021-11-16",
+        "end": "2021-11-16"
+      },
+      {
+        "id": "2u-3",
+        "date": "13 Sep 2024",
+        "title": "Restructuring and emergence",
+        "description": "2U announced that it completed financial restructuring and emerged from Chapter 11 as a privately held entity.",
+        "source": "2U restructuring announcement",
+        "url": "https://2u.com/newsroom/2u-successfully-completes-transaction/",
+        "start": "2024-09-13",
+        "end": "2024-09-13"
+      }
+    ]
+  },
+  {
+    "id": "byjus-think-learn",
+    "name": "BYJU’S / Think & Learn",
+    "country": "India",
+    "focus": "Consumer tutoring and acquisition-led expansion",
+    "category": "education",
+    "events": [
+      {
+        "id": "byjus-think-learn-1",
+        "date": "Dec 2018",
+        "title": "Major investment and app evidence",
+        "description": "Naspers disclosed leading a primary-and-secondary investment in Think & Learn and described its K–12 learning app.",
+        "source": "Investor offering circular",
+        "url": "https://ise-prodnr-eu-west-1-data-integration.s3-eu-west-1.amazonaws.com/202507/f0b3655f-f80f-4169-8424-2224a2371228.pdf",
+        "start": "2018-12-01",
+        "end": "2018-12-31"
+      },
+      {
+        "id": "byjus-think-learn-2",
+        "date": "2019",
+        "title": "Osmo acquisition reported",
+        "description": "Reuters records the purchase of Osmo. The target and buyer need separate legal-entity records.",
+        "source": "Reuters acquisitions chronology",
+        "url": "https://theprint.in/india/factbox-indian-edtech-startup-byjus-top-acquisitions-investors/1639181/",
+        "start": "2019-01-01",
+        "end": "2019-12-31"
+      },
+      {
+        "id": "byjus-think-learn-3",
+        "date": "2021",
+        "title": "Aakash transaction process",
+        "description": "India's Competition Commission records the notification for the proposed combination involving Think & Learn and Aakash.",
+        "source": "Competition Commission order",
+        "url": "https://cci.gov.in/images/caseorders/en/1652246365.pdf",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+      },
+      {
+        "id": "byjus-think-learn-4",
+        "date": "Oct 2024",
+        "title": "Insolvency proceeding milestone",
+        "description": "India's Supreme Court set aside an appeals tribunal order that had halted the insolvency process. This is a dated procedural event.",
+        "source": "Reuters court reporting",
+        "url": "https://www.reuters.com/world/india/byjus-payment-dispute-settlement-with-india-cricket-body-set-aside-by-top-court-2024-10-23/",
+        "start": "2024-10-01",
+        "end": "2024-10-31"
+      }
+    ]
+  },
+  {
+    "id": "mint-innovation",
+    "name": "Mint Innovation",
+    "country": "New Zealand",
+    "focus": "E-waste metals recovery",
+    "category": "climate",
+    "events": [
+      {
+        "id": "mint-innovation-1",
+        "date": "Dec 2020",
+        "title": "Commercial scale-up financing reported",
+        "description": "UoA reported fundraising to build the first commercial biorefineries. Outset's later interview describes the intermediate East Tāmaki demo plant.",
+        "source": "University of Auckland announcement",
+        "url": "https://www.auckland.ac.nz/en/news/2020/12/16/venture-using-microbes-turn-e-waste-precious-metals.html",
+        "start": "2020-12-01",
+        "end": "2020-12-31"
+      },
+      {
+        "id": "mint-innovation-2",
+        "date": "Aug 2022",
+        "title": "Commercial facility opened",
+        "description": "Mint opened its Sydney commercial-scale facility for e-waste recovery.",
+        "source": "Mint facility announcement",
+        "url": "https://www.mint.bio/news-and-press/mint-innovation-opens-its-first-commercial-scale-biorefinery-plant-in-sydney-australia",
+        "start": "2022-08-01",
+        "end": "2022-08-31"
+      },
+      {
+        "id": "mint-innovation-3",
+        "date": "4 Mar 2026",
+        "title": "Customer-linked output validation reported",
+        "description": "Mint announced an initial batch of recycled copper through an HP collaboration. The report describes the validation scope, rather than annual throughput.",
+        "source": "Mint collaboration announcement",
+        "url": "https://www.mint.bio/news-and-press/mint-innovation-collaborates-with-hp-to-produce-industry-first-closed-loop-recycled-copper",
+        "start": "2026-03-04",
+        "end": "2026-03-04"
+      },
+      {
+        "id": "mint-innovation-4",
+        "date": "Jul 2026",
+        "title": "Battery recovery spinout",
+        "description": "Linca announced its separation from Mint and a NZ$5 million seed first close. The raise attaches to Linca.",
+        "source": "Linca announcement",
+        "url": "https://www.linca.co/news/linca-launches-following-spin-out-from-mint-innovation-and-nzd-5m-first-close",
+        "start": "2026-07-01",
+        "end": "2026-07-31"
+      }
+    ]
+  },
+  {
+    "id": "lanzatech",
+    "name": "LanzaTech",
+    "country": "New Zealand-founded, later US-headquartered",
+    "focus": "Industrial waste-gas conversion and licensing",
+    "category": "climate",
+    "events": [
+      {
+        "id": "lanzatech-1",
+        "date": "25 Jan 2005",
+        "title": "Incorporation",
+        "description": "A prospectus records incorporation as LanzaTech New Zealand Limited.",
+        "source": "SEC prospectus",
+        "url": "https://www.sec.gov/Archives/edgar/data/1843724/000110465923003114/tm225496-26_424b3.htm",
+        "start": "2005-01-25",
+        "end": "2005-01-25"
+      },
+      {
+        "id": "lanzatech-2",
+        "date": "2018",
+        "title": "First commercial facility in China",
+        "description": "The company reports a partner joint venture established its first commercial waste-gas-to-ethanol facility.",
+        "source": "SEC annual filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1843724/000162828025017874/lnza-20241231.htm",
+        "start": "2018-01-01",
+        "end": "2018-12-31"
+      },
+      {
+        "id": "lanzatech-3",
+        "date": "8 Feb 2023",
+        "title": "Business combination",
+        "description": "Legacy LanzaTech completed its combination with AMCI. Distinguish the public listing pathway from a priced venture round.",
+        "source": "SEC annual report",
+        "url": "https://www.sec.gov/Archives/edgar/data/1843724/000162828026028339/lt2025annualreport.pdf",
+        "start": "2023-02-08",
+        "end": "2023-02-08"
+      },
+      {
+        "id": "lanzatech-4",
+        "date": "2025 reporting year",
+        "title": "Ongoing operating and financing disclosures",
+        "description": "Its FY2025 filing describes operations, facilities and financial risk after the combination.",
+        "source": "SEC FY2025 filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1843724/000162828026028339/lt2025annualreport.pdf",
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      }
+    ]
+  },
+  {
+    "id": "li-cycle",
+    "name": "Li-Cycle",
+    "country": "Canada",
+    "focus": "Battery preprocessing and downstream refining",
+    "category": "climate",
+    "events": [
+      {
+        "id": "li-cycle-1",
+        "date": "FY2021",
+        "title": "Preprocessing in operation",
+        "description": "The company described operating Ontario and New York Spokes and the work needed to demonstrate a commercial Hub.",
+        "source": "SEC FY2021 filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1828811/000162828022001515/licy-20211031_d2.htm",
+        "start": "2020-11-01",
+        "end": "2021-10-31"
+      },
+      {
+        "id": "li-cycle-2",
+        "date": "23 Oct 2023",
+        "title": "Rochester Hub construction paused",
+        "description": "The annual filing documents a pause at the first planned commercial Hub, citing escalating costs.",
+        "source": "SEC FY2024 filing",
+        "url": "https://www.sec.gov/Archives/edgar/data/1828811/000182881125000009/licy-20241231.htm",
+        "start": "2023-10-23",
+        "end": "2023-10-23"
+      },
+      {
+        "id": "li-cycle-3",
+        "date": "7 Aug 2025",
+        "title": "Restructuring asset transaction closed",
+        "description": "The court record says Glencore designees acquired substantially all assets and designated liabilities.",
+        "source": "CCAA court record",
+        "url": "https://www.alvarezandmarsal.com/sites/default/files/canada/Motion%20Record%20-%20Distribution%20Approval%20and%20Ancillary%20Relief%20Order%20%28Returnable%20Jan.%208%2C%202026%29.pdf",
+        "start": "2025-08-07",
+        "end": "2025-08-07"
+      }
+    ]
+  },
+  {
+    "id": "redwood-materials",
+    "name": "Redwood Materials",
+    "country": "United States",
+    "focus": "Battery recycling and strategic buyers",
+    "category": "climate",
+    "events": [
+      {
+        "id": "redwood-materials-1",
+        "date": "22 Sep 2021",
+        "title": "Automaker partnership announced",
+        "description": "Redwood and Ford announced collaboration aimed at a closed-loop materials supply chain.",
+        "source": "Redwood and Ford announcement",
+        "url": "https://www.redwoodmaterials.com/news/redwood-materials-and-ford-motor-company-announce-strategic-relationship/",
+        "start": "2021-09-22",
+        "end": "2021-09-22"
+      },
+      {
+        "id": "redwood-materials-2",
+        "date": "Feb 2023",
+        "title": "Conditional debt commitment",
+        "description": "Redwood announced a Department of Energy conditional loan commitment. Record financing instrument and status independently from cash received.",
+        "source": "Redwood conditional loan announcement",
+        "url": "https://www.redwoodmaterials.com/news/redwood-department-of-energy-loan/",
+        "start": "2023-02-01",
+        "end": "2023-02-28"
+      },
+      {
+        "id": "redwood-materials-3",
+        "date": "Nov 2025",
+        "title": "Second-region recovery operations reported",
+        "description": "Contemporary reporting describes the start of recycling operations in South Carolina.",
+        "source": "South Carolina Daily Gazette",
+        "url": "https://scdailygazette.com/2025/11/13/sc-battery-company-begins-recycling-operations-in-the-lowcountry/",
+        "start": "2025-11-01",
+        "end": "2025-11-30"
+      },
+      {
+        "id": "redwood-materials-4",
+        "date": "28 Jan 2026",
+        "title": "Series E closing announced",
+        "description": "Redwood announced the final close of a US$425 million Series E to scale its energy storage business. Keep this funding separate from the conditional project loan and plant output.",
+        "source": "Redwood Series E announcement",
+        "url": "https://www.redwoodmaterials.com/news/redwood-materials-announces-final-close-of-425m-series-e/",
+        "start": "2026-01-28",
+        "end": "2026-01-28"
+      }
+    ]
+  },
+  {
+    "id": "northvolt",
+    "name": "Northvolt",
+    "country": "Sweden",
+    "focus": "Battery gigafactory ramp-up",
+    "category": "climate",
+    "events": [
+      {
+        "id": "northvolt-1",
+        "date": "2016",
+        "title": "Founding",
+        "description": "Founding investor Vargas dates formation to October 2016.",
+        "source": "Founding investor history",
+        "url": "https://www.vargasholding.com/our-companies/northvolt",
+        "start": "2016-01-01",
+        "end": "2016-12-31"
+      },
+      {
+        "id": "northvolt-2",
+        "date": "Dec 2021",
+        "title": "First cell assembled",
+        "description": "Northvolt announced the first battery cell assembled at its Skellefteå facility.",
+        "source": "Northvolt announcement",
+        "url": "https://northvolt.com/articles/first-cell/",
+        "start": "2021-12-01",
+        "end": "2021-12-31"
+      },
+      {
+        "id": "northvolt-3",
+        "date": "2022",
+        "title": "First commercial deliveries announced",
+        "description": "The company reported deliveries from Northvolt Ett to European automotive customers.",
+        "source": "Northvolt delivery announcement",
+        "url": "https://northvolt.com/articles/northvoltett-delivers/",
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      {
+        "id": "northvolt-4",
+        "date": "12 Mar 2025",
+        "title": "Swedish bankruptcy proceedings",
+        "description": "The receiver records Northvolt AB's formal entry into bankruptcy proceedings following a Stockholm District Court decision.",
+        "source": "Appointed receiver",
+        "url": "https://ackordscentralen.se/en/current-events/information-for-creditors/northvolt",
+        "start": "2025-03-12",
+        "end": "2025-03-12"
+      },
+      {
+        "id": "northvolt-5",
+        "date": "27 Feb 2026",
+        "title": "Asset acquisition completed",
+        "description": "Lyten reported completing acquisition of the Swedish battery assets.",
+        "source": "Buyer announcement",
+        "url": "https://news.cision.com/lyten/r/lyten-completes-acquisition-of-northvolt-sweden-and-establishes-its-first-lyten-industrial-hub-in-sw%2Cc4314000",
+        "start": "2026-02-27",
+        "end": "2026-02-27"
+      }
+    ]
+  },
+  {
+    "id": "form-energy",
+    "name": "Form Energy",
+    "country": "United States",
+    "focus": "Long-duration storage and utility pilots",
+    "category": "climate",
+    "events": [
+      {
+        "id": "form-energy-1",
+        "date": "2017",
+        "title": "Founding",
+        "description": "Form Energy dates its formation to 2017.",
+        "source": "Company history",
+        "url": "https://formenergy.com/about/",
+        "start": "2017-01-01",
+        "end": "2017-12-31"
+      },
+      {
+        "id": "form-energy-2",
+        "date": "2020",
+        "title": "Utility partnership",
+        "description": "Great River Energy and Form agreed to develop a grid-connected storage pilot at Cambridge, Minnesota.",
+        "source": "Utility project page",
+        "url": "https://greatriverenergy.com/what-we-do/cambridge-energy-storage-project/",
+        "start": "2020-01-01",
+        "end": "2020-12-31"
+      },
+      {
+        "id": "form-energy-3",
+        "date": "15 Aug 2024",
+        "title": "Project broke ground",
+        "description": "The utility announced groundbreaking for the multi-day storage project.",
+        "source": "Utility announcement",
+        "url": "https://greatriverenergy.com/power-generation-resources/great-river-energy-form-energy-break-ground-on-first-of-its-kind-multi-day-energy-storage-project/",
+        "start": "2024-08-15",
+        "end": "2024-08-15"
+      },
+      {
+        "id": "form-energy-4",
+        "date": "Oct 2024",
+        "title": "Manufacturing expansion began",
+        "description": "Form announced construction to expand its Weirton manufacturing facility.",
+        "source": "Form Energy announcement",
+        "url": "https://formenergy.com/form-energy-begins-expansion-of-form-factory-1-to-increase-manufacturing-capacity/",
+        "start": "2024-10-01",
+        "end": "2024-10-31"
+      },
+      {
+        "id": "form-energy-5",
+        "date": "Oct 2025",
+        "title": "First battery deployment reported",
+        "description": "Great River Energy republished a report that Form had started deploying batteries. The article still described full project operation as expected in 2026.",
+        "source": "Utility-hosted reporting",
+        "url": "https://econdev.greatriverenergy.com/news/p/item/66011/latitude-media-forms-first-100hour-batteries-are-hitting-the-grid",
+        "start": "2025-10-01",
+        "end": "2025-10-31"
+      }
+    ]
+  },
+  {
+    "id": "climeworks",
+    "name": "Climeworks",
+    "country": "Switzerland",
+    "focus": "Direct air capture and permanent storage",
+    "category": "climate",
+    "events": [
+      {
+        "id": "climeworks-1",
+        "date": "2017",
+        "title": "First commercial plant at Hinwil",
+        "description": "Company history identifies Hinwil as the first commercial technology generation.",
+        "source": "Climeworks retrospective",
+        "url": "https://climeworks.com/press-release/climeworks-completes-commercial-operations-in-hinwil",
+        "start": "2017-01-01",
+        "end": "2017-12-31"
+      },
+      {
+        "id": "climeworks-2",
+        "date": "8 Sep 2021",
+        "title": "Orca launched",
+        "description": "Climeworks announced the start of operations of its Orca direct air capture and storage plant.",
+        "source": "Climeworks launch",
+        "url": "https://climeworks.com/press-release/climeworks-launches-orca",
+        "start": "2021-09-08",
+        "end": "2021-09-08"
+      },
+      {
+        "id": "climeworks-3",
+        "date": "2024",
+        "title": "Mammoth began operations",
+        "description": "The company describes the start of operations at its second Iceland facility.",
+        "source": "Climeworks facility timeline",
+        "url": "https://climeworks.com/plant-mammoth/",
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      {
+        "id": "climeworks-4",
+        "date": "May 2025",
+        "title": "Workforce reduction reported",
+        "description": "Reuters reported planned staffing cuts amid financing and policy uncertainty in the sector.",
+        "source": "Reuters sector reporting",
+        "url": "https://www.wsj.com/articles/carbon-capture-startups-face-staff-cuts-amid-u-s-funding-uncertainty-fa6013e8",
+        "start": "2025-05-01",
+        "end": "2025-05-31"
+      }
+    ]
+  },
+  {
+    "id": "carboncure-technologies",
+    "name": "CarbonCure Technologies",
+    "country": "Canada",
+    "focus": "Concrete-production retrofit and CO₂ utilisation",
+    "category": "climate",
+    "events": [
+      {
+        "id": "carboncure-technologies-1",
+        "date": "2020",
+        "title": "Scale demonstration completed",
+        "description": "Company history dates its final Carbon XPRIZE technology demonstration in Alberta to 2020.",
+        "source": "Company competition history",
+        "url": "https://www.carboncure.com/awards/",
+        "start": "2020-01-01",
+        "end": "2020-12-31"
+      },
+      {
+        "id": "carboncure-technologies-2",
+        "date": "Sep 2020",
+        "title": "Strategic equity investment announced",
+        "description": "Amazon and Breakthrough Energy Ventures co-led an investment.",
+        "source": "Funding announcement",
+        "url": "https://www.carboncure.com/news/amazon-and-breakthrough-energy-ventures-co-lead-investment-in-cleantech-company-carboncure/",
+        "start": "2020-09-01",
+        "end": "2020-09-30"
+      },
+      {
+        "id": "carboncure-technologies-3",
+        "date": "Jul 2023",
+        "title": "Later equity round",
+        "description": "CarbonCure reported US$80 million in new equity led by Blue Earth Capital.",
+        "source": "Financing announcement",
+        "url": "https://www.carboncure.com/news/carboncure-secures-80m-in-new-equity-round-led-by-blue-earth-capital/",
+        "start": "2023-07-01",
+        "end": "2023-07-31"
+      }
+    ]
+  },
+  {
+    "id": "running-tide",
+    "name": "Running Tide",
+    "country": "United States",
+    "focus": "Ocean carbon removal and registry-dependent sales",
+    "category": "climate",
+    "events": [
+      {
+        "id": "running-tide-1",
+        "date": "2020–21",
+        "title": "Early purchases reported retrospectively",
+        "description": "Reporting describes small early carbon-credit purchases by Shopify and Stripe. The payments and later verified deliveries require separate evidence.",
+        "source": "Investigative retrospective",
+        "url": "https://www.wired.com/story/how-the-next-big-thing-in-carbon-removal-sunk-without-a-trace",
+        "start": "2020-01-01",
+        "end": "2021-12-31"
+      },
+      {
+        "id": "running-tide-2",
+        "date": "Mar 2023",
+        "title": "Microsoft agreement announced",
+        "description": "Running Tide announced its supplier agreement with Microsoft for ocean-based removals.",
+        "source": "Company deal announcement",
+        "url": "https://www.prnewswire.com/news-releases/running-tide-becomes-microsofts-first-open-ocean-based-carbon-removal-supplier-301768338.html",
+        "start": "2023-03-01",
+        "end": "2023-03-31"
+      },
+      {
+        "id": "running-tide-3",
+        "date": "Jun 2024",
+        "title": "Wind-down announced",
+        "description": "Trade reporting documents the company's decision to wind down.",
+        "source": "Contemporary trade reporting",
+        "url": "https://www.axios.com/pro/climate-deals/2024/06/17/running-tide-shuts-down",
+        "start": "2024-06-01",
+        "end": "2024-06-30"
+      }
+    ]
+  },
+  {
+    "id": "twelve",
+    "name": "Twelve",
+    "country": "United States",
+    "focus": "Carbon conversion and e-fuel plant finance",
+    "category": "climate",
+    "events": [
+      {
+        "id": "twelve-1",
+        "date": "2019",
+        "title": "Public R&D award",
+        "description": "The SBIR award record documents development under the Opus 12 predecessor name. A grant is classified separately from venture funding.",
+        "source": "US SBIR award",
+        "url": "https://www.sbir.gov/awards/179850",
+        "start": "2019-01-01",
+        "end": "2019-12-31"
+      },
+      {
+        "id": "twelve-2",
+        "date": "6 May 2025",
+        "title": "Strategic investor announced",
+        "description": "United Airlines announced an investment in Twelve.",
+        "source": "United announcement",
+        "url": "https://united.mediaroom.com/2025-05-06-Air-to-Jet-Fuel-United-Announces-Investment-in-Power-to-Liquid-Fuels-Company-Twelve",
+        "start": "2025-05-06",
+        "end": "2025-05-06"
+      },
+      {
+        "id": "twelve-3",
+        "date": "10 Jun 2026",
+        "title": "First commercial facility opening reported",
+        "description": "Twelve announced opening AirPlant One in Moses Lake.",
+        "source": "Twelve plant announcement",
+        "url": "https://www.twelve.co/post/airplant-one-opens-in-moses-lake-america-s-first-commercial-e-jet-fuel-plant-begins-operations",
+        "start": "2026-06-10",
+        "end": "2026-06-10"
+      },
+      {
+        "id": "twelve-4",
+        "date": "9 Sep 2026",
+        "title": "Plant credit facility announced",
+        "description": "Twelve announced a facility of up to $45 million. The maximum commitment remains distinct from draws.",
+        "source": "Credit facility announcement",
+        "url": "https://www.twelve.co/post/twelve-closes-an-up-to-45-million-credit-facility-for-airplant-one-with-nomura-and-endurance-capita",
+        "start": "2026-09-09",
+        "end": "2026-09-09"
+      }
+    ]
+  },
+  {
+    "id": "halter",
+    "name": "Halter",
+    "country": "New Zealand",
+    "focus": "Farm operating system and virtual fencing",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "halter-1",
+        "date": "2016",
+        "title": "First backing reported retrospectively",
+        "description": "Icehouse Ventures traces its first backing and company origin to 2016. Public visibility at that date needs a different source.",
+        "source": "Investor portfolio history",
+        "url": "https://www.icehouseventures.co.nz/companies/halter",
+        "start": "2016-01-01",
+        "end": "2016-12-31"
+      },
+      {
+        "id": "halter-2",
+        "date": "2021",
+        "title": "NZ commercial deployment",
+        "description": "Callaghan Innovation described Halter adding farms in New Zealand as its digital fencing and management product went into use.",
+        "source": "Callaghan Innovation case study",
+        "url": "https://www.callaghaninnovation.govt.nz/stories/ahead-herd/",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+      },
+      {
+        "id": "halter-3",
+        "date": "2025",
+        "title": "Series D",
+        "description": "The company announced a NZ$165 million Series D.",
+        "source": "Company Series D announcement",
+        "url": "https://www.halterhq.com/en-au/news/halter-raises-165m-in-funding-to-help-farmers-boost-productivity",
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      {
+        "id": "halter-4",
+        "date": "2026",
+        "title": "Series E and international expansion",
+        "description": "The NZ release announced NZ$377 million in new financing and plans for international expansion. Regional releases express the same round in different currencies.",
+        "source": "Halter NZ Series E announcement",
+        "url": "https://www.halterhq.com/en-nz/news/halter-accelerates-international-expansion-following-seriese-fundraising-round",
+        "start": "2026-01-01",
+        "end": "2026-12-31"
+      }
+    ]
+  },
+  {
+    "id": "robotics-plus",
+    "name": "Robotics Plus",
+    "country": "New Zealand",
+    "focus": "Agricultural automation and strategic distribution",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "robotics-plus-1",
+        "date": "2018",
+        "title": "Strategic investment",
+        "description": "Yamaha announced investment in the NZ robotics company.",
+        "source": "Yamaha Motor announcement",
+        "url": "https://global.yamaha-motor.com/news/2018/1114/investment.html",
+        "start": "2018-01-01",
+        "end": "2018-12-31"
+      },
+      {
+        "id": "robotics-plus-2",
+        "date": "2019 reporting year",
+        "title": "First commercial products recorded",
+        "description": "Callaghan Innovation's annual report describes international rollout of apple packers and recent first-product milestones.",
+        "source": "Callaghan Innovation annual report",
+        "url": "https://www.callaghaninnovation.govt.nz/assets/documents/callaghan-innovation-annual-report-2019-web.pdf",
+        "start": "2019-01-01",
+        "end": "2019-12-31"
+      },
+      {
+        "id": "robotics-plus-3",
+        "date": "1 Apr 2025",
+        "title": "Share acquisition completed",
+        "description": "Yamaha's filings say its February agreement was followed by buying the remaining shares in April.",
+        "source": "Yamaha annual filing",
+        "url": "https://global.yamaha-motor.com/ir/library/report/pdf/2025/2025report-e.pdf",
+        "start": "2025-04-01",
+        "end": "2025-04-01"
+      }
+    ]
+  },
+  {
+    "id": "biolumic",
+    "name": "BioLumic",
+    "country": "New Zealand",
+    "focus": "University spinout and seed-company adoption",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "biolumic-1",
+        "date": "Mar 2013",
+        "title": "Investor entry recorded",
+        "description": "NZGCP records investing in the Massey-linked company in March 2013. Investment date and founding date are distinct.",
+        "source": "Investor portfolio record",
+        "url": "https://www.nzgcp.co.nz/portfolio/case-study/biolumic",
+        "start": "2013-03-01",
+        "end": "2013-03-31"
+      },
+      {
+        "id": "biolumic-2",
+        "date": "Mar 2018",
+        "title": "Series A reported",
+        "description": "Contemporary coverage documented a US$5 million Series A to commercialise the technology. Massey identified BioLumic as a university spinout.",
+        "source": "AgFunderNews contemporary reporting",
+        "url": "https://agfundernews.com/biolumic-raises-seriesa-uv-crop-enhancement",
+        "start": "2018-03-01",
+        "end": "2018-03-31"
+      },
+      {
+        "id": "biolumic-3",
+        "date": "Aug 2024",
+        "title": "Seed-company collaborator milestone",
+        "description": "BioLumic announced development work with seed-company partners.",
+        "source": "Company collaboration release",
+        "url": "https://www.biolumic.com/headlines/2024/8/6/biolumic-pioneers-new-seed-traits-with-seed-company-partners",
+        "start": "2024-08-01",
+        "end": "2024-08-31"
+      },
+      {
+        "id": "biolumic-4",
+        "date": "Mar 2025",
+        "title": "Commercial launch announced",
+        "description": "BioLumic announced the launch of commercial light-activated seed traits. The release's performance claims remain company-reported.",
+        "source": "Company launch release",
+        "url": "https://www.biolumic.com/headlines/2025/3/10/biolumic-launches-worlds-first-commercial-light-activated-seed-traits",
+        "start": "2025-03-01",
+        "end": "2025-03-31"
+      }
+    ]
+  },
+  {
+    "id": "pivot-bio",
+    "name": "Pivot Bio",
+    "country": "United States",
+    "focus": "Crop nutrition and grower sales",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "pivot-bio-1",
+        "date": "Aug 2018",
+        "title": "Pre-commercial beta",
+        "description": "The company reported a grower beta for its corn nutrition product.",
+        "source": "Company beta announcement",
+        "url": "https://www.pivotbio.com/press-releases/pivot-bio-nearing-launch-of-first-sustainable-nitrogen-product",
+        "start": "2018-08-01",
+        "end": "2018-08-31"
+      },
+      {
+        "id": "pivot-bio-2",
+        "date": "Aug 2019",
+        "title": "Sales channel documented",
+        "description": "The company described its direct sales, referrals and independent representative channel for the next sales season.",
+        "source": "Company sales announcement",
+        "url": "https://www.pivotbio.com/press-releases/pivot-bio-launches-its-2020-sales-season",
+        "start": "2019-08-01",
+        "end": "2019-08-31"
+      },
+      {
+        "id": "pivot-bio-3",
+        "date": "Jul 2021",
+        "title": "Large follow-on financing",
+        "description": "Pivot Bio reported closing a US$430 million Series D.",
+        "source": "Company financing announcement",
+        "url": "https://www.pivotbio.com/press-releases/series-d",
+        "start": "2021-07-01",
+        "end": "2021-07-31"
+      }
+    ]
+  },
+  {
+    "id": "agbiome",
+    "name": "AgBiome",
+    "country": "United States",
+    "focus": "Crop protection products and asset value",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "agbiome-1",
+        "date": "Aug 2017",
+        "title": "Product registration",
+        "description": "EPA records the Howler registration under 91197-3.",
+        "source": "EPA registration record",
+        "url": "https://downloads.regulations.gov/EPA-HQ-OPP-2016-0251-0019/content.pdf",
+        "start": "2017-08-01",
+        "end": "2017-08-31"
+      },
+      {
+        "id": "agbiome-2",
+        "date": "Oct 2023",
+        "title": "Permanent layoff notice",
+        "description": "North Carolina lists an AgBiome layoff notice with a planned December effective date. A notice carries different certainty than a verified headcount outcome.",
+        "source": "State WARN record",
+        "url": "https://www.commerce.nc.gov/data-tools-reports/labor-market-data-tools/workforce-warn-reports/report-workforce-warn-listings-2023/open",
+        "start": "2023-10-01",
+        "end": "2023-10-31"
+      },
+      {
+        "id": "agbiome-3",
+        "date": "Mar 2024",
+        "title": "Product asset transfer",
+        "description": "Certis acquired assets including Howler and Theia. Keep the transferred products and company status distinct.",
+        "source": "Buyer announcement",
+        "url": "https://www.certisbio.com/news/releases/certis-biologicals-acquires-howler-and-theia-fungicides-from-agbiome",
+        "start": "2024-03-01",
+        "end": "2024-03-31"
+      },
+      {
+        "id": "agbiome-4",
+        "date": "2024",
+        "title": "Separate platform asset transfer reported",
+        "description": "Trade reporting describes acquisition of platform assets by Ginkgo. This is a second buyer and scope.",
+        "source": "Trade reporting on platform transfer",
+        "url": "https://www.newaginternational.com/agribusiness/agbiome-sell-off-continues-following-sale-of-two-main-products/",
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      }
+    ]
+  },
+  {
+    "id": "indigo-ag",
+    "name": "Indigo Ag",
+    "country": "United States",
+    "focus": "Crop-input portfolio and farm carbon programmes",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "indigo-ag-1",
+        "date": "Jul 2016",
+        "title": "First commercial product and Series C reported",
+        "description": "A company release announced its first commercial cotton product and a US$100 million Series C.",
+        "source": "Company financing and product release",
+        "url": "https://www.indigoag.com/pages/news/2016/indigo-raises-100m-to-help-grow-hardier-crops",
+        "start": "2016-07-01",
+        "end": "2016-07-31"
+      },
+      {
+        "id": "indigo-ag-2",
+        "date": "2022",
+        "title": "First carbon-credit issuance reported",
+        "description": "Indigo reported issuance of agricultural soil carbon credits, distinct from the crop-input product.",
+        "source": "Company issuance announcement",
+        "url": "https://www.indigoag.com/pages/news/inaugural-carbon-by-indigo-credit-issuance",
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      {
+        "id": "indigo-ag-3",
+        "date": "Feb 2023",
+        "title": "Second issuance reported",
+        "description": "Indigo announced a second carbon crop and separately documented registry project CAR1459.",
+        "source": "Company announcement",
+        "url": "https://www.indigoag.com/pages/news/indigo-ag-second-crop-of-soil-carbon-credits-grows-5x-validating-agriculture-as-a-meaningful-solution-to-climate-change",
+        "start": "2023-02-01",
+        "end": "2023-02-28"
+      }
+    ]
+  },
+  {
+    "id": "benson-hill",
+    "name": "Benson Hill",
+    "country": "United States",
+    "focus": "Crop genetics and capital-intensive commercialisation",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "benson-hill-1",
+        "date": "2012",
+        "title": "Founding reconstructed",
+        "description": "SEC prospectus history dates company founding to 2012.",
+        "source": "SEC prospectus, founding history",
+        "url": "https://www.sec.gov/Archives/edgar/data/1830210/000110465921122558/tm2127275-5_424b3.htm",
+        "start": "2012-01-01",
+        "end": "2012-12-31"
+      },
+      {
+        "id": "benson-hill-2",
+        "date": "2021",
+        "title": "Processing asset acquisition",
+        "description": "The company reported the closing of a soy crushing facility asset acquisition. Its annual filing separately documents the public-market combination.",
+        "source": "SEC-filed announcement",
+        "url": "https://www.sec.gov/Archives/edgar/data/1830210/000110465921117056/tm2115705d55_425.htm",
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+      },
+      {
+        "id": "benson-hill-3",
+        "date": "20 Mar 2025",
+        "title": "Chapter 11 filing",
+        "description": "The company reported voluntary filings and an intended asset-sale process.",
+        "source": "SEC-filed disclosure",
+        "url": "https://www.sec.gov/Archives/edgar/data/1830210/000183021025000016/ex991pressreleaseissuedmar.htm",
+        "start": "2025-03-20",
+        "end": "2025-03-20"
+      },
+      {
+        "id": "benson-hill-4",
+        "date": "May 2025",
+        "title": "Asset-sale order",
+        "description": "Court records approve sale of substantially all seller assets. Closing needs distinct evidence.",
+        "source": "Bankruptcy court order",
+        "url": "https://cases.stretto.com/public/x418/13600/PLEADINGS/1360005222580000000019.pdf",
+        "start": "2025-05-01",
+        "end": "2025-05-31"
+      }
+    ]
+  },
+  {
+    "id": "plenty",
+    "name": "Plenty",
+    "country": "United States",
+    "focus": "Controlled-environment agriculture",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "plenty-1",
+        "date": "2017",
+        "title": "Series B reported",
+        "description": "Contemporary reporting documents a reported US$200 million round led by SoftBank.",
+        "source": "Contemporary financing reporting",
+        "url": "https://www.axios.com/2017/12/15/vertical-farming-startup-raises-200-million-from-softbank-bezos-1513304326",
+        "start": "2017-01-01",
+        "end": "2017-12-31"
+      },
+      {
+        "id": "plenty-2",
+        "date": "Sep 2024",
+        "title": "Virginia facility opening",
+        "description": "Plenty reported the opening of its vertically farmed berry site, with first supply planned for early 2025 at that announcement date.",
+        "source": "Company site announcement",
+        "url": "https://www.plenty.ag/plenty-opens-worlds-first-farm-to-grow-indoor-vertically-farmed-berries-at-scale/",
+        "start": "2024-09-01",
+        "end": "2024-09-30"
+      },
+      {
+        "id": "plenty-3",
+        "date": "Mar 2025",
+        "title": "Chapter 11 filing",
+        "description": "Court papers document the filing and operating adjustments.",
+        "source": "Bankruptcy court declaration",
+        "url": "https://cases.stretto.com/public/x416/13624/PLEADINGS/1362403242580000000003.pdf",
+        "start": "2025-03-01",
+        "end": "2025-03-31"
+      },
+      {
+        "id": "plenty-4",
+        "date": "29 May 2025",
+        "title": "Emergence announced",
+        "description": "Plenty announced completion of restructuring and emergence from Chapter 11.",
+        "source": "Company restructuring announcement",
+        "url": "https://www.plenty.ag/plenty-completes-restructuring-emerges-from-chapter-11/",
+        "start": "2025-05-29",
+        "end": "2025-05-29"
+      }
+    ]
+  },
+  {
+    "id": "innerplant",
+    "name": "InnerPlant",
+    "country": "United States",
+    "focus": "Grower diagnostics and subscription information",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "innerplant-1",
+        "date": "Sep 2022",
+        "title": "Strategic Series A",
+        "description": "InnerPlant announced a US$16 million round led by John Deere.",
+        "source": "Company financing release",
+        "url": "https://innerplant.com/innerplant-16m-series-a-led-by-john-deere-to-build-the-future-of-farming/",
+        "start": "2022-09-01",
+        "end": "2022-09-30"
+      },
+      {
+        "id": "innerplant-2",
+        "date": "Jul 2024",
+        "title": "Grower-backed Series B",
+        "description": "The venture announced a US$30 million Series B led by an alliance of growers.",
+        "source": "Company financing release",
+        "url": "https://innerplant.com/innerplants-30m-series-b-led-by-alliance-of-north-american-farmers/",
+        "start": "2024-07-01",
+        "end": "2024-07-31"
+      },
+      {
+        "id": "innerplant-3",
+        "date": "2024",
+        "title": "CropVoice launched",
+        "description": "The company announced its CropVoice insights platform. The offering supports crop-management decisions.",
+        "source": "Company launch release",
+        "url": "https://innerplant.com/innerplant-launches-cropvoice-insights-platform-that-listens-to-plants-engineered-to-signal-fungal-stress/",
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      {
+        "id": "innerplant-4",
+        "date": "2025 season",
+        "title": "Use reported across three US states",
+        "description": "BloombergNEF's profile described use of CropVoice across three states. This gives bounded deployment evidence.",
+        "source": "BloombergNEF profile",
+        "url": "https://assets.bbhub.io/professional/sites/24/Winners-profiles-2025.pdf",
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      }
+    ]
+  },
+  {
+    "id": "agworld",
+    "name": "Agworld",
+    "country": "Australia",
+    "focus": "Farm management software and consolidation",
+    "category": "agriculture",
+    "events": [
+      {
+        "id": "agworld-1",
+        "date": "Dec 2009",
+        "title": "Company origin reconstructed",
+        "description": "Agworld dates its founding to Perth and describes a goal of digital collaboration between growers and advisers.",
+        "source": "Company history",
+        "url": "https://www.agworld.com/nz/about/",
+        "start": "2009-12-01",
+        "end": "2009-12-31"
+      },
+      {
+        "id": "agworld-2",
+        "date": "2019",
+        "title": "International expansion documented",
+        "description": "The company's tenth-anniversary account describes an operating footprint beyond its original market.",
+        "source": "Company anniversary update",
+        "url": "https://www.agworld.com/resources/blog/agworld-celebrates-10-years/",
+        "start": "2019-01-01",
+        "end": "2019-12-31"
+      },
+      {
+        "id": "agworld-3",
+        "date": "Aug 2021",
+        "title": "Strategic acquisition announced",
+        "description": "Semios announced its acquisition of Agworld to combine farm data and precision management tools. Agworld's current product site identifies it as part of the group.",
+        "source": "Transaction announcement",
+        "url": "https://www.agworld.com/nz/resources/blog/semios-acquires-agworld-to-form-independent-global-agtech-powerhouse/",
+        "start": "2021-08-01",
+        "end": "2021-08-31"
+      }
+    ]
+  }
+]
